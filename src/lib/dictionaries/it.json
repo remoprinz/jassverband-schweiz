@@ -1,0 +1,123 @@
+{
+  "metadata": {
+    "title": "Federazione Svizzera di Jass | Tradizione e Innovazione",
+    "description": "La Federazione Svizzera di Jass promuove il gioco nazionale svizzero come sport mentale moderno. Promozione giovanile, piattaforme digitali, campionati nazionali."
+  },
+  "nav": {
+    "home": "Home",
+    "verband": "Federazione",
+    "projekte": "Progetti",
+    "partner": "Diventa partner",
+    "kontakt": "Contatto"
+  },
+  "hero": {
+    "title": "Il Jass è più di un gioco di carte.",
+    "subtitle": "È patrimonio culturale svizzero — e merita un futuro moderno.",
+    "cta": "Al campionato giovanile"
+  },
+  "pillars": {
+    "title": "La nostra missione",
+    "tradition": {
+      "title": "Preservare la tradizione",
+      "description": "Il Jass è iscritto come «Tradizione vivente» presso l'Ufficio federale della cultura. Preserviamo questo patrimonio per le generazioni future."
+    },
+    "youth": {
+      "title": "Promuovere i giovani",
+      "description": "Il Campionato Svizzero di Jass a squadre giovanili porta il pensiero strategico e il lavoro di squadra nelle scuole e università."
+    },
+    "future": {
+      "title": "Plasmare il futuro",
+      "description": "Con piattaforme digitali e un sistema Elo nazionale, modernizziamo lo sport e lo rendiamo misurabile."
+    }
+  },
+  "tournament": {
+    "title": "Campionato Svizzero di Jass a squadre giovanili",
+    "subtitle": "La prima competizione nazionale di Jass per squadre giovani",
+    "cta": "Iscriviti ora"
+  },
+  "ecosystem": {
+    "title": "L'ecosistema Jass",
+    "subtitle": "Strumenti digitali per la comunità Jass",
+    "jasswiki": {
+      "title": "JassWiki",
+      "description": "L'enciclopedia del Jass — regole, varianti e storia."
+    },
+    "jassguru": {
+      "title": "JassGuru",
+      "description": "Allena le tue abilità — tabellone punti, sistema Elo e statistiche."
+    },
+    "jassmeister": {
+      "title": "Jassmeister",
+      "description": "La competizione — tornei e campionati."
+    }
+  },
+  "trust": {
+    "badge": "Tradizione vivente",
+    "text": "Iscritto presso l'Ufficio federale della cultura"
+  },
+  "verband": {
+    "title": "La Federazione",
+    "intro": "La Federazione Svizzera di Jass è stata fondata il 15 gennaio 2026 a Zurigo. Ci impegniamo per la promozione, la conservazione e la trasmissione innovativa del Jass come patrimonio culturale svizzero e sport mentale strategico.",
+    "vorstand": "Comitato",
+    "statuten": {
+      "title": "Statuti",
+      "download": "Scarica gli statuti (PDF)"
+    },
+    "values": {
+      "title": "I nostri valori",
+      "respect": "Rispetto",
+      "fairplay": "Fair play",
+      "integrity": "Integrità",
+      "inclusion": "Inclusione"
+    }
+  },
+  "projekte": {
+    "title": "I nostri progetti",
+    "subtitle": "Strumenti e piattaforme digitali per la comunità Jass"
+  },
+  "partner": {
+    "title": "Diventa partner",
+    "subtitle": "Investi nel patrimonio culturale svizzero e nella promozione giovanile",
+    "why": {
+      "title": "Perché sostenere il Jass?",
+      "culture": "Il Jass è patrimonio culturale immateriale svizzero iscritto all'UNESCO",
+      "youth": "Promozione diretta dei giovani attraverso campionati nazionali",
+      "digital": "Digitalizzazione innovativa di una tradizione vivente",
+      "reach": "Accesso a una comunità attiva e impegnata"
+    },
+    "cta": "Contattaci",
+    "brochure": "Scarica la brochure sponsoring (PDF)"
+  },
+  "kontakt": {
+    "title": "Contatto",
+    "subtitle": "Siamo lieti di ricevere il tuo messaggio",
+    "form": {
+      "name": "Nome",
+      "email": "E-mail",
+      "message": "Messaggio",
+      "submit": "Invia"
+    },
+    "info": {
+      "address": "Indirizzo",
+      "email": "E-mail",
+      "phone": "Telefono"
+    }
+  },
+  "footer": {
+    "tagline": "Tradizione e Innovazione",
+    "legal": "Note legali",
+    "impressum": "Impressum",
+    "datenschutz": "Privacy",
+    "copyright": "© 2026 Federazione Svizzera di Jass. Tutti i diritti riservati."
+  },
+  "impressum": {
+    "title": "Impressum",
+    "verein": "Informazioni sull'associazione",
+    "contact": "Contatto",
+    "responsible": "Responsabile del contenuto"
+  },
+  "datenschutz": {
+    "title": "Informativa sulla privacy",
+    "intro": "La protezione dei tuoi dati è importante per noi. Questa informativa sulla privacy ti informa sul trattamento dei dati personali sul nostro sito web."
+  }
+}

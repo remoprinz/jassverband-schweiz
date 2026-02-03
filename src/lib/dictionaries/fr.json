@@ -1,0 +1,123 @@
+{
+  "metadata": {
+    "title": "Fédération Suisse de Jass | Tradition et Innovation",
+    "description": "La Fédération Suisse de Jass promeut le jeu national suisse comme sport de réflexion moderne. Promotion de la jeunesse, plateformes numériques, championnats nationaux."
+  },
+  "nav": {
+    "home": "Accueil",
+    "verband": "Fédération",
+    "projekte": "Projets",
+    "partner": "Devenir partenaire",
+    "kontakt": "Contact"
+  },
+  "hero": {
+    "title": "Le Jass est plus qu'un jeu de cartes.",
+    "subtitle": "C'est un patrimoine culturel suisse — qui mérite un avenir moderne.",
+    "cta": "Au championnat jeunesse"
+  },
+  "pillars": {
+    "title": "Notre mission",
+    "tradition": {
+      "title": "Préserver la tradition",
+      "description": "Le Jass est inscrit comme «Tradition vivante» auprès de l'Office fédéral de la culture. Nous préservons ce patrimoine pour les générations futures."
+    },
+    "youth": {
+      "title": "Promouvoir la jeunesse",
+      "description": "Le Championnat Suisse de Jass par équipes jeunesse apporte la réflexion stratégique et le travail d'équipe dans les écoles et universités."
+    },
+    "future": {
+      "title": "Façonner l'avenir",
+      "description": "Avec des plateformes numériques et un système Elo national, nous modernisons le sport et le rendons mesurable."
+    }
+  },
+  "tournament": {
+    "title": "Championnat Suisse de Jass par équipes jeunesse",
+    "subtitle": "La première compétition nationale de Jass pour jeunes équipes",
+    "cta": "S'inscrire maintenant"
+  },
+  "ecosystem": {
+    "title": "L'écosystème Jass",
+    "subtitle": "Outils numériques pour la communauté Jass",
+    "jasswiki": {
+      "title": "JassWiki",
+      "description": "L'encyclopédie du Jass — règles, variantes et histoire."
+    },
+    "jassguru": {
+      "title": "JassGuru",
+      "description": "Entraînez vos compétences — tableau de points, système Elo et statistiques."
+    },
+    "jassmeister": {
+      "title": "Jassmeister",
+      "description": "La compétition — tournois et championnats."
+    }
+  },
+  "trust": {
+    "badge": "Tradition vivante",
+    "text": "Inscrit auprès de l'Office fédéral de la culture"
+  },
+  "verband": {
+    "title": "La Fédération",
+    "intro": "La Fédération Suisse de Jass a été fondée le 15 janvier 2026 à Zurich. Nous nous engageons pour la promotion, la préservation et la transmission innovante du Jass en tant que patrimoine culturel suisse et sport de réflexion stratégique.",
+    "vorstand": "Comité",
+    "statuten": {
+      "title": "Statuts",
+      "download": "Télécharger les statuts (PDF)"
+    },
+    "values": {
+      "title": "Nos valeurs",
+      "respect": "Respect",
+      "fairplay": "Fair-play",
+      "integrity": "Intégrité",
+      "inclusion": "Inclusion"
+    }
+  },
+  "projekte": {
+    "title": "Nos projets",
+    "subtitle": "Outils et plateformes numériques pour la communauté Jass"
+  },
+  "partner": {
+    "title": "Devenir partenaire",
+    "subtitle": "Investissez dans le patrimoine culturel suisse et la promotion de la jeunesse",
+    "why": {
+      "title": "Pourquoi soutenir le Jass?",
+      "culture": "Le Jass est un patrimoine culturel immatériel suisse inscrit à l'UNESCO",
+      "youth": "Promotion directe de la jeunesse par des championnats nationaux",
+      "digital": "Numérisation innovante d'une tradition vivante",
+      "reach": "Accès à une communauté active et engagée"
+    },
+    "cta": "Contactez-nous",
+    "brochure": "Télécharger la brochure sponsoring (PDF)"
+  },
+  "kontakt": {
+    "title": "Contact",
+    "subtitle": "Nous nous réjouissons de votre message",
+    "form": {
+      "name": "Nom",
+      "email": "E-mail",
+      "message": "Message",
+      "submit": "Envoyer"
+    },
+    "info": {
+      "address": "Adresse",
+      "email": "E-mail",
+      "phone": "Téléphone"
+    }
+  },
+  "footer": {
+    "tagline": "Tradition et Innovation",
+    "legal": "Mentions légales",
+    "impressum": "Mentions légales",
+    "datenschutz": "Protection des données",
+    "copyright": "© 2026 Fédération Suisse de Jass. Tous droits réservés."
+  },
+  "impressum": {
+    "title": "Mentions légales",
+    "verein": "Informations sur l'association",
+    "contact": "Contact",
+    "responsible": "Responsable du contenu"
+  },
+  "datenschutz": {
+    "title": "Protection des données",
+    "intro": "La protection de vos données nous tient à cœur. Cette déclaration de protection des données vous informe sur le traitement des données personnelles sur notre site web."
+  }
+}

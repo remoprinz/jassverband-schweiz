@@ -1,0 +1,123 @@
+{
+  "metadata": {
+    "title": "Jassverband Schweiz | Tradition trifft Innovation",
+    "description": "Der Jassverband Schweiz fördert das Schweizer Nationalspiel als modernen Denksport. Jugendförderung, digitale Plattformen, nationale Meisterschaften."
+  },
+  "nav": {
+    "home": "Home",
+    "verband": "Verband",
+    "projekte": "Projekte",
+    "partner": "Partner werden",
+    "kontakt": "Kontakt"
+  },
+  "hero": {
+    "title": "Jassen ist mehr als ein Kartenspiel.",
+    "subtitle": "Es ist Schweizer Kulturgut — und verdient eine moderne Zukunft.",
+    "cta": "Zur Jugendmeisterschaft"
+  },
+  "pillars": {
+    "title": "Unsere Mission",
+    "tradition": {
+      "title": "Tradition bewahren",
+      "description": "Jassen ist beim Bundesamt für Kultur als «Lebendige Tradition» gelistet. Wir sichern dieses Erbe für kommende Generationen."
+    },
+    "youth": {
+      "title": "Jugend fördern",
+      "description": "Die Schweizer Jugend Team-Schiebermeisterschaft bringt strategisches Denken und Teamarbeit in Schulen und Unis."
+    },
+    "future": {
+      "title": "Zukunft gestalten",
+      "description": "Mit digitalen Plattformen und einem nationalen Elo-System modernisieren wir den Sport und machen ihn messbar."
+    }
+  },
+  "tournament": {
+    "title": "Schweizer Jugend Team-Schiebermeisterschaft",
+    "subtitle": "Der erste nationale Jass-Wettkampf für junge Teams",
+    "cta": "Jetzt anmelden"
+  },
+  "ecosystem": {
+    "title": "Das Jass-Ökosystem",
+    "subtitle": "Digitale Werkzeuge für die Jass-Community",
+    "jasswiki": {
+      "title": "JassWiki",
+      "description": "Die Enzyklopädie des Jassens — Regeln, Varianten und Geschichte."
+    },
+    "jassguru": {
+      "title": "JassGuru",
+      "description": "Trainiere deine Skills — Punktetafel, Elo-System und Statistiken."
+    },
+    "jassmeister": {
+      "title": "Jassmeister",
+      "description": "Der Wettkampf — Turniere und Meisterschaften."
+    }
+  },
+  "trust": {
+    "badge": "Lebendige Tradition",
+    "text": "Gelistet beim Bundesamt für Kultur"
+  },
+  "verband": {
+    "title": "Der Verband",
+    "intro": "Der Jassverband Schweiz wurde am 15. Januar 2026 in Zürich gegründet. Wir setzen uns für die Förderung, Erhaltung und innovative Vermittlung des Jassens als schweizerisches Kulturgut und strategischer Denksport ein.",
+    "vorstand": "Vorstand",
+    "statuten": {
+      "title": "Statuten",
+      "download": "Statuten herunterladen (PDF)"
+    },
+    "values": {
+      "title": "Unsere Werte",
+      "respect": "Respekt",
+      "fairplay": "Fairplay",
+      "integrity": "Integrität",
+      "inclusion": "Inklusion"
+    }
+  },
+  "projekte": {
+    "title": "Unsere Projekte",
+    "subtitle": "Digitale Werkzeuge und Plattformen für die Jass-Community"
+  },
+  "partner": {
+    "title": "Partner werden",
+    "subtitle": "Investieren Sie in Schweizer Kulturgut und Jugendförderung",
+    "why": {
+      "title": "Warum Jassen fördern?",
+      "culture": "Jassen ist UNESCO-gelistetes immaterielles Kulturgut der Schweiz",
+      "youth": "Direkte Jugendförderung durch nationale Meisterschaften",
+      "digital": "Innovative Digitalisierung einer lebendigen Tradition",
+      "reach": "Zugang zu einer aktiven, engagierten Community"
+    },
+    "cta": "Kontaktieren Sie uns",
+    "brochure": "Sponsoring-Broschüre herunterladen (PDF)"
+  },
+  "kontakt": {
+    "title": "Kontakt",
+    "subtitle": "Wir freuen uns auf Ihre Nachricht",
+    "form": {
+      "name": "Name",
+      "email": "E-Mail",
+      "message": "Nachricht",
+      "submit": "Absenden"
+    },
+    "info": {
+      "address": "Adresse",
+      "email": "E-Mail",
+      "phone": "Telefon"
+    }
+  },
+  "footer": {
+    "tagline": "Tradition trifft Innovation",
+    "legal": "Rechtliches",
+    "impressum": "Impressum",
+    "datenschutz": "Datenschutz",
+    "copyright": "© 2026 Jassverband Schweiz. Alle Rechte vorbehalten."
+  },
+  "impressum": {
+    "title": "Impressum",
+    "verein": "Vereinsangaben",
+    "contact": "Kontakt",
+    "responsible": "Verantwortlich für den Inhalt"
+  },
+  "datenschutz": {
+    "title": "Datenschutzerklärung",
+    "intro": "Der Schutz Ihrer Daten ist uns wichtig. Diese Datenschutzerklärung informiert Sie über die Verarbeitung personenbezogener Daten auf unserer Website."
+  }
+}
