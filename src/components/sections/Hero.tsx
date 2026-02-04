@@ -12,35 +12,12 @@ interface HeroProps {
 export function Hero({ title, subtitle, cta }: HeroProps) {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[var(--color-background)]">
-      {/* Background Pattern */}
+      {/* Background Pattern - Subtle geometric shapes */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 border border-[var(--color-foreground)] rounded-full" />
         <div className="absolute bottom-1/4 right-1/4 w-64 h-64 border border-[var(--color-foreground)] rounded-full" />
         <div className="absolute top-1/2 right-1/3 w-48 h-48 border border-[var(--color-foreground)] rounded-full" />
       </div>
-
-      {/* Animated Jass Symbols */}
-      <motion.div
-        className="absolute top-20 left-10 text-[var(--color-primary)] opacity-10 text-9xl font-bold select-none"
-        animate={{ rotate: [0, 5, -5, 0], y: [0, -10, 10, 0] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-      >
-        ♦
-      </motion.div>
-      <motion.div
-        className="absolute bottom-20 right-10 text-[var(--color-primary)] opacity-10 text-8xl font-bold select-none"
-        animate={{ rotate: [0, -5, 5, 0], y: [0, 10, -10, 0] }}
-        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-      >
-        ♣
-      </motion.div>
-      <motion.div
-        className="absolute top-1/3 right-20 text-[var(--color-foreground)] opacity-5 text-7xl font-bold select-none"
-        animate={{ rotate: [0, 3, -3, 0] }}
-        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-      >
-        ♠
-      </motion.div>
 
       {/* Content */}
       <div className="container-main text-center relative z-10 pt-20">
