@@ -81,9 +81,9 @@ function renderMarkdown(content: string): string {
     .replace(/^\- (.*$)/gim, '<li class="ml-4 list-disc">$1</li>')
     .replace(/^(\d+)\. (.*$)/gim, '<li class="ml-4 list-decimal">$2</li>')
     // Paragraphs
-    .replace(/\n\n/gim, '</p><p class="mb-4">')
-    // Wrap in paragraph
-    .replace(/^(.*)$/s, '<p class="mb-4">$1</p>');
+    .split('\n\n')
+    .map(para => `<p class="mb-4">${para}</p>`)
+    .join('');
 }
 
 export default async function ArticlePage({ params }: ArticlePageProps) {
