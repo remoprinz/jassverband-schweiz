@@ -54,7 +54,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
   }
 
   const messages = await getMessages();
-  const nav = messages.nav as { home: string; verband: string; projekte: string; partner: string; kontakt: string };
+  const nav = messages.nav as { home: string; verband: string; news: string; projekte: string; partner: string; kontakt: string };
   const footer = messages.footer as { tagline: string; legal: string; impressum: string; datenschutz: string; copyright: string };
 
   return (

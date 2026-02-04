@@ -12,6 +12,7 @@ interface FooterProps {
   nav: {
     home: string;
     verband: string;
+    news: string;
     projekte: string;
     partner: string;
     kontakt: string;
@@ -45,6 +46,11 @@ export function Footer({ locale, content, nav }: FooterProps) {
               <li>
                 <Link href={`/${locale}/verband`} className="text-white/60 hover:text-white transition-colors">
                   {nav.verband}
+                </Link>
+              </li>
+              <li>
+                <Link href={`/${locale}/news`} className="text-white/60 hover:text-white transition-colors">
+                  {nav.news}
                 </Link>
               </li>
               <li>

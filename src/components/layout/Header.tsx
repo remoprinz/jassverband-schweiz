@@ -11,6 +11,7 @@ interface HeaderProps {
   nav: {
     home: string;
     verband: string;
+    news: string;
     projekte: string;
     partner: string;
     kontakt: string;
@@ -24,6 +25,7 @@ export function Header({ locale, nav }: HeaderProps) {
   const navItems = [
     { href: `/${locale}`, label: nav.home },
     { href: `/${locale}/verband`, label: nav.verband },
+    { href: `/${locale}/news`, label: nav.news },
     { href: `/${locale}/projekte`, label: nav.projekte },
     { href: `/${locale}/partner`, label: nav.partner },
     { href: `/${locale}/kontakt`, label: nav.kontakt },
