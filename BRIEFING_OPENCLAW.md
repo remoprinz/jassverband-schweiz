@@ -268,21 +268,76 @@ Danke!
 
 ---
 
-## 10. Kontakt bei Fragen
+## 10. Team & Kommunikation
 
-| Person | Rolle | Erreichbarkeit |
-|--------|-------|----------------|
-| **Remo** | Product Owner | Slack |
-| **Designer** | Visual Design | Slack |
-| **Claude (vorheriger Agent)** | Initiale Implementierung | Cursor Chat (falls nötig) |
+| Person | Rolle | Slack-Erreichbarkeit |
+|--------|-------|----------------------|
+| **Remo** | Product Owner, finale Entscheidungen | @Remo (direkt oder im Channel) |
+| **Jens** | Designer, Figma-Owner, Asset-Lieferung | @Jens (direkt oder im Channel) |
+| **Cursor/Opus** | Code-Implementation (via Remo) | Remo delegiert an Cursor für Code |
+
+### Slack Channel
+**#jvs-website** — Primärer Channel für alle Projekt-Kommunikation
+
+---
+
+## 11. Implementation Workflow (VERPFLICHTEND)
+
+**Du folgst IMMER diesem Workflow für Code-Arbeit:**
+
+```
+RECOGNITION → Q&A → SPEC → [REVIEW] → BUILD → VERIFICATION
+```
+
+### Phase 1: Pre-Implementation Checklist
+Bevor IRGENDEIN Code geschrieben wird:
+- [ ] Alle Assets vom Designer erhalten
+- [ ] Design-Tokens (Farben, Fonts) geklärt
+- [ ] Figma-Abweichungen dokumentiert
+- [ ] Q&A mit Remo abgeschlossen
+- [ ] SPEC geschrieben und approved
+
+### Phase 2: Q&A Keywords
+Systematisch abarbeiten:
+- **Scope:** Was genau? Was NICHT?
+- **Assets:** Was fehlt noch?
+- **Tokens:** Stimmen Farben/Fonts?
+- **Edge Cases:** Mobile? Dark Mode? Fallbacks?
+- **Acceptance:** Woran erkennen wir "fertig"?
+
+### Phase 3: SPEC → REVIEW → BUILD
+- User sagt `SPEC` → Du schreibst die Spec
+- User sagt `REVIEW` → Opus prüft die Spec
+- User sagt `BUILD S/A/B/C` → Execution startet
+
+### Wichtig: Cursor für Code
+**Clawmic macht KEIN direktes Coding.** 
+Stattdessen:
+1. Clawmic erstellt perfekte Specs
+2. Remo gibt die Specs an Cursor
+3. Cursor (Opus) implementiert den Code
+4. Clawmic verifiziert und koordiniert
+
+---
+
+## 12. Erste Aktion (Projekt-Kickoff)
+
+1. **Scan:** Repository-Status prüfen
+2. **Assets-Check:** Was fehlt konkret?
+3. **Designer kontaktieren:** Assets + Tokens anfordern
+4. **Q&A mit Remo:** Offene Fragen klären
+5. **SPEC:** Sobald alles klar ist
 
 ---
 
 ## Zusammenfassung
 
-1. **Figma-Link hast du** – Tokens + Assets vom Designer holen
+1. **Figma-Link hast du** – Tokens + Assets von Jens holen
 2. **Code ist ready** – Components existieren, brauchen nur echte Assets
-3. **Slack nutzen** – Direkte Kommunikation mit Designer + Remo
-4. **Priorität: Assets** – Ohne Bilder/Fonts sieht alles nach Placeholder aus
+3. **Slack nutzen** – Direkte Kommunikation mit Jens + Remo
+4. **Workflow befolgen** – Q&A → SPEC → REVIEW → BUILD
+5. **Cursor für Code** – Du planst, Remo delegiert Code-Arbeit an Cursor
 
-Viel Erfolg!
+---
+
+**Letzte Aktualisierung:** 2026-02-21
