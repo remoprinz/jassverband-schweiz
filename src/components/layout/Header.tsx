@@ -41,6 +41,9 @@ export function Header({ locale, nav }: HeaderProps) {
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
 
+  // Check if we're on the homepage
+  const isHomePage = pathname === `/${locale}` || pathname === `/${locale}/`;
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
@@ -65,18 +68,29 @@ export function Header({ locale, nav }: HeaderProps) {
     return pathname.startsWith(href);
   };
 
+  // Logo variant logic:
+  // - Homepage: white when not scrolled (dark hero bg), color when scrolled (white header)
+  // - Other pages: always color (they have light backgrounds)
+  const logoVariant = isHomePage && !scrolled ? 'white' : 'color';
+  
+  // Text colors based on header state
+  const textColorUnscrolled = isHomePage ? 'text-white' : 'text-[var(--color-foreground)]';
+  const textColorScrolled = 'text-[var(--color-foreground)]';
+
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled 
           ? 'bg-white/95 backdrop-blur-md shadow-sm' 
-          : 'bg-transparent'
+          : isHomePage 
+            ? 'bg-transparent' 
+            : 'bg-white/95 backdrop-blur-md shadow-sm'
       }`}
     >
       <div className="container-main">
         <nav className="flex items-center justify-between h-16 md:h-20">
           <Link href={`/${locale}`} className="flex items-center">
-            <Logo variant={scrolled ? 'color' : 'white'} />
+            <Logo variant={logoVariant} />
           </Link>
 
           <div className="hidden md:flex items-center gap-6 lg:gap-8">
@@ -88,8 +102,8 @@ export function Header({ locale, nav }: HeaderProps) {
                   isActive(item.href)
                     ? 'text-[var(--color-primary)]'
                     : scrolled 
-                      ? 'text-[var(--color-foreground)] hover:text-[var(--color-primary)]'
-                      : 'text-white hover:text-[var(--color-primary-light)]'
+                      ? `${textColorScrolled} hover:text-[var(--color-primary)]`
+                      : `${textColorUnscrolled} hover:text-[var(--color-primary-light)]`
                 }`}
               >
                 {item.label}
@@ -100,7 +114,7 @@ export function Header({ locale, nav }: HeaderProps) {
 
           <button
             className={`md:hidden p-2 rounded-lg transition-colors ${
-              scrolled ? 'text-[var(--color-foreground)]' : 'text-white'
+              scrolled ? textColorScrolled : textColorUnscrolled
             }`}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
