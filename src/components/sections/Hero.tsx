@@ -157,14 +157,13 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
 
       {/* ── TEXTE – direkt im section als absolute, kein Wrapper ─────── */}
 
-      {/* HEADLINE – Figma: y=1804, w=771px → top=29.78%, maxWidth=53.54% */}
+      {/* HEADLINE – Figma: x=335, y=1804, w=771px → zentriert bei 50.03% */}
       <motion.h1
-        className="absolute z-20 text-center"
+        className="absolute z-20 text-center px-4"
         style={{
           top: '29.78%',
           left: '50%',
           transform: 'translateX(-50%)',
-          width: '90%',
           maxWidth: '771px',
           fontFamily: 'var(--font-capita), Capita, Georgia, serif',
           fontWeight: 700,
@@ -173,6 +172,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
           letterSpacing: '-0.96px',
           color: '#ffffff',
           textShadow: '0 2px 20px rgba(0,0,0,0.3)',
+          whiteSpace: 'nowrap',
         }}
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -181,14 +181,13 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
         {title}
       </motion.h1>
 
-      {/* SUBTITLE – Figma: y=1986, w=571px → top=49.57%, maxWidth=39.65% */}
+      {/* SUBTITLE – Figma: x=435, y=1986, w=571px → zentriert bei 50.03% */}
       <motion.p
-        className="absolute z-20 text-center"
+        className="absolute z-20 text-center px-4"
         style={{
           top: '49.57%',
           left: '50%',
           transform: 'translateX(-50%)',
-          width: '80%',
           maxWidth: '571px',
           fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
           fontWeight: 400,
