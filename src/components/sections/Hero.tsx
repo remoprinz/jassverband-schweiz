@@ -101,19 +101,18 @@ function JassCards() {
 export function Hero({ title, subtitle, cta }: HeroProps) {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Jassteppich (Felt) Background */}
+      {/* Holztisch Background (wie in Figma) */}
       <div 
         className="absolute inset-0"
         style={{
-          backgroundImage: 'url(/images/backgrounds/felt-texture-gradient.png)',
+          backgroundImage: 'url(/images/backgrounds/wood-texture.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          backgroundColor: 'var(--color-felt-green)',
         }}
       />
       
-      {/* Subtle Vignette for depth */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/20" />
+      {/* Gradient Overlay for readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/40" />
 
       {/* Content */}
       <div className="container-main relative z-10 pt-24 pb-16">
