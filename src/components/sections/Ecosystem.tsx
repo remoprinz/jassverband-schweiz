@@ -59,7 +59,7 @@ function EcosystemCard({ title, description, href, icon, ctaText }: EcosystemCar
       </div>
       <h3 
         className="text-lg lg:text-xl font-bold mb-2 text-[var(--color-foreground)] group-hover:text-[var(--color-primary)] transition-colors"
-        style={{ fontFamily: 'var(--font-display)' }}
+        style={{ fontFamily: 'var(--font-capita), Georgia, serif' }}
       >
         {title}
       </h3>
@@ -89,7 +89,7 @@ export function Ecosystem({ title, subtitle, jasswiki, jassguru, jassmeister }: 
         <div className="text-center mb-10 md:mb-14">
           <motion.h2
             className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 text-[var(--color-foreground)]"
-            style={{ fontFamily: 'var(--font-display)' }}
+            style={{ fontFamily: 'var(--font-capita), Georgia, serif' }}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

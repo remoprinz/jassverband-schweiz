@@ -119,7 +119,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
         <div className="text-center">
           <motion.h1
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6"
-            style={{ fontFamily: 'var(--font-display)', textShadow: '0 2px 20px rgba(0,0,0,0.3)' }}
+            style={{ fontFamily: 'var(--font-capita), Georgia, serif', textShadow: '0 2px 20px rgba(0,0,0,0.3)' }}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}

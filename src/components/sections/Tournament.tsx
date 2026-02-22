@@ -66,7 +66,7 @@ export function Tournament({ title, subtitle, cta }: TournamentProps) {
 
           <h2 
             className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6"
-            style={{ fontFamily: 'var(--font-display)', textShadow: '0 2px 10px rgba(0,0,0,0.2)' }}
+            style={{ fontFamily: 'var(--font-capita), Georgia, serif', textShadow: '0 2px 10px rgba(0,0,0,0.2)' }}
           >
             {title}
           </h2>

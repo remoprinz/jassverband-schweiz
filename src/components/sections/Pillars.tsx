@@ -54,7 +54,7 @@ export function Pillars({ title, tradition, youth, future }: PillarsProps) {
       <div className="container-main">
         <motion.h2
           className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-12 md:mb-16 text-[var(--color-foreground)]"
-          style={{ fontFamily: 'var(--font-display)' }}
+          style={{ fontFamily: 'var(--font-capita), Georgia, serif' }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -90,7 +90,7 @@ export function Pillars({ title, tradition, youth, future }: PillarsProps) {
                 </div>
                 <h3 
                   className="text-xl lg:text-2xl font-bold mb-3 text-[var(--color-foreground)]"
-                  style={{ fontFamily: 'var(--font-display)' }}
+                  style={{ fontFamily: 'var(--font-capita), Georgia, serif' }}
                 >
                   {pillar.title}
                 </h3>

@@ -33,7 +33,7 @@ export function Trust({ badge, text }: TrustProps) {
           <div className="text-center md:text-left">
             <span 
               className="font-semibold text-[var(--color-foreground)] block md:inline"
-              style={{ fontFamily: 'var(--font-display)' }}
+              style={{ fontFamily: 'var(--font-capita), Georgia, serif' }}
             >
               {badge}
             </span>
