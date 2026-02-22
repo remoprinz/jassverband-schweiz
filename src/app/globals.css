@@ -288,9 +288,10 @@ a, button {
 
 @media (max-width: 767px) {
   :root {
-    --hero-felt-left: 2.5%;
+    --hero-felt-left: 3%;
+    --hero-felt-right: 3%;
     --hero-felt-width: 92%;
-    --hero-felt-height: 60%;
+    --hero-felt-height: 82%;
     --hero-felt-top: 13.5%;
     --hero-felt-radius: 16px;
     --hero-felt-border: 6px;
@@ -301,7 +302,7 @@ a, button {
     --hero-subtitle-top: 42%;
     --hero-subtitle-max-width: 260px;
     --hero-subtitle-width: 70%;
-    --hero-subtitle-size: 22px;
+    --hero-subtitle-size: 20px;
     --hero-cta-top: 78%;
   }
 }
