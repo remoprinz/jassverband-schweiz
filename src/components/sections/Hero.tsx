@@ -13,7 +13,7 @@ interface HeroProps {
 export function Hero({ title, subtitle, cta }: HeroProps) {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Layer 1: Wood Table Background - visible at edges */}
+      {/* Layer 1: Wood - full bleed, edge to edge, top to bottom */}
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/backgrounds/holztisch.jpg"
@@ -25,114 +25,106 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
         />
       </div>
 
-      {/* Layer 2: Green Felt Overlay - centered, with wood showing at edges */}
-      <div 
-        className="absolute z-[1]"
-        style={{
-          top: '5%',
-          left: '8%',
-          right: '8%',
-          bottom: '8%',
-          borderRadius: '20px',
-        }}
-      >
+      {/* Layer 2: Felt - covers center, full height, wood visible ~12% on each side */}
+      <div className="absolute inset-y-0 z-[1]" style={{ left: '12%', right: '12%' }}>
         <Image
           src="/images/backgrounds/felt-texture.png"
           alt="Jassteppich"
           fill
-          className="object-cover rounded-[20px]"
+          className="object-cover"
           priority
         />
-        {/* Subtle vignette on felt */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/20 rounded-[20px]" />
+        {/* slight vignette */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/5 via-transparent to-black/30" />
       </div>
 
-      {/* Cards - smaller, positioned at edges of felt */}
-      {/* Card 1 - Left side, Swiss German (Schilten 10) */}
-      <motion.div
-        className="absolute z-10 w-[100px] sm:w-[120px] lg:w-[140px]"
-        style={{ top: '20%', left: '12%' }}
-        initial={{ opacity: 0, y: -30, rotate: -25 }}
-        animate={{ opacity: 1, y: 0, rotate: -12 }}
-        transition={{ duration: 0.8, delay: 0.3, type: "spring" }}
-      >
-        <Image
-          src="/images/cards/card-hero-1.png"
-          alt="Jasskarte Deutsch"
-          width={140}
-          height={217}
-          className="w-full h-auto drop-shadow-2xl"
-          priority
-        />
-      </motion.div>
+      {/* Cards LEFT - paarweise wie in Figma */}
+      <div className="absolute z-10 hidden sm:block" style={{ bottom: '12%', left: '4%' }}>
+        {/* Back card - slightly behind */}
+        <motion.div
+          className="absolute"
+          style={{ width: 85, bottom: 0, left: 30 }}
+          initial={{ opacity: 0, x: -40, rotate: -20 }}
+          animate={{ opacity: 1, x: 0, rotate: -5 }}
+          transition={{ duration: 0.9, delay: 0.5, type: 'spring' }}
+        >
+          <Image
+            src="/images/cards/card-hero-3.png"
+            alt="Jasskarte"
+            width={85}
+            height={132}
+            className="w-full h-auto drop-shadow-xl"
+            priority
+          />
+        </motion.div>
+        {/* Front card - rotated more */}
+        <motion.div
+          style={{ width: 90, position: 'relative' }}
+          initial={{ opacity: 0, y: 40, rotate: -10 }}
+          animate={{ opacity: 1, y: 0, rotate: -20 }}
+          transition={{ duration: 0.8, delay: 0.3, type: 'spring' }}
+        >
+          <Image
+            src="/images/cards/card-hero-1.png"
+            alt="Jasskarte"
+            width={90}
+            height={140}
+            className="w-full h-auto drop-shadow-2xl"
+            priority
+          />
+        </motion.div>
+      </div>
 
-      {/* Card 2 - Left side bottom, Swiss German (Rosen König) */}
-      <motion.div
-        className="absolute z-10 w-[90px] sm:w-[110px] lg:w-[130px]"
-        style={{ bottom: '18%', left: '10%' }}
-        initial={{ opacity: 0, x: -50, rotate: -15 }}
-        animate={{ opacity: 1, x: 0, rotate: -5 }}
-        transition={{ duration: 0.9, delay: 0.5, type: "spring" }}
-      >
-        <Image
-          src="/images/cards/card-hero-3.png"
-          alt="Jasskarte Deutsch"
-          width={130}
-          height={202}
-          className="w-full h-auto drop-shadow-2xl"
-          priority
-        />
-      </motion.div>
+      {/* Cards RIGHT - paarweise wie in Figma */}
+      <div className="absolute z-10 hidden sm:block" style={{ bottom: '14%', right: '3%' }}>
+        {/* Back card */}
+        <motion.div
+          className="absolute"
+          style={{ width: 80, bottom: 0, right: 25 }}
+          initial={{ opacity: 0, x: 40, rotate: 20 }}
+          animate={{ opacity: 1, x: 0, rotate: 8 }}
+          transition={{ duration: 0.9, delay: 0.6, type: 'spring' }}
+        >
+          <Image
+            src="/images/cards/card-hero-4.png"
+            alt="Jasskarte"
+            width={80}
+            height={124}
+            className="w-full h-auto drop-shadow-xl"
+            priority
+          />
+        </motion.div>
+        {/* Front card */}
+        <motion.div
+          style={{ width: 85, position: 'relative' }}
+          initial={{ opacity: 0, y: 40, rotate: 25 }}
+          animate={{ opacity: 1, y: 0, rotate: 15 }}
+          transition={{ duration: 0.8, delay: 0.4, type: 'spring' }}
+        >
+          <Image
+            src="/images/cards/card-hero-2.png"
+            alt="Jasskarte"
+            width={85}
+            height={132}
+            className="w-full h-auto drop-shadow-2xl"
+            priority
+          />
+        </motion.div>
+      </div>
 
-      {/* Card 3 - Right side top, French style */}
-      <motion.div
-        className="absolute z-10 w-[100px] sm:w-[120px] lg:w-[140px]"
-        style={{ top: '18%', right: '12%' }}
-        initial={{ opacity: 0, y: -30, rotate: 25 }}
-        animate={{ opacity: 1, y: 0, rotate: 15 }}
-        transition={{ duration: 0.8, delay: 0.4, type: "spring" }}
-      >
-        <Image
-          src="/images/cards/card-hero-2.png"
-          alt="Jasskarte Französisch"
-          width={140}
-          height={217}
-          className="w-full h-auto drop-shadow-2xl"
-          priority
-        />
-      </motion.div>
+      {/* Content - centered */}
+      <div className="relative z-20 text-center px-6 max-w-2xl mx-auto">
 
-      {/* Card 4 - Right side bottom, French style */}
-      <motion.div
-        className="absolute z-10 w-[95px] sm:w-[115px] lg:w-[135px]"
-        style={{ bottom: '20%', right: '10%' }}
-        initial={{ opacity: 0, x: 50, rotate: 20 }}
-        animate={{ opacity: 1, x: 0, rotate: 8 }}
-        transition={{ duration: 0.9, delay: 0.6, type: "spring" }}
-      >
-        <Image
-          src="/images/cards/card-hero-4.png"
-          alt="Jasskarte Französisch"
-          width={135}
-          height={210}
-          className="w-full h-auto drop-shadow-2xl"
-          priority
-        />
-      </motion.div>
-
-      {/* Content Container - centered on felt */}
-      <div className="relative z-20 text-center px-6 max-w-3xl mx-auto">
-        
-        {/* Headline - Figma: Capita Bold 75px */}
+        {/* Headline */}
         <motion.h1
-          className="text-white mb-6 md:mb-8 drop-shadow-lg"
-          style={{ 
+          className="text-white mb-6 md:mb-8"
+          style={{
             fontFamily: 'var(--font-capita), Capita, Georgia, serif',
             fontWeight: 700,
-            fontSize: 'clamp(36px, 7vw, 65px)',
+            fontSize: 'clamp(36px, 6vw, 65px)',
             lineHeight: '1.0',
             letterSpacing: '-0.96px',
-            textShadow: '0 2px 20px rgba(0,0,0,0.3)'
+            textShadow: '0 2px 20px rgba(0,0,0,0.25)'
           }}
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -141,16 +133,16 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
           {title}
         </motion.h1>
 
-        {/* Subtitle - Figma: Inter Regular 28px */}
+        {/* Subtitle */}
         <motion.p
-          className="text-white/90 mb-10 md:mb-12 max-w-xl mx-auto drop-shadow-md"
-          style={{ 
+          className="text-white/90 mb-10 md:mb-12 max-w-lg mx-auto"
+          style={{
             fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
             fontWeight: 400,
-            fontSize: 'clamp(16px, 2.5vw, 24px)',
+            fontSize: 'clamp(16px, 2.2vw, 22px)',
             lineHeight: '1.4',
             letterSpacing: '-0.3px',
-            textShadow: '0 1px 10px rgba(0,0,0,0.2)'
+            textShadow: '0 1px 8px rgba(0,0,0,0.2)'
           }}
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -159,16 +151,16 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
           {subtitle}
         </motion.p>
 
-        {/* CTA Button */}
+        {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.35 }}
         >
-          <Button 
-            href="/de/projekte/jugendmeisterschaft" 
-            size="lg" 
-            className="bg-[#ff0000] hover:bg-[#cc0000] text-white px-8 py-4 text-[17px] font-bold rounded-full shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.2),0px_4px_6px_-4px_rgba(0,0,0,0.15)] hover:shadow-xl transition-all transform hover:-translate-y-1"
+          <Button
+            href="/de/projekte/jugendmeisterschaft"
+            size="lg"
+            className="bg-[#ff0000] hover:bg-[#cc0000] text-white px-8 py-4 text-[17px] font-bold rounded-full shadow-[0px_10px_20px_-3px_rgba(0,0,0,0.25)] hover:shadow-xl transition-all transform hover:-translate-y-1"
           >
             {cta}
             <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -190,15 +182,6 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
         </svg>
       </motion.div>
-
-      {/* Mobile: Hide cards on very small screens to prevent overlap */}
-      <style jsx>{`
-        @media (max-width: 480px) {
-          .absolute.z-10 {
-            display: none;
-          }
-        }
-      `}</style>
     </section>
   );
 }
