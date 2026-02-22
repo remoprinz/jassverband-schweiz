@@ -157,51 +157,56 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
 
       {/* ── TEXTE – direkt im section als absolute, kein Wrapper ─────── */}
 
-      {/* HEADLINE – Figma: x=335, y=1804, w=771px → zentriert bei 50.03% */}
-      <motion.h1
-        className="absolute z-20 text-center px-4"
-        style={{
-          top: '29.78%',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          maxWidth: '771px',
-          fontFamily: 'var(--font-capita), Capita, Georgia, serif',
-          fontWeight: 700,
-          fontSize: 'clamp(24px, 5.208vw, 75px)',
-          lineHeight: 1.0,
-          letterSpacing: '-0.96px',
-          color: '#ffffff',
-          textShadow: '0 2px 20px rgba(0,0,0,0.3)',
-          whiteSpace: 'nowrap',
-        }}
+      {/* HEADLINE – Figma: y=1804, w=771px → top=29.78%, zentriert */}
+      <motion.div
+        className="absolute z-20 left-0 right-0 flex justify-center"
+        style={{ top: '29.78%' }}
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.1 }}
       >
-        {title}
-      </motion.h1>
+        <h1
+          style={{
+            textAlign: 'center',
+            maxWidth: '771px',
+            width: '90%',
+            fontFamily: 'var(--font-capita), Capita, Georgia, serif',
+            fontWeight: 700,
+            fontSize: 'clamp(24px, 5.208vw, 75px)',
+            lineHeight: 1.0,
+            letterSpacing: '-0.96px',
+            color: '#ffffff',
+            textShadow: '0 2px 20px rgba(0,0,0,0.3)',
+          }}
+        >
+          {title}
+        </h1>
+      </motion.div>
 
-      {/* SUBTITLE – Figma: x=435, y=1986, w=571px → zentriert bei 50.03% */}
-      <motion.p
-        className="absolute z-20 text-center px-4"
-        style={{
-          top: '49.57%',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          maxWidth: '571px',
-          fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
-          fontWeight: 400,
-          fontSize: 'clamp(15px, 1.944vw, 28px)',
-          lineHeight: 1.35,
-          color: 'rgba(255,255,255,0.92)',
-          textShadow: '0 1px 8px rgba(0,0,0,0.2)',
-        }}
+      {/* SUBTITLE – Figma: y=1986, w=571px → top=49.57%, zentriert */}
+      <motion.div
+        className="absolute z-20 left-0 right-0 flex justify-center"
+        style={{ top: '49.57%' }}
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
       >
-        {subtitle}
-      </motion.p>
+        <p
+          style={{
+            textAlign: 'center',
+            maxWidth: '571px',
+            width: '80%',
+            fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
+            fontWeight: 400,
+            fontSize: 'clamp(15px, 1.944vw, 28px)',
+            lineHeight: 1.35,
+            color: 'rgba(255,255,255,0.92)',
+            textShadow: '0 1px 8px rgba(0,0,0,0.2)',
+          }}
+        >
+          {subtitle}
+        </p>
+      </motion.div>
 
       {/* CTA BUTTON – Figma: y=2178, h=60 → top=70.43% */}
       <motion.div
