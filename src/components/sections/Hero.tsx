@@ -65,14 +65,12 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
           className="object-cover"
           priority
         />
-        {/* Shadow-Overlay – breiter halbtransparenter Rahmen ÜBER der Filz-Textur */}
+        {/* Sauberer Rand ÜBER der Filz-Textur */}
         <div
           className="absolute inset-0 z-10 pointer-events-none"
           style={{
             borderRadius: 'inherit',
-            border: '18px solid rgba(0,0,0,0.18)',
-            boxShadow:
-              'inset 0 0 30px 5px rgba(0,0,0,0.25)',
+            border: '16px solid rgba(0,0,0,0.15)',
           }}
         />
       </div>
