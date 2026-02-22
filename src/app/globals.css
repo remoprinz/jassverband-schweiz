@@ -291,18 +291,18 @@ a, button {
     --hero-felt-left: 2.5%;
     --hero-felt-width: 92%;
     --hero-felt-height: 75%;
-    --hero-felt-top: 15%;
+    --hero-felt-top: 8%;
     --hero-felt-radius: 16px;
     --hero-felt-border: 6px;
-    --hero-title-top: 14%;
+    --hero-title-top: 18%;
     --hero-title-size: 44px;
     --hero-title-line-height: 1.1;
     --hero-title-max-width: 260px;
-    --hero-subtitle-top: 52%;
+    --hero-subtitle-top: 42%;
     --hero-subtitle-max-width: 260px;
     --hero-subtitle-width: 70%;
     --hero-subtitle-size: 16px;
-    --hero-cta-top: 72%;
+    --hero-cta-top: 78%;
   }
 }
 
