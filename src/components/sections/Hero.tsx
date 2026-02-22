@@ -50,6 +50,10 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
     leftBottom: randomCardEntry('left'),
     rightTop: randomCardEntry('right'),
     rightBottom: randomCardEntry('right'),
+    mobileLeft1: randomCardEntry('left'),
+    mobileLeft2: randomCardEntry('left'),
+    mobileRight1: randomCardEntry('right'),
+    mobileRight2: randomCardEntry('right'),
   }), []);
 
   return (
@@ -171,6 +175,80 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
           className="w-full h-auto"
           style={{ borderRadius: '1.2vw', filter: 'drop-shadow(0 12px 20px rgba(0,0,0,0.35))' }}
           priority
+        />
+      </motion.div>
+
+      {/* ── MOBILE KARTEN (nur < md) ─────────────────────────────────── */}
+
+      {/* MOBILE CARD LINKS 1 */}
+      <motion.div
+        className="absolute z-10 md:hidden"
+        style={{ left: '3%', top: '55%', width: '22%' }}
+        initial={{ opacity: 0, x: cardEntries.mobileLeft1.x, y: cardEntries.mobileLeft1.y, rotate: cardEntries.mobileLeft1.rotate }}
+        animate={{ opacity: 1, x: 0, y: 0, rotate: 12 }}
+        transition={{ duration: 0.7, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+      >
+        <Image
+          src="/images/cards/figma-card-left-top.png"
+          alt="Jasskarte"
+          width={159}
+          height={250}
+          className="w-full h-auto"
+          style={{ borderRadius: '8px', filter: 'drop-shadow(0 8px 16px rgba(0,0,0,0.4))' }}
+        />
+      </motion.div>
+
+      {/* MOBILE CARD LINKS 2 */}
+      <motion.div
+        className="absolute z-10 md:hidden"
+        style={{ left: '18%', top: '62%', width: '22%' }}
+        initial={{ opacity: 0, x: cardEntries.mobileLeft2.x, y: cardEntries.mobileLeft2.y, rotate: cardEntries.mobileLeft2.rotate }}
+        animate={{ opacity: 1, x: 0, y: 0, rotate: -20 }}
+        transition={{ duration: 0.75, delay: 0.45, ease: [0.25, 0.1, 0.25, 1] }}
+      >
+        <Image
+          src="/images/cards/figma-card-left-bottom.png"
+          alt="Jasskarte"
+          width={159}
+          height={250}
+          className="w-full h-auto"
+          style={{ borderRadius: '8px', filter: 'drop-shadow(0 10px 18px rgba(0,0,0,0.45))' }}
+        />
+      </motion.div>
+
+      {/* MOBILE CARD RECHTS 1 */}
+      <motion.div
+        className="absolute z-10 md:hidden"
+        style={{ right: '3%', top: '55%', width: '22%' }}
+        initial={{ opacity: 0, x: cardEntries.mobileRight1.x, y: cardEntries.mobileRight1.y, rotate: cardEntries.mobileRight1.rotate }}
+        animate={{ opacity: 1, x: 0, y: 0, rotate: -14 }}
+        transition={{ duration: 0.7, delay: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
+      >
+        <Image
+          src="/images/cards/figma-card-right-top.png"
+          alt="Jasskarte"
+          width={159}
+          height={250}
+          className="w-full h-auto"
+          style={{ borderRadius: '8px', filter: 'drop-shadow(0 8px 16px rgba(0,0,0,0.4))' }}
+        />
+      </motion.div>
+
+      {/* MOBILE CARD RECHTS 2 */}
+      <motion.div
+        className="absolute z-10 md:hidden"
+        style={{ right: '18%', top: '62%', width: '22%' }}
+        initial={{ opacity: 0, x: cardEntries.mobileRight2.x, y: cardEntries.mobileRight2.y, rotate: cardEntries.mobileRight2.rotate }}
+        animate={{ opacity: 1, x: 0, y: 0, rotate: 8 }}
+        transition={{ duration: 0.75, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+      >
+        <Image
+          src="/images/cards/figma-card-right-bottom.png"
+          alt="Jasskarte"
+          width={159}
+          height={250}
+          className="w-full h-auto"
+          style={{ borderRadius: '8px', filter: 'drop-shadow(0 10px 18px rgba(0,0,0,0.45))' }}
         />
       </motion.div>
 
