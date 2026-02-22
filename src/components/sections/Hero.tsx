@@ -18,9 +18,21 @@ const ALL_CARDS = [
   'S6','S7','S8','S9','S10','SU','SO','SK','SA',
 ];
 
+const HIGH_VALUES = new Set(['10','U','O','K','A']);
+
 function pickRandomCards(count: number): string[] {
-  const shuffled = [...ALL_CARDS].sort(() => Math.random() - 0.5);
-  return shuffled.slice(0, count).map(c => `/cards/de/${c}.webp`);
+  const weighted: string[] = [];
+  for (const card of ALL_CARDS) {
+    const value = card.slice(1);
+    weighted.push(card, ...(HIGH_VALUES.has(value) ? [card, card] : []));
+  }
+  const shuffled = weighted.sort(() => Math.random() - 0.5);
+  const picked: string[] = [];
+  for (const card of shuffled) {
+    if (picked.length >= count) break;
+    if (!picked.includes(card)) picked.push(card);
+  }
+  return picked.map(c => `/cards/de/${c}.webp`);
 }
 
 function randomCardEntry(side: 'left' | 'right') {
