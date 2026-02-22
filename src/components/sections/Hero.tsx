@@ -56,9 +56,8 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
           width: '86.806%',
           height: '93.478%',
           borderRadius: '3.097vw',
-          border: '0.6vw solid rgba(0,0,0,0.2)',
           boxShadow:
-            'inset 6px 6px 8px rgba(0,0,0,0.15), inset 6px 6px 6px rgba(0,0,0,0.25)',
+            'inset 0 0 30px 10px rgba(0,0,0,0.35), inset 0 0 8px 2px rgba(0,0,0,0.25)',
         }}
       >
         <Image
