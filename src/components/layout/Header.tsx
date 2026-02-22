@@ -19,7 +19,7 @@ interface HeaderProps {
   };
 }
 
-function Logo({ variant = 'color' }: { variant?: 'color' | 'white' }) {
+function Logo({ variant = 'color', shrunk = false }: { variant?: 'color' | 'white'; shrunk?: boolean }) {
   const src = variant === 'white' 
     ? '/images/logos/JVS Logo farbig weiss.svg'
     : '/images/logos/JVS Logo farbig.svg';
@@ -30,7 +30,9 @@ function Logo({ variant = 'color' }: { variant?: 'color' | 'white' }) {
       alt="Jassverband Schweiz"
       width={180}
       height={48}
-      className="h-10 md:h-12 w-auto"
+      className={`transition-all duration-300 w-auto ${
+        shrunk ? 'h-8 md:h-10' : 'h-10 md:h-12'
+      }`}
       priority
     />
   );
@@ -41,14 +43,15 @@ export function Header({ locale, nav }: HeaderProps) {
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
 
-  // Check if we're on the homepage
   const isHomePage = pathname === `/${locale}` || pathname === `/${locale}/`;
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
+      setScrolled(window.scrollY > 50);
     };
-    window.addEventListener('scroll', handleScroll);
+    
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -68,29 +71,31 @@ export function Header({ locale, nav }: HeaderProps) {
     return pathname.startsWith(href);
   };
 
-  // Logo variant logic:
-  // - Homepage: white when not scrolled (dark hero bg), color when scrolled (white header)
-  // - Other pages: always color (they have light backgrounds)
-  const logoVariant = isHomePage && !scrolled ? 'white' : 'color';
-  
-  // Text colors based on header state
-  const textColorUnscrolled = isHomePage ? 'text-white' : 'text-[var(--color-foreground)]';
-  const textColorScrolled = 'text-[var(--color-foreground)]';
+  const showTransparent = isHomePage && !scrolled;
+  const logoVariant = showTransparent ? 'white' : 'color';
+  const textColor = showTransparent 
+    ? 'text-white' 
+    : 'text-[var(--color-foreground)]';
+  const hoverColor = showTransparent
+    ? 'hover:text-white/80'
+    : 'hover:text-[var(--color-primary)]';
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out ${
         scrolled 
-          ? 'bg-white/95 backdrop-blur-md shadow-sm' 
+          ? 'bg-white/95 backdrop-blur-md shadow-md' 
           : isHomePage 
             ? 'bg-transparent' 
-            : 'bg-white/95 backdrop-blur-md shadow-sm'
+            : 'bg-white shadow-sm'
       }`}
     >
       <div className="container-main">
-        <nav className="flex items-center justify-between h-16 md:h-20">
+        <nav className={`flex items-center justify-between transition-all duration-500 ${
+          scrolled ? 'h-14 md:h-16' : 'h-16 md:h-20'
+        }`}>
           <Link href={`/${locale}`} className="flex items-center">
-            <Logo variant={logoVariant} />
+            <Logo variant={logoVariant} shrunk={scrolled} />
           </Link>
 
           <div className="hidden md:flex items-center gap-6 lg:gap-8">
@@ -98,24 +103,20 @@ export function Header({ locale, nav }: HeaderProps) {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`text-sm font-medium transition-colors ${
+                className={`text-sm font-medium transition-all duration-300 ${
                   isActive(item.href)
                     ? 'text-[var(--color-primary)]'
-                    : scrolled 
-                      ? `${textColorScrolled} hover:text-[var(--color-primary)]`
-                      : `${textColorUnscrolled} hover:text-[var(--color-primary-light)]`
+                    : `${textColor} ${hoverColor}`
                 }`}
               >
                 {item.label}
               </Link>
             ))}
-            <LanguageSwitcher currentLocale={locale} />
+            <LanguageSwitcher currentLocale={locale} variant={showTransparent ? 'light' : 'dark'} />
           </div>
 
           <button
-            className={`md:hidden p-2 rounded-lg transition-colors ${
-              scrolled ? textColorScrolled : textColorUnscrolled
-            }`}
+            className={`md:hidden p-2 rounded-lg transition-colors ${textColor}`}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -135,7 +136,8 @@ export function Header({ locale, nav }: HeaderProps) {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden bg-white rounded-b-xl shadow-lg"
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
+              className="md:hidden bg-white rounded-b-xl shadow-lg overflow-hidden"
             >
               <div className="py-4 space-y-1">
                 {navItems.map((item) => (
@@ -153,7 +155,7 @@ export function Header({ locale, nav }: HeaderProps) {
                   </Link>
                 ))}
                 <div className="px-4 pt-3 border-t border-[var(--color-border)] mt-2">
-                  <LanguageSwitcher currentLocale={locale} />
+                  <LanguageSwitcher currentLocale={locale} variant="dark" />
                 </div>
               </div>
             </motion.div>
