@@ -56,8 +56,6 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
           width: '86.806%',
           height: '93.478%',
           borderRadius: '3.097vw',
-          boxShadow:
-            'inset 0 0 30px 10px rgba(0,0,0,0.35), inset 0 0 8px 2px rgba(0,0,0,0.25)',
         }}
       >
         <Image
@@ -67,11 +65,13 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
           className="object-cover"
           priority
         />
+        {/* Shadow-Overlay – liegt ÜBER der Textur */}
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 z-10 pointer-events-none"
           style={{
+            borderRadius: 'inherit',
             boxShadow:
-              'inset -4px -4px 4px 1px rgba(0,0,0,0.25), inset 0px 4px 4px rgba(0,0,0,0.25)',
+              'inset 0 0 40px 12px rgba(0,0,0,0.4), inset 0 0 10px 3px rgba(0,0,0,0.3)',
           }}
         />
       </div>
