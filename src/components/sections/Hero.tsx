@@ -33,7 +33,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
   return (
     <section
       className="relative w-full overflow-hidden"
-      style={{ aspectRatio: '1440 / 920', minHeight: '520px', marginTop: '-300px', paddingTop: '300px' }}
+      style={{ height: '100vh', maxHeight: '920px', minHeight: '520px' }}
     >
       {/* HOLZTISCH – full bleed */}
       <div className="absolute inset-0 z-0">
