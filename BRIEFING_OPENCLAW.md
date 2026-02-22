@@ -1,10 +1,10 @@
 # Briefing: Jassverband Schweiz Website
 
-**Datum:** 2026-02-19  
-**Erstellt von:** Claude (Cursor Agent)  
-**Für:** OpenClaw  
-**Rolle:** Projektmanagement + Implementation  
-**Kommunikation:** Slack (direkt mit Designer + Remo)
+**Datum:** 2026-02-21 (aktualisiert)  
+**Erstellt von:** Cursor Agent  
+**Für:** Clawmic (OpenClaw)  
+**Rolle:** Projektmanagement + Spec-Writing  
+**Kommunikation:** Telegram-Gruppe "JVS Website" (Remo, Jens, Clawmic)
 
 ---
 
@@ -178,39 +178,48 @@ jassverband-schweiz/
 --color-background-dark: #1A1512; /* Footer/Dark Sections */
 ```
 
-### Typography
-- **Headlines:** Zilla Slab (Google Font), Bold
-- **Body:** Geist Sans (Vercel Font), Regular
+### Typography (via Figma API verifiziert, 2026-02-22)
+- **Headlines:** Capita, Bold (700) — lokaler Webfont in `src/assets/fonts/Capita Webfont.zip`
+- **Body/UI:** Inter, Regular (400) + Bold (700) — Google Font
+- **Type Scale Headlines:** 20, 28, 42, 75px
+- **Type Scale Body:** 13, 15, 18.6, 28px
+- **Buttons/Nav:** Inter Bold 16-17px
 
-**WICHTIG:** Diese Werte sind aus Screenshots abgeleitet. Sobald du die echten Figma-Tokens hast, bitte `globals.css` aktualisieren!
+**Achtung:** Der aktuelle Code verwendet noch Zilla Slab + Geist Sans als Platzhalter. Muss in Phase 2 ersetzt werden (siehe IMPLEMENTATION_PLAN.md).
 
 ---
 
-## 7. Kommunikation (Slack)
+## 7. Kommunikation (Telegram)
 
-### Channels/DMs
+### Telegram-Gruppe "JVS Website"
 - **Remo** – Product Owner, finale Entscheidungen
-- **Designer** – Figma-File, Assets, Design-Fragen
+- **Jens** – Designer, Figma-Owner, Assets
+- **Clawmic** (@mr_remobot) – Projektmanagement, Specs
 
-### Deine Aufgaben im Slack
-1. **Assets anfordern** – Schreib dem Designer, was du brauchst (siehe Checkliste)
-2. **Design-Tokens klären** – Frag nach exakten Hex/Font-Werten
-3. **Feedback-Loop** – Schick Screenshots von deinem Fortschritt
+### Deine Aufgaben auf Telegram
+1. **Assets anfordern** – Schreib Jens, was du brauchst (siehe Checkliste)
+2. **Design-Tokens klären** – Frag nach erweitertem Figma-Token
+3. **Status-Updates** – Halte das Team informiert
 4. **Blocker melden** – Falls etwas unklar ist, sofort fragen
 
-### Beispiel-Nachricht an Designer
+### Beispiel-Nachricht an Jens
 ```
-Hi! Ich übernehme die Frontend-Implementierung der JVS-Website.
-Könntest du mir bitte folgende Exports schicken?
+Hallo Jens! Ich bin Clawmic, der AI-Partner für das JVS-Projekt.
 
-1. Design-Tokens (Farben, Fonts, Spacing) – Screenshot oder Liste
-2. Logo als SVG
-3. Jasskarten als PNG (transparent)
-4. Holz- und Filz-Texturen als JPG
-5. Alle Icons als SVG
+Ich habe Zugriff auf das Figma-File, aber für die Design-Tokens 
+(Farben als CSS-Variablen) brauche ich einen erweiterten Token mit 
+dem Scope "file_variables:read".
 
-Danke!
+Kannst du einen neuen Personal Access Token erstellen mit diesem Scope?
+Oder alternativ die Variables als JSON exportieren?
+
+Die ~80 Bilder im File kann ich bereits abrufen!
 ```
+
+### Projekt-Status Tracking
+Clawmic aktualisiert nach jeder Interaktion:
+- **Open_R:** `context/PROJECT_STATUS.md` (Single Source of Truth)
+- **Offene Fragen:** `context/QA_JVS_WEBSITE_*.md`
 
 ---
 
@@ -270,14 +279,20 @@ Danke!
 
 ## 10. Team & Kommunikation
 
-| Person | Rolle | Slack-Erreichbarkeit |
-|--------|-------|----------------------|
-| **Remo** | Product Owner, finale Entscheidungen | @Remo (direkt oder im Channel) |
-| **Jens** | Designer, Figma-Owner, Asset-Lieferung | @Jens (direkt oder im Channel) |
-| **Cursor/Opus** | Code-Implementation (via Remo) | Remo delegiert an Cursor für Code |
+| Person | Rolle | Erreichbarkeit |
+|--------|-------|----------------|
+| **Remo** | Product Owner, finale Entscheidungen | Telegram-Gruppe + DM |
+| **Jens** | Designer, Figma-Owner, Asset-Lieferung | Telegram-Gruppe |
+| **Clawmic** | Projektmanagement, Specs, Koordination | @mr_remobot auf Telegram |
+| **Cursor/Opus** | Code-Implementation | Via Remo (Cursor IDE) |
 
-### Slack Channel
-**#jvs-website** — Primärer Channel für alle Projekt-Kommunikation
+### Primärer Kanal
+**Telegram-Gruppe "JVS Website"** — Alle Projekt-Kommunikation
+
+### Figma API
+- **Token:** In `.env.local` (FIGMA_ACCESS_TOKEN)
+- **File:** `RVZcmCaTCDouMhRxfyAOmP`
+- **Link:** https://www.figma.com/design/RVZcmCaTCDouMhRxfyAOmP/JVS-Jassverband-Website--Bot-
 
 ---
 
@@ -340,4 +355,4 @@ Stattdessen:
 
 ---
 
-**Letzte Aktualisierung:** 2026-02-21
+**Letzte Aktualisierung:** 2026-02-21 (Telegram-Migration, Figma API integriert)

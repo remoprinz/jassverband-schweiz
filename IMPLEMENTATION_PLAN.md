@@ -35,8 +35,7 @@ Das **Hauptproblem**: Assets liegen in `src/assets/`, aber der Code referenziert
 |---------|--------|--------|
 | **Assets am falschen Ort** | Components zeigen keine Bilder | Migration zu `public/images/` |
 | **Hero.tsx falsche Pfade** | Platzhalter statt echte Karten | Pfade korrigieren |
-| **Font-Entscheidung** | Unklarheit Capita vs Zilla Slab | Mit Designer klären |
-| **en.json fehlt** | Englische Version nicht übersetzt | Übersetzen oder auslassen |
+| **Font-Entscheidung** | ✅ GEKLÄRT: Capita (Headlines), Inter (Body) | Figma API bestätigt |
 
 ---
 
@@ -128,41 +127,59 @@ cp src/assets/cards/jester.png public/images/illustrations/
 
 ## Phase 2: Design-System Finalisierung
 
-### 2.1 Font-Entscheidung klären
+### 2.1 Fonts einbinden (GEKLÄRT via Figma API)
 
-**Frage an Designer (Jens):**
-> "Welcher Font für Headlines: **Capita** (aus Figma-Export) oder **Zilla Slab** (aktuell im Code)?"
+**Ergebnis der Figma-Analyse:**
 
-**Wenn Capita:**
+| Verwendung | Font | Weight | Grössen (px) |
+|------------|------|--------|--------------|
+| Headlines | **Capita** | Bold (700) | 20, 28, 42, 75, 224 |
+| Body-Text | **Inter** | Regular (400) | 13, 15, 18.6, 28 |
+| Buttons/Nav | **Inter** | Bold (700) | 16, 17.2 |
+
+**Zilla Slab und Geist Sans im Code sind Platzhalter und müssen ersetzt werden.**
+
+**Schritt 1: Capita Webfont entpacken und einbinden**
 ```bash
-# Font extrahieren
 cd src/assets/fonts
 unzip "Capita Webfont.zip"
-
-# Font in public/ verschieben
-mkdir -p public/fonts
-cp -r Capita/* public/fonts/
 ```
 
-Dann in `src/app/layout.tsx`:
+**Schritt 2: In `src/app/layout.tsx` einbinden**
 ```tsx
 import localFont from 'next/font/local';
+import { Inter } from 'next/font/google';
 
 const capita = localFont({
   src: [
-    { path: '../../public/fonts/Capita-Regular.woff2', weight: '400' },
-    { path: '../../public/fonts/Capita-Bold.woff2', weight: '700' },
+    { path: '../assets/fonts/Capita Webfont/Capita-Regular.woff2', weight: '400' },
+    { path: '../assets/fonts/Capita Webfont/Capita-Bold.woff2', weight: '700' },
   ],
   variable: '--font-capita',
+  display: 'swap',
+});
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
 });
 ```
 
-**Wenn Zilla Slab:** Keine Änderung nötig (bereits via Google Fonts).
+**Schritt 3: globals.css aktualisieren**
+```css
+--font-display: var(--font-capita), Georgia, serif;
+--font-sans: var(--font-inter), system-ui, sans-serif;
+```
 
 **Checkliste:**
-- [ ] Font-Entscheidung von Jens erhalten
-- [ ] Font korrekt eingebunden (lokal oder Google)
-- [ ] `--font-display` Variable in globals.css aktualisiert
+- [ ] Capita Webfont.zip entpackt
+- [ ] Capita als localFont in layout.tsx eingebunden
+- [ ] Inter als Google Font in layout.tsx eingebunden
+- [ ] `--font-display` Variable → Capita
+- [ ] `--font-sans` Variable → Inter
+- [ ] Zilla Slab Referenzen entfernt
+- [ ] Geist Sans Referenzen entfernt
 
 ### 2.2 Farben verifizieren
 
@@ -257,21 +274,18 @@ Alle 7 Unterseiten existieren als Skelette. Content muss eingefügt werden.
 
 ## Phase 5: i18n Finalisierung
 
-### 5.1 Fehlende Sprache
+### 5.1 Sprachen
 
 | Sprache | Status | Aktion |
 |---------|--------|--------|
-| DE | ✅ Vorhanden | - |
+| DE | ✅ Vorhanden | Hauptsprache |
 | FR | ✅ Vorhanden | Review |
 | IT | ✅ Vorhanden | Review |
-| EN | ❌ Fehlt | Erstellen oder auslassen |
-
-**Entscheidung nötig:** Brauchen wir EN?
+| EN | ❌ Nicht nötig | Entscheidung: Kein EN |
 
 **Checkliste:**
-- [ ] EN-Entscheidung von Remo
-- [ ] Falls ja: en.json erstellen
-- [ ] FR/IT Übersetzungen reviewen
+- [ ] FR Übersetzungen reviewen
+- [ ] IT Übersetzungen reviewen
 
 ---
 
@@ -356,13 +370,13 @@ const cards: CardData[] = [
 
 ---
 
-## Offene Fragen (für Remo/Jens)
+## Offene Fragen (für Remo)
 
-1. **Font:** Capita (Figma) oder Zilla Slab (aktuell)?
-2. **EN-Version:** Brauchen wir Englisch?
-3. **Kontaktformular:** Wohin sollen Anfragen gehen?
+1. ~~**Font:** Capita oder Zilla Slab?~~ → ✅ GEKLÄRT: Capita (Headlines), Inter (Body) — via Figma API verifiziert
+2. ~~**EN-Version:** Brauchen wir Englisch?~~ → ✅ GEKLÄRT: Nein
+3. **Kontaktformular:** Wohin sollen Anfragen gehen? (E-Mail-Adresse)
 4. **News:** Gibt es bereits Artikel für den Launch?
-5. **Partner:** Welche Partner-Logos zeigen?
+5. **Partner:** Welche Partner-Logos zeigen wir?
 
 ---
 
