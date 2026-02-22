@@ -11,11 +11,26 @@ interface HeroProps {
 }
 
 /**
- * Figma canvas: 1440px × 920px
- * All positions converted to % of canvas:
- *   x% = pixel / 1440 * 100
- *   y% = pixel / 920 * 100
- * Section uses aspect-ratio: 1440/920 so % values always match Figma exactly.
+ * FIGMA API EXACT VALUES (via REST API with token):
+ * Canvas: 1440 × 920 px
+ * 
+ * Teppich (21:125): x=95, y=-42 (relative to hero), w=1250, h=860
+ *   → left: 6.597%, top: -4.565%, width: 86.806%, height: 93.478%
+ * 
+ * Card sizes (all 4 cards): 159 × 250 px
+ *   → width: 11.042% of 1440
+ * 
+ * Card positions (relative to hero top=0):
+ *   21:136 (left top):     x=133,  y=426  → left: 9.236%,  top: 46.304%
+ *   21:135 (left bottom):  x=196,  y=583  → left: 13.611%, top: 63.370%
+ *   21:140 (right top):    x=1104, y=468  → left: 76.667%, top: 50.870%
+ *   21:144 (right bottom): x=1034, y=616  → left: 71.806%, top: 66.957%
+ * 
+ * Rotations:
+ *   21:136: +15.8°
+ *   21:135: -27.35°
+ *   21:140: -16.19°
+ *   21:144: +8.34°
  */
 export function Hero({ title, subtitle, cta }: HeroProps) {
   return (
@@ -23,13 +38,8 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
       className="relative w-full overflow-hidden"
       style={{ aspectRatio: '1440 / 920', minHeight: '560px' }}
     >
-      {/* ── HOLZTISCH ─────────────────────────────────────────────────────
-          Figma: top-[-24px] h-[944px] → top: -24/920 = -2.6%, h: 944/920 = 102.6%
-          Extends slightly above the section so it bleeds behind the transparent header. */}
-      <div
-        className="absolute left-0 right-0 z-0"
-        style={{ top: '-2.609%', height: '102.609%' }}
-      >
+      {/* HOLZTISCH - full bleed */}
+      <div className="absolute inset-0 z-0">
         <Image
           src="/images/backgrounds/holztisch.jpg"
           alt="Holztisch"
@@ -40,139 +50,123 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
         />
       </div>
 
-      {/* ── TEPPICH (Grüner Filz) ──────────────────────────────────────────
-          Figma exact structure:
-          Outer:  size-[475px] left-[95px] top-[-42px]  → 6.597% / -4.565% / w:32.986% / aspect-ratio:1
-          Inner:  border-[8.646px] border-rgba(0,0,0,0.2) rounded-[44.611px]
-                  with felt texture + inner shadows
-          Outer shadow: inset 6px 6px 8px rgba(0,0,0,0.15) + inset 6px 6px 6px rgba(0,0,0,0.25) */}
+      {/* TEPPICH - Figma: x=95, w=1250, h=860 */}
       <div
-        className="absolute z-[1]"
+        className="absolute z-[1] overflow-hidden"
         style={{
           left: '6.597%',
           top: '-4.565%',
-          width: '32.986%',
-          aspectRatio: '1',
+          width: '86.806%',
+          height: '93.478%',
           borderRadius: '3.097vw',
+          border: '0.6vw solid rgba(0,0,0,0.2)',
           boxShadow: 'inset 6px 6px 8px 0px rgba(0,0,0,0.15), inset 6px 6px 6px 0px rgba(0,0,0,0.25)',
         }}
       >
-        {/* Inner bordered frame with texture */}
+        <Image
+          src="/images/backgrounds/felt-figma.png"
+          alt="Jassteppich"
+          fill
+          className="object-cover"
+          priority
+        />
         <div
-          className="absolute overflow-hidden"
+          className="absolute inset-0"
           style={{
-            inset: 0,
-            border: '0.6vw solid rgba(0,0,0,0.2)',
-            borderRadius: '3.097vw',
+            boxShadow: 'inset -4px -4px 4px 1px rgba(0,0,0,0.25), inset 0px 4px 4px 0px rgba(0,0,0,0.25)',
           }}
-        >
-          <Image
-            src="/images/backgrounds/felt-figma.png"
-            alt="Jassteppich"
-            fill
-            className="object-cover"
-            priority
-          />
-          {/* Figma inner shadow on texture */}
-          <div
-            className="absolute inset-0"
-            style={{
-              boxShadow:
-                'inset -4px -4px 4px 1px rgba(0,0,0,0.25), inset 0px 4px 4px 0px rgba(0,0,0,0.25)',
-            }}
-          />
-        </div>
+        />
       </div>
 
-      {/* ── KARTE LINKS OBEN ──────────────────────────────────────────────
-          Figma node 21:136 → container left-[132.95px] top-[426px]
-          Card: 245×382px, rotate 15.8°
-          x: 132.95/1440 = 9.232%
-          y: 426/920    = 46.304% */}
+      {/* CARD LEFT TOP - 21:136: x=133, y=426, 159×250, rotate +15.8° */}
       <motion.div
         className="absolute z-10 hidden md:block"
-        style={{ left: '9.232%', top: '46.304%', width: '17.014%' }}
-        initial={{ opacity: 0, y: -40, rotate: 5 }}
+        style={{
+          left: '9.236%',
+          top: '46.304%',
+          width: '11.042%',
+        }}
+        initial={{ opacity: 0, y: -30, rotate: 5 }}
         animate={{ opacity: 1, y: 0, rotate: 15.8 }}
-        transition={{ duration: 0.9, delay: 0.3, type: 'spring', stiffness: 80 }}
+        transition={{ duration: 0.8, delay: 0.3, type: 'spring', stiffness: 80 }}
       >
         <Image
           src="/images/cards/figma-card-left-top.png"
           alt="Jasskarte"
-          width={245}
-          height={382}
+          width={159}
+          height={250}
           className="w-full h-auto"
           style={{
-            borderRadius: '1.67vw',
-            filter: 'drop-shadow(0 20px 30px rgba(0,0,0,0.35))',
+            borderRadius: '1.2vw',
+            filter: 'drop-shadow(0 15px 25px rgba(0,0,0,0.4))',
           }}
           priority
         />
       </motion.div>
 
-      {/* ── KARTE LINKS UNTEN (gross) ─────────────────────────────────────
-          Figma node 21:135 → container left-[196px] top-[583.49px]
-          Card: 306×478px, rotate -27.35°
-          x: 196/1440   = 13.611%
-          y: 583/920    = 63.370% */}
+      {/* CARD LEFT BOTTOM - 21:135: x=196, y=583, 159×250, rotate -27.35° */}
       <motion.div
         className="absolute z-10 hidden md:block"
-        style={{ left: '13.611%', top: '63.370%', width: '21.250%' }}
-        initial={{ opacity: 0, x: -60, rotate: -10 }}
+        style={{
+          left: '13.611%',
+          top: '63.370%',
+          width: '11.042%',
+        }}
+        initial={{ opacity: 0, x: -40, rotate: -15 }}
         animate={{ opacity: 1, x: 0, rotate: -27.35 }}
-        transition={{ duration: 0.9, delay: 0.45, type: 'spring', stiffness: 80 }}
+        transition={{ duration: 0.9, delay: 0.4, type: 'spring', stiffness: 80 }}
       >
         <Image
           src="/images/cards/figma-card-left-bottom.png"
           alt="Jasskarte"
-          width={306}
-          height={478}
+          width={159}
+          height={250}
           className="w-full h-auto"
           style={{
-            borderRadius: '1.67vw',
-            filter: 'drop-shadow(0 25px 35px rgba(0,0,0,0.45))',
+            borderRadius: '1.2vw',
+            filter: 'drop-shadow(0 18px 28px rgba(0,0,0,0.45))',
           }}
           priority
         />
       </motion.div>
 
-      {/* ── KARTE RECHTS OBEN ────────────────────────────────────────────
-          Figma node 21:140 → container left-[calc(83.33%-96px)] = 1104px, top-[467.68px]
-          Card: 245×382px, rotate -16.19°
-          x: 1104/1440  = 76.667%
-          y: 467.68/920 = 50.835% */}
+      {/* CARD RIGHT TOP - 21:140: x=1104, y=468, 159×250, rotate -16.19° */}
       <motion.div
         className="absolute z-10 hidden md:block"
-        style={{ left: '76.667%', top: '50.835%', width: '17.014%' }}
-        initial={{ opacity: 0, y: -40, rotate: -5 }}
+        style={{
+          left: '76.667%',
+          top: '50.870%',
+          width: '11.042%',
+        }}
+        initial={{ opacity: 0, y: -30, rotate: -5 }}
         animate={{ opacity: 1, y: 0, rotate: -16.19 }}
-        transition={{ duration: 0.9, delay: 0.35, type: 'spring', stiffness: 80 }}
+        transition={{ duration: 0.8, delay: 0.35, type: 'spring', stiffness: 80 }}
       >
         <Image
           src="/images/cards/figma-card-right-top.png"
           alt="Jasskarte"
-          width={245}
-          height={382}
+          width={159}
+          height={250}
           className="w-full h-auto"
           style={{
-            borderRadius: '1.67vw',
-            filter: 'drop-shadow(0 20px 30px rgba(0,0,0,0.35))',
+            borderRadius: '1.2vw',
+            filter: 'drop-shadow(0 15px 25px rgba(0,0,0,0.4))',
           }}
           priority
         />
       </motion.div>
 
-      {/* ── KARTE RECHTS UNTEN (klein) ───────────────────────────────────
-          Figma node 21:144 → container left-[calc(75%-46.27px)] = 1033.73px, top-[616px]
-          Card: 159×250px, rotate 8.34°
-          x: 1033.73/1440 = 71.787%
-          y: 616/920      = 66.957% */}
+      {/* CARD RIGHT BOTTOM - 21:144: x=1034, y=616, 159×250, rotate +8.34° */}
       <motion.div
         className="absolute z-10 hidden md:block"
-        style={{ left: '71.787%', top: '66.957%', width: '11.042%' }}
-        initial={{ opacity: 0, x: 40, rotate: 15 }}
+        style={{
+          left: '71.806%',
+          top: '66.957%',
+          width: '11.042%',
+        }}
+        initial={{ opacity: 0, x: 30, rotate: 15 }}
         animate={{ opacity: 1, x: 0, rotate: 8.34 }}
-        transition={{ duration: 0.9, delay: 0.5, type: 'spring', stiffness: 80 }}
+        transition={{ duration: 0.9, delay: 0.45, type: 'spring', stiffness: 80 }}
       >
         <Image
           src="/images/cards/figma-card-right-bottom.png"
@@ -181,27 +175,18 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
           height={250}
           className="w-full h-auto"
           style={{
-            borderRadius: '0.83vw',
-            filter: 'drop-shadow(0 15px 20px rgba(0,0,0,0.35))',
+            borderRadius: '1.2vw',
+            filter: 'drop-shadow(0 12px 20px rgba(0,0,0,0.35))',
           }}
           priority
         />
       </motion.div>
 
-      {/* ── TEXT CONTENT ─────────────────────────────────────────────────
-          Figma:
-            Title CENTER:    x=720px (50%), y=344px → top of title = (344-70)/920 = 29.78%
-            Subtitle CENTER: y=487px → below title, gap title-bottom→subtitle-top = 37px
-            CTA top:         y=648px → gap subtitle-bottom→CTA = 125px
-
-          Font sizes as vw (scale with viewport width = scale with section width):
-            75px / 1440 * 100 = 5.208vw
-            28px / 1440 * 100 = 1.944vw */}
+      {/* TEXT CONTENT */}
       <div
         className="absolute z-20 inset-x-0 flex flex-col items-center text-center"
-        style={{ top: '29.78%' }}
+        style={{ top: '25%' }}
       >
-        {/* TITEL: Capita Bold 75px / line-height 70px */}
         <motion.h1
           style={{
             fontFamily: 'var(--font-capita), Capita, Georgia, serif',
@@ -219,8 +204,6 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
           {title}
         </motion.h1>
 
-        {/* UNTERTITEL: Inter Regular 28px / line-height 36px
-            Gap to title bottom: 37px = 37/1440*100 = 2.569vw */}
         <motion.p
           style={{
             fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
@@ -238,8 +221,6 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
           {subtitle}
         </motion.p>
 
-        {/* CTA BUTTON
-            Gap subtitle bottom → button top: 125px = 125/1440*100 = 8.681vw */}
         <motion.div
           style={{ marginTop: 'clamp(32px, 8.681vw, 125px)' }}
           initial={{ opacity: 0, y: 30 }}
@@ -259,11 +240,10 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
         </motion.div>
       </div>
 
-      {/* ── SCROLL INDIKATOR ──────────────────────────────────────────────
-          Figma: top-[865px] → 865/920 = 94% → bottom: 6% */}
+      {/* SCROLL INDICATOR */}
       <motion.div
         className="absolute z-20 left-1/2 -translate-x-1/2 cursor-pointer"
-        style={{ bottom: '6%' }}
+        style={{ bottom: '4%' }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, y: [0, 8, 0] }}
         transition={{ delay: 1.5, duration: 2, repeat: Infinity }}
