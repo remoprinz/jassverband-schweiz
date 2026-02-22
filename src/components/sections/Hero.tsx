@@ -41,38 +41,47 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
       </div>
 
       {/* ── TEPPICH (Grüner Filz) ──────────────────────────────────────────
-          Figma: size-[475px] left-[95px] top-[-42px] rounded-[44.6px]
-          x: 95/1440 = 6.597%
-          y: -42/920 = -4.565%
-          w: 475/1440 = 32.986%
-          aspect-ratio:1 keeps it square across all viewports.
-          border-radius: 44.6/1440 = 3.097vw (vw not % to preserve circle shape) */}
+          Figma exact structure:
+          Outer:  size-[475px] left-[95px] top-[-42px]  → 6.597% / -4.565% / w:32.986% / aspect-ratio:1
+          Inner:  border-[8.646px] border-rgba(0,0,0,0.2) rounded-[44.611px]
+                  with felt texture + inner shadows
+          Outer shadow: inset 6px 6px 8px rgba(0,0,0,0.15) + inset 6px 6px 6px rgba(0,0,0,0.25) */}
       <div
-        className="absolute z-[1] overflow-hidden"
+        className="absolute z-[1]"
         style={{
           left: '6.597%',
           top: '-4.565%',
           width: '32.986%',
           aspectRatio: '1',
           borderRadius: '3.097vw',
+          boxShadow: 'inset 6px 6px 8px 0px rgba(0,0,0,0.15), inset 6px 6px 6px 0px rgba(0,0,0,0.25)',
         }}
       >
-        <Image
-          src="/images/backgrounds/felt-texture.png"
-          alt="Jassteppich"
-          fill
-          className="object-cover"
-          priority
-        />
-        {/* Figma inner shadow */}
+        {/* Inner bordered frame with texture */}
         <div
-          className="absolute inset-0"
+          className="absolute overflow-hidden"
           style={{
-            borderRadius: 'inherit',
-            boxShadow:
-              'inset -4px -4px 4px 1px rgba(0,0,0,0.25), inset 0px 4px 4px 0px rgba(0,0,0,0.25), inset 6px 6px 8px 0px rgba(0,0,0,0.15)',
+            inset: 0,
+            border: '0.6vw solid rgba(0,0,0,0.2)',
+            borderRadius: '3.097vw',
           }}
-        />
+        >
+          <Image
+            src="/images/backgrounds/felt-figma.png"
+            alt="Jassteppich"
+            fill
+            className="object-cover"
+            priority
+          />
+          {/* Figma inner shadow on texture */}
+          <div
+            className="absolute inset-0"
+            style={{
+              boxShadow:
+                'inset -4px -4px 4px 1px rgba(0,0,0,0.25), inset 0px 4px 4px 0px rgba(0,0,0,0.25)',
+            }}
+          />
+        </div>
       </div>
 
       {/* ── KARTE LINKS OBEN ──────────────────────────────────────────────
@@ -88,7 +97,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
         transition={{ duration: 0.9, delay: 0.3, type: 'spring', stiffness: 80 }}
       >
         <Image
-          src="/images/cards/card-hero-3.png"
+          src="/images/cards/figma-card-left-top.png"
           alt="Jasskarte"
           width={245}
           height={382}
@@ -114,7 +123,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
         transition={{ duration: 0.9, delay: 0.45, type: 'spring', stiffness: 80 }}
       >
         <Image
-          src="/images/cards/card-hero-1.png"
+          src="/images/cards/figma-card-left-bottom.png"
           alt="Jasskarte"
           width={306}
           height={478}
@@ -140,7 +149,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
         transition={{ duration: 0.9, delay: 0.35, type: 'spring', stiffness: 80 }}
       >
         <Image
-          src="/images/cards/card-hero-2.png"
+          src="/images/cards/figma-card-right-top.png"
           alt="Jasskarte"
           width={245}
           height={382}
@@ -166,7 +175,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
         transition={{ duration: 0.9, delay: 0.5, type: 'spring', stiffness: 80 }}
       >
         <Image
-          src="/images/cards/card-hero-4.png"
+          src="/images/cards/figma-card-right-bottom.png"
           alt="Jasskarte"
           width={159}
           height={250}
