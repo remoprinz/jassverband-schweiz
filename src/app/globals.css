@@ -2,64 +2,94 @@
 
 /* ============================================
    JASSVERBAND SCHWEIZ - DESIGN SYSTEM
-   "Swiss Heritage" Style: Traditional, Warm, Authentic
+   Extracted 1:1 from Figma (Node 2:441)
    ============================================ */
 
 :root {
-  /* Primary Brand Colors */
-  --color-primary: #E31E24;
-  --color-primary-hover: #C91A1F;
-  --color-primary-light: #FF4A4F;
+  /* Primary Brand Color - Schweizer Rot */
+  --color-primary: #ff0000;
+  --color-primary-hover: #cc0000;
+  --color-primary-light: #ff3333;
   
   /* Swiss Heritage Palette */
-  --color-wood-dark: #5D4037;
-  --color-wood-medium: #8B6F47;
-  --color-wood-light: #A1887F;
-  --color-felt-green: #1B4D3E;
-  --color-felt-green-light: #2E7D5A;
-  --color-cream: #F5F1E8;
-  --color-cream-dark: #EDE8DC;
+  --color-cream: #f0eee7;
+  --color-cream-dark: #e5e3dc;
   
   /* Neutral Colors */
-  --color-background: #FFFFFF;
-  --color-background-alt: #F5F1E8;
-  --color-background-dark: #1A1512;
-  --color-foreground: #1A1A1A;
-  --color-foreground-muted: #6B6B6B;
-  --color-foreground-light: #FFFFFF;
+  --color-background: #ffffff;
+  --color-background-alt: #f0eee7;
+  --color-background-dark: #000000;
+  --color-foreground: #000000;
+  --color-foreground-muted: #6b6b6b;
+  --color-foreground-light: #ffffff;
   
-  /* Accent (Jassmeister Orange - for tournament teaser) */
-  --color-accent-jassmeister: #FF5F1F;
+  /* Footer specific */
+  --color-footer-bg: #000000;
+  --color-footer-text: rgba(255, 255, 255, 0.6);
+  --color-footer-text-muted: rgba(255, 255, 255, 0.4);
   
   /* Borders */
-  --color-border: #E5E5E5;
+  --color-border: #e5e5e5;
   --color-border-dark: #333333;
   
-  /* Typography - Note: --font-capita and --font-inter are set by Next.js on <body> */
-  /* We define fallbacks here, actual font-family is applied in body/heading rules */
-  --font-display-fallback: Georgia, serif;
-  --font-sans-fallback: system-ui, -apple-system, sans-serif;
-  --font-mono: ui-monospace, monospace;
+  /* Typography - Figma Tokens */
+  --font-family-serif: var(--font-capita), 'Capita', Georgia, serif;
+  --font-family-sans: var(--font-inter), 'Inter', system-ui, sans-serif;
+  
+  /* Font Sizes from Figma */
+  --font-size-75: 75px;
+  --font-size-48: 48px;
+  --font-size-42: 42px;
+  --font-size-28: 28px;
+  --font-size-20: 20px;
+  --font-size-17: 17px;
+  --font-size-16: 16px;
+  --font-size-15: 15px;
+  --font-size-13: 13px;
+  
+  /* Line Heights from Figma */
+  --line-height-70: 70px;
+  --line-height-57: 57.6px;
+  --line-height-36: 36px;
+  --line-height-28: 28px;
+  --line-height-25: 25.6px;
+  --line-height-24: 24px;
+  --line-height-20: 20px;
+  --line-height-19: 19.2px;
+  
+  /* Letter Spacing from Figma */
+  --letter-spacing-tight: -0.96px;
+  --letter-spacing-normal: -0.4px;
+  --letter-spacing-small: -0.32px;
   
   /* Spacing */
-  --spacing-section: 5rem;
-  --spacing-section-mobile: 3rem;
+  --spacing-section: 80px;
+  --spacing-section-mobile: 48px;
+  --item-spacing-xs: 8px;
+  --item-spacing-s: 16px;
+  --item-spacing-m: 32px;
+  --item-spacing-l: 48px;
   
   /* Container */
-  --container-max: 1200px;
-  --container-padding: 1.5rem;
+  --container-max: 1152px;
+  --container-padding: 144px;
+  --container-padding-mobile: 24px;
   
-  /* Shadows */
+  /* Border Radius from Figma */
+  --radius-card: 12px;
+  --radius-card-lg: 16px;
+  --radius-button: 9999px;
+  
+  /* Shadows from Figma */
+  --shadow-button: 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -4px rgba(0, 0, 0, 0.1);
   --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.08);
   --shadow-card-hover: 0 8px 30px rgba(0, 0, 0, 0.12);
-  --shadow-elevated: 0 20px 50px rgba(0, 0, 0, 0.15);
 }
 
 @theme inline {
   --color-primary: var(--color-primary);
   --color-background: var(--color-background);
   --color-foreground: var(--color-foreground);
-  --font-mono: var(--font-mono);
 }
 
 /* Base Styles */
@@ -70,20 +100,36 @@ html {
 body {
   background: var(--color-background);
   color: var(--color-foreground);
-  /* --font-inter is set by Next.js via body class */
-  font-family: var(--font-inter), var(--font-sans-fallback);
-  line-height: 1.6;
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-16);
+  line-height: var(--line-height-24);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Typography Scale */
+/* Typography - Headlines use Capita Bold */
 h1, h2, h3, h4, h5, h6 {
-  /* --font-capita is set by Next.js via body class */
-  font-family: var(--font-capita), var(--font-display-fallback);
+  font-family: var(--font-family-serif);
   font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: var(--font-size-75);
+  line-height: var(--line-height-70);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+h2 {
+  font-size: var(--font-size-42);
+  line-height: var(--line-height-57);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+h3 {
+  font-size: var(--font-size-28);
+  line-height: var(--line-height-24);
+  letter-spacing: var(--letter-spacing-normal);
 }
 
 /* Selection */
@@ -103,13 +149,37 @@ a, button {
   transition: all 0.2s ease;
 }
 
-/* Container utility */
+/* Container utility - matches Figma 1440px viewport with 144px margins */
 .container-main {
-  max-width: var(--container-max);
+  max-width: calc(var(--container-max) + var(--container-padding) * 2);
   margin-left: auto;
   margin-right: auto;
   padding-left: var(--container-padding);
   padding-right: var(--container-padding);
+}
+
+@media (max-width: 1280px) {
+  .container-main {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container-main {
+    padding-left: var(--container-padding-mobile);
+    padding-right: var(--container-padding-mobile);
+  }
+  
+  h1 {
+    font-size: 42px;
+    line-height: 48px;
+  }
+  
+  h2 {
+    font-size: 32px;
+    line-height: 40px;
+  }
 }
 
 /* Section spacing */
@@ -126,95 +196,71 @@ a, button {
 }
 
 /* ============================================
-   WOOD TEXTURE BACKGROUNDS
+   BUTTON STYLES (from Figma)
    ============================================ */
 
-.bg-wood {
-  background-color: var(--color-wood-dark);
-  background-image: url('/images/backgrounds/wood-texture.jpg');
-  background-size: cover;
-  background-position: center;
+.btn-primary {
+  background: var(--color-primary);
+  color: white;
+  font-family: var(--font-family-sans);
+  font-weight: 700;
+  font-size: var(--font-size-17);
+  line-height: var(--line-height-28);
+  padding: 16px 32px;
+  border-radius: var(--radius-button);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: var(--shadow-button);
+  transition: all 0.2s ease;
 }
 
-.bg-felt {
-  background-color: var(--color-felt-green);
-  background-image: url('/images/backgrounds/felt-texture.jpg');
-  background-size: cover;
-  background-position: center;
-}
-
-/* Fallback if no texture image */
-.bg-wood-fallback {
-  background: linear-gradient(
-    135deg,
-    var(--color-wood-dark) 0%,
-    var(--color-wood-medium) 50%,
-    var(--color-wood-dark) 100%
-  );
-}
-
-.bg-felt-fallback {
-  background: linear-gradient(
-    180deg,
-    var(--color-felt-green) 0%,
-    var(--color-felt-green-light) 100%
-  );
+.btn-primary:hover {
+  background: var(--color-primary-hover);
+  transform: translateY(-2px);
 }
 
 /* ============================================
-   CARD STYLES (Pillar Cards)
+   CARD STYLES (from Figma)
    ============================================ */
 
-.pillar-card {
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid rgba(0, 0, 0, 0.08);
+.card {
+  background: var(--color-background);
+  border-radius: var(--radius-card);
+  padding: 32px;
   box-shadow: var(--shadow-card);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.pillar-card:hover {
+.card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-card-hover);
 }
 
-/* ============================================
-   JASS CARD ANIMATION
-   ============================================ */
-
-.jass-card {
-  position: absolute;
-  transform-style: preserve-3d;
-  transition: transform 0.4s ease;
-  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
-}
-
-.jass-card:hover {
-  transform: translateY(-10px) rotate(0deg) !important;
-  z-index: 10;
+.card-lg {
+  border-radius: var(--radius-card-lg);
 }
 
 /* ============================================
-   CTA BUTTON SPECIAL STYLES
+   NAV STYLES (from Figma - Capita Bold 20px)
    ============================================ */
 
-.btn-cta {
-  background: var(--color-primary);
-  color: white;
-  font-family: var(--font-capita), var(--font-display-fallback);
-  font-weight: 600;
-  padding: 1rem 2rem;
-  border-radius: 9999px;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: all 0.2s ease;
-  box-shadow: 0 4px 15px rgba(227, 30, 36, 0.3);
+.nav-link {
+  font-family: var(--font-family-serif);
+  font-weight: 700;
+  font-size: var(--font-size-20);
+  line-height: var(--line-height-20);
+  color: var(--color-foreground);
+  transition: color 0.2s ease;
 }
 
-.btn-cta:hover {
-  background: var(--color-primary-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(227, 30, 36, 0.4);
+.nav-link:hover {
+  color: var(--color-primary);
+}
+
+.nav-link-active {
+  color: var(--color-primary);
 }
 
 /* ============================================
@@ -228,22 +274,4 @@ a, button {
 
 .scroll-indicator {
   animation: bounce-subtle 2s ease-in-out infinite;
-}
-
-/* ============================================
-   RESPONSIVE UTILITIES
-   ============================================ */
-
-@media (max-width: 640px) {
-  :root {
-    --container-padding: 1rem;
-  }
-  
-  h1 {
-    font-size: 2rem;
-  }
-  
-  h2 {
-    font-size: 1.5rem;
-  }
 }

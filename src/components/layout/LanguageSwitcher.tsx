@@ -20,31 +20,52 @@ export function LanguageSwitcher({ currentLocale, variant = 'dark' }: LanguageSw
   };
 
   const isLight = variant === 'light';
-  
-  const activeColor = 'text-[var(--color-primary)]';
-  const inactiveColor = isLight 
-    ? 'text-white/70 hover:text-white' 
-    : 'text-[var(--color-foreground-muted)] hover:text-[var(--color-foreground)]';
-  const separatorColor = isLight 
-    ? 'text-white/50' 
-    : 'text-[var(--color-foreground-muted)]';
 
   return (
-    <div className="flex items-center gap-1 text-sm">
+    <div 
+      className="flex items-center gap-1"
+      style={{
+        fontFamily: 'var(--font-capita), Capita, Georgia, serif',
+        fontWeight: 700,
+        fontSize: '15px'
+      }}
+    >
       {locales.map((locale, index) => (
         <span key={locale} className="flex items-center">
           <button
             onClick={() => switchLocale(locale)}
-            className={`px-2 py-1 rounded transition-colors duration-300 ${
-              currentLocale === locale
-                ? `${activeColor} font-semibold`
-                : inactiveColor
-            }`}
+            className="px-2 py-1 rounded transition-colors duration-300"
+            style={{
+              color: currentLocale === locale
+                ? '#ff0000'
+                : isLight 
+                  ? 'rgba(255, 255, 255, 0.7)' 
+                  : '#6b6b6b'
+            }}
+            onMouseEnter={(e) => {
+              if (currentLocale !== locale) {
+                e.currentTarget.style.color = isLight ? '#ffffff' : '#000000';
+              }
+            }}
+            onMouseLeave={(e) => {
+              if (currentLocale !== locale) {
+                e.currentTarget.style.color = isLight 
+                  ? 'rgba(255, 255, 255, 0.7)' 
+                  : '#6b6b6b';
+              }
+            }}
           >
             {locale.toUpperCase()}
           </button>
           {index < locales.length - 1 && (
-            <span className={`transition-colors duration-300 ${separatorColor}`}>/</span>
+            <span 
+              className="transition-colors duration-300"
+              style={{
+                color: isLight ? 'rgba(255, 255, 255, 0.5)' : '#6b6b6b'
+              }}
+            >
+              /
+            </span>
           )}
         </span>
       ))}

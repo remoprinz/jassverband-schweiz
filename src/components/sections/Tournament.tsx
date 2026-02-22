@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { Button } from '@/components/ui';
 
 interface TournamentProps {
@@ -11,39 +12,21 @@ interface TournamentProps {
 
 export function Tournament({ title, subtitle, cta }: TournamentProps) {
   return (
-    <section className="relative py-20 md:py-28 overflow-hidden">
-      {/* Felt Green Background */}
-      <div 
-        className="absolute inset-0 bg-felt-fallback"
-        style={{
-          backgroundImage: 'url(/images/backgrounds/felt-texture.png)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundColor: 'var(--color-felt-green)',
-        }}
-      />
-      
-      {/* Subtle Vignette */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/20" />
-
-      {/* Decorative Card Symbols */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div 
-          className="absolute top-8 left-8 md:left-16 text-white/5 text-6xl md:text-8xl"
-          animate={{ rotate: [0, 5, 0] }}
-          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-        >
-          ♠
-        </motion.div>
-        <motion.div 
-          className="absolute bottom-8 right-8 md:right-16 text-white/5 text-6xl md:text-8xl"
-          animate={{ rotate: [0, -5, 0] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        >
-          ♥
-        </motion.div>
+    <section className="relative py-24 md:py-32 overflow-hidden">
+      {/* Felt Texture Background - Figma exact */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/backgrounds/felt-tournament.jpg"
+          alt="Grüner Filz Hintergrund"
+          fill
+          className="object-cover"
+          quality={85}
+        />
+        {/* Dark overlay for text contrast */}
+        <div className="absolute inset-0 bg-black/30" />
       </div>
 
+      {/* Content */}
       <div className="container-main relative z-10">
         <motion.div
           className="max-w-3xl mx-auto text-center"
@@ -54,31 +37,57 @@ export function Tournament({ title, subtitle, cta }: TournamentProps) {
         >
           {/* Badge */}
           <motion.div 
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm text-white/90 text-sm font-medium mb-6"
+            className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/15 backdrop-blur-sm text-white text-sm font-medium mb-8"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            <span className="w-2 h-2 bg-[var(--color-primary)] rounded-full animate-pulse" />
-            2026
+            <span 
+              className="w-2.5 h-2.5 rounded-full animate-pulse"
+              style={{ backgroundColor: '#ff0000' }}
+            />
+            Jetzt anmelden
           </motion.div>
 
+          {/* Title - Figma: Capita Bold 48px */}
           <h2 
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6"
-            style={{ fontFamily: 'var(--font-capita), Georgia, serif', textShadow: '0 2px 10px rgba(0,0,0,0.2)' }}
+            className="text-white mb-6"
+            style={{ 
+              fontFamily: 'var(--font-capita), Capita, Georgia, serif',
+              fontWeight: 700,
+              fontSize: 'clamp(32px, 6vw, 48px)',
+              lineHeight: '1.2',
+              letterSpacing: '-0.96px',
+              textShadow: '0 2px 20px rgba(0,0,0,0.3)'
+            }}
           >
             {title}
           </h2>
           
-          <p className="text-lg md:text-xl text-white/80 mb-8 md:mb-10 max-w-xl mx-auto">
+          {/* Subtitle - Figma: Inter Regular 20px */}
+          <p 
+            className="text-white/85 mb-10 max-w-xl mx-auto"
+            style={{
+              fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
+              fontWeight: 400,
+              fontSize: 'clamp(16px, 2.5vw, 20px)',
+              lineHeight: '1.6'
+            }}
+          >
             {subtitle}
           </p>
 
+          {/* CTA Button - Figma: Schweizer Rot, Inter Bold 17px */}
           <Button
             href="https://jassmeister.web.app"
             external
             size="lg"
+            className="bg-[#ff0000] hover:bg-[#cc0000] text-white px-8 py-4 text-[17px] font-bold rounded-full shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1"
+            style={{
+              fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
+              boxShadow: '0px 10px 15px -3px rgba(0, 0, 0, 0.2), 0px 4px 6px -4px rgba(0, 0, 0, 0.15)'
+            }}
           >
             {cta}
             <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">

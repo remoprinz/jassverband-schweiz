@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 
 interface PillarContent {
   title: string;
@@ -17,44 +16,55 @@ interface PillarsProps {
 
 const icons = {
   tradition: (
-    <svg viewBox="0 0 48 48" fill="none" className="w-full h-full">
-      <rect x="8" y="6" width="32" height="36" rx="2" stroke="currentColor" strokeWidth="2" fill="none" />
-      <path d="M14 14h20M14 22h20M14 30h12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-      <circle cx="34" cy="34" r="6" fill="currentColor" opacity="0.2" />
-      <path d="M32 34l2 2 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <svg viewBox="0 0 64 64" fill="none" className="w-full h-full">
+      <rect x="10" y="8" width="44" height="48" rx="3" stroke="currentColor" strokeWidth="2.5" fill="none" />
+      <path d="M18 20h28M18 32h28M18 44h18" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+      <circle cx="46" cy="46" r="8" fill="currentColor" opacity="0.15" />
+      <path d="M43 46l3 3 6-6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   ),
   youth: (
-    <svg viewBox="0 0 48 48" fill="none" className="w-full h-full">
-      <circle cx="24" cy="14" r="8" stroke="currentColor" strokeWidth="2" fill="none" />
-      <path d="M24 26c-8 0-14 4-14 10v4h28v-4c0-6-6-10-14-10z" stroke="currentColor" strokeWidth="2" fill="none" />
-      <path d="M36 8l4 4-8 8-4-4 8-8z" fill="currentColor" opacity="0.3" />
-      <circle cx="24" cy="32" r="3" fill="currentColor" opacity="0.5" />
+    <svg viewBox="0 0 64 64" fill="none" className="w-full h-full">
+      <circle cx="32" cy="18" r="10" stroke="currentColor" strokeWidth="2.5" fill="none" />
+      <path d="M32 32c-10 0-18 5-18 12v6h36v-6c0-7-8-12-18-12z" stroke="currentColor" strokeWidth="2.5" fill="none" />
+      <circle cx="32" cy="42" r="4" fill="currentColor" opacity="0.3" />
+      <path d="M48 10l5 5-10 10-5-5 10-10z" fill="currentColor" opacity="0.2" />
     </svg>
   ),
   future: (
-    <svg viewBox="0 0 48 48" fill="none" className="w-full h-full">
-      <circle cx="24" cy="24" r="16" stroke="currentColor" strokeWidth="2" fill="none" />
-      <path d="M24 12v12l8 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-      <circle cx="24" cy="24" r="3" fill="currentColor" />
-      <path d="M38 10l4-4M10 38l-4 4M38 38l4 4M10 10l-4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity="0.5" />
+    <svg viewBox="0 0 64 64" fill="none" className="w-full h-full">
+      <circle cx="32" cy="32" r="20" stroke="currentColor" strokeWidth="2.5" fill="none" />
+      <path d="M32 16v16l10 5" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="32" cy="32" r="4" fill="currentColor" />
+      <path d="M50 14l5-5M14 50l-5 5M50 50l5 5M14 14l-5-5" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" opacity="0.4" />
     </svg>
   ),
 };
 
 export function Pillars({ title, tradition, youth, future }: PillarsProps) {
   const pillars = [
-    { key: 'tradition', icon: icons.tradition, image: '/images/cards/rosen-under.png', ...tradition },
-    { key: 'youth', icon: icons.youth, image: '/images/cards/schilten-bauer.png', ...youth },
-    { key: 'future', icon: icons.future, image: '/images/cards/eichel-ass.png', ...future },
+    { key: 'tradition', icon: icons.tradition, ...tradition },
+    { key: 'youth', icon: icons.youth, ...youth },
+    { key: 'future', icon: icons.future, ...future },
   ];
 
   return (
-    <section className="section-spacing bg-[var(--color-cream)]">
+    <section 
+      className="py-20 md:py-24"
+      style={{ backgroundColor: '#f0eee7' }}
+    >
       <div className="container-main">
+        {/* Section Title - Figma: Capita Bold 42px */}
         <motion.h2
-          className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-12 md:mb-16 text-[var(--color-foreground)]"
-          style={{ fontFamily: 'var(--font-capita), Georgia, serif' }}
+          className="text-center mb-12 md:mb-16"
+          style={{ 
+            fontFamily: 'var(--font-capita), Capita, Georgia, serif',
+            fontWeight: 700,
+            fontSize: 'clamp(32px, 5vw, 42px)',
+            lineHeight: '1.37',
+            letterSpacing: '-0.96px',
+            color: '#000000'
+          }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -63,41 +73,56 @@ export function Pillars({ title, tradition, youth, future }: PillarsProps) {
           {title}
         </motion.h2>
         
+        {/* Cards Grid - Figma: 3 columns, 32px gap */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           {pillars.map((pillar, index) => (
             <motion.div
               key={pillar.key}
-              className="pillar-card bg-white rounded-xl p-6 lg:p-8 text-center relative overflow-hidden"
+              className="bg-white p-8 lg:p-10 text-center transition-all duration-300 hover:-translate-y-1"
+              style={{
+                borderRadius: '12px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)'
+              }}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              {/* Decorative Card Image */}
-              <div className="absolute -right-4 -top-4 w-20 h-28 opacity-10 rotate-12">
-                <Image
-                  src={pillar.image}
-                  alt=""
-                  fill
-                  className="object-contain"
-                  sizes="80px"
-                />
+              {/* Icon - Figma: 64x64px, Schweizer Rot */}
+              <div 
+                className="w-16 h-16 mx-auto mb-6"
+                style={{ color: '#ff0000' }}
+              >
+                {pillar.icon}
               </div>
-
-              <div className="relative z-10">
-                <div className="w-14 h-14 lg:w-16 lg:h-16 mx-auto mb-5 text-[var(--color-felt-green)]">
-                  {pillar.icon}
-                </div>
-                <h3 
-                  className="text-xl lg:text-2xl font-bold mb-3 text-[var(--color-foreground)]"
-                  style={{ fontFamily: 'var(--font-capita), Georgia, serif' }}
-                >
-                  {pillar.title}
-                </h3>
-                <p className="text-[var(--color-foreground-muted)] leading-relaxed text-sm lg:text-base">
-                  {pillar.description}
-                </p>
-              </div>
+              
+              {/* Card Title - Figma: Capita Bold 28px */}
+              <h3 
+                className="mb-4"
+                style={{ 
+                  fontFamily: 'var(--font-capita), Capita, Georgia, serif',
+                  fontWeight: 700,
+                  fontSize: '28px',
+                  lineHeight: '1',
+                  letterSpacing: '-0.4px',
+                  color: '#000000'
+                }}
+              >
+                {pillar.title}
+              </h3>
+              
+              {/* Description - Figma: Inter Regular 16px */}
+              <p 
+                style={{ 
+                  fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
+                  fontWeight: 400,
+                  fontSize: '16px',
+                  lineHeight: '1.5',
+                  color: '#6b6b6b'
+                }}
+              >
+                {pillar.description}
+              </p>
             </motion.div>
           ))}
         </div>

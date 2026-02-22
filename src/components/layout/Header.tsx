@@ -30,8 +30,8 @@ function Logo({ variant = 'color', shrunk = false }: { variant?: 'color' | 'whit
       alt="Jassverband Schweiz"
       width={180}
       height={48}
-      className={`transition-all duration-300 w-auto ${
-        shrunk ? 'h-8 md:h-10' : 'h-10 md:h-12'
+      className={`transition-all duration-500 w-auto ${
+        shrunk ? 'h-9 md:h-10' : 'h-11 md:h-14'
       }`}
       priority
     />
@@ -56,7 +56,6 @@ export function Header({ locale, nav }: HeaderProps) {
   }, []);
 
   const navItems = [
-    { href: `/${locale}`, label: nav.home },
     { href: `/${locale}/verband`, label: nav.verband },
     { href: `/${locale}/news`, label: nav.news },
     { href: `/${locale}/projekte`, label: nav.projekte },
@@ -65,26 +64,17 @@ export function Header({ locale, nav }: HeaderProps) {
   ];
 
   const isActive = (href: string) => {
-    if (href === `/${locale}`) {
-      return pathname === `/${locale}` || pathname === `/${locale}/`;
-    }
     return pathname.startsWith(href);
   };
 
   const showTransparent = isHomePage && !scrolled;
   const logoVariant = showTransparent ? 'white' : 'color';
-  const textColor = showTransparent 
-    ? 'text-white' 
-    : 'text-[var(--color-foreground)]';
-  const hoverColor = showTransparent
-    ? 'hover:text-white/80'
-    : 'hover:text-[var(--color-primary)]';
 
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out ${
         scrolled 
-          ? 'bg-white/95 backdrop-blur-md shadow-md' 
+          ? 'bg-white/98 backdrop-blur-md shadow-md' 
           : isHomePage 
             ? 'bg-transparent' 
             : 'bg-white shadow-sm'
@@ -92,22 +82,45 @@ export function Header({ locale, nav }: HeaderProps) {
     >
       <div className="container-main">
         <nav className={`flex items-center justify-between transition-all duration-500 ${
-          scrolled ? 'h-14 md:h-16' : 'h-16 md:h-20'
+          scrolled ? 'h-16 md:h-18' : 'h-20 md:h-24'
         }`}>
+          {/* Logo */}
           <Link href={`/${locale}`} className="flex items-center">
             <Logo variant={logoVariant} shrunk={scrolled} />
           </Link>
 
-          <div className="hidden md:flex items-center gap-6 lg:gap-8">
+          {/* Desktop Navigation - Figma: Capita Bold 20px */}
+          <div className="hidden md:flex items-center gap-8 lg:gap-10">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`text-sm font-medium transition-all duration-300 ${
-                  isActive(item.href)
-                    ? 'text-[var(--color-primary)]'
-                    : `${textColor} ${hoverColor}`
-                }`}
+                className="transition-all duration-300"
+                style={{
+                  fontFamily: 'var(--font-capita), Capita, Georgia, serif',
+                  fontWeight: 700,
+                  fontSize: '20px',
+                  lineHeight: '1',
+                  color: isActive(item.href) 
+                    ? '#ff0000' 
+                    : showTransparent 
+                      ? 'rgba(255, 255, 255, 0.95)' 
+                      : '#000000'
+                }}
+                onMouseEnter={(e) => {
+                  if (!isActive(item.href)) {
+                    e.currentTarget.style.color = showTransparent 
+                      ? 'rgba(255, 255, 255, 0.7)' 
+                      : '#ff0000';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (!isActive(item.href)) {
+                    e.currentTarget.style.color = showTransparent 
+                      ? 'rgba(255, 255, 255, 0.95)' 
+                      : '#000000';
+                  }
+                }}
               >
                 {item.label}
               </Link>
@@ -115,12 +128,15 @@ export function Header({ locale, nav }: HeaderProps) {
             <LanguageSwitcher currentLocale={locale} variant={showTransparent ? 'light' : 'dark'} />
           </div>
 
+          {/* Mobile Menu Button */}
           <button
-            className={`md:hidden p-2 rounded-lg transition-colors ${textColor}`}
+            className={`md:hidden p-2 rounded-lg transition-colors ${
+              showTransparent ? 'text-white' : 'text-black'
+            }`}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
-            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               {mobileMenuOpen ? (
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               ) : (
@@ -130,6 +146,7 @@ export function Header({ locale, nav }: HeaderProps) {
           </button>
         </nav>
 
+        {/* Mobile Menu */}
         <AnimatePresence>
           {mobileMenuOpen && (
             <motion.div
@@ -140,21 +157,39 @@ export function Header({ locale, nav }: HeaderProps) {
               className="md:hidden bg-white rounded-b-xl shadow-lg overflow-hidden"
             >
               <div className="py-4 space-y-1">
+                {/* Home link in mobile */}
+                <Link
+                  href={`/${locale}`}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block py-4 px-6 transition-colors"
+                  style={{
+                    fontFamily: 'var(--font-capita), Capita, Georgia, serif',
+                    fontWeight: 700,
+                    fontSize: '20px',
+                    color: isHomePage ? '#ff0000' : '#000000',
+                    backgroundColor: isHomePage ? '#f0eee7' : 'transparent'
+                  }}
+                >
+                  {nav.home}
+                </Link>
                 {navItems.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className={`block py-3 px-4 font-medium transition-colors ${
-                      isActive(item.href)
-                        ? 'text-[var(--color-primary)] bg-[var(--color-background-alt)]'
-                        : 'text-[var(--color-foreground)] hover:bg-[var(--color-background-alt)]'
-                    }`}
+                    className="block py-4 px-6 transition-colors"
+                    style={{
+                      fontFamily: 'var(--font-capita), Capita, Georgia, serif',
+                      fontWeight: 700,
+                      fontSize: '20px',
+                      color: isActive(item.href) ? '#ff0000' : '#000000',
+                      backgroundColor: isActive(item.href) ? '#f0eee7' : 'transparent'
+                    }}
                   >
                     {item.label}
                   </Link>
                 ))}
-                <div className="px-4 pt-3 border-t border-[var(--color-border)] mt-2">
+                <div className="px-6 pt-4 border-t border-gray-200 mt-2">
                   <LanguageSwitcher currentLocale={locale} variant="dark" />
                 </div>
               </div>

@@ -34,77 +34,138 @@ function FooterLogo() {
 
 export function Footer({ locale, content, nav }: FooterProps) {
   return (
-    <footer className="bg-[var(--color-background-dark)] text-white">
-      <div className="container-main py-12 md:py-16">
+    <footer style={{ backgroundColor: '#000000' }}>
+      <div className="container-main py-14 md:py-20">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
             <FooterLogo />
-            <p className="text-white/60 mt-4 text-sm leading-relaxed max-w-xs">
+            {/* Tagline - Figma: Inter Regular 15px */}
+            <p 
+              className="mt-5 max-w-xs"
+              style={{
+                fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
+                fontWeight: 400,
+                fontSize: '15px',
+                lineHeight: '1.6',
+                color: 'rgba(255, 255, 255, 0.6)'
+              }}
+            >
               {content.tagline}
             </p>
           </div>
 
           {/* Navigation */}
           <div>
-            <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-white/80">Navigation</h4>
-            <ul className="space-y-2.5">
-              <li>
-                <Link href={`/${locale}`} className="text-white/60 hover:text-white transition-colors text-sm">
-                  {nav.home}
-                </Link>
-              </li>
-              <li>
-                <Link href={`/${locale}/verband`} className="text-white/60 hover:text-white transition-colors text-sm">
-                  {nav.verband}
-                </Link>
-              </li>
-              <li>
-                <Link href={`/${locale}/news`} className="text-white/60 hover:text-white transition-colors text-sm">
-                  {nav.news}
-                </Link>
-              </li>
-              <li>
-                <Link href={`/${locale}/projekte`} className="text-white/60 hover:text-white transition-colors text-sm">
-                  {nav.projekte}
-                </Link>
-              </li>
-              <li>
-                <Link href={`/${locale}/partner`} className="text-white/60 hover:text-white transition-colors text-sm">
-                  {nav.partner}
-                </Link>
-              </li>
-              <li>
-                <Link href={`/${locale}/kontakt`} className="text-white/60 hover:text-white transition-colors text-sm">
-                  {nav.kontakt}
-                </Link>
-              </li>
+            <h4 
+              className="mb-5"
+              style={{
+                fontFamily: 'var(--font-capita), Capita, Georgia, serif',
+                fontWeight: 700,
+                fontSize: '13px',
+                letterSpacing: '0.1em',
+                textTransform: 'uppercase',
+                color: 'rgba(255, 255, 255, 0.8)'
+              }}
+            >
+              Navigation
+            </h4>
+            <ul className="space-y-3">
+              {[
+                { href: `/${locale}`, label: nav.home },
+                { href: `/${locale}/verband`, label: nav.verband },
+                { href: `/${locale}/news`, label: nav.news },
+                { href: `/${locale}/projekte`, label: nav.projekte },
+                { href: `/${locale}/partner`, label: nav.partner },
+                { href: `/${locale}/kontakt`, label: nav.kontakt },
+              ].map((item) => (
+                <li key={item.href}>
+                  <Link 
+                    href={item.href} 
+                    className="transition-colors duration-200 hover:text-white"
+                    style={{
+                      fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
+                      fontWeight: 400,
+                      fontSize: '15px',
+                      color: 'rgba(255, 255, 255, 0.6)'
+                    }}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Legal */}
           <div>
-            <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-white/80">{content.legal}</h4>
-            <ul className="space-y-2.5">
+            <h4 
+              className="mb-5"
+              style={{
+                fontFamily: 'var(--font-capita), Capita, Georgia, serif',
+                fontWeight: 700,
+                fontSize: '13px',
+                letterSpacing: '0.1em',
+                textTransform: 'uppercase',
+                color: 'rgba(255, 255, 255, 0.8)'
+              }}
+            >
+              {content.legal}
+            </h4>
+            <ul className="space-y-3">
               <li>
-                <Link href={`/${locale}/impressum`} className="text-white/60 hover:text-white transition-colors text-sm">
+                <Link 
+                  href={`/${locale}/impressum`} 
+                  className="transition-colors duration-200 hover:text-white"
+                  style={{
+                    fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
+                    fontWeight: 400,
+                    fontSize: '15px',
+                    color: 'rgba(255, 255, 255, 0.6)'
+                  }}
+                >
                   {content.impressum}
                 </Link>
               </li>
               <li>
-                <Link href={`/${locale}/datenschutz`} className="text-white/60 hover:text-white transition-colors text-sm">
+                <Link 
+                  href={`/${locale}/datenschutz`} 
+                  className="transition-colors duration-200 hover:text-white"
+                  style={{
+                    fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
+                    fontWeight: 400,
+                    fontSize: '15px',
+                    color: 'rgba(255, 255, 255, 0.6)'
+                  }}
+                >
                   {content.datenschutz}
                 </Link>
               </li>
             </ul>
-            <div className="mt-6">
-              <p className="text-sm text-white/50">
+            
+            {/* Contact Info */}
+            <div className="mt-8">
+              <p 
+                style={{
+                  fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
+                  fontWeight: 400,
+                  fontSize: '14px',
+                  lineHeight: '1.7',
+                  color: 'rgba(255, 255, 255, 0.4)'
+                }}
+              >
                 Hirslanderstrasse 34<br />
                 8032 Zürich
               </p>
               <a 
                 href="mailto:info@jassverband.ch" 
-                className="text-sm text-white/50 hover:text-white transition-colors mt-2 inline-block"
+                className="inline-block mt-2 transition-colors duration-200 hover:text-white"
+                style={{
+                  fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
+                  fontWeight: 400,
+                  fontSize: '14px',
+                  color: 'rgba(255, 255, 255, 0.4)'
+                }}
               >
                 info@jassverband.ch
               </a>
@@ -113,25 +174,46 @@ export function Footer({ locale, content, nav }: FooterProps) {
 
           {/* Jester Illustration */}
           <div className="hidden lg:flex items-end justify-center">
-            <div className="relative w-32 h-40">
+            <div className="relative w-36 h-44 opacity-70">
               <Image
-                src="/images/illustrations/jester.png"
-                alt="Jass Jester"
+                src="/images/cards/jester.png"
+                alt="Jass Narr"
                 fill
                 className="object-contain"
-                sizes="128px"
+                sizes="144px"
               />
             </div>
           </div>
         </div>
 
-        {/* Bottom */}
-        <div className="mt-10 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-white/40">
+        {/* Bottom Bar */}
+        <div 
+          className="mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4"
+          style={{ borderTop: '1px solid rgba(255, 255, 255, 0.1)' }}
+        >
+          <p 
+            style={{
+              fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
+              fontWeight: 400,
+              fontSize: '13px',
+              color: 'rgba(255, 255, 255, 0.4)'
+            }}
+          >
             {content.copyright}
           </p>
+          
+          {/* Lebendige Traditionen Badge */}
           <div className="flex items-center gap-3">
-            <span className="text-xs text-white/30">Gelistet beim Bundesamt für Kultur als</span>
+            <span 
+              style={{
+                fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
+                fontWeight: 400,
+                fontSize: '12px',
+                color: 'rgba(255, 255, 255, 0.3)'
+              }}
+            >
+              Gelistet beim Bundesamt für Kultur als
+            </span>
             <div className="relative w-24 h-8">
               <Image
                 src="/images/badges/lebendige-traditionen.png"

@@ -50,25 +50,70 @@ function EcosystemCard({ title, description, href, icon, ctaText }: EcosystemCar
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="block bg-white border border-[var(--color-border)] rounded-xl p-6 lg:p-8 group hover:border-[var(--color-primary)]/30 transition-all"
-      whileHover={{ y: -4, boxShadow: 'var(--shadow-card-hover)' }}
-      transition={{ duration: 0.2 }}
+      className="block bg-white p-8 group transition-all duration-300"
+      style={{
+        borderRadius: '16px',
+        boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)'
+      }}
+      whileHover={{ 
+        y: -6, 
+        boxShadow: '0 12px 32px rgba(0, 0, 0, 0.12)' 
+      }}
+      transition={{ duration: 0.25 }}
     >
-      <div className="w-10 h-10 lg:w-12 lg:h-12 mb-4 text-[var(--color-foreground)] group-hover:text-[var(--color-primary)] transition-colors">
+      {/* Icon - 48x48px */}
+      <div 
+        className="w-12 h-12 mb-5 text-black group-hover:text-[#ff0000] transition-colors duration-300"
+      >
         {icon}
       </div>
+      
+      {/* Card Title - Figma: Capita Bold 28px */}
       <h3 
-        className="text-lg lg:text-xl font-bold mb-2 text-[var(--color-foreground)] group-hover:text-[var(--color-primary)] transition-colors"
-        style={{ fontFamily: 'var(--font-capita), Georgia, serif' }}
+        className="mb-3 group-hover:text-[#ff0000] transition-colors duration-300"
+        style={{ 
+          fontFamily: 'var(--font-capita), Capita, Georgia, serif',
+          fontWeight: 700,
+          fontSize: '28px',
+          lineHeight: '1',
+          letterSpacing: '-0.4px',
+          color: '#000000'
+        }}
       >
         {title}
       </h3>
-      <p className="text-[var(--color-foreground-muted)] text-sm lg:text-base mb-4 leading-relaxed">
+      
+      {/* Description - Figma: Inter Regular 16px */}
+      <p 
+        className="mb-5"
+        style={{ 
+          fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
+          fontWeight: 400,
+          fontSize: '16px',
+          lineHeight: '1.5',
+          color: '#6b6b6b'
+        }}
+      >
         {description}
       </p>
-      <div className="flex items-center text-[var(--color-primary)] font-medium text-sm">
+      
+      {/* CTA Link - Figma: Inter Medium 15px, Rot */}
+      <div 
+        className="flex items-center"
+        style={{
+          fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
+          fontWeight: 500,
+          fontSize: '15px',
+          color: '#ff0000'
+        }}
+      >
         <span>{ctaText}</span>
-        <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg 
+          className="w-4 h-4 ml-1.5 group-hover:translate-x-1.5 transition-transform duration-300" 
+          fill="none" 
+          viewBox="0 0 24 24" 
+          stroke="currentColor"
+        >
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
         </svg>
       </div>
@@ -78,18 +123,30 @@ function EcosystemCard({ title, description, href, icon, ctaText }: EcosystemCar
 
 export function Ecosystem({ title, subtitle, jasswiki, jassguru, jassmeister }: EcosystemProps) {
   const projects = [
-    { key: 'jasswiki', href: 'https://jasswiki.ch', icon: icons.jasswiki, ctaText: 'Besuchen', ...jasswiki },
-    { key: 'jassguru', href: 'https://jassguru.ch', icon: icons.jassguru, ctaText: 'Besuchen', ...jassguru },
-    { key: 'jassmeister', href: 'https://jassmeister.web.app', icon: icons.jassmeister, ctaText: 'Besuchen', ...jassmeister },
+    { key: 'jasswiki', href: 'https://jasswiki.ch', icon: icons.jasswiki, ctaText: 'Erkunden', ...jasswiki },
+    { key: 'jassguru', href: 'https://jassguru.ch', icon: icons.jassguru, ctaText: 'Spielen', ...jassguru },
+    { key: 'jassmeister', href: 'https://jassmeister.web.app', icon: icons.jassmeister, ctaText: 'Anmelden', ...jassmeister },
   ];
 
   return (
-    <section className="section-spacing bg-[var(--color-cream)]">
+    <section 
+      className="py-20 md:py-24"
+      style={{ backgroundColor: '#f0eee7' }}
+    >
       <div className="container-main">
-        <div className="text-center mb-10 md:mb-14">
+        {/* Section Header */}
+        <div className="text-center mb-12 md:mb-16">
+          {/* Section Title - Figma: Capita Bold 42px */}
           <motion.h2
-            className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 text-[var(--color-foreground)]"
-            style={{ fontFamily: 'var(--font-capita), Georgia, serif' }}
+            className="mb-4"
+            style={{ 
+              fontFamily: 'var(--font-capita), Capita, Georgia, serif',
+              fontWeight: 700,
+              fontSize: 'clamp(32px, 5vw, 42px)',
+              lineHeight: '1.37',
+              letterSpacing: '-0.96px',
+              color: '#000000'
+            }}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -97,8 +154,17 @@ export function Ecosystem({ title, subtitle, jasswiki, jassguru, jassmeister }: 
           >
             {title}
           </motion.h2>
+          
+          {/* Subtitle - Figma: Inter Regular 20px */}
           <motion.p
-            className="text-[var(--color-foreground-muted)] text-lg max-w-2xl mx-auto"
+            className="max-w-2xl mx-auto"
+            style={{
+              fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
+              fontWeight: 400,
+              fontSize: 'clamp(16px, 2.5vw, 20px)',
+              lineHeight: '1.6',
+              color: '#6b6b6b'
+            }}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -108,6 +174,7 @@ export function Ecosystem({ title, subtitle, jasswiki, jassguru, jassmeister }: 
           </motion.p>
         </div>
         
+        {/* Cards Grid - Figma: 3 columns, 32px gap */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           {projects.map((project, index) => (
             <motion.div
