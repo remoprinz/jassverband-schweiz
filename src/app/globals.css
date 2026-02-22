@@ -288,22 +288,21 @@ a, button {
 
 @media (max-width: 767px) {
   :root {
-    --hero-felt-left: 3%;
-    --hero-felt-right: 3%;
+    --hero-felt-left: 4%;
     --hero-felt-width: 92%;
-    --hero-felt-height: 82%;
-    --hero-felt-top: 13.5%;
+    --hero-felt-height: 60%;
+    --hero-felt-top: 12%;
     --hero-felt-radius: 16px;
     --hero-felt-border: 6px;
     --hero-title-top: 21%;
     --hero-title-size: 44px;
     --hero-title-line-height: 1.1;
     --hero-title-max-width: 260px;
-    --hero-subtitle-top: 42%;
+    --hero-subtitle-top: 43.5%;
     --hero-subtitle-max-width: 260px;
     --hero-subtitle-width: 70%;
     --hero-subtitle-size: 20px;
-    --hero-cta-top: 78%;
+    --hero-cta-top: 80%;
   }
 }
 
