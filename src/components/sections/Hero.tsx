@@ -80,7 +80,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
       {/* CARD LINKS OBEN – 21:136: x=133, y=1956, rot=+15.8° */}
       <motion.div
         className="absolute z-10 hidden md:block"
-        style={{ left: '9.236%', top: '46.304%', width: '11.042%' }}
+        style={{ left: '16.18%', top: '46.304%', width: '11.042%' }}
         initial={{ opacity: 0, y: -30, rotate: 5 }}
         animate={{ opacity: 1, y: 0, rotate: 15.8 }}
         transition={{ duration: 0.8, delay: 0.3, type: 'spring', stiffness: 80 }}
@@ -99,7 +99,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
       {/* CARD LINKS UNTEN – 21:135: x=196, y=2113, rot=−27.35° */}
       <motion.div
         className="absolute z-10 hidden md:block"
-        style={{ left: '13.611%', top: '63.370%', width: '11.042%' }}
+        style={{ left: '20.55%', top: '63.370%', width: '11.042%' }}
         initial={{ opacity: 0, x: -40, rotate: -15 }}
         animate={{ opacity: 1, x: 0, rotate: -27.35 }}
         transition={{ duration: 0.9, delay: 0.4, type: 'spring', stiffness: 80 }}
