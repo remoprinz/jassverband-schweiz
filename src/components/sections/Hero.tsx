@@ -11,32 +11,39 @@ interface HeroProps {
 }
 
 /**
- * FIGMA API EXACT VALUES (via REST API with token):
- * Canvas: 1440 × 920 px
+ * FIGMA API EXACT VALUES (2026-02-22, Token-verified):
  * 
- * Teppich (21:125): x=95, y=-42 (relative to hero), w=1250, h=860
- *   → left: 6.597%, top: -4.565%, width: 86.806%, height: 93.478%
+ * Canvas (holztisch): x=0, y=1506, w=1440, h=944
+ * → aspectRatio: 1440/944
  * 
- * Card sizes (all 4 cards): 159 × 250 px
- *   → width: 11.042% of 1440
+ * Teppich (21:125): x=95, y=1488, w=1250, h=860
+ *   Relative to canvas (y=1506):
+ *   → left: 95/1440 = 6.597%
+ *   → top: (1488-1506)/944 = -1.907%
+ *   → width: 1250/1440 = 86.806%
+ *   → height: 860/944 = 91.102%
  * 
- * Card positions (relative to hero top=0):
- *   21:136 (left top):     x=133,  y=426  → left: 9.236%,  top: 46.304%
- *   21:135 (left bottom):  x=196,  y=583  → left: 13.611%, top: 63.370%
- *   21:140 (right top):    x=1104, y=468  → left: 76.667%, top: 50.870%
- *   21:144 (right bottom): x=1034, y=616  → left: 71.806%, top: 66.957%
+ * Headline (3:148): x=335, y=1804, w=771, h=140
+ *   → top: (1804-1506)/944 = 31.568%
+ *   → centered horizontally
  * 
- * Rotations:
- *   21:136: +15.8°
- *   21:135: -27.35°
- *   21:140: -16.19°
- *   21:144: +8.34°
+ * Subtitle (3:150): x=435, y=1986, w=571, h=62
+ *   → top: (1986-1506)/944 = 50.847%
+ * 
+ * CTA Button (3:152): x=567, y=2178, w=307, h=60
+ *   → top: (2178-1506)/944 = 71.186%
+ * 
+ * Cards (intrinsic 159×250, rotated bounding boxes):
+ *   21:136: x=133, y=1956, rot=+15.8°  → left: 9.236%, top: 47.669%
+ *   21:135: x=196, y=2113, rot=-27.35° → left: 13.611%, top: 64.301%
+ *   21:140: x=1104, y=1998, rot=-16.19° → left: 76.667%, top: 52.119%
+ *   21:144: x=1034, y=2146, rot=+8.34° → left: 71.806%, top: 67.797%
  */
 export function Hero({ title, subtitle, cta }: HeroProps) {
   return (
     <section
       className="relative w-full overflow-hidden"
-      style={{ aspectRatio: '1440 / 920', minHeight: '560px' }}
+      style={{ aspectRatio: '1440 / 944', minHeight: '560px' }}
     >
       {/* HOLZTISCH - full bleed */}
       <div className="absolute inset-0 z-0">
@@ -50,14 +57,14 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
         />
       </div>
 
-      {/* TEPPICH - Figma: x=95, w=1250, h=860 */}
+      {/* TEPPICH - Figma: x=95, y=1488 (top=-1.9%), w=1250, h=860 */}
       <div
         className="absolute z-[1] overflow-hidden"
         style={{
           left: '6.597%',
-          top: '-4.565%',
+          top: '-1.907%',
           width: '86.806%',
-          height: '93.478%',
+          height: '91.102%',
           borderRadius: '3.097vw',
           border: '0.6vw solid rgba(0,0,0,0.2)',
           boxShadow: 'inset 6px 6px 8px 0px rgba(0,0,0,0.15), inset 6px 6px 6px 0px rgba(0,0,0,0.25)',
@@ -78,12 +85,12 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
         />
       </div>
 
-      {/* CARD LEFT TOP - 21:136: x=133, y=426, 159×250, rotate +15.8° */}
+      {/* CARD LEFT TOP - 21:136: x=133, y=1956, rotate +15.8° */}
       <motion.div
         className="absolute z-10 hidden md:block"
         style={{
           left: '9.236%',
-          top: '46.304%',
+          top: '47.669%',
           width: '11.042%',
         }}
         initial={{ opacity: 0, y: -30, rotate: 5 }}
@@ -104,12 +111,12 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
         />
       </motion.div>
 
-      {/* CARD LEFT BOTTOM - 21:135: x=196, y=583, 159×250, rotate -27.35° */}
+      {/* CARD LEFT BOTTOM - 21:135: x=196, y=2113, rotate -27.35° */}
       <motion.div
         className="absolute z-10 hidden md:block"
         style={{
           left: '13.611%',
-          top: '63.370%',
+          top: '64.301%',
           width: '11.042%',
         }}
         initial={{ opacity: 0, x: -40, rotate: -15 }}
@@ -130,12 +137,12 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
         />
       </motion.div>
 
-      {/* CARD RIGHT TOP - 21:140: x=1104, y=468, 159×250, rotate -16.19° */}
+      {/* CARD RIGHT TOP - 21:140: x=1104, y=1998, rotate -16.19° */}
       <motion.div
         className="absolute z-10 hidden md:block"
         style={{
           left: '76.667%',
-          top: '50.870%',
+          top: '52.119%',
           width: '11.042%',
         }}
         initial={{ opacity: 0, y: -30, rotate: -5 }}
@@ -156,12 +163,12 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
         />
       </motion.div>
 
-      {/* CARD RIGHT BOTTOM - 21:144: x=1034, y=616, 159×250, rotate +8.34° */}
+      {/* CARD RIGHT BOTTOM - 21:144: x=1034, y=2146, rotate +8.34° */}
       <motion.div
         className="absolute z-10 hidden md:block"
         style={{
           left: '71.806%',
-          top: '66.957%',
+          top: '67.797%',
           width: '11.042%',
         }}
         initial={{ opacity: 0, x: 30, rotate: 15 }}
@@ -182,13 +189,15 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
         />
       </motion.div>
 
-      {/* TEXT CONTENT */}
-      <div
-        className="absolute z-20 inset-x-0 flex flex-col items-center text-center"
-        style={{ top: '25%' }}
-      >
+      {/* TEXT CONTENT - positioned exactly as in Figma */}
+      <div className="absolute z-20 inset-x-0 flex flex-col items-center text-center">
+        {/* HEADLINE - Figma: top: 31.568% */}
         <motion.h1
           style={{
+            position: 'absolute',
+            top: '31.568%',
+            left: '50%',
+            transform: 'translateX(-50%)',
             fontFamily: 'var(--font-capita), Capita, Georgia, serif',
             fontWeight: 700,
             fontSize: 'clamp(28px, 5.208vw, 75px)',
@@ -196,6 +205,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
             letterSpacing: '-0.96px',
             color: '#ffffff',
             textShadow: '0 2px 20px rgba(0,0,0,0.3)',
+            whiteSpace: 'nowrap',
           }}
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -204,15 +214,20 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
           {title}
         </motion.h1>
 
+        {/* SUBTITLE - Figma: top: 50.847% */}
         <motion.p
           style={{
+            position: 'absolute',
+            top: '50.847%',
+            left: '50%',
+            transform: 'translateX(-50%)',
             fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
             fontWeight: 400,
             fontSize: 'clamp(16px, 1.944vw, 28px)',
             lineHeight: 'clamp(22px, 2.5vw, 36px)',
             color: 'rgba(255,255,255,0.92)',
             textShadow: '0 1px 8px rgba(0,0,0,0.2)',
-            marginTop: 'clamp(16px, 2.569vw, 37px)',
+            whiteSpace: 'nowrap',
           }}
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -221,8 +236,14 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
           {subtitle}
         </motion.p>
 
+        {/* CTA BUTTON - Figma: top: 71.186% */}
         <motion.div
-          style={{ marginTop: 'clamp(32px, 8.681vw, 125px)' }}
+          style={{
+            position: 'absolute',
+            top: '71.186%',
+            left: '50%',
+            transform: 'translateX(-50%)',
+          }}
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.35 }}
@@ -242,14 +263,14 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
 
       {/* SCROLL INDICATOR */}
       <motion.div
-        className="absolute z-20 left-1/2 -translate-x-1/2 cursor-pointer"
+        className="absolute z-20 left-1/2 -translate-x-1/2"
         style={{ bottom: '4%' }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, y: [0, 8, 0] }}
         transition={{ delay: 1.5, duration: 2, repeat: Infinity }}
         onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
       >
-        <svg className="w-6 h-6 text-white/70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg className="w-6 h-6 text-white/70 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
         </svg>
       </motion.div>
