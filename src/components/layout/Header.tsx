@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { LanguageSwitcher } from './LanguageSwitcher';
@@ -18,28 +19,20 @@ interface HeaderProps {
   };
 }
 
-function Logo() {
+function Logo({ variant = 'color' }: { variant?: 'color' | 'white' }) {
+  const src = variant === 'white' 
+    ? '/images/logos/JVS Logo farbig weiss.svg'
+    : '/images/logos/JVS Logo farbig.svg';
+  
   return (
-    <div className="flex items-center gap-1">
-      <div className="flex flex-col items-center gap-0.5">
-        <svg viewBox="0 0 24 24" className="w-5 h-5 text-[var(--color-primary)]" fill="currentColor">
-          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-        </svg>
-        <div className="w-5 h-5 bg-[var(--color-primary)] rounded-full flex items-center justify-center">
-          <svg viewBox="0 0 24 24" className="w-3 h-3 text-white" fill="currentColor">
-            <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
-          </svg>
-        </div>
-      </div>
-      <div className="flex flex-col leading-none ml-1">
-        <span className="text-lg md:text-xl font-bold text-[var(--color-foreground)]" style={{ fontFamily: 'var(--font-display)' }}>
-          Jassverband
-        </span>
-        <span className="text-lg md:text-xl font-bold text-[var(--color-foreground)]" style={{ fontFamily: 'var(--font-display)' }}>
-          Schweiz
-        </span>
-      </div>
-    </div>
+    <Image
+      src={src}
+      alt="Jassverband Schweiz"
+      width={180}
+      height={48}
+      className="h-10 md:h-12 w-auto"
+      priority
+    />
   );
 }
 
@@ -83,7 +76,7 @@ export function Header({ locale, nav }: HeaderProps) {
       <div className="container-main">
         <nav className="flex items-center justify-between h-16 md:h-20">
           <Link href={`/${locale}`} className="flex items-center">
-            <Logo />
+            <Logo variant={scrolled ? 'color' : 'white'} />
           </Link>
 
           <div className="hidden md:flex items-center gap-6 lg:gap-8">
