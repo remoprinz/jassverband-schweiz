@@ -289,15 +289,15 @@ a, button {
 @media (max-width: 767px) {
   :root {
     --hero-felt-left: 2.5%;
-    --hero-felt-width: 95%;
-    --hero-felt-height: 60%;
-    --hero-felt-top: 10%;
+    --hero-felt-width: 92%;
+    --hero-felt-height: 75%;
+    --hero-felt-top: 15%;
     --hero-felt-radius: 16px;
     --hero-felt-border: 6px;
-    --hero-title-top: 15%;
-    --hero-title-size: 32px;
-    --hero-title-line-height: 1.15;
-    --hero-title-max-width: 90%;
+    --hero-title-top: 14%;
+    --hero-title-size: 44px;
+    --hero-title-line-height: 1.1;
+    --hero-title-max-width: 260px;
     --hero-subtitle-top: 52%;
     --hero-subtitle-max-width: 260px;
     --hero-subtitle-width: 70%;
