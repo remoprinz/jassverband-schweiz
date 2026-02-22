@@ -142,11 +142,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
           <Button 
             href="/de/projekte/jugendmeisterschaft" 
             size="lg" 
-            className="bg-[#ff0000] hover:bg-[#cc0000] text-white px-8 py-4 text-[17px] font-bold rounded-full shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1"
-            style={{
-              fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
-              boxShadow: '0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -4px rgba(0, 0, 0, 0.1)'
-            }}
+            className="bg-[#ff0000] hover:bg-[#cc0000] text-white px-8 py-4 text-[17px] font-bold rounded-full shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)] hover:shadow-xl transition-all transform hover:-translate-y-1"
           >
             {cta}
             <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
