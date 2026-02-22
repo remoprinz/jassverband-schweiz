@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { Button } from '@/components/ui';
-import { useState } from 'react';
 
 interface HeroProps {
   title: string;
@@ -11,160 +10,105 @@ interface HeroProps {
   cta: string;
 }
 
-interface CardData {
-  id: number;
-  src: string;
-  symbol: string;
-  color: string;
-  value: string;
-  rotate: number;
-  x: number;
-}
-
-function FallbackCard({ symbol, color, value }: { symbol: string; color: string; value: string }) {
-  return (
-    <div className="w-full h-full bg-white rounded-lg border-2 border-gray-200 flex flex-col items-center justify-center p-2">
-      <span className={`text-2xl md:text-3xl ${color}`}>{value}</span>
-      <span className={`text-4xl md:text-5xl ${color}`}>{symbol}</span>
-    </div>
-  );
-}
-
-function JassCardImage({ card }: { card: CardData }) {
-  const [hasError, setHasError] = useState(false);
-
-  if (hasError) {
-    return <FallbackCard symbol={card.symbol} color={card.color} value={card.value} />;
-  }
-
-  return (
-    <div className="relative w-full h-full rounded-lg overflow-hidden bg-white">
-      <Image
-        src={card.src}
-        alt="Jasskarte"
-        fill
-        className="object-contain p-1"
-        sizes="(max-width: 768px) 100px, 140px"
-        onError={() => setHasError(true)}
-      />
-    </div>
-  );
-}
-
-function JassCards() {
-  const cards: CardData[] = [
-    { id: 1, src: '/images/cards/schilten-under.png', symbol: '🛡️', color: 'text-yellow-600', value: 'U', rotate: -15, x: -100 },
-    { id: 2, src: '/images/cards/schilten-10.png', symbol: '🛡️', color: 'text-yellow-600', value: '10', rotate: -5, x: -35 },
-    { id: 3, src: '/images/cards/rosen-ass.png', symbol: '🌹', color: 'text-red-500', value: 'A', rotate: 8, x: 35 },
-    { id: 4, src: '/images/cards/eichel-under.png', symbol: '🌰', color: 'text-amber-700', value: 'U', rotate: 18, x: 100 },
-  ];
-
-  return (
-    <div className="relative w-full max-w-md mx-auto h-[240px] md:h-[320px]">
-      {cards.map((card, index) => (
-        <motion.div
-          key={card.id}
-          className="absolute left-1/2 top-1/2 w-[100px] md:w-[140px] h-[150px] md:h-[210px] cursor-pointer"
-          initial={{ opacity: 0, y: 50, rotate: 0 }}
-          animate={{ 
-            opacity: 1, 
-            y: 0,
-            rotate: card.rotate,
-            x: card.x,
-          }}
-          transition={{ 
-            duration: 0.8, 
-            delay: 0.5 + index * 0.12,
-            ease: "easeOut"
-          }}
-          whileHover={{ 
-            y: -15, 
-            rotate: 0,
-            scale: 1.08,
-            zIndex: 10,
-            transition: { duration: 0.25 }
-          }}
-          style={{ 
-            marginLeft: '-50px',
-            marginTop: '-75px',
-            transformOrigin: 'center bottom',
-            filter: 'drop-shadow(0 10px 25px rgba(0, 0, 0, 0.35))',
-          }}
-        >
-          <JassCardImage card={card} />
-        </motion.div>
-      ))}
-    </div>
-  );
-}
-
 export function Hero({ title, subtitle, cta }: HeroProps) {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Holztisch Background (wie in Figma) */}
+    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#1B4D3E]">
+      {/* Felt Texture Overlay (optional, if we have it) - otherwise just solid color */}
       <div 
-        className="absolute inset-0"
+        className="absolute inset-0 opacity-40 mix-blend-multiply"
         style={{
-          backgroundImage: 'url(/images/backgrounds/wood-texture.jpg)',
+          backgroundImage: 'url(/images/backgrounds/felt-texture.png)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
       />
       
-      {/* Gradient Overlay for readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/40" />
+      {/* Subtle Vignette */}
+      <div className="absolute inset-0 bg-radial-gradient from-transparent to-black/30 pointer-events-none" />
 
-      {/* Content */}
-      <div className="container-main relative z-10 pt-24 pb-16">
-        <div className="text-center">
-          <motion.h1
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6"
-            style={{ fontFamily: 'var(--font-capita), Georgia, serif', textShadow: '0 2px 20px rgba(0,0,0,0.3)' }}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            {title}
-          </motion.h1>
+      {/* Content Container */}
+      <div className="container-main relative z-20 pt-32 pb-40 text-center">
+        
+        {/* Headline */}
+        <motion.h1
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 md:mb-8 leading-tight drop-shadow-lg"
+          style={{ fontFamily: 'var(--font-capita), Georgia, serif' }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          {title}
+        </motion.h1>
 
-          <motion.p
-            className="text-lg md:text-xl lg:text-2xl text-white/90 mb-8 md:mb-12 max-w-2xl mx-auto"
-            style={{ textShadow: '0 1px 10px rgba(0,0,0,0.3)' }}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.15 }}
-          >
-            {subtitle}
-          </motion.p>
+        {/* Subtitle */}
+        <motion.p
+          className="text-lg md:text-2xl text-white/90 mb-10 md:mb-14 max-w-3xl mx-auto font-medium drop-shadow-md"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.15 }}
+        >
+          {subtitle}
+        </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="mb-12 md:mb-16"
-          >
-            <Button href="/de/projekte/jugendmeisterschaft" size="lg">
-              {cta}
-              <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Button>
-          </motion.div>
-
-          {/* Jass Cards Animation */}
-          <JassCards />
-        </div>
+        {/* CTA Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="mb-12"
+        >
+          <Button href="/de/projekte/jugendmeisterschaft" size="lg" className="bg-[#E31E24] hover:bg-[#C91A1F] text-white px-8 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
+            {cta}
+            <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </Button>
+        </motion.div>
       </div>
+
+      {/* Left Cards (Schellen König + 7) */}
+      <motion.div
+        className="absolute bottom-[-5%] left-[5%] w-[25vw] max-w-[300px] min-w-[180px] z-10"
+        initial={{ opacity: 0, x: -100, rotate: -20 }}
+        animate={{ opacity: 1, x: 0, rotate: 0 }}
+        transition={{ duration: 1, delay: 0.5, type: "spring" }}
+      >
+        <Image
+          src="/images/cards/cards-left.png"
+          alt="Jasskarten Links"
+          width={400}
+          height={500}
+          className="w-full h-auto object-contain drop-shadow-2xl"
+          priority
+        />
+      </motion.div>
+
+      {/* Right Cards (Schilten 10 + Under) */}
+      <motion.div
+        className="absolute bottom-[-5%] right-[5%] w-[25vw] max-w-[300px] min-w-[180px] z-10"
+        initial={{ opacity: 0, x: 100, rotate: 20 }}
+        animate={{ opacity: 1, x: 0, rotate: 0 }}
+        transition={{ duration: 1, delay: 0.6, type: "spring" }}
+      >
+        <Image
+          src="/images/cards/cards-right.png"
+          alt="Jasskarten Rechts"
+          width={400}
+          height={500}
+          className="w-full h-auto object-contain drop-shadow-2xl"
+          priority
+        />
+      </motion.div>
 
       {/* Scroll Indicator */}
       <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 scroll-indicator"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 cursor-pointer z-20"
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
+        animate={{ opacity: 1, y: [0, 10, 0] }}
+        transition={{ delay: 1.5, duration: 2, repeat: Infinity }}
       >
-        <svg className="w-6 h-6 text-white/70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        <svg className="w-8 h-8 text-white/70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
         </svg>
       </motion.div>
     </section>
