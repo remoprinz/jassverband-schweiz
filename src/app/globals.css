@@ -290,8 +290,8 @@ a, button {
   :root {
     --hero-felt-left: 2.5%;
     --hero-felt-width: 95%;
-    --hero-felt-height: 90%;
-    --hero-felt-top: -2%;
+    --hero-felt-height: 85%;
+    --hero-felt-top: 10%;
     --hero-felt-radius: 16px;
     --hero-felt-border: 6px;
     --hero-title-top: 15%;
