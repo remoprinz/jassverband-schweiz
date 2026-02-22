@@ -77,13 +77,13 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
 
       {/* ── KARTEN ─────────────────────────────────────────────────────── */}
 
-      {/* CARD LINKS OBEN – 21:136: x=133, y=1956, rot=+15.8° */}
+      {/* CARD LINKS OBEN – fliegt von links-oben ein */}
       <motion.div
         className="absolute z-10 hidden md:block"
         style={{ left: '12.18%', top: '46.304%', width: '11.042%' }}
-        initial={{ opacity: 0, y: -30, rotate: 5 }}
-        animate={{ opacity: 1, y: 0, rotate: 15.8 }}
-        transition={{ duration: 0.8, delay: 0.3, type: 'spring', stiffness: 80 }}
+        initial={{ opacity: 0, x: '-60vw', y: '-30vh', rotate: -120 }}
+        animate={{ opacity: 1, x: 0, y: 0, rotate: 15.8 }}
+        transition={{ duration: 1.0, delay: 0.4, type: 'spring', stiffness: 50, damping: 12 }}
       >
         <Image
           src="/images/cards/figma-card-left-top.png"
@@ -96,13 +96,13 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
         />
       </motion.div>
 
-      {/* CARD LINKS UNTEN – 21:135: x=196, y=2113, rot=−27.35° */}
+      {/* CARD LINKS UNTEN – fliegt von links ein */}
       <motion.div
         className="absolute z-10 hidden md:block"
-        style={{ left: '13.611%', top: '63.370%', width: '11.042%' }}
-        initial={{ opacity: 0, x: -40, rotate: -15 }}
-        animate={{ opacity: 1, x: 0, rotate: -27.35 }}
-        transition={{ duration: 0.9, delay: 0.4, type: 'spring', stiffness: 80 }}
+        style={{ left: '20.55%', top: '63.370%', width: '11.042%' }}
+        initial={{ opacity: 0, x: '-70vw', y: '10vh', rotate: 90 }}
+        animate={{ opacity: 1, x: 0, y: 0, rotate: -27.35 }}
+        transition={{ duration: 1.1, delay: 0.6, type: 'spring', stiffness: 50, damping: 12 }}
       >
         <Image
           src="/images/cards/figma-card-left-bottom.png"
@@ -115,13 +115,13 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
         />
       </motion.div>
 
-      {/* CARD RECHTS OBEN – 21:140: x=1104, y=1998, rot=−16.19° */}
+      {/* CARD RECHTS OBEN – fliegt von rechts-oben ein */}
       <motion.div
         className="absolute z-10 hidden md:block"
         style={{ left: '76.667%', top: '50.870%', width: '11.042%' }}
-        initial={{ opacity: 0, y: -30, rotate: -5 }}
-        animate={{ opacity: 1, y: 0, rotate: -16.19 }}
-        transition={{ duration: 0.8, delay: 0.35, type: 'spring', stiffness: 80 }}
+        initial={{ opacity: 0, x: '60vw', y: '-30vh', rotate: 120 }}
+        animate={{ opacity: 1, x: 0, y: 0, rotate: -16.19 }}
+        transition={{ duration: 1.0, delay: 0.5, type: 'spring', stiffness: 50, damping: 12 }}
       >
         <Image
           src="/images/cards/figma-card-right-top.png"
@@ -134,13 +134,13 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
         />
       </motion.div>
 
-      {/* CARD RECHTS UNTEN – 21:144: x=1034, y=2146, rot=+8.34° */}
+      {/* CARD RECHTS UNTEN – fliegt von rechts ein */}
       <motion.div
         className="absolute z-10 hidden md:block"
         style={{ left: '71.806%', top: '66.957%', width: '11.042%' }}
-        initial={{ opacity: 0, x: 30, rotate: 15 }}
-        animate={{ opacity: 1, x: 0, rotate: 8.34 }}
-        transition={{ duration: 0.9, delay: 0.45, type: 'spring', stiffness: 80 }}
+        initial={{ opacity: 0, x: '70vw', y: '10vh', rotate: -90 }}
+        animate={{ opacity: 1, x: 0, y: 0, rotate: 8.34 }}
+        transition={{ duration: 1.1, delay: 0.7, type: 'spring', stiffness: 50, damping: 12 }}
       >
         <Image
           src="/images/cards/figma-card-right-bottom.png"
