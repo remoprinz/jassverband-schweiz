@@ -19,12 +19,12 @@ const inter = Inter({
 const capita = localFont({
   src: [
     {
-      path: "../../../../public/fonts/Capita/Capita-Regular.woff2",
+      path: "../../fonts/Capita/Capita-Regular.woff2",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../../../../public/fonts/Capita/Capita-Bold.woff2",
+      path: "../../fonts/Capita/Capita-Bold.woff2",
       weight: "700",
       style: "normal",
     },
