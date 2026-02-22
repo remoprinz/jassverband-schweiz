@@ -31,7 +31,7 @@ function Logo({ variant = 'color', shrunk = false }: { variant?: 'color' | 'whit
       width={180}
       height={48}
       className={`transition-all duration-500 w-auto ${
-        shrunk ? 'h-9 md:h-10' : 'h-11 md:h-14'
+        shrunk ? 'h-10 md:h-10' : 'h-11 md:h-14'
       }`}
       priority
     />
@@ -72,13 +72,15 @@ export function Header({ locale, nav }: HeaderProps) {
 
   return (
     <header
-      className="fixed z-50 transition-all duration-500 ease-out"
+      className={`fixed z-50 transition-all duration-500 ease-out ${
+        scrolled
+          ? 'left-3 right-3 md:left-[140px] md:right-[140px]'
+          : 'left-0 right-0'
+      }`}
       style={
         scrolled
           ? {
               top: '12px',
-              left: '140px',
-              right: '140px',
               background: 'rgba(255,255,255,0.98)',
               borderRadius: '12px',
               boxShadow: '0 4px 24px rgba(0,0,0,0.10)',
@@ -87,14 +89,10 @@ export function Header({ locale, nav }: HeaderProps) {
           : isHomePage
           ? {
               top: 0,
-              left: 0,
-              right: 0,
               background: 'transparent',
             }
           : {
               top: 0,
-              left: 0,
-              right: 0,
               background: 'rgba(255,255,255,0.98)',
               boxShadow: '0 1px 8px rgba(0,0,0,0.08)',
             }
@@ -102,7 +100,7 @@ export function Header({ locale, nav }: HeaderProps) {
     >
       <div className={scrolled ? 'px-6' : 'container-main'}>
         <nav className={`flex items-center justify-between transition-all duration-500 ${
-          scrolled ? 'h-[76px]' : 'h-20 md:h-24'
+          scrolled ? 'h-[72px] md:h-[76px]' : 'h-20 md:h-24'
         }`}>
           {/* Logo */}
           <Link href={`/${locale}`} className="flex items-center">
