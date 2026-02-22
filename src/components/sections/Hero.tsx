@@ -81,9 +81,9 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
       <motion.div
         className="absolute z-10 hidden md:block"
         style={{ left: '12.18%', top: '46.304%', width: '11.042%' }}
-        initial={{ opacity: 0, x: '-60vw', y: '-30vh', rotate: -120 }}
+        initial={{ opacity: 0, x: '-60vw', y: '-30vh', rotate: -360 }}
         animate={{ opacity: 1, x: 0, y: 0, rotate: 15.8 }}
-        transition={{ duration: 1.0, delay: 0.4, type: 'spring', stiffness: 50, damping: 12 }}
+        transition={{ duration: 0.7, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
       >
         <Image
           src="/images/cards/figma-card-left-top.png"
@@ -100,9 +100,9 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
       <motion.div
         className="absolute z-10 hidden md:block"
         style={{ left: '20.55%', top: '63.370%', width: '11.042%' }}
-        initial={{ opacity: 0, x: '-70vw', y: '10vh', rotate: 90 }}
+        initial={{ opacity: 0, x: '-70vw', y: '10vh', rotate: 300 }}
         animate={{ opacity: 1, x: 0, y: 0, rotate: -27.35 }}
-        transition={{ duration: 1.1, delay: 0.6, type: 'spring', stiffness: 50, damping: 12 }}
+        transition={{ duration: 0.75, delay: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
       >
         <Image
           src="/images/cards/figma-card-left-bottom.png"
@@ -119,9 +119,9 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
       <motion.div
         className="absolute z-10 hidden md:block"
         style={{ left: '76.667%', top: '50.870%', width: '11.042%' }}
-        initial={{ opacity: 0, x: '60vw', y: '-30vh', rotate: 120 }}
+        initial={{ opacity: 0, x: '60vw', y: '-30vh', rotate: 360 }}
         animate={{ opacity: 1, x: 0, y: 0, rotate: -16.19 }}
-        transition={{ duration: 1.0, delay: 0.5, type: 'spring', stiffness: 50, damping: 12 }}
+        transition={{ duration: 0.7, delay: 0.25, ease: [0.25, 0.1, 0.25, 1] }}
       >
         <Image
           src="/images/cards/figma-card-right-top.png"
@@ -138,9 +138,9 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
       <motion.div
         className="absolute z-10 hidden md:block"
         style={{ left: '71.806%', top: '66.957%', width: '11.042%' }}
-        initial={{ opacity: 0, x: '70vw', y: '10vh', rotate: -90 }}
+        initial={{ opacity: 0, x: '70vw', y: '10vh', rotate: -300 }}
         animate={{ opacity: 1, x: 0, y: 0, rotate: 8.34 }}
-        transition={{ duration: 1.1, delay: 0.7, type: 'spring', stiffness: 50, damping: 12 }}
+        transition={{ duration: 0.75, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
       >
         <Image
           src="/images/cards/figma-card-right-bottom.png"
