@@ -69,15 +69,15 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
         />
       </div>
 
-      {/* TEPPICH – top=-4.565%, h=93.478%, overflow-hidden clippt rounded-top → kein Holzstreifen */}
+      {/* TEPPICH – responsive via CSS vars */}
       <div
         className="absolute z-[1] overflow-hidden"
         style={{
-          left: '6.597%',
-          top: '-4.565%',
-          width: '86.806%',
-          height: '93.478%',
-          borderRadius: '3.097vw',
+          left: 'var(--hero-felt-left)',
+          top: 'var(--hero-felt-top)',
+          width: 'var(--hero-felt-width)',
+          height: 'var(--hero-felt-height)',
+          borderRadius: 'var(--hero-felt-radius)',
         }}
       >
         <Image
@@ -87,12 +87,11 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
           className="object-cover"
           priority
         />
-        {/* Sauberer Rand ÜBER der Filz-Textur */}
         <div
           className="absolute inset-0 z-10 pointer-events-none"
           style={{
             borderRadius: 'inherit',
-            border: '16px solid rgba(0,0,0,0.28)',
+            border: 'var(--hero-felt-border) solid rgba(0,0,0,0.28)',
           }}
         />
       </div>
@@ -177,10 +176,10 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
 
       {/* ── TEXTE – direkt im section als absolute, kein Wrapper ─────── */}
 
-      {/* HEADLINE – Figma: y=1804 → 29.78%, minus 50px ≈ −5.43% → 24.35% */}
+      {/* HEADLINE – responsive via CSS vars */}
       <motion.div
         className="absolute z-20 left-0 right-0 flex justify-center"
-        style={{ top: '24.35%' }}
+        style={{ top: 'var(--hero-title-top)' }}
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.1 }}
@@ -188,12 +187,12 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
         <h1
           style={{
             textAlign: 'center',
-            maxWidth: '771px',
+            maxWidth: 'var(--hero-title-max-width)',
             width: '90%',
             fontFamily: 'var(--font-capita), Capita, Georgia, serif',
             fontWeight: 700,
-            fontSize: 'clamp(24px, 5.208vw, 75px)',
-            lineHeight: 1.0,
+            fontSize: 'var(--hero-title-size)',
+            lineHeight: 'var(--hero-title-line-height)',
             letterSpacing: '-0.96px',
             color: '#ffffff',
             textShadow: '0 2px 20px rgba(0,0,0,0.3)',
@@ -203,10 +202,10 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
         </h1>
       </motion.div>
 
-      {/* SUBTITLE – Figma: y=1986, w=571px → top=49.57%, zentriert */}
+      {/* SUBTITLE – responsive via CSS vars */}
       <motion.div
         className="absolute z-20 left-0 right-0 flex justify-center"
-        style={{ top: '49.57%' }}
+        style={{ top: 'var(--hero-subtitle-top)' }}
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
@@ -214,11 +213,11 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
         <p
           style={{
             textAlign: 'center',
-            maxWidth: '571px',
-            width: '80%',
+            maxWidth: 'var(--hero-subtitle-max-width)',
+            width: 'var(--hero-subtitle-width)',
             fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
             fontWeight: 400,
-            fontSize: 'clamp(15px, 1.944vw, 28px)',
+            fontSize: 'var(--hero-subtitle-size)',
             lineHeight: 1.35,
             color: 'rgba(255,255,255,0.92)',
             textShadow: '0 1px 8px rgba(0,0,0,0.2)',
@@ -228,11 +227,11 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
         </p>
       </motion.div>
 
-      {/* CTA BUTTON – Figma: y=2178, h=60 → top=70.43% */}
+      {/* CTA BUTTON – responsive via CSS vars */}
       <motion.div
         className="absolute z-20 flex justify-center"
         style={{
-          top: '70.43%',
+          top: 'var(--hero-cta-top)',
           left: 0,
           right: 0,
         }}

@@ -264,6 +264,49 @@ a, button {
 }
 
 /* ============================================
+   HERO RESPONSIVE (Mobile only)
+   Desktop values are inline in Hero.tsx
+   ============================================ */
+
+:root {
+  --hero-felt-left: 6.597%;
+  --hero-felt-width: 86.806%;
+  --hero-felt-height: 93.478%;
+  --hero-felt-top: -4.565%;
+  --hero-felt-radius: 3.097vw;
+  --hero-felt-border: 16px;
+  --hero-title-top: 24.35%;
+  --hero-title-size: clamp(24px, 5.208vw, 75px);
+  --hero-title-line-height: 1.0;
+  --hero-title-max-width: 771px;
+  --hero-subtitle-top: 49.57%;
+  --hero-subtitle-max-width: 571px;
+  --hero-subtitle-width: 80%;
+  --hero-subtitle-size: clamp(15px, 1.944vw, 28px);
+  --hero-cta-top: 70.43%;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --hero-felt-left: 2.5%;
+    --hero-felt-width: 95%;
+    --hero-felt-height: 90%;
+    --hero-felt-top: -2%;
+    --hero-felt-radius: 16px;
+    --hero-felt-border: 6px;
+    --hero-title-top: 15%;
+    --hero-title-size: 32px;
+    --hero-title-line-height: 1.15;
+    --hero-title-max-width: 90%;
+    --hero-subtitle-top: 52%;
+    --hero-subtitle-max-width: 260px;
+    --hero-subtitle-width: 70%;
+    --hero-subtitle-size: 16px;
+    --hero-cta-top: 72%;
+  }
+}
+
+/* ============================================
    SCROLL INDICATOR
    ============================================ */
 
