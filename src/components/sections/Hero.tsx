@@ -11,10 +11,22 @@ interface HeroProps {
   cta: string;
 }
 
+const ALL_CARDS = [
+  'E6','E7','E8','E9','E10','EU','EO','EK','EA',
+  'L6','L7','L8','L9','L10','LU','LO','LK','LA',
+  'R6','R7','R8','R9','R10','RU','RO','RK','RA',
+  'S6','S7','S8','S9','S10','SU','SO','SK','SA',
+];
+
+function pickRandomCards(count: number): string[] {
+  const shuffled = [...ALL_CARDS].sort(() => Math.random() - 0.5);
+  return shuffled.slice(0, count).map(c => `/cards/de/${c}.webp`);
+}
+
 function randomCardEntry(side: 'left' | 'right') {
   const angle = Math.random() * 360;
   const rad = (angle * Math.PI) / 180;
-  const dist = 70 + Math.random() * 30; // 70–100vw entfernt
+  const dist = 70 + Math.random() * 30;
   const x = Math.cos(rad) * dist;
   const y = Math.sin(rad) * dist;
   const rot = (Math.random() > 0.5 ? 1 : -1) * (200 + Math.random() * 300);
@@ -45,16 +57,19 @@ function randomCardEntry(side: 'left' | 'right') {
  *   21:144 (rechts-unten): x=1034,y=2146 → L=71.81%, T=(2146-1530)/920=66.96%  rot=+8.34°
  */
 export function Hero({ title, subtitle, cta }: HeroProps) {
-  const cardEntries = useMemo(() => ({
-    leftTop: randomCardEntry('left'),
-    leftBottom: randomCardEntry('left'),
-    rightTop: randomCardEntry('right'),
-    rightBottom: randomCardEntry('right'),
-    mobileLeft1: randomCardEntry('left'),
-    mobileLeft2: randomCardEntry('left'),
-    mobileRight1: randomCardEntry('right'),
-    mobileRight2: randomCardEntry('right'),
-  }), []);
+  const cardEntries = useMemo(() => {
+    const cards = pickRandomCards(8);
+    return {
+      leftTop: { ...randomCardEntry('left'), src: cards[0] },
+      leftBottom: { ...randomCardEntry('left'), src: cards[1] },
+      rightTop: { ...randomCardEntry('right'), src: cards[2] },
+      rightBottom: { ...randomCardEntry('right'), src: cards[3] },
+      mobileLeft1: { ...randomCardEntry('left'), src: cards[4] },
+      mobileLeft2: { ...randomCardEntry('left'), src: cards[5] },
+      mobileRight1: { ...randomCardEntry('right'), src: cards[6] },
+      mobileRight2: { ...randomCardEntry('right'), src: cards[7] },
+    };
+  }, []);
 
   return (
     <section
@@ -111,7 +126,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
         transition={{ duration: 0.7, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
       >
         <Image
-          src="/images/cards/figma-card-left-top.png"
+          src={cardEntries.leftTop.src}
           alt="Jasskarte"
           width={159}
           height={250}
@@ -130,7 +145,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
         transition={{ duration: 0.75, delay: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
       >
         <Image
-          src="/images/cards/figma-card-left-bottom.png"
+          src={cardEntries.leftBottom.src}
           alt="Jasskarte"
           width={159}
           height={250}
@@ -149,7 +164,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
         transition={{ duration: 0.7, delay: 0.25, ease: [0.25, 0.1, 0.25, 1] }}
       >
         <Image
-          src="/images/cards/figma-card-right-top.png"
+          src={cardEntries.rightTop.src}
           alt="Jasskarte"
           width={159}
           height={250}
@@ -168,7 +183,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
         transition={{ duration: 0.75, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
       >
         <Image
-          src="/images/cards/figma-card-right-bottom.png"
+          src={cardEntries.rightBottom.src}
           alt="Jasskarte"
           width={159}
           height={250}
@@ -189,7 +204,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
         transition={{ duration: 0.7, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
       >
         <Image
-          src="/images/cards/figma-card-left-top.png"
+          src={cardEntries.mobileLeft1.src}
           alt="Jasskarte"
           width={159}
           height={250}
@@ -207,7 +222,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
         transition={{ duration: 0.75, delay: 0.45, ease: [0.25, 0.1, 0.25, 1] }}
       >
         <Image
-          src="/images/cards/figma-card-left-bottom.png"
+          src={cardEntries.mobileLeft2.src}
           alt="Jasskarte"
           width={159}
           height={250}
@@ -225,7 +240,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
         transition={{ duration: 0.7, delay: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
       >
         <Image
-          src="/images/cards/figma-card-right-top.png"
+          src={cardEntries.mobileRight1.src}
           alt="Jasskarte"
           width={159}
           height={250}
@@ -243,7 +258,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
         transition={{ duration: 0.75, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
       >
         <Image
-          src="/images/cards/figma-card-right-bottom.png"
+          src={cardEntries.mobileRight2.src}
           alt="Jasskarte"
           width={159}
           height={250}
