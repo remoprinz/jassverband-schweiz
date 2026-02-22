@@ -11,28 +11,29 @@ interface HeroProps {
 }
 
 /**
- * FIGMA API – verifizierte Werte (Token-Abruf 2026-02-22):
+ * FIGMA API – KORREKTER REFERENZRAHMEN (Home-Frame = y=1530, h≈920):
  *
- * Canvas (holztisch 21:207): x=0, y=1506, w=1440, h=944
+ * Home-Frame (2:441):  x=0, y=1530, w=1440 → unser Section-Koordinatensystem
+ * Section-Höhe (sichtbar): 1506+944 - 1530 = 920px → aspectRatio: 1440/920
  *
- * Teppich (21:125):  x=95,  y=1488 → top=(1488-1506)/944=−1.9%
- *                    w=1250, h=860  → w=86.8%, h=91.1%
+ * Teppich (36:52):   y=1488 → top=(1488-1530)/920 = -4.565%
+ *                    w=1250, h=860 → w=86.806%, h=860/920=93.478%
  *
- * Headline (3:148):  y=1804 → top=(1804−1506)/944=31.57%  cx=335+771/2=720.5 → 50%
- * Subtitle (3:150):  y=1986 → top=(1986−1506)/944=50.85%
- * CTA (3:152):       y=2178 → top=(2178−1506)/944=71.19%
+ * Headline (3:148):  y=1804, w=771  → top=(1804-1530)/920=29.78%, maxW=771/1440=53.54%
+ * Subtitle (3:150):  y=1986, w=571  → top=(1986-1530)/920=49.57%, maxW=571/1440=39.65%
+ * CTA (3:152):       y=2178, h=60   → top=(2178-1530)/920=70.43%
  *
- * Karten (Intrinsic 159×250, Bounding-Box-Position):
- *   21:136 (left-top):    x=133,  y=1956 → L=9.24%,  T=47.67%  rot=+15.8°
- *   21:135 (left-bottom): x=196,  y=2113 → L=13.61%, T=64.30%  rot=−27.35°
- *   21:140 (right-top):   x=1104, y=1998 → L=76.67%, T=52.12%  rot=−16.19°
- *   21:144 (right-bottom):x=1034, y=2146 → L=71.81%, T=67.80%  rot=+8.34°
+ * Karten (bounding-box top-left x/y, intrinsic 159×250px):
+ *   21:136 (links-oben):   x=133, y=1956 → L=9.24%,  T=(1956-1530)/920=46.30%  rot=+15.8°
+ *   21:135 (links-unten):  x=196, y=2113 → L=13.61%, T=(2113-1530)/920=63.37%  rot=−27.35°
+ *   21:140 (rechts-oben):  x=1104,y=1998 → L=76.67%, T=(1998-1530)/920=50.87%  rot=−16.19°
+ *   21:144 (rechts-unten): x=1034,y=2146 → L=71.81%, T=(2146-1530)/920=66.96%  rot=+8.34°
  */
 export function Hero({ title, subtitle, cta }: HeroProps) {
   return (
     <section
       className="relative w-full overflow-hidden"
-      style={{ aspectRatio: '1440 / 944', minHeight: '520px' }}
+      style={{ aspectRatio: '1440 / 920', minHeight: '520px' }}
     >
       {/* HOLZTISCH – full bleed */}
       <div className="absolute inset-0 z-0">
@@ -46,14 +47,14 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
         />
       </div>
 
-      {/* TEPPICH – Figma: top=−1.9%, w=86.8%, h=91.1% */}
+      {/* TEPPICH – top=-4.565%, h=93.478%, overflow-hidden clippt rounded-top → kein Holzstreifen */}
       <div
         className="absolute z-[1] overflow-hidden"
         style={{
           left: '6.597%',
-          top: '-1.907%',
+          top: '-4.565%',
           width: '86.806%',
-          height: '91.102%',
+          height: '93.478%',
           borderRadius: '3.097vw',
           border: '0.6vw solid rgba(0,0,0,0.2)',
           boxShadow:
@@ -76,12 +77,12 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
         />
       </div>
 
-      {/* ── KARTEN ────────────────────────────────────────────── */}
+      {/* ── KARTEN ─────────────────────────────────────────────────────── */}
 
-      {/* CARD LEFT TOP – 21:136: x=133, y=1956, rot=+15.8° */}
+      {/* CARD LINKS OBEN – 21:136: x=133, y=1956, rot=+15.8° */}
       <motion.div
         className="absolute z-10 hidden md:block"
-        style={{ left: '9.236%', top: '47.669%', width: '11.042%' }}
+        style={{ left: '9.236%', top: '46.304%', width: '11.042%' }}
         initial={{ opacity: 0, y: -30, rotate: 5 }}
         animate={{ opacity: 1, y: 0, rotate: 15.8 }}
         transition={{ duration: 0.8, delay: 0.3, type: 'spring', stiffness: 80 }}
@@ -97,10 +98,10 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
         />
       </motion.div>
 
-      {/* CARD LEFT BOTTOM – 21:135: x=196, y=2113, rot=−27.35° */}
+      {/* CARD LINKS UNTEN – 21:135: x=196, y=2113, rot=−27.35° */}
       <motion.div
         className="absolute z-10 hidden md:block"
-        style={{ left: '13.611%', top: '64.301%', width: '11.042%' }}
+        style={{ left: '13.611%', top: '63.370%', width: '11.042%' }}
         initial={{ opacity: 0, x: -40, rotate: -15 }}
         animate={{ opacity: 1, x: 0, rotate: -27.35 }}
         transition={{ duration: 0.9, delay: 0.4, type: 'spring', stiffness: 80 }}
@@ -116,10 +117,10 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
         />
       </motion.div>
 
-      {/* CARD RIGHT TOP – 21:140: x=1104, y=1998, rot=−16.19° */}
+      {/* CARD RECHTS OBEN – 21:140: x=1104, y=1998, rot=−16.19° */}
       <motion.div
         className="absolute z-10 hidden md:block"
-        style={{ left: '76.667%', top: '52.119%', width: '11.042%' }}
+        style={{ left: '76.667%', top: '50.870%', width: '11.042%' }}
         initial={{ opacity: 0, y: -30, rotate: -5 }}
         animate={{ opacity: 1, y: 0, rotate: -16.19 }}
         transition={{ duration: 0.8, delay: 0.35, type: 'spring', stiffness: 80 }}
@@ -135,10 +136,10 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
         />
       </motion.div>
 
-      {/* CARD RIGHT BOTTOM – 21:144: x=1034, y=2146, rot=+8.34° */}
+      {/* CARD RECHTS UNTEN – 21:144: x=1034, y=2146, rot=+8.34° */}
       <motion.div
         className="absolute z-10 hidden md:block"
-        style={{ left: '71.806%', top: '67.797%', width: '11.042%' }}
+        style={{ left: '71.806%', top: '66.957%', width: '11.042%' }}
         initial={{ opacity: 0, x: 30, rotate: 15 }}
         animate={{ opacity: 1, x: 0, rotate: 8.34 }}
         transition={{ duration: 0.9, delay: 0.45, type: 'spring', stiffness: 80 }}
@@ -154,16 +155,20 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
         />
       </motion.div>
 
-      {/* ── TEXTE – direkt im section, kein Wrapper-Div ─────── */}
+      {/* ── TEXTE – direkt im section als absolute, kein Wrapper ─────── */}
 
-      {/* HEADLINE – Figma: y=1804 → top=31.57% */}
+      {/* HEADLINE – Figma: y=1804, w=771px → top=29.78%, maxWidth=53.54% */}
       <motion.h1
-        className="absolute z-20 w-full text-center px-8"
+        className="absolute z-20 text-center"
         style={{
-          top: '31.57%',
+          top: '29.78%',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          width: '90%',
+          maxWidth: '771px',
           fontFamily: 'var(--font-capita), Capita, Georgia, serif',
           fontWeight: 700,
-          fontSize: 'clamp(28px, 5.208vw, 75px)',
+          fontSize: 'clamp(24px, 5.208vw, 75px)',
           lineHeight: 1.0,
           letterSpacing: '-0.96px',
           color: '#ffffff',
@@ -176,14 +181,18 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
         {title}
       </motion.h1>
 
-      {/* SUBTITLE – Figma: y=1986 → top=50.85% */}
+      {/* SUBTITLE – Figma: y=1986, w=571px → top=49.57%, maxWidth=39.65% */}
       <motion.p
-        className="absolute z-20 w-full text-center px-8"
+        className="absolute z-20 text-center"
         style={{
-          top: '50.85%',
+          top: '49.57%',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          width: '80%',
+          maxWidth: '571px',
           fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
           fontWeight: 400,
-          fontSize: 'clamp(16px, 1.944vw, 28px)',
+          fontSize: 'clamp(15px, 1.944vw, 28px)',
           lineHeight: 1.35,
           color: 'rgba(255,255,255,0.92)',
           textShadow: '0 1px 8px rgba(0,0,0,0.2)',
@@ -195,10 +204,14 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
         {subtitle}
       </motion.p>
 
-      {/* CTA BUTTON – Figma: y=2178 → top=71.19% */}
+      {/* CTA BUTTON – Figma: y=2178, h=60 → top=70.43% */}
       <motion.div
-        className="absolute z-20 w-full flex justify-center"
-        style={{ top: '71.19%' }}
+        className="absolute z-20 flex justify-center"
+        style={{
+          top: '70.43%',
+          left: 0,
+          right: 0,
+        }}
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.35 }}
