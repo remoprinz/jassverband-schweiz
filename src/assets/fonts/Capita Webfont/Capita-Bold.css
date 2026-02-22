@@ -1,0 +1,13 @@
+/* Webfont: Capita-Bold */@font-face {
+    font-family: 'Capita-Bold';
+    src: url('Capita-Bold.eot'); /* IE9 Compat Modes */
+    src: url('Capita-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('Capita-Bold.woff2') format('woff2'), /* Modern Browsers */
+         url('Capita-Bold.woff') format('woff'), /* Modern Browsers */
+         url('Capita-Bold.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('Capita-Bold.svg#Capita-Bold') format('svg'); /* Legacy iOS */
+    font-style: normal;
+    font-weight: bold;
+    text-rendering: optimizeLegibility;
+}
+

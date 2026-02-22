@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
@@ -9,14 +10,27 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import "../globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const capita = localFont({
+  src: [
+    {
+      path: "../../assets/fonts/Capita Webfont/Capita-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../assets/fonts/Capita Webfont/Capita-Bold.woff2",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-capita",
+  display: "swap",
 });
 
 interface LocaleLayoutProps {
@@ -59,7 +73,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
 
   return (
     <html lang={locale}>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${inter.variable} ${capita.variable} antialiased`}>
         <NextIntlClientProvider messages={messages}>
           <Header locale={locale} nav={nav} />
           <main className="pt-16 md:pt-20">

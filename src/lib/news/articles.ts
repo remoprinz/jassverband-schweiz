@@ -65,7 +65,7 @@ export const articles: NewsArticle[] = [
     slug: "gruendung-jassverband-schweiz",
     publishedAt: "2026-01-15",
     author: authors.remo,
-    readingTime: 4,
+    readingTime: 6,
     featured: true,
     tags: ["verband", "gründung", "meilenstein"],
     de: {
@@ -76,19 +76,38 @@ export const articles: NewsArticle[] = [
 
 Am 15. Januar 2026 wurde in Zürich Geschichte geschrieben: Die Gründungsmitglieder Remo Prinz, Fabian Cadonau und Dr. Erich Studerus haben den **Jassverband Schweiz (JVS)** ins Leben gerufen.
 
-### Unsere Vision
+Das Jassen ist mehr als ein Kartenspiel. Es ist ein Stück Schweizer Identität, das in Beizen und Stuben, an Familientischen und in Vereinslokalen lebendig bleibt. Es verbindet Generationen, überbrückt Sprachgrenzen und schafft Momente echter Begegnung in einer zunehmend digitalen Welt.
 
-Der Jassverband Schweiz hat sich zum Ziel gesetzt, das Jassen als **immaterielles Kulturerbe** der Schweiz zu fördern und für kommende Generationen zu bewahren. Dabei setzen wir auf drei Säulen:
+### Unsere Philosophie: Tradition trifft Innovation
 
-1. **Tradition bewahren** – Jassen ist beim Bundesamt für Kultur als "Lebendige Tradition" gelistet
-2. **Jugend fördern** – Mit der Schweizer Jugend Team-Schiebermeisterschaft bringen wir strategisches Denken in Schulen
-3. **Zukunft gestalten** – Digitale Plattformen und ein nationales Elo-System modernisieren den Sport
+Wir glauben, dass wahre Tradition nicht in Museen gehört. Sie lebt, wenn sie gelebt wird. Der Jassverband Schweiz steht für eine einfache Überzeugung: **Das Jassen verdient eine moderne Zukunft, ohne seine Seele zu verlieren.**
+
+Das bedeutet konkret:
+
+- **Wir bewahren, was zählt.** Die Rituale, die Begriffe, die kleinen Traditionen am Tisch – vom "Stöck-Wys-Stich" bis zum respektvollen Umgang mit dem Gegner.
+- **Wir öffnen, was verstaubt wirkt.** Jassen ist kein Sport für ältere Herren. Es ist ein strategischer Denksport, der junge Köpfe fordert und fördert.
+- **Wir digitalisieren, ohne zu vergessen.** Unsere Plattformen – JassWiki, JassGuru, Jassmeister – sind Werkzeuge, nicht Ersatz. Der echte Jass findet immer noch am Tisch statt.
+
+### Die drei Säulen unserer Mission
+
+**1. Tradition bewahren**  
+Das Jassen ist beim Bundesamt für Kultur als "Lebendige Tradition" gelistet – eine Ehre, die verpflichtet. Wir dokumentieren Wissen, sammeln Varianten und sorgen dafür, dass dieses Erbe nicht in Vergessenheit gerät.
+
+**2. Jugend fördern**  
+Mit der Schweizer Jugend Team-Schiebermeisterschaft bringen wir strategisches Denken und echte Teamarbeit in Schulen und Universitäten. Jassen schärft den Geist: Wahrscheinlichkeitsrechnung, Mustererkennung, Kommunikation ohne Worte – Fähigkeiten, die weit über den Kartentisch hinaus wertvoll sind.
+
+**3. Zukunft gestalten**  
+Ein nationales Elo-System macht Leistung messbar und vergleichbar. Digitale Plattformen ermöglichen Training und Austausch. Aber am Ende zählt, was zählt: vier Menschen, 36 Karten, und die Frage, wer den besseren Durchblick hat.
+
+### Warum jetzt?
+
+Das Jassen erlebt einen stillen Wandel. Die Generation, die es am Stammtisch gelernt hat, wird älter. Gleichzeitig entdecken junge Menschen das Spiel neu – oft über digitale Wege. Der Jassverband Schweiz will diese Brücke sein: zwischen analog und digital, zwischen Tradition und Moderne, zwischen den Generationen.
 
 ### Was kommt als Nächstes?
 
-Im ersten Jahr fokussieren wir uns auf die **Schweizer Jugend Team-Schiebermeisterschaft**. Dieses Leuchtturmprojekt soll zeigen, dass Jassen mehr ist als ein Kartenspiel – es ist ein strategischer Denksport, der kognitive Fähigkeiten schärft und Teamwork fördert.
+Im ersten Jahr fokussieren wir uns auf die **Schweizer Jugend Team-Schiebermeisterschaft 2026**. Dieses Leuchtturmprojekt soll zeigen, was möglich ist, wenn man das Jassen ernst nimmt – als Sport, als Kulturgut, als Gemeinschaft.
 
-Wir freuen uns auf eine spannende Zukunft und laden alle Jass-Enthusiasten ein, Teil dieser Bewegung zu werden.
+Wir laden alle ein, Teil dieser Bewegung zu werden. Ob als Spieler, Partner, oder einfach als jemand, der findet: Das Jassen hat eine moderne Zukunft verdient.
 
 *Der Vorstand des Jassverbands Schweiz*
       `.trim(),

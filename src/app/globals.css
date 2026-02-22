@@ -2,19 +2,28 @@
 
 /* ============================================
    JASSVERBAND SCHWEIZ - DESIGN SYSTEM
-   "Neo-Swiss" Style: Clean, Bold, Modern
+   "Swiss Heritage" Style: Traditional, Warm, Authentic
    ============================================ */
 
 :root {
-  /* Primary Colors */
-  --color-primary: #FF3B30;
-  --color-primary-hover: #E6352B;
-  --color-primary-light: #FF6B63;
+  /* Primary Brand Colors */
+  --color-primary: #E31E24;
+  --color-primary-hover: #C91A1F;
+  --color-primary-light: #FF4A4F;
+  
+  /* Swiss Heritage Palette */
+  --color-wood-dark: #5D4037;
+  --color-wood-medium: #8B6F47;
+  --color-wood-light: #A1887F;
+  --color-felt-green: #1B4D3E;
+  --color-felt-green-light: #2E7D5A;
+  --color-cream: #F5F1E8;
+  --color-cream-dark: #EDE8DC;
   
   /* Neutral Colors */
   --color-background: #FFFFFF;
-  --color-background-alt: #F5F5F5;
-  --color-background-dark: #0A0A0A;
+  --color-background-alt: #F5F1E8;
+  --color-background-dark: #1A1512;
   --color-foreground: #1A1A1A;
   --color-foreground-muted: #6B6B6B;
   --color-foreground-light: #FFFFFF;
@@ -26,17 +35,23 @@
   --color-border: #E5E5E5;
   --color-border-dark: #333333;
   
-  /* Typography */
-  --font-sans: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
-  --font-mono: var(--font-geist-mono), monospace;
+  /* Typography (Capita for headlines, Inter for body - verified via Figma API) */
+  --font-display: var(--font-capita), Georgia, serif;
+  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+  --font-mono: ui-monospace, monospace;
   
   /* Spacing */
-  --spacing-section: 6rem;
-  --spacing-section-mobile: 4rem;
+  --spacing-section: 5rem;
+  --spacing-section-mobile: 3rem;
   
   /* Container */
   --container-max: 1200px;
   --container-padding: 1.5rem;
+  
+  /* Shadows */
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --shadow-card-hover: 0 8px 30px rgba(0, 0, 0, 0.12);
+  --shadow-elevated: 0 20px 50px rgba(0, 0, 0, 0.15);
 }
 
 @theme inline {
@@ -63,9 +78,10 @@ body {
 
 /* Typography Scale */
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
 }
 
 /* Selection */
@@ -104,5 +120,128 @@ a, button {
   .section-spacing {
     padding-top: var(--spacing-section-mobile);
     padding-bottom: var(--spacing-section-mobile);
+  }
+}
+
+/* ============================================
+   WOOD TEXTURE BACKGROUNDS
+   ============================================ */
+
+.bg-wood {
+  background-color: var(--color-wood-dark);
+  background-image: url('/images/backgrounds/wood-texture.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-felt {
+  background-color: var(--color-felt-green);
+  background-image: url('/images/backgrounds/felt-texture.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Fallback if no texture image */
+.bg-wood-fallback {
+  background: linear-gradient(
+    135deg,
+    var(--color-wood-dark) 0%,
+    var(--color-wood-medium) 50%,
+    var(--color-wood-dark) 100%
+  );
+}
+
+.bg-felt-fallback {
+  background: linear-gradient(
+    180deg,
+    var(--color-felt-green) 0%,
+    var(--color-felt-green-light) 100%
+  );
+}
+
+/* ============================================
+   CARD STYLES (Pillar Cards)
+   ============================================ */
+
+.pillar-card {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow-card);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pillar-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* ============================================
+   JASS CARD ANIMATION
+   ============================================ */
+
+.jass-card {
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+}
+
+.jass-card:hover {
+  transform: translateY(-10px) rotate(0deg) !important;
+  z-index: 10;
+}
+
+/* ============================================
+   CTA BUTTON SPECIAL STYLES
+   ============================================ */
+
+.btn-cta {
+  background: var(--color-primary);
+  color: white;
+  font-family: var(--font-display);
+  font-weight: 600;
+  padding: 1rem 2rem;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 15px rgba(227, 30, 36, 0.3);
+}
+
+.btn-cta:hover {
+  background: var(--color-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(227, 30, 36, 0.4);
+}
+
+/* ============================================
+   SCROLL INDICATOR
+   ============================================ */
+
+@keyframes bounce-subtle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+.scroll-indicator {
+  animation: bounce-subtle 2s ease-in-out infinite;
+}
+
+/* ============================================
+   RESPONSIVE UTILITIES
+   ============================================ */
+
+@media (max-width: 640px) {
+  :root {
+    --container-padding: 1rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
   }
 }

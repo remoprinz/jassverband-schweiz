@@ -11,23 +11,38 @@ interface TournamentProps {
 
 export function Tournament({ title, subtitle, cta }: TournamentProps) {
   return (
-    <section className="relative py-24 md:py-32 bg-[var(--color-background-dark)] overflow-hidden">
-      {/* Background Accent */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[var(--color-accent-jassmeister)] to-transparent" />
-      </div>
+    <section className="relative py-20 md:py-28 overflow-hidden">
+      {/* Felt Green Background */}
+      <div 
+        className="absolute inset-0 bg-felt-fallback"
+        style={{
+          backgroundImage: 'url(/images/backgrounds/felt-texture.png)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundColor: 'var(--color-felt-green)',
+        }}
+      />
+      
+      {/* Subtle Vignette */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/20" />
 
-      {/* Animated Elements */}
-      <motion.div
-        className="absolute top-10 left-10 w-32 h-32 border-2 border-[var(--color-accent-jassmeister)] rounded-full opacity-20"
-        animate={{ scale: [1, 1.2, 1], rotate: [0, 180, 360] }}
-        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-      />
-      <motion.div
-        className="absolute bottom-10 right-10 w-24 h-24 border-2 border-white rounded-full opacity-10"
-        animate={{ scale: [1, 1.3, 1] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-      />
+      {/* Decorative Card Symbols */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <motion.div 
+          className="absolute top-8 left-8 md:left-16 text-white/5 text-6xl md:text-8xl"
+          animate={{ rotate: [0, 5, 0] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+        >
+          ♠
+        </motion.div>
+        <motion.div 
+          className="absolute bottom-8 right-8 md:right-16 text-white/5 text-6xl md:text-8xl"
+          animate={{ rotate: [0, -5, 0] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        >
+          ♥
+        </motion.div>
+      </div>
 
       <div className="container-main relative z-10">
         <motion.div
@@ -37,16 +52,26 @@ export function Tournament({ title, subtitle, cta }: TournamentProps) {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--color-accent-jassmeister)]/20 text-[var(--color-accent-jassmeister)] text-sm font-medium mb-6">
-            <span className="w-2 h-2 bg-[var(--color-accent-jassmeister)] rounded-full animate-pulse" />
+          {/* Badge */}
+          <motion.div 
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm text-white/90 text-sm font-medium mb-6"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+          >
+            <span className="w-2 h-2 bg-[var(--color-primary)] rounded-full animate-pulse" />
             2026
-          </div>
+          </motion.div>
 
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
+          <h2 
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6"
+            style={{ fontFamily: 'var(--font-display)', textShadow: '0 2px 10px rgba(0,0,0,0.2)' }}
+          >
             {title}
           </h2>
           
-          <p className="text-xl text-white/70 mb-10">
+          <p className="text-lg md:text-xl text-white/80 mb-8 md:mb-10 max-w-xl mx-auto">
             {subtitle}
           </p>
 
@@ -54,7 +79,6 @@ export function Tournament({ title, subtitle, cta }: TournamentProps) {
             href="https://jassmeister.web.app"
             external
             size="lg"
-            className="bg-[var(--color-accent-jassmeister)] hover:bg-[#E5551B]"
           >
             {cta}
             <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
