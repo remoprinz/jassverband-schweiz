@@ -1,5 +1,6 @@
 'use client';
 
+import { useMemo } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { Button } from '@/components/ui';
@@ -8,6 +9,20 @@ interface HeroProps {
   title: string;
   subtitle: string;
   cta: string;
+}
+
+function randomCardEntry(side: 'left' | 'right') {
+  const angle = Math.random() * 360;
+  const rad = (angle * Math.PI) / 180;
+  const dist = 70 + Math.random() * 30; // 70–100vw entfernt
+  const x = Math.cos(rad) * dist;
+  const y = Math.sin(rad) * dist;
+  const rot = (Math.random() > 0.5 ? 1 : -1) * (200 + Math.random() * 300);
+  return {
+    x: `${side === 'left' ? -Math.abs(x) : Math.abs(x)}vw`,
+    y: `${y}vh`,
+    rotate: rot,
+  };
 }
 
 /**
@@ -30,6 +45,13 @@ interface HeroProps {
  *   21:144 (rechts-unten): x=1034,y=2146 → L=71.81%, T=(2146-1530)/920=66.96%  rot=+8.34°
  */
 export function Hero({ title, subtitle, cta }: HeroProps) {
+  const cardEntries = useMemo(() => ({
+    leftTop: randomCardEntry('left'),
+    leftBottom: randomCardEntry('left'),
+    rightTop: randomCardEntry('right'),
+    rightBottom: randomCardEntry('right'),
+  }), []);
+
   return (
     <section
       className="relative w-full overflow-hidden"
@@ -81,7 +103,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
       <motion.div
         className="absolute z-10 hidden md:block"
         style={{ left: '12.18%', top: '46.304%', width: '11.042%' }}
-        initial={{ opacity: 0, x: '-60vw', y: '-30vh', rotate: -360 }}
+        initial={{ opacity: 0, x: cardEntries.leftTop.x, y: cardEntries.leftTop.y, rotate: cardEntries.leftTop.rotate }}
         animate={{ opacity: 1, x: 0, y: 0, rotate: 15.8 }}
         transition={{ duration: 0.7, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
       >
@@ -100,7 +122,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
       <motion.div
         className="absolute z-10 hidden md:block"
         style={{ left: '20.55%', top: '63.370%', width: '11.042%' }}
-        initial={{ opacity: 0, x: '-70vw', y: '10vh', rotate: 300 }}
+        initial={{ opacity: 0, x: cardEntries.leftBottom.x, y: cardEntries.leftBottom.y, rotate: cardEntries.leftBottom.rotate }}
         animate={{ opacity: 1, x: 0, y: 0, rotate: -27.35 }}
         transition={{ duration: 0.75, delay: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
       >
@@ -119,7 +141,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
       <motion.div
         className="absolute z-10 hidden md:block"
         style={{ left: '76.667%', top: '50.870%', width: '11.042%' }}
-        initial={{ opacity: 0, x: '60vw', y: '-30vh', rotate: 360 }}
+        initial={{ opacity: 0, x: cardEntries.rightTop.x, y: cardEntries.rightTop.y, rotate: cardEntries.rightTop.rotate }}
         animate={{ opacity: 1, x: 0, y: 0, rotate: -16.19 }}
         transition={{ duration: 0.7, delay: 0.25, ease: [0.25, 0.1, 0.25, 1] }}
       >
@@ -138,7 +160,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
       <motion.div
         className="absolute z-10 hidden md:block"
         style={{ left: '71.806%', top: '66.957%', width: '11.042%' }}
-        initial={{ opacity: 0, x: '70vw', y: '10vh', rotate: -300 }}
+        initial={{ opacity: 0, x: cardEntries.rightBottom.x, y: cardEntries.rightBottom.y, rotate: cardEntries.rightBottom.rotate }}
         animate={{ opacity: 1, x: 0, y: 0, rotate: 8.34 }}
         transition={{ duration: 0.75, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
       >
