@@ -8,6 +8,7 @@ import { getMessages } from "next-intl/server";
 import { locales, type Locale } from "@/lib/i18n";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { MainWrapper } from "@/components/layout/MainWrapper";
 import "../globals.css";
 
 const inter = Inter({
@@ -76,9 +77,9 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
       <body className={`${inter.variable} ${capita.variable} antialiased`}>
         <NextIntlClientProvider messages={messages}>
           <Header locale={locale} nav={nav} />
-          <main className="pt-16 md:pt-20">
+          <MainWrapper locale={locale}>
             {children}
-          </main>
+          </MainWrapper>
           <Footer locale={locale} content={footer} nav={nav} />
         </NextIntlClientProvider>
       </body>

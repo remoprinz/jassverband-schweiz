@@ -71,18 +71,38 @@ export function Header({ locale, nav }: HeaderProps) {
   const logoVariant = showTransparent ? 'white' : 'color';
 
   return (
-    <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out ${
-        scrolled 
-          ? 'bg-white/98 backdrop-blur-md shadow-md' 
-          : isHomePage 
-            ? 'bg-transparent' 
-            : 'bg-white shadow-sm'
-      }`}
+    <header
+      className="fixed z-50 transition-all duration-500 ease-out"
+      style={
+        scrolled
+          ? {
+              top: '12px',
+              left: '140px',
+              right: '140px',
+              background: 'rgba(255,255,255,0.98)',
+              borderRadius: '12px',
+              boxShadow: '0 4px 24px rgba(0,0,0,0.10)',
+              backdropFilter: 'blur(12px)',
+            }
+          : isHomePage
+          ? {
+              top: 0,
+              left: 0,
+              right: 0,
+              background: 'transparent',
+            }
+          : {
+              top: 0,
+              left: 0,
+              right: 0,
+              background: 'rgba(255,255,255,0.98)',
+              boxShadow: '0 1px 8px rgba(0,0,0,0.08)',
+            }
+      }
     >
-      <div className="container-main">
+      <div className={scrolled ? 'px-6' : 'container-main'}>
         <nav className={`flex items-center justify-between transition-all duration-500 ${
-          scrolled ? 'h-16 md:h-18' : 'h-20 md:h-24'
+          scrolled ? 'h-[76px]' : 'h-20 md:h-24'
         }`}>
           {/* Logo */}
           <Link href={`/${locale}`} className="flex items-center">
