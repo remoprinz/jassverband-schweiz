@@ -70,7 +70,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
           className="absolute inset-0 z-10 pointer-events-none"
           style={{
             borderRadius: 'inherit',
-            border: '16px solid rgba(0,0,0,0.15)',
+            border: '16px solid rgba(0,0,0,0.28)',
           }}
         />
       </div>
