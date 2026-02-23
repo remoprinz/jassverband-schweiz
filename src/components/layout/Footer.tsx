@@ -153,7 +153,7 @@ export function Footer({ locale, content, nav }: FooterProps) {
             style={{ paddingTop: '64px', gap: '120px' }}
           >
             {/* Navigation */}
-            <div style={{ width: '140px' }}>
+            <div className="flex flex-col" style={{ width: '140px', height: '260px' }}>
               <h4 className="mb-4" style={headingStyle}>Navigation</h4>
               <ul className="space-y-2">
                 {[
@@ -171,9 +171,9 @@ export function Footer({ locale, content, nav }: FooterProps) {
                   </li>
                 ))}
               </ul>
-              {/* Copyright direkt unter Kontakt */}
+              {/* Copyright – zum unteren Rand */}
               <p
-                className="mt-4"
+                className="mt-auto pt-8"
                 style={{
                   fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
                   fontWeight: 400,
