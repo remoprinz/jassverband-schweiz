@@ -48,22 +48,26 @@ const headingStyle = {
 
 export function Footer({ locale, content, nav }: FooterProps) {
   return (
-    <footer style={{ backgroundColor: '#1a1a1a' }}>
+    <footer className="relative overflow-visible" style={{ backgroundColor: '#1a1a1a' }}>
       <div className="container-main py-14 md:py-20">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8">
-          {/* Left: Logo + Jester */}
-          <div className="md:col-span-5 lg:col-span-4">
+          {/* Left: Logo + Jester (overflows bottom) */}
+          <div className="md:col-span-5 lg:col-span-4 relative">
             <FooterLogo />
 
-            {/* Jester – large, below logo */}
-            <div className="hidden md:block relative mt-8 w-52 h-64 lg:w-60 lg:h-72">
-              <Image
-                src="/images/cards/jester.png"
-                alt="Jass Narr"
-                fill
-                className="object-contain object-bottom"
-                sizes="240px"
-              />
+            <div className="hidden md:block relative mt-6" style={{ height: '320px' }}>
+              <div
+                className="absolute left-0"
+                style={{ width: '220px', height: '380px', top: '0' }}
+              >
+                <Image
+                  src="/images/cards/jester.png"
+                  alt="Jass Narr"
+                  fill
+                  className="object-contain object-top"
+                  sizes="220px"
+                />
+              </div>
             </div>
           </div>
 

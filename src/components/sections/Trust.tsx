@@ -10,7 +10,7 @@ interface TrustProps {
 
 export function Trust({ badge }: TrustProps) {
   return (
-    <section 
+    <section
       className="py-6 md:py-8"
       style={{ backgroundColor: '#e8e4dc' }}
     >
@@ -33,31 +33,15 @@ export function Trust({ badge }: TrustProps) {
             {badge}
           </p>
 
-          <div className="flex items-center gap-4">
-            <div 
-              className="hidden sm:block text-right"
-              style={{
-                fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
-                fontWeight: 400,
-                fontSize: '11px',
-                lineHeight: '1.5',
-                color: 'rgba(0, 0, 0, 0.45)',
-              }}
-            >
-              lebendige traditionen<br />
-              traditions vivantes<br />
-              tradizioni viventi<br />
-              tradiziuns vivas
-            </div>
-            <div className="relative w-12 h-12 md:w-14 md:h-14 flex-shrink-0">
-              <Image
-                src="/images/badges/lebendige-traditionen.png"
-                alt="Lebendige Traditionen der Schweiz"
-                fill
-                className="object-contain"
-                sizes="56px"
-              />
-            </div>
+          {/* Figma-Asset: Text + Siegel kombiniert (800×453) */}
+          <div className="relative flex-shrink-0" style={{ width: '200px', height: '80px' }}>
+            <Image
+              src="/images/badges/lebendige-traditionen-figma.png"
+              alt="Lebendige Traditionen der Schweiz"
+              fill
+              className="object-contain object-right"
+              sizes="200px"
+            />
           </div>
         </motion.div>
       </div>
