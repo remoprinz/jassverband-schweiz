@@ -48,7 +48,20 @@ export function OrganizationSchema() {
       "Schieber",
       "Schweizer Kartenspiele",
       "Lebendige Traditionen der Schweiz"
-    ]
+    ],
+    "potentialAction": {
+      "@type": "JoinAction",
+      "name": "Mitglied werden",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://jassverband.ch/de/mitmachen",
+        "actionPlatform": [
+          "http://schema.org/DesktopWebPlatform",
+          "http://schema.org/MobileWebPlatform"
+        ]
+      },
+      "description": "Werden Sie Gründungsmitglied im Jassverband Schweiz und unterstützen Sie die Jass-Kultur."
+    }
   };
 
   return (

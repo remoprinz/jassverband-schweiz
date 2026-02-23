@@ -120,5 +120,134 @@
   "datenschutz": {
     "title": "Datenschutzerklärung",
     "intro": "Der Schutz Ihrer Daten ist uns wichtig. Diese Datenschutzerklärung informiert Sie über die Verarbeitung personenbezogener Daten auf unserer Website."
+  },
+  "mitmachen": {
+    "hero": {
+      "title": "Gestalten Sie die Zukunft des Schweizer Jass",
+      "subtitle": "Werden Sie Gründungsmitglied im Jassverband Schweiz. Im Jahr 2026 legen wir das Fundament für unser Nationalspiel – seien Sie von Anfang an dabei.",
+      "cta": "Jetzt Mitglied werden",
+      "ctaSecondary": "Sponsoring anfragen"
+    },
+    "warum": {
+      "title": "Ein Erbe, das gepflegt werden muss",
+      "intro": "Jassen ist beim Bundesamt für Kultur als «Lebendige Tradition» gelistet. Doch Tradition braucht Träger – Menschen, die sie weitergeben.",
+      "wissen": {
+        "title": "Wissenserhalt",
+        "description": "JassWiki – alle Regeln und Varianten, frei zugänglich für alle."
+      },
+      "modern": {
+        "title": "Modernisierung",
+        "description": "JassGuru – ein faires, schweizweites Elo-System für alle Spieler."
+      },
+      "foerderung": {
+        "title": "Förderung",
+        "description": "Programme für die nächste Generation von Jasserinnen und Jassern."
+      },
+      "vertretung": {
+        "title": "Vertretung",
+        "description": "Eine starke Stimme gegenüber Politik, Medien und Partnern."
+      }
+    },
+    "pionier": {
+      "badge": "Nur 2026",
+      "title": "Pionier-Status – Exklusiv im Gründungsjahr",
+      "intro": "Alle Mitglieder, die 2026 beitreten, erhalten den dauerhaften Status als JVS-Pionier.",
+      "register": {
+        "title": "Gründungsregister",
+        "description": "Ihr Name wird (auf Wunsch) im offiziellen Gründungsregister des Verbands geführt."
+      },
+      "kartenset": {
+        "title": "Gründungskartenset",
+        "description": "Sie erhalten das limitierte JVS-Gründungskartenset – in der Schweiz gedruckt."
+      },
+      "feedback": {
+        "title": "Feedback-Recht",
+        "description": "Sie gestalten aktiv mit: Direktes Feedback-Recht bei der Entwicklung unserer Tools."
+      }
+    },
+    "pricing": {
+      "title": "Wählen Sie Ihr Paket",
+      "subtitle": "Jedes Paket unterstützt die Mission des Jassverbands Schweiz.",
+      "year": "Jahr",
+      "recommended": "Beliebt",
+      "select": "Auswählen",
+      "pionier": {
+        "title": "Jass-Pionier",
+        "feature1": "Volle Mitgliedschaft im JVS",
+        "feature2": "Zugang zu JassGuru Elo-System",
+        "feature3": "Dauerhafter Pionier-Status"
+      },
+      "botschafter": {
+        "title": "Jass-Botschafter",
+        "feature1": "Alles aus Jass-Pionier",
+        "feature2": "Limitiertes JVS-Gründungskartenset",
+        "feature3": "Erweiterte Statistiken in JassGuru"
+      },
+      "patron": {
+        "title": "Jass-Patron",
+        "feature1": "Alles aus Jass-Botschafter",
+        "feature2": "Teilnahme am 1. Nationalen Verbands-Jassturnier",
+        "feature3": "Zugang zur Schweizer Team-Schieber-Liga"
+      }
+    },
+    "impact": {
+      "title": "Was Ihr Beitrag bewirkt",
+      "intro": "Mit Ihrem Beitrag finanzieren wir konkrete Projekte:",
+      "jasswiki": {
+        "title": "JassWiki werbefrei",
+        "description": "Wissen für alle, ohne Ablenkung – dauerhaft kostenlos."
+      },
+      "lehrmaterial": {
+        "title": "Lehrmaterialien",
+        "description": "Anleitungen für Schulen, Vereine und Familien."
+      },
+      "infrastruktur": {
+        "title": "Infrastruktur",
+        "description": "Ein schweizweites Netzwerk für das Jassen."
+      }
+    },
+    "form": {
+      "title": "Jetzt anmelden",
+      "intro": "Füllen Sie das Formular aus und wir melden uns bei Ihnen mit den Zahlungsdetails.",
+      "name": "Name",
+      "email": "E-Mail",
+      "jassname": "Jassname (optional)",
+      "jassnamePlaceholder": "Ihr Spielername bei JassGuru",
+      "phone": "Telefon (optional)",
+      "paket": "Mitgliedschafts-Paket",
+      "message": "Nachricht (optional)",
+      "messagePlaceholder": "Haben Sie Fragen oder Anmerkungen?",
+      "notice": {
+        "title": "Hinweis:",
+        "message": "Die Online-Zahlung via Stripe/Twint wird bald verfügbar sein. Aktuell erhalten Sie nach der Anmeldung eine Rechnung per E-Mail."
+      },
+      "submit": "Anmeldung absenden",
+      "success": {
+        "title": "Anmeldung erhalten!",
+        "message": "Vielen Dank für Ihr Interesse. Wir melden uns innerhalb von 48 Stunden mit den Zahlungsdetails."
+      }
+    },
+    "faq": {
+      "title": "Häufige Fragen",
+      "turniere": {
+        "question": "Bin ich an Turniere gebunden?",
+        "answer": "Nein, Sie unterstützen die Jass-Kultur. Turniere sind ein optionales Angebot, an dem Sie freiwillig teilnehmen können."
+      },
+      "spende": {
+        "question": "Gilt mein Beitrag als Spende?",
+        "answer": "Wir sind ein Verein nach Art. 60 ff. ZGB. Die steuerliche Abzugsfähigkeit hängt von Ihrem Wohnkanton ab. Kontaktieren Sie uns für eine Bestätigung."
+      },
+      "kuendigung": {
+        "question": "Kann ich jederzeit kündigen?",
+        "answer": "Ja, die Mitgliedschaft ist jährlich kündbar. Eine Kündigung ist jederzeit zum Ende des Mitgliedsjahres möglich."
+      },
+      "jassguru": {
+        "question": "Was ist JassGuru?",
+        "answer": "JassGuru ist unsere digitale Jass-Plattform mit Elo-Ranking, Statistiken und Turnierorganisation. Als Mitglied erhalten Sie Zugang zu Ihrem persönlichen Elo-Profil."
+      }
+    },
+    "trust": {
+      "text": "Der Jassverband Schweiz repräsentiert das Jassen als vom Bundesamt für Kultur anerkannte «Lebendige Tradition» der Schweiz."
+    }
   }
 }

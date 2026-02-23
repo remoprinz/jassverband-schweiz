@@ -120,5 +120,134 @@
   "datenschutz": {
     "title": "Informativa sulla privacy",
     "intro": "La protezione dei tuoi dati è importante per noi. Questa informativa sulla privacy ti informa sul trattamento dei dati personali sul nostro sito web."
+  },
+  "mitmachen": {
+    "hero": {
+      "title": "Plasmate il futuro del Jass svizzero",
+      "subtitle": "Diventate membro fondatore della Federazione Svizzera di Jass. Nel 2026 poniamo le basi per il nostro gioco nazionale – siate presenti fin dall'inizio.",
+      "cta": "Diventa membro",
+      "ctaSecondary": "Richiedi sponsorizzazione"
+    },
+    "warum": {
+      "title": "Un'eredità che deve essere curata",
+      "intro": "Il Jass è iscritto come «Tradizione vivente» presso l'Ufficio federale della cultura. Ma la tradizione ha bisogno di portatori – persone che la tramandano.",
+      "wissen": {
+        "title": "Conservazione del sapere",
+        "description": "JassWiki – tutte le regole e varianti, liberamente accessibili a tutti."
+      },
+      "modern": {
+        "title": "Modernizzazione",
+        "description": "JassGuru – un sistema Elo equo a livello svizzero per tutti i giocatori."
+      },
+      "foerderung": {
+        "title": "Promozione",
+        "description": "Programmi per la prossima generazione di giocatori di Jass."
+      },
+      "vertretung": {
+        "title": "Rappresentanza",
+        "description": "Una voce forte nei confronti di politica, media e partner."
+      }
+    },
+    "pionier": {
+      "badge": "Solo 2026",
+      "title": "Status di Pioniere – Esclusivo nell'anno di fondazione",
+      "intro": "Tutti i membri che aderiscono nel 2026 ricevono lo status permanente di Pioniere JVS.",
+      "register": {
+        "title": "Registro di fondazione",
+        "description": "Il vostro nome sarà (su richiesta) registrato nel registro ufficiale di fondazione."
+      },
+      "kartenset": {
+        "title": "Set di carte fondatore",
+        "description": "Riceverete il set di carte JVS limitato – stampato in Svizzera."
+      },
+      "feedback": {
+        "title": "Diritto di feedback",
+        "description": "Partecipate attivamente: diritto di feedback diretto sullo sviluppo dei nostri strumenti."
+      }
+    },
+    "pricing": {
+      "title": "Scegliete il vostro pacchetto",
+      "subtitle": "Ogni pacchetto sostiene la missione della Federazione Svizzera di Jass.",
+      "year": "anno",
+      "recommended": "Popolare",
+      "select": "Seleziona",
+      "pionier": {
+        "title": "Jass-Pioniere",
+        "feature1": "Adesione completa alla JVS",
+        "feature2": "Accesso al sistema Elo JassGuru",
+        "feature3": "Status di pioniere permanente"
+      },
+      "botschafter": {
+        "title": "Jass-Ambasciatore",
+        "feature1": "Tutto da Jass-Pioniere",
+        "feature2": "Set di carte JVS fondatore limitato",
+        "feature3": "Statistiche estese in JassGuru"
+      },
+      "patron": {
+        "title": "Jass-Patrono",
+        "feature1": "Tutto da Jass-Ambasciatore",
+        "feature2": "Partecipazione al 1° torneo nazionale della Federazione",
+        "feature3": "Accesso alla Lega svizzera di Schieber a squadre"
+      }
+    },
+    "impact": {
+      "title": "Cosa realizza il vostro contributo",
+      "intro": "Con il vostro contributo finanziamo progetti concreti:",
+      "jasswiki": {
+        "title": "JassWiki senza pubblicità",
+        "description": "Sapere per tutti, senza distrazioni – gratuitamente e permanentemente."
+      },
+      "lehrmaterial": {
+        "title": "Materiale didattico",
+        "description": "Guide per scuole, club e famiglie."
+      },
+      "infrastruktur": {
+        "title": "Infrastruttura",
+        "description": "Una rete svizzera per il Jass."
+      }
+    },
+    "form": {
+      "title": "Iscrivetevi ora",
+      "intro": "Compilate il modulo e vi contatteremo con i dettagli di pagamento.",
+      "name": "Nome",
+      "email": "E-mail",
+      "jassname": "Nome Jass (opzionale)",
+      "jassnamePlaceholder": "Il vostro nome giocatore su JassGuru",
+      "phone": "Telefono (opzionale)",
+      "paket": "Pacchetto di adesione",
+      "message": "Messaggio (opzionale)",
+      "messagePlaceholder": "Avete domande o osservazioni?",
+      "notice": {
+        "title": "Nota:",
+        "message": "Il pagamento online tramite Stripe/Twint sarà presto disponibile. Attualmente riceverete una fattura via e-mail dopo l'iscrizione."
+      },
+      "submit": "Invia iscrizione",
+      "success": {
+        "title": "Iscrizione ricevuta!",
+        "message": "Grazie per il vostro interesse. Vi contatteremo entro 48 ore con i dettagli di pagamento."
+      }
+    },
+    "faq": {
+      "title": "Domande frequenti",
+      "turniere": {
+        "question": "Sono obbligato a partecipare ai tornei?",
+        "answer": "No, sostenete la cultura del Jass. I tornei sono un'offerta opzionale a cui potete partecipare volontariamente."
+      },
+      "spende": {
+        "question": "Il mio contributo è deducibile dalle tasse?",
+        "answer": "Siamo un'associazione secondo gli art. 60 ss. CC. La deducibilità fiscale dipende dal vostro cantone di residenza. Contattateci per un'attestazione."
+      },
+      "kuendigung": {
+        "question": "Posso disdire in qualsiasi momento?",
+        "answer": "Sì, l'adesione è disdettabile annualmente. Una disdetta è possibile in qualsiasi momento per la fine dell'anno di adesione."
+      },
+      "jassguru": {
+        "question": "Cos'è JassGuru?",
+        "answer": "JassGuru è la nostra piattaforma digitale di Jass con classifica Elo, statistiche e organizzazione di tornei. Come membro avete accesso al vostro profilo Elo personale."
+      }
+    },
+    "trust": {
+      "text": "La Federazione Svizzera di Jass rappresenta il Jass come «Tradizione vivente» riconosciuta dall'Ufficio federale della cultura."
+    }
   }
 }
