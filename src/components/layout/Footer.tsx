@@ -48,31 +48,35 @@ const headingStyle = {
 
 export function Footer({ locale, content, nav }: FooterProps) {
   return (
-    <footer className="relative overflow-visible" style={{ backgroundColor: '#1a1a1a' }}>
-      <div className="container-main py-14 md:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8">
-          {/* Left: Logo + Jester (overflows bottom) */}
-          <div className="md:col-span-5 lg:col-span-4 relative">
-            <FooterLogo />
+    <footer className="relative" style={{ backgroundColor: '#1a1a1a', overflow: 'visible' }}>
+      {/* Jester – absolut positioniert, ragt unten über den Rand */}
+      <div
+        className="hidden md:block absolute z-0 pointer-events-none"
+        style={{
+          left: 'max(40px, calc((100% - 1280px) / 2 + 40px))',
+          top: '80px',
+          width: '220px',
+          bottom: '-80px',
+        }}
+      >
+        <Image
+          src="/images/cards/jester.png"
+          alt="Jass Narr"
+          fill
+          className="object-contain object-bottom"
+          sizes="220px"
+        />
+      </div>
 
-            <div className="hidden md:block relative mt-6" style={{ height: '320px' }}>
-              <div
-                className="absolute left-0"
-                style={{ width: '220px', height: '380px', top: '0' }}
-              >
-                <Image
-                  src="/images/cards/jester.png"
-                  alt="Jass Narr"
-                  fill
-                  className="object-contain object-top"
-                  sizes="220px"
-                />
-              </div>
-            </div>
+      <div className="container-main relative z-10 pt-14 md:pt-20 pb-6">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8">
+          {/* Left: Logo */}
+          <div className="md:col-span-4">
+            <FooterLogo />
           </div>
 
           {/* Navigation */}
-          <div className="md:col-span-3 lg:col-span-4">
+          <div className="md:col-span-4">
             <h4 className="mb-5" style={headingStyle}>
               Navigation
             </h4>
@@ -99,7 +103,7 @@ export function Footer({ locale, content, nav }: FooterProps) {
           </div>
 
           {/* Rechtliches */}
-          <div className="md:col-span-4 lg:col-span-4">
+          <div className="md:col-span-4">
             <h4 className="mb-5" style={headingStyle}>
               {content.legal}
             </h4>
@@ -124,7 +128,6 @@ export function Footer({ locale, content, nav }: FooterProps) {
               </li>
             </ul>
 
-            {/* Adresse */}
             <div className="mt-8">
               <p
                 style={{
