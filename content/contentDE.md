@@ -6,6 +6,19 @@
 
 ---
 
+## Core Identity
+
+### Vision
+Jeder Mensch in der Schweiz lernt jassen.
+
+### Mission
+Wir demokratisieren das Jass-Wissen durch digitale Exzellenz und kulturelle Präsenz, um Barrieren abzubauen und das Lernen radikal zu vereinfachen.
+
+### Tagline
+Tradition trifft Innovation.
+
+---
+
 ## Metadata
 
 - **Titel:** Jassverband Schweiz | Tradition trifft Innovation
@@ -299,6 +312,22 @@ Wir laden alle ein, Teil dieser Bewegung zu werden. Ob als Spieler, Partner, ode
 - **Lesezeit:** 3 Min.
 - **Featured:** Ja
 - **Tags:** meisterschaft, jugend, turnier
+
+---
+
+## Terminology (Glossar)
+
+| Begriff | Definition / Note |
+|---|---|
+| Jass | Das Spiel (nicht "Jassen" als Nomen, ausser im Kontext "Das Jassen") |
+| Schieber | Die populärste Variante |
+| Stich | Ein gespielter Kartenstapel (4 Karten) |
+| Trumpf | Die dominierende Farbe |
+| Nell | Trumpf-Neun |
+| Bauer | Trumpf-Unter |
+| Weis | Punkteansage (nicht "Weisung") |
+| Stöck | König + Ober von Trumpf |
+| Match | Alle Stiche gewinnen (nicht "Durchmarsch") |
 
 **Excerpt:** Die erste nationale Jass-Meisterschaft für junge Teams startet. Jetzt anmelden und Teil der Geschichte werden.
 
