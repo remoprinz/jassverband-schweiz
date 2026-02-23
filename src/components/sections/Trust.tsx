@@ -8,39 +8,56 @@ interface TrustProps {
   text: string;
 }
 
-export function Trust({ badge, text }: TrustProps) {
+export function Trust({ badge }: TrustProps) {
   return (
-    <section className="py-8 md:py-12 bg-[var(--color-cream)]">
+    <section 
+      className="py-6 md:py-8"
+      style={{ backgroundColor: '#e8e4dc' }}
+    >
       <div className="container-main">
         <motion.div
-          className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6"
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          className="flex items-center justify-between"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          {/* Badge Image */}
-          <div className="relative w-16 h-16 md:w-20 md:h-20 flex-shrink-0">
-            <Image
-              src="/images/badges/lebendige-traditionen.png"
-              alt="Lebendige Traditionen der Schweiz"
-              fill
-              className="object-contain"
-              sizes="80px"
-            />
-          </div>
-          
-          <div className="text-center md:text-left">
-            <span 
-              className="font-semibold text-[var(--color-foreground)] block md:inline"
-              style={{ fontFamily: 'var(--font-capita), Georgia, serif' }}
+          <p
+            style={{
+              fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
+              fontWeight: 400,
+              fontSize: '14px',
+              color: 'rgba(0, 0, 0, 0.5)',
+            }}
+          >
+            {badge}
+          </p>
+
+          <div className="flex items-center gap-4">
+            <div 
+              className="hidden sm:block text-right"
+              style={{
+                fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
+                fontWeight: 400,
+                fontSize: '11px',
+                lineHeight: '1.5',
+                color: 'rgba(0, 0, 0, 0.45)',
+              }}
             >
-              {badge}
-            </span>
-            <span className="hidden md:inline text-[var(--color-foreground-muted)] mx-2">—</span>
-            <span className="text-[var(--color-foreground-muted)] text-sm md:text-base block md:inline mt-1 md:mt-0">
-              {text}
-            </span>
+              lebendige traditionen<br />
+              traditions vivantes<br />
+              tradizioni viventi<br />
+              tradiziuns vivas
+            </div>
+            <div className="relative w-12 h-12 md:w-14 md:h-14 flex-shrink-0">
+              <Image
+                src="/images/badges/lebendige-traditionen.png"
+                alt="Lebendige Traditionen der Schweiz"
+                fill
+                className="object-contain"
+                sizes="56px"
+              />
+            </div>
           </div>
         </motion.div>
       </div>

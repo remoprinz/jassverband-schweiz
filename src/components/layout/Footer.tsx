@@ -32,42 +32,44 @@ function FooterLogo() {
   );
 }
 
+const linkStyle = {
+  fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
+  fontWeight: 400 as const,
+  fontSize: '15px',
+  color: 'rgba(255, 255, 255, 0.6)',
+};
+
+const headingStyle = {
+  fontFamily: 'var(--font-capita), Capita, Georgia, serif',
+  fontWeight: 700 as const,
+  fontSize: '16px',
+  color: 'rgba(255, 255, 255, 0.95)',
+};
+
 export function Footer({ locale, content, nav }: FooterProps) {
   return (
-    <footer style={{ backgroundColor: '#000000' }}>
+    <footer style={{ backgroundColor: '#1a1a1a' }}>
       <div className="container-main py-14 md:py-20">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
-          {/* Brand */}
-          <div className="sm:col-span-2 lg:col-span-1">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8">
+          {/* Left: Logo + Jester */}
+          <div className="md:col-span-5 lg:col-span-4">
             <FooterLogo />
-            {/* Tagline - Figma: Inter Regular 15px */}
-            <p 
-              className="mt-5 max-w-xs"
-              style={{
-                fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
-                fontWeight: 400,
-                fontSize: '15px',
-                lineHeight: '1.6',
-                color: 'rgba(255, 255, 255, 0.6)'
-              }}
-            >
-              {content.tagline}
-            </p>
+
+            {/* Jester – large, below logo */}
+            <div className="hidden md:block relative mt-8 w-52 h-64 lg:w-60 lg:h-72">
+              <Image
+                src="/images/cards/jester.png"
+                alt="Jass Narr"
+                fill
+                className="object-contain object-bottom"
+                sizes="240px"
+              />
+            </div>
           </div>
 
           {/* Navigation */}
-          <div>
-            <h4 
-              className="mb-5"
-              style={{
-                fontFamily: 'var(--font-capita), Capita, Georgia, serif',
-                fontWeight: 700,
-                fontSize: '13px',
-                letterSpacing: '0.1em',
-                textTransform: 'uppercase',
-                color: 'rgba(255, 255, 255, 0.8)'
-              }}
-            >
+          <div className="md:col-span-3 lg:col-span-4">
+            <h4 className="mb-5" style={headingStyle}>
               Navigation
             </h4>
             <ul className="space-y-3">
@@ -80,15 +82,10 @@ export function Footer({ locale, content, nav }: FooterProps) {
                 { href: `/${locale}/kontakt`, label: nav.kontakt },
               ].map((item) => (
                 <li key={item.href}>
-                  <Link 
-                    href={item.href} 
+                  <Link
+                    href={item.href}
                     className="transition-colors duration-200 hover:text-white"
-                    style={{
-                      fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
-                      fontWeight: 400,
-                      fontSize: '15px',
-                      color: 'rgba(255, 255, 255, 0.6)'
-                    }}
+                    style={linkStyle}
                   >
                     {item.label}
                   </Link>
@@ -97,133 +94,77 @@ export function Footer({ locale, content, nav }: FooterProps) {
             </ul>
           </div>
 
-          {/* Legal */}
-          <div>
-            <h4 
-              className="mb-5"
-              style={{
-                fontFamily: 'var(--font-capita), Capita, Georgia, serif',
-                fontWeight: 700,
-                fontSize: '13px',
-                letterSpacing: '0.1em',
-                textTransform: 'uppercase',
-                color: 'rgba(255, 255, 255, 0.8)'
-              }}
-            >
+          {/* Rechtliches */}
+          <div className="md:col-span-4 lg:col-span-4">
+            <h4 className="mb-5" style={headingStyle}>
               {content.legal}
             </h4>
             <ul className="space-y-3">
               <li>
-                <Link 
-                  href={`/${locale}/impressum`} 
+                <Link
+                  href={`/${locale}/impressum`}
                   className="transition-colors duration-200 hover:text-white"
-                  style={{
-                    fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
-                    fontWeight: 400,
-                    fontSize: '15px',
-                    color: 'rgba(255, 255, 255, 0.6)'
-                  }}
+                  style={linkStyle}
                 >
                   {content.impressum}
                 </Link>
               </li>
               <li>
-                <Link 
-                  href={`/${locale}/datenschutz`} 
+                <Link
+                  href={`/${locale}/datenschutz`}
                   className="transition-colors duration-200 hover:text-white"
-                  style={{
-                    fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
-                    fontWeight: 400,
-                    fontSize: '15px',
-                    color: 'rgba(255, 255, 255, 0.6)'
-                  }}
+                  style={linkStyle}
                 >
                   {content.datenschutz}
                 </Link>
               </li>
             </ul>
-            
-            {/* Contact Info */}
+
+            {/* Adresse */}
             <div className="mt-8">
-              <p 
+              <p
                 style={{
                   fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
                   fontWeight: 400,
                   fontSize: '14px',
                   lineHeight: '1.7',
-                  color: 'rgba(255, 255, 255, 0.4)'
+                  color: 'rgba(255, 255, 255, 0.4)',
                 }}
               >
                 Hirslanderstrasse 34<br />
                 8032 Zürich
               </p>
-              <a 
-                href="mailto:info@jassverband.ch" 
+              <a
+                href="mailto:info@jassverband.ch"
                 className="inline-block mt-2 transition-colors duration-200 hover:text-white"
                 style={{
                   fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
                   fontWeight: 400,
                   fontSize: '14px',
-                  color: 'rgba(255, 255, 255, 0.4)'
+                  color: 'rgba(255, 255, 255, 0.4)',
                 }}
               >
                 info@jassverband.ch
               </a>
             </div>
           </div>
-
-          {/* Jester Illustration */}
-          <div className="hidden lg:flex items-end justify-center">
-            <div className="relative w-36 h-44 opacity-70">
-              <Image
-                src="/images/cards/jester.png"
-                alt="Jass Narr"
-                fill
-                className="object-contain"
-                sizes="144px"
-              />
-            </div>
-          </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div 
-          className="mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4"
-          style={{ borderTop: '1px solid rgba(255, 255, 255, 0.1)' }}
+        {/* Copyright */}
+        <div
+          className="mt-16 pt-8 text-center"
+          style={{ borderTop: '1px solid rgba(255, 255, 255, 0.08)' }}
         >
-          <p 
+          <p
             style={{
               fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
               fontWeight: 400,
               fontSize: '13px',
-              color: 'rgba(255, 255, 255, 0.4)'
+              color: 'rgba(255, 255, 255, 0.35)',
             }}
           >
             {content.copyright}
           </p>
-          
-          {/* Lebendige Traditionen Badge */}
-          <div className="flex items-center gap-3">
-            <span 
-              style={{
-                fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
-                fontWeight: 400,
-                fontSize: '12px',
-                color: 'rgba(255, 255, 255, 0.3)'
-              }}
-            >
-              Gelistet beim Bundesamt für Kultur als
-            </span>
-            <div className="relative w-24 h-8">
-              <Image
-                src="/images/badges/lebendige-traditionen.png"
-                alt="Lebendige Traditionen"
-                fill
-                className="object-contain opacity-60"
-                sizes="96px"
-              />
-            </div>
-          </div>
         </div>
       </div>
     </footer>
