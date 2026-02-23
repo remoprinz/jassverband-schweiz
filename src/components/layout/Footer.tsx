@@ -37,8 +37,8 @@ const headingStyle = {
 export function Footer({ locale, content, nav }: FooterProps) {
   return (
     <footer className="bg-black overflow-hidden">
-      {/* Desktop: Figma 1440×390 proportional */}
-      <div className="hidden md:block container-main relative" style={{ aspectRatio: '1440 / 390' }}>
+      {/* Desktop: Figma 1440×390 proportional (ab lg, damit Landscape Mobile gestapelt bleibt) */}
+      <div className="hidden lg:block container-main relative" style={{ aspectRatio: '1440 / 390' }}>
         {/* Logo – 189×51, top-left */}
         <div style={{ position: 'absolute', top: '12.3%', left: '0' }}>
           <Image
@@ -134,8 +134,8 @@ export function Footer({ locale, content, nav }: FooterProps) {
         </p>
       </div>
 
-      {/* Mobile: gestapelt */}
-      <div className="md:hidden px-6 py-12">
+      {/* Mobile + Tablet/Landscape: gestapelt */}
+      <div className="lg:hidden px-6 py-12">
         <Image
           src="/images/logos/JVS Logo farbig weiss.svg"
           alt="Jassverband Schweiz"
