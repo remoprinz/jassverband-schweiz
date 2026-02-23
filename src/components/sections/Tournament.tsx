@@ -16,7 +16,7 @@ export function Tournament({ title, subtitle, cta }: TournamentProps) {
       {/* Felt Texture Background - Figma exact */}
       <div className="absolute inset-0">
         <Image
-          src="/images/backgrounds/felt-tournament.jpg"
+          src="/images/backgrounds/felt-figma.png"
           alt="Grüner Filz Hintergrund"
           fill
           className="object-cover"
