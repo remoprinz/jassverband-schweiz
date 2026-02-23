@@ -128,12 +128,12 @@ export function Footer({ locale, content, nav }: FooterProps) {
             />
           </div>
 
-          {/* Jester – links, ragt nach unten raus */}
+          {/* Jester – weiter rechts, ragt nach unten raus */}
           <div 
             className="absolute"
             style={{ 
-              top: '130px',
-              left: '80px',
+              top: '150px',
+              left: '200px',
               width: '203px', 
               height: '333px',
             }}
@@ -147,10 +147,10 @@ export function Footer({ locale, content, nav }: FooterProps) {
             />
           </div>
 
-          {/* Navigation + Rechtliches – rechts */}
+          {/* Navigation + Rechtliches – Flex-Layout, rechtsbündig mit Content */}
           <div 
-            className="absolute flex gap-16"
-            style={{ top: '64px', right: '0' }}
+            className="flex justify-end gap-16"
+            style={{ paddingTop: '64px' }}
           >
             {/* Navigation */}
             <div style={{ width: '140px' }}>
