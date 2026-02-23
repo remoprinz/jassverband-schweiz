@@ -23,6 +23,7 @@ Tradition trifft Innovation.
 
 - **Titel:** Jassverband Schweiz | Tradition trifft Innovation
 - **Beschreibung:** Der Jassverband Schweiz fördert das Schweizer Nationalspiel als modernen Denksport. Jugendförderung, digitale Plattformen, nationale Meisterschaften.
+- **Keywords:** Jassverband Schweiz, Jass Verband, Schweizer Jass, Schieber, Jass lernen, Jass-Kultur, Lebendige Tradition, JVS
 - **URL:** https://jassverband.ch
 - **Open Graph Locale:** de_CH
 
@@ -93,7 +94,7 @@ Trainiere deine Skills — Punktetafel, Elo-System und Statistiken.
 
 ### Jassmeister
 Der Wettkampf — Turniere und Meisterschaften.
-→ https://jassmeister.web.app
+→ **Coming Soon** (noch nicht live)
 
 ---
 
@@ -139,9 +140,6 @@ Der Wettkampf — Turniere und Meisterschaften.
 **Titel:** News & Aktuelles
 **Subtitle:** Neuigkeiten rund um den Jassverband Schweiz
 
-**Leere Seite:** Noch keine Artikel vorhanden.
-**Weitere Artikel Label:** Weitere Artikel
-
 ---
 
 ## Seite: Projekte (`/de/projekte`)
@@ -149,15 +147,13 @@ Der Wettkampf — Turniere und Meisterschaften.
 **Titel:** Unsere Projekte
 **Subtitle:** Digitale Werkzeuge und Plattformen für die Jass-Community
 
-### Projekte
-
 | Projekt | URL | Beschreibung | Status |
 |---------|-----|-------------|--------|
 | JassWiki | https://jasswiki.ch | Die Enzyklopädie des Jassens — Regeln, Varianten und Geschichte. | Live |
 | JassGuru | https://jassguru.ch | Trainiere deine Skills — Punktetafel, Elo-System und Statistiken. | Live |
 | Jassmeister | — | Der Wettkampf — Turniere und Meisterschaften. | Coming Soon |
 
-**Info-Box:** Gemeinsam für die Zukunft des Jassens — Alle Plattformen sind Teil des digitalen Ökosystems des Jassverbands Schweiz. Sie ergänzen sich gegenseitig und bieten der Jass-Community ein umfassendes Angebot von Wissen über Training bis zum Wettkampf.
+**Info-Box:** Gemeinsam für die Zukunft des Jassens — Alle Plattformen sind Teil des digitalen Ökosystems des Jassverbands Schweiz.
 
 ---
 
@@ -174,9 +170,6 @@ Der Wettkampf — Turniere und Meisterschaften.
 
 **CTA:** Kontaktieren Sie uns
 **Brochure:** Sponsoring-Broschüre herunterladen (PDF) → `/documents/sponsoring-jvs.pdf`
-
-**CTA-Box-Titel:** Interessiert?
-**CTA-Box-Text:** Kontaktieren Sie uns für ein unverbindliches Gespräch über Partnerschaften und Sponsoring-Möglichkeiten.
 
 ---
 
@@ -353,25 +346,137 @@ Im Gründungsjahr 2026 bieten wir den exklusiven **Pionier-Status**: Alle Mitgli
 
 ---
 
-## Geplante Seiten
+## Seite: Mitmachen (`/de/mitmachen`)
 
-### /de/mitmachen (Landingpage)
+> **Status:** Implementiert (Phase 4)
+> **SEO-Titel:** Jetzt Mitglied werden | Jassverband Schweiz
+> **SEO-Beschreibung:** Werden Sie Gründungsmitglied im Jassverband Schweiz. Pionier-Status 2026, JassGuru Elo-System, limitiertes Gründungskartenset. Ab CHF 60/Jahr.
+> **Keywords:** Jassverband Mitgliedschaft, Jass Verein beitreten, JVS Mitglied werden, Jass-Pionier, Jassverband Schweiz, Jass fördern
 
-> **Status:** Geplant, noch nicht implementiert
+### Hero
+- **Titel:** Gestalten Sie die Zukunft des Schweizer Jass
+- **Subtitle:** Werden Sie Gründungsmitglied im Jassverband Schweiz. Im Jahr 2026 legen wir das Fundament für unser Nationalspiel – seien Sie von Anfang an dabei.
+- **CTA primär:** Jetzt Mitglied werden → #mitglied-werden
+- **CTA sekundär:** Sponsoring anfragen → /de/kontakt
+- **Hintergrund:** Gradient von #1a472a nach #0d2818 mit Filz-Overlay
 
-**Struktur:**
-1. Hero: "Gestalten Sie die Zukunft des Schweizer Jass"
-2. Warum wir Sie brauchen
-3. Pionier-Status (nur 2026)
-4. Mitgliedschafts-Pakete (Pionier CHF 60 / Botschafter CHF 90 / Patron CHF 180)
-5. Was Ihr Beitrag bewirkt
-6. FAQ
-7. Footer
+### Warum wir Sie brauchen
+- **Titel:** Ein Erbe, das gepflegt werden muss
+- **Intro:** Jassen ist beim Bundesamt für Kultur als «Lebendige Tradition» gelistet. Doch Tradition braucht Träger – Menschen, die sie weitergeben.
 
-**Technische Anforderungen:**
-- Stripe-Integration für Zahlungen
-- Twint als zusätzliche Zahlungsoption
-- Backend für Mitgliederverwaltung
-- Verknüpfung mit JassGuru/Jasstafel
+| Bereich | Titel | Beschreibung |
+|---------|-------|-------------|
+| Wissen | Wissenserhalt | JassWiki – alle Regeln und Varianten, frei zugänglich für alle. |
+| Modern | Modernisierung | JassGuru – ein faires, schweizweites Elo-System für alle Spieler. |
+| Förderung | Förderung | Programme für die nächste Generation von Jasserinnen und Jassern. |
+| Vertretung | Vertretung | Eine starke Stimme gegenüber Politik, Medien und Partnern. |
+
+### Pionier-Status (exklusiv 2026)
+- **Badge:** Nur 2026
+- **Titel:** Pionier-Status – Exklusiv im Gründungsjahr
+- **Intro:** Alle Mitglieder, die 2026 beitreten, erhalten den dauerhaften Status als JVS-Pionier.
+
+| Vorteil | Titel | Beschreibung |
+|---------|-------|-------------|
+| Register | Gründungsregister | Ihr Name wird (auf Wunsch) im offiziellen Gründungsregister des Verbands geführt. |
+| Kartenset | Gründungskartenset | Sie erhalten das limitierte JVS-Gründungskartenset – in der Schweiz gedruckt. |
+| Feedback | Feedback-Recht | Sie gestalten aktiv mit: Direktes Feedback-Recht bei der Entwicklung unserer Tools. |
+
+### Mitgliedschafts-Pakete
+
+| Paket | Preis | Feature 1 | Feature 2 | Feature 3 |
+|-------|-------|-----------|-----------|-----------|
+| **Jass-Pionier** | CHF 60/Jahr | Volle Mitgliedschaft im JVS | Zugang zu JassGuru Elo-System | Dauerhafter Pionier-Status |
+| **Jass-Botschafter** *(empfohlen)* | CHF 90/Jahr | Alles aus Jass-Pionier | Limitiertes JVS-Gründungskartenset | Erweiterte Statistiken in JassGuru |
+| **Jass-Patron** | CHF 180/Jahr | Alles aus Jass-Botschafter | Teilnahme am 1. Nationalen Verbands-Jassturnier | Zugang zur Schweizer Team-Schieber-Liga |
+
+### Was Ihr Beitrag bewirkt
+- **Titel:** Was Ihr Beitrag bewirkt
+- **Intro:** Mit Ihrem Beitrag finanzieren wir konkrete Projekte:
+
+| Bereich | Titel | Beschreibung |
+|---------|-------|-------------|
+| JassWiki | JassWiki werbefrei | Wissen für alle, ohne Ablenkung – dauerhaft kostenlos. |
+| Lehrmaterial | Lehrmaterialien | Anleitungen für Schulen, Vereine und Familien. |
+| Infrastruktur | Infrastruktur | Ein schweizweites Netzwerk für das Jassen. |
+
+### Anmeldeformular
+- **Titel:** Jetzt anmelden
+- **Intro:** Füllen Sie das Formular aus und wir melden uns bei Ihnen mit den Zahlungsdetails.
+
+**Felder:**
+- Name *
+- E-Mail *
+- Jassname (optional) — Platzhalter: "Ihr Spielername bei JassGuru"
+- Telefon (optional)
+- Mitgliedschafts-Paket * (Auswahl: Pionier / Botschafter / Patron)
+- Nachricht (optional) — Platzhalter: "Haben Sie Fragen oder Anmerkungen?"
+
+**Hinweis-Box:** Die Online-Zahlung via Stripe/Twint wird bald verfügbar sein. Aktuell erhalten Sie nach der Anmeldung eine Rechnung per E-Mail.
+
+**Button:** Anmeldung absenden
+
+**Erfolg-Nachricht:**
+- **Titel:** Anmeldung erhalten!
+- **Text:** Vielen Dank für Ihr Interesse. Wir melden uns innerhalb von 48 Stunden mit den Zahlungsdetails.
+
+### FAQ
+
+| Frage | Antwort |
+|-------|---------|
+| Bin ich an Turniere gebunden? | Nein, Sie unterstützen die Jass-Kultur. Turniere sind ein optionales Angebot, an dem Sie freiwillig teilnehmen können. |
+| Gilt mein Beitrag als Spende? | Wir sind ein Verein nach Art. 60 ff. ZGB. Die steuerliche Abzugsfähigkeit hängt von Ihrem Wohnkanton ab. Kontaktieren Sie uns für eine Bestätigung. |
+| Kann ich jederzeit kündigen? | Ja, die Mitgliedschaft ist jährlich kündbar. Eine Kündigung ist jederzeit zum Ende des Mitgliedsjahres möglich. |
+| Was ist JassGuru? | JassGuru ist unsere digitale Jass-Plattform mit Elo-Ranking, Statistiken und Turnierorganisation. Als Mitglied erhalten Sie Zugang zu Ihrem persönlichen Elo-Profil. |
+
+### Trust-Badge
+- **Bild:** `/images/badges/lebendige-traditionen-figma.png`
+- **Text:** Der Jassverband Schweiz repräsentiert das Jassen als vom Bundesamt für Kultur anerkannte «Lebendige Tradition» der Schweiz.
 
 ---
+
+## SEO & Schema.org
+
+### Organization Schema (global)
+- **@type:** Organization
+- **name:** Jassverband Schweiz
+- **alternateName:** JVS, Fédération Suisse de Jass, Federazione Svizzera di Jass
+- **foundingDate:** 2026-01-15
+- **address:** Hirslanderstrasse 34, 8032 Zürich, CH
+- **owns:** JassWiki (jasswiki.ch), JassGuru (jassguru.ch)
+- **potentialAction:** JoinAction → /de/mitmachen
+
+### Sitemap
+Alle Seiten mit hreflang-Alternates (de, fr, it, x-default=de).
+`/mitmachen` hat Priorität 0.95 (zweithöchste nach Home).
+
+### robots.txt
+- Allow: /
+- Disallow: /api/, /_next/, /static/
+
+---
+
+## Technische Pendenzen
+
+- [ ] OG-Image (1200×630px) vom Designer
+- [ ] Stripe-Integration für Online-Zahlung
+- [ ] Twint als Zahlungsoption
+- [ ] Backend für Mitgliederverwaltung (Firestore)
+- [ ] Verknüpfung Mitgliedschaft → JassGuru/Jasstafel
+- [ ] Social-Media-Kanäle in Schema.org `sameAs` eintragen sobald vorhanden
+
+---
+
+## Terminology (Glossar)
+
+| Begriff | Definition / Note |
+|---|---|
+| Jass | Das Spiel (nicht "Jassen" als Nomen, ausser im Kontext "Das Jassen") |
+| Schieber | Die populärste Variante |
+| Stich | Ein gespielter Kartenstapel (4 Karten) |
+| Trumpf | Die dominierende Farbe |
+| Nell | Trumpf-Neun |
+| Bauer | Trumpf-Unter |
+| Weis | Punkteansage (nicht "Weisung") |
+| Stöck | König + Ober von Trumpf |
+| Match | Alle Stiche gewinnen (nicht "Durchmarsch") |
