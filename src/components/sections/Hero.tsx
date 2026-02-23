@@ -32,7 +32,7 @@ function pickRandomCards(count: number): string[] {
     if (picked.length >= count) break;
     if (!picked.includes(card)) picked.push(card);
   }
-  return picked.map(c => `/cards/de/${c}.webp`);
+  return picked.map(c => `/cards/de/${c}.png`);
 }
 
 function randomCardEntry(side: 'left' | 'right') {
