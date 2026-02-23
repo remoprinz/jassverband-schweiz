@@ -56,7 +56,7 @@ export function Footer({ locale, content, nav }: FooterProps) {
         <div
           style={{
             position: 'absolute',
-            left: '5.5%',
+            left: '10.5%',
             top: '33%',
             width: '15.8%',
             aspectRatio: '203 / 333',
@@ -122,7 +122,7 @@ export function Footer({ locale, content, nav }: FooterProps) {
           style={{
             position: 'absolute',
             bottom: '6%',
-            right: '19.7%',
+            left: '62.8%',
             whiteSpace: 'nowrap',
             fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
             fontWeight: 400,
