@@ -129,7 +129,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
           width={159}
           height={250}
           className="w-full h-auto"
-          style={{ borderRadius: '1.2vw', filter: 'drop-shadow(0 15px 25px rgba(0,0,0,0.4))' }}
+          style={{ borderRadius: '14px', filter: 'drop-shadow(0 15px 25px rgba(0,0,0,0.4))' }}
           priority
         />
       </motion.div>
@@ -148,7 +148,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
           width={159}
           height={250}
           className="w-full h-auto"
-          style={{ borderRadius: '1.2vw', filter: 'drop-shadow(0 18px 28px rgba(0,0,0,0.45))' }}
+          style={{ borderRadius: '14px', filter: 'drop-shadow(0 18px 28px rgba(0,0,0,0.45))' }}
           priority
         />
       </motion.div>
@@ -167,7 +167,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
           width={159}
           height={250}
           className="w-full h-auto"
-          style={{ borderRadius: '1.2vw', filter: 'drop-shadow(0 15px 25px rgba(0,0,0,0.4))' }}
+          style={{ borderRadius: '14px', filter: 'drop-shadow(0 15px 25px rgba(0,0,0,0.4))' }}
           priority
         />
       </motion.div>
@@ -186,7 +186,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
           width={159}
           height={250}
           className="w-full h-auto"
-          style={{ borderRadius: '1.2vw', filter: 'drop-shadow(0 12px 20px rgba(0,0,0,0.35))' }}
+          style={{ borderRadius: '14px', filter: 'drop-shadow(0 12px 20px rgba(0,0,0,0.35))' }}
           priority
         />
       </motion.div>
@@ -207,7 +207,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
           width={159}
           height={250}
           className="w-full h-auto"
-          style={{ borderRadius: '8px', filter: 'drop-shadow(0 8px 16px rgba(0,0,0,0.4))' }}
+          style={{ borderRadius: '14px', filter: 'drop-shadow(0 8px 16px rgba(0,0,0,0.4))' }}
         />
       </motion.div>
 
@@ -225,7 +225,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
           width={159}
           height={250}
           className="w-full h-auto"
-          style={{ borderRadius: '8px', filter: 'drop-shadow(0 10px 18px rgba(0,0,0,0.45))' }}
+          style={{ borderRadius: '14px', filter: 'drop-shadow(0 10px 18px rgba(0,0,0,0.45))' }}
         />
       </motion.div>
 
@@ -243,7 +243,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
           width={159}
           height={250}
           className="w-full h-auto"
-          style={{ borderRadius: '8px', filter: 'drop-shadow(0 8px 16px rgba(0,0,0,0.4))' }}
+          style={{ borderRadius: '14px', filter: 'drop-shadow(0 8px 16px rgba(0,0,0,0.4))' }}
         />
       </motion.div>
 
@@ -261,7 +261,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
           width={159}
           height={250}
           className="w-full h-auto"
-          style={{ borderRadius: '8px', filter: 'drop-shadow(0 10px 18px rgba(0,0,0,0.45))' }}
+          style={{ borderRadius: '14px', filter: 'drop-shadow(0 10px 18px rgba(0,0,0,0.45))' }}
         />
       </motion.div>
 
