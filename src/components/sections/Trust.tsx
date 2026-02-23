@@ -46,7 +46,7 @@ export function Trust({}: TrustProps) {
           </p>
 
           {/* Figma-Asset: Text + Siegel kombiniert */}
-          <div className="relative flex-shrink-0" style={{ width: 'clamp(160px, 20vw, 280px)', aspectRatio: '800 / 453' }}>
+          <div className="relative flex-shrink-0 self-end sm:self-auto" style={{ width: 'clamp(160px, 20vw, 280px)', aspectRatio: '800 / 453' }}>
             <Image
               src="/images/badges/lebendige-traditionen-figma.png"
               alt="Lebendige Traditionen der Schweiz"
