@@ -286,6 +286,28 @@ a, button {
   --hero-cta-top: 70.43%;
 }
 
+/* iPad Portrait (768-1023px) – zwischen Mobile und Desktop */
+@media (min-width: 768px) and (max-width: 1023px) {
+  :root {
+    --hero-felt-left: 5%;
+    --hero-felt-width: 90%;
+    --hero-felt-height: 85%;
+    --hero-felt-top: 0%;
+    --hero-felt-radius: 2.5vw;
+    --hero-felt-border: 12px;
+    --hero-title-top: 18%;
+    --hero-title-size: clamp(36px, 5vw, 52px);
+    --hero-title-line-height: 1.1;
+    --hero-title-max-width: 500px;
+    --hero-subtitle-top: 42%;
+    --hero-subtitle-max-width: 380px;
+    --hero-subtitle-width: 50%;
+    --hero-subtitle-size: clamp(16px, 2vw, 22px);
+    --hero-cta-top: 62%;
+  }
+}
+
+/* Mobile (<768px) */
 @media (max-width: 767px) {
   :root {
     --hero-felt-left: 24px;

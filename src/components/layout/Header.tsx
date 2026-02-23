@@ -107,8 +107,8 @@ export function Header({ locale, nav }: HeaderProps) {
             <Logo variant={logoVariant} shrunk={scrolled} />
           </Link>
 
-          {/* Desktop Navigation - Figma: Capita Bold 20px */}
-          <div className="hidden md:flex items-center gap-8 lg:gap-10">
+          {/* Desktop Navigation - Figma: Capita Bold 20px (ab lg, damit iPad Portrait Mobile-Nav bekommt) */}
+          <div className="hidden lg:flex items-center gap-8 xl:gap-10">
             {navItems.map((item) => (
               <Link
                 key={item.href}
@@ -148,7 +148,7 @@ export function Header({ locale, nav }: HeaderProps) {
 
           {/* Mobile Menu Button */}
           <button
-            className={`md:hidden p-2 rounded-lg transition-colors ${
+            className={`lg:hidden p-2 rounded-lg transition-colors ${
               showTransparent ? 'text-white' : 'text-black'
             }`}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -172,7 +172,7 @@ export function Header({ locale, nav }: HeaderProps) {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3, ease: 'easeInOut' }}
-              className="md:hidden bg-white rounded-b-xl shadow-lg overflow-hidden"
+              className="lg:hidden bg-white rounded-b-xl shadow-lg overflow-hidden"
             >
               <div className="py-4 space-y-1">
                 {/* Home link in mobile */}

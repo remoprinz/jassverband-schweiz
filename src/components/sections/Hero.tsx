@@ -131,7 +131,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
 
       {/* CARD LINKS OBEN – fliegt von links-oben ein */}
       <motion.div
-        className="absolute z-10 hidden md:block"
+        className="absolute z-10 hidden lg:block"
         style={{ left: '12.18%', top: '46.304%', width: '11.042%' }}
         initial={{ opacity: 0, x: cardEntries.leftTop.x, y: cardEntries.leftTop.y, rotate: cardEntries.leftTop.rotate }}
         animate={{ opacity: 1, x: 0, y: 0, rotate: 15.8 }}
@@ -150,7 +150,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
 
       {/* CARD LINKS UNTEN – fliegt von links ein */}
       <motion.div
-        className="absolute z-10 hidden md:block"
+        className="absolute z-10 hidden lg:block"
         style={{ left: '20.55%', top: '63.370%', width: '11.042%' }}
         initial={{ opacity: 0, x: cardEntries.leftBottom.x, y: cardEntries.leftBottom.y, rotate: cardEntries.leftBottom.rotate }}
         animate={{ opacity: 1, x: 0, y: 0, rotate: -27.35 }}
@@ -169,7 +169,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
 
       {/* CARD RECHTS OBEN – fliegt von rechts-oben ein */}
       <motion.div
-        className="absolute z-10 hidden md:block"
+        className="absolute z-10 hidden lg:block"
         style={{ left: '76.667%', top: '50.870%', width: '11.042%' }}
         initial={{ opacity: 0, x: cardEntries.rightTop.x, y: cardEntries.rightTop.y, rotate: cardEntries.rightTop.rotate }}
         animate={{ opacity: 1, x: 0, y: 0, rotate: -16.19 }}
@@ -188,7 +188,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
 
       {/* CARD RECHTS UNTEN – fliegt von rechts ein */}
       <motion.div
-        className="absolute z-10 hidden md:block"
+        className="absolute z-10 hidden lg:block"
         style={{ left: '71.806%', top: '66.957%', width: '11.042%' }}
         initial={{ opacity: 0, x: cardEntries.rightBottom.x, y: cardEntries.rightBottom.y, rotate: cardEntries.rightBottom.rotate }}
         animate={{ opacity: 1, x: 0, y: 0, rotate: 8.34 }}
@@ -209,7 +209,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
 
       {/* MOBILE CARD LINKS 1 */}
       <motion.div
-        className="absolute z-10 md:hidden"
+        className="absolute z-10 lg:hidden"
         style={{ left: '3%', top: '55%', width: '22%' }}
         initial={{ opacity: 0, x: cardEntries.mobileLeft1.x, y: cardEntries.mobileLeft1.y, rotate: cardEntries.mobileLeft1.rotate }}
         animate={{ opacity: 1, x: 0, y: 0, rotate: 12 }}
@@ -227,7 +227,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
 
       {/* MOBILE CARD LINKS 2 */}
       <motion.div
-        className="absolute z-10 md:hidden"
+        className="absolute z-10 lg:hidden"
         style={{ left: '18%', top: '62%', width: '22%' }}
         initial={{ opacity: 0, x: cardEntries.mobileLeft2.x, y: cardEntries.mobileLeft2.y, rotate: cardEntries.mobileLeft2.rotate }}
         animate={{ opacity: 1, x: 0, y: 0, rotate: -20 }}
@@ -245,7 +245,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
 
       {/* MOBILE CARD RECHTS 1 */}
       <motion.div
-        className="absolute z-10 md:hidden"
+        className="absolute z-10 lg:hidden"
         style={{ right: '3%', top: '55%', width: '22%' }}
         initial={{ opacity: 0, x: cardEntries.mobileRight1.x, y: cardEntries.mobileRight1.y, rotate: cardEntries.mobileRight1.rotate }}
         animate={{ opacity: 1, x: 0, y: 0, rotate: -14 }}
@@ -263,7 +263,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
 
       {/* MOBILE CARD RECHTS 2 */}
       <motion.div
-        className="absolute z-10 md:hidden"
+        className="absolute z-10 lg:hidden"
         style={{ right: '18%', top: '62%', width: '22%' }}
         initial={{ opacity: 0, x: cardEntries.mobileRight2.x, y: cardEntries.mobileRight2.y, rotate: cardEntries.mobileRight2.rotate }}
         animate={{ opacity: 1, x: 0, y: 0, rotate: 8 }}
