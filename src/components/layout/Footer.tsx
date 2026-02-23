@@ -46,9 +46,11 @@ const headingStyle = {
   color: 'rgba(255, 255, 255, 0.95)',
 };
 
+const FOOTER_BG = '#252525';
+
 export function Footer({ locale, content, nav }: FooterProps) {
   return (
-    <footer className="relative" style={{ backgroundColor: '#1a1a1a', overflow: 'visible' }}>
+    <footer className="relative" style={{ backgroundColor: FOOTER_BG, overflow: 'visible' }}>
       {/* Jester – absolut positioniert, ragt unten über den Rand */}
       <div
         className="hidden md:block absolute z-0 pointer-events-none"
@@ -68,7 +70,7 @@ export function Footer({ locale, content, nav }: FooterProps) {
         />
       </div>
 
-      <div className="container-main relative z-10 pt-14 md:pt-20 pb-6">
+      <div className="container-main relative z-10 pt-14 md:pt-20 pb-14 md:pb-20">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8">
           {/* Left: Logo */}
           <div className="md:col-span-4">
@@ -102,8 +104,8 @@ export function Footer({ locale, content, nav }: FooterProps) {
             </ul>
           </div>
 
-          {/* Rechtliches */}
-          <div className="md:col-span-4">
+          {/* Rechtliches + Copyright */}
+          <div className="md:col-span-4 flex flex-col">
             <h4 className="mb-5" style={headingStyle}>
               {content.legal}
             </h4>
@@ -154,24 +156,20 @@ export function Footer({ locale, content, nav }: FooterProps) {
                 info@jassverband.ch
               </a>
             </div>
-          </div>
-        </div>
 
-        {/* Copyright */}
-        <div
-          className="mt-16 pt-8 text-center"
-          style={{ borderTop: '1px solid rgba(255, 255, 255, 0.08)' }}
-        >
-          <p
-            style={{
-              fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
-              fontWeight: 400,
-              fontSize: '13px',
-              color: 'rgba(255, 255, 255, 0.35)',
-            }}
-          >
-            {content.copyright}
-          </p>
+            {/* Copyright – rechts unten im Rechtliches-Block */}
+            <p
+              className="mt-auto pt-10"
+              style={{
+                fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
+                fontWeight: 400,
+                fontSize: '13px',
+                color: 'rgba(255, 255, 255, 0.35)',
+              }}
+            >
+              {content.copyright}
+            </p>
+          </div>
         </div>
       </div>
     </footer>
