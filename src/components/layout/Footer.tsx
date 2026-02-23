@@ -58,8 +58,8 @@ export function Footer({ locale, content, nav }: FooterProps) {
         <div
           className="hidden md:block absolute"
           style={{
-            left: '0',
-            top: '110px',
+            left: '80px',
+            top: '140px',
             width: '203px',
             height: '333px',
           }}
@@ -168,13 +168,12 @@ export function Footer({ locale, content, nav }: FooterProps) {
           </div>
         </div>
 
-        {/* Copyright – 342×20, zentriert unten */}
+        {/* Copyright – 342×20, linksbündig zum Navigationsblock */}
         <p
-          className="absolute text-center"
+          className="absolute text-left"
           style={{
             bottom: '24px',
-            left: '50%',
-            transform: 'translateX(-50%)',
+            right: '504px',
             width: '342px',
             fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
             fontWeight: 400,
