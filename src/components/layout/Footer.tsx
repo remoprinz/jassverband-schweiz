@@ -132,8 +132,8 @@ export function Footer({ locale, content, nav }: FooterProps) {
           <div 
             className="absolute"
             style={{ 
-              top: '150px',
-              left: '200px',
+              top: '155px',
+              left: '300x',
               width: '203px', 
               height: '333px',
             }}
@@ -149,8 +149,8 @@ export function Footer({ locale, content, nav }: FooterProps) {
 
           {/* Navigation + Rechtliches – Flex-Layout, rechtsbündig mit Content */}
           <div 
-            className="flex justify-end gap-16"
-            style={{ paddingTop: '64px' }}
+            className="flex justify-end"
+            style={{ paddingTop: '64px', gap: '120px' }}
           >
             {/* Navigation */}
             <div style={{ width: '140px' }}>
