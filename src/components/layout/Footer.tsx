@@ -20,18 +20,6 @@ interface FooterProps {
   };
 }
 
-function FooterLogo() {
-  return (
-    <Image
-      src="/images/logos/JVS Logo farbig weiss.svg"
-      alt="Jassverband Schweiz"
-      width={200}
-      height={54}
-      className="h-12 md:h-14 w-auto"
-    />
-  );
-}
-
 const linkStyle = {
   fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
   fontWeight: 400 as const,
@@ -46,131 +34,156 @@ const headingStyle = {
   color: 'rgba(255, 255, 255, 0.95)',
 };
 
-const FOOTER_BG = '#252525';
-
 export function Footer({ locale, content, nav }: FooterProps) {
   return (
-    <footer className="relative" style={{ backgroundColor: FOOTER_BG, overflow: 'visible' }}>
-      {/* Jester – absolut positioniert, ragt unten über den Rand */}
-      <div
-        className="hidden md:block absolute z-0 pointer-events-none"
-        style={{
-          left: 'max(40px, calc((100% - 1280px) / 2 + 40px))',
-          top: '80px',
-          width: '220px',
-          bottom: '-80px',
-        }}
-      >
-        <Image
-          src="/images/cards/jester.png"
-          alt="Jass Narr"
-          fill
-          className="object-contain object-bottom"
-          sizes="220px"
-        />
-      </div>
+    <footer
+      className="relative overflow-hidden"
+      style={{ backgroundColor: '#000000', height: '390px' }}
+    >
+      <div className="container-main relative h-full">
+        {/* Logo – 189×51, oben links */}
+        <div className="absolute" style={{ top: '48px', left: '0' }}>
+          <Image
+            src="/images/logos/JVS Logo farbig weiss.svg"
+            alt="Jassverband Schweiz"
+            width={189}
+            height={51}
+            className="w-auto"
+            style={{ height: '51px' }}
+            priority
+          />
+        </div>
 
-      <div className="container-main relative z-10 pt-14 md:pt-20 pb-14 md:pb-20">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8">
-          {/* Left: Logo */}
-          <div className="md:col-span-4">
-            <FooterLogo />
-          </div>
+        {/* Jester – 203×333, wird unten abgeschnitten */}
+        <div
+          className="hidden md:block absolute"
+          style={{
+            left: '0',
+            top: '110px',
+            width: '203px',
+            height: '333px',
+          }}
+        >
+          <Image
+            src="/images/cards/jester.png"
+            alt="Jass Narr"
+            fill
+            className="object-contain object-top"
+            sizes="203px"
+          />
+        </div>
 
-          {/* Navigation */}
-          <div className="md:col-span-4">
-            <h4 className="mb-5" style={headingStyle}>
-              Navigation
-            </h4>
-            <ul className="space-y-3">
-              {[
-                { href: `/${locale}`, label: nav.home },
-                { href: `/${locale}/verband`, label: nav.verband },
-                { href: `/${locale}/news`, label: nav.news },
-                { href: `/${locale}/projekte`, label: nav.projekte },
-                { href: `/${locale}/partner`, label: nav.partner },
-                { href: `/${locale}/kontakt`, label: nav.kontakt },
-              ].map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="transition-colors duration-200 hover:text-white"
-                    style={linkStyle}
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Rechtliches + Copyright */}
-          <div className="md:col-span-4 flex flex-col">
-            <h4 className="mb-5" style={headingStyle}>
-              {content.legal}
-            </h4>
-            <ul className="space-y-3">
-              <li>
+        {/* Navigation – 252×232 */}
+        <div
+          className="absolute"
+          style={{
+            right: '252px',
+            top: '48px',
+            width: '252px',
+          }}
+        >
+          <h4 className="mb-5" style={headingStyle}>
+            Navigation
+          </h4>
+          <ul className="space-y-3">
+            {[
+              { href: `/${locale}`, label: nav.home },
+              { href: `/${locale}/verband`, label: nav.verband },
+              { href: `/${locale}/news`, label: nav.news },
+              { href: `/${locale}/projekte`, label: nav.projekte },
+              { href: `/${locale}/partner`, label: nav.partner },
+              { href: `/${locale}/kontakt`, label: nav.kontakt },
+            ].map((item) => (
+              <li key={item.href}>
                 <Link
-                  href={`/${locale}/impressum`}
+                  href={item.href}
                   className="transition-colors duration-200 hover:text-white"
                   style={linkStyle}
                 >
-                  {content.impressum}
+                  {item.label}
                 </Link>
               </li>
-              <li>
-                <Link
-                  href={`/${locale}/datenschutz`}
-                  className="transition-colors duration-200 hover:text-white"
-                  style={linkStyle}
-                >
-                  {content.datenschutz}
-                </Link>
-              </li>
-            </ul>
+            ))}
+          </ul>
+        </div>
 
-            <div className="mt-8">
-              <p
-                style={{
-                  fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
-                  fontWeight: 400,
-                  fontSize: '14px',
-                  lineHeight: '1.7',
-                  color: 'rgba(255, 255, 255, 0.4)',
-                }}
+        {/* Rechtliches – 252×232 */}
+        <div
+          className="absolute"
+          style={{
+            right: '0',
+            top: '48px',
+            width: '252px',
+          }}
+        >
+          <h4 className="mb-5" style={headingStyle}>
+            {content.legal}
+          </h4>
+          <ul className="space-y-3">
+            <li>
+              <Link
+                href={`/${locale}/impressum`}
+                className="transition-colors duration-200 hover:text-white"
+                style={linkStyle}
               >
-                Hirslanderstrasse 34<br />
-                8032 Zürich
-              </p>
-              <a
-                href="mailto:info@jassverband.ch"
-                className="inline-block mt-2 transition-colors duration-200 hover:text-white"
-                style={{
-                  fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
-                  fontWeight: 400,
-                  fontSize: '14px',
-                  color: 'rgba(255, 255, 255, 0.4)',
-                }}
+                {content.impressum}
+              </Link>
+            </li>
+            <li>
+              <Link
+                href={`/${locale}/datenschutz`}
+                className="transition-colors duration-200 hover:text-white"
+                style={linkStyle}
               >
-                info@jassverband.ch
-              </a>
-            </div>
+                {content.datenschutz}
+              </Link>
+            </li>
+          </ul>
 
-            {/* Copyright – rechts unten im Rechtliches-Block */}
+          <div className="mt-8">
             <p
-              className="mt-auto pt-10"
               style={{
                 fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
                 fontWeight: 400,
-                fontSize: '13px',
-                color: 'rgba(255, 255, 255, 0.35)',
+                fontSize: '14px',
+                lineHeight: '1.7',
+                color: 'rgba(255, 255, 255, 0.4)',
               }}
             >
-              {content.copyright}
+              Hirslanderstrasse 34<br />
+              8032 Zürich
             </p>
+            <a
+              href="mailto:info@jassverband.ch"
+              className="inline-block mt-2 transition-colors duration-200 hover:text-white"
+              style={{
+                fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
+                fontWeight: 400,
+                fontSize: '14px',
+                color: 'rgba(255, 255, 255, 0.4)',
+              }}
+            >
+              info@jassverband.ch
+            </a>
           </div>
         </div>
+
+        {/* Copyright – 342×20, zentriert unten */}
+        <p
+          className="absolute text-center"
+          style={{
+            bottom: '24px',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            width: '342px',
+            fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
+            fontWeight: 400,
+            fontSize: '13px',
+            color: 'rgba(255, 255, 255, 0.35)',
+          }}
+        >
+          {content.copyright}
+        </p>
       </div>
     </footer>
   );

@@ -81,8 +81,6 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
             {children}
           </MainWrapper>
           <Footer locale={locale} content={footer} nav={nav} />
-          {/* Spacer für Jester-Overflow im Footer */}
-          <div className="h-20 bg-[#252525]" aria-hidden="true" />
         </NextIntlClientProvider>
       </body>
     </html>
