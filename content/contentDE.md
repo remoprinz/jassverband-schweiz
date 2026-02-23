@@ -1,7 +1,7 @@
 # Jassverband Schweiz – Content (Deutsch)
 
 > **Referenzdokument für sämtlichen Website-Content.**
-> Quelle: `src/lib/dictionaries/de.json`, Seiten-Komponenten, `src/lib/news/articles.ts`
+> Quellen: `src/lib/dictionaries/de.json`, Seiten-Komponenten, `src/lib/news/articles.ts`
 > Stand: 23. Februar 2026
 
 ---
@@ -24,6 +24,7 @@ Tradition trifft Innovation.
 - **Titel:** Jassverband Schweiz | Tradition trifft Innovation
 - **Beschreibung:** Der Jassverband Schweiz fördert das Schweizer Nationalspiel als modernen Denksport. Jugendförderung, digitale Plattformen, nationale Meisterschaften.
 - **URL:** https://jassverband.ch
+- **Open Graph Locale:** de_CH
 
 ---
 
@@ -38,6 +39,8 @@ Tradition trifft Innovation.
 | partner | Partner werden |
 | kontakt | Kontakt |
 
+**Sprachauswahl:** DE / FR / IT
+
 ---
 
 ## Hero-Section
@@ -45,10 +48,14 @@ Tradition trifft Innovation.
 - **Titel:** Jassen ist mehr als ein Kartenspiel.
 - **Subtitle:** Es ist Schweizer Kulturgut — und verdient eine moderne Zukunft.
 - **CTA:** Jetzt Mitglied werden
+- **Hintergrund:** Holztisch-Textur mit grünem Filz-Teppich
+- **Karten:** 4 zufällige Jass-Karten (DE-Set), hochwertige Karten (10, U, O, K, A) 3x häufiger
 
 ---
 
 ## Pillars-Section (Unsere Mission)
+
+**Überschrift:** Unsere Mission
 
 ### Tradition bewahren
 Jassen ist beim Bundesamt für Kultur als «Lebendige Tradition» gelistet. Wir sichern dieses Erbe für kommende Generationen.
@@ -66,6 +73,7 @@ Mit digitalen Plattformen und einem nationalen Elo-System modernisieren wir den 
 - **Titel:** Schweizer Jugend Team-Schiebermeisterschaft
 - **Subtitle:** Der erste nationale Jass-Wettkampf für junge Teams
 - **CTA:** Jetzt anmelden
+- **Hintergrund:** Grüner Filz (felt-figma.png)
 
 ---
 
@@ -90,14 +98,17 @@ Der Wettkampf — Turniere und Meisterschaften.
 
 ## Trust-Section
 
+**Hintergrund:** #e8e4dc
+
 **Text:** JVS repräsentiert Jassen als vom Bundesamt für Kultur anerkannte [lebendige Tradition](https://www.lebendige-traditionen.ch/tradition/de/home/traditionen/jassen.html).
 
 **Badge:** Lebendige Tradition
 **Badge-Text:** Gelistet beim Bundesamt für Kultur
+**Badge-Asset:** `/images/badges/lebendige-traditionen-figma.png`
 
 ---
 
-## Seite: Verband
+## Seite: Verband (`/de/verband`)
 
 **Titel:** Der Verband
 
@@ -112,26 +123,44 @@ Der Wettkampf — Turniere und Meisterschaften.
 | Dr. Erich Studerus | Aktuar | Wissenschaft und Dokumentation |
 
 ### Unsere Werte
-- Respekt
-- Fairplay
-- Integrität
-- Inklusion
+- **Respekt** — Achtung vor Mitspielern und Tradition
+- **Fairplay** — Ehrliches Spiel und sportlicher Umgang
+- **Integrität** — Aufrichtigkeit in allem was wir tun
+- **Inklusion** — Jassen für alle, unabhängig von Herkunft oder Alter
 
 ### Statuten
 → Download: `/documents/statuten-jvs.pdf`
 
 ---
 
-## Seite: Projekte
+## Seite: News (`/de/news`)
+
+**Titel:** News & Aktuelles
+**Subtitle:** Neuigkeiten rund um den Jassverband Schweiz
+
+**Leere Seite:** Noch keine Artikel vorhanden.
+**Weitere Artikel Label:** Weitere Artikel
+
+---
+
+## Seite: Projekte (`/de/projekte`)
 
 **Titel:** Unsere Projekte
 **Subtitle:** Digitale Werkzeuge und Plattformen für die Jass-Community
+
+### Projekte
+
+| Projekt | URL | Beschreibung |
+|---------|-----|-------------|
+| JassWiki | https://jasswiki.ch | Die Enzyklopädie des Jassens — Regeln, Varianten und Geschichte. |
+| JassGuru | https://jassguru.ch | Trainiere deine Skills — Punktetafel, Elo-System und Statistiken. |
+| Jassmeister | https://jassmeister.web.app | Der Wettkampf — Turniere und Meisterschaften. |
 
 **Info-Box:** Gemeinsam für die Zukunft des Jassens — Alle Plattformen sind Teil des digitalen Ökosystems des Jassverbands Schweiz. Sie ergänzen sich gegenseitig und bieten der Jass-Community ein umfassendes Angebot von Wissen über Training bis zum Wettkampf.
 
 ---
 
-## Seite: Partner werden
+## Seite: Partner werden (`/de/partner`)
 
 **Titel:** Partner werden
 **Subtitle:** Investieren Sie in Schweizer Kulturgut und Jugendförderung
@@ -145,22 +174,28 @@ Der Wettkampf — Turniere und Meisterschaften.
 **CTA:** Kontaktieren Sie uns
 **Brochure:** Sponsoring-Broschüre herunterladen (PDF) → `/documents/sponsoring-jvs.pdf`
 
-**CTA-Box:** Interessiert? Kontaktieren Sie uns für ein unverbindliches Gespräch über Partnerschaften und Sponsoring-Möglichkeiten.
+**CTA-Box-Titel:** Interessiert?
+**CTA-Box-Text:** Kontaktieren Sie uns für ein unverbindliches Gespräch über Partnerschaften und Sponsoring-Möglichkeiten.
 
 ---
 
-## Seite: Kontakt
+## Seite: Kontakt (`/de/kontakt`)
 
 **Titel:** Kontakt
 **Subtitle:** Wir freuen uns auf Ihre Nachricht
 
-### Formular
+### Formular-Felder
 - Name
 - E-Mail
 - Nachricht
-- Absenden
+- **Button:** Absenden
+
+### Erfolg-Nachricht
+- **Titel:** Nachricht gesendet!
+- **Text:** Wir melden uns so schnell wie möglich bei Ihnen.
 
 ### Kontaktdaten
+- **Organisation:** Jassverband Schweiz
 - **Adresse:** Hirslanderstrasse 34, 8032 Zürich
 - **E-Mail:** info@jassverband.ch
 - **Telefon:** +41 79 237 52 08
@@ -168,7 +203,7 @@ Der Wettkampf — Turniere und Meisterschaften.
 
 ---
 
-## Seite: Impressum
+## Seite: Impressum (`/de/impressum`)
 
 **Titel:** Impressum
 
@@ -193,7 +228,7 @@ Die Inhalte dieser Website wurden mit grösster Sorgfalt erstellt. Für die Rich
 
 ---
 
-## Seite: Datenschutz
+## Seite: Datenschutz (`/de/datenschutz`)
 
 **Titel:** Datenschutzerklärung
 
@@ -229,7 +264,11 @@ Es gilt das Schweizerische Datenschutzgesetz (revDSG). Gerichtsstand ist Zürich
 
 ## Footer
 
-- **Tagline:** Tradition trifft Innovation
+- **Logo:** `/images/logos/JVS Logo farbig weiss.svg` (189 × 51px)
+- **Jester:** `/images/cards/jester.png` (203 × 333px, ragt unten über den Footer hinaus)
+- **Hintergrund:** #000000 (reines Schwarz)
+- **Höhe Desktop:** 390px mit overflow: hidden
+- **Navigation:** Home, Verband, News, Projekte, Partner werden, Kontakt
 - **Rechtliches:** Impressum, Datenschutz
 - **Adresse:** Hirslanderstrasse 34, 8032 Zürich
 - **E-Mail:** info@jassverband.ch
@@ -313,22 +352,6 @@ Wir laden alle ein, Teil dieser Bewegung zu werden. Ob als Spieler, Partner, ode
 - **Featured:** Ja
 - **Tags:** meisterschaft, jugend, turnier
 
----
-
-## Terminology (Glossar)
-
-| Begriff | Definition / Note |
-|---|---|
-| Jass | Das Spiel (nicht "Jassen" als Nomen, ausser im Kontext "Das Jassen") |
-| Schieber | Die populärste Variante |
-| Stich | Ein gespielter Kartenstapel (4 Karten) |
-| Trumpf | Die dominierende Farbe |
-| Nell | Trumpf-Neun |
-| Bauer | Trumpf-Unter |
-| Weis | Punkteansage (nicht "Weisung") |
-| Stöck | König + Ober von Trumpf |
-| Match | Alle Stiche gewinnen (nicht "Durchmarsch") |
-
 **Excerpt:** Die erste nationale Jass-Meisterschaft für junge Teams startet. Jetzt anmelden und Teil der Geschichte werden.
 
 **Content:**
@@ -353,3 +376,19 @@ Es ist offiziell: Die **Schweizer Jugend Team-Schiebermeisterschaft 2026** nimmt
 - Community – Lernt Gleichgesinnte kennen
 
 → [Jetzt anmelden auf jassmeister.web.app](https://jassmeister.web.app)
+
+---
+
+## Terminology (Glossar)
+
+| Begriff | Definition / Note |
+|---------|-------------------|
+| Jass | Das Spiel (nicht "Jassen" als Nomen, ausser im Kontext "Das Jassen") |
+| Schieber | Die populärste Variante |
+| Stich | Ein gespielter Kartenstapel (4 Karten) |
+| Trumpf | Die dominierende Farbe |
+| Nell | Trumpf-Neun |
+| Bauer | Trumpf-Unter |
+| Weis | Punkteansage (nicht "Weisung") |
+| Stöck | König + Ober von Trumpf |
+| Match | Alle Stiche gewinnen (nicht "Durchmarsch") |
