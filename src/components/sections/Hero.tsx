@@ -86,7 +86,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
   return (
     <section
       className="relative w-full overflow-hidden"
-      style={{ height: '100vh', maxHeight: '920px', minHeight: '520px' }}
+      style={{ height: '100vh', minHeight: '520px' }}
     >
       {/* HOLZTISCH – full bleed */}
       <div className="absolute inset-0 z-0">
