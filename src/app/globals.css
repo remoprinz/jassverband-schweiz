@@ -288,8 +288,8 @@ a, button {
 
 @media (max-width: 767px) {
   :root {
-    --hero-felt-left: 4%;
-    --hero-felt-width: 92%;
+    --hero-felt-left: 24px;
+    --hero-felt-width: calc(100% - 48px);
     --hero-felt-height: 60%;
     --hero-felt-top: 12%;
     --hero-felt-radius: 16px;
