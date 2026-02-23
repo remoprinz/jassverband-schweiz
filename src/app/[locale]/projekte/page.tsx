@@ -34,6 +34,7 @@ export default async function ProjektePage({ params }: ProjektePageProps) {
       icon: icons.jasswiki,
       title: t("ecosystem.jasswiki.title"),
       description: t("ecosystem.jasswiki.description"),
+      comingSoon: false,
     },
     {
       key: "jassguru",
@@ -41,13 +42,15 @@ export default async function ProjektePage({ params }: ProjektePageProps) {
       icon: icons.jassguru,
       title: t("ecosystem.jassguru.title"),
       description: t("ecosystem.jassguru.description"),
+      comingSoon: false,
     },
     {
       key: "jassmeister",
-      href: "https://jassmeister.web.app",
+      href: "#",
       icon: icons.jassmeister,
       title: t("ecosystem.jassmeister.title"),
       description: t("ecosystem.jassmeister.description"),
+      comingSoon: true,
     },
   ];
 
@@ -61,13 +64,20 @@ export default async function ProjektePage({ params }: ProjektePageProps) {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {projects.map((project) => (
-            <ProjectCard
-              key={project.key}
-              title={project.title}
-              description={project.description}
-              href={project.href}
-              icon={<div className="w-12 h-12">{project.icon}</div>}
-            />
+            <div key={project.key} className="relative">
+              {project.comingSoon && (
+                <div className="absolute -top-2 -right-2 z-10 bg-[#ff0000] text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+                  Coming Soon
+                </div>
+              )}
+              <ProjectCard
+                title={project.title}
+                description={project.description}
+                href={project.comingSoon ? undefined : project.href}
+                icon={<div className="w-12 h-12">{project.icon}</div>}
+                className={project.comingSoon ? "opacity-80 cursor-default" : ""}
+              />
+            </div>
           ))}
         </div>
 

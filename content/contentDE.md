@@ -47,7 +47,8 @@ Tradition trifft Innovation.
 
 - **Titel:** Jassen ist mehr als ein Kartenspiel.
 - **Subtitle:** Es ist Schweizer Kulturgut — und verdient eine moderne Zukunft.
-- **CTA:** Jetzt Mitglied werden
+- **CTA:** Jetzt mitmachen
+- **CTA-Link:** /de/mitmachen
 - **Hintergrund:** Holztisch-Textur mit grünem Filz-Teppich
 - **Karten:** 4 zufällige Jass-Karten (DE-Set), hochwertige Karten (10, U, O, K, A) 3x häufiger
 
@@ -150,11 +151,11 @@ Der Wettkampf — Turniere und Meisterschaften.
 
 ### Projekte
 
-| Projekt | URL | Beschreibung |
-|---------|-----|-------------|
-| JassWiki | https://jasswiki.ch | Die Enzyklopädie des Jassens — Regeln, Varianten und Geschichte. |
-| JassGuru | https://jassguru.ch | Trainiere deine Skills — Punktetafel, Elo-System und Statistiken. |
-| Jassmeister | https://jassmeister.web.app | Der Wettkampf — Turniere und Meisterschaften. |
+| Projekt | URL | Beschreibung | Status |
+|---------|-----|-------------|--------|
+| JassWiki | https://jasswiki.ch | Die Enzyklopädie des Jassens — Regeln, Varianten und Geschichte. | Live |
+| JassGuru | https://jassguru.ch | Trainiere deine Skills — Punktetafel, Elo-System und Statistiken. | Live |
+| Jassmeister | — | Der Wettkampf — Turniere und Meisterschaften. | Coming Soon |
 
 **Info-Box:** Gemeinsam für die Zukunft des Jassens — Alle Plattformen sind Teil des digitalen Ökosystems des Jassverbands Schweiz. Sie ergänzen sich gegenseitig und bieten der Jass-Community ein umfassendes Angebot von Wissen über Training bis zum Wettkampf.
 
@@ -289,7 +290,7 @@ Es gilt das Schweizerische Datenschutzgesetz (revDSG). Gerichtsstand ist Zürich
 
 ---
 
-### Artikel 1: Jassverband Schweiz offiziell gegründet
+### Artikel 1: Jassverband Schweiz gegründet – Eine neue Ära
 
 - **Slug:** gruendung-jassverband-schweiz
 - **Datum:** 15. Januar 2026
@@ -298,97 +299,79 @@ Es gilt das Schweizerische Datenschutzgesetz (revDSG). Gerichtsstand ist Zürich
 - **Featured:** Ja
 - **Tags:** verband, gründung, meilenstein
 
-**Excerpt:** Am 15. Januar 2026 wurde in Zürich der Jassverband Schweiz (JVS) gegründet. Ein historischer Schritt für das Schweizer Nationalspiel.
+**Excerpt:** Am 15. Januar 2026 wurde in Zürich der Jassverband Schweiz (JVS) gegründet – mit einer klaren Vision: Jeder Mensch in der Schweiz lernt jassen.
 
 **Content:**
 
-#### Ein historischer Tag für das Jassen
+#### Der Jassverband Schweiz ist da
 
-Am 15. Januar 2026 wurde in Zürich Geschichte geschrieben: Die Gründungsmitglieder Remo Prinz, Fabian Cadonau und Dr. Erich Studerus haben den **Jassverband Schweiz (JVS)** ins Leben gerufen.
+Am 15. Januar 2026 wurde in Zürich der **Jassverband Schweiz (JVS)** gegründet. Mit diesem Schritt erhält das Schweizer Nationalspiel erstmals eine professionelle Organisation, die sich seiner Förderung, Erhaltung und Modernisierung verschreibt.
 
-Das Jassen ist mehr als ein Kartenspiel. Es ist ein Stück Schweizer Identität, das in Beizen und Stuben, an Familientischen und in Vereinslokalen lebendig bleibt. Es verbindet Generationen, überbrückt Sprachgrenzen und schafft Momente echter Begegnung in einer zunehmend digitalen Welt.
+Die Gründungsmitglieder – Remo Prinz (Präsident), Fabian Cadonau (Vizepräsident) und Dr. Erich Studerus (Aktuar) – eint eine gemeinsame Vision: **Jeder Mensch in der Schweiz lernt jassen.**
 
-#### Unsere Philosophie: Tradition trifft Innovation
+#### Warum braucht das Jassen einen Verband?
 
-Wir glauben, dass wahre Tradition nicht in Museen gehört. Sie lebt, wenn sie gelebt wird. Der Jassverband Schweiz steht für eine einfache Überzeugung: **Das Jassen verdient eine moderne Zukunft, ohne seine Seele zu verlieren.**
+Das Jassen ist beim Bundesamt für Kultur als «Lebendige Tradition» gelistet – eine Auszeichnung, die es mit dem Schwingen, dem Jodeln und dem Alphorn teilt. Doch lebendige Traditionen brauchen aktive Pflege.
 
-Das bedeutet konkret:
+Während das Jassen in Wirtshäusern und Wohnzimmern weiterhin gespielt wird, fehlt es an:
+- **Zentralem Wissen:** Regeln werden regional unterschiedlich interpretiert
+- **Nachwuchsförderung:** Junge Menschen finden schwer Zugang
+- **Digitaler Infrastruktur:** Keine einheitliche Plattform für Training und Wettkampf
 
-- **Wir bewahren, was zählt.** Die Rituale, die Begriffe, die kleinen Traditionen am Tisch – vom "Stöck-Wys-Stich" bis zum respektvollen Umgang mit dem Gegner.
-- **Wir öffnen, was verstaubt wirkt.** Jassen ist kein Sport für ältere Herren. Es ist ein strategischer Denksport, der junge Köpfe fordert und fördert.
-- **Wir digitalisieren, ohne zu vergessen.** Unsere Plattformen – JassWiki, JassGuru, Jassmeister – sind Werkzeuge, nicht Ersatz. Der echte Jass findet immer noch am Tisch statt.
+Der Jassverband Schweiz schliesst diese Lücken.
+
+#### Das digitale Ökosystem
+
+Der JVS baut auf einem bestehenden Fundament auf – drei digitale Plattformen, die gemeinsam das umfassendste Jass-Angebot der Schweiz bilden:
+
+- **[JassWiki](https://jasswiki.ch)** — Die Enzyklopädie des Jassens. Über 100 Artikel zu Regeln, Varianten, Geschichte und Strategie.
+- **[JassGuru](https://jassguru.ch)** — Die digitale Jasstafel mit integriertem Elo-System.
+- **Jassmeister** *(in Entwicklung)* — Die Wettkampf-Plattform für Turniere und Meisterschaften.
 
 #### Die drei Säulen unserer Mission
 
 **1. Tradition bewahren**
-Das Jassen ist beim Bundesamt für Kultur als "Lebendige Tradition" gelistet – eine Ehre, die verpflichtet. Wir dokumentieren Wissen, sammeln Varianten und sorgen dafür, dass dieses Erbe nicht in Vergessenheit gerät.
+Das Jass-Wissen darf nicht verloren gehen. Wir dokumentieren Varianten, sammeln historische Quellen und sorgen dafür, dass die Begriffe – vom Nell bis zum Weis – korrekt überliefert werden.
 
-**2. Jugend fördern**
-Mit der Schweizer Jugend Team-Schiebermeisterschaft bringen wir strategisches Denken und echte Teamarbeit in Schulen und Universitäten. Jassen schärft den Geist: Wahrscheinlichkeitsrechnung, Mustererkennung, Kommunikation ohne Worte – Fähigkeiten, die weit über den Kartentisch hinaus wertvoll sind.
+**2. Zugang vereinfachen**
+Jassen soll keine Geheimwissenschaft sein. Mit verständlichen Anleitungen, digitalen Lerntools und offenen Plattformen machen wir den Einstieg so einfach wie möglich.
 
 **3. Zukunft gestalten**
-Ein nationales Elo-System macht Leistung messbar und vergleichbar. Digitale Plattformen ermöglichen Training und Austausch. Aber am Ende zählt, was zählt: vier Menschen, 36 Karten, und die Frage, wer den besseren Durchblick hat.
+Ein nationales Elo-System macht Leistung messbar. Digitale Turniere ermöglichen Wettkampf über Kantonsgrenzen hinweg. Der Jass der Zukunft ist vernetzt – aber der echte Jass findet immer noch am Tisch statt.
 
-#### Warum jetzt?
+#### Teil der Bewegung werden
 
-Das Jassen erlebt einen stillen Wandel. Die Generation, die es am Stammtisch gelernt hat, wird älter. Gleichzeitig entdecken junge Menschen das Spiel neu – oft über digitale Wege. Der Jassverband Schweiz will diese Brücke sein: zwischen analog und digital, zwischen Tradition und Moderne, zwischen den Generationen.
+Der Jassverband Schweiz ist offen für alle, die das Jassen lieben – ob als Gelegenheitsspieler, ambitionierter Wettkämpfer oder kulturell Interessierte.
 
-#### Was kommt als Nächstes?
+Im Gründungsjahr 2026 bieten wir den exklusiven **Pionier-Status**: Alle Mitglieder, die jetzt beitreten, werden dauerhaft als Gründungsmitglieder geführt.
 
-Im ersten Jahr fokussieren wir uns auf die **Schweizer Jugend Team-Schiebermeisterschaft 2026**. Dieses Leuchtturmprojekt soll zeigen, was möglich ist, wenn man das Jassen ernst nimmt – als Sport, als Kulturgut, als Gemeinschaft.
+→ **[Jetzt mitmachen](/de/mitmachen)** und Teil der Geschichte werden.
 
-Wir laden alle ein, Teil dieser Bewegung zu werden. Ob als Spieler, Partner, oder einfach als jemand, der findet: Das Jassen hat eine moderne Zukunft verdient.
+*«Tradition trifft Innovation» – das ist mehr als ein Slogan. Es ist unser Versprechen.*
 
 *Der Vorstand des Jassverbands Schweiz*
 
 ---
 
-### Artikel 2: Jugendmeisterschaft 2026 – Anmeldung eröffnet
+## Geplante Seiten
 
-- **Slug:** jugendmeisterschaft-2026-ankuendigung
-- **Datum:** 1. Februar 2026
-- **Autor:** Jassverband Schweiz (Redaktion)
-- **Lesezeit:** 3 Min.
-- **Featured:** Ja
-- **Tags:** meisterschaft, jugend, turnier
+### /de/mitmachen (Landingpage)
 
-**Excerpt:** Die erste nationale Jass-Meisterschaft für junge Teams startet. Jetzt anmelden und Teil der Geschichte werden.
+> **Status:** Geplant, noch nicht implementiert
 
-**Content:**
+**Struktur:**
+1. Hero: "Gestalten Sie die Zukunft des Schweizer Jass"
+2. Warum wir Sie brauchen
+3. Pionier-Status (nur 2026)
+4. Mitgliedschafts-Pakete (Pionier CHF 60 / Botschafter CHF 90 / Patron CHF 180)
+5. Was Ihr Beitrag bewirkt
+6. FAQ
+7. Footer
 
-#### Die erste nationale Jugend-Meisterschaft
-
-Es ist offiziell: Die **Schweizer Jugend Team-Schiebermeisterschaft 2026** nimmt Anmeldungen entgegen!
-
-#### Wer kann teilnehmen?
-- Teams bestehend aus **2 Spielern** (feste Partnerschaft)
-- Alter: **16 bis 25 Jahre**
-- Wohnsitz in der Schweiz
-
-#### Wie funktioniert es?
-1. **Online-Qualifikation** – Spielt euch in die Top-Rankings
-2. **Regionale Finals** – Die besten Teams treten gegeneinander an
-3. **Nationales Finale** – Der Showdown um den Titel
-
-#### Warum mitmachen?
-- Ruhm und Ehre – Werdet die ersten Schweizer Jugend-Meister
-- Offizielles Elo-Rating – Eure Leistung wird messbar
-- Community – Lernt Gleichgesinnte kennen
-
-→ [Jetzt anmelden auf jassmeister.web.app](https://jassmeister.web.app)
+**Technische Anforderungen:**
+- Stripe-Integration für Zahlungen
+- Twint als zusätzliche Zahlungsoption
+- Backend für Mitgliederverwaltung
+- Verknüpfung mit JassGuru/Jasstafel
 
 ---
-
-## Terminology (Glossar)
-
-| Begriff | Definition / Note |
-|---------|-------------------|
-| Jass | Das Spiel (nicht "Jassen" als Nomen, ausser im Kontext "Das Jassen") |
-| Schieber | Die populärste Variante |
-| Stich | Ein gespielter Kartenstapel (4 Karten) |
-| Trumpf | Die dominierende Farbe |
-| Nell | Trumpf-Neun |
-| Bauer | Trumpf-Unter |
-| Weis | Punkteansage (nicht "Weisung") |
-| Stöck | König + Ober von Trumpf |
-| Match | Alle Stiche gewinnen (nicht "Durchmarsch") |

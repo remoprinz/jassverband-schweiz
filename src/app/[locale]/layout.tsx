@@ -9,6 +9,7 @@ import { locales, type Locale } from "@/lib/i18n";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { MainWrapper } from "@/components/layout/MainWrapper";
+import { OrganizationSchema } from "@/components/seo/OrganizationSchema";
 import "../globals.css";
 
 const inter = Inter({
@@ -39,6 +40,14 @@ interface LocaleLayoutProps {
   params: Promise<{ locale: string }>;
 }
 
+const BASE_URL = "https://jassverband.ch";
+
+const keywordsByLocale: Record<string, string> = {
+  de: "Jassverband Schweiz, Schweizer Jass, Schieber, Lebendige Tradition, Kartenspiel Schweiz, JassWiki, JassGuru, Jass lernen",
+  fr: "Fédération Suisse de Jass, Jass suisse, Schieber, Tradition vivante, Jeu de cartes suisse, JassWiki, JassGuru",
+  it: "Federazione Svizzera di Jass, Jass svizzero, Schieber, Tradizione vivente, Gioco di carte svizzero, JassWiki, JassGuru",
+};
+
 export async function generateMetadata({ params }: LocaleLayoutProps): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "metadata" });
@@ -46,13 +55,52 @@ export async function generateMetadata({ params }: LocaleLayoutProps): Promise<M
   return {
     title: t("title"),
     description: t("description"),
+    keywords: keywordsByLocale[locale] || keywordsByLocale.de,
+    authors: [{ name: "Jassverband Schweiz", url: BASE_URL }],
+    creator: "Jassverband Schweiz",
+    publisher: "Jassverband Schweiz",
+    metadataBase: new URL(BASE_URL),
+    alternates: {
+      canonical: `${BASE_URL}/${locale}`,
+      languages: {
+        "de": `${BASE_URL}/de`,
+        "fr": `${BASE_URL}/fr`,
+        "it": `${BASE_URL}/it`,
+        "x-default": `${BASE_URL}/de`,
+      },
+    },
     openGraph: {
       title: "Jassverband Schweiz",
       description: t("description"),
-      url: "https://jassverband.ch",
+      url: BASE_URL,
       siteName: "Jassverband Schweiz",
       locale: `${locale}_CH`,
       type: "website",
+      images: [
+        {
+          url: `${BASE_URL}/images/og-image.jpg`,
+          width: 1200,
+          height: 630,
+          alt: "Jassverband Schweiz",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Jassverband Schweiz",
+      description: t("description"),
+      images: [`${BASE_URL}/images/og-image.jpg`],
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
     },
   };
 }
@@ -74,6 +122,9 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
 
   return (
     <html lang={locale}>
+      <head>
+        <OrganizationSchema />
+      </head>
       <body className={`${inter.variable} ${capita.variable} antialiased`}>
         <NextIntlClientProvider messages={messages}>
           <Header locale={locale} nav={nav} />

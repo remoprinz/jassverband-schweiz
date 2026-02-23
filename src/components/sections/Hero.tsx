@@ -345,7 +345,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
         transition={{ duration: 0.8, delay: 0.35 }}
       >
         <Button
-          href="/de/projekte/jugendmeisterschaft"
+          href="/de/mitmachen"
           size="lg"
           className="bg-[#ff0000] hover:bg-[#cc0000] text-white text-[17px] font-bold px-8 py-4 rounded-full shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)] hover:shadow-xl transition-all transform hover:-translate-y-1 whitespace-nowrap"
         >

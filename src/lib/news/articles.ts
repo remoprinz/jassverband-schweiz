@@ -69,136 +69,191 @@ export const articles: NewsArticle[] = [
     featured: true,
     tags: ["verband", "gründung", "meilenstein"],
     de: {
-      title: "Jassverband Schweiz offiziell gegründet",
-      excerpt: "Am 15. Januar 2026 wurde in Zürich der Jassverband Schweiz (JVS) gegründet. Ein historischer Schritt für das Schweizer Nationalspiel.",
+      title: "Jassverband Schweiz gegründet: Eine neue Ära für das Schweizer Nationalspiel",
+      excerpt: "Am 15. Januar 2026 wurde in Zürich der Jassverband Schweiz (JVS) gegründet – mit einer klaren Vision: Jeder Mensch in der Schweiz lernt jassen.",
       content: `
-## Ein historischer Tag für das Jassen
+## Der Jassverband Schweiz ist da
 
-Am 15. Januar 2026 wurde in Zürich Geschichte geschrieben: Die Gründungsmitglieder Remo Prinz, Fabian Cadonau und Dr. Erich Studerus haben den **Jassverband Schweiz (JVS)** ins Leben gerufen.
+Am 15. Januar 2026 wurde in Zürich der **Jassverband Schweiz (JVS)** gegründet. Mit diesem Schritt erhält das Schweizer Nationalspiel erstmals eine professionelle Organisation, die sich seiner Förderung, Erhaltung und Modernisierung verschreibt.
 
-Das Jassen ist mehr als ein Kartenspiel. Es ist ein Stück Schweizer Identität, das in Beizen und Stuben, an Familientischen und in Vereinslokalen lebendig bleibt. Es verbindet Generationen, überbrückt Sprachgrenzen und schafft Momente echter Begegnung in einer zunehmend digitalen Welt.
+Die Gründungsmitglieder – Remo Prinz (Präsident), Fabian Cadonau (Vizepräsident) und Dr. Erich Studerus (Aktuar) – eint eine gemeinsame Vision: **Jeder Mensch in der Schweiz lernt jassen.**
 
-### Unsere Philosophie: Tradition trifft Innovation
+## Warum braucht das Jassen einen Verband?
 
-Wir glauben, dass wahre Tradition nicht in Museen gehört. Sie lebt, wenn sie gelebt wird. Der Jassverband Schweiz steht für eine einfache Überzeugung: **Das Jassen verdient eine moderne Zukunft, ohne seine Seele zu verlieren.**
+Das Jassen ist beim [Bundesamt für Kultur als «Lebendige Tradition»](https://www.lebendige-traditionen.ch/) gelistet – eine Auszeichnung, die es mit dem Schwingen, dem Jodeln und dem Alphorn teilt. Doch lebendige Traditionen brauchen aktive Pflege.
 
-Das bedeutet konkret:
+Während das Jassen in Wirtshäusern und Wohnzimmern weiterhin gespielt wird, fehlt es an:
 
-- **Wir bewahren, was zählt.** Die Rituale, die Begriffe, die kleinen Traditionen am Tisch – vom "Stöck-Wys-Stich" bis zum respektvollen Umgang mit dem Gegner.
-- **Wir öffnen, was verstaubt wirkt.** Jassen ist kein Sport für ältere Herren. Es ist ein strategischer Denksport, der junge Köpfe fordert und fördert.
-- **Wir digitalisieren, ohne zu vergessen.** Unsere Plattformen – JassWiki, JassGuru, Jassmeister – sind Werkzeuge, nicht Ersatz. Der echte Jass findet immer noch am Tisch statt.
+- **Zentralem Wissen:** Regeln werden regional unterschiedlich interpretiert
+- **Nachwuchsförderung:** Junge Menschen finden schwer Zugang
+- **Digitaler Infrastruktur:** Keine einheitliche Plattform für Training und Wettkampf
 
-### Die drei Säulen unserer Mission
+Der Jassverband Schweiz schliesst diese Lücken.
 
-**1. Tradition bewahren**  
-Das Jassen ist beim Bundesamt für Kultur als "Lebendige Tradition" gelistet – eine Ehre, die verpflichtet. Wir dokumentieren Wissen, sammeln Varianten und sorgen dafür, dass dieses Erbe nicht in Vergessenheit gerät.
+## Das digitale Ökosystem
 
-**2. Jugend fördern**  
-Mit der Schweizer Jugend Team-Schiebermeisterschaft bringen wir strategisches Denken und echte Teamarbeit in Schulen und Universitäten. Jassen schärft den Geist: Wahrscheinlichkeitsrechnung, Mustererkennung, Kommunikation ohne Worte – Fähigkeiten, die weit über den Kartentisch hinaus wertvoll sind.
+Der JVS baut auf einem bestehenden Fundament auf – drei digitale Plattformen, die gemeinsam das umfassendste Jass-Angebot der Schweiz bilden:
 
-**3. Zukunft gestalten**  
-Ein nationales Elo-System macht Leistung messbar und vergleichbar. Digitale Plattformen ermöglichen Training und Austausch. Aber am Ende zählt, was zählt: vier Menschen, 36 Karten, und die Frage, wer den besseren Durchblick hat.
+### [JassWiki](https://jasswiki.ch)
+Die Enzyklopädie des Jassens. Über 100 Artikel zu Regeln, Varianten, Geschichte und Strategie. Werbefrei, offen für alle, ständig aktualisiert.
 
-### Warum jetzt?
+### [JassGuru](https://jassguru.ch)
+Die digitale Jasstafel mit integriertem Elo-System. Hier wird jedes Spiel erfasst, jede Leistung messbar. Von der Punktetafel bis zur nationalen Rangliste.
 
-Das Jassen erlebt einen stillen Wandel. Die Generation, die es am Stammtisch gelernt hat, wird älter. Gleichzeitig entdecken junge Menschen das Spiel neu – oft über digitale Wege. Der Jassverband Schweiz will diese Brücke sein: zwischen analog und digital, zwischen Tradition und Moderne, zwischen den Generationen.
+### Jassmeister *(in Entwicklung)*
+Die Wettkampf-Plattform. Turniere organisieren, Teams verwalten, Meisterschaften austragen – alles an einem Ort.
 
-### Was kommt als Nächstes?
+## Die drei Säulen unserer Mission
 
-Im ersten Jahr fokussieren wir uns auf die **Schweizer Jugend Team-Schiebermeisterschaft 2026**. Dieses Leuchtturmprojekt soll zeigen, was möglich ist, wenn man das Jassen ernst nimmt – als Sport, als Kulturgut, als Gemeinschaft.
+Der Jassverband Schweiz verfolgt drei strategische Ziele:
 
-Wir laden alle ein, Teil dieser Bewegung zu werden. Ob als Spieler, Partner, oder einfach als jemand, der findet: Das Jassen hat eine moderne Zukunft verdient.
+### 1. Tradition bewahren
+
+Das Jass-Wissen darf nicht verloren gehen. Wir dokumentieren Varianten, sammeln historische Quellen und sorgen dafür, dass die Begriffe – vom **Nell** bis zum **Weis** – korrekt überliefert werden.
+
+### 2. Zugang vereinfachen
+
+Jassen soll keine Geheimwissenschaft sein. Mit verständlichen Anleitungen, digitalen Lerntools und offenen Plattformen machen wir den Einstieg so einfach wie möglich.
+
+### 3. Zukunft gestalten
+
+Ein nationales Elo-System macht Leistung messbar. Digitale Turniere ermöglichen Wettkampf über Kantonsgrenzen hinweg. Der Jass der Zukunft ist vernetzt – aber der echte Jass findet immer noch am Tisch statt.
+
+## Teil der Bewegung werden
+
+Der Jassverband Schweiz ist offen für alle, die das Jassen lieben – ob als Gelegenheitsspieler, ambitionierter Wettkämpfer oder kulturell Interessierte.
+
+Im Gründungsjahr 2026 bieten wir den exklusiven **Pionier-Status**: Alle Mitglieder, die jetzt beitreten, werden dauerhaft als Gründungsmitglieder geführt.
+
+**[Jetzt mitmachen](/de/mitmachen)** und Teil der Geschichte werden.
+
+---
+
+*«Tradition trifft Innovation» – das ist mehr als ein Slogan. Es ist unser Versprechen.*
 
 *Der Vorstand des Jassverbands Schweiz*
       `.trim(),
     },
     fr: {
-      title: "Fédération Suisse de Jass officiellement fondée",
-      excerpt: "Le 15 janvier 2026, la Fédération Suisse de Jass (JVS) a été fondée à Zurich. Une étape historique pour le jeu national suisse.",
+      title: "Fédération Suisse de Jass fondée : Une nouvelle ère pour le jeu national suisse",
+      excerpt: "Le 15 janvier 2026, la Fédération Suisse de Jass (JVS) a été fondée à Zurich – avec une vision claire : Chaque personne en Suisse apprend à jouer au Jass.",
       content: `
-## Un jour historique pour le Jass
+## La Fédération Suisse de Jass est là
 
-Le 15 janvier 2026, l'histoire a été écrite à Zurich : les membres fondateurs Remo Prinz, Fabian Cadonau et Dr. Erich Studerus ont créé la **Fédération Suisse de Jass (JVS)**.
+Le 15 janvier 2026, la **Fédération Suisse de Jass (JVS)** a été fondée à Zurich. Le jeu national suisse reçoit ainsi pour la première fois une organisation professionnelle dédiée à sa promotion, sa préservation et sa modernisation.
 
-### Notre vision
+Les membres fondateurs – Remo Prinz (Président), Fabian Cadonau (Vice-président) et Dr. Erich Studerus (Secrétaire) – partagent une vision commune : **Chaque personne en Suisse apprend à jouer au Jass.**
 
-La Fédération Suisse de Jass s'est fixé pour objectif de promouvoir le Jass en tant que **patrimoine culturel immatériel** de la Suisse et de le préserver pour les générations futures.
+## Pourquoi le Jass a-t-il besoin d'une fédération ?
+
+Le Jass est inscrit comme [«Tradition vivante»](https://www.lebendige-traditionen.ch/) auprès de l'Office fédéral de la culture – une distinction qu'il partage avec la lutte suisse, le yodel et le cor des Alpes. Mais les traditions vivantes nécessitent un entretien actif.
+
+Alors que le Jass continue d'être joué dans les bistrots et les salons, il manque :
+
+- **Un savoir centralisé :** Les règles sont interprétées différemment selon les régions
+- **La promotion de la relève :** Les jeunes ont du mal à y accéder
+- **Une infrastructure numérique :** Pas de plateforme unifiée pour l'entraînement et la compétition
+
+La Fédération Suisse de Jass comble ces lacunes.
+
+## L'écosystème numérique
+
+La JVS s'appuie sur une base existante – trois plateformes numériques qui forment ensemble l'offre de Jass la plus complète de Suisse :
+
+### [JassWiki](https://jasswiki.ch)
+L'encyclopédie du Jass. Plus de 100 articles sur les règles, variantes, histoire et stratégie. Sans publicité, ouvert à tous, constamment mis à jour.
+
+### [JassGuru](https://jassguru.ch)
+Le tableau de Jass numérique avec système Elo intégré. Chaque partie est enregistrée, chaque performance mesurable.
+
+### Jassmeister *(en développement)*
+La plateforme de compétition. Organiser des tournois, gérer des équipes, disputer des championnats – tout en un seul endroit.
+
+## Les trois piliers de notre mission
+
+### 1. Préserver la tradition
+Le savoir du Jass ne doit pas se perdre. Nous documentons les variantes et veillons à ce que les termes soient correctement transmis.
+
+### 2. Simplifier l'accès
+Le Jass ne doit pas être une science secrète. Avec des guides compréhensibles et des outils numériques, nous facilitons au maximum l'initiation.
+
+### 3. Façonner l'avenir
+Un système Elo national rend la performance mesurable. Les tournois numériques permettent la compétition au-delà des frontières cantonales.
+
+## Rejoindre le mouvement
+
+La Fédération Suisse de Jass est ouverte à tous ceux qui aiment le Jass.
+
+En 2026, nous offrons le **statut de Pionnier** exclusif : Tous les membres qui adhèrent maintenant seront enregistrés en permanence comme membres fondateurs.
+
+**[Participer maintenant](/fr/participer)** et faire partie de l'histoire.
+
+---
+
+*«Tradition et Innovation» – c'est plus qu'un slogan. C'est notre promesse.*
 
 *Le comité de la Fédération Suisse de Jass*
       `.trim(),
     },
     it: {
-      title: "Federazione Svizzera di Jass ufficialmente fondata",
-      excerpt: "Il 15 gennaio 2026, la Federazione Svizzera di Jass (JVS) è stata fondata a Zurigo. Un passo storico per il gioco nazionale svizzero.",
+      title: "Federazione Svizzera di Jass fondata: Una nuova era per il gioco nazionale svizzero",
+      excerpt: "Il 15 gennaio 2026, la Federazione Svizzera di Jass (JVS) è stata fondata a Zurigo – con una visione chiara: Ogni persona in Svizzera impara a giocare a Jass.",
       content: `
-## Un giorno storico per il Jass
+## La Federazione Svizzera di Jass è qui
 
-Il 15 gennaio 2026, la storia è stata scritta a Zurigo: i membri fondatori Remo Prinz, Fabian Cadonau e Dr. Erich Studerus hanno creato la **Federazione Svizzera di Jass (JVS)**.
+Il 15 gennaio 2026, la **Federazione Svizzera di Jass (JVS)** è stata fondata a Zurigo. Il gioco nazionale svizzero riceve così per la prima volta un'organizzazione professionale dedicata alla sua promozione, conservazione e modernizzazione.
 
-### La nostra visione
+I membri fondatori – Remo Prinz (Presidente), Fabian Cadonau (Vicepresidente) e Dr. Erich Studerus (Segretario) – condividono una visione comune: **Ogni persona in Svizzera impara a giocare a Jass.**
 
-La Federazione Svizzera di Jass si è posta l'obiettivo di promuovere il Jass come **patrimonio culturale immateriale** della Svizzera e di preservarlo per le generazioni future.
+## Perché il Jass ha bisogno di una federazione?
+
+Il Jass è iscritto come [«Tradizione vivente»](https://www.lebendige-traditionen.ch/) presso l'Ufficio federale della cultura – una distinzione che condivide con la lotta svizzera, lo jodel e il corno delle Alpi. Ma le tradizioni viventi richiedono una cura attiva.
+
+Mentre il Jass continua a essere giocato nelle osterie e nei salotti, manca:
+
+- **Un sapere centralizzato:** Le regole vengono interpretate diversamente a seconda delle regioni
+- **La promozione dei giovani:** I giovani fanno fatica ad accedervi
+- **Un'infrastruttura digitale:** Nessuna piattaforma unificata per l'allenamento e la competizione
+
+La Federazione Svizzera di Jass colma queste lacune.
+
+## L'ecosistema digitale
+
+La JVS si basa su una fondazione esistente – tre piattaforme digitali che insieme formano l'offerta di Jass più completa della Svizzera:
+
+### [JassWiki](https://jasswiki.ch)
+L'enciclopedia del Jass. Oltre 100 articoli su regole, varianti, storia e strategia. Senza pubblicità, aperto a tutti, costantemente aggiornato.
+
+### [JassGuru](https://jassguru.ch)
+Il tabellone digitale del Jass con sistema Elo integrato. Ogni partita viene registrata, ogni prestazione è misurabile.
+
+### Jassmeister *(in sviluppo)*
+La piattaforma di competizione. Organizzare tornei, gestire squadre, disputare campionati – tutto in un unico posto.
+
+## I tre pilastri della nostra missione
+
+### 1. Preservare la tradizione
+Il sapere del Jass non deve andare perso. Documentiamo le varianti e ci assicuriamo che i termini vengano trasmessi correttamente.
+
+### 2. Semplificare l'accesso
+Il Jass non deve essere una scienza segreta. Con guide comprensibili e strumenti digitali, rendiamo l'iniziazione il più semplice possibile.
+
+### 3. Plasmare il futuro
+Un sistema Elo nazionale rende la prestazione misurabile. I tornei digitali permettono la competizione oltre i confini cantonali.
+
+## Unirsi al movimento
+
+La Federazione Svizzera di Jass è aperta a tutti coloro che amano il Jass.
+
+Nel 2026, offriamo lo **status di Pioniere** esclusivo: Tutti i membri che aderiscono ora saranno registrati permanentemente come membri fondatori.
+
+**[Partecipa ora](/it/partecipa)** e fai parte della storia.
+
+---
+
+*«Tradizione e Innovazione» – è più di uno slogan. È la nostra promessa.*
 
 *Il comitato della Federazione Svizzera di Jass*
-      `.trim(),
-    },
-  },
-  {
-    slug: "jugendmeisterschaft-2026-ankuendigung",
-    publishedAt: "2026-02-01",
-    author: authors.jvs,
-    readingTime: 3,
-    featured: true,
-    tags: ["meisterschaft", "jugend", "turnier"],
-    de: {
-      title: "Schweizer Jugend Team-Schiebermeisterschaft 2026: Anmeldung eröffnet",
-      excerpt: "Die erste nationale Jass-Meisterschaft für junge Teams startet. Jetzt anmelden und Teil der Geschichte werden.",
-      content: `
-## Die erste nationale Jugend-Meisterschaft
-
-Es ist offiziell: Die **Schweizer Jugend Team-Schiebermeisterschaft 2026** nimmt Anmeldungen entgegen!
-
-### Wer kann teilnehmen?
-
-- Teams bestehend aus **2 Spielern** (feste Partnerschaft)
-- Alter: **16 bis 25 Jahre**
-- Wohnsitz in der Schweiz
-
-### Wie funktioniert es?
-
-1. **Online-Qualifikation** – Spielt euch in die Top-Rankings
-2. **Regionale Finals** – Die besten Teams treten gegeneinander an
-3. **Nationales Finale** – Der Showdown um den Titel
-
-### Warum mitmachen?
-
-- 🏆 **Ruhm und Ehre** – Werdet die ersten Schweizer Jugend-Meister
-- 📊 **Offizielles Elo-Rating** – Eure Leistung wird messbar
-- 🤝 **Community** – Lernt Gleichgesinnte kennen
-
-[Jetzt anmelden auf jassmeister.web.app](https://jassmeister.web.app)
-      `.trim(),
-    },
-    fr: {
-      title: "Championnat Suisse de Jass par équipes jeunesse 2026 : Inscriptions ouvertes",
-      excerpt: "Le premier championnat national de Jass pour jeunes équipes démarre. Inscrivez-vous maintenant et faites partie de l'histoire.",
-      content: `
-## Le premier championnat national jeunesse
-
-C'est officiel : le **Championnat Suisse de Jass par équipes jeunesse 2026** accepte les inscriptions !
-
-[Inscrivez-vous maintenant sur jassmeister.web.app](https://jassmeister.web.app)
-      `.trim(),
-    },
-    it: {
-      title: "Campionato Svizzero di Jass a squadre giovanili 2026: Iscrizioni aperte",
-      excerpt: "Il primo campionato nazionale di Jass per squadre giovani inizia. Iscriviti ora e fai parte della storia.",
-      content: `
-## Il primo campionato nazionale giovanile
-
-È ufficiale: il **Campionato Svizzero di Jass a squadre giovanili 2026** accetta iscrizioni!
-
-[Iscriviti ora su jassmeister.web.app](https://jassmeister.web.app)
       `.trim(),
     },
   },
