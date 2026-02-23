@@ -11,28 +11,14 @@ interface HeroProps {
   cta: string;
 }
 
-const ALL_CARDS = [
-  'E6','E7','E8','E9','E10','EU','EO','EK','EA',
-  'L6','L7','L8','L9','L10','LU','LO','LK','LA',
-  'R6','R7','R8','R9','R10','RU','RO','RK','RA',
-  'S6','S7','S8','S9','S10','SU','SO','SK','SA',
+const CARD_SET = [
+  'card-01', 'card-02', 'card-03', 'card-04', 'card-05',
+  'card-06', 'card-07', 'card-08', 'card-09', 'card-10',
 ];
 
-const HIGH_VALUES = new Set(['10','U','O','K','A']);
-
 function pickRandomCards(count: number): string[] {
-  const weighted: string[] = [];
-  for (const card of ALL_CARDS) {
-    const value = card.slice(1);
-    weighted.push(card, ...(HIGH_VALUES.has(value) ? [card, card] : []));
-  }
-  const shuffled = weighted.sort(() => Math.random() - 0.5);
-  const picked: string[] = [];
-  for (const card of shuffled) {
-    if (picked.length >= count) break;
-    if (!picked.includes(card)) picked.push(card);
-  }
-  return picked.map(c => `/cards/de/${c}.png`);
+  const shuffled = [...CARD_SET].sort(() => Math.random() - 0.5);
+  return shuffled.slice(0, count).map(c => `/cards/de/${c}.png`);
 }
 
 function randomCardEntry(side: 'left' | 'right') {
