@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import { Hero, Pillars, Tournament, Ecosystem, Trust } from "@/components/sections";
+import { Hero, Vision, MissionTiles, Tournament, Ecosystem, Trust } from "@/components/sections";
 
 interface HomePageProps {
   params: Promise<{ locale: string }>;
@@ -9,6 +9,11 @@ export default async function HomePage({ params }: HomePageProps) {
   const { locale } = await params;
   const t = await getTranslations({ locale });
 
+  const missionItems = Array.from({ length: 6 }, (_, i) => ({
+    title: t(`mission.items.${i}.title`),
+    mission: t(`mission.items.${i}.mission`),
+  }));
+
   return (
     <>
       <Hero
@@ -16,22 +21,15 @@ export default async function HomePage({ params }: HomePageProps) {
         subtitle={t("hero.subtitle")}
         cta={t("hero.cta")}
       />
-      
-      <Pillars
-        title={t("pillars.title")}
-        tradition={{
-          title: t("pillars.tradition.title"),
-          description: t("pillars.tradition.description"),
-        }}
-        youth={{
-          title: t("pillars.youth.title"),
-          description: t("pillars.youth.description"),
-        }}
-        future={{
-          title: t("pillars.future.title"),
-          description: t("pillars.future.description"),
-        }}
+
+      <Vision
+        title={t("vision.title")}
+        text={t("vision.text")}
+        cta={t("vision.cta")}
+        ctaHref={`/${locale}/leitbild`}
       />
+
+      <MissionTiles title={t("mission.title")} items={missionItems} />
 
       <Tournament
         title={t("tournament.title")}

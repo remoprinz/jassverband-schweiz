@@ -16,6 +16,40 @@
     "subtitle": "Es ist Schweizer Kulturgut — und verdient eine moderne Zukunft.",
     "cta": "Mitglied werden"
   },
+  "vision": {
+    "title": "Unsere Vision",
+    "text": "Jassen zum Schulfach machen.",
+    "cta": "Weiterlesen"
+  },
+  "mission": {
+    "title": "Unsere Mission",
+    "items": [
+      {
+        "title": "Meisterschaften etablieren",
+        "mission": "Wir etablieren Jassen als offizielle Wettkampfsportart mit klaren Strukturen, Ranglisten und nationalen Meisterschaften."
+      },
+      {
+        "title": "Jasser vernetzen",
+        "mission": "Wir bringen Jasser – gerade im digitalen Zeitalter – bewusst zurück an den physischen Tisch."
+      },
+      {
+        "title": "Nachwuchs fördern",
+        "mission": "Wir begeistern die nächste Generation für Jassen und verankern es nachhaltig im Bildungssystem."
+      },
+      {
+        "title": "Hürden abbauen",
+        "mission": "Wir senken die Einstiegshürden und machen Jassen für alle zugänglich – unabhängig vom Erfahrungsstand."
+      },
+      {
+        "title": "Tradition modernisieren",
+        "mission": "Wir führen das Jassen ins digitale Zeitalter und sichern seine Relevanz für kommende Generationen."
+      },
+      {
+        "title": "Kultur gestalten",
+        "mission": "Wir pflegen und entwickeln Jassen als lebendiges Kulturgut, das Menschen über alle gesellschaftlichen Grenzen hinweg verbindet."
+      }
+    ]
+  },
   "pillars": {
     "title": "Unsere Mission",
     "tradition": {
@@ -55,6 +89,44 @@
   "trust": {
     "badge": "Lebendige Tradition",
     "text": "Gelistet beim Bundesamt für Kultur"
+  },
+  "leitbild": {
+    "title": "Leitbild",
+    "visionTitle": "Unsere Vision",
+    "visionText": "Jassen zum Schulfach machen. Der Jassverband Schweiz setzt sich dafür ein, Jassen als festen Bestandteil der Bildung zu verankern – als Spiel, das strategisches Denken, soziale Kompetenz und kulturelles Erbe verbindet.",
+    "missionsTitle": "Unsere Missionen",
+    "missions": [
+      {
+        "title": "Meisterschaften etablieren",
+        "mission": "Wir etablieren Jassen als offizielle Wettkampfsportart mit klaren Strukturen, Ranglisten und nationalen Meisterschaften.",
+        "kernidee": "Jede ernstzunehmende Aktivität kennt ihre Meisterschaft. Wir schaffen verbindliche Formate, transparente Regeln und institutionelle Strukturen – vom lokalen Turnier bis zur nationalen Spitze. Jassen wird messbar, vergleichbar und sportlich anerkannt."
+      },
+      {
+        "title": "Jasser vernetzen",
+        "mission": "Wir bringen Jasser – gerade im digitalen Zeitalter – bewusst zurück an den physischen Tisch.",
+        "kernidee": "Digitalisierung verbindet virtuell, ersetzt aber nicht die Begegnung von Mensch zu Mensch. Unser Ziel ist es, Jasser sichtbar zu machen, regionale Gemeinschaften zu stärken und Menschen weg vom isolierten Smartphone hin zum gemeinsamen Spiel am Tisch zu führen. Digitale Mittel nutzen wir als Werkzeug zur Organisation und Vernetzung – gespielt wird gemeinsam, vor Ort, mit echter Interaktion."
+      },
+      {
+        "title": "Nachwuchs fördern",
+        "mission": "Wir begeistern die nächste Generation für Jassen und verankern es nachhaltig im Bildungssystem.",
+        "kernidee": "Wir wirken der Überalterung aktiv entgegen. Jassen fördert strategisches Denken, Wahrscheinlichkeitsverständnis, Teamfähigkeit und Fairness. Unsere langfristige Vision ist es, Jassen als kulturell und pädagogisch wertvolles Element im schulischen Kontext zu etablieren."
+      },
+      {
+        "title": "Hürden abbauen",
+        "mission": "Wir senken die Einstiegshürden und machen Jassen für alle zugänglich – unabhängig vom Erfahrungsstand.",
+        "kernidee": "Viele Interessierte trauen sich nicht an den Tisch, weil sie ihre Spielstärke nicht einschätzen können oder Angst haben, Fehler zu machen. Wir schaffen niederschwellige Lernangebote, transparente Spielstärkeeinschätzungen und KI-gestützte Trainingsmodelle mit Geduld und individueller Förderung – vom ersten Stich bis zum ambitionierten Turnierspieler."
+      },
+      {
+        "title": "Tradition modernisieren",
+        "mission": "Wir führen das Jassen ins digitale Zeitalter und sichern seine Relevanz für kommende Generationen.",
+        "kernidee": "Tradition und Technologie sind kein Widerspruch. Wir nutzen moderne Plattformen, Datenanalyse, digitale Turnierformate und künstliche Intelligenz, um Jassen langfristig zu stärken, zugänglicher zu machen und strukturell weiterzuentwickeln – ohne seinen Charakter zu verlieren."
+      },
+      {
+        "title": "Kultur gestalten",
+        "mission": "Wir pflegen und entwickeln Jassen als lebendiges Kulturgut, das Menschen über alle gesellschaftlichen Grenzen hinweg verbindet.",
+        "kernidee": "Jassen ist mehr als ein Spiel – es ist ein Spiegel der Schweiz: vielfältig, anpassungsfähig und gemeinschaftlich. Die Regeln sind klar, doch regional unterschiedlich gelebt. Es passt in die Dorfbeiz ebenso wie ins Turnierformat, in die Familie ebenso wie ins Vereinsleben. Vom Handwerker bis zur Führungspersönlichkeit bringt es Menschen selbstverständlich an einen Tisch. Diese verbindende Kraft bewahren wir nicht nur – wir entwickeln sie aktiv weiter."
+      }
+    ]
   },
   "verband": {
     "title": "Der Verband",

@@ -16,6 +16,22 @@
     "subtitle": "È patrimonio culturale svizzero — e merita un futuro moderno.",
     "cta": "Partecipa ora"
   },
+  "vision": {
+    "title": "La nostra visione",
+    "text": "Fare del Jass una materia scolastica.",
+    "cta": "Leggi di più"
+  },
+  "mission": {
+    "title": "La nostra missione",
+    "items": [
+      { "title": "Stabilire i campionati", "mission": "Facciamo del Jass uno sport di competizione ufficiale con strutture chiare, classifiche e campionati nazionali." },
+      { "title": "Connettere i giocatori", "mission": "Portiamo i giocatori di Jass – soprattutto nell'era digitale – consapevolmente di nuovo al tavolo fisico." },
+      { "title": "Promuovere i giovani", "mission": "Entusiasmiamo la prossima generazione per il Jass e lo ancoriamo in modo sostenibile nel sistema formativo." },
+      { "title": "Abbattere le barriere", "mission": "Abbassiamo le soglie di ingresso e rendiamo il Jass accessibile a tutti – indipendentemente dall'esperienza." },
+      { "title": "Modernizzare la tradizione", "mission": "Portiamo il Jass nell'era digitale e ne assicuriamo la rilevanza per le generazioni future." },
+      { "title": "Plasmare la cultura", "mission": "Curiamo e sviluppiamo il Jass come patrimonio culturale vivente che unisce le persone oltre ogni confine sociale." }
+    ]
+  },
   "pillars": {
     "title": "La nostra missione",
     "tradition": {
@@ -55,6 +71,20 @@
   "trust": {
     "badge": "Tradizione vivente",
     "text": "Iscritto presso l'Ufficio federale della cultura"
+  },
+  "leitbild": {
+    "title": "Visione e missione",
+    "visionTitle": "La nostra visione",
+    "visionText": "Fare del Jass una materia scolastica. La Federazione Svizzera di Jass si impegna per ancorare il Jass nell'istruzione – come gioco che unisce pensiero strategico, competenze sociali e patrimonio culturale.",
+    "missionsTitle": "Le nostre missioni",
+    "missions": [
+      { "title": "Stabilire i campionati", "mission": "Facciamo del Jass uno sport di competizione ufficiale con strutture chiare, classifiche e campionati nazionali.", "kernidee": "Facciamo del Jass uno sport di competizione ufficiale con strutture chiare, classifiche e campionati nazionali." },
+      { "title": "Connettere i giocatori", "mission": "Portiamo i giocatori di Jass – soprattutto nell'era digitale – consapevolmente di nuovo al tavolo fisico.", "kernidee": "Portiamo i giocatori di Jass – soprattutto nell'era digitale – consapevolmente di nuovo al tavolo fisico." },
+      { "title": "Promuovere i giovani", "mission": "Entusiasmiamo la prossima generazione per il Jass e lo ancoriamo in modo sostenibile nel sistema formativo.", "kernidee": "Entusiasmiamo la prossima generazione per il Jass e lo ancoriamo in modo sostenibile nel sistema formativo." },
+      { "title": "Abbattere le barriere", "mission": "Abbassiamo le soglie di ingresso e rendiamo il Jass accessibile a tutti – indipendentemente dall'esperienza.", "kernidee": "Abbassiamo le soglie di ingresso e rendiamo il Jass accessibile a tutti – indipendentemente dall'esperienza." },
+      { "title": "Modernizzare la tradizione", "mission": "Portiamo il Jass nell'era digitale e ne assicuriamo la rilevanza per le generazioni future.", "kernidee": "Portiamo il Jass nell'era digitale e ne assicuriamo la rilevanza per le generazioni future." },
+      { "title": "Plasmare la cultura", "mission": "Curiamo e sviluppiamo il Jass come patrimonio culturale vivente che unisce le persone oltre ogni confine sociale.", "kernidee": "Curiamo e sviluppiamo il Jass come patrimonio culturale vivente che unisce le persone oltre ogni confine sociale." }
+    ]
   },
   "verband": {
     "title": "La Federazione",
