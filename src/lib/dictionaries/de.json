@@ -14,7 +14,7 @@
   "hero": {
     "title": "Jassen ist mehr als ein Kartenspiel.",
     "subtitle": "Es ist Schweizer Kulturgut — und verdient eine moderne Zukunft.",
-    "cta": "Jetzt mitmachen"
+    "cta": "Mitglied werden"
   },
   "pillars": {
     "title": "Unsere Mission",
@@ -125,17 +125,17 @@
     "hero": {
       "title": "Jassen ist dein Spiel. Dein Platz dafür steht bereit.",
       "subtitle": "Der Jassverband Schweiz — für alle, die Jassen lieben.",
-      "cta": "Paket wählen"
+      "cta": "Lizenz wählen"
     },
     "pricing": {
-      "title": "Wähle dein Paket",
-      "subtitle": "Von Einzelmitgliedschaft bis Gruppenrunde: Du entscheidest, wie du Teil der Bewegung wirst.",
-      "year": "Jahr",
+      "title": "Wähle deine Lizenz",
+      "subtitle": "Jasser-Lizenz, Trumpf-Lizenz oder Gruppen-Lizenz: Du entscheidest, wie du Teil der Bewegung wirst. Alle Beträge sind Jahresbeiträge pro Saison.",
+      "year": "Saison",
       "recommended": "Empfohlen",
-      "select": "Auswählen",
-      "groupNote": "Hinweis: Das Gruppenpaket berechtigt zur Teilnahme an Gruppen-Events. Für Einzel-Events ist eine individuelle Jasser-Lizenz erforderlich.",
+      "select": "Lizenz wählen",
+      "groupNote": "Hinweis: Die Gruppen-Lizenz berechtigt zur Teilnahme an Gruppen-Events. Für Einzel-Events ist eine individuelle Jasser-Lizenz erforderlich.",
       "pionier": {
-        "title": "Jasser",
+        "title": "Jasser-Lizenz",
         "feature1": "Wettkampf-Berechtigung für Schweizer Jass-Meisterschaften.",
         "feature2": "Jass-Brevet als offizieller Kompetenznachweis (Badge im Profil).",
         "feature3": "Zugang zum JVS-Mitgliederchat und Verbandsnetzwerk.",
@@ -145,7 +145,7 @@
         "linkUrl": "https://jassguru.ch"
       },
       "botschafter": {
-        "title": "Jass-Botschafter",
+        "title": "Trumpf-Lizenz",
         "feature1": "Alles aus dem Jasser-Paket.",
         "feature2": "Exklusives Saison-Kartenset (Edition 2026 als erste Auflage).",
         "feature3": "24 Stunden Vorzugszugang für nationale Turniere und Events.",
@@ -155,7 +155,7 @@
         "linkUrl": "https://trumpf-as.ch"
       },
       "patron": {
-        "title": "Die Jass-Runde",
+        "title": "Gruppen-Lizenz",
         "feature1": "Für Jassgruppen bis zu 10 Personen.",
         "feature2": "Team-Berechtigung für Gruppen-Events und Team-Schiebermeisterschaft.",
         "feature3": "Private Runden-Rangliste auf JassGuru.",
@@ -177,7 +177,7 @@
       "email": "E-Mail",
       "jassname": "Jassname (optional)",
       "jassnamePlaceholder": "Dein Spielername bei JassGuru",
-      "paket": "Paket",
+      "paket": "Lizenz",
       "message": "Nachricht (optional)",
       "messagePlaceholder": "Optional: Fragen oder Hinweise",
       "notice": {
@@ -202,7 +202,7 @@
       },
       "kuendigung": {
         "question": "Wie melde ich meine Gruppe an?",
-        "answer": "Der Coach registriert sich, wählt das Gruppenpaket und trägt die Mitglieder ein. Die anderen melden sich bei JassGuru an — fertig."
+        "answer": "Der Coach registriert sich, wählt die Gruppen-Lizenz und trägt die Mitglieder ein. Die anderen melden sich bei JassGuru an — fertig."
       },
       "jassguru": {
         "question": "Wann kommt das Saison-Kartenset?",

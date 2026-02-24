@@ -8,7 +8,7 @@ import { Button } from '@/components/ui';
 
 const packages = [
   { key: 'pionier' as const, price: 60, highlight: false },
-  { key: 'botschafter' as const, price: 90, highlight: true },
+  { key: 'botschafter' as const, price: 90, highlight: false },
   { key: 'patron' as const, price: 350, highlight: false },
 ];
 
@@ -30,11 +30,11 @@ export default function MitmachenPage() {
   return (
     <div>
       {/* ════════════════════ HERO ════════════════════ */}
-      <section className="relative py-24 md:py-32 overflow-hidden">
+      <section className="relative py-16 md:py-20 overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/backgrounds/felt-figma.png"
-            alt="Grüner Filz Hintergrund"
+            src="/images/backgrounds/chalkboard.jpg"
+            alt="Kreidetafel Hintergrund"
             fill
             className="object-cover"
             priority
@@ -65,7 +65,7 @@ export default function MitmachenPage() {
             </h2>
 
             <p
-              className="text-white/85 mb-10 max-w-xl mx-auto"
+              className="text-white/85 max-w-xl mx-auto"
               style={{
                 fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
                 fontWeight: 400,
@@ -75,19 +75,6 @@ export default function MitmachenPage() {
             >
               {t('hero.subtitle')}
             </p>
-
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button
-                href="#mitglied-werden"
-                size="lg"
-                className="bg-[#ff0000] hover:bg-[#cc0000] text-white px-8 py-4 text-[17px] font-bold rounded-full shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.2),0px_4px_6px_-4px_rgba(0,0,0,0.15)] hover:shadow-xl transition-all transform hover:-translate-y-1"
-              >
-                {t('hero.cta')}
-                <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </Button>
-            </div>
           </motion.div>
         </div>
       </section>
