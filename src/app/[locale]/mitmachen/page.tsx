@@ -1,58 +1,23 @@
 'use client';
 
 import { useState } from 'react';
-import { useTranslations, useLocale } from 'next-intl';
+import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { Button, Card } from '@/components/ui';
-
-const icons = {
-  book: (
-    <svg viewBox="0 0 64 64" fill="none" className="w-full h-full">
-      <rect x="8" y="10" width="22" height="44" rx="2" stroke="currentColor" strokeWidth="2.5" fill="none" />
-      <rect x="34" y="10" width="22" height="44" rx="2" stroke="currentColor" strokeWidth="2.5" fill="none" />
-      <path d="M30 14v36M34 14v36" stroke="currentColor" strokeWidth="2.5" />
-      <path d="M14 22h10M14 30h10M14 38h10M40 22h10M40 30h10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity="0.5" />
-    </svg>
-  ),
-  target: (
-    <svg viewBox="0 0 64 64" fill="none" className="w-full h-full">
-      <circle cx="32" cy="32" r="20" stroke="currentColor" strokeWidth="2.5" fill="none" />
-      <circle cx="32" cy="32" r="12" stroke="currentColor" strokeWidth="2.5" fill="none" />
-      <circle cx="32" cy="32" r="4" fill="currentColor" />
-      <path d="M32 8v8M32 48v8M8 32h8M48 32h8" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" opacity="0.4" />
-    </svg>
-  ),
-  graduation: (
-    <svg viewBox="0 0 64 64" fill="none" className="w-full h-full">
-      <path d="M32 12L8 24l24 12 24-12L32 12z" stroke="currentColor" strokeWidth="2.5" fill="none" />
-      <path d="M16 30v14c0 4 7 8 16 8s16-4 16-8V30" stroke="currentColor" strokeWidth="2.5" fill="none" />
-      <path d="M56 24v16" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <circle cx="56" cy="42" r="3" fill="currentColor" opacity="0.3" />
-    </svg>
-  ),
-  megaphone: (
-    <svg viewBox="0 0 64 64" fill="none" className="w-full h-full">
-      <path d="M14 24h8l20-10v36L22 40h-8a4 4 0 01-4-4V28a4 4 0 014-4z" stroke="currentColor" strokeWidth="2.5" fill="none" />
-      <path d="M22 40v10a4 4 0 004 4h2a4 4 0 004-4V38" stroke="currentColor" strokeWidth="2.5" fill="none" />
-      <path d="M48 26c3 2 5 5 5 8s-2 6-5 8" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" opacity="0.5" />
-    </svg>
-  ),
-};
+import { Button } from '@/components/ui';
 
 const packages = [
   { key: 'pionier' as const, price: 60, highlight: false },
   { key: 'botschafter' as const, price: 90, highlight: true },
-  { key: 'patron' as const, price: 180, highlight: false },
+  { key: 'patron' as const, price: 350, highlight: false },
 ];
 
 const faqKeys = ['turniere', 'spende', 'kuendigung', 'jassguru'] as const;
 
 export default function MitmachenPage() {
   const t = useTranslations('mitmachen');
-  const locale = useLocale();
   const [formData, setFormData] = useState({
-    name: '', email: '', jassname: '', phone: '', paket: 'botschafter', message: '',
+    name: '', email: '', jassname: '', paket: 'botschafter', message: '',
   });
   const [submitted, setSubmitted] = useState(false);
   const [openFaq, setOpenFaq] = useState<string | null>(null);
@@ -85,16 +50,6 @@ export default function MitmachenPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <motion.div
-              className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/15 backdrop-blur-sm text-white text-sm font-medium mb-8"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2 }}
-            >
-              <span className="w-2.5 h-2.5 rounded-full animate-pulse" style={{ backgroundColor: '#ff0000' }} />
-              {t('pionier.badge')}
-            </motion.div>
-
             <h2
               className="text-white mb-6"
               style={{
@@ -132,183 +87,8 @@ export default function MitmachenPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </Button>
-              <a
-                href={`/${locale}/kontakt`}
-                className="inline-flex items-center gap-2 px-6 py-3 border-2 border-white/30 text-white rounded-full hover:bg-white/10 transition-colors font-medium"
-              >
-                {t('hero.ctaSecondary')}
-              </a>
             </div>
           </motion.div>
-        </div>
-      </section>
-
-      {/* ════════════════════ WARUM ════════════════════ */}
-      <section className="py-20 md:py-24" style={{ backgroundColor: '#f0eee7' }}>
-        <div className="container-main">
-          <motion.h2
-            className="text-center mb-12 md:mb-16"
-            style={{
-              fontFamily: 'var(--font-capita), Capita, Georgia, serif',
-              fontWeight: 700,
-              fontSize: 'clamp(32px, 5vw, 42px)',
-              lineHeight: '1.37',
-              letterSpacing: '-0.96px',
-              color: '#000000',
-            }}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            {t('warum.title')}
-          </motion.h2>
-
-          <motion.p
-            className="text-center mb-12 max-w-2xl mx-auto"
-            style={{
-              fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
-              fontWeight: 400,
-              fontSize: '16px',
-              lineHeight: '1.5',
-              color: '#6b6b6b',
-            }}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
-            {t('warum.intro')}
-          </motion.p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-            {(['wissen', 'modern', 'foerderung', 'vertretung'] as const).map((key, index) => (
-              <motion.div
-                key={key}
-                className="bg-white p-8 lg:p-10 transition-all duration-300 hover:-translate-y-1"
-                style={{ borderRadius: '12px', boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)' }}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <div className="flex items-start gap-5">
-                  <div className="w-14 h-14 shrink-0" style={{ color: '#ff0000' }}>
-                    {key === 'wissen' && icons.book}
-                    {key === 'modern' && icons.target}
-                    {key === 'foerderung' && icons.graduation}
-                    {key === 'vertretung' && icons.megaphone}
-                  </div>
-                  <div>
-                    <h3
-                      className="mb-3"
-                      style={{
-                        fontFamily: 'var(--font-capita), Capita, Georgia, serif',
-                        fontWeight: 700,
-                        fontSize: '22px',
-                        lineHeight: '1.2',
-                        letterSpacing: '-0.4px',
-                        color: '#000000',
-                      }}
-                    >
-                      {t(`warum.${key}.title`)}
-                    </h3>
-                    <p
-                      style={{
-                        fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
-                        fontWeight: 400,
-                        fontSize: '16px',
-                        lineHeight: '1.5',
-                        color: '#6b6b6b',
-                      }}
-                    >
-                      {t(`warum.${key}.description`)}
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ════════════════════ PIONIER-STATUS ════════════════════ */}
-      <section className="section-spacing bg-white">
-        <div className="container-main">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm font-medium mb-6" style={{ backgroundColor: 'rgba(255,0,0,0.08)', color: '#ff0000' }}>
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-              </svg>
-              {t('pionier.badge')}
-            </div>
-            <h2
-              style={{
-                fontFamily: 'var(--font-capita), Capita, Georgia, serif',
-                fontWeight: 700,
-                fontSize: 'clamp(32px, 5vw, 42px)',
-                lineHeight: '1.37',
-                letterSpacing: '-0.96px',
-                color: '#000000',
-              }}
-              className="mb-4"
-            >
-              {t('pionier.title')}
-            </h2>
-            <p
-              className="max-w-2xl mx-auto"
-              style={{
-                fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
-                fontWeight: 400,
-                fontSize: '16px',
-                lineHeight: '1.5',
-                color: '#6b6b6b',
-              }}
-            >
-              {t('pionier.intro')}
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-            {(['register', 'kartenset', 'feedback'] as const).map((key, index) => (
-              <motion.div
-                key={key}
-                className="bg-white p-8 lg:p-10 text-center transition-all duration-300 hover:-translate-y-1"
-                style={{ borderRadius: '12px', boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)' }}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <div className="w-12 h-12 mx-auto mb-6 rounded-full flex items-center justify-center" style={{ backgroundColor: 'rgba(255,0,0,0.08)' }}>
-                  <svg className="w-6 h-6" style={{ color: '#ff0000' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <h3
-                  className="mb-4"
-                  style={{
-                    fontFamily: 'var(--font-capita), Capita, Georgia, serif',
-                    fontWeight: 700,
-                    fontSize: '22px',
-                    lineHeight: '1.2',
-                    letterSpacing: '-0.4px',
-                    color: '#000000',
-                  }}
-                >
-                  {t(`pionier.${key}.title`)}
-                </h3>
-                <p style={{ fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif', fontWeight: 400, fontSize: '16px', lineHeight: '1.5', color: '#6b6b6b' }}>
-                  {t(`pionier.${key}.description`)}
-                </p>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -379,7 +159,7 @@ export default function MitmachenPage() {
                   <span style={{ opacity: 0.7, fontSize: '16px' }}> / {t('pricing.year')}</span>
                 </div>
                 <ul className="space-y-3 mb-8">
-                  {[1, 2, 3].map((i) => {
+                  {[1, 2, 3, 4, 5].map((i) => {
                     const feature = t.raw(`pricing.${pkg.key}.feature${i}`);
                     if (!feature) return null;
                     return (
@@ -394,6 +174,17 @@ export default function MitmachenPage() {
                     );
                   })}
                 </ul>
+                {t.raw(`pricing.${pkg.key}.linkUrl`) && (
+                  <a
+                    href={t.raw(`pricing.${pkg.key}.linkUrl`)}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center mb-6 text-sm underline"
+                    style={{ opacity: pkg.highlight ? 0.95 : 0.8 }}
+                  >
+                    {t(`pricing.${pkg.key}.linkLabel`)}
+                  </a>
+                )}
                 <button
                   onClick={() => {
                     setFormData({ ...formData, paket: pkg.key });
@@ -416,70 +207,66 @@ export default function MitmachenPage() {
               </motion.div>
             ))}
           </div>
+          <p className="text-center mt-8 text-sm" style={{ color: '#6b6b6b' }}>
+            {t('pricing.groupNote')}
+          </p>
         </div>
       </section>
-
-      {/* ════════════════════ IMPACT ════════════════════ */}
+      {/* ════════════════════ GOENNER ════════════════════ */}
       <section className="section-spacing bg-white">
         <div className="container-main">
-          <motion.h2
-            className="text-center mb-4"
-            style={{
-              fontFamily: 'var(--font-capita), Capita, Georgia, serif',
-              fontWeight: 700,
-              fontSize: 'clamp(32px, 5vw, 42px)',
-              lineHeight: '1.37',
-              letterSpacing: '-0.96px',
-              color: '#000000',
-            }}
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            className="max-w-3xl mx-auto text-center"
           >
-            {t('impact.title')}
-          </motion.h2>
-          <motion.p
-            className="text-center mb-12 md:mb-16 max-w-2xl mx-auto"
-            style={{ fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif', fontWeight: 400, fontSize: '16px', lineHeight: '1.5', color: '#6b6b6b' }}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
-            {t('impact.intro')}
-          </motion.p>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-            {(['jasswiki', 'lehrmaterial', 'infrastruktur'] as const).map((key, index) => (
-              <motion.div
-                key={key}
-                className="p-8 lg:p-10 text-center transition-all duration-300 hover:-translate-y-1"
-                style={{ borderRadius: '12px', backgroundColor: '#f0eee7' }}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <h3
-                  className="mb-4"
-                  style={{
-                    fontFamily: 'var(--font-capita), Capita, Georgia, serif',
-                    fontWeight: 700,
-                    fontSize: '22px',
-                    lineHeight: '1.2',
-                    letterSpacing: '-0.4px',
-                    color: '#000000',
-                  }}
-                >
-                  {t(`impact.${key}.title`)}
-                </h3>
-                <p style={{ fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif', fontWeight: 400, fontSize: '16px', lineHeight: '1.5', color: '#6b6b6b' }}>
-                  {t(`impact.${key}.description`)}
-                </p>
-              </motion.div>
-            ))}
-          </div>
+            <h2
+              className="mb-4"
+              style={{
+                fontFamily: 'var(--font-capita), Capita, Georgia, serif',
+                fontWeight: 700,
+                fontSize: 'clamp(32px, 5vw, 42px)',
+                lineHeight: '1.37',
+                letterSpacing: '-0.96px',
+                color: '#000000',
+              }}
+            >
+              {t('goenner.title')}
+            </h2>
+            <p
+              className="mb-4"
+              style={{
+                fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
+                fontWeight: 400,
+                fontSize: '18px',
+                lineHeight: '1.6',
+                color: '#1f1f1f',
+              }}
+            >
+              {t('goenner.lead')}
+            </p>
+            <p
+              className="mb-8"
+              style={{
+                fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
+                fontWeight: 400,
+                fontSize: '16px',
+                lineHeight: '1.6',
+                color: '#6b6b6b',
+              }}
+            >
+              {t('goenner.description')}
+            </p>
+            <Button
+              href="#anmeldung"
+              size="lg"
+              className="bg-[#ff0000] hover:bg-[#cc0000] text-white px-8 py-4 text-[17px] font-bold rounded-full shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.2),0px_4px_6px_-4px_rgba(0,0,0,0.15)] hover:shadow-xl transition-all transform hover:-translate-y-1"
+              onClick={() => setFormData({ ...formData, paket: 'goenner' })}
+            >
+              {t('goenner.cta')}
+            </Button>
+          </motion.div>
         </div>
       </section>
 
@@ -578,41 +365,26 @@ export default function MitmachenPage() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="jassname" className="block text-sm font-medium mb-2" style={{ color: '#000000' }}>
-                      {t('form.jassname')}
-                    </label>
-                    <input
-                      type="text"
-                      id="jassname"
-                      value={formData.jassname}
-                      onChange={(e) => setFormData({ ...formData, jassname: e.target.value })}
-                      placeholder={t('form.jassnamePlaceholder')}
-                      className="w-full px-4 py-3 outline-none transition-all"
-                      style={{ borderRadius: '12px', border: '1px solid #e5e5e5', fontSize: '16px' }}
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium mb-2" style={{ color: '#000000' }}>
-                      {t('form.phone')}
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full px-4 py-3 outline-none transition-all"
-                      style={{ borderRadius: '12px', border: '1px solid #e5e5e5', fontSize: '16px' }}
-                    />
-                  </div>
+                <div>
+                  <label htmlFor="jassname" className="block text-sm font-medium mb-2" style={{ color: '#000000' }}>
+                    {t('form.jassname')}
+                  </label>
+                  <input
+                    type="text"
+                    id="jassname"
+                    value={formData.jassname}
+                    onChange={(e) => setFormData({ ...formData, jassname: e.target.value })}
+                    placeholder={t('form.jassnamePlaceholder')}
+                    className="w-full px-4 py-3 outline-none transition-all"
+                    style={{ borderRadius: '12px', border: '1px solid #e5e5e5', fontSize: '16px' }}
+                  />
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium mb-2" style={{ color: '#000000' }}>
                     {t('form.paket')} *
                   </label>
-                  <div className="grid grid-cols-3 gap-3">
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                     {packages.map((pkg) => (
                       <button
                         key={pkg.key}
@@ -631,6 +403,21 @@ export default function MitmachenPage() {
                         <div style={{ fontSize: '13px', color: '#6b6b6b' }}>CHF {pkg.price}</div>
                       </button>
                     ))}
+                    <button
+                      type="button"
+                      onClick={() => setFormData({ ...formData, paket: 'goenner' })}
+                      className="py-3 px-4 transition-all"
+                      style={{
+                        borderRadius: '12px',
+                        border: formData.paket === 'goenner' ? '2px solid #ff0000' : '2px solid #e5e5e5',
+                        backgroundColor: formData.paket === 'goenner' ? 'rgba(255,0,0,0.04)' : '#ffffff',
+                      }}
+                    >
+                      <div style={{ fontFamily: 'var(--font-capita), Capita, Georgia, serif', fontWeight: 700, fontSize: '15px' }}>
+                        {t('goenner.title')}
+                      </div>
+                      <div style={{ fontSize: '13px', color: '#6b6b6b' }}>{t('goenner.optionPrice')}</div>
+                    </button>
                   </div>
                 </div>
 

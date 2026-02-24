@@ -354,80 +354,59 @@ Im Gründungsjahr 2026 bieten wir den exklusiven **Pionier-Status**: Alle Mitgli
 > **Keywords:** Jassverband Mitgliedschaft, Jass Verein beitreten, JVS Mitglied werden, Jass-Pionier, Jassverband Schweiz, Jass fördern
 
 ### Hero
-- **Titel:** Gestalten Sie die Zukunft des Schweizer Jass
-- **Subtitle:** Werden Sie Gründungsmitglied im Jassverband Schweiz. Im Jahr 2026 legen wir das Fundament für unser Nationalspiel – seien Sie von Anfang an dabei.
-- **CTA primär:** Jetzt Mitglied werden → #mitglied-werden
-- **CTA sekundär:** Sponsoring anfragen → /de/kontakt
-- **Hintergrund:** Gradient von #1a472a nach #0d2818 mit Filz-Overlay
-
-### Warum wir Sie brauchen
-- **Titel:** Ein Erbe, das gepflegt werden muss
-- **Intro:** Jassen ist beim Bundesamt für Kultur als «Lebendige Tradition» gelistet. Doch Tradition braucht Träger – Menschen, die sie weitergeben.
-
-| Bereich | Titel | Beschreibung |
-|---------|-------|-------------|
-| Wissen | Wissenserhalt | JassWiki – alle Regeln und Varianten, frei zugänglich für alle. |
-| Modern | Modernisierung | JassGuru – ein faires, schweizweites Elo-System für alle Spieler. |
-| Förderung | Förderung | Programme für die nächste Generation von Jasserinnen und Jassern. |
-| Vertretung | Vertretung | Eine starke Stimme gegenüber Politik, Medien und Partnern. |
-
-### Pionier-Status (exklusiv 2026)
-- **Badge:** Nur 2026
-- **Titel:** Pionier-Status – Exklusiv im Gründungsjahr
-- **Intro:** Alle Mitglieder, die 2026 beitreten, erhalten den dauerhaften Status als JVS-Pionier.
-
-| Vorteil | Titel | Beschreibung |
-|---------|-------|-------------|
-| Register | Gründungsregister | Ihr Name wird (auf Wunsch) im offiziellen Gründungsregister des Verbands geführt. |
-| Kartenset | Gründungskartenset | Sie erhalten das limitierte JVS-Gründungskartenset – in der Schweiz gedruckt. |
-| Feedback | Feedback-Recht | Sie gestalten aktiv mit: Direktes Feedback-Recht bei der Entwicklung unserer Tools. |
+- **Titel:** Jassen ist dein Spiel. Dein Platz dafür steht bereit.
+- **Subtitle:** Der Jassverband Schweiz — für alle, die Jassen lieben.
+- **CTA:** Paket wählen → #mitglied-werden
+- **Hintergrund:** Grüner Filz mit dezentem Overlay
 
 ### Mitgliedschafts-Pakete
 
-| Paket | Preis | Feature 1 | Feature 2 | Feature 3 |
-|-------|-------|-----------|-----------|-----------|
-| **Jass-Pionier** | CHF 60/Jahr | Volle Mitgliedschaft im JVS | Zugang zu JassGuru Elo-System | Dauerhafter Pionier-Status |
-| **Jass-Botschafter** *(empfohlen)* | CHF 90/Jahr | Alles aus Jass-Pionier | Limitiertes JVS-Gründungskartenset | Erweiterte Statistiken in JassGuru |
-| **Jass-Patron** | CHF 180/Jahr | Alles aus Jass-Botschafter | Teilnahme am 1. Nationalen Verbands-Jassturnier | Zugang zur Schweizer Team-Schieber-Liga |
+| Paket | Preis | Kernleistungen |
+|-------|-------|---------------|
+| **Jasser** | CHF 60/Jahr | Wettkampf-Berechtigung, Jass-Brevet, Verbandsnetzwerk, JassGuru Pro |
+| **Jass-Botschafter** *(empfohlen)* | CHF 90/Jahr | Alles aus Jasser plus Saison-Kartenset, Vorzugszugang, Rabatt auf Jassreisen |
+| **Die Jass-Runde** | CHF 350/Jahr | Für Gruppen bis 10 Personen, Team-Berechtigung, Runden-Ranking, Preisvorteil |
 
-### Was Ihr Beitrag bewirkt
-- **Titel:** Was Ihr Beitrag bewirkt
-- **Intro:** Mit Ihrem Beitrag finanzieren wir konkrete Projekte:
+**Links:**
+- Jasser / JassGuru Pro → https://jassguru.ch
+- Jassreisen → https://trumpf-as.ch
 
-| Bereich | Titel | Beschreibung |
-|---------|-------|-------------|
-| JassWiki | JassWiki werbefrei | Wissen für alle, ohne Ablenkung – dauerhaft kostenlos. |
-| Lehrmaterial | Lehrmaterialien | Anleitungen für Schulen, Vereine und Familien. |
-| Infrastruktur | Infrastruktur | Ein schweizweites Netzwerk für das Jassen. |
+**Hinweis Gruppenpaket:**
+Das Gruppenpaket berechtigt zur Teilnahme an Gruppen-Events. Für Einzel-Events ist eine individuelle Jasser-Lizenz erforderlich.
+
+### Gönner
+- **Lead:** Du brauchst kein Elo-Ranking und kein Kartenset. Du willst einfach, dass das Jassen eine Zukunft hat.
+- **Text:** Mit deiner Unterstützung halten wir JassWiki werbefrei, entwickeln JassGuru weiter und bringen das Nationalspiel in die nächste Generation.
+- **Optional:** Auf Wunsch erscheinst du auf unserer Gönnerliste.
+- **CTA:** Betrag wählen und unterstützen → #anmeldung
 
 ### Anmeldeformular
-- **Titel:** Jetzt anmelden
-- **Intro:** Füllen Sie das Formular aus und wir melden uns bei Ihnen mit den Zahlungsdetails.
+- **Titel:** Anmeldung
+- **Intro:** Online-Zahlung via Stripe/Twint folgt in Kürze. Du erhältst nach der Anmeldung eine Rechnung per E-Mail.
 
 **Felder:**
 - Name *
 - E-Mail *
-- Jassname (optional) — Platzhalter: "Ihr Spielername bei JassGuru"
-- Telefon (optional)
-- Mitgliedschafts-Paket * (Auswahl: Pionier / Botschafter / Patron)
-- Nachricht (optional) — Platzhalter: "Haben Sie Fragen oder Anmerkungen?"
+- Jassname (optional) — Platzhalter: "Dein Spielername bei JassGuru"
+- Paket * (Auswahl: Jasser / Botschafter / Jass-Runde / Gönner)
+- Nachricht (optional)
 
-**Hinweis-Box:** Die Online-Zahlung via Stripe/Twint wird bald verfügbar sein. Aktuell erhalten Sie nach der Anmeldung eine Rechnung per E-Mail.
+**Hinweis-Box:** Online-Zahlung via Stripe/Twint folgt in Kürze. Du erhältst nach der Anmeldung eine Rechnung per E-Mail.
 
 **Button:** Anmeldung absenden
 
 **Erfolg-Nachricht:**
 - **Titel:** Anmeldung erhalten!
-- **Text:** Vielen Dank für Ihr Interesse. Wir melden uns innerhalb von 48 Stunden mit den Zahlungsdetails.
+- **Text:** Wir melden uns innerhalb von 48 Stunden.
 
 ### FAQ
 
 | Frage | Antwort |
 |-------|---------|
-| Bin ich an Turniere gebunden? | Nein, Sie unterstützen die Jass-Kultur. Turniere sind ein optionales Angebot, an dem Sie freiwillig teilnehmen können. |
-| Gilt mein Beitrag als Spende? | Wir sind ein Verein nach Art. 60 ff. ZGB. Die steuerliche Abzugsfähigkeit hängt von Ihrem Wohnkanton ab. Kontaktieren Sie uns für eine Bestätigung. |
-| Kann ich jederzeit kündigen? | Ja, die Mitgliedschaft ist jährlich kündbar. Eine Kündigung ist jederzeit zum Ende des Mitgliedsjahres möglich. |
-| Was ist JassGuru? | JassGuru ist unsere digitale Jass-Plattform mit Elo-Ranking, Statistiken und Turnierorganisation. Als Mitglied erhalten Sie Zugang zu Ihrem persönlichen Elo-Profil. |
+| Was ist das Jass-Brevet? | Ein Test, der zeigt, dass du Jassen wirklich verstehst — nicht nur mitspielst. Wer besteht, trägt das offizielle Badge im JassGuru-Profil. Nur für Mitglieder. |
+| Wie funktioniert die Mitgliedschaft? | Du bezahlst einmal pro Saison. Für die nächste Saison entscheidest du neu — ganz ohne Abo oder Kündigung. |
+| Wie melde ich meine Gruppe an? | Der Coach registriert sich, wählt das Gruppenpaket und trägt die Mitglieder ein. Die anderen melden sich bei JassGuru an — fertig. |
+| Wann kommt das Saison-Kartenset? | Das Kartenset 2026 wird nach der Gründungsphase versandt. Du wirst per E-Mail informiert. |
 
 ### Trust-Badge
 - **Bild:** `/images/badges/lebendige-traditionen-figma.png`
@@ -480,3 +459,4 @@ Alle Seiten mit hreflang-Alternates (de, fr, it, x-default=de).
 | Weis | Punkteansage (nicht "Weisung") |
 | Stöck | König + Ober von Trumpf |
 | Match | Alle Stiche gewinnen (nicht "Durchmarsch") |
+

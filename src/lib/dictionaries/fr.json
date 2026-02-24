@@ -171,24 +171,42 @@
       "year": "an",
       "recommended": "Populaire",
       "select": "Choisir",
+      "groupNote": "Remarque : la formule de groupe autorise la participation aux événements de groupe. Pour les événements individuels, une licence Jasser individuelle est requise.",
       "pionier": {
         "title": "Jass-Pionnier",
         "feature1": "Adhésion complète à la JVS",
         "feature2": "Accès au système Elo JassGuru",
-        "feature3": "Statut de pionnier permanent"
+        "feature3": "Statut de pionnier permanent",
+        "feature4": "Classement Elo et statistiques avancées",
+        "feature5": "Base idéale pour la saison 2026",
+        "linkLabel": "→ jassguru.ch",
+        "linkUrl": "https://jassguru.ch"
       },
       "botschafter": {
         "title": "Jass-Ambassadeur",
         "feature1": "Tout de Jass-Pionnier",
         "feature2": "Jeu de cartes JVS fondateur limité",
-        "feature3": "Statistiques étendues dans JassGuru"
+        "feature3": "Statistiques étendues dans JassGuru",
+        "feature4": "Accès prioritaire 24h aux tournois et événements",
+        "feature5": "Rabais exclusif sur les voyages Jass",
+        "linkLabel": "→ trumpf-as.ch",
+        "linkUrl": "https://trumpf-as.ch"
       },
       "patron": {
-        "title": "Jass-Patron",
+        "title": "Le Cercle de Jass",
         "feature1": "Tout de Jass-Ambassadeur",
         "feature2": "Participation au 1er tournoi national de la Fédération",
-        "feature3": "Accès à la Ligue suisse de Schieber par équipes"
+        "feature3": "Accès à la Ligue suisse de Schieber par équipes",
+        "feature4": "Jass-Brevet, Elo et statistiques pour chaque membre",
+        "feature5": "Avantage prix : CHF 35 par personne"
       }
+    },
+    "goenner": {
+      "title": "Soutien",
+      "lead": "Vous n'avez pas besoin de classement Elo ni de jeu de cartes. Vous voulez simplement que le Jass ait un avenir.",
+      "description": "Avec votre soutien, nous gardons JassWiki sans publicité, développons JassGuru et transmettons le jeu national à la prochaine génération.",
+      "cta": "Choisir un montant et soutenir",
+      "optionPrice": "Montant libre"
     },
     "impact": {
       "title": "Ce que votre contribution accomplit",

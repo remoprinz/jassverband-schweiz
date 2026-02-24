@@ -123,127 +123,90 @@
   },
   "mitmachen": {
     "hero": {
-      "title": "Gestalten Sie die Zukunft des Schweizer Jass",
-      "subtitle": "Werden Sie Gründungsmitglied im Jassverband Schweiz. Im Jahr 2026 legen wir das Fundament für unser Nationalspiel – seien Sie von Anfang an dabei.",
-      "cta": "Jetzt Mitglied werden",
-      "ctaSecondary": "Sponsoring anfragen"
-    },
-    "warum": {
-      "title": "Ein Erbe, das gepflegt werden muss",
-      "intro": "Jassen ist beim Bundesamt für Kultur als «Lebendige Tradition» gelistet. Doch Tradition braucht Träger – Menschen, die sie weitergeben.",
-      "wissen": {
-        "title": "Wissenserhalt",
-        "description": "JassWiki – alle Regeln und Varianten, frei zugänglich für alle."
-      },
-      "modern": {
-        "title": "Modernisierung",
-        "description": "JassGuru – ein faires, schweizweites Elo-System für alle Spieler."
-      },
-      "foerderung": {
-        "title": "Förderung",
-        "description": "Programme für die nächste Generation von Jasserinnen und Jassern."
-      },
-      "vertretung": {
-        "title": "Vertretung",
-        "description": "Eine starke Stimme gegenüber Politik, Medien und Partnern."
-      }
-    },
-    "pionier": {
-      "badge": "Nur 2026",
-      "title": "Pionier-Status – Exklusiv im Gründungsjahr",
-      "intro": "Alle Mitglieder, die 2026 beitreten, erhalten den dauerhaften Status als JVS-Pionier.",
-      "register": {
-        "title": "Gründungsregister",
-        "description": "Ihr Name wird (auf Wunsch) im offiziellen Gründungsregister des Verbands geführt."
-      },
-      "kartenset": {
-        "title": "Gründungskartenset",
-        "description": "Sie erhalten das limitierte JVS-Gründungskartenset – in der Schweiz gedruckt."
-      },
-      "feedback": {
-        "title": "Feedback-Recht",
-        "description": "Sie gestalten aktiv mit: Direktes Feedback-Recht bei der Entwicklung unserer Tools."
-      }
+      "title": "Jassen ist dein Spiel. Dein Platz dafür steht bereit.",
+      "subtitle": "Der Jassverband Schweiz — für alle, die Jassen lieben.",
+      "cta": "Paket wählen"
     },
     "pricing": {
-      "title": "Wählen Sie Ihr Paket",
-      "subtitle": "Jedes Paket unterstützt die Mission des Jassverbands Schweiz.",
+      "title": "Wähle dein Paket",
+      "subtitle": "Von Einzelmitgliedschaft bis Gruppenrunde: Du entscheidest, wie du Teil der Bewegung wirst.",
       "year": "Jahr",
-      "recommended": "Beliebt",
+      "recommended": "Empfohlen",
       "select": "Auswählen",
+      "groupNote": "Hinweis: Das Gruppenpaket berechtigt zur Teilnahme an Gruppen-Events. Für Einzel-Events ist eine individuelle Jasser-Lizenz erforderlich.",
       "pionier": {
-        "title": "Jass-Pionier",
-        "feature1": "Volle Mitgliedschaft im JVS",
-        "feature2": "Zugang zu JassGuru Elo-System",
-        "feature3": "Dauerhafter Pionier-Status"
+        "title": "Jasser",
+        "feature1": "Wettkampf-Berechtigung für Schweizer Jass-Meisterschaften.",
+        "feature2": "Jass-Brevet als offizieller Kompetenznachweis (Badge im Profil).",
+        "feature3": "Zugang zum JVS-Mitgliederchat und Verbandsnetzwerk.",
+        "feature4": "JassGuru Pro mit Elo-Ranking und Statistiken.",
+        "feature5": "Beste Ausgangslage für die Saison 2026.",
+        "linkLabel": "→ jassguru.ch",
+        "linkUrl": "https://jassguru.ch"
       },
       "botschafter": {
         "title": "Jass-Botschafter",
-        "feature1": "Alles aus Jass-Pionier",
-        "feature2": "Limitiertes JVS-Gründungskartenset",
-        "feature3": "Erweiterte Statistiken in JassGuru"
+        "feature1": "Alles aus dem Jasser-Paket.",
+        "feature2": "Exklusives Saison-Kartenset (Edition 2026 als erste Auflage).",
+        "feature3": "24 Stunden Vorzugszugang für nationale Turniere und Events.",
+        "feature4": "Exklusiver Rabatt auf Jassreisen mit Trumpf-As.",
+        "feature5": "Nicht im Handel erhältliches Kartenset in höchster Qualität.",
+        "linkLabel": "→ trumpf-as.ch",
+        "linkUrl": "https://trumpf-as.ch"
       },
       "patron": {
-        "title": "Jass-Patron",
-        "feature1": "Alles aus Jass-Botschafter",
-        "feature2": "Teilnahme am 1. Nationalen Verbands-Jassturnier",
-        "feature3": "Zugang zur Schweizer Team-Schieber-Liga"
+        "title": "Die Jass-Runde",
+        "feature1": "Für Jassgruppen bis zu 10 Personen.",
+        "feature2": "Team-Berechtigung für Gruppen-Events und Team-Schiebermeisterschaft.",
+        "feature3": "Private Runden-Rangliste auf JassGuru.",
+        "feature4": "Jass-Brevet, Elo-Ranking und Statistiken für jede Person.",
+        "feature5": "Preisvorteil: CHF 35 pro Person statt CHF 60."
       }
     },
-    "impact": {
-      "title": "Was Ihr Beitrag bewirkt",
-      "intro": "Mit Ihrem Beitrag finanzieren wir konkrete Projekte:",
-      "jasswiki": {
-        "title": "JassWiki werbefrei",
-        "description": "Wissen für alle, ohne Ablenkung – dauerhaft kostenlos."
-      },
-      "lehrmaterial": {
-        "title": "Lehrmaterialien",
-        "description": "Anleitungen für Schulen, Vereine und Familien."
-      },
-      "infrastruktur": {
-        "title": "Infrastruktur",
-        "description": "Ein schweizweites Netzwerk für das Jassen."
-      }
+    "goenner": {
+      "title": "Gönner",
+      "lead": "Du brauchst kein Elo-Ranking und kein Kartenset. Du willst einfach, dass das Jassen eine Zukunft hat.",
+      "description": "Mit deiner Unterstützung halten wir JassWiki werbefrei, entwickeln JassGuru weiter und bringen das Nationalspiel in die nächste Generation. Auf Wunsch erscheinst du auf unserer Gönnerliste.",
+      "cta": "Betrag wählen und unterstützen",
+      "optionPrice": "Frei wählbar"
     },
     "form": {
-      "title": "Jetzt anmelden",
-      "intro": "Füllen Sie das Formular aus und wir melden uns bei Ihnen mit den Zahlungsdetails.",
+      "title": "Anmeldung",
+      "intro": "Online-Zahlung via Stripe/Twint folgt in Kürze. Du erhältst nach der Anmeldung eine Rechnung per E-Mail.",
       "name": "Name",
       "email": "E-Mail",
       "jassname": "Jassname (optional)",
-      "jassnamePlaceholder": "Ihr Spielername bei JassGuru",
-      "phone": "Telefon (optional)",
-      "paket": "Mitgliedschafts-Paket",
+      "jassnamePlaceholder": "Dein Spielername bei JassGuru",
+      "paket": "Paket",
       "message": "Nachricht (optional)",
-      "messagePlaceholder": "Haben Sie Fragen oder Anmerkungen?",
+      "messagePlaceholder": "Optional: Fragen oder Hinweise",
       "notice": {
         "title": "Hinweis:",
-        "message": "Die Online-Zahlung via Stripe/Twint wird bald verfügbar sein. Aktuell erhalten Sie nach der Anmeldung eine Rechnung per E-Mail."
+        "message": "Online-Zahlung via Stripe/Twint folgt in Kürze. Du erhältst nach der Anmeldung eine Rechnung per E-Mail."
       },
       "submit": "Anmeldung absenden",
       "success": {
         "title": "Anmeldung erhalten!",
-        "message": "Vielen Dank für Ihr Interesse. Wir melden uns innerhalb von 48 Stunden mit den Zahlungsdetails."
+        "message": "Wir melden uns innerhalb von 48 Stunden."
       }
     },
     "faq": {
       "title": "Häufige Fragen",
       "turniere": {
-        "question": "Bin ich an Turniere gebunden?",
-        "answer": "Nein, Sie unterstützen die Jass-Kultur. Turniere sind ein optionales Angebot, an dem Sie freiwillig teilnehmen können."
+        "question": "Was ist das Jass-Brevet?",
+        "answer": "Ein Test, der zeigt, dass du Jassen wirklich verstehst — nicht nur mitspielst. Wer besteht, trägt das offizielle Badge im JassGuru-Profil. Nur für Mitglieder."
       },
       "spende": {
-        "question": "Gilt mein Beitrag als Spende?",
-        "answer": "Wir sind ein Verein nach Art. 60 ff. ZGB. Die steuerliche Abzugsfähigkeit hängt von Ihrem Wohnkanton ab. Kontaktieren Sie uns für eine Bestätigung."
+        "question": "Wie funktioniert die Mitgliedschaft?",
+        "answer": "Du bezahlst einmal pro Saison. Für die nächste Saison entscheidest du neu — ganz ohne Abo oder Kündigung."
       },
       "kuendigung": {
-        "question": "Kann ich jederzeit kündigen?",
-        "answer": "Ja, die Mitgliedschaft ist jährlich kündbar. Eine Kündigung ist jederzeit zum Ende des Mitgliedsjahres möglich."
+        "question": "Wie melde ich meine Gruppe an?",
+        "answer": "Der Coach registriert sich, wählt das Gruppenpaket und trägt die Mitglieder ein. Die anderen melden sich bei JassGuru an — fertig."
       },
       "jassguru": {
-        "question": "Was ist JassGuru?",
-        "answer": "JassGuru ist unsere digitale Jass-Plattform mit Elo-Ranking, Statistiken und Turnierorganisation. Als Mitglied erhalten Sie Zugang zu Ihrem persönlichen Elo-Profil."
+        "question": "Wann kommt das Saison-Kartenset?",
+        "answer": "Das Kartenset 2026 wird nach der Gründungsphase versandt. Du wirst per E-Mail informiert."
       }
     },
     "trust": {

@@ -171,24 +171,42 @@
       "year": "anno",
       "recommended": "Popolare",
       "select": "Seleziona",
+      "groupNote": "Nota: il pacchetto di gruppo autorizza la partecipazione agli eventi di gruppo. Per gli eventi individuali è necessaria una licenza Jasser individuale.",
       "pionier": {
         "title": "Jass-Pioniere",
         "feature1": "Adesione completa alla JVS",
         "feature2": "Accesso al sistema Elo JassGuru",
-        "feature3": "Status di pioniere permanente"
+        "feature3": "Status di pioniere permanente",
+        "feature4": "Classifica Elo e statistiche avanzate",
+        "feature5": "Base ideale per la stagione 2026",
+        "linkLabel": "→ jassguru.ch",
+        "linkUrl": "https://jassguru.ch"
       },
       "botschafter": {
         "title": "Jass-Ambasciatore",
         "feature1": "Tutto da Jass-Pioniere",
         "feature2": "Set di carte JVS fondatore limitato",
-        "feature3": "Statistiche estese in JassGuru"
+        "feature3": "Statistiche estese in JassGuru",
+        "feature4": "Accesso prioritario 24h a tornei ed eventi",
+        "feature5": "Sconto esclusivo sui viaggi Jass",
+        "linkLabel": "→ trumpf-as.ch",
+        "linkUrl": "https://trumpf-as.ch"
       },
       "patron": {
-        "title": "Jass-Patrono",
+        "title": "Il Tavolo di Jass",
         "feature1": "Tutto da Jass-Ambasciatore",
         "feature2": "Partecipazione al 1° torneo nazionale della Federazione",
-        "feature3": "Accesso alla Lega svizzera di Schieber a squadre"
+        "feature3": "Accesso alla Lega svizzera di Schieber a squadre",
+        "feature4": "Jass-Brevet, Elo e statistiche per ogni membro",
+        "feature5": "Vantaggio prezzo: CHF 35 a persona"
       }
+    },
+    "goenner": {
+      "title": "Sostenitore",
+      "lead": "Non ti servono classifica Elo o set di carte. Vuoi semplicemente che il Jass abbia un futuro.",
+      "description": "Con il tuo sostegno manteniamo JassWiki senza pubblicità, sviluppiamo JassGuru e portiamo il gioco nazionale alla prossima generazione.",
+      "cta": "Scegli importo e sostieni",
+      "optionPrice": "Importo libero"
     },
     "impact": {
       "title": "Cosa realizza il vostro contributo",
