@@ -128,7 +128,7 @@
       "cta": "Lizenz wählen"
     },
     "pricing": {
-      "title": "Wähle deine Lizenz",
+      "title": "Wähle deine Mitgliedschaft",
       "subtitle": "Jasser-Lizenz, Trumpf-Lizenz oder Gruppen-Lizenz: Du entscheidest, wie du Teil der Bewegung wirst. Alle Beträge sind Jahresbeiträge pro Saison.",
       "year": "Saison",
       "recommended": "Empfohlen",
@@ -140,9 +140,7 @@
         "feature2": "Jass-Brevet als offizieller Kompetenznachweis (Badge im Profil).",
         "feature3": "Zugang zum JVS-Mitgliederchat und Verbandsnetzwerk.",
         "feature4": "JassGuru Pro mit Elo-Ranking und Statistiken.",
-        "feature5": "Beste Ausgangslage für die Saison 2026.",
-        "linkLabel": "→ jassguru.ch",
-        "linkUrl": "https://jassguru.ch"
+        "feature5": "Beste Ausgangslage für die Saison 2026."
       },
       "botschafter": {
         "title": "Trumpf-Lizenz",

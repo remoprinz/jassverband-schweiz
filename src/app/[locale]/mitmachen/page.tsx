@@ -8,7 +8,7 @@ import { Button } from '@/components/ui';
 
 const packages = [
   { key: 'pionier' as const, price: 60, highlight: false },
-  { key: 'botschafter' as const, price: 90, highlight: false },
+  { key: 'botschafter' as const, price: 90, highlight: true },
   { key: 'patron' as const, price: 350, highlight: false },
 ];
 
@@ -33,8 +33,8 @@ export default function MitmachenPage() {
       <section className="relative py-16 md:py-20 overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/backgrounds/chalkboard.jpg"
-            alt="Kreidetafel Hintergrund"
+            src="/images/backgrounds/felt-figma.png"
+            alt="Grüner Filz Hintergrund"
             fill
             className="object-cover"
             priority
@@ -110,7 +110,7 @@ export default function MitmachenPage() {
             {packages.map((pkg, index) => (
               <motion.div
                 key={pkg.key}
-                className={`relative p-8 lg:p-10 transition-all duration-300 hover:-translate-y-1 ${pkg.highlight ? 'md:scale-105' : ''}`}
+                className="relative h-full flex flex-col p-8 lg:p-10 transition-all duration-300 hover:-translate-y-1"
                 style={{
                   borderRadius: '12px',
                   boxShadow: pkg.highlight ? '0 8px 30px rgba(0, 0, 0, 0.15)' : '0 4px 20px rgba(0, 0, 0, 0.08)',
@@ -161,9 +161,9 @@ export default function MitmachenPage() {
                     );
                   })}
                 </ul>
-                {t.raw(`pricing.${pkg.key}.linkUrl`) && (
+                {t.has(`pricing.${pkg.key}.linkUrl`) && t.has(`pricing.${pkg.key}.linkLabel`) && (
                   <a
-                    href={t.raw(`pricing.${pkg.key}.linkUrl`)}
+                    href={t(`pricing.${pkg.key}.linkUrl`)}
                     target="_blank"
                     rel="noreferrer"
                     className="inline-flex items-center mb-6 text-sm underline"
@@ -177,7 +177,7 @@ export default function MitmachenPage() {
                     setFormData({ ...formData, paket: pkg.key });
                     document.getElementById('anmeldung')?.scrollIntoView({ behavior: 'smooth' });
                   }}
-                  className="w-full font-bold transition-all transform hover:-translate-y-0.5"
+                  className="w-full mt-auto font-bold transition-all transform hover:-translate-y-0.5"
                   style={{
                     fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
                     fontSize: '17px',
@@ -261,8 +261,8 @@ export default function MitmachenPage() {
       <section id="anmeldung" className="relative py-24 md:py-32 overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/backgrounds/holztisch.jpg"
-            alt="Holztisch"
+            src="/images/backgrounds/chalkboard.jpg"
+            alt="Kreidetafel Hintergrund"
             fill
             className="object-cover"
             quality={85}
