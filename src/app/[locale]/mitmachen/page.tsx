@@ -8,7 +8,7 @@ import { Button } from '@/components/ui';
 
 const packages = [
   { key: 'pionier' as const, price: 60, highlight: false },
-  { key: 'botschafter' as const, price: 90, highlight: true },
+  { key: 'botschafter' as const, price: 90, highlight: false },
   { key: 'patron' as const, price: 350, highlight: false },
 ];
 
