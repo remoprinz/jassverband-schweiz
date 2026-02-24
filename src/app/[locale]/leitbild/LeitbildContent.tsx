@@ -61,21 +61,23 @@ export function LeitbildContent({ vision, missionsTitle, missions }: LeitbildCon
           >
             {vision.title}
           </motion.h2>
-          <motion.p
-            className="text-white/95 mb-4"
-            style={{
-              fontFamily: 'var(--font-capita), Capita, Georgia, serif',
-              fontWeight: 700,
-              fontSize: 'clamp(24px, 3.2vw, 38px)',
-              lineHeight: 1.25,
-              letterSpacing: '-0.4px',
-            }}
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            {vision.subtitle}
-          </motion.p>
+          {vision.subtitle && (
+            <motion.p
+              className="text-white/95 mb-4"
+              style={{
+                fontFamily: 'var(--font-capita), Capita, Georgia, serif',
+                fontWeight: 700,
+                fontSize: 'clamp(24px, 3.2vw, 38px)',
+                lineHeight: 1.25,
+                letterSpacing: '-0.4px',
+              }}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              {vision.subtitle}
+            </motion.p>
+          )}
           <motion.p
             className="text-white/92 text-lg md:text-xl leading-relaxed"
             style={{
@@ -96,9 +98,9 @@ export function LeitbildContent({ vision, missionsTitle, missions }: LeitbildCon
         style={{
           fontFamily: 'var(--font-capita), Capita, Georgia, serif',
           fontWeight: 700,
-          fontSize: 'var(--font-size-20)',
-          lineHeight: '1.25',
-          letterSpacing: '-0.4px',
+          fontSize: 'clamp(32px, 5vw, 42px)',
+          lineHeight: '1.37',
+          letterSpacing: '-0.96px',
           color: 'var(--color-foreground)',
         }}
         initial={{ opacity: 0, y: 16 }}
