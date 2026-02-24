@@ -65,16 +65,41 @@ export default function MitmachenPage() {
             </h2>
 
             <p
-              className="text-white/85 max-w-xl mx-auto"
+              className="text-white/90 max-w-3xl mx-auto"
               style={{
-                fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
-                fontWeight: 400,
-                fontSize: 'clamp(16px, 2.5vw, 20px)',
-                lineHeight: '1.6',
+                fontFamily: 'var(--font-capita), Capita, Georgia, serif',
+                fontWeight: 700,
+                fontSize: 'clamp(22px, 3.2vw, 30px)',
+                lineHeight: '1.35',
+                letterSpacing: '-0.5px',
+                whiteSpace: 'pre-line',
+                textShadow: '0 2px 20px rgba(0,0,0,0.25)',
               }}
             >
               {t('hero.subtitle')}
             </p>
+            {t.has('hero.teaser') && t.has('hero.teaserLabel') && t.has('hero.teaserUrl') && (
+              <p
+                className="mt-5 text-white/85"
+                style={{
+                  fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
+                  fontWeight: 500,
+                  fontSize: 'clamp(15px, 2vw, 18px)',
+                  lineHeight: '1.5',
+                }}
+              >
+                {t('hero.teaser')}{' '}
+                <a
+                  href={t('hero.teaserUrl')}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="underline underline-offset-2 hover:text-white transition-colors"
+                  style={{ fontWeight: 700 }}
+                >
+                  {t('hero.teaserLabel')}
+                </a>
+              </p>
+            )}
           </motion.div>
         </div>
       </section>

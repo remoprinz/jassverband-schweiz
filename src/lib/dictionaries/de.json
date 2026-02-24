@@ -123,13 +123,16 @@
   },
   "mitmachen": {
     "hero": {
-      "title": "Jassen ist dein Spiel. Dein Platz dafür steht bereit.",
-      "subtitle": "Der Jassverband Schweiz — für alle, die Jassen lieben.",
+      "title": "Saison 1 ist eröffnet. Dein Platz steht bereit.",
+      "subtitle": "Jetzt Mitglied werden und die Lizenz zur Teilnahme sichern.\nMit deiner Lizenz kannst du Schweizermeister werden — gültig, bis das erste Team zum Schieber-Schweizermeister gekürt wird.",
+      "teaser": "Neugierig auf die Team-Schiebermeisterschaft?",
+      "teaserLabel": "Zur Vorschau auf jassmeister.web.app",
+      "teaserUrl": "https://jassmeister.web.app",
       "cta": "Lizenz wählen"
     },
     "pricing": {
-      "title": "Wähle deine Mitgliedschaft",
-      "subtitle": "Jasser-Lizenz, Trumpf-Lizenz oder Gruppen-Lizenz: Du entscheidest, wie du Teil der Bewegung wirst. Alle Beträge sind Jahresbeiträge pro Saison.",
+      "title": "Wähle deine Lizenz für Saison 1.",
+      "subtitle": "Wähle die passende Lizenz und profitiere von den Services des Jassverbands Schweiz. Werde Teil der Jass-Bewegung.",
       "year": "Saison",
       "recommended": "Empfohlen",
       "select": "Lizenz wählen",
