@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: LeitbildPageProps): Promise<M
 
   return {
     title: `${title} | Jassverband Schweiz`,
-    description: t("vision.text"),
+    description: t("leitbild.visionCopy"),
   };
 }
 
@@ -23,7 +23,8 @@ export default async function LeitbildPage({ params }: LeitbildPageProps) {
 
   const vision = {
     title: t("leitbild.visionTitle"),
-    text: t("leitbild.visionText"),
+    subtitle: t("leitbild.visionSubtitle"),
+    copy: t("leitbild.visionCopy"),
   };
 
   const missions = Array.from({ length: 6 }, (_, i) => ({

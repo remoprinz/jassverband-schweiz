@@ -8,6 +8,7 @@ interface HomePageProps {
 export default async function HomePage({ params }: HomePageProps) {
   const { locale } = await params;
   const t = await getTranslations({ locale });
+  const leitbildUrl = "https://jassverband-schweiz.vercel.app/de/leitbild";
 
   const missionItems = Array.from({ length: 6 }, (_, i) => ({
     title: t(`mission.items.${i}.title`),
@@ -24,12 +25,18 @@ export default async function HomePage({ params }: HomePageProps) {
 
       <Vision
         title={t("vision.title")}
-        text={t("vision.text")}
+        subtitle={t("vision.subtitle")}
+        copy={t("vision.copy")}
         cta={t("vision.cta")}
-        ctaHref={`/${locale}/leitbild`}
+        ctaHref={leitbildUrl}
       />
 
-      <MissionTiles title={t("mission.title")} items={missionItems} />
+      <MissionTiles
+        title={t("mission.title")}
+        items={missionItems}
+        cta={t("mission.cta")}
+        ctaHref={leitbildUrl}
+      />
 
       <Tournament
         title={t("tournament.title")}

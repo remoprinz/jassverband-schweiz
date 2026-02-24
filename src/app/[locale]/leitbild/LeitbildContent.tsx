@@ -1,11 +1,11 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 
 interface VisionData {
   title: string;
-  text: string;
+  subtitle: string;
+  copy: string;
 }
 
 interface MissionData {
@@ -20,12 +20,7 @@ interface LeitbildContentProps {
   missions: MissionData[];
 }
 
-const CARD_SET = ['card-01', 'card-02', 'card-03', 'card-04', 'card-05'];
-const DECO_CARDS = CARD_SET.slice(0, 2).map((c) => `/cards/de/${c}.png`);
-
 export function LeitbildContent({ vision, missionsTitle, missions }: LeitbildContentProps) {
-  const cards = DECO_CARDS;
-
   return (
     <div className="container-main">
       {/* Vision-Block: an Hero angelehnt, eigenständig */}
@@ -49,19 +44,7 @@ export function LeitbildContent({ vision, missionsTitle, missions }: LeitbildCon
           />
         </div>
 
-        {/* Dezente Karten-Deko */}
-        <div className="absolute right-4 top-1/2 -translate-y-1/2 z-10 hidden md:block w-20 opacity-30">
-          <Image
-            src={cards[0]}
-            alt=""
-            width={80}
-            height={125}
-            className="drop-shadow-lg"
-            style={{ borderRadius: '10px' }}
-          />
-        </div>
-
-        <div className="relative z-10 px-6 py-12 md:px-16 md:py-16 max-w-3xl">
+        <div className="relative z-10 px-6 py-12 md:px-16 md:py-16">
           <motion.h2
             className="mb-4"
             style={{
@@ -79,15 +62,30 @@ export function LeitbildContent({ vision, missionsTitle, missions }: LeitbildCon
             {vision.title}
           </motion.h2>
           <motion.p
+            className="text-white/95 mb-4"
+            style={{
+              fontFamily: 'var(--font-capita), Capita, Georgia, serif',
+              fontWeight: 700,
+              fontSize: 'clamp(24px, 3.2vw, 38px)',
+              lineHeight: 1.25,
+              letterSpacing: '-0.4px',
+            }}
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            {vision.subtitle}
+          </motion.p>
+          <motion.p
             className="text-white/92 text-lg md:text-xl leading-relaxed"
             style={{
               fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
             }}
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.25 }}
           >
-            {vision.text}
+            {vision.copy}
           </motion.p>
         </div>
       </motion.section>
@@ -115,6 +113,7 @@ export function LeitbildContent({ vision, missionsTitle, missions }: LeitbildCon
         {missions.map((item, index) => (
           <motion.article
             key={index}
+            id={`mission-${index + 1}`}
             className="bg-white rounded-xl p-6 md:p-8 shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-card-hover)] transition-shadow duration-300"
             style={{ borderRadius: 'var(--radius-card-lg)' }}
             initial={{ opacity: 0, y: 24 }}

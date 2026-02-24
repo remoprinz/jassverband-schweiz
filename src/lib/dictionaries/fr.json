@@ -18,7 +18,8 @@
   },
   "vision": {
     "title": "Notre vision",
-    "text": "Faire du Jass une matière scolaire.",
+    "subtitle": "Faire du Jass une matière scolaire.",
+    "copy": "La Fédération Suisse de Jass s'engage activement à ancrer le Jass dans l'éducation – comme jeu qui relie pensée stratégique, compétences sociales et patrimoine culturel.",
     "cta": "Lire la suite"
   },
   "mission": {
@@ -30,7 +31,8 @@
       { "title": "Réduire les obstacles", "mission": "Nous abaissons les barrières à l'entrée et rendons le Jass accessible à tous – quel que soit le niveau." },
       { "title": "Moderniser la tradition", "mission": "Nous amenons le Jass à l'ère numérique et assurons sa pertinence pour les générations à venir." },
       { "title": "Façonner la culture", "mission": "Nous entretenons et développons le Jass comme patrimoine culturel vivant qui relie les gens par-delà toutes les frontières sociales." }
-    ]
+    ],
+    "cta": "Lire la suite"
   },
   "pillars": {
     "title": "Notre mission",
@@ -75,7 +77,9 @@
   "leitbild": {
     "title": "Vision et mission",
     "visionTitle": "Notre vision",
-    "visionText": "Faire du Jass une matière scolaire. La Fédération Suisse de Jass s'engage à ancrer le Jass dans l'éducation – comme jeu qui relie pensée stratégique, compétences sociales et patrimoine culturel.",
+    "visionSubtitle": "Faire du Jass une matière scolaire",
+    "visionCopy": "La Fédération Suisse de Jass s'engage à ancrer le Jass dans l'éducation – comme jeu qui relie pensée stratégique, compétences sociales et patrimoine culturel.",
+    "visionText": "La Fédération Suisse de Jass s'engage à ancrer le Jass dans l'éducation – comme jeu qui relie pensée stratégique, compétences sociales et patrimoine culturel.",
     "missionsTitle": "Nos missions",
     "missions": [
       { "title": "Établir des championnats", "mission": "Nous faisons du Jass un sport de compétition officiel avec des structures claires, des classements et des championnats nationaux.", "kernidee": "Nous faisons du Jass un sport de compétition officiel avec des structures claires, des classements et des championnats nationaux." },
