@@ -2,7 +2,7 @@
 
 > **Referenzdokument für sämtlichen Website-Content.**
 > Quellen: `src/lib/dictionaries/de.json`, Seiten-Komponenten, `src/lib/news/articles.ts`
-> Stand: 23. Februar 2026
+> Stand: 24. Februar 2026
 
 ---
 
@@ -354,25 +354,29 @@ Im Gründungsjahr 2026 bieten wir den exklusiven **Pionier-Status**: Alle Mitgli
 > **Keywords:** Jassverband Mitgliedschaft, Jass Verein beitreten, JVS Mitglied werden, Jass-Pionier, Jassverband Schweiz, Jass fördern
 
 ### Hero
-- **Titel:** Jassen ist dein Spiel. Dein Platz dafür steht bereit.
-- **Subtitle:** Der Jassverband Schweiz — für alle, die Jassen lieben.
-- **CTA:** Paket wählen → #mitglied-werden
+- **Titel:** Saison 1 ist eröffnet. Dein Platz steht bereit.
+- **Subtitle:** Jetzt Mitglied werden und die Lizenz zur Teilnahme an der ersten Schweizermeisterschaft im Team-Schieber sichern. Gültig, bis die ersten Schweizermeister gekürt sind.
+- **Teaser:** Neugierig? Hier geht's zur Vorschau → https://jassmeister.web.app
+- **CTA:** Kein Hero-CTA (bewusst entfernt)
 - **Hintergrund:** Grüner Filz mit dezentem Overlay
 
 ### Mitgliedschafts-Pakete
 
 | Paket | Preis | Kernleistungen |
 |-------|-------|---------------|
-| **Jasser** | CHF 60/Jahr | Wettkampf-Berechtigung, Jass-Brevet, Verbandsnetzwerk, JassGuru Pro |
-| **Jass-Botschafter** *(empfohlen)* | CHF 90/Jahr | Alles aus Jasser plus Saison-Kartenset, Vorzugszugang, Rabatt auf Jassreisen |
-| **Die Jass-Runde** | CHF 350/Jahr | Für Gruppen bis 10 Personen, Team-Berechtigung, Runden-Ranking, Preisvorteil |
+| **Jasser-Lizenz** | CHF 60/Saison | Wettkampf-Berechtigung, Jass-Brevet, Verbandsnetzwerk, JassGuru Pro |
+| **Trumpf-Lizenz** | CHF 90/Saison | Alles aus Jasser-Lizenz plus Saison-Kartenset, Vorzugszugang, Rabatt auf Jassreisen |
+| **Gruppen-Lizenz** | CHF 350/Saison | Für Gruppen bis 10 Personen, Team-Berechtigung, Runden-Ranking, Preisvorteil |
 
 **Links:**
-- Jasser / JassGuru Pro → https://jassguru.ch
 - Jassreisen → https://trumpf-as.ch
 
-**Hinweis Gruppenpaket:**
-Das Gruppenpaket berechtigt zur Teilnahme an Gruppen-Events. Für Einzel-Events ist eine individuelle Jasser-Lizenz erforderlich.
+**Hinweis Gruppen-Lizenz:**
+Die Gruppen-Lizenz berechtigt zur Teilnahme an Gruppen-Events. Für Einzel-Events ist eine individuelle Jasser-Lizenz erforderlich.
+
+**Section-Heading:**
+- **Titel:** Wähle deine Lizenz für Saison 1.
+- **Subtitle:** Wähle die passende Lizenz und profitiere von den Services des Jassverbands Schweiz. Werde Teil der Jass-Bewegung.
 
 ### Gönner
 - **Lead:** Du brauchst kein Elo-Ranking und kein Kartenset. Du willst einfach, dass das Jassen eine Zukunft hat.
@@ -388,7 +392,7 @@ Das Gruppenpaket berechtigt zur Teilnahme an Gruppen-Events. Für Einzel-Events 
 - Name *
 - E-Mail *
 - Jassname (optional) — Platzhalter: "Dein Spielername bei JassGuru"
-- Paket * (Auswahl: Jasser / Botschafter / Jass-Runde / Gönner)
+- Lizenz * (Auswahl: Jasser-Lizenz / Trumpf-Lizenz / Gruppen-Lizenz / Gönner)
 - Nachricht (optional)
 
 **Hinweis-Box:** Online-Zahlung via Stripe/Twint folgt in Kürze. Du erhältst nach der Anmeldung eine Rechnung per E-Mail.
@@ -403,10 +407,19 @@ Das Gruppenpaket berechtigt zur Teilnahme an Gruppen-Events. Für Einzel-Events 
 
 | Frage | Antwort |
 |-------|---------|
-| Was ist das Jass-Brevet? | Ein Test, der zeigt, dass du Jassen wirklich verstehst — nicht nur mitspielst. Wer besteht, trägt das offizielle Badge im JassGuru-Profil. Nur für Mitglieder. |
-| Wie funktioniert die Mitgliedschaft? | Du bezahlst einmal pro Saison. Für die nächste Saison entscheidest du neu — ganz ohne Abo oder Kündigung. |
-| Wie melde ich meine Gruppe an? | Der Coach registriert sich, wählt das Gruppenpaket und trägt die Mitglieder ein. Die anderen melden sich bei JassGuru an — fertig. |
-| Wann kommt das Saison-Kartenset? | Das Kartenset 2026 wird nach der Gründungsphase versandt. Du wirst per E-Mail informiert. |
+| Was ist die Team-Schieber Schweizermeisterschaft? | Der JVS etabliert ein komplett neues Format. Nicht ein einzelner Spieler wird Schweizermeister, sondern ein ganzes Team — so wie im Fussball oder Hockey. |
+| Wie funktioniert die Team-Schiebermeisterschaft? | Zentral ist die digitale Erfassung mit JassGuru. So können Teams in ihrer eigenen Arena spielen, während alle Resultate zentral erfasst werden. (Link: https://jassguru.ch) |
+| Wie ist der Modus? | Der genaue Modus hängt davon ab, wie viele Teilnehmende sich in Saison 1 registrieren. Die Community wird laufend informiert. |
+| Was steht schon fest? | Zur Qualifikation werden mindestens 10 Spiele innerhalb der eigenen Gruppe gespielt. Danach können andere Teams herausgefordert werden. Die besten Teams werden zum Finalturnier eingeladen. |
+| Was, wenn wir nicht genug Anmeldungen haben? | Dann treffen sich alle registrierten Gruppen ohne Qualifikation direkt am Finalturnier — damit Saison 1 auf jeden Fall gespielt wird. |
+| Wie lange ist meine Lizenz gültig? | Sie ist so lange gültig, bis in Saison 1 das erste offizielle Schweizermeister-Team gekürt ist. Danach wird die Lizenz für Saison 2 erneuert. |
+| Was ist JassGuru Pro? | JassGuru Pro ist das zentrale Erfassungssystem für Turniere, Statistiken, Tabellen und Auswertungen. Resultate werden auf dem Smartphone erfasst und direkt in die Datenbank übernommen. |
+| Wie nutze ich JassGuru Pro? | JassGuru wurde mit hunderten Spielen und verschiedenen Spielertypen getestet. Alle Fragen und Antworten findest du im Support-Bereich. (Link: https://jassguru.ch/support/) |
+| JassGuru Pro ist mir zu kompliziert. Was nun? | Nicht jedes Mitglied muss JassGuru Pro aktiv nutzen. Jedes Team braucht jedoch einen Captain, der die Funktionen kennt. Der JVS unterstützt die Captains persönlich. |
+| Was ist der Captain? | Jedes Team hat einen Captain. Er gründet die Jassgruppe, kann weitere Administratoren ernennen, registriert die Gruppe, meldet sie zu Turnieren an und repräsentiert das Team gegenüber dem JVS. |
+| Wird es auch andere Turniere geben? | Der Fokus liegt auf der Team-Schieber Schweizermeisterschaft. Weitere Formate wie ein 24-Stunden-Jass sind geplant. Verbandsmitglieder können zudem eigene Turniere mit JassGuru Pro erfassen und autonom durchführen. |
+| Was ist das Elo-System? | Es funktioniert ähnlich wie im Schach. Beim Jassen werden Spielstärken von Partner und Gegner berücksichtigt. So kann auch ein Underdog gegen ein starkes Team Elo gewinnen. |
+| Wer bestimmt die Spielregeln? | Der Jassverband Schweiz ist Hüter der Spielregeln und stellt sie kostenlos digital zur Verfügung. Grundlage ist das Werk von Dani Müller mit moderaten Ergänzungen des JVS. (Link: https://jasswiki.ch) |
 
 ### Trust-Badge
 - **Bild:** `/images/badges/lebendige-traditionen-figma.png`

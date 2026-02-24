@@ -247,21 +247,63 @@
     },
     "faq": {
       "title": "Questions fréquentes",
-      "turniere": {
-        "question": "Suis-je obligé de participer aux tournois ?",
-        "answer": "Non, vous soutenez la culture du Jass. Les tournois sont une offre optionnelle à laquelle vous pouvez participer volontairement."
+      "meisterschaft": {
+        "question": "Qu'est-ce que le Championnat suisse de Schieber par équipe ?",
+        "answer": "Le JVS établit un format entièrement nouveau. Ce n'est pas un joueur seul qui devient champion suisse, mais une équipe complète — comme au football ou au hockey."
       },
-      "spende": {
-        "question": "Ma contribution est-elle déductible des impôts ?",
-        "answer": "Nous sommes une association selon les art. 60 ss. CC. La déductibilité fiscale dépend de votre canton de résidence. Contactez-nous pour une attestation."
+      "ablauf": {
+        "question": "Comment fonctionne le championnat de Schieber par équipe ?",
+        "answer": "L'élément central est la saisie numérique avec JassGuru. Les équipes peuvent jouer dans leur propre arène pendant que tous les résultats sont enregistrés de manière centralisée.",
+        "linkLabel": "Vers jassguru.ch",
+        "linkUrl": "https://jassguru.ch"
       },
-      "kuendigung": {
-        "question": "Puis-je résilier à tout moment ?",
-        "answer": "Oui, l'adhésion est résiliable annuellement. Une résiliation est possible à tout moment pour la fin de l'année d'adhésion."
+      "modus": {
+        "question": "Quel est le mode de compétition ?",
+        "answer": "Le mode exact dépend du nombre d'équipes inscrites en saison 1. La communauté est informée en continu."
       },
-      "jassguru": {
-        "question": "Qu'est-ce que JassGuru ?",
-        "answer": "JassGuru est notre plateforme de Jass numérique avec classement Elo, statistiques et organisation de tournois. En tant que membre, vous avez accès à votre profil Elo personnel."
+      "stehtFest": {
+        "question": "Qu'est-ce qui est déjà fixé ?",
+        "answer": "Pour se qualifier, il faut jouer au minimum 10 parties dans son propre groupe. Ensuite, d'autres équipes peuvent être défiées. Les meilleures équipes sont invitées au tournoi final."
+      },
+      "zuWenigAnmeldungen": {
+        "question": "Que se passe-t-il s'il n'y a pas assez d'inscriptions ?",
+        "answer": "Dans ce cas, tous les groupes inscrits se retrouvent directement au tournoi final sans qualification, afin que la saison 1 ait lieu dans tous les cas."
+      },
+      "lizenzGueltigkeit": {
+        "question": "Combien de temps ma licence est-elle valable ?",
+        "answer": "Elle reste valable jusqu'à ce que la première équipe officiellement championne suisse soit couronnée en saison 1. Ensuite, la licence est renouvelée pour la saison 2."
+      },
+      "jassguruPro": {
+        "question": "Qu'est-ce que JassGuru Pro ?",
+        "answer": "JassGuru Pro est le système central de saisie pour les tournois, statistiques, classements et analyses. Les résultats sont saisis sur smartphone et transmis directement à la base de données."
+      },
+      "jassguruNutzung": {
+        "question": "Comment utiliser JassGuru Pro ?",
+        "answer": "JassGuru a été testé avec des centaines de parties et différents profils de joueurs. Toutes les questions et réponses se trouvent dans le support.",
+        "linkLabel": "Support sur jassguru.ch",
+        "linkUrl": "https://jassguru.ch/support/"
+      },
+      "zuKompliziert": {
+        "question": "JassGuru Pro est trop compliqué pour moi. Que faire ?",
+        "answer": "Chaque membre n'est pas obligé d'utiliser activement JassGuru Pro. Mais chaque équipe a besoin d'un capitaine qui maîtrise les fonctions. Le JVS accompagne personnellement les capitaines."
+      },
+      "captain": {
+        "question": "Qu'est-ce que le capitaine ?",
+        "answer": "Chaque équipe a un capitaine. Il crée le groupe de Jass, peut nommer d'autres administrateurs, enregistre le groupe, l'inscrit aux tournois et représente l'équipe auprès du JVS."
+      },
+      "weitereTurniere": {
+        "question": "Y aura-t-il d'autres tournois ?",
+        "answer": "L'accent est mis sur le Championnat suisse de Schieber par équipe. D'autres formats, comme un Jass de 24 heures, sont envisagés. Les membres peuvent aussi organiser leurs propres tournois avec JassGuru Pro."
+      },
+      "eloSystem": {
+        "question": "Qu'est-ce que le système Elo ?",
+        "answer": "Il fonctionne de manière similaire aux échecs. Au Jass, la force des partenaires et des adversaires est prise en compte. Ainsi, une équipe outsider peut aussi gagner des points Elo contre une équipe forte."
+      },
+      "spielregeln": {
+        "question": "Qui définit les règles du jeu ?",
+        "answer": "La Fédération Suisse de Jass est garante des règles et les met gratuitement à disposition en version numérique. La base est le travail de Dani Mueller, complété modérément par le JVS.",
+        "linkLabel": "Voir les règles sur jasswiki.ch",
+        "linkUrl": "https://jasswiki.ch"
       }
     },
     "trust": {

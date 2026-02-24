@@ -12,7 +12,21 @@ const packages = [
   { key: 'patron' as const, price: 350, highlight: false },
 ];
 
-const faqKeys = ['turniere', 'spende', 'kuendigung', 'jassguru'] as const;
+const faqKeys = [
+  'meisterschaft',
+  'ablauf',
+  'modus',
+  'stehtFest',
+  'zuWenigAnmeldungen',
+  'lizenzGueltigkeit',
+  'jassguruPro',
+  'jassguruNutzung',
+  'zuKompliziert',
+  'captain',
+  'weitereTurniere',
+  'eloSystem',
+  'spielregeln',
+] as const;
 
 export default function MitmachenPage() {
   const t = useTranslations('mitmachen');
@@ -527,7 +541,18 @@ export default function MitmachenPage() {
                 </button>
                 {openFaq === key && (
                   <div className="px-8 pb-5" style={{ fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif', fontSize: '16px', lineHeight: '1.5', color: '#6b6b6b' }}>
-                    {t(`faq.${key}.answer`)}
+                    <p>{t(`faq.${key}.answer`)}</p>
+                    {t.has(`faq.${key}.linkUrl`) && t.has(`faq.${key}.linkLabel`) && (
+                      <a
+                        href={t(`faq.${key}.linkUrl`)}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-block mt-3 underline underline-offset-2"
+                        style={{ color: '#000000', fontWeight: 600 }}
+                      >
+                        {t(`faq.${key}.linkLabel`)}
+                      </a>
+                    )}
                   </div>
                 )}
               </motion.div>

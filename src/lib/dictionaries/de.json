@@ -124,9 +124,9 @@
   "mitmachen": {
     "hero": {
       "title": "Saison 1 ist eröffnet. Dein Platz steht bereit.",
-      "subtitle": "Jetzt Mitglied werden und die Lizenz zur Teilnahme sichern.\nMit deiner Lizenz kannst du Schweizermeister werden — gültig, bis das erste Team zum Schieber-Schweizermeister gekürt wird.",
-      "teaser": "Neugierig auf die Team-Schiebermeisterschaft?",
-      "teaserLabel": "Zur Vorschau auf jassmeister.web.app",
+      "subtitle": "Jetzt Mitglied werden und die Lizenz zur Teilnahme an der ersten Schweizermeisterschaft im Team-Schieber sichern. Gültig, bis die ersten Schweizermeister gekürt sind.",
+      "teaser": "Neugierig?",
+      "teaserLabel": "Hier geht's zur Vorschau",
       "teaserUrl": "https://jassmeister.web.app",
       "cta": "Lizenz wählen"
     },
@@ -193,21 +193,63 @@
     },
     "faq": {
       "title": "Häufige Fragen",
-      "turniere": {
-        "question": "Was ist das Jass-Brevet?",
-        "answer": "Ein Test, der zeigt, dass du Jassen wirklich verstehst — nicht nur mitspielst. Wer besteht, trägt das offizielle Badge im JassGuru-Profil. Nur für Mitglieder."
+      "meisterschaft": {
+        "question": "Was ist die Team-Schieber Schweizermeisterschaft?",
+        "answer": "Der JVS etabliert ein komplett neues Format. Nicht ein einzelner Spieler wird Schweizermeister, sondern ein ganzes Team — so wie im Fussball oder Hockey."
       },
-      "spende": {
-        "question": "Wie funktioniert die Mitgliedschaft?",
-        "answer": "Du bezahlst einmal pro Saison. Für die nächste Saison entscheidest du neu — ganz ohne Abo oder Kündigung."
+      "ablauf": {
+        "question": "Wie funktioniert die Team-Schiebermeisterschaft?",
+        "answer": "Zentral ist die digitale Erfassung mit JassGuru. So koennen Teams in ihrer eigenen Arena spielen, waehrend alle Resultate zentral erfasst werden.",
+        "linkLabel": "Zu jassguru.ch",
+        "linkUrl": "https://jassguru.ch"
       },
-      "kuendigung": {
-        "question": "Wie melde ich meine Gruppe an?",
-        "answer": "Der Coach registriert sich, wählt die Gruppen-Lizenz und trägt die Mitglieder ein. Die anderen melden sich bei JassGuru an — fertig."
+      "modus": {
+        "question": "Wie ist der Modus?",
+        "answer": "Der genaue Modus haengt davon ab, wie viele Teilnehmende sich in Saison 1 registrieren. Die Community wird laufend informiert."
       },
-      "jassguru": {
-        "question": "Wann kommt das Saison-Kartenset?",
-        "answer": "Das Kartenset 2026 wird nach der Gründungsphase versandt. Du wirst per E-Mail informiert."
+      "stehtFest": {
+        "question": "Was steht schon fest?",
+        "answer": "Zur Qualifikation werden mindestens 10 Spiele innerhalb der eigenen Gruppe gespielt. Danach koennen andere Teams herausgefordert werden. Die besten Teams werden zum Finalturnier eingeladen."
+      },
+      "zuWenigAnmeldungen": {
+        "question": "Was, wenn wir nicht genug Anmeldungen haben?",
+        "answer": "Dann treffen sich alle registrierten Gruppen ohne Qualifikation direkt am Finalturnier — damit Saison 1 auf jeden Fall gespielt wird."
+      },
+      "lizenzGueltigkeit": {
+        "question": "Wie lange ist meine Lizenz gueltig?",
+        "answer": "Sie ist so lange gueltig, bis in Saison 1 das erste offizielle Schweizermeister-Team gekuert ist. Danach wird die Lizenz fuer Saison 2 erneuert."
+      },
+      "jassguruPro": {
+        "question": "Was ist JassGuru Pro?",
+        "answer": "JassGuru Pro ist das zentrale Erfassungssystem fuer Turniere, Statistiken, Tabellen und Auswertungen. Resultate werden auf dem Smartphone erfasst und direkt in die Datenbank uebernommen."
+      },
+      "jassguruNutzung": {
+        "question": "Wie nutze ich JassGuru Pro?",
+        "answer": "JassGuru wurde mit hunderten Spielen und verschiedenen Spielertypen getestet. Alle Fragen und Antworten findest du im Support-Bereich.",
+        "linkLabel": "Zum Support auf jassguru.ch",
+        "linkUrl": "https://jassguru.ch/support/"
+      },
+      "zuKompliziert": {
+        "question": "JassGuru Pro ist mir zu kompliziert. Was nun?",
+        "answer": "Nicht jedes Mitglied muss JassGuru Pro aktiv nutzen. Jedes Team braucht jedoch einen Captain, der die Funktionen kennt. Der JVS unterstuetzt die Captains persoenlich."
+      },
+      "captain": {
+        "question": "Was ist der Captain?",
+        "answer": "Jedes Team hat einen Captain. Er gruendet die Jassgruppe, kann weitere Administratoren ernennen, registriert die Gruppe, meldet sie zu Turnieren an und repraesentiert das Team gegenueber dem JVS."
+      },
+      "weitereTurniere": {
+        "question": "Wird es auch andere Turniere geben?",
+        "answer": "Der Fokus liegt auf der Team-Schieber Schweizermeisterschaft. Weitere Formate wie ein 24-Stunden-Jass sind geplant. Verbandsmitglieder koennen zudem eigene Turniere mit JassGuru Pro erfassen und autonom durchfuehren."
+      },
+      "eloSystem": {
+        "question": "Was ist das Elo-System?",
+        "answer": "Es funktioniert aehnlich wie im Schach. Beim Jassen werden Spielstaerken von Partner und Gegner beruecksichtigt. So kann auch ein Underdog gegen ein starkes Team Elo gewinnen."
+      },
+      "spielregeln": {
+        "question": "Wer bestimmt die Spielregeln?",
+        "answer": "Der Jassverband Schweiz ist Hueter der Spielregeln und stellt sie kostenlos digital zur Verfuegung. Grundlage ist das Werk von Dani Mueller mit moderaten Ergaenzungen des JVS.",
+        "linkLabel": "Zu den Regeln auf jasswiki.ch",
+        "linkUrl": "https://jasswiki.ch"
       }
     },
     "trust": {
