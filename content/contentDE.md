@@ -48,25 +48,49 @@ Tradition trifft Innovation.
 
 - **Titel:** Jassen ist mehr als ein Kartenspiel.
 - **Subtitle:** Es ist Schweizer Kulturgut — und verdient eine moderne Zukunft.
-- **CTA:** Jetzt mitmachen
+- **CTA:** Mitglied werden
 - **CTA-Link:** /de/mitmachen
 - **Hintergrund:** Holztisch-Textur mit grünem Filz-Teppich
 - **Karten:** 4 zufällige Jass-Karten (DE-Set), hochwertige Karten (10, U, O, K, A) 3x häufiger
 
 ---
 
-## Pillars-Section (Unsere Mission)
+## Vision-Section (Home)
+
+- **Titel:** Unsere Vision: In der Schweiz bleibt kein Jasser ohne Tisch.
+- **Subtitle:** *(leer)*
+- **Copy:** Der Jassverband Schweiz setzt sich aktiv dafür ein, Jasserinnen und Jasser in der ganzen Schweiz zu vernetzen, neue Tische sichtbar zu machen und den Zugang zum gemeinsamen Spiel zu erleichtern.
+- **CTA:** Weiterlesen
+- **CTA-Link:** https://jassverband-schweiz.vercel.app/de/leitbild
+- **Hintergrund:** Kreidetafel-Textur (`/images/backgrounds/chalkboard.jpg`)
+- **Hinweis:** Keine Karten-Deko in dieser Section.
+
+---
+
+## Mission-Section (Home)
 
 **Überschrift:** Unsere Mission
 
-### Tradition bewahren
-Jassen ist beim Bundesamt für Kultur als «Lebendige Tradition» gelistet. Wir sichern dieses Erbe für kommende Generationen.
+### 1) Meisterschaften etablieren
+Wir etablieren Jassen als offizielle Wettkampfsportart mit klaren Strukturen, Ranglisten und nationalen Meisterschaften.
 
-### Jugend fördern
-Die Schweizer Jugend Team-Schiebermeisterschaft bringt strategisches Denken und Teamarbeit in Schulen und Unis.
+### 2) Jasser vernetzen
+Wir bringen Jasser – gerade im digitalen Zeitalter – bewusst zurück an den physischen Tisch.
 
-### Zukunft gestalten
-Mit digitalen Plattformen und einem nationalen Elo-System modernisieren wir den Sport und machen ihn messbar.
+### 3) Nachwuchs fördern
+Wir begeistern die nächste Generation fürs Jassen und verankern es nachhaltig im Bildungssystem.
+
+### 4) Hürden abbauen
+Wir senken die Einstiegshürden und machen Jassen für alle zugänglich – unabhängig vom Erfahrungsstand.
+
+### 5) Tradition modernisieren
+Wir führen das Jassen ins digitale Zeitalter und sichern seine Relevanz für kommende Generationen.
+
+### 6) Kultur gestalten
+Wir pflegen und entwickeln Jassen als lebendiges Kulturgut, das Menschen über alle gesellschaftlichen Grenzen hinweg verbindet.
+
+- **Interaktion:** Alle 6 Kacheln sind klickbar und verlinken auf die Leitbild-Seite (jeweils mit Anker pro Mission).
+- **Zusätzlicher Button:** Weiterlesen → https://jassverband-schweiz.vercel.app/de/leitbild
 
 ---
 
@@ -107,6 +131,23 @@ Der Wettkampf — Turniere und Meisterschaften.
 **Badge:** Lebendige Tradition
 **Badge-Text:** Gelistet beim Bundesamt für Kultur
 **Badge-Asset:** `/images/badges/lebendige-traditionen-figma.png`
+
+---
+
+## Seite: Leitbild (`/de/leitbild`)
+
+**Titel (Hero):** Unsere Vision: In der Schweiz bleibt kein Jasser ohne Tisch.
+
+**Vision-Copy:** Der Jassverband Schweiz setzt sich aktiv dafür ein, Jasserinnen und Jasser in der ganzen Schweiz zu vernetzen, neue Tische sichtbar zu machen und den Zugang zum gemeinsamen Spiel zu erleichtern.
+
+**Section-Headline:** Unsere Mission
+
+**Inhalte:** 6 Missionen mit jeweils
+- Titel
+- Mission (Lead)
+- Kernidee (ausformuliert)
+
+**Design-Hinweis:** Keine Jasskarten in der Leitbild-Topsection.
 
 ---
 

@@ -17,9 +17,9 @@
     "cta": "Partecipa ora"
   },
   "vision": {
-    "title": "La nostra visione",
-    "subtitle": "Fare del Jass una materia scolastica.",
-    "copy": "La Federazione Svizzera di Jass si impegna attivamente per ancorare il Jass nell'istruzione – come gioco che unisce pensiero strategico, competenze sociali e patrimonio culturale.",
+    "title": "La nostra visione: in Svizzera nessun giocatore di Jass resta senza tavolo.",
+    "subtitle": "",
+    "copy": "La Federazione Svizzera di Jass si impegna attivamente a collegare giocatrici e giocatori di Jass in tutta la Svizzera, a rendere visibili nuovi tavoli e a facilitare l'accesso al gioco condiviso.",
     "cta": "Leggi di più"
   },
   "mission": {
@@ -76,10 +76,10 @@
   },
   "leitbild": {
     "title": "Visione e missione",
-    "visionTitle": "La nostra visione",
-    "visionSubtitle": "Fare del Jass una materia scolastica",
-    "visionCopy": "La Federazione Svizzera di Jass si impegna per ancorare il Jass nell'istruzione – come gioco che unisce pensiero strategico, competenze sociali e patrimonio culturale.",
-    "visionText": "La Federazione Svizzera di Jass si impegna per ancorare il Jass nell'istruzione – come gioco che unisce pensiero strategico, competenze sociali e patrimonio culturale.",
+    "visionTitle": "La nostra visione: in Svizzera nessun giocatore di Jass resta senza tavolo.",
+    "visionSubtitle": "",
+    "visionCopy": "La Federazione Svizzera di Jass si impegna attivamente a collegare giocatrici e giocatori di Jass in tutta la Svizzera, a rendere visibili nuovi tavoli e a facilitare l'accesso al gioco condiviso.",
+    "visionText": "La Federazione Svizzera di Jass si impegna attivamente a collegare giocatrici e giocatori di Jass in tutta la Svizzera, a rendere visibili nuovi tavoli e a facilitare l'accesso al gioco condiviso.",
     "missionsTitle": "Le nostre missioni",
     "missions": [
       { "title": "Stabilire i campionati", "mission": "Facciamo del Jass uno sport di competizione ufficiale con strutture chiare, classifiche e campionati nazionali.", "kernidee": "Facciamo del Jass uno sport di competizione ufficiale con strutture chiare, classifiche e campionati nazionali." },
