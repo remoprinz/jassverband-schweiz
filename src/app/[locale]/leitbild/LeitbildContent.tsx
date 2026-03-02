@@ -50,9 +50,9 @@ export function LeitbildContent({ vision, missionsTitle, missions }: LeitbildCon
             style={{
               fontFamily: 'var(--font-capita), Capita, Georgia, serif',
               fontWeight: 700,
-              fontSize: 'clamp(26px, 3.5vw, 36px)',
-              lineHeight: 1.2,
-              letterSpacing: '-0.5px',
+              fontSize: 'clamp(32px, 5vw, 42px)',
+              lineHeight: 1.37,
+              letterSpacing: '-0.96px',
               color: '#ffffff',
             }}
             initial={{ opacity: 0, y: 12 }}

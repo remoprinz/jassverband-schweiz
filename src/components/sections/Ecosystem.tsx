@@ -1,6 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { StandardSection } from '@/components/layout/StandardSection';
+import { EnhancedProjectCard } from '@/components/ui';
 
 interface EcosystemProps {
   title: string;
@@ -36,90 +38,6 @@ const icons = {
   ),
 };
 
-interface EcosystemCardProps {
-  title: string;
-  description: string;
-  href: string;
-  icon: React.ReactNode;
-  ctaText: string;
-}
-
-function EcosystemCard({ title, description, href, icon, ctaText }: EcosystemCardProps) {
-  return (
-    <motion.a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="block bg-white p-8 group transition-all duration-300"
-      style={{
-        borderRadius: '16px',
-        boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)'
-      }}
-      whileHover={{ 
-        y: -6, 
-        boxShadow: '0 12px 32px rgba(0, 0, 0, 0.12)' 
-      }}
-      transition={{ duration: 0.25 }}
-    >
-      {/* Icon - 48x48px */}
-      <div 
-        className="w-12 h-12 mb-5 text-black group-hover:text-[#ff0000] transition-colors duration-300"
-      >
-        {icon}
-      </div>
-      
-      {/* Card Title - Figma: Capita Bold 28px */}
-      <h3 
-        className="mb-3 group-hover:text-[#ff0000] transition-colors duration-300"
-        style={{ 
-          fontFamily: 'var(--font-capita), Capita, Georgia, serif',
-          fontWeight: 700,
-          fontSize: '28px',
-          lineHeight: '1',
-          letterSpacing: '-0.4px',
-          color: '#000000'
-        }}
-      >
-        {title}
-      </h3>
-      
-      {/* Description - Figma: Inter Regular 16px */}
-      <p 
-        className="mb-5"
-        style={{ 
-          fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
-          fontWeight: 400,
-          fontSize: '16px',
-          lineHeight: '1.5',
-          color: '#6b6b6b'
-        }}
-      >
-        {description}
-      </p>
-      
-      {/* CTA Link - Figma: Inter Medium 15px, Rot */}
-      <div 
-        className="flex items-center"
-        style={{
-          fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
-          fontWeight: 500,
-          fontSize: '15px',
-          color: '#ff0000'
-        }}
-      >
-        <span>{ctaText}</span>
-        <svg 
-          className="w-4 h-4 ml-1.5 group-hover:translate-x-1.5 transition-transform duration-300" 
-          fill="none" 
-          viewBox="0 0 24 24" 
-          stroke="currentColor"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-        </svg>
-      </div>
-    </motion.a>
-  );
-}
 
 export function Ecosystem({ title, subtitle, jasswiki, jassguru, jassmeister }: EcosystemProps) {
   const projects = [
@@ -129,72 +47,32 @@ export function Ecosystem({ title, subtitle, jasswiki, jassguru, jassmeister }: 
   ];
 
   return (
-    <section 
-      className="py-20 md:py-24"
-      style={{ backgroundColor: '#f0eee7' }}
+    <StandardSection
+      title={title}
+      subtitle={subtitle}
+      background="cream"
+      containerSize="full"  // ✅ Consistent with other content sections
+      spacing="lg"
     >
-      <div className="container-main">
-        {/* Section Header */}
-        <div className="text-center mb-12 md:mb-16">
-          {/* Section Title - Figma: Capita Bold 42px */}
-          <motion.h2
-            className="mb-4"
-            style={{ 
-              fontFamily: 'var(--font-capita), Capita, Georgia, serif',
-              fontWeight: 700,
-              fontSize: 'clamp(32px, 5vw, 42px)',
-              lineHeight: '1.37',
-              letterSpacing: '-0.96px',
-              color: '#000000'
-            }}
-            initial={{ opacity: 0, y: 20 }}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        {projects.map((project, index) => (
+          <motion.div
+            key={project.key}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
           >
-            {title}
-          </motion.h2>
-          
-          {/* Subtitle - Figma: Inter Regular 20px */}
-          <motion.p
-            className="max-w-2xl mx-auto"
-            style={{
-              fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
-              fontWeight: 400,
-              fontSize: 'clamp(16px, 2.5vw, 20px)',
-              lineHeight: '1.6',
-              color: '#6b6b6b'
-            }}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
-            {subtitle}
-          </motion.p>
-        </div>
-        
-        {/* Cards Grid - Figma: 3 columns, 32px gap */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-          {projects.map((project, index) => (
-            <motion.div
-              key={project.key}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <EcosystemCard
-                title={project.title}
-                description={project.description}
-                href={project.href}
-                icon={project.icon}
-                ctaText={project.ctaText}
-              />
-            </motion.div>
-          ))}
-        </div>
+            <EnhancedProjectCard
+              title={project.title}
+              description={project.description}
+              href={project.href}
+              icon={project.icon}
+              ctaText={project.ctaText}
+            />
+          </motion.div>
+        ))}
       </div>
-    </section>
+    </StandardSection>
   );
 }

@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { StandardSection } from '@/components/layout/StandardSection';
 
 interface PillarContent {
   title: string;
@@ -49,84 +50,66 @@ export function Pillars({ title, tradition, youth, future }: PillarsProps) {
   ];
 
   return (
-    <section 
-      className="py-20 md:py-24"
-      style={{ backgroundColor: '#f0eee7' }}
+    <StandardSection
+      title={title}
+      background="cream"
+      containerSize="full"
+      spacing="lg"
     >
-      <div className="container-main">
-        {/* Section Title - Figma: Capita Bold 42px */}
-        <motion.h2
-          className="text-center mb-12 md:mb-16"
-          style={{ 
-            fontFamily: 'var(--font-capita), Capita, Georgia, serif',
-            fontWeight: 700,
-            fontSize: 'clamp(32px, 5vw, 42px)',
-            lineHeight: '1.37',
-            letterSpacing: '-0.96px',
-            color: '#000000'
-          }}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          {title}
-        </motion.h2>
-        
-        {/* Cards Grid - Figma: 3 columns, 32px gap */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-          {pillars.map((pillar, index) => (
-            <motion.div
-              key={pillar.key}
-              className="bg-white p-8 lg:p-10 text-center transition-all duration-300 hover:-translate-y-1"
-              style={{
-                borderRadius: '12px',
-                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)'
-              }}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+      {/* Cards Grid - Figma: 3 columns, 32px gap */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        {pillars.map((pillar, index) => (
+          <motion.div
+            key={pillar.key}
+            className="bg-white p-8 lg:p-10 text-center transition-all duration-300 hover:-translate-y-1"
+            style={{
+              borderRadius: 'var(--radius-card)',
+              boxShadow: 'var(--shadow-card)'
+            }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            whileHover={{ boxShadow: 'var(--shadow-card-hover)' }}
+          >
+            {/* Icon - Figma: 64x64px, Schweizer Rot */}
+            <div 
+              className="w-16 h-16 mx-auto mb-6"
+              style={{ color: 'var(--color-primary)' }}
             >
-              {/* Icon - Figma: 64x64px, Schweizer Rot */}
-              <div 
-                className="w-16 h-16 mx-auto mb-6"
-                style={{ color: '#ff0000' }}
-              >
-                {pillar.icon}
-              </div>
-              
-              {/* Card Title - Figma: Capita Bold 28px */}
-              <h3 
-                className="mb-4"
-                style={{ 
-                  fontFamily: 'var(--font-capita), Capita, Georgia, serif',
-                  fontWeight: 700,
-                  fontSize: '28px',
-                  lineHeight: '1',
-                  letterSpacing: '-0.4px',
-                  color: '#000000'
-                }}
-              >
-                {pillar.title}
-              </h3>
-              
-              {/* Description - Figma: Inter Regular 16px */}
-              <p 
-                style={{ 
-                  fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
-                  fontWeight: 400,
-                  fontSize: '16px',
-                  lineHeight: '1.5',
-                  color: '#6b6b6b'
-                }}
-              >
-                {pillar.description}
-              </p>
-            </motion.div>
-          ))}
-        </div>
+              {pillar.icon}
+            </div>
+            
+            {/* Card Title - Figma: Capita Bold 28px */}
+            <h3 
+              className="mb-4"
+              style={{ 
+                fontFamily: 'var(--font-capita), Capita, Georgia, serif',
+                fontWeight: 700,
+                fontSize: 'var(--font-size-28)',
+                lineHeight: '1',
+                letterSpacing: 'var(--letter-spacing-normal)',
+                color: 'var(--color-foreground)'
+              }}
+            >
+              {pillar.title}
+            </h3>
+            
+            {/* Description - Figma: Inter Regular 16px */}
+            <p 
+              style={{ 
+                fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
+                fontWeight: 400,
+                fontSize: 'var(--font-size-16)',
+                lineHeight: '1.5',
+                color: 'var(--color-foreground-muted)'
+              }}
+            >
+              {pillar.description}
+            </p>
+          </motion.div>
+        ))}
       </div>
-    </section>
+    </StandardSection>
   );
 }
