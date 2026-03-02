@@ -171,7 +171,7 @@ export function SystemrelevanzVideo({
               className="relative aspect-video w-full max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-2xl bg-black"
             >
               
-              {/* 🎬 Video - PiP deaktiviert, Fullscreen-optimiert */}
+              {/* 🎬 Video - PiP deaktiviert, Poster für Mobile, Fullscreen-optimiert */}
               <video
                 ref={videoRef}
                 className="absolute inset-0 w-full h-full object-contain bg-black"
@@ -182,6 +182,7 @@ export function SystemrelevanzVideo({
                 controls={false}
                 playsInline
                 preload="auto"
+                poster="/assets/videos/video-poster.jpg"
                 disablePictureInPicture
                 controlsList="nodownload nofullscreen noremoteplayback"
               >
