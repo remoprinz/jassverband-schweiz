@@ -1,5 +1,6 @@
 export { Hero } from './Hero';
 export { Vision } from './Vision';
+export { SystemrelevanzVideo } from './SystemrelevanzVideo';
 export { MissionTiles } from './MissionTiles';
 export { Pillars } from './Pillars';
 export { Tournament } from './Tournament';

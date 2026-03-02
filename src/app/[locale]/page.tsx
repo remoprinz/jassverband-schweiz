@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import { Hero, Vision, MissionTiles, Tournament, Ecosystem, Trust } from "@/components/sections";
+import { Hero, Vision, SystemrelevanzVideo, MissionTiles, Tournament, Ecosystem, Trust } from "@/components/sections";
 
 interface HomePageProps {
   params: Promise<{ locale: string }>;
@@ -29,6 +29,10 @@ export default async function HomePage({ params }: HomePageProps) {
         copy={t("vision.copy")}
         cta={t("vision.cta")}
         ctaHref={leitbildUrl}
+      />
+
+      <SystemrelevanzVideo
+        title={t("systemrelevanz.title")}
       />
 
       <MissionTiles

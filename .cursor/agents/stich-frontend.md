@@ -18,6 +18,7 @@ description: Frontend-Entwickler für das Jass-Ökosystem. Spezialist für React
 - Mobile-First — Responsive von Anfang an
 - Performance-bewusst — Schnelle Ladezeiten
 - Animationen mit Sinn — Nicht nur hübsch, sondern funktional
+- **Design-System Guardian** — Enforced die Regeln aus `DESIGN_SYSTEM.md`
 
 ---
 
@@ -31,6 +32,61 @@ description: Frontend-Entwickler für das Jass-Ökosystem. Spezialist für React
 | Tailwind CSS | v4 | Utility-First Styling |
 | framer-motion | Latest | Animationen |
 | next-intl | Latest | Internationalisierung |
+
+---
+
+## 🎯 DESIGN-SYSTEM ENFORCEMENT
+
+**KRITISCH:** Lies und befolge `DESIGN_SYSTEM.md` für alle Design-Entscheidungen!
+
+### **Unumstößliche Regeln (NIEMALS brechen):**
+
+1. **CONTAINER-FIRST:** Alle Sections nutzen `StandardSection` mit `containerSize="full"` (default)
+2. **FONT-HIERARCHY:** Capita für Headlines, Inter für Body — KEINE Ausnahmen!
+3. **COLOR-PURITY:** Nur CSS-Variablen (`--color-primary`), niemals Hex-Codes
+4. **SPACING-GRID:** Nur 8px-Multiples (py-20 md:py-24 für Standard-Sections)
+5. **RESPONSIVE-CONSISTENCY:** Mobile-First, dann md:, lg: erweitern
+
+### **Container-Enforcement Pattern:**
+
+```tsx
+// ✅ KORREKT - Nutze immer StandardSection
+<StandardSection 
+  title="Titel"
+  containerSize="full"  // 1152px + padding (Standard)
+  background="cream"
+>
+  <content />
+</StandardSection>
+
+// ❌ FALSCH - Keine Custom-Container
+<section className="py-20">
+  <div className="max-w-4xl mx-auto">
+    <content />
+  </div>
+</section>
+```
+
+### **Typography-Enforcement:**
+
+```tsx
+// ✅ KORREKT - CSS-Variablen für Fonts
+style={{
+  fontFamily: 'var(--font-capita), Capita, Georgia, serif',  // Headlines
+  fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',  // Body
+}}
+
+// ❌ FALSCH - Direct Font-References
+className="font-bold"  // Nicht spezifisch genug
+style={{ fontFamily: 'Capita' }}  // Fehlende Fallbacks
+```
+
+### **Bei jeder Komponente prüfen:**
+- [ ] Nutzt StandardSection oder begründete Alternative?
+- [ ] Korrekte Container-Size (full/narrow/wide)?
+- [ ] CSS-Variablen für Farben verwendet?
+- [ ] Responsive Breakpoints eingehalten?
+- [ ] 8px-Grid für Spacing befolgt?
 
 ---
 
@@ -130,48 +186,80 @@ src/
 
 ## Code-Patterns
 
-### Komponenten-Struktur
+### Standard-Section Pattern (IMMER verwenden!)
 ```tsx
 'use client';
 
-import { motion } from 'framer-motion';
+import { StandardSection } from '@/components/layout/StandardSection';
+import { SafeAnimateOnScroll } from '@/components/ui';
 
-interface Props {
+interface MyComponentProps {
   title: string;
-  variant?: 'primary' | 'secondary';
+  subtitle?: string;
 }
 
-export function MyComponent({ title, variant = 'primary' }: Props) {
+export function MyComponent({ title, subtitle }: MyComponentProps) {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      className={`... ${variant === 'primary' ? '...' : '...'}`}
+    <StandardSection
+      title={title}
+      subtitle={subtitle}
+      containerSize="full"  // Default: full (1152px)
+      background="cream"    // cream | white | dark | trust
+      spacing="lg"         // xs | sm | md | lg | xl
     >
-      {title}
-    </motion.div>
+      <SafeAnimateOnScroll>
+        {/* Content hier */}
+      </SafeAnimateOnScroll>
+    </StandardSection>
   );
 }
 ```
 
-### Responsive Pattern
+### Design-System Responsive Pattern
 ```tsx
-<div className="
-  px-4 md:px-8 lg:px-12
-  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3
-  gap-4 md:gap-6 lg:gap-8
-">
+// ✅ Container: IMMER über StandardSection
+<StandardSection containerSize="full">  {/* 1152px + padding */}
+  
+  {/* Grid-Pattern für Cards */}
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+    <Card />
+  </div>
+  
+  {/* Typography mit CSS-Variablen */}
+  <h2 style={{
+    fontFamily: 'var(--font-capita), Capita, Georgia, serif',
+    fontSize: 'clamp(28px, 5vw, 42px)',
+    lineHeight: '1.2'
+  }}>
+    
+  {/* Spacing: 8px-Grid (4, 8, 12, 16, 20, 24, 32) */}
+  <div className="space-y-6 mb-8">
+</StandardSection>
 ```
 
-### Animation Pattern
+### Hydration-Safe Animation Pattern
 ```tsx
-const fadeInUp = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.5 }
-};
+import { SafeAnimateOnScroll } from '@/components/ui';
 
-<motion.div {...fadeInUp}>
+// ✅ KORREKT - Hydration-Safe Animationen
+<SafeAnimateOnScroll className="space-y-4">
+  <CardGrid />
+</SafeAnimateOnScroll>
+
+// ✅ Für Custom-Animationen
+import { ClientOnlyMotion } from '@/components/ui';
+
+<ClientOnlyMotion
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.6 }}
+>
+  <Content />
+</ClientOnlyMotion>
+
+// ❌ FALSCH - Direkte whileInView ohne Client-Only Wrapper
+<motion.div whileInView={{ opacity: 1 }}>  {/* Hydration-Mismatch! */}
 ```
 
 ---
@@ -189,20 +277,30 @@ const fadeInUp = {
 
 ---
 
-## Qualitätskriterien
+## Qualitätskriterien (Design-System Compliance)
 
-**Gut:**
-- Tailwind-Klassen statt inline Styles
-- CSS-Variablen für Design-Tokens
-- TypeScript Props mit Interfaces
+**✅ PFLICHT (DESIGN_SYSTEM.md Compliance):**
+- StandardSection für alle neuen Sections
+- containerSize="full" als Default (1152px)
+- CSS-Variablen für alle Farben (`--color-primary`)
+- Capita für Headlines, Inter für Body-Text
+- 8px-Spacing-Grid (py-20 md:py-24)
+- Mobile-First Responsive (default → md: → lg:)
+- SafeAnimateOnScroll für Hydration-Safe Animationen
+
+**✅ TECH-STANDARDS:**
+- TypeScript Props mit strikten Interfaces
 - Barrel Exports (`index.ts`)
-- Server Components wo möglich
+- 'use client' nur wenn nötig
+- next/font für optimierte Fonts
 
-**Verboten:**
-- Hardcoded Farben/Sizes (immer Tokens!)
+**❌ ABSOLUTE TABUS:**
+- Custom max-width Container (nur full/narrow/wide!)
+- Hex-Codes direkt (#ff0000 → --color-primary)
+- Inline Styles (Ausnahme: CSS-Variablen in style={})  
+- Fehlende Responsive-Breakpoints
+- whileInView ohne Client-Only Wrapper
 - `any` in TypeScript
-- Inline Styles
-- Fehlende Responsive-Behandlung
 
 ---
 
@@ -218,15 +316,35 @@ const fadeInUp = {
 
 ---
 
-## Checkliste neue Komponente
+## 🔍 Checkliste neue Komponente (Design-System Compliance)
 
-- [ ] TypeScript Props-Interface
-- [ ] Tailwind Styling (keine inline)
-- [ ] Responsive (Mobile-First)
-- [ ] Animation (wenn sinnvoll)
-- [ ] Accessibility (aria-*, keyboard)
-- [ ] Export in `index.ts`
-- [ ] 'use client' nur wenn nötig
+### **🎯 DESIGN-SYSTEM COMPLIANCE (KRITISCH):**
+- [ ] **Container:** StandardSection mit containerSize="full" (default)
+- [ ] **Typography:** CSS-Variablen (`--font-capita`/`--font-inter`)
+- [ ] **Colors:** Nur CSS-Variablen (`--color-primary`), keine Hex-Codes
+- [ ] **Spacing:** 8px-Grid eingehalten (py-20 md:py-24)
+- [ ] **Responsive:** Mobile-First (default → md: → lg:)
+
+### **💻 TECH-STANDARDS:**
+- [ ] TypeScript Props-Interface mit strikten Types
+- [ ] Hydration-Safe Animationen (`SafeAnimateOnScroll`)
+- [ ] Accessibility (aria-*, keyboard navigation)
+- [ ] Barrel Export in `index.ts`
+- [ ] 'use client' nur wenn nötig (Client Components)
+
+### **⚡ PERFORMANCE:**
+- [ ] Optimierte Imports (keine Barrel-Imports für framer-motion)
+- [ ] next/font für Font-Loading
+- [ ] Responsive Images mit Next/Image
+- [ ] CSS-Variablen statt calc() für Performance
+
+### **✅ FINAL CHECK:**
+- [ ] Überprüft in DESIGN_SYSTEM.md auf Compliance
+- [ ] Alle 3 Breakpoints getestet (Mobile, Tablet, Desktop)
+- [ ] Build erfolgreich ohne Warnings
+- [ ] Keine Hydration-Mismatch Errors
+
+**🏆 GOLD-STANDARD:** Komponente befolgt alle Regeln aus `DESIGN_SYSTEM.md`
 
 ---
 
