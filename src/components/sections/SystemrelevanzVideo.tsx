@@ -53,23 +53,38 @@ export function SystemrelevanzVideo({
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
   const [isLandscape, setIsLandscape] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const checkOrientation = () => {
       setIsLandscape(window.innerHeight < window.innerWidth);
     };
+    
+    // Mobile-Detection für Auto-Fullscreen Feature
+    const checkMobile = () => {
+      const userAgent = navigator.userAgent;
+      const mobileRegex = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
+      setIsMobile(mobileRegex.test(userAgent) || window.innerWidth <= 768);
+    };
+    
     checkOrientation();
+    checkMobile();
+    
     window.addEventListener('resize', checkOrientation);
     window.addEventListener('orientationchange', checkOrientation);
+    window.addEventListener('resize', checkMobile);
+    
     return () => {
       window.removeEventListener('resize', checkOrientation);
       window.removeEventListener('orientationchange', checkOrientation);
+      window.removeEventListener('resize', checkMobile);
     };
   }, []);
 
   // Kern-Fix: play() wird direkt im Click-Handler aufgerufen (User-Gesture-Kontext bleibt erhalten).
   // Das <video>-Element ist immer im DOM — nur visuell hinter dem Poster versteckt.
+  // 🚀 UX-VERBESSERUNG: Auto-Fullscreen auf Mobile für optimale Viewing-Experience
   const handlePlayClick = async () => {
     const video = videoRef.current;
     if (!video) return;
@@ -80,6 +95,17 @@ export function SystemrelevanzVideo({
       setHasStarted(true);
       video.muted = false;
       setIsMuted(false);
+      
+      // 📱 MOBILE UX ENHANCEMENT: Auto-Fullscreen bei Play auf Touch-Devices
+      if (isMobile && !hasStarted) {
+        try {
+          await video.requestFullscreen();
+        } catch (error) {
+          // Fallback: wenn Fullscreen nicht verfügbar, normal abspielen
+          console.log('Fullscreen nicht verfügbar:', error);
+        }
+      }
+      
       try {
         await video.play();
       } catch {
@@ -147,10 +173,15 @@ export function SystemrelevanzVideo({
               </video>
 
               {/* Poster-Overlay — sichtbar bis erster Play-Klick */}
+              {/* 🖼️ UX-VERBESSERUNG: Optimierte Overlay-Abdunklung für bessere Thumbnail-Sichtbarkeit */}
               {showPoster && (
-                <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-900/90 via-gray-800/90 to-black/90">
+                <div className={`absolute inset-0 flex items-center justify-center ${
+                  isMobile 
+                    ? 'bg-gradient-to-br from-gray-900/15 via-gray-800/20 to-black/30' // Mobile: Weniger Abdunklung
+                    : 'bg-gradient-to-br from-gray-900/25 via-gray-800/30 to-black/40' // Desktop: Moderate Abdunklung
+                }`}>
                   <div 
-                    className="absolute inset-0 bg-gradient-to-br from-green-900/20 via-amber-900/20 to-red-900/20"
+                    className="absolute inset-0 bg-gradient-to-br from-green-900/10 via-amber-900/10 to-red-900/15"
                     style={{
                       backgroundImage: thumbnailFrame > 0 ? `url(/assets/video-thumbnails/frame-${thumbnailFrame}.jpg)` : undefined,
                       backgroundSize: 'cover',
@@ -174,28 +205,29 @@ export function SystemrelevanzVideo({
               )}
 
               {/* ✅ BEST PRACTICE: Professional Video Player Control Bar */}
+              {/* 📏 UX-VERBESSERUNG: Alle Control-Buttons einheitliche Größe für harmonische UI */}
               {hasStarted && (
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent p-4 md:p-6">
                   <div className="flex items-center justify-between">
                     {/* Left Controls: Play/Pause + Audio */}
                     <div className="flex items-center gap-3">
-                      {/* Play/Pause Button */}
+                      {/* Play/Pause Button - CONSISTENT SIZE */}
                       <button
                         onClick={handlePlayClick}
-                        className="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 bg-red-500/20 hover:bg-red-500/30 backdrop-blur-sm rounded-full transition-all duration-200 hover:scale-105 focus:ring-2 focus:ring-red-500/50 focus:outline-none border border-white/10"
+                        className="flex items-center justify-center w-12 h-12 md:w-12 md:h-12 bg-red-500/20 hover:bg-red-500/30 backdrop-blur-sm rounded-full transition-all duration-200 hover:scale-105 focus:ring-2 focus:ring-red-500/50 focus:outline-none border border-white/10"
                         aria-label={isPlaying ? "Video pausieren" : "Video abspielen"}
                       >
                         {isPlaying ? (
-                          <PauseIcon className="w-5 h-5 md:w-6 md:h-6 text-white" />
+                          <PauseIcon className="w-5 h-5 text-white" />
                         ) : (
-                          <PlayIcon className="w-5 h-5 md:w-6 md:h-6 text-white ml-0.5" />
+                          <PlayIcon className="w-5 h-5 text-white ml-0.5" />
                         )}
                       </button>
 
-                      {/* Audio/Mute Button */}
+                      {/* Audio/Mute Button - CONSISTENT SIZE */}
                       <button
                         onClick={handleMuteToggle}
-                        className={`flex items-center justify-center w-10 h-10 md:w-12 md:h-12 backdrop-blur-sm rounded-full transition-all duration-200 hover:scale-105 focus:ring-2 focus:outline-none border ${
+                        className={`flex items-center justify-center w-12 h-12 md:w-12 md:h-12 backdrop-blur-sm rounded-full transition-all duration-200 hover:scale-105 focus:ring-2 focus:outline-none border ${
                           isMuted 
                             ? 'bg-gray-500/20 hover:bg-gray-500/30 focus:ring-gray-500/50 border-gray-500/20' 
                             : 'bg-green-500/20 hover:bg-green-500/30 focus:ring-green-500/50 border-green-500/20'
@@ -203,21 +235,21 @@ export function SystemrelevanzVideo({
                         aria-label={isMuted ? "Ton einschalten" : "Ton ausschalten"}
                       >
                         {isMuted ? (
-                          <VolumeOffIcon className="w-4 h-4 md:w-5 md:h-5 text-white" />
+                          <VolumeOffIcon className="w-5 h-5 text-white" />
                         ) : (
-                          <VolumeIcon className="w-4 h-4 md:w-5 md:h-5 text-white" isActive={isPlaying} />
+                          <VolumeIcon className="w-5 h-5 text-white" isActive={isPlaying} />
                         )}
                       </button>
                     </div>
 
-                    {/* Right Controls: Fullscreen */}
+                    {/* Right Controls: Fullscreen - CONSISTENT SIZE */}
                     <div className="flex items-center">
                       <button
                         onClick={handleFullscreen}
-                        className="flex items-center justify-center w-10 h-10 md:w-12 md:h-12 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full transition-all duration-200 hover:scale-105 focus:ring-2 focus:ring-white/50 focus:outline-none border border-white/10"
+                        className="flex items-center justify-center w-12 h-12 md:w-12 md:h-12 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full transition-all duration-200 hover:scale-105 focus:ring-2 focus:ring-white/50 focus:outline-none border border-white/10"
                         aria-label="Vollbild"
                       >
-                        <FullscreenIcon className="w-4 h-4 md:w-5 md:h-5 text-white" />
+                        <FullscreenIcon className="w-5 h-5 text-white" />
                       </button>
                     </div>
                   </div>
