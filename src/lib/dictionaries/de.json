@@ -86,6 +86,10 @@
     "jassmeister": {
       "title": "Jassmeister",
       "description": "Der Wettkampf — Turniere und Meisterschaften."
+    },
+    "jasskalkulator": {
+      "title": "Jasskalkulator",
+      "description": "Berechne Wahrscheinlichkeiten — wer hat welche Karten?"
     }
   },
   "trust": {

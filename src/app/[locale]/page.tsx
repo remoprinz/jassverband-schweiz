@@ -59,6 +59,10 @@ export default async function HomePage({ params }: HomePageProps) {
           title: t("ecosystem.jassmeister.title"),
           description: t("ecosystem.jassmeister.description"),
         }}
+        jasskalkulator={{
+          title: t("ecosystem.jasskalkulator.title"),
+          description: t("ecosystem.jasskalkulator.description"),
+        }}
       />
 
       <Trust

@@ -44,7 +44,7 @@ export default async function VerbandPage({ params }: VerbandPageProps) {
         {/* Intro */}
         <section className="mb-20">
           <SectionHeader title={t("title")} />
-          <p className="text-lg text-[var(--color-foreground-muted)] max-w-3xl mx-auto text-center">
+          <p className="text-lg text-[var(--color-foreground-muted)] text-center">
             {t("intro")}
           </p>
         </section>

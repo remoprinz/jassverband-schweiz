@@ -68,6 +68,10 @@
     "jassmeister": {
       "title": "Jassmeister",
       "description": "La competizione — tornei e campionati."
+    },
+    "jasskalkulator": {
+      "title": "Jasskalkulator",
+      "description": "Calcola le probabilità — chi ha quali carte?"
     }
   },
   "trust": {

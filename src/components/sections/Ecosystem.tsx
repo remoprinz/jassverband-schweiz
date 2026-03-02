@@ -10,6 +10,7 @@ interface EcosystemProps {
   jasswiki: { title: string; description: string };
   jassguru: { title: string; description: string };
   jassmeister: { title: string; description: string };
+  jasskalkulator: { title: string; description: string };
 }
 
 const icons = {
@@ -36,14 +37,27 @@ const icons = {
       <path d="M24 6v2M24 40v2M6 24h2M40 24h2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
     </svg>
   ),
+  jasskalkulator: (
+    <svg viewBox="0 0 48 48" fill="none" className="w-full h-full">
+      <rect x="8" y="6" width="32" height="36" rx="3" stroke="currentColor" strokeWidth="2" fill="none" />
+      <rect x="12" y="10" width="24" height="8" rx="1" stroke="currentColor" strokeWidth="2" fill="none" />
+      <circle cx="16" cy="26" r="2" fill="currentColor" />
+      <circle cx="24" cy="26" r="2" fill="currentColor" />
+      <circle cx="32" cy="26" r="2" fill="currentColor" />
+      <circle cx="16" cy="34" r="2" fill="currentColor" />
+      <circle cx="24" cy="34" r="2" fill="currentColor" />
+      <circle cx="32" cy="34" r="2" fill="currentColor" />
+    </svg>
+  ),
 };
 
 
-export function Ecosystem({ title, subtitle, jasswiki, jassguru, jassmeister }: EcosystemProps) {
+export function Ecosystem({ title, subtitle, jasswiki, jassguru, jassmeister, jasskalkulator }: EcosystemProps) {
   const projects = [
     { key: 'jasswiki', href: 'https://jasswiki.ch', icon: icons.jasswiki, ctaText: 'Erkunden', ...jasswiki },
     { key: 'jassguru', href: 'https://jassguru.ch', icon: icons.jassguru, ctaText: 'Spielen', ...jassguru },
     { key: 'jassmeister', href: 'https://jassmeister.web.app', icon: icons.jassmeister, ctaText: 'Anmelden', ...jassmeister },
+    { key: 'jasskalkulator', href: '/jasskalkulator', icon: icons.jasskalkulator, ctaText: 'Berechnen', ...jasskalkulator },
   ];
 
   return (
@@ -54,7 +68,7 @@ export function Ecosystem({ title, subtitle, jasswiki, jassguru, jassmeister }: 
       containerSize="full"  // ✅ Consistent with other content sections
       spacing="lg"
     >
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
         {projects.map((project, index) => (
           <motion.div
             key={project.key}

@@ -37,7 +37,7 @@ export default function ErfolgPage() {
 
         <div className="container-main relative z-10">
           <motion.div
-            className="max-w-2xl mx-auto text-center"
+            className="text-center"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
@@ -145,7 +145,7 @@ export default function ErfolgPage() {
       {/* Nächste Schritte */}
       <section className="py-20 md:py-24" style={{ backgroundColor: '#f0eee7' }}>
         <div className="container-main">
-          <div className="max-w-2xl mx-auto">
+          <div>
             <h2
               className="text-center mb-12"
               style={{

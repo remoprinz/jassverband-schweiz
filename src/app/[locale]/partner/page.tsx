@@ -71,7 +71,7 @@ export default async function PartnerPage({ params }: PartnerPageProps) {
           <h2 className="text-2xl md:text-3xl font-bold mb-4">
             Interessiert?
           </h2>
-          <p className="text-white/70 max-w-xl mx-auto mb-8">
+          <p className="text-white/70 mb-8">
             Kontaktieren Sie uns für ein unverbindliches Gespräch über Partnerschaften und Sponsoring-Möglichkeiten.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

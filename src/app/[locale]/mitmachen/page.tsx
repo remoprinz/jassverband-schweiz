@@ -158,7 +158,7 @@ export default function MitmachenPage() {
         title={t('pricing.title')}
         subtitle={t('pricing.subtitle')}
         background="cream"
-        containerSize="wide"
+        containerSize="full"
         spacing="lg"
       >
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
@@ -191,7 +191,7 @@ export default function MitmachenPage() {
       <StandardSection
         title={t('goenner.title')}
         background="white"
-        containerSize="narrow"
+        containerSize="full"
         spacing="lg"
       >
         <div className="text-center">
@@ -243,7 +243,6 @@ export default function MitmachenPage() {
         </div>
 
         <div className="container-main relative z-10">
-          <div className="max-w-2xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -421,7 +420,6 @@ export default function MitmachenPage() {
                   Sichere Zahlung via Stripe
                 </div>
               </form>
-          </div>
         </div>
       </section>
 
