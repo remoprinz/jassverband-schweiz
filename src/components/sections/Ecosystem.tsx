@@ -11,6 +11,8 @@ interface EcosystemProps {
   jassguru: { title: string; description: string };
   jassmeister: { title: string; description: string };
   jasskalkulator: { title: string; description: string };
+  jasskarten: { title: string; description: string };
+  jasstrainer: { title: string; description: string };
 }
 
 const icons = {
@@ -49,15 +51,33 @@ const icons = {
       <circle cx="32" cy="34" r="2" fill="currentColor" />
     </svg>
   ),
+  jasskarten: (
+    <svg viewBox="0 0 48 48" fill="none" className="w-full h-full">
+      <rect x="8" y="6" width="20" height="28" rx="2" stroke="currentColor" strokeWidth="2" fill="none" transform="rotate(-8 18 20)" />
+      <rect x="20" y="14" width="20" height="28" rx="2" stroke="currentColor" strokeWidth="2" fill="none" transform="rotate(8 30 28)" />
+      <circle cx="18" cy="16" r="3" fill="currentColor" />
+      <circle cx="30" cy="32" r="3" fill="currentColor" />
+    </svg>
+  ),
+  jasstrainer: (
+    <svg viewBox="0 0 48 48" fill="none" className="w-full h-full">
+      <circle cx="24" cy="16" r="8" stroke="currentColor" strokeWidth="2" fill="none" />
+      <path d="M12 42c0-8 5-14 12-14s12 6 12 14" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" />
+      <path d="M32 20l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M36 24H28" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  ),
 };
 
 
-export function Ecosystem({ title, subtitle, jasswiki, jassguru, jassmeister, jasskalkulator }: EcosystemProps) {
+export function Ecosystem({ title, subtitle, jasswiki, jassguru, jassmeister, jasskalkulator, jasskarten, jasstrainer }: EcosystemProps) {
   const projects = [
     { key: 'jasswiki', href: 'https://jasswiki.ch', icon: icons.jasswiki, ctaText: 'Erkunden', ...jasswiki },
     { key: 'jassguru', href: 'https://jassguru.ch', icon: icons.jassguru, ctaText: 'Spielen', ...jassguru },
-    { key: 'jassmeister', href: 'https://jassmeister.web.app', icon: icons.jassmeister, ctaText: 'Anmelden', ...jassmeister },
+    { key: 'jassmeister', href: 'https://jassmeister.web.app', icon: icons.jassmeister, ctaText: 'Anmelden', comingSoon: true, ...jassmeister },
     { key: 'jasskalkulator', href: '/jasskalkulator', icon: icons.jasskalkulator, ctaText: 'Berechnen', ...jasskalkulator },
+    { key: 'jasskarten', href: 'https://schweizerjass.ch', icon: icons.jasskarten, ctaText: 'Bestellen', external: true, ...jasskarten },
+    { key: 'jasstrainer', href: '#', icon: icons.jasstrainer, ctaText: 'Trainieren', comingSoon: true, ...jasstrainer },
   ];
 
   return (
@@ -68,7 +88,7 @@ export function Ecosystem({ title, subtitle, jasswiki, jassguru, jassmeister, ja
       containerSize="full"  // ✅ Consistent with other content sections
       spacing="lg"
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
         {projects.map((project, index) => (
           <motion.div
             key={project.key}
@@ -83,6 +103,7 @@ export function Ecosystem({ title, subtitle, jasswiki, jassguru, jassmeister, ja
               href={project.href}
               icon={project.icon}
               ctaText={project.ctaText}
+              external={'external' in project ? project.external : !project.href?.startsWith('/')}
             />
           </motion.div>
         ))}

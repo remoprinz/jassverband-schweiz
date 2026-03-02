@@ -90,6 +90,14 @@
     "jasskalkulator": {
       "title": "Jasskalkulator",
       "description": "Berechne Wahrscheinlichkeiten — wer hat welche Karten?"
+    },
+    "jasskarten": {
+      "title": "JassKarten",
+      "description": "Premium Schweizer Jasskarten — traditionell & modern."
+    },
+    "jasstrainer": {
+      "title": "Jasstrainer Göpf",
+      "description": "KI-gestütztes Training — lerne von den Besten."
     }
   },
   "trust": {

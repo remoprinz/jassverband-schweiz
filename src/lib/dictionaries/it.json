@@ -72,6 +72,14 @@
     "jasskalkulator": {
       "title": "Jasskalkulator",
       "description": "Calcola le probabilità — chi ha quali carte?"
+    },
+    "jasskarten": {
+      "title": "JassKarten",
+      "description": "Carte da Jass svizzere premium — tradizionali & moderne."
+    },
+    "jasstrainer": {
+      "title": "Jasstrainer Göpf",
+      "description": "Allenamento con IA — impara dai migliori."
     }
   },
   "trust": {

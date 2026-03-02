@@ -63,6 +63,14 @@ export default async function HomePage({ params }: HomePageProps) {
           title: t("ecosystem.jasskalkulator.title"),
           description: t("ecosystem.jasskalkulator.description"),
         }}
+        jasskarten={{
+          title: t("ecosystem.jasskarten.title"),
+          description: t("ecosystem.jasskarten.description"),
+        }}
+        jasstrainer={{
+          title: t("ecosystem.jasstrainer.title"),
+          description: t("ecosystem.jasstrainer.description"),
+        }}
       />
 
       <Trust
