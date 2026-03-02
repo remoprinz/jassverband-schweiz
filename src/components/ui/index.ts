@@ -16,3 +16,6 @@ export {
   FAQCard, 
   ProjectCard as EnhancedProjectCard 
 } from './Cards';
+
+// Motion & Animations (Client-Only)
+export { ClientOnlyMotion, SafeAnimateOnScroll } from './ClientOnlyMotion';

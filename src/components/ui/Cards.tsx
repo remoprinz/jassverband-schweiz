@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { SafeAnimateOnScroll } from '@/components/ui/ClientOnlyMotion';
 import React from 'react';
 
 // ============================================
@@ -65,10 +66,8 @@ export function PricingCard({
         color: isHighlighted ? '#ffffff' : '#000000',
         border: isSelected ? '2px solid var(--color-primary)' : 'none',
       }}
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
+      initial={{ opacity: 1, y: 0 }}
+      suppressHydrationWarning={true}
     >
       {badge && (
         <div 
@@ -170,16 +169,13 @@ export function FAQCard({
   linkLabel 
 }: FAQCardProps) {
   return (
-    <motion.div
+    <SafeAnimateOnScroll
       className="overflow-hidden transition-all duration-300"
       style={{ 
         borderRadius: 'var(--radius-card)', 
         backgroundColor: '#ffffff', 
         boxShadow: 'var(--shadow-card)' 
       }}
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
     >
       <button
         onClick={onToggle}
@@ -209,9 +205,9 @@ export function FAQCard({
       {isOpen && (
         <motion.div 
           className="px-8 pb-5"
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: 'auto' }}
-          exit={{ opacity: 0, height: 0 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
         >
           <p 
@@ -237,7 +233,7 @@ export function FAQCard({
           )}
         </motion.div>
       )}
-    </motion.div>
+    </SafeAnimateOnScroll>
   );
 }
 

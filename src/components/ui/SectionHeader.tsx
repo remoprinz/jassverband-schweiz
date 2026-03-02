@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { SafeAnimateOnScroll } from '@/components/ui/ClientOnlyMotion';
 
 interface SectionHeaderProps {
   title: string;
@@ -35,12 +35,8 @@ export function SectionHeader({
   className = '' 
 }: SectionHeaderProps) {
   return (
-    <motion.div
+    <SafeAnimateOnScroll
       className={`mb-12 md:mb-16 ${centered ? 'text-center' : ''} ${className}`}
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
     >
       <h2 
         className={`mb-4 ${light ? 'text-white' : 'text-[var(--color-foreground)]'}`}
@@ -68,6 +64,6 @@ export function SectionHeader({
           {subtitle}
         </p>
       )}
-    </motion.div>
+    </SafeAnimateOnScroll>
   );
 }

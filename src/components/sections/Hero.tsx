@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo } from 'react';
+import { useMemo, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { Button } from '@/components/ui';
@@ -73,6 +73,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
     <section
       className="relative w-full overflow-hidden"
       style={{ height: '100vh', minHeight: '520px' }}
+      suppressHydrationWarning={true}
     >
       {/* HOLZTISCH – full bleed */}
       <div className="absolute inset-0 z-0">
