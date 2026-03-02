@@ -41,50 +41,64 @@ const FullscreenIcon = ({ className }: { className?: string }) => (
 
 interface SystemrelevanzVideoProps {
   title: string;
-  thumbnailFrame?: number; // For future thumbnail selection
+  thumbnailFrame?: number;
 }
 
 export function SystemrelevanzVideo({ 
   title, 
   thumbnailFrame = 0
 }: SystemrelevanzVideoProps) {
-  // "hasStarted" = user hat mindestens einmal geklickt und das Video soll sichtbar sein
   const [hasStarted, setHasStarted] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
-  const [isLandscape, setIsLandscape] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const checkOrientation = () => {
-      setIsLandscape(window.innerHeight < window.innerWidth);
-    };
-    
-    // Mobile-Detection für Auto-Fullscreen Feature
     const checkMobile = () => {
       const userAgent = navigator.userAgent;
       const mobileRegex = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
       setIsMobile(mobileRegex.test(userAgent) || window.innerWidth <= 768);
     };
     
-    checkOrientation();
     checkMobile();
-    
-    window.addEventListener('resize', checkOrientation);
-    window.addEventListener('orientationchange', checkOrientation);
     window.addEventListener('resize', checkMobile);
-    
-    return () => {
-      window.removeEventListener('resize', checkOrientation);
-      window.removeEventListener('orientationchange', checkOrientation);
-      window.removeEventListener('resize', checkMobile);
-    };
+    return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  // Kern-Fix: play() wird direkt im Click-Handler aufgerufen (User-Gesture-Kontext bleibt erhalten).
-  // Das <video>-Element ist immer im DOM — nur visuell hinter dem Poster versteckt.
-  // 🚀 UX-VERBESSERUNG: Auto-Fullscreen auf Mobile für optimale Viewing-Experience
+  // 🎯 BEST-IN-CLASS MOBILE FULLSCREEN SOLUTION
+  // iOS Safari: webkitEnterFullscreen() auf Video-Element
+  // Android/Desktop: requestFullscreen() auf Container (für custom controls)
+  const enterMobileFullscreen = async () => {
+    const video = videoRef.current;
+    const container = containerRef.current;
+    if (!video) return;
+
+    try {
+      // iOS Safari - spezielles Video-Fullscreen (native controls)
+      if ('webkitEnterFullscreen' in video && typeof (video as HTMLVideoElement & { webkitEnterFullscreen?: () => void }).webkitEnterFullscreen === 'function') {
+        (video as HTMLVideoElement & { webkitEnterFullscreen: () => void }).webkitEnterFullscreen();
+        return;
+      }
+      
+      // Android/Desktop - Container fullscreen (custom controls bleiben)
+      if (container?.requestFullscreen) {
+        await container.requestFullscreen();
+        return;
+      }
+      
+      // Webkit-Fallback
+      if ((container as HTMLDivElement & { webkitRequestFullscreen?: () => void })?.webkitRequestFullscreen) {
+        (container as HTMLDivElement & { webkitRequestFullscreen: () => void }).webkitRequestFullscreen();
+      }
+    } catch (error) {
+      console.log('Fullscreen nicht verfügbar:', error);
+    }
+  };
+
+  // 🚀 OPTIMIERTER PLAY-HANDLER
+  // Reihenfolge: 1) Play starten  2) DANN Fullscreen (wichtig für iOS!)
   const handlePlayClick = async () => {
     const video = videoRef.current;
     if (!video) return;
@@ -92,29 +106,26 @@ export function SystemrelevanzVideo({
     if (isPlaying) {
       video.pause();
     } else {
+      const wasFirstPlay = !hasStarted;
       setHasStarted(true);
       video.muted = false;
       setIsMuted(false);
       
-      // 📱 MOBILE UX ENHANCEMENT: Auto-Fullscreen bei Play auf Touch-Devices
-      if (isMobile && !hasStarted) {
-        try {
-          await video.requestFullscreen();
-        } catch (error) {
-          // Fallback: wenn Fullscreen nicht verfügbar, normal abspielen
-          console.log('Fullscreen nicht verfügbar:', error);
-        }
-      }
-      
       try {
         await video.play();
+        
+        // 📱 MOBILE: Auto-Fullscreen NACH erfolgreichem Play-Start
+        if (isMobile && wasFirstPlay) {
+          setTimeout(() => enterMobileFullscreen(), 100);
+        }
       } catch {
-        // Einige Mobile-Browser blockieren trotz User-Gesture wenn nicht muted.
-        // In diesem Fall stumm abspielen und Mute-Button für User anzeigen.
         video.muted = true;
         setIsMuted(true);
         try {
           await video.play();
+          if (isMobile && wasFirstPlay) {
+            setTimeout(() => enterMobileFullscreen(), 100);
+          }
         } catch (e) {
           console.error('Video-Wiedergabe fehlgeschlagen:', e);
         }
@@ -130,7 +141,7 @@ export function SystemrelevanzVideo({
   };
 
   const handleFullscreen = () => {
-    videoRef.current?.requestFullscreen?.();
+    enterMobileFullscreen();
   };
 
   const showPoster = !hasStarted;
@@ -155,52 +166,41 @@ export function SystemrelevanzVideo({
         <div className="flex justify-center">{/* FIX 2: KEIN Text um Video - nur zentriertes Video */}
 
           <SafeAnimateOnScroll delay={0.2} className="w-full">
-            <div className="relative aspect-video w-full max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-2xl bg-black">
+            <div 
+              ref={containerRef}
+              className="relative aspect-video w-full max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-2xl bg-black"
+            >
               
-              {/* Video ist IMMER im DOM — play() direkt im Click-Handler bleibt im User-Gesture-Kontext */}
+              {/* 🎬 Video - PiP deaktiviert, Fullscreen-optimiert */}
               <video
                 ref={videoRef}
-                className="absolute inset-0 w-full h-full object-cover"
+                className="absolute inset-0 w-full h-full object-contain bg-black"
                 onPlay={() => setIsPlaying(true)}
                 onPause={() => setIsPlaying(false)}
                 onEnded={() => setIsPlaying(false)}
                 onVolumeChange={() => setIsMuted(!!videoRef.current?.muted)}
                 controls={false}
                 playsInline
-                preload="metadata"
+                preload="auto"
+                disablePictureInPicture
+                controlsList="nodownload nofullscreen noremoteplayback"
               >
                 <source src="/assets/videos/Video_Berset_SVJ_1.mp4" type="video/mp4" />
               </video>
 
-              {/* Poster-Overlay — sichtbar bis erster Play-Klick */}
-              {/* 🖼️ UX-VERBESSERUNG: Optimierte Overlay-Abdunklung für bessere Thumbnail-Sichtbarkeit */}
+              {/* 🖼️ CLEAN POSTER-OVERLAY: Nur Play-Button, KEIN Overlay/Abdunklung */}
+              {/* Das Video selbst ist als Thumbnail sichtbar (preload="auto") */}
               {showPoster && (
-                <div className={`absolute inset-0 flex items-center justify-center ${
-                  isMobile 
-                    ? 'bg-gradient-to-br from-gray-900/15 via-gray-800/20 to-black/30' // Mobile: Weniger Abdunklung
-                    : 'bg-gradient-to-br from-gray-900/25 via-gray-800/30 to-black/40' // Desktop: Moderate Abdunklung
-                }`}>
-                  <div 
-                    className="absolute inset-0 bg-gradient-to-br from-green-900/10 via-amber-900/10 to-red-900/15"
-                    style={{
-                      backgroundImage: thumbnailFrame > 0 ? `url(/assets/video-thumbnails/frame-${thumbnailFrame}.jpg)` : undefined,
-                      backgroundSize: 'cover',
-                      backgroundPosition: 'center'
-                    }}
-                  />
-
-                  {/* FIX 2: KEIN Text mehr - nur Play Button */}
-                  <div className="relative z-10 flex items-center justify-center">
-                    <button
-                      onClick={handlePlayClick}
-                      className="group relative flex items-center justify-center w-20 h-20 md:w-28 md:h-28 bg-red-500 hover:bg-red-600 rounded-full transition-all duration-300 hover:scale-110 focus:ring-4 focus:ring-red-500/30 focus:outline-none shadow-2xl"
-                      aria-label="Video abspielen"
-                    >
-                      <PlayIcon className="w-8 h-8 md:w-12 md:h-12 text-white ml-1 group-hover:scale-110 transition-transform" />
-                      <div className="absolute inset-0 rounded-full bg-red-500 animate-ping opacity-20"></div>
-                      <div className="absolute inset-0 rounded-full bg-red-500 animate-pulse opacity-10"></div>
-                    </button>
-                  </div>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  {/* Play Button - zentral, prominent, KEIN überlagerndes Overlay */}
+                  <button
+                    onClick={handlePlayClick}
+                    className="group relative flex items-center justify-center w-20 h-20 md:w-24 md:h-24 bg-red-500 hover:bg-red-600 rounded-full transition-all duration-300 hover:scale-110 focus:ring-4 focus:ring-red-500/30 focus:outline-none shadow-2xl"
+                    aria-label="Video abspielen"
+                  >
+                    <PlayIcon className="w-8 h-8 md:w-10 md:h-10 text-white ml-1 group-hover:scale-110 transition-transform" />
+                    <div className="absolute inset-0 rounded-full bg-red-500 animate-ping opacity-20"></div>
+                  </button>
                 </div>
               )}
 
