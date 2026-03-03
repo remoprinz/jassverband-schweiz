@@ -1,0 +1,601 @@
+# CONTENT STRUCTURE — Jassverband Schweiz
+
+> **Masterfile für die gesamte Website-Architektur**
+> **Stand:** 2. März 2026
+> **Zweck:** Strategische Content-Planung über allen Sprachen (DE/FR/IT)
+
+---
+
+## 🎯 Core Strategie
+
+### Vision
+Jeder Mensch in der Schweiz lernt jassen.
+
+### Mission
+Wir demokratisieren das Jass-Wissen durch digitale Exzellenz und kulturelle Präsenz, um Barrieren abzubauen und das Lernen radikal zu vereinfachen.
+
+### Tagline
+Tradition trifft Innovation.
+
+---
+
+## 📐 Website-Architektur
+
+### Navigation (Hauptmenü)
+
+| Position | Label DE | Label FR | Label IT | Ziel |
+|----------|----------|----------|----------|------|
+| 1 | **Mitglied werden** | Devenir membre | Diventa membro | `/mitmachen` |
+| 2 | **Schweizermeisterschaft** | Championnat Suisse | Campionato Svizzero | `/schweizermeisterschaft` |
+| 3 | **Plattformen** | Plateformes | Piattaforme | `/plattformen` |
+| 4 | **Leitbild** | Mission | Missione | `/leitbild` |
+| 5 | **News** | Actualités | Notizie | `/news` |
+| 6 | **Kontakt** | Contact | Contatto | `/kontakt` |
+
+**Begründung für neue Struktur:**
+
+1. **"Mitglied werden" an Position 1** → Primärer CTA, wichtigste Conversion
+2. **"Schweizermeisterschaft" an Position 2** → Flagship-Produkt, Alleinstellungsmerkmal
+3. **"Plattformen" statt "Projekte"** → Klarer, zeigt Infrastruktur (JassWiki, JassGuru etc.)
+4. **"Leitbild" statt "Verband"** → Interessanter, emotionaler (Vision/Mission statt Präsidium)
+5. **"News"** → bleibt
+6. **"Kontakt"** → bleibt
+
+**Entfernt:**
+- ❌ "Verband" (zu trocken, ersetzt durch "Leitbild")
+- ❌ "Partner werden" (Unterseite von "Kontakt" oder eigener Footer-Link)
+
+---
+
+## 🏠 Homepage — Neue Struktur
+
+### 1. Hero-Section
+**Titel:** Jassen ist mehr als ein Kartenspiel.
+**Subtitle:** Es ist Schweizer Kulturgut — und verdient eine moderne Zukunft.
+**CTA:** Mitglied werden → `/mitmachen`
+
+---
+
+### 2. Vision-Section
+**Titel:** Unsere Vision: In der Schweiz bleibt kein Jasser ohne Tisch.
+**Copy:** Der Jassverband Schweiz setzt sich aktiv dafür ein, Jasserinnen und Jasser in der ganzen Schweiz zu vernetzen, neue Tische sichtbar zu machen und den Zugang zum gemeinsamen Spiel zu erleichtern.
+**CTA:** Weiterlesen → `/leitbild`
+
+---
+
+### 3. 🔥 NEU: Statistik-Teaser Section
+
+**Tonalität:** Positiv, neugierig machend, NICHT kompetitiv
+
+#### **Variante A: "Mach dein Jassen messbar"**
+
+**Titel:** Mach dein Jassen messbar
+
+**Subtitle:** Statistiken machen jeden Sport spannender. Auch Jassen.
+
+**Copy:**
+Vom Egg 🥚 zum Göpf 👼 — wer spielt wie stark? Welche Partnerkombination funktioniert am besten? Wie entwickelst du dich über die Saison?
+
+Mit dem ersten nationalen Ranking-System für Schieber wird jedes Spiel erfasst und ausgewertet. Nicht um Gewinner und Verlierer zu küren — sondern um zu sehen, wie du dich entwickelst.
+
+**CTA 1:** So funktioniert's → `/statistiken`
+**CTA 2:** Profil anlegen → `/mitmachen`
+
+---
+
+#### **Variante B: "Deine Jass-Statistiken"**
+
+**Titel:** Deine Jass-Statistiken
+
+**Subtitle:** Wer ist dein bester Partner? Wie entwickelst du dich? Jetzt messbar.
+
+**Copy:**
+Fussball hat Tabellen. Tennis hat Ranglisten. Schach hat Elo.
+
+Und Jassen?
+
+Jetzt gibt es das erste nationale Statistik-System für Schieber. Jedes Spiel wird erfasst. Partner, Gegner, Punkteverlauf — alles fliesst ein. So entsteht dein persönliches Jass-Profil.
+
+Vom Egg 🥚 bis zum Göpf 👼 — der Weg ist messbar.
+
+**CTA 1:** Mehr erfahren → `/statistiken`
+**CTA 2:** Jetzt starten → `/mitmachen`
+
+---
+
+**Empfehlung:** **Variante A** — "Mach dein Jassen messbar"
+
+**Begründung:**
+- Positiver, aktivierender Titel
+- "Messbar" statt "Ranking" (neutraler)
+- Fokus auf **persönliche Entwicklung**, nicht auf Wettbewerb
+- Die Ränge (Egg → Göpf) sind humorvoll, nicht einschüchternd
+- "Nicht um Gewinner zu küren" = entwaffnet Kritiker
+
+---
+
+### 4. Mission-Section (bleibt)
+**6 Kacheln:**
+1. Meisterschaften etablieren
+2. Jasser vernetzen
+3. Nachwuchs fördern
+4. Hürden abbauen
+5. Tradition modernisieren
+6. Kultur gestalten
+
+**CTA:** Weiterlesen → `/leitbild`
+
+---
+
+### 5. Tournament-Section (bleibt)
+**Titel:** Schweizer Jugend Team-Schiebermeisterschaft
+**Subtitle:** Der erste nationale Jass-Wettkampf für junge Teams
+**CTA:** Jetzt anmelden → `/schweizermeisterschaft`
+
+---
+
+### 6. SystemrelevanzVideo-Section
+
+**Neuer Titel:** Weshalb braucht es den Jassverband?
+
+**Kein Subtitle** — das Video antwortet selbst.
+
+---
+
+### 7. 🔥 NEU: Jass-Profil Section
+
+**Titel:** Dein Jass-Profil — erfasst, ausgewertet, verstanden
+
+**Subtitle:** Was du als Mitglied bekommst
+
+**3 Karten:**
+
+#### Karte 1: Deine Entwicklung
+**Icon:** 📈
+**Headline:** Wie entwickelst du dich?
+**Text:** Mit dem nationalen Ranking-System wird jedes Spiel gewertet. Partner, Gegner, Spielverlauf — alles fliesst ein. Vom Egg 🥚 zum Göpf 👼 — der Weg ist messbar.
+**Link:** Mehr zum Ranking-System →
+
+#### Karte 2: Deine Statistiken
+**Icon:** 📊
+**Headline:** Wer ist dein bester Partner?
+**Text:** Alle deine Spiele, Gegner und Partner werden erfasst. Welche Kombination funktioniert am besten? Wann spielst du stark? JassGuru zeigt es dir.
+**Link:** Zum Support → https://jassguru.ch/support/
+
+#### Karte 3: Deine Chance
+**Icon:** 🏆
+**Headline:** Werde Schweizermeister
+**Text:** Das erste Mal in der Geschichte gibt es eine offizielle Team-Schieber Schweizermeisterschaft. Dein Ranking entscheidet mit, wer sich qualifiziert.
+**Link:** Zur Schweizermeisterschaft → `/schweizermeisterschaft`
+
+---
+
+### 8. 🔥 NEU: Tools-Section
+
+**Titel:** Werkzeuge für alle Jasser
+
+**Subtitle:** Ob Anfänger oder Profi — diese Tools sind gratis für alle
+
+**3 Karten:**
+
+#### Karte 1: JassWiki
+**Headline:** Das Regelwerk
+**Text:** Über 100 Artikel zu Regeln, Varianten, Geschichte und Strategie. Die Enzyklopädie des Jassens.
+**Badge:** Gratis für alle
+**Link:** Zu JassWiki → https://jasswiki.ch
+
+#### Karte 2: Jasstrainer Göpf
+**Headline:** Lerne von der KI
+**Text:** Göpf erklärt dir jeden Stich. Warum war das der richtige Zug? Was hättest du anders machen können?
+**Badge:** Gratis für alle
+**Link:** Zu Göpf → (noch nicht live)
+
+#### Karte 3: Jasskalkulator
+**Headline:** Wer hat welche Karte?
+**Text:** Berechne Wahrscheinlichkeiten während dem Spiel. Welche Trümpfe sind noch im Spiel?
+**Badge:** Gratis für alle
+**Link:** Zum Jasskalkulator → `/jasskalkulator`
+
+---
+
+### 9. 🔥 NEU: FAQ-Section
+
+**Titel:** Häufige Fragen
+
+**8 Fragen:**
+
+#### Vision & Auftrag
+1. Weshalb braucht es den Jassverband?
+2. Was macht der Jassverband konkret?
+3. Für wen ist der Verband da?
+
+#### Mitgliedschaft
+4. Wie kann ich Mitglied werden?
+5. Welche Vorteile habe ich als Mitglied?
+
+#### Jassen lernen
+6. Ich kann noch nicht jassen – wo fange ich an?
+7. Wo finde ich die offiziellen Regeln?
+
+#### Turniere
+8. Gibt es eine Schweizer Meisterschaft?
+
+**Design:** Accordion-Stil, 2-spaltig Desktop, 1-spaltig Mobile
+
+---
+
+### 10. Trust-Section (bleibt)
+**Text:** JVS repräsentiert Jassen als vom Bundesamt für Kultur anerkannte lebendige Tradition.
+**Badge:** Lebendige Tradition
+
+---
+
+### 11. Footer (bleibt)
+**Standard-Footer** mit Navigation, Rechtlichem, Kontakt
+
+---
+
+## 📄 Unterseiten — Neue Struktur
+
+### 1. `/mitmachen` — Mitglied werden
+
+**Status:** ✅ Gut strukturiert, kleine Anpassungen
+
+**Neue Section (VOR den Paketen):**
+
+#### "Was du bekommst"
+
+**3 Benefit-Blöcke:**
+
+##### Block 1: 📊 Dein Jass-Profil
+- Persönliches Ranking
+- Vollständige Spielstatistiken
+- Partner- und Gegner-Analysen
+- Historische Daten (alle Spiele)
+- Vergleich mit anderen Jassern
+
+##### Block 2: 🏆 Startberechtigung
+- Schweizermeisterschaft Team-Schieber
+- Zugang zu allen Verbandsturnieren
+- Offizielle Qualifikations-Rangliste
+
+##### Block 3: 🎴 Premium-Extras (Trumpf-Lizenz)
+- Exklusives Kartenset (Edition 2026)
+- Rabatt auf Jassreisen
+- 24h Vorzug bei Event-Anmeldungen
+
+**Neue FAQ (ergänzend zu bestehenden):**
+
+**"Ich jasse lieber mit Kreide und Tafel. Muss ich eine App nutzen?"**
+
+> Niemand muss eine App nutzen. Du kannst weiterhin privat mit Kreide und Tafel jassen.
+>
+> **ABER:** Wenn du Teil des nationalen Ranking-Systems sein willst — und damit auch an der Schweizermeisterschaft teilnehmen — dann müssen deine Resultate erfasst werden.
+>
+> Genau wie im Schach: Wer an Turnieren teilnimmt, spielt nach FIDE-Regeln und wird gerankt. Wer privat spielt, kann machen was er will.
+>
+> **JassGuru ist keine "App zum Jassen"** — es ist das Erfassungssystem für das nationale Ranking.
+>
+> Es ist so einfach wie möglich gebaut. Und falls du Fragen hast: Der Support erklärt dir jeden Schritt → [jassguru.ch/support](https://jassguru.ch/support/)
+
+---
+
+### 2. 🔥 NEU: `/schweizermeisterschaft` — Schweizermeisterschaft
+
+**Zweck:** Dedizierte Seite für das Flagship-Produkt
+
+**Hero:**
+**Titel:** Die erste Team-Schieber Schweizermeisterschaft
+**Subtitle:** Ein ganzes Team wird Schweizermeister — so wie im Fussball oder Hockey.
+
+**Sections:**
+
+1. **Das Format**
+   - Nicht ein Einzelspieler wird Meister, sondern ein Team
+   - Dezentrale Qualifikation (jedes Team spielt in seiner Arena)
+   - Zentrale Erfassung via JassGuru
+   - Finalturnier der besten Teams
+
+2. **So funktioniert's**
+   - Mindestens 10 Spiele in der eigenen Gruppe
+   - Andere Teams herausfordern
+   - Ranking entscheidet über Finalturnier
+   - Details zum Modus (je nach Teilnehmerzahl)
+
+3. **Anmelden**
+   - Gruppen-Lizenz buchen
+   - Captain bestimmen
+   - Team registrieren
+   - Losspielen
+
+4. **FAQ** (von /mitmachen übernehmen)
+   - Was ist die Team-Schieber SM?
+   - Wie funktioniert die Qualifikation?
+   - Was ist der Captain?
+   - etc.
+
+**CTA:** Jetzt Team anmelden → `/mitmachen#gruppen-lizenz`
+
+---
+
+### 3. 🔥 NEU: `/plattformen` — Unsere Plattformen
+
+**Zweck:** Übersicht über das digitale Ökosystem
+
+**Hero:**
+**Titel:** Unsere Plattformen
+**Subtitle:** Digitale Werkzeuge für die Jass-Community
+
+**Sections:**
+
+#### Für Mitglieder
+
+**JassGuru Pro**
+- **Was ist das:** Erfassungssystem für Spiele, Statistiken und Ranking
+- **Wofür:** Elo-System, Turnierverwaltung, Schweizermeisterschaft
+- **Zugang:** Nur für JVS-Mitglieder
+- **Status:** Live
+- **Link:** https://jassguru.ch
+
+**Jassmeister**
+- **Was ist das:** Turnierplattform für nationale Meisterschaften
+- **Wofür:** Anmeldung, Turnierformate, Ergebnisse
+- **Zugang:** Für Mitglieder
+- **Status:** Coming Soon
+- **Link:** (Preview) https://jassmeister.web.app
+
+#### Für alle (gratis)
+
+**JassWiki**
+- **Was ist das:** Die Enzyklopädie des Jassens
+- **Wofür:** Regeln, Varianten, Geschichte, Strategie
+- **Zugang:** Gratis für alle
+- **Status:** Live
+- **Link:** https://jasswiki.ch
+
+**Jasstrainer Göpf**
+- **Was ist das:** KI-gestützter Jass-Trainer
+- **Wofür:** Lernen, Strategie verbessern, Züge analysieren
+- **Zugang:** Gratis für alle
+- **Status:** In Entwicklung
+- **Link:** (noch nicht live)
+
+**Jasskalkulator**
+- **Was ist das:** Wahrscheinlichkeitsrechner
+- **Wofür:** Berechnen, welche Karten noch im Spiel sind
+- **Zugang:** Gratis für alle
+- **Status:** Live
+- **Link:** `/jasskalkulator`
+
+**Trust-Badge:** Lebendige Tradition
+
+---
+
+### 4. `/leitbild` — Leitbild (ersetzt "Verband")
+
+**Status:** ✅ Gut strukturiert, bleibt weitgehend
+
+**Anpassungen:**
+
+**Hero:**
+**Titel:** Unsere Vision und Mission
+
+**Sections:**
+1. Vision (bleibt)
+2. Mission (6 Kacheln, bleibt)
+3. **NEU: Vorstand** (hier integrieren statt eigene Seite)
+4. **NEU: Werte** (Respekt, Fairplay, Integrität, Inklusion)
+5. Statuten (Link zum PDF)
+
+**Begründung:** 
+- Leitbild ist interessanter als "Verband"
+- Vorstand gehört zur Identity, aber nicht in Hauptnavi
+- Werte zeigen, wofür der Verband steht
+
+---
+
+### 5. `/news` — News & Aktuelles
+
+**Status:** ✅ Funktioniert, bleibt
+
+---
+
+### 6. `/kontakt` — Kontakt
+
+**Status:** ✅ Funktioniert, bleibt
+
+**Anpassung:** 
+- Formular (bleibt)
+- **NEU: "Partner werden"** als Section auf dieser Seite
+  - Warum Jassen fördern?
+  - Kontaktaufnahme
+  - Sponsoring-Broschüre (Link zum PDF)
+
+---
+
+### 7. 🔥 NEU: `/statistiken` — Das Ranking-System
+
+**Zweck:** Ausführliche Erklärung des Elo-Systems (Landing-Page für neugierige User)
+
+**Hero:**
+**Titel:** Das Ranking-System
+**Subtitle:** Wie funktioniert das nationale Elo-System für Schieber?
+
+**Sections:**
+
+1. **Was ist Elo?**
+   - Ursprung: Schach (Arpad Elo)
+   - Prinzip: Relativer Skill-Vergleich
+   - Vorteil: Fair, dynamisch, messbar
+
+2. **Wie funktioniert Jass-Elo?**
+   - Partner UND Gegner werden berücksichtigt
+   - Underdog kann gegen Favoriten gewinnen
+   - Beispielrechnung (visuell mit Grafik)
+   - Link zum Whitepaper (PDF)
+
+3. **Die Ränge**
+   - Vom Egg 🥚 zum Göpf 👼
+   - Tabelle der Ränge (aus dem PDF)
+   - Humorvolle Namen (Chlaus, Chäs, Ente, Gurke...)
+
+4. **Wie steige ich auf?**
+   - Regelmässig spielen
+   - Gegen starke Gegner antreten
+   - Mit starken Partnern spielen
+   - Fair spielen (kein Elo-Farming)
+
+5. **FAQ**
+   - Was ist das Elo-System?
+   - Wie fair ist es?
+   - Kann ich mein Elo manipulieren?
+   - Was ist mit Anfängern?
+
+**CTA:** Starte dein Profil → `/mitmachen`
+
+---
+
+## 🗑️ Entfernte Seiten
+
+### `/verband` — Verband
+**Ersetzt durch:** `/leitbild` (inkludiert Vorstand)
+
+### `/partner` — Partner werden
+**Ersetzt durch:** Section auf `/kontakt`
+
+### `/projekte` — Projekte
+**Ersetzt durch:** `/plattformen` (fokussierter auf Infrastruktur)
+
+---
+
+## 🌍 Mehrsprachigkeit
+
+### Prinzipien
+
+1. **Keine wörtlichen Übersetzungen** — kulturelle Anpassung
+2. **Konsistente Terminologie** — Glossar führen
+3. **Regionale Unterschiede berücksichtigen** 
+   - DE: "Jassen" (Verb), "Jass" (Nomen)
+   - FR: "Jasser" (Verb), "Jass" (Nomen)
+   - IT: "Giocare a Jass" (Verb), "Jass" (Nomen)
+
+### Sprachspezifische Content-Dateien
+
+- `contentDE.md` — Deutsch (Master)
+- `contentFR.md` — Französisch
+- `contentIT.md` — Italienisch
+
+---
+
+## 📊 SEO-Strategie
+
+### Fokus-Keywords
+
+| Deutsch | Französisch | Italienisch |
+|---------|-------------|-------------|
+| Jassverband Schweiz | Fédération Suisse de Jass | Federazione Svizzera di Jass |
+| Jass lernen | Apprendre le jass | Imparare il Jass |
+| Schieber Meisterschaft | Championnat Schieber | Campionato Schieber |
+| Jass Elo-System | Système Elo Jass | Sistema Elo Jass |
+| JassGuru | JassGuru | JassGuru |
+
+### Priority-Seiten für SEO
+
+1. `/mitmachen` (0.95) — Mitgliedschaft = Conversion
+2. `/` (1.0) — Homepage
+3. `/schweizermeisterschaft` (0.9) — Flagship
+4. `/plattformen` (0.8) — Infrastruktur
+5. `/statistiken` (0.8) — Elo-System (unique content)
+
+---
+
+## 🎯 Conversion-Pfade
+
+### Hauptpfad: Mitglied werden
+
+1. **Homepage** → Hero CTA "Mitglied werden"
+2. **Homepage** → Statistik-Teaser → "Jetzt starten"
+3. **Homepage** → Jass-Profil Section → "Mehr erfahren"
+4. **Homepage** → FAQ → "Wie kann ich Mitglied werden?"
+
+### Sekundärpfad: Schweizermeisterschaft
+
+1. **Homepage** → Tournament Section → "Jetzt anmelden"
+2. **Homepage** → Jass-Profil Section → "Zur Schweizermeisterschaft"
+3. **Navi** → "Schweizermeisterschaft" → Dedizierte Landing Page
+
+### Tertiärpfad: Plattformen erkunden
+
+1. **Homepage** → Tools Section → JassWiki / Göpf / Kalkulator
+2. **Navi** → "Plattformen" → Übersicht
+3. **Footer** → Direkte Links zu Plattformen
+
+---
+
+## 🎨 Design-Prinzipien
+
+### Tonalität
+- **Seriös, aber nicht steif** — Verband mit Augenzwinkern
+- **Inklusiv, nicht elitär** — Vom Egg zum Göpf ist für alle
+- **Modern, aber traditionsbewusst** — Tradition trifft Innovation
+
+### Visuell
+- **Schweizer Rot** (#ff0000) — Primärfarbe
+- **Cream** (#f0eee7) — Sekundärfarbe
+- **Jasskarten-Deko** — sparsam einsetzen
+- **Filz-Texturen** — für Jass-Atmosphäre
+
+### Typografie
+- **Capita** (Headlines) — kraftvoll, traditionsreich
+- **Inter** (Body) — modern, lesbar
+
+---
+
+## 📅 Implementation Roadmap
+
+### Phase 1: Content (jetzt)
+- ✅ CONTENT_STRUCTURE.md erstellen
+- ⏳ contentDE.md überarbeiten
+- ⏳ faqDE.md finalisieren
+- ⏳ contentFR.md erstellen
+- ⏳ contentIT.md erstellen
+
+### Phase 2: Navigation
+- ⏳ Navigation umstrukturieren (Navi-Items ändern)
+- ⏳ Routes anpassen (`/verband` → `/leitbild`)
+- ⏳ Redirects einrichten (301)
+
+### Phase 3: Neue Seiten
+- ⏳ `/schweizermeisterschaft` erstellen
+- ⏳ `/plattformen` erstellen (ersetzt `/projekte`)
+- ⏳ `/statistiken` erstellen (neue Seite)
+
+### Phase 4: Homepage
+- ⏳ Statistik-Teaser Section bauen
+- ⏳ Jass-Profil Section bauen
+- ⏳ Tools Section bauen
+- ⏳ FAQ Section bauen
+- ⏳ Reihenfolge anpassen
+
+### Phase 5: Bestehende Seiten
+- ⏳ `/mitmachen` anpassen (neue Benefits-Section)
+- ⏳ `/leitbild` erweitern (Vorstand integrieren)
+- ⏳ `/kontakt` erweitern (Partner-Section)
+
+---
+
+## ✅ Checkliste: Content Ready?
+
+- [ ] Alle Texte in contentDE.md
+- [ ] FAQ in faqDE.md
+- [ ] Französische Übersetzung (contentFR.md)
+- [ ] Italienische Übersetzung (contentIT.md)
+- [ ] Elo-Whitepaper verlinkt
+- [ ] Support-Links gesetzt
+- [ ] CTAs definiert
+- [ ] SEO-Meta für neue Seiten
+- [ ] OG-Images vorbereitet
+
+---
+
+*Ende des Struktur-Dokuments*
