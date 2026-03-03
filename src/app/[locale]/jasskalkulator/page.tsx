@@ -140,7 +140,7 @@ export default function JasskalkulatorPage() {
         </header>
 
         {/* Main Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] xl:grid-cols-[1fr_380px] gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] xl:grid-cols-[1fr_420px] gap-6 lg:gap-8">
           {/* Left: Card Grid */}
           <div>
             <div className="flex items-center justify-between mb-3">
@@ -200,7 +200,7 @@ export default function JasskalkulatorPage() {
             </div>
           </div>
 
-          {/* Right: Config Panel */}
+          {/* Right: Config Panel - PIXEL PERFECT */}
           <div className="space-y-4 mt-4 lg:mt-0">
             <span 
               className="text-white text-sm sm:text-base block"
@@ -209,35 +209,40 @@ export default function JasskalkulatorPage() {
               Wie gross ist die Wahrscheinlichkeit...
             </span>
 
-            {/* Opponent Selection */}
-            <div className="flex gap-2">
+            {/* Opponent Selection - Höhe 50px, Gap 2px */}
+            <div className="flex gap-[2px]">
               {[
                 { key: 'partner', label: 'Mein\nPartner', type: 'partner' as OpponentType },
                 { key: 'opponents_one', label: 'Einer der\nGegner', type: 'opponents_one' as OpponentType },
                 { key: 'opponents_none', label: 'Keiner der\nGegner', type: 'opponents_none' as OpponentType },
-              ].map((opt) => (
-                <button
-                  key={opt.key}
-                  onClick={() => setConfig((prev) => ({ ...prev, opponentType: opt.type }))}
-                  className="flex-1 py-2.5 px-2 rounded-lg text-xs whitespace-pre-line text-center leading-tight transition-all"
-                  style={{
-                    fontFamily: 'var(--font-inter), Inter, sans-serif',
-                    fontWeight: 500,
-                    backgroundColor: config.opponentType === opt.type ? '#2BB752' : 'transparent',
-                    color: 'white',
-                    border: config.opponentType === opt.type ? '1px solid #2BB752' : '1px solid #3d5c45',
-                  }}
-                >
-                  {opt.label}
-                </button>
-              ))}
+              ].map((opt) => {
+                const isActive = config.opponentType === opt.type;
+                return (
+                  <button
+                    key={opt.key}
+                    onClick={() => setConfig((prev) => ({ ...prev, opponentType: opt.type }))}
+                    className="flex-1 h-[50px] rounded-lg text-xs whitespace-pre-line text-center leading-tight transition-all"
+                    style={{
+                      fontFamily: 'var(--font-inter), Inter, sans-serif',
+                      fontWeight: 500,
+                      fontSize: '12px',
+                      backgroundColor: isActive ? '#2BB752' : '#020905',
+                      color: 'white',
+                      border: isActive ? '1px solid #00FF46' : '1px solid #020902',
+                      padding: '0 8px',
+                    }}
+                  >
+                    {opt.label}
+                  </button>
+                );
+              })}
             </div>
 
-            {/* Divider */}
-            <div className="h-px bg-[#3d5c45]" />
+            {/* Divider Line - 1px #00FF46 */}
+            <div style={{ height: '1px', backgroundColor: '#00FF46', margin: '12px 0' }} />
 
-            {/* Suit Selection */}
-            <div className="flex gap-2">
+            {/* Suit Selection - Höhe 70px, Gap 2px */}
+            <div className="flex gap-[2px]">
               {suitOrder.map((suit) => {
                 const isSelected = config.targetCard?.suit === suit;
                 const suitCards = selectedCards.length === MAX_CARDS 
@@ -254,10 +259,10 @@ export default function JasskalkulatorPage() {
                       }
                     }}
                     disabled={!hasAvailable && selectedCards.length === MAX_CARDS}
-                    className="flex-1 h-14 sm:h-16 rounded-lg flex items-center justify-center transition-all"
+                    className="flex-1 h-[70px] rounded-lg flex items-center justify-center transition-all"
                     style={{
-                      backgroundColor: isSelected ? '#2BB752' : 'transparent',
-                      border: isSelected ? '2px solid #00FF46' : '1px solid #3d5c45',
+                      backgroundColor: isSelected ? '#2BB752' : '#020905',
+                      border: isSelected ? '2px solid #00FF46' : '1px solid #020902',
                       opacity: (!hasAvailable && selectedCards.length === MAX_CARDS) ? 0.4 : 1,
                       cursor: (!hasAvailable && selectedCards.length === MAX_CARDS) ? 'not-allowed' : 'pointer',
                     }}
@@ -265,20 +270,20 @@ export default function JasskalkulatorPage() {
                     <Image
                       src={SUIT_ICONS[cardLocale][suit]}
                       alt={getSuitLabel(suit, cardLocale)}
-                      width={32}
-                      height={32}
-                      className="w-7 h-7 sm:w-8 sm:h-8 object-contain"
+                      width={36}
+                      height={36}
+                      className="w-9 h-9 object-contain"
                     />
                   </button>
                 );
               })}
             </div>
 
-            {/* Divider */}
-            <div className="h-px bg-[#3d5c45]" />
+            {/* Divider Line */}
+            <div style={{ height: '1px', backgroundColor: '#00FF46', margin: '12px 0' }} />
 
-            {/* Value Selection - Row 1 */}
-            <div className="grid grid-cols-5 gap-1.5">
+            {/* Value Selection - Row 1: 5 buttons, Höhe 40px */}
+            <div className="flex gap-[2px]">
               {(['A', 'K', 'O', 'U', '10'] as Value[]).map((value) => {
                 const targetSuit = config.targetCard?.suit;
                 const card = targetSuit ? JASS_CARDS.find(c => c.suit === targetSuit && c.value === value) : null;
@@ -295,13 +300,14 @@ export default function JasskalkulatorPage() {
                       }
                     }}
                     disabled={!isAvailable || !targetSuit}
-                    className="py-2 rounded-lg text-xs sm:text-sm transition-all"
+                    className="flex-1 h-[40px] rounded-lg text-xs transition-all"
                     style={{
                       fontFamily: 'var(--font-inter), Inter, sans-serif',
                       fontWeight: 500,
-                      backgroundColor: isSelected ? '#2BB752' : 'transparent',
+                      fontSize: '12px',
+                      backgroundColor: isSelected ? '#2BB752' : '#020905',
                       color: (isAvailable && targetSuit) ? 'white' : 'rgba(255,255,255,0.4)',
-                      border: isSelected ? '1px solid #2BB752' : '1px solid #3d5c45',
+                      border: isSelected ? '1px solid #00FF46' : '1px solid #020902',
                       cursor: (!isAvailable || !targetSuit) ? 'not-allowed' : 'pointer',
                     }}
                   >
@@ -311,8 +317,8 @@ export default function JasskalkulatorPage() {
               })}
             </div>
             
-            {/* Value Selection - Row 2 */}
-            <div className="grid grid-cols-4 gap-1.5">
+            {/* Value Selection - Row 2: 4 buttons */}
+            <div className="flex gap-[2px]">
               {(['9', '8', '7', '6'] as Value[]).map((value) => {
                 const targetSuit = config.targetCard?.suit;
                 const card = targetSuit ? JASS_CARDS.find(c => c.suit === targetSuit && c.value === value) : null;
@@ -328,13 +334,14 @@ export default function JasskalkulatorPage() {
                       }
                     }}
                     disabled={!isAvailable || !targetSuit}
-                    className="py-2 rounded-lg text-xs sm:text-sm transition-all"
+                    className="flex-1 h-[40px] rounded-lg text-xs transition-all"
                     style={{
                       fontFamily: 'var(--font-inter), Inter, sans-serif',
                       fontWeight: 500,
-                      backgroundColor: isSelected ? '#2BB752' : 'transparent',
+                      fontSize: '12px',
+                      backgroundColor: isSelected ? '#2BB752' : '#020905',
                       color: (isAvailable && targetSuit) ? 'white' : 'rgba(255,255,255,0.4)',
-                      border: isSelected ? '1px solid #2BB752' : '1px solid #3d5c45',
+                      border: isSelected ? '1px solid #00FF46' : '1px solid #020902',
                       cursor: (!isAvailable || !targetSuit) ? 'not-allowed' : 'pointer',
                     }}
                   >
@@ -344,135 +351,169 @@ export default function JasskalkulatorPage() {
               })}
             </div>
 
-            {/* Divider */}
-            <div className="h-px bg-[#3d5c45]" />
+            {/* Divider Line */}
+            <div style={{ height: '1px', backgroundColor: '#00FF46', margin: '12px 0' }} />
 
-            {/* Comparator Selection */}
-            <div className="flex gap-1.5">
+            {/* Comparator Selection - 3 buttons, Höhe 50px */}
+            <div className="flex gap-[2px]">
               {[
                 { key: 'atLeast', label: 'mindestens' },
                 { key: 'exact', label: 'genau' },
                 { key: 'atMost', label: 'höchstens' },
-              ].map((opt) => (
-                <button
-                  key={opt.key}
-                  onClick={() => setConfig((prev) => ({ ...prev, comparator: opt.key as Comparator }))}
-                  className="flex-1 py-2 rounded-lg text-xs sm:text-sm transition-all"
-                  style={{
-                    fontFamily: 'var(--font-inter), Inter, sans-serif',
-                    fontWeight: 500,
-                    backgroundColor: config.comparator === opt.key ? '#2BB752' : 'transparent',
-                    color: 'white',
-                    border: config.comparator === opt.key ? '1px solid #2BB752' : '1px solid #3d5c45',
-                  }}
-                >
-                  {opt.label}
-                </button>
-              ))}
+              ].map((opt) => {
+                const isActive = config.comparator === opt.key;
+                return (
+                  <button
+                    key={opt.key}
+                    onClick={() => setConfig((prev) => ({ ...prev, comparator: opt.key as Comparator }))}
+                    className="flex-1 h-[50px] rounded-lg text-xs transition-all"
+                    style={{
+                      fontFamily: 'var(--font-inter), Inter, sans-serif',
+                      fontWeight: 500,
+                      fontSize: '12px',
+                      backgroundColor: isActive ? '#2BB752' : '#020905',
+                      color: 'white',
+                      border: isActive ? '1px solid #00FF46' : '1px solid #020902',
+                    }}
+                  >
+                    {opt.label}
+                  </button>
+                );
+              })}
             </div>
 
-            {/* Condition Selection - Row 1 */}
-            <div className="grid grid-cols-5 gap-1.5">
+            {/* Condition Selection - Row 1: 5 buttons */}
+            <div className="flex gap-[2px]">
               <button
                 onClick={() => setConfig((prev) => ({ ...prev, condition: 0 }))}
-                className="py-2 rounded-lg text-xs sm:text-sm transition-all"
+                className="flex-1 h-[40px] rounded-lg text-xs transition-all"
                 style={{
                   fontFamily: 'var(--font-inter), Inter, sans-serif',
                   fontWeight: 500,
-                  backgroundColor: config.condition === 0 ? '#2BB752' : 'transparent',
+                  fontSize: '12px',
+                  backgroundColor: config.condition === 0 ? '#2BB752' : '#020905',
                   color: 'white',
-                  border: config.condition === 0 ? '1px solid #2BB752' : '1px solid #3d5c45',
+                  border: config.condition === 0 ? '1px solid #00FF46' : '1px solid #020902',
                 }}
               >
                 blutt
               </button>
-              {[2, 3, 4, 5].map((n) => (
-                <button
-                  key={n}
-                  onClick={() => setConfig((prev) => ({ ...prev, condition: n }))}
-                  disabled={n > maxCondition}
-                  className="py-2 rounded-lg text-xs sm:text-sm transition-all"
-                  style={{
-                    fontFamily: 'var(--font-inter), Inter, sans-serif',
-                    fontWeight: 500,
-                    backgroundColor: config.condition === n ? '#2BB752' : 'transparent',
-                    color: n <= maxCondition ? 'white' : 'rgba(255,255,255,0.4)',
-                    border: config.condition === n ? '1px solid #2BB752' : '1px solid #3d5c45',
-                    cursor: n > maxCondition ? 'not-allowed' : 'pointer',
-                  }}
-                >
-                  zu {n}.
-                </button>
-              ))}
+              {[2, 3, 4, 5].map((n) => {
+                const isActive = config.condition === n;
+                const isDisabled = n > maxCondition;
+                return (
+                  <button
+                    key={n}
+                    onClick={() => setConfig((prev) => ({ ...prev, condition: n }))}
+                    disabled={isDisabled}
+                    className="flex-1 h-[40px] rounded-lg text-xs transition-all"
+                    style={{
+                      fontFamily: 'var(--font-inter), Inter, sans-serif',
+                      fontWeight: 500,
+                      fontSize: '12px',
+                      backgroundColor: isActive ? '#2BB752' : '#020905',
+                      color: isDisabled ? 'rgba(255,255,255,0.4)' : 'white',
+                      border: isActive ? '1px solid #00FF46' : '1px solid #020902',
+                      cursor: isDisabled ? 'not-allowed' : 'pointer',
+                    }}
+                  >
+                    zu {n}.
+                  </button>
+                );
+              })}
             </div>
             
-            {/* Condition Selection - Row 2 */}
-            <div className="grid grid-cols-4 gap-1.5">
-              {[6, 7, 8, 9].map((n) => (
-                <button
-                  key={n}
-                  onClick={() => setConfig((prev) => ({ ...prev, condition: n }))}
-                  disabled={n > maxCondition}
-                  className="py-2 rounded-lg text-xs sm:text-sm transition-all"
-                  style={{
-                    fontFamily: 'var(--font-inter), Inter, sans-serif',
-                    fontWeight: 500,
-                    backgroundColor: config.condition === n ? '#2BB752' : 'transparent',
-                    color: n <= maxCondition ? 'white' : 'rgba(255,255,255,0.4)',
-                    border: config.condition === n ? '1px solid #2BB752' : '1px solid #3d5c45',
-                    cursor: n > maxCondition ? 'not-allowed' : 'pointer',
-                  }}
-                >
-                  zu {n}.
-                </button>
-              ))}
+            {/* Condition Selection - Row 2: 4 buttons */}
+            <div className="flex gap-[2px]">
+              {[6, 7, 8, 9].map((n) => {
+                const isActive = config.condition === n;
+                const isDisabled = n > maxCondition;
+                return (
+                  <button
+                    key={n}
+                    onClick={() => setConfig((prev) => ({ ...prev, condition: n }))}
+                    disabled={isDisabled}
+                    className="flex-1 h-[40px] rounded-lg text-xs transition-all"
+                    style={{
+                      fontFamily: 'var(--font-inter), Inter, sans-serif',
+                      fontWeight: 500,
+                      fontSize: '12px',
+                      backgroundColor: isActive ? '#2BB752' : '#020905',
+                      color: isDisabled ? 'rgba(255,255,255,0.4)' : 'white',
+                      border: isActive ? '1px solid #00FF46' : '1px solid #020902',
+                      cursor: isDisabled ? 'not-allowed' : 'pointer',
+                    }}
+                  >
+                    zu {n}.
+                  </button>
+                );
+              })}
             </div>
 
-            {/* Result Display */}
+            {/* Result Display - PIXEL PERFECT nach Figma */}
             <AnimatePresence mode="wait">
               <motion.div
                 key={probability?.toString() ?? 'empty'}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
-                className="rounded-xl p-4"
+                className="rounded-xl"
                 style={{
-                  backgroundColor: 'rgba(0, 0, 0, 0.4)',
-                  border: '1px solid #3d5c45',
+                  backgroundColor: 'rgba(0, 0, 0, 0.6)',
+                  border: '1px solid #00FF46',
+                  padding: '16px',
+                  marginTop: '24px',
                 }}
               >
-                <div className="flex items-center justify-between mb-2">
+                <div className="flex items-center justify-between mb-3">
                   <span 
-                    className="text-white text-sm sm:text-base"
-                    style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', fontWeight: 400 }}
+                    style={{ 
+                      fontFamily: 'var(--font-inter), Inter, sans-serif', 
+                      fontWeight: 400,
+                      fontSize: '14px',
+                      color: 'white',
+                    }}
                   >
                     Wahrscheinlichkeit
                   </span>
                   {probability !== null ? (
                     <span 
-                      className="text-xl sm:text-2xl"
                       style={{ 
-                        color: probability >= 50 ? '#2BB752' : '#ff4444',
+                        color: probability >= 50 ? '#00FF46' : '#ff4444',
                         fontFamily: 'var(--font-capita), Capita, Georgia, serif',
                         fontWeight: 700,
+                        fontSize: '28px',
                       }}
                     >
                       {probability.toFixed(0)}%
                     </span>
                   ) : (
                     <span 
-                      className="text-white/40 text-lg"
-                      style={{ fontFamily: 'var(--font-capita), Capita, Georgia, serif' }}
+                      style={{ 
+                        color: 'rgba(255,255,255,0.4)',
+                        fontFamily: 'var(--font-capita), Capita, Georgia, serif',
+                        fontSize: '24px',
+                      }}
                     >
                       —
                     </span>
                   )}
                 </div>
-                {/* Progress Bar */}
-                <div className="h-2 bg-[#1a472a] rounded-full overflow-hidden">
+                {/* Progress Bar mit Gradient */}
+                <div 
+                  style={{ 
+                    height: '8px', 
+                    backgroundColor: '#1a472a', 
+                    borderRadius: '4px',
+                    overflow: 'hidden',
+                  }}
+                >
                   <motion.div
-                    className="h-full rounded-full"
-                    style={{ backgroundColor: '#2BB752' }}
+                    style={{ 
+                      height: '100%',
+                      borderRadius: '4px',
+                      background: 'linear-gradient(90deg, #00FF46 0%, #2BB752 100%)',
+                    }}
                     initial={{ width: 0 }}
                     animate={{ width: probability !== null ? `${probability}%` : '0%' }}
                     transition={{ duration: 0.5, ease: 'easeOut' }}
