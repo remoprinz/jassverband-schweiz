@@ -4,8 +4,8 @@ import { useState, useCallback, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { JASS_CARDS, CARDS_BY_SUIT, type JassCard, type CardLocale, type Suit, type Value, getSuitLabel, getValueLabel } from '@/lib/calculator/cards';
-import { calculateProbability, type CalculationConfig, type OpponentType, type Comparator, getAvailableCards, getMaxPossibleInSuit } from '@/lib/calculator/jassLogic';
+import { JASS_CARDS, CARDS_BY_SUIT, type JassCard, type CardLocale, type Suit, type Value, getSuitLabel } from '@/lib/calculator/cards';
+import { calculateProbability, type CalculationConfig, type OpponentType, type Comparator, getMaxPossibleInSuit } from '@/lib/calculator/jassLogic';
 
 const MAX_CARDS = 9;
 
@@ -75,18 +75,13 @@ export default function JasskalkulatorPage() {
     }
   }, [selectedCards, config.targetCard, config.condition]);
 
-  const suitIcons = ['E', 'R', 'S', 'L'] as Suit[];
-  const valueLabels: Record<CardLocale, Record<Value, string>> = {
-    de: { A: 'Ass', K: 'König', O: 'Ober', U: 'Under', '10': 'Banner', '9': '9', '8': '8', '7': '7', '6': '6' },
-    fr: { A: 'As', K: 'Roi', O: 'Dame', U: 'Valet', '10': 'Dix', '9': '9', '8': '8', '7': '7', '6': '6' }
-  };
+  const suitOrder = ['E', 'R', 'S', 'L'] as Suit[];
 
   return (
     <div 
       className="min-h-screen w-full"
       style={{ 
         backgroundColor: '#1a472a',
-        fontFamily: 'var(--font-family-sans)',
       }}
     >
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 py-4 sm:py-6">
@@ -98,39 +93,46 @@ export default function JasskalkulatorPage() {
               className="w-8 h-8 flex items-center justify-center text-white/60 hover:text-white transition-colors"
             >
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
               </svg>
             </Link>
-            <h1 
-              className="text-white text-lg sm:text-xl flex items-center gap-2"
-              style={{ fontFamily: 'var(--font-family-serif)', fontWeight: 700 }}
-            >
-              <span className="text-xl sm:text-2xl">🎴</span>
-              JassSimulator
-            </h1>
+            <div className="flex items-center gap-2">
+              <div className="w-5 h-5 bg-red-600 rounded-sm flex items-center justify-center">
+                <span className="text-white text-xs font-bold">J</span>
+              </div>
+              <h1 
+                className="text-white text-lg sm:text-xl"
+                style={{ 
+                  fontFamily: 'var(--font-capita), Capita, Georgia, serif',
+                  fontWeight: 700,
+                }}
+              >
+                JassSimulator
+              </h1>
+            </div>
           </div>
           
           {/* DE/FR Toggle */}
-          <div className="flex items-center gap-1 sm:gap-2">
+          <div className="flex items-center gap-1">
             <button
               onClick={() => setCardLocale('de')}
-              className={`px-2 sm:px-3 py-1 sm:py-1.5 rounded text-xs sm:text-sm transition-all ${
+              className={`px-2.5 py-1 rounded text-sm transition-all ${
                 cardLocale === 'de'
-                  ? 'bg-[#2BB752] text-white font-semibold'
-                  : 'bg-[#1a1a1a] text-white/60 border border-[#333] hover:text-white hover:border-[#00FF46]'
+                  ? 'bg-[#2BB752] text-white'
+                  : 'bg-transparent text-white/60 hover:text-white'
               }`}
-              style={{ fontFamily: 'var(--font-family-sans)', fontWeight: 600 }}
+              style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', fontWeight: 600 }}
             >
               DE
             </button>
             <button
               onClick={() => setCardLocale('fr')}
-              className={`px-2 sm:px-3 py-1 sm:py-1.5 rounded text-xs sm:text-sm transition-all ${
+              className={`px-2.5 py-1 rounded text-sm transition-all ${
                 cardLocale === 'fr'
-                  ? 'bg-[#2BB752] text-white font-semibold'
-                  : 'bg-[#1a1a1a] text-white/60 border border-[#333] hover:text-white hover:border-[#00FF46]'
+                  ? 'bg-[#2BB752] text-white'
+                  : 'bg-transparent text-white/60 hover:text-white'
               }`}
-              style={{ fontFamily: 'var(--font-family-sans)', fontWeight: 600 }}
+              style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', fontWeight: 600 }}
             >
               FR
             </button>
@@ -138,25 +140,25 @@ export default function JasskalkulatorPage() {
         </header>
 
         {/* Main Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_340px] xl:grid-cols-[1fr_400px] gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] xl:grid-cols-[1fr_380px] gap-6 lg:gap-8">
           {/* Left: Card Grid */}
           <div>
-            <div className="flex items-center justify-between mb-3 sm:mb-4">
+            <div className="flex items-center justify-between mb-3">
               <span 
                 className="text-white text-sm sm:text-base"
-                style={{ fontFamily: 'var(--font-family-sans)', fontWeight: 600 }}
+                style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', fontWeight: 500 }}
               >
                 Ich habe folgende Karten:
               </span>
               <span 
                 className="text-white text-sm sm:text-base"
-                style={{ fontFamily: 'var(--font-family-sans)', fontWeight: 600 }}
+                style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', fontWeight: 500 }}
               >
                 {selectedCards.length} | {MAX_CARDS}
               </span>
             </div>
 
-            {/* Card Grid - 4 rows (suits) x 9 columns (values) */}
+            {/* Card Grid */}
             <div className="space-y-1.5 sm:space-y-2">
               {CARDS_BY_SUIT.map((suitCards, suitIndex) => (
                 <div key={suitIndex} className="flex gap-1 sm:gap-1.5">
@@ -169,21 +171,18 @@ export default function JasskalkulatorPage() {
                         key={card.id}
                         onClick={() => !isDisabled && handleCardSelect(card)}
                         disabled={isDisabled}
-                        className={`relative aspect-[83/130] rounded overflow-hidden transition-all ${
-                          isSelected 
-                            ? 'ring-2 ring-[#00FF46] z-10 brightness-100' 
-                            : isDisabled 
-                              ? 'opacity-30 cursor-not-allowed brightness-50'
-                              : 'brightness-[0.6] hover:brightness-90 cursor-pointer'
-                        }`}
+                        className="relative aspect-[83/130] rounded-lg overflow-hidden transition-all"
                         style={{
-                          width: 'calc((100% - 8 * 4px) / 9)',
+                          width: 'calc((100% - 8 * 6px) / 9)',
+                          opacity: isDisabled ? 0.35 : 1,
+                          filter: isSelected ? 'none' : (isDisabled ? 'grayscale(0.5)' : 'brightness(0.7)'),
                           boxShadow: isSelected 
-                            ? '3px 4px 4px rgba(0,0,0,0.25)'
-                            : '2px 3px 3px rgba(0,0,0,0.15)',
-                          transform: isSelected ? 'scale(1.05)' : 'scale(1)',
+                            ? '0 0 0 3px #00FF46, 0 0 12px rgba(0, 255, 70, 0.5)'
+                            : '2px 3px 6px rgba(0,0,0,0.3)',
+                          borderRadius: '8px',
+                          cursor: isDisabled ? 'not-allowed' : 'pointer',
                         }}
-                        whileTap={!isDisabled ? { scale: 0.98 } : undefined}
+                        whileTap={!isDisabled ? { scale: 0.97 } : undefined}
                       >
                         <Image
                           src={card.getImage(cardLocale)}
@@ -202,16 +201,16 @@ export default function JasskalkulatorPage() {
           </div>
 
           {/* Right: Config Panel */}
-          <div className="space-y-3 sm:space-y-4 mt-4 lg:mt-0">
+          <div className="space-y-4 mt-4 lg:mt-0">
             <span 
               className="text-white text-sm sm:text-base block"
-              style={{ fontFamily: 'var(--font-family-sans)', fontWeight: 600 }}
+              style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', fontWeight: 500 }}
             >
               Wie gross ist die Wahrscheinlichkeit...
             </span>
 
             {/* Opponent Selection */}
-            <div className="flex gap-1.5 sm:gap-2">
+            <div className="flex gap-2">
               {[
                 { key: 'partner', label: 'Mein\nPartner', type: 'partner' as OpponentType },
                 { key: 'opponents_one', label: 'Einer der\nGegner', type: 'opponents_one' as OpponentType },
@@ -220,21 +219,26 @@ export default function JasskalkulatorPage() {
                 <button
                   key={opt.key}
                   onClick={() => setConfig((prev) => ({ ...prev, opponentType: opt.type }))}
-                  className={`flex-1 py-2 px-2 rounded text-[10px] sm:text-xs whitespace-pre-line text-center leading-tight transition-all ${
-                    config.opponentType === opt.type
-                      ? 'bg-[#2BB752] text-white border border-[#00FF46]'
-                      : 'bg-[#1a1a1a] text-white border border-[#333] hover:border-[#00FF46]'
-                  }`}
-                  style={{ fontFamily: 'var(--font-family-sans)', fontWeight: 500 }}
+                  className="flex-1 py-2.5 px-2 rounded-lg text-xs whitespace-pre-line text-center leading-tight transition-all"
+                  style={{
+                    fontFamily: 'var(--font-inter), Inter, sans-serif',
+                    fontWeight: 500,
+                    backgroundColor: config.opponentType === opt.type ? '#2BB752' : 'transparent',
+                    color: 'white',
+                    border: config.opponentType === opt.type ? '1px solid #2BB752' : '1px solid #3d5c45',
+                  }}
                 >
                   {opt.label}
                 </button>
               ))}
             </div>
 
-            {/* Suit Selection - with real SVG icons */}
-            <div className="flex gap-1.5 sm:gap-2">
-              {suitIcons.map((suit) => {
+            {/* Divider */}
+            <div className="h-px bg-[#3d5c45]" />
+
+            {/* Suit Selection */}
+            <div className="flex gap-2">
+              {suitOrder.map((suit) => {
                 const isSelected = config.targetCard?.suit === suit;
                 const suitCards = selectedCards.length === MAX_CARDS 
                   ? JASS_CARDS.filter(c => c.suit === suit && !selectedCards.some(sc => sc.id === c.id))
@@ -250,33 +254,37 @@ export default function JasskalkulatorPage() {
                       }
                     }}
                     disabled={!hasAvailable && selectedCards.length === MAX_CARDS}
-                    className={`flex-1 h-12 sm:h-14 rounded flex items-center justify-center transition-all ${
-                      isSelected
-                        ? 'bg-[#2BB752] border-2 border-[#00FF46]'
-                        : hasAvailable || selectedCards.length < MAX_CARDS
-                          ? 'bg-[#1a1a1a] border border-[#333] hover:border-[#00FF46]'
-                          : 'bg-[#1a1a1a] border border-[#333] opacity-40 cursor-not-allowed'
-                    }`}
+                    className="flex-1 h-14 sm:h-16 rounded-lg flex items-center justify-center transition-all"
+                    style={{
+                      backgroundColor: isSelected ? '#2BB752' : 'transparent',
+                      border: isSelected ? '2px solid #00FF46' : '1px solid #3d5c45',
+                      opacity: (!hasAvailable && selectedCards.length === MAX_CARDS) ? 0.4 : 1,
+                      cursor: (!hasAvailable && selectedCards.length === MAX_CARDS) ? 'not-allowed' : 'pointer',
+                    }}
                   >
                     <Image
                       src={SUIT_ICONS[cardLocale][suit]}
                       alt={getSuitLabel(suit, cardLocale)}
-                      width={28}
-                      height={28}
-                      className="w-6 h-6 sm:w-7 sm:h-7 object-contain"
+                      width={32}
+                      height={32}
+                      className="w-7 h-7 sm:w-8 sm:h-8 object-contain"
                     />
                   </button>
                 );
               })}
             </div>
 
-            {/* Value Selection - Row 1: Ass, König, Ober, Under, Banner */}
-            <div className="grid grid-cols-5 gap-1.5 sm:gap-2">
+            {/* Divider */}
+            <div className="h-px bg-[#3d5c45]" />
+
+            {/* Value Selection - Row 1 */}
+            <div className="grid grid-cols-5 gap-1.5">
               {(['A', 'K', 'O', 'U', '10'] as Value[]).map((value) => {
                 const targetSuit = config.targetCard?.suit;
                 const card = targetSuit ? JASS_CARDS.find(c => c.suit === targetSuit && c.value === value) : null;
                 const isSelected = config.targetCard?.value === value;
                 const isAvailable = !card || !selectedCards.some(c => c.id === card.id);
+                const labels: Record<string, string> = { A: 'Ass', K: 'König', O: 'Ober', U: 'Under', '10': '10' };
                 
                 return (
                   <button
@@ -287,23 +295,24 @@ export default function JasskalkulatorPage() {
                       }
                     }}
                     disabled={!isAvailable || !targetSuit}
-                    className={`py-1.5 sm:py-2 rounded text-xs sm:text-sm transition-all ${
-                      isSelected
-                        ? 'bg-[#2BB752] text-white border border-[#00FF46]'
-                        : isAvailable && targetSuit
-                          ? 'bg-[#1a1a1a] text-white border border-[#333] hover:border-[#00FF46]'
-                          : 'bg-[#1a1a1a] text-white/40 border border-[#333] cursor-not-allowed'
-                    }`}
-                    style={{ fontFamily: 'var(--font-family-sans)', fontWeight: 500 }}
+                    className="py-2 rounded-lg text-xs sm:text-sm transition-all"
+                    style={{
+                      fontFamily: 'var(--font-inter), Inter, sans-serif',
+                      fontWeight: 500,
+                      backgroundColor: isSelected ? '#2BB752' : 'transparent',
+                      color: (isAvailable && targetSuit) ? 'white' : 'rgba(255,255,255,0.4)',
+                      border: isSelected ? '1px solid #2BB752' : '1px solid #3d5c45',
+                      cursor: (!isAvailable || !targetSuit) ? 'not-allowed' : 'pointer',
+                    }}
                   >
-                    {valueLabels[cardLocale][value]}
+                    {labels[value]}
                   </button>
                 );
               })}
             </div>
             
-            {/* Value Selection - Row 2: 9, 8, 7, 6 */}
-            <div className="grid grid-cols-4 gap-1.5 sm:gap-2">
+            {/* Value Selection - Row 2 */}
+            <div className="grid grid-cols-4 gap-1.5">
               {(['9', '8', '7', '6'] as Value[]).map((value) => {
                 const targetSuit = config.targetCard?.suit;
                 const card = targetSuit ? JASS_CARDS.find(c => c.suit === targetSuit && c.value === value) : null;
@@ -319,23 +328,27 @@ export default function JasskalkulatorPage() {
                       }
                     }}
                     disabled={!isAvailable || !targetSuit}
-                    className={`py-1.5 sm:py-2 rounded text-xs sm:text-sm transition-all ${
-                      isSelected
-                        ? 'bg-[#2BB752] text-white border border-[#00FF46]'
-                        : isAvailable && targetSuit
-                          ? 'bg-[#1a1a1a] text-white border border-[#333] hover:border-[#00FF46]'
-                          : 'bg-[#1a1a1a] text-white/40 border border-[#333] cursor-not-allowed'
-                    }`}
-                    style={{ fontFamily: 'var(--font-family-sans)', fontWeight: 500 }}
+                    className="py-2 rounded-lg text-xs sm:text-sm transition-all"
+                    style={{
+                      fontFamily: 'var(--font-inter), Inter, sans-serif',
+                      fontWeight: 500,
+                      backgroundColor: isSelected ? '#2BB752' : 'transparent',
+                      color: (isAvailable && targetSuit) ? 'white' : 'rgba(255,255,255,0.4)',
+                      border: isSelected ? '1px solid #2BB752' : '1px solid #3d5c45',
+                      cursor: (!isAvailable || !targetSuit) ? 'not-allowed' : 'pointer',
+                    }}
                   >
-                    {valueLabels[cardLocale][value]}
+                    {value}
                   </button>
                 );
               })}
             </div>
 
+            {/* Divider */}
+            <div className="h-px bg-[#3d5c45]" />
+
             {/* Comparator Selection */}
-            <div className="flex gap-1.5 sm:gap-2">
+            <div className="flex gap-1.5">
               {[
                 { key: 'atLeast', label: 'mindestens' },
                 { key: 'exact', label: 'genau' },
@@ -344,12 +357,14 @@ export default function JasskalkulatorPage() {
                 <button
                   key={opt.key}
                   onClick={() => setConfig((prev) => ({ ...prev, comparator: opt.key as Comparator }))}
-                  className={`flex-1 py-1.5 sm:py-2 rounded text-xs sm:text-sm transition-all ${
-                    config.comparator === opt.key
-                      ? 'bg-[#2BB752] text-white border border-[#00FF46]'
-                      : 'bg-[#1a1a1a] text-white border border-[#333] hover:border-[#00FF46]'
-                  }`}
-                  style={{ fontFamily: 'var(--font-family-sans)', fontWeight: 500 }}
+                  className="flex-1 py-2 rounded-lg text-xs sm:text-sm transition-all"
+                  style={{
+                    fontFamily: 'var(--font-inter), Inter, sans-serif',
+                    fontWeight: 500,
+                    backgroundColor: config.comparator === opt.key ? '#2BB752' : 'transparent',
+                    color: 'white',
+                    border: config.comparator === opt.key ? '1px solid #2BB752' : '1px solid #3d5c45',
+                  }}
                 >
                   {opt.label}
                 </button>
@@ -357,15 +372,17 @@ export default function JasskalkulatorPage() {
             </div>
 
             {/* Condition Selection - Row 1 */}
-            <div className="grid grid-cols-5 gap-1.5 sm:gap-2">
+            <div className="grid grid-cols-5 gap-1.5">
               <button
                 onClick={() => setConfig((prev) => ({ ...prev, condition: 0 }))}
-                className={`py-1.5 sm:py-2 rounded text-xs sm:text-sm transition-all ${
-                  config.condition === 0
-                    ? 'bg-[#2BB752] text-white border border-[#00FF46]'
-                    : 'bg-[#1a1a1a] text-white border border-[#333] hover:border-[#00FF46]'
-                }`}
-                style={{ fontFamily: 'var(--font-family-sans)', fontWeight: 500 }}
+                className="py-2 rounded-lg text-xs sm:text-sm transition-all"
+                style={{
+                  fontFamily: 'var(--font-inter), Inter, sans-serif',
+                  fontWeight: 500,
+                  backgroundColor: config.condition === 0 ? '#2BB752' : 'transparent',
+                  color: 'white',
+                  border: config.condition === 0 ? '1px solid #2BB752' : '1px solid #3d5c45',
+                }}
               >
                 blutt
               </button>
@@ -374,14 +391,15 @@ export default function JasskalkulatorPage() {
                   key={n}
                   onClick={() => setConfig((prev) => ({ ...prev, condition: n }))}
                   disabled={n > maxCondition}
-                  className={`py-1.5 sm:py-2 rounded text-xs sm:text-sm transition-all ${
-                    config.condition === n
-                      ? 'bg-[#2BB752] text-white border border-[#00FF46]'
-                      : n <= maxCondition
-                        ? 'bg-[#1a1a1a] text-white border border-[#333] hover:border-[#00FF46]'
-                        : 'bg-[#1a1a1a] text-white/40 border border-[#333] cursor-not-allowed'
-                  }`}
-                  style={{ fontFamily: 'var(--font-family-sans)', fontWeight: 500 }}
+                  className="py-2 rounded-lg text-xs sm:text-sm transition-all"
+                  style={{
+                    fontFamily: 'var(--font-inter), Inter, sans-serif',
+                    fontWeight: 500,
+                    backgroundColor: config.condition === n ? '#2BB752' : 'transparent',
+                    color: n <= maxCondition ? 'white' : 'rgba(255,255,255,0.4)',
+                    border: config.condition === n ? '1px solid #2BB752' : '1px solid #3d5c45',
+                    cursor: n > maxCondition ? 'not-allowed' : 'pointer',
+                  }}
                 >
                   zu {n}.
                 </button>
@@ -389,20 +407,21 @@ export default function JasskalkulatorPage() {
             </div>
             
             {/* Condition Selection - Row 2 */}
-            <div className="grid grid-cols-4 gap-1.5 sm:gap-2">
+            <div className="grid grid-cols-4 gap-1.5">
               {[6, 7, 8, 9].map((n) => (
                 <button
                   key={n}
                   onClick={() => setConfig((prev) => ({ ...prev, condition: n }))}
                   disabled={n > maxCondition}
-                  className={`py-1.5 sm:py-2 rounded text-xs sm:text-sm transition-all ${
-                    config.condition === n
-                      ? 'bg-[#2BB752] text-white border border-[#00FF46]'
-                      : n <= maxCondition
-                        ? 'bg-[#1a1a1a] text-white border border-[#333] hover:border-[#00FF46]'
-                        : 'bg-[#1a1a1a] text-white/40 border border-[#333] cursor-not-allowed'
-                  }`}
-                  style={{ fontFamily: 'var(--font-family-sans)', fontWeight: 500 }}
+                  className="py-2 rounded-lg text-xs sm:text-sm transition-all"
+                  style={{
+                    fontFamily: 'var(--font-inter), Inter, sans-serif',
+                    fontWeight: 500,
+                    backgroundColor: config.condition === n ? '#2BB752' : 'transparent',
+                    color: n <= maxCondition ? 'white' : 'rgba(255,255,255,0.4)',
+                    border: config.condition === n ? '1px solid #2BB752' : '1px solid #3d5c45',
+                    cursor: n > maxCondition ? 'not-allowed' : 'pointer',
+                  }}
                 >
                   zu {n}.
                 </button>
@@ -416,47 +435,58 @@ export default function JasskalkulatorPage() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
-                className="rounded-xl p-3 sm:p-4 flex items-center justify-between"
+                className="rounded-xl p-4"
                 style={{
-                  backgroundColor: 'rgba(0, 0, 0, 0.6)',
-                  border: '0.5px solid #00FF46',
-                  borderRadius: '12px',
+                  backgroundColor: 'rgba(0, 0, 0, 0.4)',
+                  border: '1px solid #3d5c45',
                 }}
               >
-                <span 
-                  className="text-white text-sm sm:text-base"
-                  style={{ fontFamily: 'var(--font-family-sans)', fontWeight: 500 }}
-                >
-                  Wahrscheinlichkeit
-                </span>
-                {probability !== null ? (
+                <div className="flex items-center justify-between mb-2">
                   <span 
-                    className="text-xl sm:text-2xl"
-                    style={{ 
-                      color: probability >= 50 ? '#2BB752' : '#ff4444',
-                      fontFamily: 'var(--font-family-serif)',
-                      fontWeight: 700,
-                    }}
+                    className="text-white text-sm sm:text-base"
+                    style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', fontWeight: 400 }}
                   >
-                    {probability.toFixed(0)}%
+                    Wahrscheinlichkeit
                   </span>
-                ) : (
-                  <span 
-                    className="text-white/40 text-base sm:text-lg"
-                    style={{ fontFamily: 'var(--font-family-serif)' }}
-                  >
-                    —
-                  </span>
-                )}
+                  {probability !== null ? (
+                    <span 
+                      className="text-xl sm:text-2xl"
+                      style={{ 
+                        color: probability >= 50 ? '#2BB752' : '#ff4444',
+                        fontFamily: 'var(--font-capita), Capita, Georgia, serif',
+                        fontWeight: 700,
+                      }}
+                    >
+                      {probability.toFixed(0)}%
+                    </span>
+                  ) : (
+                    <span 
+                      className="text-white/40 text-lg"
+                      style={{ fontFamily: 'var(--font-capita), Capita, Georgia, serif' }}
+                    >
+                      —
+                    </span>
+                  )}
+                </div>
+                {/* Progress Bar */}
+                <div className="h-2 bg-[#1a472a] rounded-full overflow-hidden">
+                  <motion.div
+                    className="h-full rounded-full"
+                    style={{ backgroundColor: '#2BB752' }}
+                    initial={{ width: 0 }}
+                    animate={{ width: probability !== null ? `${probability}%` : '0%' }}
+                    transition={{ duration: 0.5, ease: 'easeOut' }}
+                  />
+                </div>
               </motion.div>
             </AnimatePresence>
           </div>
         </div>
 
         {/* Footer Icons */}
-        <div className="flex justify-end gap-2 mt-4">
-          {suitIcons.map((suit) => (
-            <div key={suit} className="w-5 h-5 sm:w-6 sm:h-6 opacity-60">
+        <div className="flex justify-end gap-2 mt-6">
+          {suitOrder.map((suit) => (
+            <div key={suit} className="w-5 h-5 sm:w-6 sm:h-6 opacity-50">
               <Image
                 src={SUIT_ICONS[cardLocale][suit]}
                 alt={getSuitLabel(suit, cardLocale)}
