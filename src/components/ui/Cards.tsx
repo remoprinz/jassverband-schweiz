@@ -275,7 +275,7 @@ export function ProjectCard({ title, description, href, icon, ctaText, external 
       </h3>
       
       <p 
-        className="mb-5"
+        className="mb-5 flex-1"
         style={{ 
           fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
           fontWeight: 400,
@@ -288,7 +288,7 @@ export function ProjectCard({ title, description, href, icon, ctaText, external 
       </p>
       
       <div 
-        className="flex items-center"
+        className="flex items-center mt-auto"
         style={{
           fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
           fontWeight: 500,
@@ -313,7 +313,7 @@ export function ProjectCard({ title, description, href, icon, ctaText, external 
 
   if (isDisabled) {
     return (
-      <BaseCard className="p-8" hover={false}>
+      <BaseCard className="p-8 h-full flex flex-col" hover={false}>
         {content}
       </BaseCard>
     );
@@ -324,7 +324,7 @@ export function ProjectCard({ title, description, href, icon, ctaText, external 
       href={href}
       target={external ? "_blank" : "_self"}
       rel={external ? "noopener noreferrer" : ""}
-      className="block bg-white p-8 group transition-all duration-300"
+      className="block bg-white p-8 h-full flex flex-col group transition-all duration-300"
       style={{
         borderRadius: 'var(--radius-card-lg)',
         boxShadow: 'var(--shadow-card)'

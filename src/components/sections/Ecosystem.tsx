@@ -106,7 +106,7 @@ type BadgeType = 'free' | 'member' | 'preview';
 
 function BadgePill({ type }: { type: BadgeType }) {
   const config: Record<BadgeType, { label: string; bg: string; color: string }> = {
-    free: { label: 'Gratis für alle', bg: 'rgba(34, 139, 34, 0.12)', color: '#228b22' },
+    free: { label: 'Frei zugänglich', bg: 'rgba(34, 139, 34, 0.12)', color: '#228b22' },
     member: { label: 'Für Mitglieder', bg: 'rgba(255, 0, 0, 0.08)', color: 'var(--color-primary)' },
     preview: { label: 'Vorschau', bg: 'rgba(0, 0, 0, 0.06)', color: 'var(--color-foreground-muted)' },
   };
@@ -146,7 +146,7 @@ export function Ecosystem({
     title: string;
     description: string;
   }> = [
-    { key: 'whatsapp', href: '#', icon: icons.whatsapp, ctaText: 'Beitreten', badge: 'free', comingSoon: true, ...whatsapp },
+    { key: 'whatsapp', href: '#', icon: icons.whatsapp, ctaText: 'Beitreten', badge: 'member', comingSoon: true, ...whatsapp },
     { key: 'jasswiki', href: 'https://jasswiki.ch', icon: icons.jasswiki, ctaText: 'Erkunden', badge: 'free', ...jasswiki },
     { key: 'jasskalkulator', href: '/jasskalkulator', icon: icons.jasskalkulator, ctaText: 'Berechnen', badge: 'free', external: false, ...jasskalkulator },
     { key: 'jassguru', href: 'https://jassguru.ch', icon: icons.jassguru, ctaText: 'Profil erstellen', badge: 'member', ...jassguru },
@@ -173,7 +173,7 @@ export function Ecosystem({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.06 }}
-            className="relative"
+            className="relative h-full"
           >
             <div className="absolute top-3 right-3 z-10">
               <BadgePill type={project.badge} />

@@ -18,7 +18,7 @@ interface VisionProps {
 export function Vision({ title, subtitle, copy, cta, ctaHref }: VisionProps) {
   return (
     <section
-      className="relative w-full overflow-hidden py-20 md:py-28"
+      className="relative w-full overflow-hidden py-20 md:py-24"
       style={{
         backgroundImage: 'url(/images/backgrounds/chalkboard.jpg)',
         backgroundSize: 'cover',

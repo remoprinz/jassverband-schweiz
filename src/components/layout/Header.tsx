@@ -57,7 +57,7 @@ export function Header({ locale, nav }: HeaderProps) {
   }, []);
 
   const navItems = [
-    { href: `/${locale}/schweizermeisterschaft`, label: nav.schweizermeisterschaft },
+    { href: `/${locale}/schweizermeisterschaft`, label: nav.schweizermeisterschaft, shortLabel: 'Meisterschaft' },
     { href: `/${locale}/plattformen`, label: nav.plattformen },
     { href: `/${locale}/verband`, label: nav.verband },
     { href: `/${locale}/news`, label: nav.news },
@@ -117,7 +117,7 @@ export function Header({ locale, nav }: HeaderProps) {
                 style={{
                   fontFamily: 'var(--font-capita), Capita, Georgia, serif',
                   fontWeight: 700,
-                  fontSize: '18px',
+                  fontSize: '16px',
                   lineHeight: '1',
                   color: isActive(item.href) 
                     ? '#ff0000' 
@@ -140,7 +140,7 @@ export function Header({ locale, nav }: HeaderProps) {
                   }
                 }}
               >
-                {item.label}
+                {'shortLabel' in item && item.shortLabel ? item.shortLabel : item.label}
               </Link>
             ))}
             
