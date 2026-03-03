@@ -11,14 +11,33 @@ interface HeroProps {
   cta: string;
 }
 
-const CARD_SET = [
+const DE_CARD_SET = [
   'card-01', 'card-02', 'card-03', 'card-04', 'card-05',
   'card-06', 'card-07', 'card-08', 'card-09', 'card-10',
 ];
 
+const FR_CARD_SET = [
+  'card-01', 'card-02', 'card-03', 'card-04', 'card-05',
+  'card-06', 'card-07', 'card-08', 'card-09', 'card-10', 'card-11',
+];
+
+const FRENCH_CARD_RATIO = 0.3;
+
+function pickUniqueCards(cardSet: string[], count: number, language: 'de' | 'fr'): string[] {
+  const shuffled = [...cardSet].sort(() => Math.random() - 0.5);
+  return shuffled.slice(0, Math.min(count, cardSet.length)).map((card) => `/cards/${language}/${card}.png`);
+}
+
 function pickRandomCards(count: number): string[] {
-  const shuffled = [...CARD_SET].sort(() => Math.random() - 0.5);
-  return shuffled.slice(0, count).map(c => `/cards/de/${c}.png`);
+  const expectedFr = count * FRENCH_CARD_RATIO;
+  const frFloor = Math.floor(expectedFr);
+  const frCount = frFloor + (Math.random() < expectedFr - frFloor ? 1 : 0);
+  const deCount = count - frCount;
+
+  const deCards = pickUniqueCards(DE_CARD_SET, deCount, 'de');
+  const frCards = pickUniqueCards(FR_CARD_SET, frCount, 'fr');
+
+  return [...deCards, ...frCards].sort(() => Math.random() - 0.5);
 }
 
 function randomCardEntry(side: 'left' | 'right') {
@@ -55,7 +74,17 @@ function randomCardEntry(side: 'left' | 'right') {
  *   21:144 (rechts-unten): x=1034,y=2146 → L=71.81%, T=(2146-1530)/920=66.96%  rot=+8.34°
  */
 export function Hero({ title, subtitle, cta }: HeroProps) {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   const cardEntries = useMemo(() => {
+    if (!isMounted) {
+      return null;
+    }
+
     const cards = pickRandomCards(8);
     return {
       leftTop: { ...randomCardEntry('left'), src: cards[0] },
@@ -67,7 +96,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
       mobileRight1: { ...randomCardEntry('right'), src: cards[6] },
       mobileRight2: { ...randomCardEntry('right'), src: cards[7] },
     };
-  }, []);
+  }, [isMounted]);
 
   return (
     <section
@@ -116,155 +145,175 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
 
       {/* ── KARTEN ─────────────────────────────────────────────────────── */}
 
-      {/* CARD LINKS OBEN – fliegt von links-oben ein */}
-      <motion.div
-        className="absolute z-10 hidden lg:block"
-        style={{ left: '12.18%', top: '46.304%', width: '11.042%' }}
-        initial={{ opacity: 0, x: cardEntries.leftTop.x, y: cardEntries.leftTop.y, rotate: cardEntries.leftTop.rotate }}
-        animate={{ opacity: 1, x: 0, y: 0, rotate: 15.8 }}
-        transition={{ duration: 0.7, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
-      >
-        <Image
-          src={cardEntries.leftTop.src}
-          alt="Jasskarte"
-          width={159}
-          height={250}
-          className="w-full h-auto"
-          style={{ borderRadius: '14px', filter: 'drop-shadow(0 15px 25px rgba(0,0,0,0.4))' }}
-          priority
-        />
-      </motion.div>
+      {cardEntries && (
+        <>
+          {/* CARD LINKS OBEN – fliegt von links-oben ein */}
+          <motion.div
+            className="absolute z-10 hidden lg:block"
+            style={{
+              left: 'calc(var(--hero-felt-left) + 4.903%)',
+              top: '46.304%',
+              width: '11.042%',
+            }}
+            initial={{ opacity: 0, x: cardEntries.leftTop.x, y: cardEntries.leftTop.y, rotate: cardEntries.leftTop.rotate }}
+            animate={{ opacity: 1, x: 0, y: 0, rotate: 15.8 }}
+            transition={{ duration: 0.7, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+          >
+            <Image
+              src={cardEntries.leftTop.src}
+              alt="Jasskarte"
+              width={159}
+              height={250}
+              className="w-full h-auto"
+              style={{ borderRadius: '14px', filter: 'drop-shadow(0 15px 25px rgba(0,0,0,0.4))' }}
+              priority
+            />
+          </motion.div>
 
-      {/* CARD LINKS UNTEN – fliegt von links ein */}
-      <motion.div
-        className="absolute z-10 hidden lg:block"
-        style={{ left: '20.55%', top: '63.370%', width: '11.042%' }}
-        initial={{ opacity: 0, x: cardEntries.leftBottom.x, y: cardEntries.leftBottom.y, rotate: cardEntries.leftBottom.rotate }}
-        animate={{ opacity: 1, x: 0, y: 0, rotate: -27.35 }}
-        transition={{ duration: 0.75, delay: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
-      >
-        <Image
-          src={cardEntries.leftBottom.src}
-          alt="Jasskarte"
-          width={159}
-          height={250}
-          className="w-full h-auto"
-          style={{ borderRadius: '14px', filter: 'drop-shadow(0 18px 28px rgba(0,0,0,0.45))' }}
-          priority
-        />
-      </motion.div>
+          {/* CARD LINKS UNTEN – fliegt von links ein */}
+          <motion.div
+            className="absolute z-10 hidden lg:block"
+            style={{
+              left: 'calc(var(--hero-felt-left) + 11.273%)',
+              top: '63.370%',
+              width: '11.042%',
+            }}
+            initial={{ opacity: 0, x: cardEntries.leftBottom.x, y: cardEntries.leftBottom.y, rotate: cardEntries.leftBottom.rotate }}
+            animate={{ opacity: 1, x: 0, y: 0, rotate: -27.35 }}
+            transition={{ duration: 0.75, delay: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
+          >
+            <Image
+              src={cardEntries.leftBottom.src}
+              alt="Jasskarte"
+              width={159}
+              height={250}
+              className="w-full h-auto"
+              style={{ borderRadius: '14px', filter: 'drop-shadow(0 18px 28px rgba(0,0,0,0.45))' }}
+              priority
+            />
+          </motion.div>
 
-      {/* CARD RECHTS OBEN – fliegt von rechts-oben ein */}
-      <motion.div
-        className="absolute z-10 hidden lg:block"
-        style={{ left: '76.667%', top: '50.870%', width: '11.042%' }}
-        initial={{ opacity: 0, x: cardEntries.rightTop.x, y: cardEntries.rightTop.y, rotate: cardEntries.rightTop.rotate }}
-        animate={{ opacity: 1, x: 0, y: 0, rotate: -16.19 }}
-        transition={{ duration: 0.7, delay: 0.25, ease: [0.25, 0.1, 0.25, 1] }}
-      >
-        <Image
-          src={cardEntries.rightTop.src}
-          alt="Jasskarte"
-          width={159}
-          height={250}
-          className="w-full h-auto"
-          style={{ borderRadius: '14px', filter: 'drop-shadow(0 15px 25px rgba(0,0,0,0.4))' }}
-          priority
-        />
-      </motion.div>
+          {/* CARD RECHTS OBEN – fliegt von rechts-oben ein */}
+          <motion.div
+            className="absolute z-10 hidden lg:block"
+            style={{
+              right: 'calc(100% - (var(--hero-felt-left) + var(--hero-felt-width)) + 4.903%)',
+              top: '48.9%',
+              width: '11.042%',
+            }}
+            initial={{ opacity: 0, x: cardEntries.rightTop.x, y: cardEntries.rightTop.y, rotate: cardEntries.rightTop.rotate }}
+            animate={{ opacity: 1, x: 0, y: 0, rotate: -16.19 }}
+            transition={{ duration: 0.7, delay: 0.25, ease: [0.25, 0.1, 0.25, 1] }}
+          >
+            <Image
+              src={cardEntries.rightTop.src}
+              alt="Jasskarte"
+              width={159}
+              height={250}
+              className="w-full h-auto"
+              style={{ borderRadius: '14px', filter: 'drop-shadow(0 15px 25px rgba(0,0,0,0.4))' }}
+              priority
+            />
+          </motion.div>
 
-      {/* CARD RECHTS UNTEN – fliegt von rechts ein */}
-      <motion.div
-        className="absolute z-10 hidden lg:block"
-        style={{ left: '71.806%', top: '66.957%', width: '11.042%' }}
-        initial={{ opacity: 0, x: cardEntries.rightBottom.x, y: cardEntries.rightBottom.y, rotate: cardEntries.rightBottom.rotate }}
-        animate={{ opacity: 1, x: 0, y: 0, rotate: 8.34 }}
-        transition={{ duration: 0.75, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-      >
-        <Image
-          src={cardEntries.rightBottom.src}
-          alt="Jasskarte"
-          width={159}
-          height={250}
-          className="w-full h-auto"
-          style={{ borderRadius: '14px', filter: 'drop-shadow(0 12px 20px rgba(0,0,0,0.35))' }}
-          priority
-        />
-      </motion.div>
+          {/* CARD RECHTS UNTEN – fliegt von rechts ein */}
+          <motion.div
+            className="absolute z-10 hidden lg:block"
+            style={{
+              right: 'calc(100% - (var(--hero-felt-left) + var(--hero-felt-width)) + 11.273%)',
+              top: '64.987%',
+              width: '11.042%',
+            }}
+            initial={{ opacity: 0, x: cardEntries.rightBottom.x, y: cardEntries.rightBottom.y, rotate: cardEntries.rightBottom.rotate }}
+            animate={{ opacity: 1, x: 0, y: 0, rotate: 8.34 }}
+            transition={{ duration: 0.75, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+          >
+            <Image
+              src={cardEntries.rightBottom.src}
+              alt="Jasskarte"
+              width={159}
+              height={250}
+              className="w-full h-auto"
+              style={{ borderRadius: '14px', filter: 'drop-shadow(0 12px 20px rgba(0,0,0,0.35))' }}
+              priority
+            />
+          </motion.div>
 
-      {/* ── MOBILE KARTEN (nur < md) ─────────────────────────────────── */}
+          {/* ── MOBILE KARTEN (nur < md) ─────────────────────────────────── */}
 
-      {/* MOBILE CARD LINKS 1 */}
-      <motion.div
-        className="absolute z-10 lg:hidden"
-        style={{ left: '3%', top: '55%', width: '22%' }}
-        initial={{ opacity: 0, x: cardEntries.mobileLeft1.x, y: cardEntries.mobileLeft1.y, rotate: cardEntries.mobileLeft1.rotate }}
-        animate={{ opacity: 1, x: 0, y: 0, rotate: 12 }}
-        transition={{ duration: 0.7, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-      >
-        <Image
-          src={cardEntries.mobileLeft1.src}
-          alt="Jasskarte"
-          width={159}
-          height={250}
-          className="w-full h-auto"
-          style={{ borderRadius: '14px', filter: 'drop-shadow(0 8px 16px rgba(0,0,0,0.4))' }}
-        />
-      </motion.div>
+          {/* MOBILE CARD LINKS 1 */}
+          <motion.div
+            className="absolute z-10 lg:hidden"
+            style={{ left: '3%', top: '55%', width: '22%' }}
+            initial={{ opacity: 0, x: cardEntries.mobileLeft1.x, y: cardEntries.mobileLeft1.y, rotate: cardEntries.mobileLeft1.rotate }}
+            animate={{ opacity: 1, x: 0, y: 0, rotate: 12 }}
+            transition={{ duration: 0.7, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+          >
+            <Image
+              src={cardEntries.mobileLeft1.src}
+              alt="Jasskarte"
+              width={159}
+              height={250}
+              className="w-full h-auto"
+              style={{ borderRadius: '6px', filter: 'drop-shadow(0 8px 16px rgba(0,0,0,0.4))' }}
+            />
+          </motion.div>
 
-      {/* MOBILE CARD LINKS 2 */}
-      <motion.div
-        className="absolute z-10 lg:hidden"
-        style={{ left: '18%', top: '62%', width: '22%' }}
-        initial={{ opacity: 0, x: cardEntries.mobileLeft2.x, y: cardEntries.mobileLeft2.y, rotate: cardEntries.mobileLeft2.rotate }}
-        animate={{ opacity: 1, x: 0, y: 0, rotate: -20 }}
-        transition={{ duration: 0.75, delay: 0.45, ease: [0.25, 0.1, 0.25, 1] }}
-      >
-        <Image
-          src={cardEntries.mobileLeft2.src}
-          alt="Jasskarte"
-          width={159}
-          height={250}
-          className="w-full h-auto"
-          style={{ borderRadius: '14px', filter: 'drop-shadow(0 10px 18px rgba(0,0,0,0.45))' }}
-        />
-      </motion.div>
+          {/* MOBILE CARD LINKS 2 */}
+          <motion.div
+            className="absolute z-10 lg:hidden"
+            style={{ left: '18%', top: '62%', width: '22%' }}
+            initial={{ opacity: 0, x: cardEntries.mobileLeft2.x, y: cardEntries.mobileLeft2.y, rotate: cardEntries.mobileLeft2.rotate }}
+            animate={{ opacity: 1, x: 0, y: 0, rotate: -20 }}
+            transition={{ duration: 0.75, delay: 0.45, ease: [0.25, 0.1, 0.25, 1] }}
+          >
+            <Image
+              src={cardEntries.mobileLeft2.src}
+              alt="Jasskarte"
+              width={159}
+              height={250}
+              className="w-full h-auto"
+              style={{ borderRadius: '6px', filter: 'drop-shadow(0 10px 18px rgba(0,0,0,0.45))' }}
+            />
+          </motion.div>
 
-      {/* MOBILE CARD RECHTS 1 */}
-      <motion.div
-        className="absolute z-10 lg:hidden"
-        style={{ right: '3%', top: '55%', width: '22%' }}
-        initial={{ opacity: 0, x: cardEntries.mobileRight1.x, y: cardEntries.mobileRight1.y, rotate: cardEntries.mobileRight1.rotate }}
-        animate={{ opacity: 1, x: 0, y: 0, rotate: -14 }}
-        transition={{ duration: 0.7, delay: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
-      >
-        <Image
-          src={cardEntries.mobileRight1.src}
-          alt="Jasskarte"
-          width={159}
-          height={250}
-          className="w-full h-auto"
-          style={{ borderRadius: '14px', filter: 'drop-shadow(0 8px 16px rgba(0,0,0,0.4))' }}
-        />
-      </motion.div>
+          {/* MOBILE CARD RECHTS 1 */}
+          <motion.div
+            className="absolute z-10 lg:hidden"
+            style={{ right: '3%', top: '55%', width: '22%' }}
+            initial={{ opacity: 0, x: cardEntries.mobileRight1.x, y: cardEntries.mobileRight1.y, rotate: cardEntries.mobileRight1.rotate }}
+            animate={{ opacity: 1, x: 0, y: 0, rotate: -14 }}
+            transition={{ duration: 0.7, delay: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
+          >
+            <Image
+              src={cardEntries.mobileRight1.src}
+              alt="Jasskarte"
+              width={159}
+              height={250}
+              className="w-full h-auto"
+              style={{ borderRadius: '6px', filter: 'drop-shadow(0 8px 16px rgba(0,0,0,0.4))' }}
+            />
+          </motion.div>
 
-      {/* MOBILE CARD RECHTS 2 */}
-      <motion.div
-        className="absolute z-10 lg:hidden"
-        style={{ right: '18%', top: '62%', width: '22%' }}
-        initial={{ opacity: 0, x: cardEntries.mobileRight2.x, y: cardEntries.mobileRight2.y, rotate: cardEntries.mobileRight2.rotate }}
-        animate={{ opacity: 1, x: 0, y: 0, rotate: 8 }}
-        transition={{ duration: 0.75, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
-      >
-        <Image
-          src={cardEntries.mobileRight2.src}
-          alt="Jasskarte"
-          width={159}
-          height={250}
-          className="w-full h-auto"
-          style={{ borderRadius: '14px', filter: 'drop-shadow(0 10px 18px rgba(0,0,0,0.45))' }}
-        />
-      </motion.div>
+          {/* MOBILE CARD RECHTS 2 */}
+          <motion.div
+            className="absolute z-10 lg:hidden"
+            style={{ right: '18%', top: '62%', width: '22%' }}
+            initial={{ opacity: 0, x: cardEntries.mobileRight2.x, y: cardEntries.mobileRight2.y, rotate: cardEntries.mobileRight2.rotate }}
+            animate={{ opacity: 1, x: 0, y: 0, rotate: 8 }}
+            transition={{ duration: 0.75, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+          >
+            <Image
+              src={cardEntries.mobileRight2.src}
+              alt="Jasskarte"
+              width={159}
+              height={250}
+              className="w-full h-auto"
+              style={{ borderRadius: '6px', filter: 'drop-shadow(0 10px 18px rgba(0,0,0,0.45))' }}
+            />
+          </motion.div>
+        </>
+      )}
 
       {/* ── TEXTE – direkt im section als absolute, kein Wrapper ─────── */}
 
@@ -352,9 +401,14 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
         transition={{ delay: 1.5, duration: 2, repeat: Infinity }}
         onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
       >
-        <svg className="w-6 h-6 text-white/70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-        </svg>
+        <Image
+          src="/images/icons/pfeil_unten_weiss.svg"
+          alt=""
+          width={24}
+          height={28}
+          className="opacity-100"
+          aria-hidden="true"
+        />
       </motion.div>
     </section>
   );

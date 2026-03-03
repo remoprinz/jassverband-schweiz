@@ -152,11 +152,12 @@ export function SystemrelevanzVideo({
         {/* FIX 2: EINZIGER TITEL - Capita wie andere Sections */}
         <SafeAnimateOnScroll className="text-center mb-12 md:mb-16">
           <h2 
-            className="text-3xl md:text-4xl lg:text-5xl text-white"
+            className="text-white/95"
             style={{ 
-              fontFamily: 'var(--font-capita)', 
-              fontWeight: 'bold',
-              lineHeight: '1.2'
+              fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
+              fontWeight: 600,
+              fontSize: 'clamp(22px, 3vw, 32px)',
+              lineHeight: 1.4
             }}
           >
             {title}
