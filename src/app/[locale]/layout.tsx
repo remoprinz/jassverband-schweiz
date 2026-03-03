@@ -107,7 +107,15 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
   }
 
   const messages = await getMessages();
-  const nav = messages.nav as { home: string; mitmachen: string; schweizermeisterschaft: string; plattformen: string; leitbild: string; news: string; kontakt: string };
+  const nav = messages.nav as {
+    home: string;
+    schweizermeisterschaft: string;
+    plattformen: string;
+    verband: string;
+    news: string;
+    kontakt: string;
+    mitmachen: string;
+  };
   const footer = messages.footer as { tagline: string; legal: string; impressum: string; datenschutz: string; copyright: string };
 
   return (

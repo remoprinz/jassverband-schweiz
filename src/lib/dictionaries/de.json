@@ -1,16 +1,16 @@
 {
   "metadata": {
-    "title": "Jassverband Schweiz | Tradition trifft Innovation",
-    "description": "Der Jassverband Schweiz fördert das Schweizer Nationalspiel als modernen Denksport. Jugendförderung, digitale Plattformen, nationale Meisterschaften."
+    "title": "Jassverband Schweiz | Die nationale Heimat für Jasser",
+    "description": "Der Jassverband Schweiz organisiert die erste nationale Team-Schieber Schweizermeisterschaft, vernetzt Jasser schweizweit und stellt digitale Werkzeuge für die Jass-Community bereit."
   },
   "nav": {
     "home": "Home",
-    "mitmachen": "Mitglied werden",
     "schweizermeisterschaft": "Schweizermeisterschaft",
     "plattformen": "Plattformen",
-    "leitbild": "Leitbild",
+    "verband": "Verband",
     "news": "News",
-    "kontakt": "Kontakt"
+    "kontakt": "Kontakt",
+    "mitmachen": "Mitmachen"
   },
   "hero": {
     "title": "Jassen ist mehr als ein Kartenspiel.",
@@ -26,24 +26,30 @@
   "systemrelevanz": {
     "title": "Weshalb braucht es den Jassverband?"
   },
-  "statistikTeaser": {
-    "title": "Jede Partie zählt. Jeder Fortschritt ist messbar.",
-    "subtitle": "Das erste nationale Elo-System für Schieber — präzise, fair, transparent.",
-    "intro": "Wer ist dein bester Partner? Gegen wen gewinnst du am häufigsten? Wie hat sich dein Spiel über die Saison entwickelt?",
-    "copy": "Mit dem Jass-Elo-System wird jede Partie erfasst und ausgewertet. Spielstärke von Partner und Gegner, Punkteverlauf, Matsch-Quote — alles fliesst in deine persönliche Statistik ein.",
-    "cta1": "Ranking-System verstehen",
-    "cta1Link": "/de/statistiken",
-    "cta2": "Jass-Profil anlegen",
-    "cta2Link": "/de/mitmachen",
-    "pdfTitle": "Technische Dokumentation",
-    "pdfLink1Label": "Jass-Elo Ranking (PDF)",
-    "pdfLink1Url": "/Jass-Elo Ranking.pdf",
-    "pdfLink2Label": "Whitepaper: Elo-System für Schieber (PDF)",
-    "pdfLink2Url": "/Jass-Elo_ Ein Elo-basiertes Bewertungssystem für den Schieber.pdf"
+  "schweizermeisterschaft": {
+    "title": "Schweizer Team-Schiebermeisterschaft",
+    "subtitle": "Die erste nationale Team-Schieber Schweizermeisterschaft.",
+    "copy": "Der Schieber ist ein Team-Jass. Deshalb treten nicht Einzelspieler, sondern ganze Teams zur Schweizermeisterschaft an. Die erste Meisterschaft wird so gross wie die Community.",
+    "jugend": "Jugendteams spielen in der gleichen Meisterschaft und erhalten eine separate Wertung für den Jugend-Schweizermeister.",
+    "cta": "Mehr zur Schweizermeisterschaft"
   },
   "mission": {
     "title": "Unsere Mission",
     "items": [
+      {
+        "title": "Jasser vernetzen",
+        "mission": "Wir bringen Jasser zusammen — vom Stammtisch bis zur Meisterschaft. Regional, national, digital."
+      },
+      {
+        "title": "Spielstärke messen",
+        "mission": "Dank digitaler Erfassung entstehen erstmals persönliche Jass-Profile. Statistiken, Entwicklung und ein nationales Elo-System machen sichtbar, was bisher im Verborgenen lag."
+      },
+      {
+        "title": "Jassen fördern",
+        "mission": "Wir stellen die Infrastruktur bereit, damit Jassen wächst — von der Schulklasse bis zum Stammtisch, vom Regelwerk bis zur Meisterschaft."
+      }
+    ],
+    "allItems": [
       {
         "title": "Meisterschaften etablieren",
         "mission": "Wir etablieren Jassen als offizielle Wettkampfsportart mit klaren Strukturen, Ranglisten und nationalen Meisterschaften."
@@ -69,7 +75,7 @@
         "mission": "Wir pflegen und entwickeln Jassen als lebendiges Kulturgut, das Menschen über alle gesellschaftlichen Grenzen hinweg verbindet."
       }
     ],
-    "cta": "Weiterlesen"
+    "cta": "Zum Leitbild"
   },
   "pillars": {
     "title": "Unsere Mission",
@@ -87,36 +93,48 @@
     }
   },
   "tournament": {
-    "title": "Schweizer Jugend Team-Schiebermeisterschaft",
-    "subtitle": "Der erste nationale Jass-Wettkampf für junge Teams",
-    "cta": "Jetzt anmelden"
+    "title": "Schweizer Team-Schiebermeisterschaft",
+    "subtitle": "Die erste nationale Team-Schieber Schweizermeisterschaft.",
+    "cta": "Mehr erfahren"
   },
   "ecosystem": {
-    "title": "Das Jass-Ökosystem",
-    "subtitle": "Digitale Werkzeuge für die Jass-Community",
+    "title": "Unsere Plattformen",
+    "subtitle": "Das Jass-Ökosystem des Jassverbands Schweiz",
+    "whatsapp": {
+      "title": "WhatsApp-Community",
+      "description": "Tausche dich mit anderen Jassern aus, finde Mitspieler und bleib informiert."
+    },
     "jasswiki": {
       "title": "JassWiki",
-      "description": "Die Enzyklopädie des Jassens — Regeln, Varianten und Geschichte."
-    },
-    "jassguru": {
-      "title": "JassGuru",
-      "description": "Trainiere deine Skills — Punktetafel, Elo-System und Statistiken."
-    },
-    "jassmeister": {
-      "title": "Jassmeister",
-      "description": "Der Wettkampf — Turniere und Meisterschaften."
+      "description": "Über 100 Artikel zu Regeln, Varianten, Geschichte und Strategie. Die Enzyklopädie des Jassens."
     },
     "jasskalkulator": {
       "title": "Jasskalkulator",
-      "description": "Berechne Wahrscheinlichkeiten — wer hat welche Karten?"
+      "description": "Berechne Wahrscheinlichkeiten während dem Spiel. Welche Trümpfe sind noch im Spiel?"
+    },
+    "jassguru": {
+      "title": "JassGuru",
+      "description": "Erfasse Spiele, verfolge deine Entwicklung und spiele in der nationalen Rangliste mit."
     },
     "jasskarten": {
       "title": "JassKarten",
-      "description": "Premium Schweizer Jasskarten — traditionell & modern."
+      "description": "Premium Schweizer Jasskarten — traditionell und modern. Exklusives Saison-Kartenset für Mitglieder."
+    },
+    "jassreisen": {
+      "title": "JassReisen",
+      "description": "Jassreisen in der Schweiz und im Ausland. Mitglieder erhalten garantierte Plätze und Rabatte."
+    },
+    "jassmeister": {
+      "title": "Jassmeister",
+      "description": "Die Turnierplattform für nationale Meisterschaften. Anmeldung, Qualifikation und Resultate."
     },
     "jasstrainer": {
       "title": "Jasstrainer Göpf",
-      "description": "KI-gestütztes Training — lerne von den Besten."
+      "description": "KI-gestütztes Training — lerne von den Besten. Göpf erklärt dir jeden Stich."
+    },
+    "jassturniere": {
+      "title": "Jass-Turniere",
+      "description": "Neben der Schweizermeisterschaft organisieren Mitglieder eigene Turniere — vom 24-Stunden-Jass bis zum Vereinsturnier."
     }
   },
   "trust": {
@@ -125,51 +143,22 @@
   },
   "homeFaq": {
     "title": "Häufige Fragen",
-    "items": [
-      {
-        "question": "Weshalb braucht es den Jassverband?",
-        "answer": "Jassen ist beim Bundesamt für Kultur als «Lebendige Tradition» gelistet — eine Auszeichnung, die es mit dem Schwingen, dem Jodeln und dem Alphorn teilt. Doch lebendige Traditionen brauchen aktive Pflege.\n\nDer Jassverband Schweiz schliesst drei zentrale Lücken:\n\n**1. Standards & Wissen** — Regelwissen ist über hunderte Webseiten und Stammtische verstreut. Wir stellen die offiziellen Regeln kostenlos, strukturiert und durchsuchbar zur Verfügung.\n\n**2. Nationale Meisterschaften** — Zum ersten Mal in der Geschichte gibt es eine offizielle Team-Schieber Schweizermeisterschaft. Damit wird Jassen messbar, vergleichbar und sportlich anerkannt.\n\n**3. Vernetzung & Zugang** — Wir bringen Jasser zusammen — über Generationen, Kantone und Sprachniveaus hinweg. Kein Jasser soll ohne Tisch bleiben."
-      },
-      {
-        "question": "Was macht der Jassverband konkret?",
-        "answer": "Der Jassverband Schweiz macht Jassen strukturiert, messbar und zugänglich:\n\n🏆 **Meisterschaften organisieren** — Wir führen die erste nationale Team-Schieber Schweizermeisterschaft durch — mit fairen Regeln, transparenter Qualifikation und echtem Wettkampf.\n\n📊 **Ranking-System aufbauen** — Mit dem nationalen Elo-System wird jedes Spiel erfasst. Vom Egg 🥚 bis zum Göpf 👼 — Spielstärke wird messbar und vergleichbar.\n\n📚 **Wissen zugänglich machen** — JassWiki ist die Enzyklopädie des Jassens — über 100 Artikel zu Regeln, Varianten und Geschichte. Kostenlos für alle.\n\n🤝 **Jasser vernetzen** — Wir bauen die Infrastruktur, um Tische, Vereine und Mitspieler zu finden — damit kein Jasser ohne Tisch bleibt."
-      },
-      {
-        "question": "Für wen ist der Verband da?",
-        "answer": "Für alle, die Jassen lieben — oder es lernen wollen.\n\n**Für ambitionierte Jasser** — Du willst wissen, wie stark du bist? Du willst an der Schweizermeisterschaft teilnehmen? Der Verband liefert die Infrastruktur.\n\n**Für Gelegenheitsspieler** — Du spielst regelmässig, aber ohne Wettkampf-Ambitionen? Der Verband vernetzt dich mit anderen Jassern.\n\n**Für Anfänger** — Du kannst noch nicht jassen, willst es aber lernen? JassWiki erklärt die Regeln kostenlos. Der Jasstrainer Göpf trainiert dich geduldig (in Entwicklung).",
-        "links": [
-          {"text": "JassWiki", "url": "https://jasswiki.ch"},
-          {"text": "Jasstrainer Göpf", "url": "https://jassguru.ch/training"}
-        ]
-      },
-      {
-        "question": "Wie kann ich Mitglied werden?",
-        "answer": "Ganz einfach: Lizenz wählen, Formular ausfüllen, losspielen.\n\n**3 Lizenzen zur Auswahl:**\n\n**Jasser-Lizenz (CHF 60/Saison)** — Startberechtigung Schweizermeisterschaft, JassGuru Pro, Jass-Brevet, Verbandsnetzwerk\n\n**Trumpf-Lizenz (CHF 90/Saison)** — Alles aus Jasser-Lizenz plus exklusives Kartenset, Rabatt auf Jassreisen, 24h Vorzugszugang\n\n**Gruppen-Lizenz (CHF 350/Saison)** — Für bis zu 10 Personen, Team-Berechtigung, private Rangliste"
-      },
-      {
-        "question": "Welche Vorteile habe ich als Mitglied?",
-        "answer": "Als Mitglied bekommst du Zugang zum ersten nationalen Jass-Ranking-System — und die Chance, Schweizermeister zu werden.\n\n**📊 Dein Jass-Profil** — Persönliches Elo-Ranking, vollständige Spielstatistiken, Partner- und Gegner-Analysen\n\n**🏆 Startberechtigung** — Schweizermeisterschaft Team-Schieber, Zugang zu allen Verbandsturnieren\n\n**🎴 Premium-Extras (Trumpf-Lizenz)** — Exklusives Kartenset, Rabatt auf Jassreisen, Vorzugszugang"
-      },
-      {
-        "question": "Ich kann noch nicht jassen – wo fange ich an?",
-        "answer": "Jassen lernen ist einfacher als du denkst.\n\n**Schritt 1: Die Regeln verstehen** — JassWiki erklärt dir alles. Über 100 Artikel, kostenlos und verständlich.\n\n**Schritt 2: Mit der KI trainieren** — Der Jasstrainer Göpf erklärt dir jeden Stich. Geduldig und so oft du willst. (in Entwicklung)\n\n**Schritt 3: Mit echten Menschen spielen** — Tritt der Community bei und finde Mitspieler in deiner Region.",
-        "links": [
-          {"text": "JassWiki", "url": "https://jasswiki.ch"},
-          {"text": "Jasstrainer Göpf", "url": "https://jassguru.ch/training"}
-        ]
-      },
-      {
-        "question": "Wo finde ich die offiziellen Regeln?",
-        "answer": "Die offiziellen Jass-Regeln sind auf JassWiki kostenlos für alle verfügbar.\n\n**Was du findest:** Grundregeln Schieber, Weis-Wertungen, Stöck/Match/Matsch, alle Varianten, Strategien & Tipps\n\n**Grundlage:** Das Werk von Dani Müller mit moderaten Ergänzungen des JVS.",
-        "links": [
-          {"text": "Zu den Regeln auf JassWiki", "url": "https://jasswiki.ch"}
-        ]
-      },
-      {
-        "question": "Gibt es eine Schweizer Meisterschaft?",
-        "answer": "Ja — und es ist ein komplett neues Format.\n\n**Das Besondere:** Nicht ein einzelner Spieler wird Schweizermeister, sondern ein ganzes Team — so wie im Fussball oder Hockey.\n\n**So funktioniert's:** Dezentrale Qualifikation (mind. 10 Spiele in eigener Arena), Challenges gegen andere Teams, Ranking-basierte Qualifikation fürs Finalturnier.\n\n**Zentral:** Alle Resultate werden mit JassGuru digital erfasst — faire Vergleichbarkeit garantiert."
-      }
-    ]
+    "q1": {
+      "question": "Weshalb braucht es den Jassverband?",
+      "answer": "Jassen ist beim Bundesamt für Kultur als lebendige Tradition gelistet. Aber lebendige Traditionen brauchen aktive Pflege. Der Jassverband Schweiz sorgt für klare Regeln, nationale Meisterschaften, digitale Infrastruktur und die Vernetzung aller Jasser in der Schweiz."
+    },
+    "q2": {
+      "question": "Wie kann ich Mitglied werden?",
+      "answer": "Wähle deine Lizenz auf unserer Mitmachen-Seite und melde dich an. Du erhältst dein Jass-Profil, Zugang zum Elo-System und die Startberechtigung für die Schweizermeisterschaft. Alle, die in Saison 1 beitreten, werden dauerhaft als Gründungsmitglieder geführt."
+    },
+    "q3": {
+      "question": "Welche Vorteile habe ich als Mitglied?",
+      "answer": "Dein persönliches Jass-Profil mit Statistiken und Elo-Ranking, Startberechtigung an der Schweizermeisterschaft, Zugang zum Verbandsnetzwerk und zur WhatsApp-Community. Mit der Trumpf-Lizenz erhältst du zusätzlich ein exklusives Kartenset und Rabatt auf Jassreisen."
+    },
+    "q4": {
+      "question": "Gibt es eine Schweizer Meisterschaft?",
+      "answer": "Ja — die erste nationale Team-Schieber Schweizermeisterschaft. Ganze Teams treten an, nicht Einzelspieler. Jugendteams erhalten eine separate Wertung. Die Meisterschaft wird so gross wie die Community."
+    }
   },
   "leitbild": {
     "title": "Leitbild",

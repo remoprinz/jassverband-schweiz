@@ -1,10 +1,11 @@
 export { Hero } from './Hero';
 export { Vision } from './Vision';
-export { StatistikTeaser } from './StatistikTeaser';
 export { SystemrelevanzVideo } from './SystemrelevanzVideo';
 export { MissionTiles } from './MissionTiles';
 export { Pillars } from './Pillars';
 export { Tournament } from './Tournament';
 export { Ecosystem } from './Ecosystem';
-export { HomeFaq } from './HomeFaq';
 export { Trust } from './Trust';
+export { Schweizermeisterschaft } from './Schweizermeisterschaft';
+export { HomeFAQ } from './HomeFAQ';
+export { Testimonials } from './Testimonials';

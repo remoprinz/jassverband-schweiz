@@ -229,6 +229,48 @@ export default function MitmachenPage() {
         </div>
       </StandardSection>
 
+      {/* ════════════════════ JUGENDLIZENZ ════════════════════ */}
+      <StandardSection
+        title="Jugendlizenz (bis 25 Jahre)"
+        background="cream"
+        containerSize="full"
+        spacing="lg"
+      >
+        <div className="max-w-2xl mx-auto text-center">
+          <p
+            className="mb-6"
+            style={{
+              fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
+              fontWeight: 400,
+              fontSize: '18px',
+              lineHeight: '1.6',
+              color: '#1f1f1f',
+            }}
+          >
+            Jugendteams (Schüler, Lehrlinge und Studenten) nehmen an der regulären Schweizermeisterschaft teil und erhalten eine separate Wertung.
+          </p>
+          <div className="mb-6">
+            <span
+              style={{
+                fontFamily: 'var(--font-capita), Capita, Georgia, serif',
+                fontWeight: 700,
+                fontSize: '36px',
+              }}
+            >
+              CHF 20
+            </span>
+            <span style={{ opacity: 0.7, fontSize: '16px' }}> / Person / Saison</span>
+          </div>
+          <Button
+            href="#anmeldung"
+            size="lg"
+            onClick={() => setFormData({ ...formData, paket: 'jugend' })}
+          >
+            Jugendlizenz wählen
+          </Button>
+        </div>
+      </StandardSection>
+
       {/* ════════════════════ ANMELDUNG ════════════════════ */}
       <section id="anmeldung" className="relative py-24 md:py-32 overflow-hidden">
         <div className="absolute inset-0">

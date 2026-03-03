@@ -2,21 +2,17 @@
 
 > **Referenzdokument für sämtlichen Website-Content.**
 > Quellen: `src/lib/dictionaries/de.json`, Seiten-Komponenten, `src/lib/news/articles.ts`
-> **Stand:** 2. März 2026 (Version 2.0 — FINALISIERT)
-> **Basis:** CONTENT_STRUCTURE.md (Version 2.0)
+> Stand: 24. Februar 2026
 
 ---
 
 ## Core Identity
 
 ### Vision
-In der Schweiz bleibt kein Jasser ohne Tisch.
+Jeder Mensch in der Schweiz lernt jassen.
 
 ### Mission
-Wir organisieren, standardisieren und fördern das Jassen schweizweit — durch klare Strukturen, digitale Werkzeuge und nationale Vernetzung.
-
-### Sekundär-Ziel
-Wir senken die Hürden fürs Jassen-Lernen und machen das Spiel für alle zugänglich.
+Wir demokratisieren das Jass-Wissen durch digitale Exzellenz und kulturelle Präsenz, um Barrieren abzubauen und das Lernen radikal zu vereinfachen.
 
 ### Tagline
 Tradition trifft Innovation.
@@ -107,148 +103,22 @@ Wir pflegen und entwickeln Jassen als lebendiges Kulturgut, das Menschen über a
 
 ---
 
-## Ecosystem-Section → ERSETZT DURCH: Statistik-Teaser, Jass-Profil, Tools & Community
+## Ecosystem-Section (Das Jass-Ökosystem)
 
-> **WICHTIG:** Die alte "Ecosystem-Section" wurde in 4 neue Sections aufgeteilt.
-> Siehe unten für Details.
+- **Titel:** Das Jass-Ökosystem
+- **Subtitle:** Digitale Werkzeuge für die Jass-Community
 
----
+### JassWiki
+Die Enzyklopädie des Jassens — Regeln, Varianten und Geschichte.
+→ https://jasswiki.ch
 
-## 🔥 NEU: Statistik-Teaser Section (Position 3)
+### JassGuru
+Trainiere deine Skills — Punktetafel, Elo-System und Statistiken.
+→ https://jassguru.ch
 
-**Titel:** Verfolge deine Entwicklung
-
-**Subtitle:** Mit dem ersten nationalen Ranking-System für Schieber.
-
-**Copy:**
-Vom Egg 🥚 bis zum Göpf 👼 — jedes Spiel zählt. Wer ist dein bester Partner? Gegen wen gewinnst du am häufigsten? Wie entwickelt sich deine Spielstärke über die Saison?
-
-Mit dem nationalen Elo-System wird jedes Spiel erfasst und ausgewertet. Partner, Gegner, Punkteverlauf — alles fliesst ein. So entsteht dein persönliches Jass-Profil.
-
-**CTA 1:** So funktioniert's → `/de/statistiken`
-**CTA 2:** Profil anlegen → `/de/mitmachen`
-
-**Design:**
-- Hintergrund: Dezente Textur (Filz oder Kreidetafel)
-- Visuell: Ranking-Symbole (Egg → Göpf) als Animation
-- Tonalität: Selbstbewusst, ambitioniert
-
-**Platzierung:** Nach Vision-Section, vor Mission-Section
-
----
-
-## 🔥 NEU: Jass-Profil Section (Position 7)
-
-**Titel:** Dein Jass-Profil — erfasst, ausgewertet, verstanden
-
-**Subtitle:** Was du als Mitglied bekommst
-
-**3 Karten:**
-
-### Karte 1: Deine Entwicklung
-**Icon:** 📈
-**Headline:** Wie entwickelst du dich?
-**Text:** Mit dem nationalen Ranking-System wird jedes Spiel gewertet. Partner, Gegner, Spielverlauf — alles fliesst ein. Vom Egg 🥚 zum Göpf 👼 — der Weg ist messbar.
-**Link:** Mehr zum Ranking-System → `/de/statistiken`
-
-### Karte 2: Deine Statistiken
-**Icon:** 📊
-**Headline:** Wer ist dein bester Partner?
-**Text:** Alle deine Spiele, Gegner und Partner werden erfasst. Welche Kombination funktioniert am besten? Wann spielst du stark? JassGuru zeigt es dir.
-**Link:** Zum Support → https://jassguru.ch/support/
-
-### Karte 3: Deine Chance
-**Icon:** 🏆
-**Headline:** Werde Schweizermeister
-**Text:** Das erste Mal in der Geschichte gibt es eine offizielle Team-Schieber Schweizermeisterschaft. Dein Ranking entscheidet mit, wer sich qualifiziert.
-**Link:** Zur Schweizermeisterschaft → `/de/schweizermeisterschaft`
-
-**Platzierung:** Nach SystemrelevanzVideo-Section
-
----
-
-## 🔥 NEU: Tools Section (Position 8)
-
-**Titel:** Werkzeuge für alle Jasser
-
-**Subtitle:** Ob Anfänger oder Profi — diese Tools sind gratis für alle
-
-**3 Karten:**
-
-### Karte 1: JassWiki
-**Headline:** Das Regelwerk
-**Text:** Über 100 Artikel zu Regeln, Varianten, Geschichte und Strategie. Die Enzyklopädie des Jassens.
-**Badge:** Gratis für alle
-**Link:** Zu JassWiki → https://jasswiki.ch
-
-### Karte 2: Jasstrainer Göpf
-**Headline:** Lerne von der KI
-**Text:** Göpf erklärt dir jeden Stich. Warum war das der richtige Zug? Was hättest du anders machen können?
-**Badge:** Gratis für alle
-**Link:** Zu Göpf → (noch nicht live, Coming Soon)
-
-### Karte 3: Jasskalkulator
-**Headline:** Wer hat welche Karte?
-**Text:** Berechne Wahrscheinlichkeiten während dem Spiel. Welche Trümpfe sind noch im Spiel?
-**Badge:** Gratis für alle
-**Link:** Zum Jasskalkulator → `/de/jasskalkulator`
-
-**Platzierung:** Nach Jass-Profil Section
-
----
-
-## 🔥 NEU: Community Section (Position 9)
-
-**Titel:** Jasser in deiner Nähe
-
-**Subtitle:** Finde Tische, Vereine und Mitspieler — bald verfügbar.
-
-**Copy:**
-Die Vision: Kein Jasser bleibt ohne Tisch. Wir bauen gerade die Infrastruktur, um Jasser schweizweit zu vernetzen.
-
-**Aktuell verfügbar:**
-- **WhatsApp-Community** — Tritt dem Verbands-Chat bei und finde spontan Mitspieler
-
-**In Entwicklung:**
-- 📍 **Tisch-Finder** — Wo wird in meiner Nähe gejasst?
-- 🏛️ **Vereins-Verzeichnis** — Jassclubs in deiner Region
-- 📅 **Event-Kalender** — Turniere und Jass-Abende
-
-**CTA:** Über WhatsApp vernetzen → [WhatsApp-Link]
-
-**Design:**
-- "Coming Soon" Badges auf Tisch-Finder/Vereins-Verzeichnis/Event-Kalender
-- WhatsApp-Button prominent und aktiv
-- 3 Karten-Layout (1 aktiv, 2 coming soon)
-
-**Platzierung:** Nach Tools Section
-
----
-
-## 🔥 NEU: FAQ Section (Position 10)
-
-**Titel:** Häufige Fragen
-
-**8 Fragen** (vollständig ausformuliert in faqDE.md):
-
-1. Weshalb braucht es den Jassverband?
-2. Was macht der Jassverband konkret?
-3. Für wen ist der Verband da?
-4. Wie kann ich Mitglied werden?
-5. Welche Vorteile habe ich als Mitglied?
-6. Ich kann noch nicht jassen – wo fange ich an?
-7. Wo finde ich die offiziellen Regeln?
-8. Gibt es eine Schweizer Meisterschaft?
-
-**Design:** Accordion-Stil, 2-spaltig Desktop, 1-spaltig Mobile
-
-**Platzierung:** Nach Community Section, vor Trust-Section
-
-**Referenz:** Vollständige Antworten siehe `/content/faqDE.md`
-
----
-
-## Ecosystem-Section (Das Jass-Ökosystem) → VERALTET, ENTFERNT
+### Jassmeister
+Der Wettkampf — Turniere und Meisterschaften.
+→ **Coming Soon** (noch nicht live)
 
 ---
 

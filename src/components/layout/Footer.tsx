@@ -12,12 +12,12 @@ interface FooterProps {
   };
   nav: {
     home: string;
-    mitmachen: string;
     schweizermeisterschaft: string;
     plattformen: string;
-    leitbild: string;
+    verband: string;
     news: string;
     kontakt: string;
+    mitmachen: string;
   };
 }
 
@@ -59,10 +59,9 @@ export function Footer({ locale, content, nav }: FooterProps) {
               <ul className="space-y-2.5">
                 {[
                   { href: `/${locale}`, label: nav.home },
-                  { href: `/${locale}/mitmachen`, label: nav.mitmachen },
                   { href: `/${locale}/schweizermeisterschaft`, label: nav.schweizermeisterschaft },
                   { href: `/${locale}/plattformen`, label: nav.plattformen },
-                  { href: `/${locale}/leitbild`, label: nav.leitbild },
+                  { href: `/${locale}/verband`, label: nav.verband },
                   { href: `/${locale}/news`, label: nav.news },
                   { href: `/${locale}/kontakt`, label: nav.kontakt },
                 ].map((item) => (
@@ -73,7 +72,6 @@ export function Footer({ locale, content, nav }: FooterProps) {
                   </li>
                 ))}
               </ul>
-              {/* Copyright direkt unter Kontakt */}
               <p
                 className="mt-6"
                 style={{
@@ -160,10 +158,9 @@ export function Footer({ locale, content, nav }: FooterProps) {
               <ul className="space-y-2">
                 {[
                   { href: `/${locale}`, label: nav.home },
-                  { href: `/${locale}/mitmachen`, label: nav.mitmachen },
                   { href: `/${locale}/schweizermeisterschaft`, label: nav.schweizermeisterschaft },
                   { href: `/${locale}/plattformen`, label: nav.plattformen },
-                  { href: `/${locale}/leitbild`, label: nav.leitbild },
+                  { href: `/${locale}/verband`, label: nav.verband },
                   { href: `/${locale}/news`, label: nav.news },
                   { href: `/${locale}/kontakt`, label: nav.kontakt },
                 ].map((item) => (
@@ -174,7 +171,6 @@ export function Footer({ locale, content, nav }: FooterProps) {
                   </li>
                 ))}
               </ul>
-              {/* Copyright – zum unteren Rand */}
               <p
                 className="mt-auto pt-8"
                 style={{

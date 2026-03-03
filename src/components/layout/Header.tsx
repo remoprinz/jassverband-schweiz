@@ -11,12 +11,12 @@ interface HeaderProps {
   locale: string;
   nav: {
     home: string;
-    mitmachen: string;
     schweizermeisterschaft: string;
     plattformen: string;
-    leitbild: string;
+    verband: string;
     news: string;
     kontakt: string;
+    mitmachen: string;
   };
 }
 
@@ -57,10 +57,9 @@ export function Header({ locale, nav }: HeaderProps) {
   }, []);
 
   const navItems = [
-    { href: `/${locale}/mitmachen`, label: nav.mitmachen },
     { href: `/${locale}/schweizermeisterschaft`, label: nav.schweizermeisterschaft },
     { href: `/${locale}/plattformen`, label: nav.plattformen },
-    { href: `/${locale}/leitbild`, label: nav.leitbild },
+    { href: `/${locale}/verband`, label: nav.verband },
     { href: `/${locale}/news`, label: nav.news },
     { href: `/${locale}/kontakt`, label: nav.kontakt },
   ];
@@ -104,13 +103,11 @@ export function Header({ locale, nav }: HeaderProps) {
         <nav className={`flex items-center justify-between transition-all duration-500 ${
           scrolled ? 'h-[72px] md:h-[76px]' : 'h-20 md:h-24'
         }`}>
-          {/* Logo */}
           <Link href={`/${locale}`} className="flex items-center">
             <Logo variant={logoVariant} shrunk={scrolled} />
           </Link>
 
-          {/* Desktop Navigation - Figma: Capita Bold 20px (ab lg, damit iPad Portrait Mobile-Nav bekommt) */}
-          <div className="hidden lg:flex items-center gap-8 xl:gap-10">
+          <div className="hidden lg:flex items-center gap-6 xl:gap-8">
             {navItems.map((item) => (
               <Link
                 key={item.href}
@@ -119,7 +116,7 @@ export function Header({ locale, nav }: HeaderProps) {
                 style={{
                   fontFamily: 'var(--font-capita), Capita, Georgia, serif',
                   fontWeight: 700,
-                  fontSize: '20px',
+                  fontSize: '18px',
                   lineHeight: '1',
                   color: isActive(item.href) 
                     ? '#ff0000' 
@@ -145,10 +142,35 @@ export function Header({ locale, nav }: HeaderProps) {
                 {item.label}
               </Link>
             ))}
+            
+            <Link
+              href={`/${locale}/mitmachen`}
+              className="rounded-full transition-all duration-300 transform hover:-translate-y-0.5"
+              style={{
+                fontFamily: 'var(--font-capita), Capita, Georgia, serif',
+                fontWeight: 700,
+                fontSize: '17px',
+                lineHeight: '1',
+                backgroundColor: 'var(--color-primary)',
+                color: '#ffffff',
+                padding: '10px 24px',
+                boxShadow: '0 2px 8px rgba(255, 0, 0, 0.3)',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#cc0000';
+                e.currentTarget.style.boxShadow = '0 4px 16px rgba(255, 0, 0, 0.4)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'var(--color-primary)';
+                e.currentTarget.style.boxShadow = '0 2px 8px rgba(255, 0, 0, 0.3)';
+              }}
+            >
+              {nav.mitmachen}
+            </Link>
+
             <LanguageSwitcher currentLocale={locale} variant={showTransparent ? 'light' : 'dark'} />
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             className={`lg:hidden p-2 rounded-lg transition-colors ${
               showTransparent ? 'text-white' : 'text-black'
@@ -166,7 +188,6 @@ export function Header({ locale, nav }: HeaderProps) {
           </button>
         </nav>
 
-        {/* Mobile Menu */}
         <AnimatePresence>
           {mobileMenuOpen && (
             <motion.div
@@ -177,7 +198,6 @@ export function Header({ locale, nav }: HeaderProps) {
               className="lg:hidden bg-white rounded-b-xl shadow-lg overflow-hidden"
             >
               <div className="py-4 space-y-1">
-                {/* Home link in mobile */}
                 <Link
                   href={`/${locale}`}
                   onClick={() => setMobileMenuOpen(false)}
@@ -209,6 +229,25 @@ export function Header({ locale, nav }: HeaderProps) {
                     {item.label}
                   </Link>
                 ))}
+                
+                <div className="px-6 pt-3">
+                  <Link
+                    href={`/${locale}/mitmachen`}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block text-center rounded-full"
+                    style={{
+                      fontFamily: 'var(--font-capita), Capita, Georgia, serif',
+                      fontWeight: 700,
+                      fontSize: '18px',
+                      backgroundColor: 'var(--color-primary)',
+                      color: '#ffffff',
+                      padding: '14px 24px',
+                    }}
+                  >
+                    {nav.mitmachen}
+                  </Link>
+                </div>
+                
                 <div className="px-6 pt-4 border-t border-gray-200 mt-2">
                   <LanguageSwitcher currentLocale={locale} variant="dark" />
                 </div>

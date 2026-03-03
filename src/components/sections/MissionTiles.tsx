@@ -20,7 +20,7 @@ export function MissionTiles({ title, items, cta, ctaHref }: MissionTilesProps) 
   return (
     <StandardSection 
       title={title}
-      background="table"
+      background="cream"
       containerSize="full"  // ✅ Explizit für Homepage-Konsistenz
       spacing="lg"
     >

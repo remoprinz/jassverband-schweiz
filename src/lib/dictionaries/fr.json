@@ -5,12 +5,12 @@
   },
   "nav": {
     "home": "Accueil",
-    "mitmachen": "Devenir membre",
-    "schweizermeisterschaft": "Championnat Suisse",
+    "schweizermeisterschaft": "Championnat",
     "plattformen": "Plateformes",
-    "leitbild": "Mission",
+    "verband": "Fédération",
     "news": "Actualités",
-    "kontakt": "Contact"
+    "kontakt": "Contact",
+    "mitmachen": "Participer"
   },
   "hero": {
     "title": "Le Jass est plus qu'un jeu de cartes.",
@@ -24,18 +24,23 @@
     "cta": "Lire la suite"
   },
   "systemrelevanz": {
-    "title": "Pourquoi une fédération de Jass est-elle nécessaire?"
+    "title": "Pourquoi la fédération de Jass?"
   },
-  "statistikTeaser": {
-    "title": "Suivez votre évolution",
-    "subtitle": "Avec le premier système de classement national pour le Schieber.",
-    "copy": "De l'Œuf 🥚 au Göpf 👼 — chaque partie compte. Qui est votre meilleur partenaire? Contre qui gagnez-vous le plus souvent? Comment évolue votre niveau de jeu au cours de la saison?\n\nAvec le système Elo national, chaque partie est enregistrée et analysée. Partenaire, adversaires, évolution des points — tout est pris en compte. Ainsi naît votre profil de Jass personnel.",
-    "cta1": "Comment ça fonctionne",
-    "cta2": "Créer un profil"
+  "schweizermeisterschaft": {
+    "title": "Championnat Suisse de Schieber par équipes",
+    "subtitle": "Le premier championnat national de Schieber par équipes.",
+    "copy": "Le Schieber est un jass d'équipe. C'est pourquoi ce ne sont pas des joueurs individuels, mais des équipes entières qui participent au championnat suisse. Le premier championnat sera aussi grand que la communauté.",
+    "jugend": "Les équipes jeunes jouent dans le même championnat et reçoivent un classement séparé pour le titre de champion suisse junior.",
+    "cta": "En savoir plus"
   },
   "mission": {
     "title": "Notre mission",
     "items": [
+      { "title": "Connecter les joueurs", "mission": "Nous réunissons les joueurs — du bistrot au championnat. Régional, national, digital." },
+      { "title": "Mesurer le niveau", "mission": "Grâce à la saisie numérique, des profils de Jass personnels naissent pour la première fois. Statistiques, progression et un système Elo national rendent visible ce qui était jusqu'ici caché." },
+      { "title": "Promouvoir le Jass", "mission": "Nous fournissons l'infrastructure pour que le Jass grandisse — de la salle de classe au bistrot, des règles au championnat." }
+    ],
+    "allItems": [
       { "title": "Établir des championnats", "mission": "Nous faisons du Jass un sport de compétition officiel avec des structures claires, des classements et des championnats nationaux." },
       { "title": "Connecter les joueurs", "mission": "Nous ramenons les joueurs de Jass – surtout à l'ère numérique – consciemment vers la table physique." },
       { "title": "Promouvoir la relève", "mission": "Nous passionnons la prochaine génération pour le Jass et l'ancrons durablement dans le système éducatif." },
@@ -43,7 +48,7 @@
       { "title": "Moderniser la tradition", "mission": "Nous amenons le Jass à l'ère numérique et assurons sa pertinence pour les générations à venir." },
       { "title": "Façonner la culture", "mission": "Nous entretenons et développons le Jass comme patrimoine culturel vivant qui relie les gens par-delà toutes les frontières sociales." }
     ],
-    "cta": "Lire la suite"
+    "cta": "Vers la charte"
   },
   "pillars": {
     "title": "Notre mission",
@@ -66,31 +71,43 @@
     "cta": "S'inscrire maintenant"
   },
   "ecosystem": {
-    "title": "L'écosystème Jass",
-    "subtitle": "Outils numériques pour la communauté Jass",
+    "title": "Nos plateformes",
+    "subtitle": "L'écosystème Jass de la Fédération Suisse de Jass",
+    "whatsapp": {
+      "title": "Communauté WhatsApp",
+      "description": "Échangez avec d'autres joueurs, trouvez des partenaires et restez informé."
+    },
     "jasswiki": {
       "title": "JassWiki",
-      "description": "L'encyclopédie du Jass — règles, variantes et histoire."
-    },
-    "jassguru": {
-      "title": "JassGuru",
-      "description": "Entraînez vos compétences — tableau de points, système Elo et statistiques."
-    },
-    "jassmeister": {
-      "title": "Jassmeister",
-      "description": "La compétition — tournois et championnats."
+      "description": "Plus de 100 articles sur les règles, variantes, histoire et stratégie. L'encyclopédie du Jass."
     },
     "jasskalkulator": {
       "title": "Jasskalkulator",
-      "description": "Calculez les probabilités — qui a quelles cartes?"
+      "description": "Calculez les probabilités pendant le jeu. Quels atouts sont encore en jeu?"
+    },
+    "jassguru": {
+      "title": "JassGuru",
+      "description": "Saisissez vos parties, suivez votre progression et participez au classement national."
     },
     "jasskarten": {
       "title": "JassKarten",
-      "description": "Cartes de Jass suisses premium — traditionnelles & modernes."
+      "description": "Cartes de Jass suisses premium — traditionnelles et modernes. Set de cartes exclusif pour les membres."
+    },
+    "jassreisen": {
+      "title": "JassReisen",
+      "description": "Voyages Jass en Suisse et à l'étranger. Les membres ont des places garanties et des rabais."
+    },
+    "jassmeister": {
+      "title": "Jassmeister",
+      "description": "La plateforme de tournoi pour les championnats nationaux. Inscription, qualification et résultats."
     },
     "jasstrainer": {
       "title": "Jasstrainer Göpf",
-      "description": "Entraînement assisté par IA — apprenez des meilleurs."
+      "description": "Entraînement avec IA — apprenez des meilleurs. Göpf vous explique chaque pli."
+    },
+    "jassturniere": {
+      "title": "Tournois de Jass",
+      "description": "En plus du championnat, les membres organisent leurs propres tournois — du Jass de 24 heures au tournoi de club."
     }
   },
   "trust": {
@@ -99,16 +116,22 @@
   },
   "homeFaq": {
     "title": "Questions fréquentes",
-    "items": [
-      {"question": "Pourquoi une fédération de Jass est-elle nécessaire?", "answer": "Le Jass est inscrit comme «Tradition vivante» auprès de l'Office fédéral de la culture. Nous comblons trois lacunes essentielles: normes et règles, championnats nationaux, mise en réseau et accès."},
-      {"question": "Que fait concrètement la Fédération de Jass?", "answer": "Nous organisons des championnats, développons un système de classement national, rendons les connaissances accessibles et mettons en réseau les joueurs de Jass."},
-      {"question": "À qui s'adresse la fédération?", "answer": "Pour tous ceux qui aiment le Jass — ou veulent l'apprendre. Pour les joueurs ambitieux, occasionnels et débutants."},
-      {"question": "Comment devenir membre?", "answer": "C'est simple: choisissez une licence, remplissez le formulaire, commencez à jouer. Trois licences au choix: Licence Jasser (60 CHF/saison), Licence Trumpf (90 CHF/saison), Licence de groupe (350 CHF/saison)."},
-      {"question": "Quels sont les avantages pour les membres?", "answer": "Accès au premier système de classement national de Jass et possibilité de devenir champion suisse. Profil Jass, autorisation de participation, extras premium."},
-      {"question": "Je ne sais pas encore jouer au Jass — par où commencer?", "answer": "Apprendre le Jass est plus facile que vous ne le pensez. Étape 1: Comprendre les règles sur JassWiki. Étape 2: S'entraîner avec l'IA Göpf. Étape 3: Jouer avec de vraies personnes."},
-      {"question": "Où puis-je trouver les règles officielles?", "answer": "Les règles officielles de Jass sont disponibles gratuitement sur JassWiki. Base: l'œuvre de Dani Müller avec des ajouts modérés de la FSJ. → jasswiki.ch"},
-      {"question": "Y a-t-il un championnat suisse?", "answer": "Oui — et c'est un tout nouveau format. Particularité: ce n'est pas un joueur individuel qui devient champion suisse, mais une équipe entière — comme au football ou au hockey."}
-    ]
+    "q1": {
+      "question": "Pourquoi faut-il une fédération de Jass?",
+      "answer": "Le Jass est inscrit comme tradition vivante auprès de l'Office fédéral de la culture. Mais les traditions vivantes ont besoin d'un soin actif. La Fédération Suisse de Jass assure des règles claires, des championnats nationaux, une infrastructure numérique et la mise en réseau de tous les joueurs en Suisse."
+    },
+    "q2": {
+      "question": "Comment devenir membre?",
+      "answer": "Choisissez votre licence sur notre page Participer et inscrivez-vous. Vous recevrez votre profil Jass, l'accès au système Elo et le droit de participer au championnat suisse. Tous ceux qui rejoignent la saison 1 seront enregistrés comme membres fondateurs."
+    },
+    "q3": {
+      "question": "Quels avantages ai-je en tant que membre?",
+      "answer": "Votre profil Jass personnel avec statistiques et classement Elo, droit de participation au championnat suisse, accès au réseau de la fédération et à la communauté WhatsApp. Avec la licence Trumpf, vous recevez en plus un set de cartes exclusif et des rabais sur les voyages Jass."
+    },
+    "q4": {
+      "question": "Y a-t-il un championnat suisse?",
+      "answer": "Oui — le premier championnat national de Schieber par équipes. Des équipes entières participent, pas des joueurs individuels. Les équipes jeunes ont un classement séparé. Le championnat sera aussi grand que la communauté."
+    }
   },
   "leitbild": {
     "title": "Vision et mission",
