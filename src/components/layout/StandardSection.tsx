@@ -7,7 +7,7 @@ interface StandardSectionProps {
   title?: string;
   subtitle?: string;
   children: React.ReactNode;
-  background?: 'white' | 'cream' | 'dark' | 'transparent' | 'trust';
+  background?: 'white' | 'cream' | 'chalk' | 'table' | 'dark' | 'transparent' | 'trust';
   containerSize?: 'full' | 'narrow' | 'wide';
   headerCentered?: boolean;
   headerLight?: boolean;

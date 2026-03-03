@@ -84,7 +84,7 @@ export function Ecosystem({ title, subtitle, jasswiki, jassguru, jassmeister, ja
     <StandardSection
       title={title}
       subtitle={subtitle}
-      background="cream"
+      background="white"
       containerSize="full"  // ✅ Consistent with other content sections
       spacing="lg"
     >

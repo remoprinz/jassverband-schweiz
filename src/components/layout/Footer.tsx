@@ -12,10 +12,11 @@ interface FooterProps {
   };
   nav: {
     home: string;
-    verband: string;
+    mitmachen: string;
+    schweizermeisterschaft: string;
+    plattformen: string;
+    leitbild: string;
     news: string;
-    projekte: string;
-    partner: string;
     kontakt: string;
   };
 }
@@ -58,10 +59,11 @@ export function Footer({ locale, content, nav }: FooterProps) {
               <ul className="space-y-2.5">
                 {[
                   { href: `/${locale}`, label: nav.home },
-                  { href: `/${locale}/verband`, label: nav.verband },
+                  { href: `/${locale}/mitmachen`, label: nav.mitmachen },
+                  { href: `/${locale}/schweizermeisterschaft`, label: nav.schweizermeisterschaft },
+                  { href: `/${locale}/plattformen`, label: nav.plattformen },
+                  { href: `/${locale}/leitbild`, label: nav.leitbild },
                   { href: `/${locale}/news`, label: nav.news },
-                  { href: `/${locale}/projekte`, label: nav.projekte },
-                  { href: `/${locale}/partner`, label: nav.partner },
                   { href: `/${locale}/kontakt`, label: nav.kontakt },
                 ].map((item) => (
                   <li key={item.href}>
@@ -158,10 +160,11 @@ export function Footer({ locale, content, nav }: FooterProps) {
               <ul className="space-y-2">
                 {[
                   { href: `/${locale}`, label: nav.home },
-                  { href: `/${locale}/verband`, label: nav.verband },
+                  { href: `/${locale}/mitmachen`, label: nav.mitmachen },
+                  { href: `/${locale}/schweizermeisterschaft`, label: nav.schweizermeisterschaft },
+                  { href: `/${locale}/plattformen`, label: nav.plattformen },
+                  { href: `/${locale}/leitbild`, label: nav.leitbild },
                   { href: `/${locale}/news`, label: nav.news },
-                  { href: `/${locale}/projekte`, label: nav.projekte },
-                  { href: `/${locale}/partner`, label: nav.partner },
                   { href: `/${locale}/kontakt`, label: nav.kontakt },
                 ].map((item) => (
                   <li key={item.href}>

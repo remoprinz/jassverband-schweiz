@@ -11,10 +11,11 @@ interface HeaderProps {
   locale: string;
   nav: {
     home: string;
-    verband: string;
+    mitmachen: string;
+    schweizermeisterschaft: string;
+    plattformen: string;
+    leitbild: string;
     news: string;
-    projekte: string;
-    partner: string;
     kontakt: string;
   };
 }
@@ -56,10 +57,11 @@ export function Header({ locale, nav }: HeaderProps) {
   }, []);
 
   const navItems = [
-    { href: `/${locale}/verband`, label: nav.verband },
+    { href: `/${locale}/mitmachen`, label: nav.mitmachen },
+    { href: `/${locale}/schweizermeisterschaft`, label: nav.schweizermeisterschaft },
+    { href: `/${locale}/plattformen`, label: nav.plattformen },
+    { href: `/${locale}/leitbild`, label: nav.leitbild },
     { href: `/${locale}/news`, label: nav.news },
-    { href: `/${locale}/projekte`, label: nav.projekte },
-    { href: `/${locale}/partner`, label: nav.partner },
     { href: `/${locale}/kontakt`, label: nav.kontakt },
   ];
 

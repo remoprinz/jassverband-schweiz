@@ -15,10 +15,27 @@ export default async function HomePage({ params }: HomePageProps) {
     mission: t(`mission.items.${i}.mission`),
   }));
 
-  const faqItems = Array.from({ length: 8 }, (_, i) => ({
-    question: t(`homeFaq.items.${i}.question`),
-    answer: t(`homeFaq.items.${i}.answer`),
-  }));
+  const faqItems = Array.from({ length: 8 }, (_, i) => {
+    const item: any = {
+      question: t(`homeFaq.items.${i}.question`),
+      answer: t(`homeFaq.items.${i}.answer`),
+    };
+    
+    // Check if links exist for this item
+    try {
+      const linksCount = t.raw(`homeFaq.items.${i}.links`)?.length || 0;
+      if (linksCount > 0) {
+        item.links = Array.from({ length: linksCount }, (_, j) => ({
+          text: t(`homeFaq.items.${i}.links.${j}.text`),
+          url: t(`homeFaq.items.${i}.links.${j}.url`),
+        }));
+      }
+    } catch (e) {
+      // No links for this item
+    }
+    
+    return item;
+  });
 
   return (
     <>
@@ -39,9 +56,17 @@ export default async function HomePage({ params }: HomePageProps) {
       <StatistikTeaser
         title={t("statistikTeaser.title")}
         subtitle={t("statistikTeaser.subtitle")}
+        intro={t("statistikTeaser.intro")}
         copy={t("statistikTeaser.copy")}
         cta1={t("statistikTeaser.cta1")}
+        cta1Link={t("statistikTeaser.cta1Link")}
         cta2={t("statistikTeaser.cta2")}
+        cta2Link={t("statistikTeaser.cta2Link")}
+        pdfTitle={t("statistikTeaser.pdfTitle")}
+        pdfLink1Label={t("statistikTeaser.pdfLink1Label")}
+        pdfLink1Url={t("statistikTeaser.pdfLink1Url")}
+        pdfLink2Label={t("statistikTeaser.pdfLink2Label")}
+        pdfLink2Url={t("statistikTeaser.pdfLink2Url")}
       />
 
       <MissionTiles

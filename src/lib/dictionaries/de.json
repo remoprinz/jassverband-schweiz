@@ -27,11 +27,19 @@
     "title": "Weshalb braucht es den Jassverband?"
   },
   "statistikTeaser": {
-    "title": "Verfolge deine Entwicklung",
-    "subtitle": "Mit dem ersten nationalen Ranking-System für Schieber.",
-    "copy": "Von Just Egg (🥚) bis zum Göpf Egg (👼) — Statitiken lügen selten. Wer ist dein bester Partner? Gegen wen gewinnst du am häufigsten? Wie entwickelt sich deine Spielstärke über die Saison?\n\nMit dem nationalen Elo-System wird jedes Spiel erfasst und ausgewertet. Partner, Gegner, Punkteverlauf — alles fliesst ein. So entsteht dein persönliches Jass-Profil.",
-    "cta1": "So funktioniert's",
-    "cta2": "Profil anlegen"
+    "title": "Jede Partie zählt. Jeder Fortschritt ist messbar.",
+    "subtitle": "Das erste nationale Elo-System für Schieber — präzise, fair, transparent.",
+    "intro": "Wer ist dein bester Partner? Gegen wen gewinnst du am häufigsten? Wie hat sich dein Spiel über die Saison entwickelt?",
+    "copy": "Mit dem Jass-Elo-System wird jede Partie erfasst und ausgewertet. Spielstärke von Partner und Gegner, Punkteverlauf, Matsch-Quote — alles fliesst in deine persönliche Statistik ein.",
+    "cta1": "Ranking-System verstehen",
+    "cta1Link": "/de/statistiken",
+    "cta2": "Jass-Profil anlegen",
+    "cta2Link": "/de/mitmachen",
+    "pdfTitle": "Technische Dokumentation",
+    "pdfLink1Label": "Jass-Elo Ranking (PDF)",
+    "pdfLink1Url": "/Jass-Elo Ranking.pdf",
+    "pdfLink2Label": "Whitepaper: Elo-System für Schieber (PDF)",
+    "pdfLink2Url": "/Jass-Elo_ Ein Elo-basiertes Bewertungssystem für den Schieber.pdf"
   },
   "mission": {
     "title": "Unsere Mission",
@@ -120,7 +128,7 @@
     "items": [
       {
         "question": "Weshalb braucht es den Jassverband?",
-        "answer": "Jassen ist beim Bundesamt für Kultur als «Lebendige Tradition» gelistet — eine Auszeichnung, die es mit dem Schwingen, dem Jodeln und dem Alphorn teilt. Doch lebendige Traditionen brauchen aktive Pflege.\n\nDer Jassverband Schweiz schliesst drei zentrale Lücken:\n\n**1. Standards & Regeln** — Jassen wird regional unterschiedlich gespielt. Wir stellen die offiziellen Regeln kostenlos zur Verfügung und sorgen für Klarheit.\n\n**2. Nationale Meisterschaften** — Zum ersten Mal in der Geschichte gibt es eine offizielle Team-Schieber Schweizermeisterschaft. Damit wird Jassen messbar, vergleichbar und sportlich anerkannt.\n\n**3. Vernetzung & Zugang** — Wir bringen Jasser zusammen — über Generationen, Kantone und Sprachniveaus hinweg. Kein Jasser soll ohne Tisch bleiben."
+        "answer": "Jassen ist beim Bundesamt für Kultur als «Lebendige Tradition» gelistet — eine Auszeichnung, die es mit dem Schwingen, dem Jodeln und dem Alphorn teilt. Doch lebendige Traditionen brauchen aktive Pflege.\n\nDer Jassverband Schweiz schliesst drei zentrale Lücken:\n\n**1. Standards & Wissen** — Regelwissen ist über hunderte Webseiten und Stammtische verstreut. Wir stellen die offiziellen Regeln kostenlos, strukturiert und durchsuchbar zur Verfügung.\n\n**2. Nationale Meisterschaften** — Zum ersten Mal in der Geschichte gibt es eine offizielle Team-Schieber Schweizermeisterschaft. Damit wird Jassen messbar, vergleichbar und sportlich anerkannt.\n\n**3. Vernetzung & Zugang** — Wir bringen Jasser zusammen — über Generationen, Kantone und Sprachniveaus hinweg. Kein Jasser soll ohne Tisch bleiben."
       },
       {
         "question": "Was macht der Jassverband konkret?",
@@ -128,7 +136,11 @@
       },
       {
         "question": "Für wen ist der Verband da?",
-        "answer": "Für alle, die Jassen lieben — oder es lernen wollen.\n\n**Für ambitionierte Jasser** — Du willst wissen, wie stark du bist? Du willst an der Schweizermeisterschaft teilnehmen? Der Verband liefert die Infrastruktur.\n\n**Für Gelegenheitsspieler** — Du spielst regelmässig, aber ohne Wettkampf-Ambitionen? Der Verband vernetzt dich mit anderen Jassern.\n\n**Für Anfänger** — Du kannst noch nicht jassen, willst es aber lernen? JassWiki erklärt die Regeln, Göpf trainiert dich — kostenlos und geduldig."
+        "answer": "Für alle, die Jassen lieben — oder es lernen wollen.\n\n**Für ambitionierte Jasser** — Du willst wissen, wie stark du bist? Du willst an der Schweizermeisterschaft teilnehmen? Der Verband liefert die Infrastruktur.\n\n**Für Gelegenheitsspieler** — Du spielst regelmässig, aber ohne Wettkampf-Ambitionen? Der Verband vernetzt dich mit anderen Jassern.\n\n**Für Anfänger** — Du kannst noch nicht jassen, willst es aber lernen? JassWiki erklärt die Regeln kostenlos. Der Jasstrainer Göpf trainiert dich geduldig (in Entwicklung).",
+        "links": [
+          {"text": "JassWiki", "url": "https://jasswiki.ch"},
+          {"text": "Jasstrainer Göpf", "url": "https://jassguru.ch/training"}
+        ]
       },
       {
         "question": "Wie kann ich Mitglied werden?",
@@ -140,11 +152,18 @@
       },
       {
         "question": "Ich kann noch nicht jassen – wo fange ich an?",
-        "answer": "Jassen lernen ist einfacher als du denkst.\n\n**Schritt 1: Die Regeln verstehen** — JassWiki erklärt dir alles. Über 100 Artikel, kostenlos und verständlich. → jasswiki.ch\n\n**Schritt 2: Mit der KI trainieren** — Der Jasstrainer Göpf erklärt dir jeden Stich. Geduldig und so oft du willst. (in Entwicklung)\n\n**Schritt 3: Mit echten Menschen spielen** — Tritt der Community bei und finde Mitspieler in deiner Region."
+        "answer": "Jassen lernen ist einfacher als du denkst.\n\n**Schritt 1: Die Regeln verstehen** — JassWiki erklärt dir alles. Über 100 Artikel, kostenlos und verständlich.\n\n**Schritt 2: Mit der KI trainieren** — Der Jasstrainer Göpf erklärt dir jeden Stich. Geduldig und so oft du willst. (in Entwicklung)\n\n**Schritt 3: Mit echten Menschen spielen** — Tritt der Community bei und finde Mitspieler in deiner Region.",
+        "links": [
+          {"text": "JassWiki", "url": "https://jasswiki.ch"},
+          {"text": "Jasstrainer Göpf", "url": "https://jassguru.ch/training"}
+        ]
       },
       {
         "question": "Wo finde ich die offiziellen Regeln?",
-        "answer": "Die offiziellen Jass-Regeln sind auf JassWiki kostenlos für alle verfügbar.\n\n**Was du findest:** Grundregeln Schieber, Weis-Wertungen, Stöck/Match/Matsch, alle Varianten, Strategien & Tipps\n\n**Grundlage:** Das Werk von Dani Müller mit moderaten Ergänzungen des JVS.\n\n→ jasswiki.ch"
+        "answer": "Die offiziellen Jass-Regeln sind auf JassWiki kostenlos für alle verfügbar.\n\n**Was du findest:** Grundregeln Schieber, Weis-Wertungen, Stöck/Match/Matsch, alle Varianten, Strategien & Tipps\n\n**Grundlage:** Das Werk von Dani Müller mit moderaten Ergänzungen des JVS.",
+        "links": [
+          {"text": "Zu den Regeln auf JassWiki", "url": "https://jasswiki.ch"}
+        ]
       },
       {
         "question": "Gibt es eine Schweizer Meisterschaft?",
