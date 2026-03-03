@@ -340,3 +340,21 @@ a, button {
 .scroll-indicator {
   animation: bounce-subtle 2s ease-in-out infinite;
 }
+
+/* ============================================
+   JASSKALKULATOR STANDALONE MODE
+   ============================================ */
+
+body.jasskalkulator-fullscreen header[data-header],
+body.jasskalkulator-fullscreen footer[data-footer] {
+  display: none !important;
+}
+
+body.jasskalkulator-fullscreen {
+  background: #1a472a !important;
+}
+
+body.jasskalkulator-fullscreen main {
+  padding-top: 0 !important;
+  min-height: 100vh;
+}

@@ -37,7 +37,7 @@ const headingStyle = {
 
 export function Footer({ locale, content, nav }: FooterProps) {
   return (
-    <footer className="bg-black overflow-hidden">
+    <footer data-footer className="bg-black overflow-hidden">
       {/* Mobile Layout */}
       <div className="lg:hidden container-main py-12">
         <div className="flex flex-col gap-10">

@@ -73,6 +73,7 @@ export function Header({ locale, nav }: HeaderProps) {
 
   return (
     <header
+      data-header
       className={`fixed z-50 transition-all duration-500 ease-out ${
         scrolled
           ? 'left-3 right-3 md:left-[140px] md:right-[140px]'

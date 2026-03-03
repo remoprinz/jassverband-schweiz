@@ -6,9 +6,7 @@ import { getTranslations } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { locales, type Locale } from "@/lib/i18n";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
-import { MainWrapper } from "@/components/layout/MainWrapper";
+import { LayoutContent } from "@/components/layout/LayoutContent";
 import { OrganizationSchema } from "@/components/seo/OrganizationSchema";
 import "../globals.css";
 
@@ -125,11 +123,9 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
       </head>
       <body className={`${inter.variable} ${capita.variable} antialiased`}>
         <NextIntlClientProvider messages={messages}>
-          <Header locale={locale} nav={nav} />
-          <MainWrapper locale={locale}>
+          <LayoutContent locale={locale} nav={nav} footer={footer}>
             {children}
-          </MainWrapper>
-          <Footer locale={locale} content={footer} nav={nav} />
+          </LayoutContent>
         </NextIntlClientProvider>
       </body>
     </html>
