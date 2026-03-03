@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import { Hero, Vision, SystemrelevanzVideo, MissionTiles, Tournament, Ecosystem, Trust } from "@/components/sections";
+import { Hero, Vision, StatistikTeaser, SystemrelevanzVideo, MissionTiles, Tournament, Ecosystem, HomeFaq, Trust } from "@/components/sections";
 
 interface HomePageProps {
   params: Promise<{ locale: string }>;
@@ -13,6 +13,11 @@ export default async function HomePage({ params }: HomePageProps) {
   const missionItems = Array.from({ length: 6 }, (_, i) => ({
     title: t(`mission.items.${i}.title`),
     mission: t(`mission.items.${i}.mission`),
+  }));
+
+  const faqItems = Array.from({ length: 8 }, (_, i) => ({
+    question: t(`homeFaq.items.${i}.question`),
+    answer: t(`homeFaq.items.${i}.answer`),
   }));
 
   return (
@@ -31,8 +36,12 @@ export default async function HomePage({ params }: HomePageProps) {
         ctaHref={leitbildUrl}
       />
 
-      <SystemrelevanzVideo
-        title={t("systemrelevanz.title")}
+      <StatistikTeaser
+        title={t("statistikTeaser.title")}
+        subtitle={t("statistikTeaser.subtitle")}
+        copy={t("statistikTeaser.copy")}
+        cta1={t("statistikTeaser.cta1")}
+        cta2={t("statistikTeaser.cta2")}
       />
 
       <MissionTiles
@@ -46,6 +55,10 @@ export default async function HomePage({ params }: HomePageProps) {
         title={t("tournament.title")}
         subtitle={t("tournament.subtitle")}
         cta={t("tournament.cta")}
+      />
+
+      <SystemrelevanzVideo
+        title={t("systemrelevanz.title")}
       />
 
       <Ecosystem
@@ -75,6 +88,11 @@ export default async function HomePage({ params }: HomePageProps) {
           title: t("ecosystem.jasstrainer.title"),
           description: t("ecosystem.jasstrainer.description"),
         }}
+      />
+
+      <HomeFaq
+        title={t("homeFaq.title")}
+        items={faqItems}
       />
 
       <Trust

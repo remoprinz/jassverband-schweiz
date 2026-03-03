@@ -5,10 +5,11 @@
   },
   "nav": {
     "home": "Home",
-    "verband": "Federazione",
+    "mitmachen": "Diventare membro",
+    "schweizermeisterschaft": "Campionato Svizzero",
+    "plattformen": "Piattaforme",
+    "leitbild": "Missione",
     "news": "Notizie",
-    "projekte": "Progetti",
-    "partner": "Diventa partner",
     "kontakt": "Contatto"
   },
   "hero": {
@@ -23,7 +24,14 @@
     "cta": "Leggi di più"
   },
   "systemrelevanz": {
-    "title": "Perché diventare membro"
+    "title": "Perché serve una Federazione di Jass?"
+  },
+  "statistikTeaser": {
+    "title": "Segui la tua evoluzione",
+    "subtitle": "Con il primo sistema di classifica nazionale per Schieber.",
+    "copy": "Dall'Uovo 🥚 al Göpf 👼 — ogni partita conta. Chi è il tuo miglior partner? Contro chi vinci più spesso? Come si evolve il tuo livello di gioco durante la stagione?\n\nCon il sistema Elo nazionale, ogni partita viene registrata e analizzata. Partner, avversari, evoluzione dei punti — tutto viene considerato. Così nasce il tuo profilo Jass personale.",
+    "cta1": "Come funziona",
+    "cta2": "Crea profilo"
   },
   "mission": {
     "title": "La nostra missione",
@@ -88,6 +96,19 @@
   "trust": {
     "badge": "Tradizione vivente",
     "text": "Iscritto presso l'Ufficio federale della cultura"
+  },
+  "homeFaq": {
+    "title": "Domande frequenti",
+    "items": [
+      {"question": "Perché serve una Federazione di Jass?", "answer": "Il Jass è iscritto come «Tradizione vivente» presso l'Ufficio federale della cultura. Colmiamo tre lacune essenziali: standard e regole, campionati nazionali, messa in rete e accesso."},
+      {"question": "Cosa fa concretamente la Federazione di Jass?", "answer": "Organizziamo campionati, sviluppiamo un sistema di classifica nazionale, rendiamo accessibili le conoscenze e mettiamo in rete i giocatori di Jass."},
+      {"question": "A chi si rivolge la federazione?", "answer": "Per tutti coloro che amano il Jass — o vogliono impararlo. Per giocatori ambiziosi, occasionali e principianti."},
+      {"question": "Come diventare membro?", "answer": "È semplice: scegli una licenza, compila il modulo, inizia a giocare. Tre licenze tra cui scegliere: Licenza Jasser (60 CHF/stagione), Licenza Trumpf (90 CHF/stagione), Licenza di gruppo (350 CHF/stagione)."},
+      {"question": "Quali sono i vantaggi per i membri?", "answer": "Accesso al primo sistema di classifica nazionale di Jass e possibilità di diventare campione svizzero. Profilo Jass, autorizzazione alla partecipazione, extra premium."},
+      {"question": "Non so ancora giocare a Jass — da dove comincio?", "answer": "Imparare il Jass è più facile di quanto pensi. Passo 1: Comprendere le regole su JassWiki. Passo 2: Allenarsi con l'IA Göpf. Passo 3: Giocare con persone reali."},
+      {"question": "Dove posso trovare le regole ufficiali?", "answer": "Le regole ufficiali di Jass sono disponibili gratuitamente su JassWiki. Base: l'opera di Dani Müller con aggiunte moderate della FSJ. → jasswiki.ch"},
+      {"question": "Esiste un campionato svizzero?", "answer": "Sì — ed è un formato completamente nuovo. Particolarità: non è un singolo giocatore a diventare campione svizzero, ma un'intera squadra — come nel calcio o nell'hockey."}
+    ]
   },
   "leitbild": {
     "title": "Visione e missione",

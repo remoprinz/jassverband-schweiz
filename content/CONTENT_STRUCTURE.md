@@ -9,10 +9,13 @@
 ## 🎯 Core Strategie
 
 ### Vision
-Jeder Mensch in der Schweiz lernt jassen.
+In der Schweiz bleibt kein Jasser ohne Tisch.
 
 ### Mission
-Wir demokratisieren das Jass-Wissen durch digitale Exzellenz und kulturelle Präsenz, um Barrieren abzubauen und das Lernen radikal zu vereinfachen.
+Wir organisieren, standardisieren und fördern das Jassen schweizweit — durch klare Strukturen, digitale Werkzeuge und nationale Vernetzung.
+
+### Sekundär-Ziel
+Wir senken die Hürden fürs Jassen-Lernen und machen das Spiel für alle zugänglich.
 
 ### Tagline
 Tradition trifft Innovation.
@@ -65,52 +68,29 @@ Tradition trifft Innovation.
 
 ### 3. 🔥 NEU: Statistik-Teaser Section
 
-**Tonalität:** Positiv, neugierig machend, NICHT kompetitiv
+**Titel:** Verfolge deine Entwicklung
 
-#### **Variante A: "Mach dein Jassen messbar"**
-
-**Titel:** Mach dein Jassen messbar
-
-**Subtitle:** Statistiken machen jeden Sport spannender. Auch Jassen.
+**Subtitle:** Mit dem ersten nationalen Ranking-System für Schieber.
 
 **Copy:**
-Vom Egg 🥚 zum Göpf 👼 — wer spielt wie stark? Welche Partnerkombination funktioniert am besten? Wie entwickelst du dich über die Saison?
+Vom Egg 🥚 bis zum Göpf 👼 — jedes Spiel zählt. Wer ist dein bester Partner? Gegen wen gewinnst du am häufigsten? Wie entwickelt sich deine Spielstärke über die Saison?
 
-Mit dem ersten nationalen Ranking-System für Schieber wird jedes Spiel erfasst und ausgewertet. Nicht um Gewinner und Verlierer zu küren — sondern um zu sehen, wie du dich entwickelst.
+Mit dem nationalen Elo-System wird jedes Spiel erfasst und ausgewertet. Partner, Gegner, Punkteverlauf — alles fliesst ein. So entsteht dein persönliches Jass-Profil.
 
 **CTA 1:** So funktioniert's → `/statistiken`
 **CTA 2:** Profil anlegen → `/mitmachen`
 
----
+**Design:** 
+- Hintergrund: Dezente Textur (z.B. Filz oder Kreidetafel)
+- Visuell: Ranking-Symbole (Egg → Göpf) als Animation
+- Tonalität: Selbstbewusst, ambitioniert, ohne defensive Formulierungen
 
-#### **Variante B: "Deine Jass-Statistiken"**
-
-**Titel:** Deine Jass-Statistiken
-
-**Subtitle:** Wer ist dein bester Partner? Wie entwickelst du dich? Jetzt messbar.
-
-**Copy:**
-Fussball hat Tabellen. Tennis hat Ranglisten. Schach hat Elo.
-
-Und Jassen?
-
-Jetzt gibt es das erste nationale Statistik-System für Schieber. Jedes Spiel wird erfasst. Partner, Gegner, Punkteverlauf — alles fliesst ein. So entsteht dein persönliches Jass-Profil.
-
-Vom Egg 🥚 bis zum Göpf 👼 — der Weg ist messbar.
-
-**CTA 1:** Mehr erfahren → `/statistiken`
-**CTA 2:** Jetzt starten → `/mitmachen`
-
----
-
-**Empfehlung:** **Variante A** — "Mach dein Jassen messbar"
-
-**Begründung:**
-- Positiver, aktivierender Titel
-- "Messbar" statt "Ranking" (neutraler)
-- Fokus auf **persönliche Entwicklung**, nicht auf Wettbewerb
-- Die Ränge (Egg → Göpf) sind humorvoll, nicht einschüchternd
-- "Nicht um Gewinner zu küren" = entwaffnet Kritiker
+**Warum das funktioniert:**
+- ✅ "Verfolge" = aktiv, motivierend
+- ✅ "Entwicklung" = Fortschritt, nicht Wettbewerb
+- ✅ "Jedes Spiel zählt" = zeigt Ambition
+- ✅ Konkrete Fragen = neugierig machend
+- ✅ Keine Entschuldigung = selbstbewusst
 
 ---
 
@@ -198,7 +178,39 @@ Vom Egg 🥚 bis zum Göpf 👼 — der Weg ist messbar.
 
 ---
 
-### 9. 🔥 NEU: FAQ-Section
+### 9. 🔥 NEU: Community-Section (Coming Soon)
+
+**Titel:** Jasser in deiner Nähe
+
+**Subtitle:** Finde Tische, Vereine und Mitspieler — bald verfügbar.
+
+**Copy:**
+Die Vision: Kein Jasser bleibt ohne Tisch. Wir bauen gerade die Infrastruktur, um Jasser schweizweit zu vernetzen.
+
+**Aktuell verfügbar:**
+- **WhatsApp-Community** — Tritt dem Verbands-Chat bei und finde spontan Mitspieler
+
+**In Entwicklung:**
+- 📍 **Tisch-Finder** — Wo wird in meiner Nähe gejasst?
+- 🏛️ **Vereins-Verzeichnis** — Jassclubs in deiner Region
+- 📅 **Event-Kalender** — Turniere und Jass-Abende
+
+**CTA:** Über WhatsApp vernetzen → [WhatsApp-Link]
+
+**Design:**
+- "Coming Soon" Badges auf Tisch-Finder/Vereins-Verzeichnis/Event-Kalender
+- WhatsApp-Button prominent und aktiv
+- 3 Karten-Layout (1 aktiv, 2 coming soon)
+
+**Warum das funktioniert:**
+- ✅ Ehrlich: "bald verfügbar" (keine falschen Versprechen)
+- ✅ Liefert JETZT etwas: WhatsApp-Chat (low-tech, aber real)
+- ✅ Zeigt Vision: Die Infrastruktur kommt
+- ✅ KI-Bot-Idee kann später integriert werden
+
+---
+
+### 10. 🔥 NEU: FAQ-Section
 
 **Titel:** Häufige Fragen
 
@@ -224,14 +236,28 @@ Vom Egg 🥚 bis zum Göpf 👼 — der Weg ist messbar.
 
 ---
 
-### 10. Trust-Section (bleibt)
+### 11. Trust-Section (bleibt)
 **Text:** JVS repräsentiert Jassen als vom Bundesamt für Kultur anerkannte lebendige Tradition.
 **Badge:** Lebendige Tradition
 
 ---
 
-### 11. Footer (bleibt)
+### 12. Footer (mit Erweiterungen)
+
 **Standard-Footer** mit Navigation, Rechtlichem, Kontakt
+
+**Neue Footer-Links (zusätzlich zu bestehenden):**
+
+**Verband:**
+- Über den Verband → `/leitbild`
+- Vorstand → `/leitbild#vorstand`
+- Statuten → `/leitbild#statuten`
+- Werte → `/leitbild#werte`
+
+**Warum:**
+- User, die "Verband" suchen, finden die Info im Footer
+- "Leitbild" bleibt emotional in Hauptnavi
+- Beide User-Typen (emotional + verwaltungsorientiert) werden bedient
 
 ---
 
@@ -554,8 +580,14 @@ Vom Egg 🥚 bis zum Göpf 👼 — der Weg ist messbar.
 ## 📅 Implementation Roadmap
 
 ### Phase 1: Content (jetzt)
-- ✅ CONTENT_STRUCTURE.md erstellen
-- ⏳ contentDE.md überarbeiten
+- ✅ CONTENT_STRUCTURE.md finalisiert (Version 2.0)
+  - Vision konsolidiert
+  - Mission verbandlich formuliert
+  - Statistik-Section selbstbewusst
+  - Community-Section als Teaser
+  - Footer erweitert
+- ⏳ FAQ-Antworten schreiben (8 Homepage-FAQs)
+- ⏳ contentDE.md überarbeiten (basierend auf neuer Struktur)
 - ⏳ faqDE.md finalisieren
 - ⏳ contentFR.md erstellen
 - ⏳ contentIT.md erstellen
@@ -564,23 +596,32 @@ Vom Egg 🥚 bis zum Göpf 👼 — der Weg ist messbar.
 - ⏳ Navigation umstrukturieren (Navi-Items ändern)
 - ⏳ Routes anpassen (`/verband` → `/leitbild`)
 - ⏳ Redirects einrichten (301)
+- ⏳ Footer-Links erweitern ("Über den Verband" etc.)
 
 ### Phase 3: Neue Seiten
 - ⏳ `/schweizermeisterschaft` erstellen
 - ⏳ `/plattformen` erstellen (ersetzt `/projekte`)
 - ⏳ `/statistiken` erstellen (neue Seite)
+- ⏳ `/community` (optional, zunächst nur WhatsApp-Link)
 
 ### Phase 4: Homepage
-- ⏳ Statistik-Teaser Section bauen
-- ⏳ Jass-Profil Section bauen
-- ⏳ Tools Section bauen
-- ⏳ FAQ Section bauen
-- ⏳ Reihenfolge anpassen
+- ⏳ Statistik-Teaser Section bauen ("Verfolge deine Entwicklung")
+- ⏳ Jass-Profil Section bauen (3 Karten)
+- ⏳ Tools Section bauen (JassWiki, Göpf, Kalkulator)
+- ⏳ Community Section bauen (WhatsApp + Coming Soon)
+- ⏳ FAQ Section bauen (8 Fragen, Accordion)
+- ⏳ Reihenfolge anpassen (12 Sections)
 
 ### Phase 5: Bestehende Seiten
-- ⏳ `/mitmachen` anpassen (neue Benefits-Section)
-- ⏳ `/leitbild` erweitern (Vorstand integrieren)
-- ⏳ `/kontakt` erweitern (Partner-Section)
+- ⏳ `/mitmachen` anpassen (neue Benefits-Section, neue FAQ)
+- ⏳ `/leitbild` erweitern (Vorstand integrieren, Werte hinzufügen)
+- ⏳ `/kontakt` erweitern (Partner-Section integrieren)
+
+### Phase 6: WhatsApp-Community
+- ⏳ WhatsApp-Gruppe/Channel erstellen
+- ⏳ Moderations-Regeln definieren
+- ⏳ Opt-In-Link generieren
+- ⏳ (Optional) KI-Bot für Slot-Buchung/Moderation (später)
 
 ---
 
@@ -598,4 +639,90 @@ Vom Egg 🥚 bis zum Göpf 👼 — der Weg ist messbar.
 
 ---
 
-*Ende des Struktur-Dokuments*
+## 📊 Finale Homepage-Struktur (Übersicht)
+
+### Reihenfolge der Sections:
+
+1. **Hero** — "Jassen ist mehr als ein Kartenspiel"
+2. **Vision** — "Kein Jasser ohne Tisch"
+3. **🔥 Statistik-Teaser** — "Verfolge deine Entwicklung" (NEU)
+4. **Mission** — 6 Kacheln (bleibt)
+5. **Tournament** — Schweizermeisterschaft (bleibt)
+6. **SystemrelevanzVideo** — "Weshalb braucht es den Jassverband?" (aktualisiert)
+7. **Jass-Profil** — 3 Karten (NEU)
+8. **Tools** — JassWiki, Göpf, Kalkulator (NEU)
+9. **🔥 Community** — "Jasser in deiner Nähe" (Coming Soon) (NEU)
+10. **FAQ** — 8 strategische Fragen (NEU)
+11. **Trust** — Lebendige Tradition Badge (bleibt)
+12. **Footer** — mit erweiterten Links (aktualisiert)
+
+**Gesamt:** 12 Sections (5 neu, 4 aktualisiert, 3 unverändert)
+
+---
+
+## ✅ Wichtigste Änderungen (Summary)
+
+### 1. **Core Identity aktualisiert**
+- ✅ Vision: "Kein Jasser ohne Tisch" (singulär, messbar)
+- ✅ Mission: "Wir organisieren, standardisieren und fördern" (verbandlich statt startup-mäßig)
+- ✅ Sekundär-Ziel: "Hürden fürs Lernen senken" (Bildung als Teil der Mission)
+
+### 2. **Statistik-Section selbstbewusst**
+- ✅ Titel: "Verfolge deine Entwicklung" (aktiv, motivierend)
+- ✅ Copy: "Jedes Spiel zählt" (ambitioniert, ohne Defensive)
+- ✅ KEINE Entschuldigung ("nicht um Gewinner...") (selbstbewusst)
+
+### 3. **Community-Section als Teaser**
+- ✅ WhatsApp-Community JETZT verfügbar
+- ✅ Tisch-Finder/Vereins-Verzeichnis/Event-Kalender "Coming Soon"
+- ✅ Ehrlich kommuniziert, keine falschen Versprechen
+
+### 4. **Navigation optimiert**
+- ✅ "Mitglied werden" an Position 1 (Conversion)
+- ✅ "Schweizermeisterschaft" an Position 2 (Flagship)
+- ✅ "Plattformen" statt "Projekte" (Infrastruktur-Fokus)
+- ✅ "Leitbild" statt "Verband" (emotional statt trocken)
+
+### 5. **Footer erweitert**
+- ✅ "Über den Verband" → `/leitbild` (für verwaltungsorientierte User)
+- ✅ Direkte Links: Vorstand, Statuten, Werte
+
+---
+
+## 🎯 Strategische Positionierung (Final)
+
+### Was ist der JVS im Kern?
+
+> Ein nationaler Dachverband, der Jassen als Wettkampfsport etabliert — mit der ersten Schweizermeisterschaft, einem fairen Elo-System und einer Community, die real am Tisch spielt.
+
+### Was ist das dominante Narrativ?
+
+> "Wir bringen die besten Jasser der Schweiz an einen Tisch — und helfen jedem, besser zu werden."
+
+### Die Pyramide:
+
+```
+           🏆 Schweizermeisterschaft
+          (Leuchtturm, Event-driven)
+                    ▲
+                    │
+        ════════════════════════════
+        📊 Elo-System + Qualifikation
+          (Strukturgeber, fair)
+        ════════════════════════════
+                    ▲
+                    │
+    ════════════════════════════════════
+    🤝 Tische finden + Lernen + Community
+        (Breite, niederschwellig)
+    ════════════════════════════════════
+```
+
+**Erfolgsformel:**
+- Event first (Schweizermeisterschaft zieht an)
+- Meritokratie (Elo macht es fair)
+- Infrastruktur (Tools unterstützen beides)
+
+---
+
+*Ende des Struktur-Dokuments — Version 2.0 (Finalisiert)*
