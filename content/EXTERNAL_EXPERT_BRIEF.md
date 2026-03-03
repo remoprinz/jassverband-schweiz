@@ -24,12 +24,13 @@ Der Jassverband Schweiz (JVS) ist ein neu gegründeter Verband (Januar 2026) mit
 5. **Medien** — Kultur, Sport, Digitalisierung
 
 ### Kernprodukte
-1. **Schweizermeisterschaft** (Team-Schieber) — erste nationale SM, geplant Herbst 2026
+1. **Schweizermeisterschaft** (Team-Schieber) — erste nationale SM,  sobald interesse klar: "wird so gross wie die community."
 2. **Elo-System** — nationales Ranking für Schieber (Partner + Gegner berücksichtigt)
-3. **JassGuru** — digitale Erfassung, Statistiken, Turnierverwaltung (Status: Beta/Closed Beta?)
+3. **JassGuru** — digitale Erfassung, Statistiken, Turnierverwaltung (Status: up & running inkl. support: https://jassguru.ch/support/) – gratisnutzung der jasstafel. statistiken, elo, etc. für zahlende verbandsmitglieder.
 4. **JassWiki** — Enzyklopädie (Regeln, Varianten, Strategie) — Live, gratis
-5. **Jasstrainer Göpf** — KI-Trainer (geplant)
+5. **Jasstrainer Göpf** — KI-Trainer (geplant). wir haben aber einen untrainierten prototypen zum vorzeigen. hier braucht es fördergeld zur umsetzung.
 6. **Jasskalkulator** — Wahrscheinlichkeitsrechner — Live, gratis
+7. **JassChat** (geplant) — Vernetzung – Chat für die Vermittlung von Jassplätzen. Voraussichtlich mit KI-Funktionen und "KI Bot Manager".
 
 ---
 
@@ -73,7 +74,7 @@ Der Jassverband Schweiz (JVS) ist ein neu gegründeter Verband (Januar 2026) mit
 ### 1. Launch-Strategie
 
 **Kontext:**
-Der Verband ist gegründet, aber noch nicht alle Produkte sind live. JassGuru ist vermutlich in einer Beta-Phase (Status unklar). Die Schweizermeisterschaft ist für Herbst 2026 geplant.
+Der Verband ist gegründet, aber noch nicht alle Produkte sind live. Die Schweizermeisterschaft kommt sobald Umfang des Interesses und Finanzierung klar ist.
 
 **Frage:**
 Sollte die Website **sofort Mitgliedschaften verkaufen** (mit festen Preisen) — oder zunächst mit einer **Warteliste + Umfrage** starten, um:
