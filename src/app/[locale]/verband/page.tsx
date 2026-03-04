@@ -5,11 +5,42 @@ interface VerbandPageProps {
   params: Promise<{ locale: string }>;
 }
 
-const vorstand = [
-  { name: "Remo Prinz", role: "Präsident", bio: "Gründer und Visionär des Jassverbands Schweiz" },
-  { name: "Fabian Cadonau", role: "Vizepräsident", bio: "Strategie und Partnerschaften" },
-  { name: "Dr. Erich Studerus", role: "Aktuar", bio: "Wissenschaft und Dokumentation" },
+const praesidium = [
+  {
+    name: "Remo Prinz",
+    role: "Präsident",
+    location: "Zürich",
+    quote: "Ich glaube nicht an Glück. Aber Ablupfen ist trotzdem das Wichtigste beim Jassen.",
+    description:
+      "Remo treibt die Digitalisierung des Schweizer Nationalspiels voran. Mit Projekten wie JassGuru und JassWiki arbeitet er daran, das Wissen, die Regeln und die Resultate des Jassens erstmals strukturiert und schweizweit zugänglich zu machen. Seine Vision: eine gemeinsame digitale Grundlage für Ranglisten, Turniere und Meisterschaften — damit der Jassverband Schweiz nicht nur Tradition bewahrt, sondern das Spiel auch organisatorisch ins digitale Zeitalter führt.",
+  },
+  {
+    name: "Fabian Cadonau",
+    role: "Vizepräsident",
+    location: "Flims",
+    quote: "Im Jassen spiegelt sich die Welt.",
+    description:
+      "Fabian ist seit Jahrzehnten tief in der Schweizer Jassszene verankert. Als Redaktor der Jass-Zeitschrift Trumpf-As und einer der erfahrensten Turnierleiter der Schweiz kennt er die Jasskultur von der Pike auf. Im JVS sorgt er dafür, dass die Perspektive der Spielerinnen und Spieler — vom Stammtisch bis zum Turniersaal — in die Verbandsarbeit einfliesst.",
+  },
+  {
+    name: "Dr. Erich Studerus",
+    role: "Aktuar",
+    location: "Basel",
+    quote: "Ein guter Jass ist wie eine perfekte Formel: Am Ende muss er aufgehen.",
+    description:
+      "Erich ist Statistik-Dozent an der Fachhochschule Nordwestschweiz. Seine Leidenschaft fürs Messen und Analysieren lebt er bereits seit 2008 mit jassstatistik.ch aus – einer der ersten Plattformen zur systematischen Erfassung von Jass-Resultaten. Im JVS sorgt er dafür, dass alles seinen richtigen Weg geht — rechtlich, organisatorisch, dokumentarisch.",
+  },
 ];
+
+type PraesidiumMember = {
+  name: string;
+  role: string;
+  location: string;
+  quote: string;
+  description: string;
+};
+
+const praesidiumMembers: PraesidiumMember[] = praesidium;
 
 const valueIcons = {
   respect: (
@@ -49,11 +80,14 @@ export default async function VerbandPage({ params }: VerbandPageProps) {
           </p>
         </section>
 
-        {/* Vorstand */}
+        {/* Praesidium */}
         <section className="mb-20">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">{t("vorstand")}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {vorstand.map((member) => (
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-2">Präsidium</h2>
+          <p className="text-sm md:text-base text-[var(--color-foreground-muted)] text-center mb-12">
+            Ein starkes Blatt für den Schweizer Jass
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {praesidiumMembers.map((member) => (
               <Card key={member.name} className="text-center">
                 {/* Photo Placeholder */}
                 <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-[var(--color-background-alt)] flex items-center justify-center">
@@ -62,8 +96,11 @@ export default async function VerbandPage({ params }: VerbandPageProps) {
                   </span>
                 </div>
                 <h3 className="text-xl font-bold">{member.name}</h3>
-                <p className="text-[var(--color-primary)] font-medium mb-2">{member.role}</p>
-                <p className="text-sm text-[var(--color-foreground-muted)]">{member.bio}</p>
+                <p className="text-[var(--color-primary)] font-medium mb-3">{member.role}, {member.location}</p>
+                <blockquote className="text-sm italic leading-relaxed text-[var(--color-foreground)] mb-4">
+                  „{member.quote}“
+                </blockquote>
+                <p className="text-sm leading-relaxed text-[var(--color-foreground-muted)]">{member.description}</p>
               </Card>
             ))}
           </div>
