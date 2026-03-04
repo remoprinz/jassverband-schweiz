@@ -21,23 +21,18 @@ const FR_CARD_SET = [
   'card-06', 'card-07', 'card-08', 'card-09', 'card-10', 'card-11',
 ];
 
-const FRENCH_CARD_RATIO = 0.3;
+function pickRandomCards() {
+  const allCards = [
+    ...DE_CARD_SET.map((c) => `/cards/de/${c}.png`),
+    ...FR_CARD_SET.map((c) => `/cards/fr/${c}.png`),
+  ];
+  const shuffled = allCards.sort(() => Math.random() - 0.5);
+  const picked = shuffled.slice(0, 8);
 
-function pickUniqueCards(cardSet: string[], count: number, language: 'de' | 'fr'): string[] {
-  const shuffled = [...cardSet].sort(() => Math.random() - 0.5);
-  return shuffled.slice(0, Math.min(count, cardSet.length)).map((card) => `/cards/${language}/${card}.png`);
-}
+  const desktopCards = picked.slice(0, 4);
+  const mobileCards = picked.slice(4, 8);
 
-function pickRandomCards(count: number): string[] {
-  const expectedFr = count * FRENCH_CARD_RATIO;
-  const frFloor = Math.floor(expectedFr);
-  const frCount = frFloor + (Math.random() < expectedFr - frFloor ? 1 : 0);
-  const deCount = count - frCount;
-
-  const deCards = pickUniqueCards(DE_CARD_SET, deCount, 'de');
-  const frCards = pickUniqueCards(FR_CARD_SET, frCount, 'fr');
-
-  return [...deCards, ...frCards].sort(() => Math.random() - 0.5);
+  return { desktopCards, mobileCards };
 }
 
 function randomCardEntry(side: 'left' | 'right') {
@@ -75,9 +70,15 @@ function randomCardEntry(side: 'left' | 'right') {
  */
 export function Hero({ title, subtitle, cta }: HeroProps) {
   const [isMounted, setIsMounted] = useState(false);
+  const [animateCards, setAnimateCards] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        setAnimateCards(true);
+      });
+    });
   }, []);
 
   const cardEntries = useMemo(() => {
@@ -85,16 +86,16 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
       return null;
     }
 
-    const cards = pickRandomCards(8);
+    const { desktopCards, mobileCards } = pickRandomCards();
     return {
-      leftTop: { ...randomCardEntry('left'), src: cards[0] },
-      leftBottom: { ...randomCardEntry('left'), src: cards[1] },
-      rightTop: { ...randomCardEntry('right'), src: cards[2] },
-      rightBottom: { ...randomCardEntry('right'), src: cards[3] },
-      mobileLeft1: { ...randomCardEntry('left'), src: cards[4] },
-      mobileLeft2: { ...randomCardEntry('left'), src: cards[5] },
-      mobileRight1: { ...randomCardEntry('right'), src: cards[6] },
-      mobileRight2: { ...randomCardEntry('right'), src: cards[7] },
+      leftTop: { ...randomCardEntry('left'), src: desktopCards[0] },
+      leftBottom: { ...randomCardEntry('left'), src: desktopCards[1] },
+      rightTop: { ...randomCardEntry('right'), src: desktopCards[2] },
+      rightBottom: { ...randomCardEntry('right'), src: desktopCards[3] },
+      mobileLeft1: { ...randomCardEntry('left'), src: mobileCards[0] },
+      mobileLeft2: { ...randomCardEntry('left'), src: mobileCards[1] },
+      mobileRight1: { ...randomCardEntry('right'), src: mobileCards[2] },
+      mobileRight2: { ...randomCardEntry('right'), src: mobileCards[3] },
     };
   }, [isMounted]);
 
@@ -156,7 +157,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
               width: '11.042%',
             }}
             initial={{ opacity: 0, x: cardEntries.leftTop.x, y: cardEntries.leftTop.y, rotate: cardEntries.leftTop.rotate }}
-            animate={{ opacity: 1, x: 0, y: 0, rotate: 15.8 }}
+            animate={animateCards ? { opacity: 1, x: 0, y: 0, rotate: 15.8 } : undefined}
             transition={{ duration: 0.7, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
           >
             <Image
@@ -179,7 +180,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
               width: '11.042%',
             }}
             initial={{ opacity: 0, x: cardEntries.leftBottom.x, y: cardEntries.leftBottom.y, rotate: cardEntries.leftBottom.rotate }}
-            animate={{ opacity: 1, x: 0, y: 0, rotate: -27.35 }}
+            animate={animateCards ? { opacity: 1, x: 0, y: 0, rotate: -27.35 } : undefined}
             transition={{ duration: 0.75, delay: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
           >
             <Image
@@ -202,7 +203,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
               width: '11.042%',
             }}
             initial={{ opacity: 0, x: cardEntries.rightTop.x, y: cardEntries.rightTop.y, rotate: cardEntries.rightTop.rotate }}
-            animate={{ opacity: 1, x: 0, y: 0, rotate: -16.19 }}
+            animate={animateCards ? { opacity: 1, x: 0, y: 0, rotate: -16.19 } : undefined}
             transition={{ duration: 0.7, delay: 0.25, ease: [0.25, 0.1, 0.25, 1] }}
           >
             <Image
@@ -225,7 +226,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
               width: '11.042%',
             }}
             initial={{ opacity: 0, x: cardEntries.rightBottom.x, y: cardEntries.rightBottom.y, rotate: cardEntries.rightBottom.rotate }}
-            animate={{ opacity: 1, x: 0, y: 0, rotate: 8.34 }}
+            animate={animateCards ? { opacity: 1, x: 0, y: 0, rotate: 8.34 } : undefined}
             transition={{ duration: 0.75, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
           >
             <Image
@@ -246,7 +247,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
             className="absolute z-10 lg:hidden"
             style={{ left: '3%', top: '55%', width: '22%' }}
             initial={{ opacity: 0, x: cardEntries.mobileLeft1.x, y: cardEntries.mobileLeft1.y, rotate: cardEntries.mobileLeft1.rotate }}
-            animate={{ opacity: 1, x: 0, y: 0, rotate: 12 }}
+            animate={animateCards ? { opacity: 1, x: 0, y: 0, rotate: 12 } : undefined}
             transition={{ duration: 0.7, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
           >
             <Image
@@ -264,7 +265,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
             className="absolute z-10 lg:hidden"
             style={{ left: '18%', top: '62%', width: '22%' }}
             initial={{ opacity: 0, x: cardEntries.mobileLeft2.x, y: cardEntries.mobileLeft2.y, rotate: cardEntries.mobileLeft2.rotate }}
-            animate={{ opacity: 1, x: 0, y: 0, rotate: -20 }}
+            animate={animateCards ? { opacity: 1, x: 0, y: 0, rotate: -20 } : undefined}
             transition={{ duration: 0.75, delay: 0.45, ease: [0.25, 0.1, 0.25, 1] }}
           >
             <Image
@@ -282,7 +283,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
             className="absolute z-10 lg:hidden"
             style={{ right: '3%', top: '55%', width: '22%' }}
             initial={{ opacity: 0, x: cardEntries.mobileRight1.x, y: cardEntries.mobileRight1.y, rotate: cardEntries.mobileRight1.rotate }}
-            animate={{ opacity: 1, x: 0, y: 0, rotate: -14 }}
+            animate={animateCards ? { opacity: 1, x: 0, y: 0, rotate: -14 } : undefined}
             transition={{ duration: 0.7, delay: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
           >
             <Image
@@ -300,7 +301,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
             className="absolute z-10 lg:hidden"
             style={{ right: '18%', top: '62%', width: '22%' }}
             initial={{ opacity: 0, x: cardEntries.mobileRight2.x, y: cardEntries.mobileRight2.y, rotate: cardEntries.mobileRight2.rotate }}
-            animate={{ opacity: 1, x: 0, y: 0, rotate: 8 }}
+            animate={animateCards ? { opacity: 1, x: 0, y: 0, rotate: 8 } : undefined}
             transition={{ duration: 0.75, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
           >
             <Image

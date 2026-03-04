@@ -214,8 +214,8 @@ export default function JasskalkulatorPage() {
               </svg>
             </Link>
             <div className="flex items-end gap-1.5 lg:scale-[1.2] lg:origin-left">
-              <span className="w-7 h-7 rounded-full bg-[#FF0000] flex items-center justify-center">
-                <PiCalculatorFill className="w-4 h-4 text-white" style={{ transform: 'scale(1.15)' }} />
+              <span className="w-7 h-7 rounded-full bg-[#FFFFFF] flex items-center justify-center">
+                <PiCalculatorFill className="w-4 h-4 text-black" style={{ transform: 'scale(1.15)' }} />
               </span>
               <span 
                 className="text-white text-[24px] sm:text-[28px]"
