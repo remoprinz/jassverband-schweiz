@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { StandardSection } from '@/components/layout/StandardSection';
 import { EnhancedProjectCard } from '@/components/ui';
+import { PiCalculatorFill } from 'react-icons/pi';
 
 interface EcosystemProject {
   title: string;
@@ -39,16 +40,9 @@ const icons = {
     </svg>
   ),
   jasskalkulator: (
-    <svg viewBox="0 0 48 48" fill="none" className="w-full h-full">
-      <rect x="8" y="6" width="32" height="36" rx="3" stroke="currentColor" strokeWidth="2" fill="none" />
-      <rect x="12" y="10" width="24" height="8" rx="1" stroke="currentColor" strokeWidth="2" fill="none" />
-      <circle cx="16" cy="26" r="2" fill="currentColor" />
-      <circle cx="24" cy="26" r="2" fill="currentColor" />
-      <circle cx="32" cy="26" r="2" fill="currentColor" />
-      <circle cx="16" cy="34" r="2" fill="currentColor" />
-      <circle cx="24" cy="34" r="2" fill="currentColor" />
-      <circle cx="32" cy="34" r="2" fill="currentColor" />
-    </svg>
+    <span className="w-full h-full rounded-full bg-[#FF0000] flex items-center justify-center">
+      <PiCalculatorFill className="w-[55%] h-[55%] text-white" />
+    </span>
   ),
   jassguru: (
     <svg viewBox="0 0 48 48" fill="none" className="w-full h-full">

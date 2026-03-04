@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
@@ -42,19 +42,61 @@ function Logo({ variant = 'color', shrunk = false }: { variant?: 'color' | 'whit
 export function Header({ locale, nav }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isMobileViewport, setIsMobileViewport] = useState(false);
+  const [isMobileCompact, setIsMobileCompact] = useState(false);
+  const lastScrollYRef = useRef(0);
   const pathname = usePathname();
 
   const isHomePage = pathname === `/${locale}` || pathname === `/${locale}/`;
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+    const MOBILE_BREAKPOINT = 1024;
+    const PIN_THRESHOLD_PX = 38; // ~1cm scroll distance
+    const COLLAPSE_THRESHOLD_PX = 288; // 3x später kollabieren
+    const EXPAND_THRESHOLD_PX = 220;
+
+    const handleResize = () => {
+      const isMobile = window.innerWidth < MOBILE_BREAKPOINT;
+      setIsMobileViewport(isMobile);
+      if (!isMobile) {
+        setIsMobileCompact(false);
+      }
     };
-    
+
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      setScrolled(scrollY > 50);
+
+      if (window.innerWidth < MOBILE_BREAKPOINT && !mobileMenuOpen) {
+        const isScrollingDown = scrollY > lastScrollYRef.current;
+
+        if (scrollY <= PIN_THRESHOLD_PX) {
+          setIsMobileCompact(false);
+        } else if (scrollY >= COLLAPSE_THRESHOLD_PX && isScrollingDown) {
+          setIsMobileCompact(true);
+        } else if (!isScrollingDown && scrollY <= EXPAND_THRESHOLD_PX) {
+          setIsMobileCompact(false);
+        }
+      }
+
+      lastScrollYRef.current = scrollY;
+    };
+
+    handleResize();
     handleScroll();
+    window.addEventListener('resize', handleResize);
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [mobileMenuOpen]);
+
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      setIsMobileCompact(false);
+    }
+  }, [mobileMenuOpen]);
 
   const navItems = [
     { href: `/${locale}/schweizermeisterschaft`, label: nav.schweizermeisterschaft, shortLabel: 'Meisterschaft' },
@@ -68,21 +110,57 @@ export function Header({ locale, nav }: HeaderProps) {
     return pathname.startsWith(href);
   };
 
+  const isCompactMode = isMobileViewport && isMobileCompact && !mobileMenuOpen;
   const showTransparent = isHomePage && !scrolled;
   const logoVariant = showTransparent ? 'white' : 'color';
 
   return (
     <header
       data-header
-      className={`fixed z-50 transition-all duration-500 ease-out ${
-        scrolled
-          ? 'left-3 right-3 md:left-[140px] md:right-[140px]'
-          : 'left-0 right-0'
-      }`}
+      className="fixed z-50 transition-[top,left,right,width,background,border-radius,box-shadow,backdrop-filter] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
       style={
-        scrolled
+        isMobileViewport
+          ? isCompactMode
+            ? {
+                top: '12px',
+                right: '12px',
+                width: '56px',
+                background: 'rgba(255,255,255,0.98)',
+                borderRadius: '12px',
+                boxShadow: '0 4px 24px rgba(0,0,0,0.10)',
+                backdropFilter: 'blur(12px)',
+              }
+            : scrolled
+            ? {
+                top: '12px',
+                right: '12px',
+                width: 'calc(100% - 24px)',
+                background: 'rgba(255,255,255,0.98)',
+                borderRadius: '12px',
+                boxShadow: '0 4px 24px rgba(0,0,0,0.10)',
+                backdropFilter: 'blur(12px)',
+              }
+            : isHomePage
+            ? {
+                top: 0,
+                left: 0,
+                right: 0,
+                width: '100%',
+                background: 'transparent',
+              }
+            : {
+                top: 0,
+                left: 0,
+                right: 0,
+                width: '100%',
+                background: 'rgba(255,255,255,0.98)',
+                boxShadow: '0 1px 8px rgba(0,0,0,0.08)',
+              }
+          : scrolled
           ? {
               top: '12px',
+              left: '140px',
+              right: '140px',
               background: 'rgba(255,255,255,0.98)',
               borderRadius: '12px',
               boxShadow: '0 4px 24px rgba(0,0,0,0.10)',
@@ -91,22 +169,32 @@ export function Header({ locale, nav }: HeaderProps) {
           : isHomePage
           ? {
               top: 0,
+              left: 0,
+              right: 0,
               background: 'transparent',
             }
           : {
               top: 0,
+              left: 0,
+              right: 0,
               background: 'rgba(255,255,255,0.98)',
               boxShadow: '0 1px 8px rgba(0,0,0,0.08)',
             }
       }
     >
-      <div className={scrolled ? 'px-6' : 'container-main'}>
-        <nav className={`flex items-center justify-between transition-all duration-500 ${
-          scrolled ? 'h-[72px] md:h-[76px]' : 'h-20 md:h-24'
+      <div className={isCompactMode ? 'px-0' : scrolled ? 'px-6' : 'container-main'}>
+        <nav className={`flex items-center transition-all duration-500 ${
+          isCompactMode
+            ? 'justify-end h-14 px-1'
+            : scrolled
+            ? 'justify-between h-[72px] md:h-[76px]'
+            : 'justify-between h-20 md:h-24'
         }`}>
-          <Link href={`/${locale}`} className="flex items-center">
-            <Logo variant={logoVariant} shrunk={scrolled} />
-          </Link>
+          {!isCompactMode && (
+            <Link href={`/${locale}`} className="flex items-center">
+              <Logo variant={logoVariant} shrunk={scrolled} />
+            </Link>
+          )}
 
           <div className="hidden lg:flex items-center gap-6 xl:gap-8">
             {navItems.map((item) => (
@@ -173,9 +261,14 @@ export function Header({ locale, nav }: HeaderProps) {
           </div>
 
           <button
-            className={`lg:hidden p-2 rounded-lg transition-colors ${
-              showTransparent ? 'text-white' : 'text-black'
+            className={`lg:hidden rounded-lg transition-all ${
+              isCompactMode
+                ? 'text-black'
+                : showTransparent
+                ? 'text-white'
+                : 'text-black'
             }`}
+            style={isCompactMode ? { width: '56px', height: '56px', display: 'flex', alignItems: 'center', justifyContent: 'center' } : undefined}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >

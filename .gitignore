@@ -40,3 +40,9 @@ __MACOSX/
 
 # internal docs (not public)
 .internal/
+
+# large local assets (not pushed to git)
+public/assets/local-only/
+
+# dev build cache
+.next-dev/

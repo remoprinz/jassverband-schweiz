@@ -4,6 +4,7 @@ import { useState, useCallback, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
+import { PiCalculatorFill } from 'react-icons/pi';
 import { JASS_CARDS, type JassCard, type CardLocale, type Suit, type Value, getSuitLabel } from '@/lib/calculator/cards';
 import { calculateProbability, type CalculationConfig, type OpponentType, type Comparator, getMaxPossibleInSuit } from '@/lib/calculator/jassLogic';
 
@@ -36,10 +37,10 @@ const SUIT_ICON_DIMENSIONS: Record<CardLocale, Record<Suit, { width: number; hei
 
 const SUIT_ICONS: Record<CardLocale, Record<Suit, string>> = {
   de: {
-    E: '/cards/icons/eichel.png',
-    R: '/cards/icons/rosen.png', 
-    S: '/cards/icons/schellen.png',
-    L: '/cards/icons/schilten.png',
+    E: '/cards/icons/eichel.svg',
+    R: '/cards/icons/rosen.svg', 
+    S: '/cards/icons/schellen.svg',
+    L: '/cards/icons/schilten.svg',
   },
   fr: {
     E: '/cards/icons/schaufel.svg',
@@ -47,6 +48,12 @@ const SUIT_ICONS: Record<CardLocale, Record<Suit, string>> = {
     S: '/cards/icons/herz.svg',
     L: '/cards/icons/ecke.svg',
   }
+};
+
+const FR_SUIT_ICON_SCALE: Partial<Record<Suit, number>> = {
+  E: 1.07, // Schaufel
+  R: 1.1025, // Kreuz (nochmals +5%)
+  S: 1.15, // Herz
 };
 
 function clamp(value: number, min: number, max: number): number {
@@ -89,18 +96,16 @@ function mixHex(a: string, b: string, t: number): string {
 
 function getProbabilityColor(value: number): string {
   const p = clamp(value, 0, 100);
-  if (p <= 20) return PROBABILITY_LOW_COLOR;
-  if (p >= 80) return PROBABILITY_HIGH_COLOR;
-  if (p < 50) {
-    return mixHex(PROBABILITY_LOW_COLOR, PROBABILITY_MID_COLOR, (p - 20) / 30);
-  }
-  return mixHex(PROBABILITY_MID_COLOR, PROBABILITY_HIGH_COLOR, (p - 50) / 30);
+  if (p < 33) return PROBABILITY_LOW_COLOR;
+  if (p < 66) return PROBABILITY_MID_COLOR;
+  return PROBABILITY_HIGH_COLOR;
 }
 
 export default function JasskalkulatorPage() {
   const [selectedCards, setSelectedCards] = useState<JassCard[]>([]);
   const [cardLocale, setCardLocale] = useState<CardLocale>('de');
   const [showCardSelectionPopup, setShowCardSelectionPopup] = useState(false);
+  const [isMobilePortrait, setIsMobilePortrait] = useState(false);
   const [config, setConfig] = useState<Partial<CalculationConfig>>({});
   const cardsReady = selectedCards.length === MAX_CARDS;
 
@@ -151,9 +156,8 @@ export default function JasskalkulatorPage() {
   const probabilityCardBackground = probability === null
     ? 'rgba(0, 0, 0, 0.5)'
     : hexToRgba(probabilityAccentColor, 0.12);
-  const probabilityFillGradient = probability === null
-    ? 'linear-gradient(90deg, #2BB752 0%, #00FF46 100%)'
-    : `linear-gradient(90deg, ${mixHex(probabilityValueColor, '#000000', 0.18)} 0%, ${probabilityValueColor} 55%, ${mixHex(probabilityValueColor, '#FFFFFF', 0.08)} 100%)`;
+  const probabilityFillColor = probability === null ? '#00FF46' : probabilityAccentColor;
+  const resetButtonIsActive = probability !== null;
 
   useEffect(() => {
     if (config.targetCard && selectedCards.length === MAX_CARDS) {
@@ -163,6 +167,20 @@ export default function JasskalkulatorPage() {
       }
     }
   }, [selectedCards, config.targetCard, config.condition]);
+
+  useEffect(() => {
+    const updateMobilePortraitState = () => {
+      if (typeof window === 'undefined') return;
+      const isPortrait = window.matchMedia('(orientation: portrait)').matches;
+      setIsMobilePortrait(window.innerWidth < 768 && isPortrait);
+    };
+
+    updateMobilePortraitState();
+    window.addEventListener('resize', updateMobilePortraitState);
+    return () => {
+      window.removeEventListener('resize', updateMobilePortraitState);
+    };
+  }, []);
 
   const suitOrder = ['E', 'R', 'S', 'L'] as Suit[];
   const getSuitCardsInDisplayOrder = (suit: Suit) => {
@@ -181,8 +199,8 @@ export default function JasskalkulatorPage() {
         className="w-full"
         style={{ 
           backgroundColor: '#000000',
-          height: '56px',
-          minHeight: '56px',
+          height: '76px',
+          minHeight: '76px',
         }}
       >
         <div className="max-w-[1400px] mx-auto w-full h-full px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -195,20 +213,17 @@ export default function JasskalkulatorPage() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
               </svg>
             </Link>
-            <div className="flex items-center gap-2.5">
-              <Image
-                src="/images/icons/jasskalkulator-icon.png"
-                alt="JassKalkulator"
-                width={28}
-                height={28}
-                className="w-7 h-7 rounded-full"
-              />
+            <div className="flex items-end gap-1.5 lg:scale-[1.2] lg:origin-left">
+              <span className="w-7 h-7 rounded-full bg-[#FF0000] flex items-center justify-center">
+                <PiCalculatorFill className="w-4 h-4 text-white" style={{ transform: 'scale(1.15)' }} />
+              </span>
               <span 
-                className="text-white"
+                className="text-white text-[24px] sm:text-[28px]"
                 style={{ 
                   fontFamily: 'var(--font-capita), Capita, Georgia, serif',
-                  fontWeight: 400,
-                  fontSize: '18px',
+                  fontWeight: 700,
+                  lineHeight: '1',
+                  transform: 'translateY(2px)',
                 }}
               >
                 JassKalkulator
@@ -249,7 +264,10 @@ export default function JasskalkulatorPage() {
       </header>
 
       {/* Main Content */}
-      <div className="flex-1 max-w-[1400px] mx-auto w-full px-4 sm:px-6 lg:px-8 py-6">
+      <div
+        className="flex-1 max-w-[1400px] mx-auto w-full px-4 sm:px-6 lg:px-8 py-6"
+        style={{ paddingBottom: isMobilePortrait ? '56px' : undefined }}
+      >
         {/* Main Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] xl:grid-cols-[1fr_396px] gap-8 lg:gap-12">
           
@@ -264,6 +282,7 @@ export default function JasskalkulatorPage() {
                   lineHeight: '100%',
                   letterSpacing: '0%',
                   color: 'white',
+                  marginLeft: isMobilePortrait ? '8px' : '0px',
                 }}
               >
                 Ich habe folgende Karten:
@@ -328,62 +347,111 @@ export default function JasskalkulatorPage() {
               })}
             </div>
 
-            {/* Card Grid - Mobile (3x3 pro Farbe) */}
+            {/* Card Grid - Mobile */}
             <div className="md:hidden">
-              {suitOrder.map((suit, suitIndex) => {
-                const suitCards = getSuitCardsInDisplayOrder(suit);
-                return (
-                  <div key={suit}>
-                    <div className="space-y-1.5">
-                      {[0, 3, 6].map((startIndex) => (
-                        <div key={`${suit}-${startIndex}`} className="grid grid-cols-3 gap-1.5">
-                          {suitCards.slice(startIndex, startIndex + 3).map((card) => {
-                            const isSelected = selectedCards.some((c) => c.id === card.id);
-                            const isDisabled = !isSelected && selectedCards.length >= MAX_CARDS;
+              {isMobilePortrait ? (
+                <div className="space-y-1">
+                  {[...CARD_VALUE_DISPLAY_ORDER].reverse().map((value) => (
+                    <div key={`portrait-row-${value}`} className="grid grid-cols-4 gap-x-0.5 gap-y-1.5">
+                      {suitOrder.map((suit) => {
+                        const card = JASS_CARDS.find((c) => c.suit === suit && c.value === value);
+                        if (!card) {
+                          return <div key={`missing-${suit}-${value}`} />;
+                        }
+                        const isSelected = selectedCards.some((c) => c.id === card.id);
+                        const isDisabled = !isSelected && selectedCards.length >= MAX_CARDS;
 
-                            return (
-                              <motion.button
-                                key={card.id}
-                                onClick={() => !isDisabled && handleCardSelect(card)}
-                                disabled={isDisabled}
-                                className="relative rounded-lg overflow-hidden transition-all w-full"
-                                style={{
-                                  aspectRatio: '83 / 130',
-                                  opacity: isDisabled ? 0.35 : 1,
-                                  filter: isSelected ? 'none' : (isDisabled ? 'grayscale(0.5)' : 'brightness(0.7)'),
-                                  boxShadow: isSelected 
-                                    ? '0 0 0 2px #00FF46'
-                                    : '2px 3px 8px rgba(0,0,0,0.4)',
-                                  borderRadius: '5.2px',
-                                  cursor: isDisabled ? 'not-allowed' : 'pointer',
-                                }}
-                                whileTap={!isDisabled ? { scale: 0.97 } : undefined}
-                              >
-                                <Image
-                                  src={card.getImage(cardLocale)}
-                                  alt={card.label}
-                                  fill
-                                  className="object-cover"
-                                  sizes="(max-width: 767px) 28vw, 80px"
-                                  draggable={false}
-                                />
-                              </motion.button>
-                            );
-                          })}
-                        </div>
-                      ))}
+                        return (
+                          <motion.button
+                            key={card.id}
+                            onClick={() => !isDisabled && handleCardSelect(card)}
+                            disabled={isDisabled}
+                            className="relative rounded-lg overflow-hidden transition-all w-[88%] mx-auto"
+                            style={{
+                              aspectRatio: '83 / 130',
+                              opacity: isDisabled ? 0.35 : 1,
+                              filter: isSelected ? 'none' : (isDisabled ? 'grayscale(0.5)' : 'brightness(0.7)'),
+                              boxShadow: isSelected 
+                                ? '0 0 0 2px #00FF46'
+                                : '2px 3px 8px rgba(0,0,0,0.4)',
+                              borderRadius: '5.2px',
+                              cursor: isDisabled ? 'not-allowed' : 'pointer',
+                            }}
+                            whileTap={!isDisabled ? { scale: 0.97 } : undefined}
+                          >
+                            <Image
+                              src={card.getImage(cardLocale)}
+                              alt={card.label}
+                              fill
+                              className="object-cover"
+                              sizes="(max-width: 767px) 22vw, 80px"
+                              draggable={false}
+                            />
+                          </motion.button>
+                        );
+                      })}
                     </div>
-                    {suitIndex < suitOrder.length - 1 && (
-                      <div style={{ height: '1px', backgroundColor: '#00FF46', margin: '12px 0' }} />
-                    )}
-                  </div>
-                );
-              })}
+                  ))}
+                </div>
+              ) : (
+                <>
+                  {/* Mobile Landscape: 3x3 pro Farbe */}
+                  {suitOrder.map((suit, suitIndex) => {
+                    const suitCards = getSuitCardsInDisplayOrder(suit);
+                    return (
+                      <div key={suit}>
+                        <div className="space-y-1.5">
+                          {[0, 3, 6].map((startIndex) => (
+                            <div key={`${suit}-${startIndex}`} className="grid grid-cols-3 gap-1.5">
+                              {suitCards.slice(startIndex, startIndex + 3).map((card) => {
+                                const isSelected = selectedCards.some((c) => c.id === card.id);
+                                const isDisabled = !isSelected && selectedCards.length >= MAX_CARDS;
+
+                                return (
+                                  <motion.button
+                                    key={card.id}
+                                    onClick={() => !isDisabled && handleCardSelect(card)}
+                                    disabled={isDisabled}
+                                    className="relative rounded-lg overflow-hidden transition-all w-full"
+                                    style={{
+                                      aspectRatio: '83 / 130',
+                                      opacity: isDisabled ? 0.35 : 1,
+                                      filter: isSelected ? 'none' : (isDisabled ? 'grayscale(0.5)' : 'brightness(0.7)'),
+                                      boxShadow: isSelected 
+                                        ? '0 0 0 2px #00FF46'
+                                        : '2px 3px 8px rgba(0,0,0,0.4)',
+                                      borderRadius: '5.2px',
+                                      cursor: isDisabled ? 'not-allowed' : 'pointer',
+                                    }}
+                                    whileTap={!isDisabled ? { scale: 0.97 } : undefined}
+                                  >
+                                    <Image
+                                      src={card.getImage(cardLocale)}
+                                      alt={card.label}
+                                      fill
+                                      className="object-cover"
+                                      sizes="(max-width: 767px) 28vw, 80px"
+                                      draggable={false}
+                                    />
+                                  </motion.button>
+                                );
+                              })}
+                            </div>
+                          ))}
+                        </div>
+                        {suitIndex < suitOrder.length - 1 && (
+                          <div style={{ height: '1px', backgroundColor: '#00FF46', margin: '12px 0' }} />
+                        )}
+                      </div>
+                    );
+                  })}
+                </>
+              )}
             </div>
           </div>
 
           {/* Right: Config Panel */}
-          <div className="mt-6 lg:mt-0">
+          <div className={`${isMobilePortrait ? 'mt-3' : 'mt-6'} lg:mt-0`}>
             {/* Überschrift - Capita Regular */}
             <h2 
               style={{ 
@@ -444,6 +512,7 @@ export default function JasskalkulatorPage() {
                 const hasAvailable = suitCards.length > 0;
                 const iconDimensions = SUIT_ICON_DIMENSIONS[cardLocale][suit];
                 const shouldForceWhiteFrIcon = cardLocale === 'fr' && !isSelected && (suit === 'E' || suit === 'R');
+                const frIconScale = cardLocale === 'fr' ? (FR_SUIT_ICON_SCALE[suit] ?? 1) : 1;
                 
                 return (
                   <button
@@ -477,6 +546,8 @@ export default function JasskalkulatorPage() {
                         width: `${iconDimensions.width}px`,
                         height: `${iconDimensions.height}px`,
                         filter: shouldForceWhiteFrIcon ? 'brightness(0) invert(0.85)' : 'none',
+                        transform: `scale(${frIconScale})`,
+                        transformOrigin: 'center',
                       }}
                     />
                   </button>
@@ -657,7 +728,7 @@ export default function JasskalkulatorPage() {
             </div>
             
             {/* Condition Selection - Row 2 */}
-            <div className="flex gap-4 mb-4">
+            <div className="grid grid-cols-5 gap-2 mb-4">
               {[6, 7, 8, 9].map((n) => {
                 const isActive = config.condition === n;
                 const showActive = cardsReady && isActive;
@@ -667,7 +738,7 @@ export default function JasskalkulatorPage() {
                     key={n}
                     onClick={() => guardConfigInteraction(() => setConfig((prev) => ({ ...prev, condition: n })))}
                     disabled={cardsReady && isDisabled}
-                    className="flex-1 rounded-lg transition-all"
+                    className="rounded-lg transition-all"
                     style={{
                       fontFamily: 'var(--font-inter), Inter, sans-serif',
                       fontWeight: 500,
@@ -683,6 +754,31 @@ export default function JasskalkulatorPage() {
                   </button>
                 );
               })}
+
+              <button
+                onClick={() => {
+                  setSelectedCards([]);
+                  setConfig({});
+                  setShowCardSelectionPopup(false);
+                }}
+                className="rounded-lg flex items-center justify-center transition-all"
+                style={{
+                  backgroundColor: resetButtonIsActive ? '#FF0000' : OPTION_BUTTON_INACTIVE_BG,
+                  border: `1px solid ${resetButtonIsActive ? '#FF0000' : OPTION_BUTTON_INACTIVE_BORDER}`,
+                  cursor: 'pointer',
+                }}
+                aria-label="Auswahl zurücksetzen"
+                title="Auswahl zurücksetzen"
+              >
+                <Image
+                  src="/cards/icons/back_icon.svg"
+                  alt="Reset"
+                  width={24}
+                  height={24}
+                  className="object-contain"
+                  style={{ filter: 'brightness(0) invert(1)' }}
+                />
+              </button>
             </div>
 
             <div
@@ -755,7 +851,7 @@ export default function JasskalkulatorPage() {
                     style={{ 
                       height: '100%',
                       borderRadius: '9999px',
-                      background: probabilityFillGradient,
+                      backgroundColor: probabilityFillColor,
                     }}
                     initial={{ width: 0 }}
                     animate={{ width: probability !== null ? `${displayProbability}%` : '0%' }}
