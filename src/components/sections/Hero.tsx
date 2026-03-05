@@ -427,9 +427,11 @@ export function Hero({
               style={{
                 fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
                 fontWeight: 400,
-                fontSize: 'clamp(12px, 1.2vw, 14px)',
+                fontSize: 'clamp(13px, 1.2vw, 14px)',
                 color: 'rgba(255,255,255,0.70)',
-                lineHeight: 1.35,
+                lineHeight: 1.4,
+                whiteSpace: 'pre-line',
+                textAlign: 'center',
               }}
             >
               {teaser.text}
