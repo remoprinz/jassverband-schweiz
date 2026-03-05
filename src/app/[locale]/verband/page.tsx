@@ -1,8 +1,27 @@
+import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
-import { SectionHeader, Card, ValueCard } from "@/components/ui";
+import { VerbandContent } from "./VerbandContent";
 
 interface VerbandPageProps {
   params: Promise<{ locale: string }>;
+}
+
+export async function generateMetadata({ params }: VerbandPageProps): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale });
+
+  return {
+    title: `${t("verband.title")} | Jassverband Schweiz`,
+    description: t("verband.intro"),
+    alternates: {
+      canonical: `https://jassverband.ch/${locale}/verband`,
+      languages: {
+        de: "/de/verband",
+        fr: "/fr/verband",
+        it: "/it/verband",
+      },
+    },
+  };
 }
 
 const praesidium = [
@@ -10,127 +29,69 @@ const praesidium = [
     name: "Remo Prinz",
     role: "Präsident",
     location: "Zürich",
-    quote: "Ich glaube nicht an Glück. Aber Ablupfen ist trotzdem das Wichtigste beim Jassen.",
+    image: "/images/praesidium/remo-freigestellt.png",
+    imageOffsetY: 8,
+    imageScale: 1.1,
+    quote: "Ich glaube nicht an Glück. Daher konzentriere ich mich beim Ablupfen besonders.",
     description:
-      "Remo treibt die Digitalisierung des Schweizer Nationalspiels voran. Mit Projekten wie JassGuru und JassWiki arbeitet er daran, das Wissen, die Regeln und die Resultate des Jassens erstmals strukturiert und schweizweit zugänglich zu machen. Seine Vision: eine gemeinsame digitale Grundlage für Ranglisten, Turniere und Meisterschaften — damit der Jassverband Schweiz nicht nur Tradition bewahrt, sondern das Spiel auch organisatorisch ins digitale Zeitalter führt.",
+      "Remo treibt die Digitalisierung des Schweizer Nationalspiels voran. Mit JassGuru und JassWiki macht er Wissen, Regeln und Resultate erstmals schweizweit zugänglich. Im Verband sorgt er dafür, dass Tradition und Technologie zusammenfinden.",
   },
   {
     name: "Fabian Cadonau",
     role: "Vizepräsident",
     location: "Flims",
+    image: "/images/praesidium/fabian-freigestellt.png",
+    imageOffsetY: 8,
+    imageScale: 1.05,
     quote: "Im Jassen spiegelt sich die Welt.",
     description:
-      "Fabian ist seit Jahrzehnten tief in der Schweizer Jassszene verankert. Als Redaktor der Jass-Zeitschrift Trumpf-As und einer der erfahrensten Turnierleiter der Schweiz kennt er die Jasskultur von der Pike auf. Im JVS sorgt er dafür, dass die Perspektive der Spielerinnen und Spieler — vom Stammtisch bis zum Turniersaal — in die Verbandsarbeit einfliesst.",
+      "Fabian kennt die Schweizer Jassszene wie kaum ein anderer. Als Redaktor von Trumpf-As und erfahrener Turnierleiter weiss er, was Spielerinnen und Spieler bewegt. Im Verband bringt er die Perspektive vom Stammtisch bis zum Turniersaal ein.",
   },
   {
     name: "Dr. Erich Studerus",
     role: "Aktuar",
     location: "Basel",
-    quote: "Ein guter Jass ist wie eine perfekte Formel: Am Ende muss er aufgehen.",
+    image: "/images/praesidium/studi-freigestellt.png",
+    imageOffsetY: 1,
+    imageScale: 1.07,
+    quote: "Jassen ist wie eine Gleichung: Am Ende muss es irgendwie aufgehen.",
     description:
-      "Erich ist Statistik-Dozent an der Fachhochschule Nordwestschweiz. Seine Leidenschaft fürs Messen und Analysieren lebt er bereits seit 2008 mit jassstatistik.ch aus – einer der ersten Plattformen zur systematischen Erfassung von Jass-Resultaten. Im JVS sorgt er dafür, dass alles seinen richtigen Weg geht — rechtlich, organisatorisch, dokumentarisch.",
+      "Erich ist Statistik-Dozent an der FHNW und betreibt seit 2008 jassstatistik.ch. Im Verband sorgt er dafür, dass alles seinen richtigen Weg geht — rechtlich, organisatorisch, dokumentarisch.",
   },
 ];
 
-type PraesidiumMember = {
-  name: string;
-  role: string;
-  location: string;
-  quote: string;
-  description: string;
-};
-
-const praesidiumMembers: PraesidiumMember[] = praesidium;
-
-const valueIcons = {
-  respect: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-full h-full">
-      <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-    </svg>
-  ),
-  fairplay: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-full h-full">
-      <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-    </svg>
-  ),
-  integrity: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-full h-full">
-      <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-    </svg>
-  ),
-  inclusion: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-full h-full">
-      <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-    </svg>
-  ),
-};
-
 export default async function VerbandPage({ params }: VerbandPageProps) {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "verband" });
+  const t = await getTranslations({ locale });
+  const tLeitbild = await getTranslations({ locale, namespace: "leitbild" });
+
+  const vision = {
+    title: tLeitbild("visionTitle"),
+    subtitle: tLeitbild("visionSubtitle"),
+    copy: tLeitbild("visionCopy"),
+  };
+
+  const missions = Array.from({ length: 6 }, (_, i) => ({
+    title: tLeitbild(`missions.${i}.title`),
+    mission: tLeitbild(`missions.${i}.mission`),
+    kernidee: tLeitbild(`missions.${i}.kernidee`),
+  }));
 
   return (
-    <div className="section-spacing">
-      <div className="container-main">
-        {/* Intro */}
-        <section className="mb-20">
-          <SectionHeader title={t("title")} />
-          <p className="text-lg text-[var(--color-foreground-muted)] text-center">
-            {t("intro")}
-          </p>
-        </section>
-
-        {/* Praesidium */}
-        <section className="mb-20">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-2">Präsidium</h2>
-          <p className="text-sm md:text-base text-[var(--color-foreground-muted)] text-center mb-12">
-            Ein starkes Blatt für den Schweizer Jass
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {praesidiumMembers.map((member) => (
-              <Card key={member.name} className="text-center">
-                {/* Photo Placeholder */}
-                <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-[var(--color-background-alt)] flex items-center justify-center">
-                  <span className="text-3xl font-bold text-[var(--color-foreground-muted)]">
-                    {member.name.split(" ").map(n => n[0]).join("")}
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold">{member.name}</h3>
-                <p className="text-[var(--color-primary)] font-medium mb-3">{member.role}, {member.location}</p>
-                <blockquote className="text-sm italic leading-relaxed text-[var(--color-foreground)] mb-4">
-                  „{member.quote}“
-                </blockquote>
-                <p className="text-sm leading-relaxed text-[var(--color-foreground-muted)]">{member.description}</p>
-              </Card>
-            ))}
-          </div>
-        </section>
-
-        {/* Values */}
-        <section className="mb-20 bg-[var(--color-background-alt)] rounded-3xl p-8 md:p-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">{t("values.title")}</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <ValueCard title={t("values.respect")} icon={valueIcons.respect} />
-            <ValueCard title={t("values.fairplay")} icon={valueIcons.fairplay} />
-            <ValueCard title={t("values.integrity")} icon={valueIcons.integrity} />
-            <ValueCard title={t("values.inclusion")} icon={valueIcons.inclusion} />
-          </div>
-        </section>
-
-        {/* Statuten */}
-        <section className="text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6">{t("statuten.title")}</h2>
-          <a
-            href="/documents/statuten-jvs.pdf"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-foreground)] text-white rounded-full hover:bg-[var(--color-foreground)]/90 transition-colors"
-          >
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-            </svg>
-            {t("statuten.download")}
-          </a>
-        </section>
-      </div>
-    </div>
+    <VerbandContent
+      title={t("verband.title")}
+      subtitle={t("verband.subtitle")}
+      intro={t("verband.intro")}
+      gruendung={t("verband.gruendung")}
+      praesidiumTitle={t("verband.praesidiumTitle")}
+      praesidiumSubtitle={t("verband.praesidiumSubtitle")}
+      statutenTitle={t("verband.statuten.title")}
+      statutenDownload={t("verband.statuten.download")}
+      statutenDescription={t("verband.statuten.description")}
+      vision={vision}
+      missionsTitle={tLeitbild("missionsTitle")}
+      missions={missions}
+      praesidium={praesidium}
+    />
   );
 }

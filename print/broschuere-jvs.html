@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>JVS Broschüre – Jassverband Schweiz</title>
+  <style>
+    /* =========================================================
+       PRINT TEMPLATE — JVS Broschüre A4
+       
+       ANLEITUNG FÜR PROGRAMMIERER:
+       Alle Positionen sind in mm angegeben (A4 = 210×297mm).
+       Elemente lassen sich durch Ändern von top/left/right/bottom
+       direkt verschieben. Karten-Grössen über width/height.
+       ========================================================= */
+
+    @font-face {
+      font-family: 'Capita';
+      src: url('../src/assets/fonts/Capita/Capita-Bold.ttf') format('truetype');
+      font-weight: 700;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Capita';
+      src: url('../src/assets/fonts/Capita/Capita-Regular.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Capita';
+      src: url('../src/assets/fonts/Capita/Capita-BoldItalic.ttf') format('truetype');
+      font-weight: 700;
+      font-style: italic;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 210mm;
+      font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10pt;
+      line-height: 1.5;
+      color: #1a1a1a;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* --- PAGE CONTAINER --- */
+    .page {
+      width: 210mm;
+      height: 297mm;
+      position: relative;
+      overflow: hidden;
+      page-break-after: always;
+      background: #ffffff;
+    }
+    .page:last-child {
+      page-break-after: avoid;
+    }
+
+    /* --- SHARED: Logo oben rechts --- */
+    .logo-top-right {
+      position: absolute;
+      /* POSITION: Logo oben rechts */
+      top: 8mm;
+      right: 10mm;
+      width: 55mm;
+      z-index: 10;
+    }
+
+    /* --- SHARED: Footer --- */
+    .page-footer {
+      position: absolute;
+      bottom: 8mm;
+      left: 15mm;
+      right: 15mm;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 8pt;
+      color: #666;
+    }
+
+    /* --- TYPOGRAPHY --- */
+    .font-capita {
+      font-family: 'Capita', Georgia, serif;
+      font-weight: 700;
+    }
+    .font-inter {
+      font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+      font-weight: 400;
+    }
+
+    /* =========================================================
+       SEITE 1 — COVER
+       ========================================================= */
+    .cover-felt {
+      position: absolute;
+      /* POSITION: Filz-Hintergrund, oberer Teil */
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 200mm;
+      background: url('../public/images/backgrounds/felt-figma.png') center/cover no-repeat;
+    }
+
+    .cover-wood {
+      position: absolute;
+      /* POSITION: Holz-Streifen */
+      top: 185mm;
+      left: 0;
+      right: 0;
+      height: 40mm;
+      background: url('../public/images/backgrounds/holztisch.jpg') center/cover no-repeat;
+    }
+
+    .cover-white {
+      position: absolute;
+      /* POSITION: Weisser unterer Bereich */
+      top: 222mm;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #ffffff;
+    }
+
+    .cover-headline {
+      position: absolute;
+      /* POSITION: Haupttitel auf Filz */
+      top: 105mm;
+      left: 18mm;
+      color: #ffffff;
+      font-family: 'Capita', Georgia, serif;
+      font-weight: 700;
+      font-style: italic;
+      font-size: 28pt;
+      line-height: 1.2;
+      max-width: 130mm;
+    }
+
+    .cover-subline {
+      position: absolute;
+      /* POSITION: Untertitel */
+      top: 148mm;
+      left: 18mm;
+      color: #ffffff;
+      font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+      font-weight: 600;
+      font-size: 11pt;
+      line-height: 1.6;
+      max-width: 170mm;
+    }
+
+    /* --- COVER: Jasskarten --- */
+    .cover-card-rosen-ass {
+      position: absolute;
+      /* POSITION: Rosen-Ass (obere Karte rechts, leicht gedreht) */
+      top: 88mm;
+      right: 8mm;
+      width: 55mm;
+      transform: rotate(18deg);
+      z-index: 5;
+      filter: drop-shadow(2px 4px 8px rgba(0,0,0,0.3));
+    }
+
+    .cover-card-karo-under {
+      position: absolute;
+      /* POSITION: Karo-Under (untere Karte, überlappt mit Holz) */
+      top: 160mm;
+      right: 22mm;
+      width: 55mm;
+      transform: rotate(-8deg);
+      z-index: 6;
+      filter: drop-shadow(2px 4px 8px rgba(0,0,0,0.3));
+    }
+
+    /* =========================================================
+       SEITE 2 — CONTENT
+       ========================================================= */
+    .content-headline {
+      position: absolute;
+      /* POSITION: Seitentitel */
+      top: 35mm;
+      left: 15mm;
+      right: 15mm;
+      font-family: 'Capita', Georgia, serif;
+      font-weight: 700;
+      font-size: 24pt;
+      line-height: 1.2;
+      color: #1a1a1a;
+    }
+
+    .content-intro {
+      position: absolute;
+      /* POSITION: Einleitungstext */
+      top: 55mm;
+      left: 15mm;
+      right: 15mm;
+      font-size: 11pt;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .content-subheadline {
+      font-family: 'Capita', Georgia, serif;
+      font-weight: 700;
+      font-size: 11pt;
+      margin-bottom: 3mm;
+      color: #1a1a1a;
+    }
+
+    .content-columns {
+      position: absolute;
+      /* POSITION: Zweispalten-Text */
+      top: 88mm;
+      left: 15mm;
+      right: 15mm;
+      column-count: 2;
+      column-gap: 8mm;
+      font-size: 8.5pt;
+      line-height: 1.55;
+      color: #333;
+    }
+
+    .content-columns-continued {
+      position: absolute;
+      /* POSITION: Fortsetzung einspaltiger Text */
+      top: 188mm;
+      left: 15mm;
+      right: 50%;
+      font-size: 8.5pt;
+      line-height: 1.55;
+      color: #333;
+    }
+
+    /* --- SEITE 2: Unterer Bereich (Filz-Cut + Karten + Filz-Zitat) --- */
+    .content-bottom-wrapper {
+      position: absolute;
+      /* POSITION: Gesamter unterer Bereich */
+      bottom: 22mm;
+      left: 0;
+      right: 0;
+      height: 90mm;
+    }
+
+    /* Filz-Streifen oben (das cut-Element mit abgerundeten Ecken) */
+    .content-felt-cut {
+      position: absolute;
+      /* POSITION: Filz-cut-Streifen (schmaler Streifen oben) */
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 28mm;
+      overflow: hidden;
+    }
+    .content-felt-cut img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Karten die über dem Filz-cut schweben */
+    .content-felt-cards {
+      position: absolute;
+      /* POSITION: Karten, ragen über den Filz-cut hinaus */
+      top: -22mm;
+      right: 10mm;
+      z-index: 10;
+    }
+
+    .content-felt-card-1 {
+      position: absolute;
+      /* POSITION: Obere Karte (Rosen-Ass) */
+      top: 0;
+      right: 0;
+      width: 30mm;
+      transform: rotate(15deg);
+      filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.4));
+    }
+
+    .content-felt-card-2 {
+      position: absolute;
+      /* POSITION: Untere Karte (Karo-Under) */
+      top: 18mm;
+      right: 14mm;
+      width: 30mm;
+      transform: rotate(-8deg);
+      filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.4));
+    }
+
+    /* Grosse Filz-Fläche unten (für Zitat-Box, mit Filz-Hintergrund) */
+    .content-felt-quote-area {
+      position: absolute;
+      /* POSITION: Filz-Hintergrund für die Zitat-Box */
+      top: 28mm;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('../public/images/backgrounds/felt-figma.png') center/cover no-repeat;
+    }
+
+    /* --- SEITE 2: Zitat-Box (weisse Schrift auf Filz) --- */
+    .content-quote-box {
+      position: absolute;
+      /* POSITION: Zitat-Box auf Filz-Fläche */
+      top: 8mm;
+      left: 15mm;
+      right: 15mm;
+      text-align: center;
+    }
+
+    .content-quote-title {
+      font-family: 'Capita', Georgia, serif;
+      font-weight: 700;
+      font-size: 15pt;
+      margin-bottom: 4mm;
+      color: #ffffff;
+    }
+
+    .content-quote-text {
+      font-size: 10pt;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.92);
+    }
+
+    /* =========================================================
+       SEITE 3 — MISSION
+       ========================================================= */
+    .mission-headline {
+      position: absolute;
+      /* POSITION: Seitentitel */
+      top: 30mm;
+      left: 15mm;
+      right: 15mm;
+      font-family: 'Capita', Georgia, serif;
+      font-weight: 700;
+      font-style: italic;
+      font-size: 24pt;
+      line-height: 1.2;
+      color: #1a1a1a;
+    }
+
+    .mission-intro {
+      position: absolute;
+      /* POSITION: Einleitungstext */
+      top: 55mm;
+      left: 15mm;
+      right: 15mm;
+      font-size: 10pt;
+      line-height: 1.6;
+      color: #333;
+      text-align: center;
+    }
+
+    .mission-section-title {
+      position: absolute;
+      /* POSITION: "Unsere Mission" Titel */
+      top: 88mm;
+      left: 15mm;
+      right: 15mm;
+      text-align: center;
+      font-family: 'Capita', Georgia, serif;
+      font-weight: 700;
+      font-size: 16pt;
+      color: #1a1a1a;
+      text-decoration: underline;
+      text-underline-offset: 3mm;
+    }
+
+    /* --- MISSION GRID: 3×2 Kacheln --- */
+    .mission-grid {
+      position: absolute;
+      /* POSITION: Kachel-Grid */
+      top: 100mm;
+      left: 15mm;
+      right: 15mm;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 4mm;
+    }
+
+    .mission-tile {
+      border: 0.5pt solid #ccc;
+      border-radius: 2mm;
+      padding: 5mm 4mm;
+      text-align: center;
+    }
+
+    .mission-tile-title {
+      font-family: 'Capita', Georgia, serif;
+      font-weight: 700;
+      font-size: 9.5pt;
+      margin-bottom: 3mm;
+      color: #1a1a1a;
+      text-decoration: underline;
+      text-underline-offset: 2mm;
+    }
+
+    .mission-tile-text {
+      font-size: 8pt;
+      line-height: 1.5;
+      color: #555;
+    }
+
+    /* --- SEITE 3: Chalkboard-Sektion --- */
+    .mission-chalkboard {
+      position: absolute;
+      /* POSITION: Tafel-Sektion */
+      bottom: 22mm;
+      left: 0;
+      right: 0;
+      height: 72mm;
+      background: url('../public/images/backgrounds/chalkboard.jpg') center/cover no-repeat;
+      border-radius: 6mm 6mm 0 0;
+      overflow: visible;
+    }
+
+    .mission-chalkboard-content {
+      position: absolute;
+      /* POSITION: Text auf der Tafel */
+      top: 10mm;
+      left: 18mm;
+      right: 72mm;
+      text-align: center;
+    }
+
+    .mission-chalkboard-title {
+      font-family: 'Capita', Georgia, serif;
+      font-weight: 700;
+      font-size: 15pt;
+      color: #ffffff;
+      margin-bottom: 4mm;
+    }
+
+    .mission-chalkboard-text {
+      font-size: 9pt;
+      line-height: 1.55;
+      color: rgba(255,255,255,0.9);
+    }
+
+    /* --- SEITE 3: Karten auf der Tafel --- */
+    .chalkboard-card-1 {
+      position: absolute;
+      /* POSITION: Obere Karte auf Tafel (ragt oben hinaus) */
+      top: -8mm;
+      right: 16mm;
+      width: 28mm;
+      transform: rotate(10deg);
+      filter: drop-shadow(2px 3px 6px rgba(0,0,0,0.5));
+      z-index: 5;
+    }
+
+    .chalkboard-card-2 {
+      position: absolute;
+      /* POSITION: Untere Karte auf Tafel */
+      top: 18mm;
+      right: 26mm;
+      width: 28mm;
+      transform: rotate(-5deg);
+      filter: drop-shadow(2px 3px 6px rgba(0,0,0,0.5));
+      z-index: 4;
+    }
+
+    /* =========================================================
+       PRINT STYLES
+       ========================================================= */
+    @media print {
+      body { margin: 0; }
+      .page { page-break-after: always; }
+      .page:last-child { page-break-after: avoid; }
+    }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ============================
+       SEITE 1 — COVER
+       ============================ -->
+  <div class="page" id="page-1-cover">
+
+    <!-- Hintergrund: Filz -->
+    <div class="cover-felt"></div>
+
+    <!-- Hintergrund: Holz-Streifen -->
+    <div class="cover-wood"></div>
+
+    <!-- Hintergrund: Weiss unten -->
+    <div class="cover-white"></div>
+
+    <!-- Logo oben rechts -->
+    <img class="logo-top-right"
+         src="../public/images/logos/JVS Logo farbig.svg"
+         alt="Jassverband Schweiz">
+
+    <!-- Headline -->
+    <div class="cover-headline">
+      Jassen ist mehr als<br>
+      ein Kartenspiel.
+    </div>
+
+    <!-- Subline -->
+    <div class="cover-subline">
+      Es ist Schweizer Kulturgut –<br>
+      und verdient eine moderne Zukunft.
+    </div>
+
+    <!-- Karte: Rosen-Ass (oben) -->
+    <img class="cover-card-rosen-ass"
+         src="../public/cards/de/RA.png"
+         alt="Rosen-Ass">
+
+    <!-- Karte: Karo-Under (unten) -->
+    <img class="cover-card-karo-under"
+         src="../public/cards/fr/LU.png"
+         alt="Karo-Under">
+
+    <!-- Footer -->
+    <div class="page-footer">
+      <span>www.jassverband.ch</span>
+      <span>1</span>
+    </div>
+  </div>
+
+  <!-- ============================
+       SEITE 2 — CONTENT
+       ============================ -->
+  <div class="page" id="page-2-content">
+
+    <!-- Logo oben rechts -->
+    <img class="logo-top-right"
+         src="../public/images/logos/JVS Logo farbig.svg"
+         alt="Jassverband Schweiz">
+
+    <!-- Headline -->
+    <div class="content-headline">
+      Cras Consectetur Fringilla Mollis
+    </div>
+
+    <!-- Einleitungstext -->
+    <div class="content-intro">
+      Nulla vitae elit libero, a pharetra augue. Vestibulum id ligula porta felis
+      euismod semper. Donec sed odio dui. Vivamus sagittis lacus vel augue
+      laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus,
+      nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+    </div>
+
+    <!-- Zweispalten-Text -->
+    <div class="content-columns">
+      <div class="content-subheadline">Inceptos Adipiscing Mollis Portan</div>
+      <p>Maecenas faucibus mollis interdum. Etiam porta sem malesuada magna mollis euismod. Curabitur blandit tempus porttitor. Nullam id dolor id nibh ultricies vehicula ut id elit. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+      <p style="margin-top: 3mm;">Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper nulla non metus auctor fringilla.</p>
+      <p style="margin-top: 3mm;">Donec sed odio dui. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Aenean lacinia bibendum nulla sed consectetur.</p>
+      <p style="margin-top: 3mm;">Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper nulla non metus auctor fringilla.</p>
+      <p style="margin-top: 3mm;">Donec sed odio dui. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Aenean lacinia bibendum nulla sed consecte</p>
+    </div>
+
+    <!-- Fortsetzung einspaltig -->
+    <div class="content-columns-continued">
+      Donec sed odio dui. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa
+    </div>
+
+    <!-- Unterer Bereich: Filz-Cut + Filz-Zitat -->
+    <div class="content-bottom-wrapper">
+
+      <!-- Filz-Cut-Streifen (schmaler Streifen mit abgerundeten Ecken) -->
+      <div class="content-felt-cut">
+        <img src="../public/images/backgrounds/felt-texture-cut-large.png"
+             alt="Filz-Textur">
+      </div>
+
+      <!-- Karten die über den Filz-cut ragen -->
+      <div class="content-felt-cards">
+        <img class="content-felt-card-1"
+             src="../public/cards/de/RA.png"
+             alt="Rosen-Ass">
+        <img class="content-felt-card-2"
+             src="../public/cards/fr/LU.png"
+             alt="Karo-Under">
+      </div>
+
+      <!-- Grosse Filz-Fläche mit Zitat (weisse Schrift auf dunkelgrün) -->
+      <div class="content-felt-quote-area">
+        <div class="content-quote-box">
+          <div class="content-quote-title">Fusce Commodo Adipiscing</div>
+          <div class="content-quote-text">
+            Curabitur blandit tempus porttitor. Curabitur blandit tempus porttitor. Nulla vitae elit
+            libero, a pharetra augue. Maecenas faucibus mollis interdum. Praesent commodo cursus
+            magna, vel scelerisque nisl consectetur et.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="page-footer">
+      <span>www.jassverband.ch</span>
+      <span>2</span>
+    </div>
+  </div>
+
+  <!-- ============================
+       SEITE 3 — MISSION
+       ============================ -->
+  <div class="page" id="page-3-mission">
+
+    <!-- Logo oben rechts -->
+    <img class="logo-top-right"
+         src="../public/images/logos/JVS Logo farbig.svg"
+         alt="Jassverband Schweiz">
+
+    <!-- Headline -->
+    <div class="mission-headline">
+      Jassen ist mehr als ein Kartenspiel.
+    </div>
+
+    <!-- Intro -->
+    <div class="mission-intro">
+      Der Jassverband Schweiz wurde am 15. Januar 2026 in Zürich gegründet.<br>
+      Wir setzen uns für die Förderung, Erhaltung und innovative Vermittlung des<br>
+      Jassens als schweizerisches Kulturgut und strategischer Denksport ein.
+    </div>
+
+    <!-- "Unsere Mission" Titel -->
+    <div class="mission-section-title">Unsere Mission</div>
+
+    <!-- Mission-Grid 3×2 -->
+    <div class="mission-grid">
+      <div class="mission-tile">
+        <div class="mission-tile-title">Meisterschaften etablieren</div>
+        <div class="mission-tile-text">
+          Wir etablieren Jassen als offizielle Wettkampfsportart mit klaren Strukturen, Ranglisten und nationalen Meisterschaften.
+        </div>
+      </div>
+      <div class="mission-tile">
+        <div class="mission-tile-title">Jasser vernetzen</div>
+        <div class="mission-tile-text">
+          Wir bringen Jasser – gerade im digitalen Zeitalter – bewusst zurück an den physischen Tisch.
+        </div>
+      </div>
+      <div class="mission-tile">
+        <div class="mission-tile-title">Nachwuchs fördern</div>
+        <div class="mission-tile-text">
+          Wir begeistern die nächste Generation fürs Jassen und verankern es nachhaltig im Bildungssystem.
+        </div>
+      </div>
+      <div class="mission-tile">
+        <div class="mission-tile-title">Hürden abbauen</div>
+        <div class="mission-tile-text">
+          Wir senken die Einstiegshürden und machen Jassen für alle zugänglich – unabhängig vom Erfahrungsstand.
+        </div>
+      </div>
+      <div class="mission-tile">
+        <div class="mission-tile-title">Tradition modernisieren</div>
+        <div class="mission-tile-text">
+          Wir führen das Jassen ins digitale Zeitalter und sichern seine Relevanz für kommende Generationen.
+        </div>
+      </div>
+      <div class="mission-tile">
+        <div class="mission-tile-title">Kultur gestalten</div>
+        <div class="mission-tile-text">
+          Wir pflegen und entwickeln Jassen als lebendiges Kulturgut, das Menschen über alle gesellschaftlichen Grenzen hinweg verbindet.
+        </div>
+      </div>
+    </div>
+
+    <!-- Chalkboard-Sektion -->
+    <div class="mission-chalkboard">
+      <div class="mission-chalkboard-content">
+        <div class="mission-chalkboard-title">Unsere Mission</div>
+        <div class="mission-chalkboard-text">
+          Curabitur blandit tempus porttitor. Curabitur blandit
+          tempus porttitor. Nulla vitae elit libero, a pharetra augue.
+          Maecenas faucibus mollis interdum. Praesent commodo
+          cursus magna, vel scelerisque nisl consectetur et.
+        </div>
+      </div>
+
+      <!-- Karten auf der Tafel -->
+      <img class="chalkboard-card-1"
+           src="../public/cards/de/EO.png"
+           alt="Eichel-Ober">
+      <img class="chalkboard-card-2"
+           src="../public/cards/de/L9.png"
+           alt="Schilten-9">
+    </div>
+
+    <!-- Footer -->
+    <div class="page-footer">
+      <span>www.jassverband.ch</span>
+      <span>3</span>
+    </div>
+  </div>
+
+</body>
+</html>

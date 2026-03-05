@@ -17,7 +17,7 @@ interface HomePageProps {
 export default async function HomePage({ params }: HomePageProps) {
   const { locale } = await params;
   const t = await getTranslations({ locale });
-  const leitbildUrl = `/${locale}/leitbild`;
+  const verbandUrl = `/${locale}/verband`;
 
   const missionItems = Array.from({ length: 3 }, (_, i) => ({
     title: t(`mission.items.${i}.title`),
@@ -50,6 +50,10 @@ export default async function HomePage({ params }: HomePageProps) {
         title={t("hero.title")}
         subtitle={t("hero.subtitle")}
         cta={t("hero.cta")}
+        locale={locale}
+        altTable={t("hero.altTable")}
+        altFelt={t("hero.altFelt")}
+        altCard={t("hero.altCard")}
       />
 
       {/* 2. Vision — Kreidetafel */}
@@ -58,7 +62,7 @@ export default async function HomePage({ params }: HomePageProps) {
         subtitle={t("vision.subtitle")}
         copy={t("vision.copy")}
         cta={t("vision.cta")}
-        ctaHref={leitbildUrl}
+        ctaHref={`${verbandUrl}#vision`}
       />
 
       {/* 3. Schweizermeisterschaft — Filz + Overlay */}
@@ -75,7 +79,7 @@ export default async function HomePage({ params }: HomePageProps) {
         title={t("mission.title")}
         items={missionItems}
         cta={t("mission.cta")}
-        ctaHref={leitbildUrl}
+        ctaHref={verbandUrl}
       />
 
       {/* 5. SystemrelevanzVideo — Schwarz */}
@@ -141,6 +145,9 @@ export default async function HomePage({ params }: HomePageProps) {
       <Trust
         badge={t("trust.badge")}
         text={t("trust.text")}
+        description={t("trust.description")}
+        linkText={t("trust.linkText")}
+        altBadge={t("trust.altBadge")}
       />
 
       {/* 9. FAQ — Weiss */}

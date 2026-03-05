@@ -8,6 +8,7 @@ import { MainWrapper } from './MainWrapper';
 interface LayoutContentProps {
   children: React.ReactNode;
   locale: string;
+  isHeroPage: boolean;
   nav: {
     home: string;
     schweizermeisterschaft: string;
@@ -26,7 +27,7 @@ interface LayoutContentProps {
   };
 }
 
-export function LayoutContent({ children, locale, nav, footer }: LayoutContentProps) {
+export function LayoutContent({ children, locale, isHeroPage, nav, footer }: LayoutContentProps) {
   const pathname = usePathname();
   const isStandalonePage = pathname.includes('/jasskalkulator');
 
@@ -40,8 +41,8 @@ export function LayoutContent({ children, locale, nav, footer }: LayoutContentPr
 
   return (
     <>
-      <Header locale={locale} nav={nav} />
-      <MainWrapper locale={locale}>
+      <Header locale={locale} nav={nav} isHeroPage={isHeroPage} />
+      <MainWrapper isHeroPage={isHeroPage}>
         {children}
       </MainWrapper>
       <Footer locale={locale} content={footer} nav={nav} />

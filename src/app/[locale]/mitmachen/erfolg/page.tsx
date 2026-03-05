@@ -2,13 +2,14 @@
 
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 
 export default function ErfolgPage() {
   const t = useTranslations('mitmachen');
+  const locale = useLocale();
   const searchParams = useSearchParams();
   const sessionId = searchParams.get('session_id');
   const [loading, setLoading] = useState(true);
@@ -26,7 +27,7 @@ export default function ErfolgPage() {
         <div className="absolute inset-0">
           <Image
             src="/images/backgrounds/felt-figma.png"
-            alt="Grüner Filz Hintergrund"
+            alt={t('altFelt')}
             fill
             className="object-cover"
             priority
@@ -85,7 +86,7 @@ export default function ErfolgPage() {
                     textShadow: '0 2px 20px rgba(0,0,0,0.3)',
                   }}
                 >
-                  Willkommen im Jassverband!
+                  {t('erfolg.title')}
                 </h1>
 
                 <p
@@ -97,13 +98,12 @@ export default function ErfolgPage() {
                     lineHeight: '1.6',
                   }}
                 >
-                  Deine Zahlung war erfolgreich. Du erhältst in Kürze eine 
-                  Bestätigung per E-Mail mit allen Details zu deiner Mitgliedschaft.
+                  {t('erfolg.description')}
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link
-                    href="/"
+                    href={`/${locale}`}
                     className="inline-flex items-center justify-center font-bold transition-all transform hover:-translate-y-0.5"
                     style={{
                       fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
@@ -115,7 +115,7 @@ export default function ErfolgPage() {
                       boxShadow: '0px 10px 15px -3px rgba(0,0,0,0.2)',
                     }}
                   >
-                    Zur Startseite
+                    {t('erfolg.ctaHome')}
                   </Link>
                   
                   <a
@@ -133,7 +133,7 @@ export default function ErfolgPage() {
                       border: '2px solid rgba(255,255,255,0.3)',
                     }}
                   >
-                    Jetzt auf Jasstafel spielen
+                    {t('erfolg.ctaPlay')}
                   </a>
                 </div>
               </>
@@ -156,25 +156,25 @@ export default function ErfolgPage() {
                 color: '#000000',
               }}
             >
-              So geht es weiter
+              {t('erfolg.nextSteps')}
             </h2>
 
             <div className="space-y-6">
               {[
                 {
                   step: '1',
-                  title: 'E-Mail bestätigen',
-                  description: 'Du erhältst in wenigen Minuten eine Bestätigungs-E-Mail mit deiner Mitgliedsnummer.',
+                  title: t('erfolg.step1Title'),
+                  description: t('erfolg.step1Description'),
                 },
                 {
                   step: '2',
-                  title: 'Jasstafel verbinden',
-                  description: 'Verknüpfe dein JVS-Konto mit Jasstafel.app für Premium-Features und Elo-Tracking.',
+                  title: t('erfolg.step2Title'),
+                  description: t('erfolg.step2Description'),
                 },
                 {
                   step: '3',
-                  title: 'Meisterschaft melden',
-                  description: 'Ab Frühjahr kannst du dein Team zur Schweizer Jass-Meisterschaft anmelden.',
+                  title: t('erfolg.step3Title'),
+                  description: t('erfolg.step3Description'),
                 },
               ].map((item, index) => (
                 <motion.div

@@ -1,6 +1,6 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { Button } from '@/components/ui';
@@ -9,6 +9,7 @@ import { Trust } from '@/components/sections';
 
 export default function SchweizermeisterschaftPage() {
   const t = useTranslations();
+  const locale = useLocale();
 
   return (
     <div>
@@ -17,7 +18,7 @@ export default function SchweizermeisterschaftPage() {
         <div className="absolute inset-0">
           <Image
             src="/images/backgrounds/felt-figma.png"
-            alt="Grüner Filz Hintergrund"
+            alt={t('schweizermeisterschaft.altFelt')}
             fill
             className="object-cover"
             priority
@@ -43,7 +44,7 @@ export default function SchweizermeisterschaftPage() {
                 className="w-2.5 h-2.5 rounded-full animate-pulse"
                 style={{ backgroundColor: 'var(--color-primary)' }}
               />
-              Saison 1
+              {t('schweizermeisterschaft.season')}
             </motion.div>
 
             <h1
@@ -77,7 +78,7 @@ export default function SchweizermeisterschaftPage() {
 
       {/* Das Format */}
       <StandardSection
-        title="Das Format"
+        title={t('schweizermeisterschaft.format.title')}
         background="cream"
         containerSize="full"
         spacing="lg"
@@ -92,7 +93,7 @@ export default function SchweizermeisterschaftPage() {
               color: 'var(--color-foreground)',
             }}
           >
-            Ein ganzes Team wird Schweizermeister. Nicht ein Einzelspieler — sondern ein Team. So wie im Fussball. So wie im Hockey.
+            {t('schweizermeisterschaft.format.description')}
           </p>
 
           <h3
@@ -103,16 +104,11 @@ export default function SchweizermeisterschaftPage() {
               fontSize: '20px',
             }}
           >
-            Wie funktioniert&rsquo;s?
+            {t('schweizermeisterschaft.format.howItWorks')}
           </h3>
 
           <ul className="space-y-3 mb-8">
-            {[
-              'Mindestens 10 Spiele in der eigenen Gruppe (dezentrale Qualifikation)',
-              'Andere Teams herausfordern',
-              'Elo-Ranking entscheidet über Finalturnier',
-              'Finalturnier: Die besten Teams treffen sich',
-            ].map((item, i) => (
+            {(t.raw('schweizermeisterschaft.format.steps') as string[]).map((item: string, i: number) => (
               <li key={i} className="flex items-start gap-3">
                 <svg
                   className="w-5 h-5 shrink-0 mt-0.5"
@@ -145,14 +141,14 @@ export default function SchweizermeisterschaftPage() {
               color: 'var(--color-foreground-muted)',
             }}
           >
-            Die erste Schweizermeisterschaft wird so gross wie die Community. Ob 20 oder 200 Teams — wir passen den Modus an. Saison 1 findet statt, egal wie viele Teams sich anmelden.
+            {t('schweizermeisterschaft.format.communityNote')}
           </p>
         </div>
       </StandardSection>
 
       {/* Jugendwertung */}
       <StandardSection
-        title="Jugendwertung"
+        title={t('schweizermeisterschaft.youth.title')}
         background="white"
         containerSize="full"
         spacing="lg"
@@ -167,7 +163,7 @@ export default function SchweizermeisterschaftPage() {
               color: 'var(--color-foreground)',
             }}
           >
-            Jugendteams (bis 25 Jahre) nehmen an der regulären Meisterschaft teil und erhalten eine separate Wertung.
+            {t('schweizermeisterschaft.youth.description')}
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -187,7 +183,7 @@ export default function SchweizermeisterschaftPage() {
                   fontSize: '17px',
                 }}
               >
-                Schweizermeister
+                {t('schweizermeisterschaft.youth.championTitle')}
               </h4>
               <p
                 style={{
@@ -196,7 +192,7 @@ export default function SchweizermeisterschaftPage() {
                   color: 'var(--color-foreground-muted)',
                 }}
               >
-                Alle Altersklassen
+                {t('schweizermeisterschaft.youth.championSubtitle')}
               </p>
             </div>
             <div
@@ -215,7 +211,7 @@ export default function SchweizermeisterschaftPage() {
                   fontSize: '17px',
                 }}
               >
-                Jugend-Schweizermeister
+                {t('schweizermeisterschaft.youth.youthChampionTitle')}
               </h4>
               <p
                 style={{
@@ -224,7 +220,7 @@ export default function SchweizermeisterschaftPage() {
                   color: 'var(--color-foreground-muted)',
                 }}
               >
-                Bis 25 Jahre
+                {t('schweizermeisterschaft.youth.youthChampionSubtitle')}
               </p>
             </div>
           </div>
@@ -236,7 +232,7 @@ export default function SchweizermeisterschaftPage() {
         <div className="absolute inset-0">
           <Image
             src="/images/backgrounds/chalkboard.jpg"
-            alt="Kreidetafel Hintergrund"
+            alt={t('schweizermeisterschaft.altChalkboard')}
             fill
             className="object-cover"
             quality={85}
@@ -259,7 +255,7 @@ export default function SchweizermeisterschaftPage() {
                 lineHeight: 1.2,
               }}
             >
-              Jetzt Team anmelden
+              {t('schweizermeisterschaft.register.title')}
             </h2>
             <p
               className="text-white/75 mb-8 max-w-lg mx-auto"
@@ -269,7 +265,7 @@ export default function SchweizermeisterschaftPage() {
                 lineHeight: 1.6,
               }}
             >
-              Die Anmeldung erfolgt über Jassmeister. Du brauchst eine Mitgliedschaft.
+              {t('schweizermeisterschaft.register.description')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
@@ -278,17 +274,17 @@ export default function SchweizermeisterschaftPage() {
                 size="lg"
                 className="bg-[var(--color-primary)] hover:bg-[#cc0000] text-white px-8 py-4 text-[17px] font-bold rounded-full shadow-lg hover:shadow-xl transition-all"
               >
-                Auf Jassmeister anmelden
+                {t('schweizermeisterschaft.register.ctaJassmeister')}
                 <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
               </Button>
               <Button
-                href="/mitmachen"
+                href={`/${locale}/mitmachen`}
                 size="lg"
                 className="bg-white/15 backdrop-blur-sm text-white border border-white/30 px-8 py-4 text-[17px] font-bold rounded-full hover:bg-white/25 transition-all"
               >
-                Mitglied werden
+                {t('schweizermeisterschaft.register.ctaMember')}
               </Button>
             </div>
           </motion.div>
@@ -296,7 +292,13 @@ export default function SchweizermeisterschaftPage() {
       </section>
 
       {/* Trust */}
-      <Trust badge={t('trust.badge')} text={t('trust.text')} />
+      <Trust
+        badge={t('trust.badge')}
+        text={t('trust.text')}
+        description={t('trust.description')}
+        linkText={t('trust.linkText')}
+        altBadge={t('trust.altBadge')}
+      />
     </div>
   );
 }

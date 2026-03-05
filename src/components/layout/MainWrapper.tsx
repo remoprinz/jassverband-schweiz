@@ -1,17 +1,13 @@
 'use client';
 
-import { usePathname } from 'next/navigation';
-
 interface MainWrapperProps {
   children: React.ReactNode;
-  locale: string;
+  isHeroPage: boolean;
 }
 
-export function MainWrapper({ children, locale }: MainWrapperProps) {
-  const pathname = usePathname();
-  const isHomePage = pathname === `/${locale}` || pathname === `/${locale}/`;
+export function MainWrapper({ children, isHeroPage }: MainWrapperProps) {
   return (
-    <main className={isHomePage ? '' : 'pt-16 md:pt-24'}>
+    <main suppressHydrationWarning className={isHeroPage ? '' : 'pt-16 md:pt-24'}>
       {children}
     </main>
   );

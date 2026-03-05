@@ -3,12 +3,23 @@
 import { useMemo, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { PiCalculatorFill } from 'react-icons/pi';
 import { Button } from '@/components/ui';
 
 interface HeroProps {
   title: string;
   subtitle: string;
   cta: string;
+  locale: string;
+  altTable?: string;
+  altFelt?: string;
+  altCard?: string;
+  ctaHref?: string;
+  preserveTitleLineBreaks?: boolean;
+  teaser?: {
+    label: string;
+    text: string;
+  };
 }
 
 const DE_CARD_SET = [
@@ -68,17 +79,37 @@ function randomCardEntry(side: 'left' | 'right') {
  *   21:140 (rechts-oben):  x=1104,y=1998 → L=76.67%, T=(1998-1530)/920=50.87%  rot=−16.19°
  *   21:144 (rechts-unten): x=1034,y=2146 → L=71.81%, T=(2146-1530)/920=66.96%  rot=+8.34°
  */
-export function Hero({ title, subtitle, cta }: HeroProps) {
+export function Hero({
+  title,
+  subtitle,
+  cta,
+  locale,
+  altTable,
+  altFelt,
+  altCard,
+  ctaHref,
+  preserveTitleLineBreaks = false,
+  teaser,
+}: HeroProps) {
   const [isMounted, setIsMounted] = useState(false);
   const [animateCards, setAnimateCards] = useState(false);
+  const resolvedCtaHref = ctaHref ?? `/${locale}/mitmachen`;
 
   useEffect(() => {
-    setIsMounted(true);
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
+    let innerFrame = 0;
+    const outerFrame = requestAnimationFrame(() => {
+      setIsMounted(true);
+      innerFrame = requestAnimationFrame(() => {
         setAnimateCards(true);
       });
     });
+
+    return () => {
+      cancelAnimationFrame(outerFrame);
+      if (innerFrame) {
+        cancelAnimationFrame(innerFrame);
+      }
+    };
   }, []);
 
   const cardEntries = useMemo(() => {
@@ -109,7 +140,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/backgrounds/holztisch.jpg"
-          alt="Holztisch"
+          alt={altTable ?? 'Holztisch'}
           fill
           className="object-cover"
           priority
@@ -130,7 +161,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
       >
         <Image
           src="/images/backgrounds/felt-figma.png"
-          alt="Jassteppich"
+          alt={altFelt ?? 'Jassteppich'}
           fill
           className="object-cover"
           priority
@@ -162,7 +193,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
           >
             <Image
               src={cardEntries.leftTop.src}
-              alt="Jasskarte"
+              alt={altCard ?? 'Jasskarte'}
               width={159}
               height={250}
               className="w-full h-auto"
@@ -185,7 +216,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
           >
             <Image
               src={cardEntries.leftBottom.src}
-              alt="Jasskarte"
+              alt={altCard ?? 'Jasskarte'}
               width={159}
               height={250}
               className="w-full h-auto"
@@ -208,7 +239,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
           >
             <Image
               src={cardEntries.rightTop.src}
-              alt="Jasskarte"
+              alt={altCard ?? 'Jasskarte'}
               width={159}
               height={250}
               className="w-full h-auto"
@@ -231,7 +262,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
           >
             <Image
               src={cardEntries.rightBottom.src}
-              alt="Jasskarte"
+              alt={altCard ?? 'Jasskarte'}
               width={159}
               height={250}
               className="w-full h-auto"
@@ -252,7 +283,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
           >
             <Image
               src={cardEntries.mobileLeft1.src}
-              alt="Jasskarte"
+              alt={altCard ?? 'Jasskarte'}
               width={159}
               height={250}
               className="w-full h-auto"
@@ -270,7 +301,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
           >
             <Image
               src={cardEntries.mobileLeft2.src}
-              alt="Jasskarte"
+              alt={altCard ?? 'Jasskarte'}
               width={159}
               height={250}
               className="w-full h-auto"
@@ -288,7 +319,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
           >
             <Image
               src={cardEntries.mobileRight1.src}
-              alt="Jasskarte"
+              alt={altCard ?? 'Jasskarte'}
               width={159}
               height={250}
               className="w-full h-auto"
@@ -306,7 +337,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
           >
             <Image
               src={cardEntries.mobileRight2.src}
-              alt="Jasskarte"
+              alt={altCard ?? 'Jasskarte'}
               width={159}
               height={250}
               className="w-full h-auto"
@@ -338,6 +369,7 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
             letterSpacing: '-0.96px',
             color: '#ffffff',
             textShadow: '0 2px 20px rgba(0,0,0,0.3)',
+            whiteSpace: preserveTitleLineBreaks ? 'pre-line' : 'normal',
           }}
         >
           {title}
@@ -369,6 +401,43 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
         </p>
       </motion.div>
 
+      {teaser && (
+        <motion.div
+          className="absolute z-20 left-0 right-0 flex justify-center px-4"
+          style={{ top: 'calc(var(--hero-cta-top) - 60px)' }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.3 }}
+        >
+          <div className="text-center flex flex-col items-center gap-2">
+            <span
+              className="inline-flex items-center justify-center rounded-full px-3 py-[3px]"
+              style={{
+                fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
+                fontWeight: 700,
+                fontSize: 'clamp(11px, 1.1vw, 13px)',
+                lineHeight: 1,
+                color: '#ffffff',
+                backgroundColor: '#ff0000',
+              }}
+            >
+              Neu
+            </span>
+            <p
+              style={{
+                fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
+                fontWeight: 400,
+                fontSize: 'clamp(12px, 1.2vw, 14px)',
+                color: 'rgba(255,255,255,0.70)',
+                lineHeight: 1.35,
+              }}
+            >
+              {teaser.text}
+            </p>
+          </div>
+        </motion.div>
+      )}
+
       {/* CTA BUTTON – responsive via CSS vars */}
       <motion.div
         className="absolute z-20 flex justify-center"
@@ -382,11 +451,32 @@ export function Hero({ title, subtitle, cta }: HeroProps) {
         transition={{ duration: 0.8, delay: 0.35 }}
       >
         <Button
-          href="/de/mitmachen"
+          href={resolvedCtaHref}
           size="lg"
           className="bg-[#ff0000] hover:bg-[#cc0000] text-white text-[17px] font-bold px-8 py-4 rounded-full shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)] hover:shadow-xl transition-all transform hover:-translate-y-1 whitespace-nowrap"
         >
-          {cta}
+          {teaser && (
+            <>
+              <span className="inline-flex items-center gap-1.5">
+                <span className="w-5 h-5 shrink-0 rounded-full bg-[#FFFFFF] flex items-center justify-center">
+                  <PiCalculatorFill className="w-3 h-3 text-[#ff0000]" style={{ transform: 'scale(1.1)' }} />
+                </span>
+                <span
+                  style={{
+                    fontFamily: 'var(--font-capita), Capita, Georgia, serif',
+                    fontWeight: 700,
+                    fontSize: '17px',
+                    lineHeight: '1',
+                    transform: 'translateY(1px)',
+                    display: 'inline-block',
+                  }}
+                >
+                  {teaser.label}
+                </span>
+              </span>
+            </>
+          )}
+          {!teaser && cta}
           <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>

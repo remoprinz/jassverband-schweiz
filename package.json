@@ -6,7 +6,9 @@
     "dev": "next dev --webpack",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "pdf": "node print/generate-pdf.mjs",
+    "pdf:broschuere": "node print/generate-pdf.mjs --template print/broschuere-jvs.html"
   },
   "dependencies": {
     "framer-motion": "^12.30.0",
@@ -24,6 +26,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
+    "puppeteer": "^24.38.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

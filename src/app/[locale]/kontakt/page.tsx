@@ -31,8 +31,8 @@ export default function KontaktPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold text-green-800 mb-2">Nachricht gesendet!</h3>
-                <p className="text-green-700">Wir melden uns so schnell wie möglich bei Ihnen.</p>
+                <h3 className="text-xl font-bold text-green-800 mb-2">{t('success.title')}</h3>
+                <p className="text-green-700">{t('success.message')}</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -84,7 +84,7 @@ export default function KontaktPage() {
 
           {/* Contact Info */}
           <div className="bg-[var(--color-background-alt)] rounded-2xl p-8">
-            <h3 className="text-xl font-bold mb-6">Jassverband Schweiz</h3>
+            <h3 className="text-xl font-bold mb-6">{t('orgName')}</h3>
             
             <div className="space-y-6">
               <div>
@@ -116,7 +116,7 @@ export default function KontaktPage() {
 
             <div className="mt-8 pt-6 border-t border-[var(--color-border)]">
               <p className="text-sm text-[var(--color-foreground-muted)]">
-                Für Medienanfragen wenden Sie sich bitte an:<br />
+                {t('mediaNote')}<br />
                 <a href="mailto:remo@jassverband.ch" className="text-[var(--color-primary)] hover:underline">
                   remo@jassverband.ch
                 </a>

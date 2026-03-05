@@ -9,6 +9,7 @@ import { LanguageSwitcher } from './LanguageSwitcher';
 
 interface HeaderProps {
   locale: string;
+  isHeroPage: boolean;
   nav: {
     home: string;
     schweizermeisterschaft: string;
@@ -39,15 +40,13 @@ function Logo({ variant = 'color', shrunk = false }: { variant?: 'color' | 'whit
   );
 }
 
-export function Header({ locale, nav }: HeaderProps) {
+export function Header({ locale, nav, isHeroPage }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [isMobileViewport, setIsMobileViewport] = useState(false);
   const [isMobileCompact, setIsMobileCompact] = useState(false);
   const lastScrollYRef = useRef(0);
   const pathname = usePathname();
-
-  const isHomePage = pathname === `/${locale}` || pathname === `/${locale}/`;
 
   useEffect(() => {
     const MOBILE_BREAKPOINT = 1024;
@@ -100,7 +99,7 @@ export function Header({ locale, nav }: HeaderProps) {
 
   const navItems = [
     { href: `/${locale}/schweizermeisterschaft`, label: nav.schweizermeisterschaft, shortLabel: 'Meisterschaft' },
-    { href: `/${locale}/plattformen`, label: nav.plattformen },
+    { href: `/${locale}/plattform`, label: nav.plattformen },
     { href: `/${locale}/verband`, label: nav.verband },
     { href: `/${locale}/news`, label: nav.news },
     { href: `/${locale}/kontakt`, label: nav.kontakt },
@@ -111,12 +110,13 @@ export function Header({ locale, nav }: HeaderProps) {
   };
 
   const isCompactMode = isMobileViewport && isMobileCompact && !mobileMenuOpen;
-  const showTransparent = isHomePage && !scrolled;
+  const showTransparent = isHeroPage && !scrolled;
   const logoVariant = showTransparent ? 'white' : 'color';
 
   return (
     <header
       data-header
+      suppressHydrationWarning
       className="fixed z-50 transition-[top,left,right,width,background,border-radius,box-shadow,backdrop-filter] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
       style={
         isMobileViewport
@@ -140,7 +140,7 @@ export function Header({ locale, nav }: HeaderProps) {
                 boxShadow: '0 4px 24px rgba(0,0,0,0.10)',
                 backdropFilter: 'blur(12px)',
               }
-            : isHomePage
+            : isHeroPage
             ? {
                 top: 0,
                 left: 0,
@@ -166,7 +166,7 @@ export function Header({ locale, nav }: HeaderProps) {
               boxShadow: '0 4px 24px rgba(0,0,0,0.10)',
               backdropFilter: 'blur(12px)',
             }
-          : isHomePage
+          : isHeroPage
           ? {
               top: 0,
               left: 0,
@@ -182,8 +182,8 @@ export function Header({ locale, nav }: HeaderProps) {
             }
       }
     >
-      <div className={isCompactMode ? 'px-0' : scrolled ? 'px-6' : 'container-main'}>
-        <nav className={`flex items-center transition-all duration-500 ${
+      <div suppressHydrationWarning className={isCompactMode ? 'px-0' : scrolled ? 'px-6' : 'container-main'}>
+        <nav suppressHydrationWarning className={`flex items-center transition-all duration-500 ${
           isCompactMode
             ? 'justify-end h-14 px-1'
             : scrolled
@@ -300,8 +300,8 @@ export function Header({ locale, nav }: HeaderProps) {
                     fontFamily: 'var(--font-capita), Capita, Georgia, serif',
                     fontWeight: 700,
                     fontSize: '20px',
-                    color: isHomePage ? '#ff0000' : '#000000',
-                    backgroundColor: isHomePage ? '#f0eee7' : 'transparent'
+                    color: pathname === `/${locale}` || pathname === `/${locale}/` ? '#ff0000' : '#000000',
+                    backgroundColor: pathname === `/${locale}` || pathname === `/${locale}/` ? '#f0eee7' : 'transparent'
                   }}
                 >
                   {nav.home}

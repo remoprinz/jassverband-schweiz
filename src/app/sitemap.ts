@@ -23,6 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = [
     { path: '', priority: 1.0, changeFreq: 'weekly' as ChangeFrequency },
     { path: '/mitmachen', priority: 0.95, changeFreq: 'weekly' as ChangeFrequency },
+    { path: '/plattform', priority: 0.9, changeFreq: 'weekly' as ChangeFrequency },
     { path: '/verband', priority: 0.8, changeFreq: 'monthly' as ChangeFrequency },
     { path: '/leitbild', priority: 0.85, changeFreq: 'monthly' as ChangeFrequency },
     { path: '/projekte', priority: 0.8, changeFreq: 'monthly' as ChangeFrequency },

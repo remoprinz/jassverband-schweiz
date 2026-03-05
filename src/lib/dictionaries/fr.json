@@ -15,7 +15,10 @@
   "hero": {
     "title": "Le Jass est plus qu'un jeu de cartes.",
     "subtitle": "C'est un patrimoine culturel suisse — qui mérite un avenir moderne.",
-    "cta": "Participer maintenant"
+    "cta": "Participer maintenant",
+    "altTable": "Table en bois",
+    "altFelt": "Tapis de jass",
+    "altCard": "Carte de jass"
   },
   "vision": {
     "title": "Notre vision: en Suisse, aucun joueur de Jass ne reste sans table.",
@@ -31,7 +34,36 @@
     "subtitle": "Le premier championnat national de Schieber par équipes.",
     "copy": "Le Schieber est un jass d'équipe. C'est pourquoi ce ne sont pas des joueurs individuels, mais des équipes entières qui participent au championnat suisse. Le premier championnat sera aussi grand que la communauté.",
     "jugend": "Les équipes jeunes jouent dans le même championnat et reçoivent un classement séparé pour le titre de champion suisse junior.",
-    "cta": "En savoir plus"
+    "cta": "En savoir plus",
+    "season": "Saison 1",
+    "altFelt": "Fond en feutre vert",
+    "altChalkboard": "Fond tableau noir",
+    "format": {
+      "title": "Le format",
+      "description": "Une équipe entière devient championne suisse. Pas un joueur individuel — mais une équipe. Comme au football. Comme au hockey.",
+      "howItWorks": "Comment ça marche ?",
+      "steps": [
+        "Au moins 10 parties dans son propre groupe (qualification décentralisée)",
+        "Défier d'autres équipes",
+        "Le classement Elo décide du tournoi final",
+        "Tournoi final : les meilleures équipes se rencontrent"
+      ],
+      "communityNote": "Le premier championnat suisse sera aussi grand que la communauté. Que ce soit 20 ou 200 équipes — nous adaptons le mode. La saison 1 aura lieu, quel que soit le nombre d'équipes inscrites."
+    },
+    "youth": {
+      "title": "Classement jeunesse",
+      "description": "Les équipes jeunes (jusqu'à 25 ans) participent au championnat régulier et reçoivent un classement séparé.",
+      "championTitle": "Champion suisse",
+      "championSubtitle": "Toutes catégories d'âge",
+      "youthChampionTitle": "Champion suisse junior",
+      "youthChampionSubtitle": "Jusqu'à 25 ans"
+    },
+    "register": {
+      "title": "Inscrire votre équipe",
+      "description": "L'inscription se fait via Jassmeister. Vous avez besoin d'une adhésion.",
+      "ctaJassmeister": "S'inscrire sur Jassmeister",
+      "ctaMember": "Devenir membre"
+    }
   },
   "mission": {
     "title": "Notre mission",
@@ -112,7 +144,10 @@
   },
   "trust": {
     "badge": "Tradition vivante",
-    "text": "Inscrit auprès de l'Office fédéral de la culture"
+    "text": "Inscrit auprès de l'Office fédéral de la culture",
+    "description": "La FSJ représente le Jass en tant que tradition reconnue par l'Office fédéral de la culture comme",
+    "linkText": "tradition vivante",
+    "altBadge": "Traditions vivantes de la Suisse"
   },
   "homeFaq": {
     "title": "Questions fréquentes",
@@ -151,18 +186,16 @@
   },
   "verband": {
     "title": "La Fédération",
+    "subtitle": "Le Jass est un patrimoine culturel suisse — et mérite une organisation qui le porte vers l'avenir.",
     "intro": "La Fédération Suisse de Jass a été fondée le 15 janvier 2026 à Zurich. Nous nous engageons pour la promotion, la préservation et la transmission innovante du Jass en tant que patrimoine culturel suisse et sport de réflexion stratégique.",
+    "gruendung": "Fondée le 15 janvier 2026 à Zurich",
     "vorstand": "Comité",
+    "praesidiumTitle": "Le Présidium",
+    "praesidiumSubtitle": "Une main forte pour le Jass suisse",
     "statuten": {
       "title": "Statuts",
-      "download": "Télécharger les statuts (PDF)"
-    },
-    "values": {
-      "title": "Nos valeurs",
-      "respect": "Respect",
-      "fairplay": "Fair-play",
-      "integrity": "Intégrité",
-      "inclusion": "Inclusion"
+      "download": "Télécharger les statuts (PDF)",
+      "description": "Les statuts de la Fédération Suisse de Jass régissent l'objet, l'adhésion, l'organisation et les finances de la fédération."
     }
   },
   "projekte": {
@@ -195,7 +228,13 @@
       "address": "Adresse",
       "email": "E-mail",
       "phone": "Téléphone"
-    }
+    },
+    "orgName": "Fédération Suisse de Jass",
+    "success": {
+      "title": "Message envoyé !",
+      "message": "Nous vous répondrons dans les plus brefs délais."
+    },
+    "mediaNote": "Pour les demandes médias, veuillez contacter :"
   },
   "footer": {
     "tagline": "Tradition et Innovation",
@@ -401,6 +440,35 @@
     },
     "trust": {
       "text": "La Fédération Suisse de Jass représente le Jass en tant que «Tradition vivante» reconnue par l'Office fédéral de la culture."
+    },
+    "altFelt": "Fond en feutre vert",
+    "altChalkboard": "Fond tableau noir",
+    "altTrust": "Traditions vivantes de la Suisse",
+    "checkout": {
+      "error": "Échec du paiement",
+      "genericError": "Une erreur est survenue",
+      "loading": "Redirection vers le paiement...",
+      "stripeNote": "Paiement sécurisé via Stripe"
+    },
+    "youth": {
+      "title": "Licence jeunesse (jusqu'à 25 ans)",
+      "description": "Les équipes jeunes (étudiants, apprentis) participent au championnat régulier et reçoivent un classement séparé.",
+      "price": "CHF 20",
+      "period": " / personne / saison",
+      "cta": "Choisir licence jeunesse"
+    },
+    "erfolg": {
+      "title": "Bienvenue à la Fédération !",
+      "description": "Votre paiement a été effectué avec succès. Vous recevrez prochainement un e-mail de confirmation avec tous les détails de votre adhésion.",
+      "ctaHome": "Vers la page d'accueil",
+      "ctaPlay": "Jouer sur Jasstafel",
+      "nextSteps": "Prochaines étapes",
+      "step1Title": "Confirmer l'e-mail",
+      "step1Description": "Vous recevrez dans quelques minutes un e-mail de confirmation avec votre numéro de membre.",
+      "step2Title": "Connecter Jasstafel",
+      "step2Description": "Liez votre compte FSJ à Jasstafel.app pour les fonctionnalités Premium et le suivi Elo.",
+      "step3Title": "S'inscrire au championnat",
+      "step3Description": "Dès le printemps, vous pourrez inscrire votre équipe au Championnat Suisse de Jass."
     }
   }
 }

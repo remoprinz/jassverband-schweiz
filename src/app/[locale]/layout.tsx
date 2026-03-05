@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
+import { headers } from "next/headers";
 import { locales, type Locale } from "@/lib/i18n";
 import { LayoutContent } from "@/components/layout/LayoutContent";
 import { OrganizationSchema } from "@/components/seo/OrganizationSchema";
@@ -97,6 +98,8 @@ export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
+const HERO_PAGES = ['', '/', '/plattform'];
+
 export default async function LocaleLayout({ children, params }: LocaleLayoutProps) {
   const { locale } = await params;
 
@@ -116,6 +119,15 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
   };
   const footer = messages.footer as { tagline: string; legal: string; impressum: string; datenschutz: string; copyright: string };
 
+  const headersList = await headers();
+  // Set by middleware on every request (reliable: same on server AND client hydration)
+  const rawPathname = headersList.get('x-pathname') ?? '';
+  const withoutLocale = rawPathname.startsWith(`/${locale}`)
+    ? rawPathname.slice(`/${locale}`.length)
+    : rawPathname;
+  const normalizedSuffix = withoutLocale === '/' ? '' : withoutLocale.replace(/\/$/, '');
+  const isHeroPage = HERO_PAGES.includes(normalizedSuffix);
+
   return (
     <html lang={locale}>
       <head>
@@ -129,7 +141,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
       </head>
       <body className={`${inter.variable} ${capita.variable} antialiased`}>
         <NextIntlClientProvider messages={messages}>
-          <LayoutContent locale={locale} nav={nav} footer={footer}>
+          <LayoutContent locale={locale} nav={nav} footer={footer} isHeroPage={isHeroPage}>
             {children}
           </LayoutContent>
         </NextIntlClientProvider>

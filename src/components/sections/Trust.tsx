@@ -7,14 +7,17 @@ import { StandardSection } from '@/components/layout/StandardSection';
 interface TrustProps {
   badge: string;
   text: string;
+  description?: string;
+  linkText?: string;
+  altBadge?: string;
 }
 
-export function Trust({}: TrustProps) {
+export function Trust({ description, linkText, altBadge }: TrustProps) {
   return (
     <StandardSection
       background="trust"
       containerSize="full"
-      spacing="sm"  // py-8 md:py-10 entspricht sm spacing
+      spacing="sm"
     >
       <motion.div
         className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-6"
@@ -33,7 +36,7 @@ export function Trust({}: TrustProps) {
             color: 'rgba(0, 0, 0, 0.55)',
           }}
         >
-          JVS repräsentiert Jassen als vom Bundesamt für Kultur anerkannte{' '}
+          {description ?? 'JVS repräsentiert Jassen als vom Bundesamt für Kultur anerkannte'}{' '}
           <a
             href="https://www.lebendige-traditionen.ch/tradition/de/home/traditionen/jassen.html"
             target="_blank"
@@ -41,16 +44,15 @@ export function Trust({}: TrustProps) {
             className="underline hover:text-black transition-colors"
             style={{ color: 'rgba(0, 0, 0, 0.75)' }}
           >
-            lebendige Tradition
+            {linkText ?? 'lebendige Tradition'}
           </a>
           .
         </p>
 
-        {/* Figma-Asset: Text + Siegel kombiniert */}
         <div className="relative flex-shrink-0 self-end sm:self-auto" style={{ width: 'clamp(160px, 20vw, 280px)', aspectRatio: '800 / 453' }}>
           <Image
             src="/images/badges/lebendige-traditionen-figma.png"
-            alt="Lebendige Traditionen der Schweiz"
+            alt={altBadge ?? 'Lebendige Traditionen der Schweiz'}
             fill
             className="object-contain object-right"
             sizes="(max-width: 768px) 160px, 280px"

@@ -60,7 +60,7 @@ export function Footer({ locale, content, nav }: FooterProps) {
                 {[
                   { href: `/${locale}`, label: nav.home },
                   { href: `/${locale}/schweizermeisterschaft`, label: nav.schweizermeisterschaft },
-                  { href: `/${locale}/plattformen`, label: nav.plattformen },
+                  { href: `/${locale}/plattform`, label: nav.plattformen },
                   { href: `/${locale}/verband`, label: nav.verband },
                   { href: `/${locale}/news`, label: nav.news },
                   { href: `/${locale}/kontakt`, label: nav.kontakt },
@@ -159,7 +159,7 @@ export function Footer({ locale, content, nav }: FooterProps) {
                 {[
                   { href: `/${locale}`, label: nav.home },
                   { href: `/${locale}/schweizermeisterschaft`, label: nav.schweizermeisterschaft },
-                  { href: `/${locale}/plattformen`, label: nav.plattformen },
+                  { href: `/${locale}/plattform`, label: nav.plattformen },
                   { href: `/${locale}/verband`, label: nav.verband },
                   { href: `/${locale}/news`, label: nav.news },
                   { href: `/${locale}/kontakt`, label: nav.kontakt },

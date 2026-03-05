@@ -6,7 +6,7 @@
   "nav": {
     "home": "Home",
     "schweizermeisterschaft": "Schweizermeisterschaft",
-    "plattformen": "Plattformen",
+    "plattformen": "Plattform",
     "verband": "Verband",
     "news": "News",
     "kontakt": "Kontakt",
@@ -15,7 +15,10 @@
   "hero": {
     "title": "Jassen ist mehr als ein Kartenspiel.",
     "subtitle": "Es ist Schweizer Kulturgut — und verdient eine moderne Zukunft.",
-    "cta": "Mitglied werden"
+    "cta": "Mitglied werden",
+    "altTable": "Holztisch",
+    "altFelt": "Jassteppich",
+    "altCard": "Jasskarte"
   },
   "vision": {
     "title": "Unsere Vision",
@@ -31,7 +34,36 @@
     "subtitle": "Die erste nationale Team-Schieber Schweizermeisterschaft.",
     "copy": "Der Schieber ist ein Team-Jass. Deshalb treten nicht Einzelspieler, sondern ganze Teams zur Schweizermeisterschaft an. Die erste Meisterschaft wird so gross wie die Community.",
     "jugend": "Jugendteams spielen in der gleichen Meisterschaft und erhalten eine separate Wertung für den Jugend-Schweizermeister.",
-    "cta": "Mehr zur Schweizermeisterschaft"
+    "cta": "Mehr zur Schweizermeisterschaft",
+    "season": "Saison 1",
+    "altFelt": "Grüner Filz Hintergrund",
+    "altChalkboard": "Kreidetafel Hintergrund",
+    "format": {
+      "title": "Das Format",
+      "description": "Ein ganzes Team wird Schweizermeister. Nicht ein Einzelspieler — sondern ein Team. So wie im Fussball. So wie im Hockey.",
+      "howItWorks": "Wie funktioniert\u2019s?",
+      "steps": [
+        "Mindestens 10 Spiele in der eigenen Gruppe (dezentrale Qualifikation)",
+        "Andere Teams herausfordern",
+        "Elo-Ranking entscheidet über Finalturnier",
+        "Finalturnier: Die besten Teams treffen sich"
+      ],
+      "communityNote": "Die erste Schweizermeisterschaft wird so gross wie die Community. Ob 20 oder 200 Teams — wir passen den Modus an. Saison 1 findet statt, egal wie viele Teams sich anmelden."
+    },
+    "youth": {
+      "title": "Jugendwertung",
+      "description": "Jugendteams (bis 25 Jahre) nehmen an der regulären Meisterschaft teil und erhalten eine separate Wertung.",
+      "championTitle": "Schweizermeister",
+      "championSubtitle": "Alle Altersklassen",
+      "youthChampionTitle": "Jugend-Schweizermeister",
+      "youthChampionSubtitle": "Bis 25 Jahre"
+    },
+    "register": {
+      "title": "Jetzt Team anmelden",
+      "description": "Die Anmeldung erfolgt über Jassmeister. Du brauchst eine Mitgliedschaft.",
+      "ctaJassmeister": "Auf Jassmeister anmelden",
+      "ctaMember": "Mitglied werden"
+    }
   },
   "mission": {
     "title": "Unsere Mission",
@@ -98,8 +130,8 @@
     "cta": "Mehr erfahren"
   },
   "ecosystem": {
-    "title": "Unsere Plattformen",
-    "subtitle": "Das Jass-Ökosystem des Jassverbands Schweiz",
+    "title": "Unsere Plattform",
+    "subtitle": "Jassen gewinnt, wenn wir zusammenarbeiten. In unserem Jass-Ökosystem führen wir Tools, Wissen und engagierte Partner zu einer Einheit zusammen. Damit schaffen wir das Fundament für eine moderne Schweizer Jasskultur.",
     "whatsapp": {
       "title": "JassBegegnung",
       "description": "Tausche dich mit anderen Jassern aus, finde Mitspieler und bleib informiert. Die Mitglieder-Plattform für die Jass-Community."
@@ -139,7 +171,10 @@
   },
   "trust": {
     "badge": "Lebendige Tradition",
-    "text": "Gelistet beim Bundesamt für Kultur"
+    "text": "Gelistet beim Bundesamt für Kultur",
+    "description": "JVS repräsentiert Jassen als vom Bundesamt für Kultur anerkannte",
+    "linkText": "lebendige Tradition",
+    "altBadge": "Lebendige Traditionen der Schweiz"
   },
   "homeFaq": {
     "title": "Häufige Fragen",
@@ -202,18 +237,16 @@
   },
   "verband": {
     "title": "Der Verband",
+    "subtitle": "Jassen ist Schweizer Kulturgut — und verdient eine Organisation, die es in die Zukunft führt.",
     "intro": "Der Jassverband Schweiz wurde am 15. Januar 2026 in Zürich gegründet. Wir setzen uns für die Förderung, Erhaltung und innovative Vermittlung des Jassens als schweizerisches Kulturgut und strategischer Denksport ein.",
+    "gruendung": "Gegründet am 15. Januar 2026 in Zürich",
     "vorstand": "Vorstand",
+    "praesidiumTitle": "Das Präsidium",
+    "praesidiumSubtitle": "Ein starkes Blatt für den Schweizer Jass",
     "statuten": {
       "title": "Statuten",
-      "download": "Statuten herunterladen (PDF)"
-    },
-    "values": {
-      "title": "Unsere Werte",
-      "respect": "Respekt",
-      "fairplay": "Fairplay",
-      "integrity": "Integrität",
-      "inclusion": "Inklusion"
+      "download": "Statuten herunterladen (PDF)",
+      "description": "Die Statuten des Jassverband Schweiz regeln Zweck, Mitgliedschaft, Organisation und Finanzen des Verbands."
     }
   },
   "projekte": {
@@ -246,7 +279,13 @@
       "address": "Adresse",
       "email": "E-Mail",
       "phone": "Telefon"
-    }
+    },
+    "orgName": "Jassverband Schweiz",
+    "success": {
+      "title": "Nachricht gesendet!",
+      "message": "Wir melden uns so schnell wie möglich bei Ihnen."
+    },
+    "mediaNote": "Für Medienanfragen wenden Sie sich bitte an:"
   },
   "footer": {
     "tagline": "Tradition trifft Innovation",
@@ -398,6 +437,35 @@
     },
     "trust": {
       "text": "Der Jassverband Schweiz repräsentiert das Jassen als vom Bundesamt für Kultur anerkannte «Lebendige Tradition» der Schweiz."
+    },
+    "altFelt": "Grüner Filz Hintergrund",
+    "altChalkboard": "Kreidetafel Hintergrund",
+    "altTrust": "Lebendige Traditionen der Schweiz",
+    "checkout": {
+      "error": "Checkout fehlgeschlagen",
+      "genericError": "Ein Fehler ist aufgetreten",
+      "loading": "Weiter zur Zahlung...",
+      "stripeNote": "Sichere Zahlung via Stripe"
+    },
+    "youth": {
+      "title": "Jugendlizenz (bis 25 Jahre)",
+      "description": "Jugendteams (Schüler, Lehrlinge und Studenten) nehmen an der regulären Schweizermeisterschaft teil und erhalten eine separate Wertung.",
+      "price": "CHF 20",
+      "period": " / Person / Saison",
+      "cta": "Jugendlizenz wählen"
+    },
+    "erfolg": {
+      "title": "Willkommen im Jassverband!",
+      "description": "Deine Zahlung war erfolgreich. Du erhältst in Kürze eine Bestätigung per E-Mail mit allen Details zu deiner Mitgliedschaft.",
+      "ctaHome": "Zur Startseite",
+      "ctaPlay": "Jetzt auf Jasstafel spielen",
+      "nextSteps": "So geht es weiter",
+      "step1Title": "E-Mail bestätigen",
+      "step1Description": "Du erhältst in wenigen Minuten eine Bestätigungs-E-Mail mit deiner Mitgliedsnummer.",
+      "step2Title": "Jasstafel verbinden",
+      "step2Description": "Verknüpfe dein JVS-Konto mit Jasstafel.app für Premium-Features und Elo-Tracking.",
+      "step3Title": "Meisterschaft melden",
+      "step3Description": "Ab Frühjahr kannst du dein Team zur Schweizer Jass-Meisterschaft anmelden."
     }
   }
 }

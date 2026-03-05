@@ -61,7 +61,7 @@ export default function MitmachenPage() {
       const data = await response.json();
       
       if (!response.ok) {
-        throw new Error(data.error || 'Checkout fehlgeschlagen');
+        throw new Error(data.error || t('checkout.error'));
       }
       
       // Redirect zu Stripe Checkout
@@ -70,7 +70,7 @@ export default function MitmachenPage() {
       }
     } catch (err) {
       console.error('Checkout error:', err);
-      setError(err instanceof Error ? err.message : 'Ein Fehler ist aufgetreten');
+      setError(err instanceof Error ? err.message : t('checkout.genericError'));
       setIsLoading(false);
     }
   };
@@ -82,7 +82,7 @@ export default function MitmachenPage() {
         <div className="absolute inset-0">
           <Image
             src="/images/backgrounds/felt-figma.png"
-            alt="Grüner Filz Hintergrund"
+            alt={t('altFelt')}
             fill
             className="object-cover"
             priority
@@ -231,7 +231,7 @@ export default function MitmachenPage() {
 
       {/* ════════════════════ JUGENDLIZENZ ════════════════════ */}
       <StandardSection
-        title="Jugendlizenz (bis 25 Jahre)"
+        title={t('youth.title')}
         background="cream"
         containerSize="full"
         spacing="lg"
@@ -247,7 +247,7 @@ export default function MitmachenPage() {
               color: '#1f1f1f',
             }}
           >
-            Jugendteams (Schüler, Lehrlinge und Studenten) nehmen an der regulären Schweizermeisterschaft teil und erhalten eine separate Wertung.
+            {t('youth.description')}
           </p>
           <div className="mb-6">
             <span
@@ -257,16 +257,16 @@ export default function MitmachenPage() {
                 fontSize: '36px',
               }}
             >
-              CHF 20
+              {t('youth.price')}
             </span>
-            <span style={{ opacity: 0.7, fontSize: '16px' }}> / Person / Saison</span>
+            <span style={{ opacity: 0.7, fontSize: '16px' }}>{t('youth.period')}</span>
           </div>
           <Button
             href="#anmeldung"
             size="lg"
             onClick={() => setFormData({ ...formData, paket: 'jugend' })}
           >
-            Jugendlizenz wählen
+            {t('youth.cta')}
           </Button>
         </div>
       </StandardSection>
@@ -276,7 +276,7 @@ export default function MitmachenPage() {
         <div className="absolute inset-0">
           <Image
             src="/images/backgrounds/chalkboard.jpg"
-            alt="Kreidetafel Hintergrund"
+            alt={t('altChalkboard')}
             fill
             className="object-cover"
             quality={85}
@@ -447,7 +447,7 @@ export default function MitmachenPage() {
                         <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
                         <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
                       </svg>
-                      Weiter zur Zahlung...
+                      {t('checkout.loading')}
                     </span>
                   ) : (
                     t('form.submit')
@@ -459,7 +459,7 @@ export default function MitmachenPage() {
                   <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/>
                   </svg>
-                  Sichere Zahlung via Stripe
+                  {t('checkout.stripeNote')}
                 </div>
               </form>
         </div>
@@ -512,7 +512,7 @@ export default function MitmachenPage() {
             <div className="relative flex-shrink-0 self-end sm:self-auto" style={{ width: 'clamp(160px, 20vw, 280px)', aspectRatio: '800 / 453' }}>
               <Image
                 src="/images/badges/lebendige-traditionen-figma.png"
-                alt="Lebendige Traditionen der Schweiz"
+                alt={t('altTrust')}
                 fill
                 className="object-contain object-right"
                 sizes="(max-width: 768px) 160px, 280px"

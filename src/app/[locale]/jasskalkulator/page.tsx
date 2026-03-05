@@ -213,17 +213,17 @@ export default function JasskalkulatorPage() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
               </svg>
             </Link>
-            <div className="flex items-end gap-1.5 lg:scale-[1.2] lg:origin-left">
-              <span className="w-7 h-7 rounded-full bg-[#FFFFFF] flex items-center justify-center">
+            <div className="inline-flex items-center gap-1.5 h-8 lg:scale-[1.2] lg:origin-left">
+              <span className="w-7 h-7 shrink-0 rounded-full bg-[#FFFFFF] flex items-center justify-center">
                 <PiCalculatorFill className="w-4 h-4 text-black" style={{ transform: 'scale(1.15)' }} />
               </span>
               <span 
-                className="text-white text-[24px] sm:text-[28px]"
+                className="inline-flex items-center h-7 text-white text-[24px] sm:text-[28px]"
                 style={{ 
                   fontFamily: 'var(--font-capita), Capita, Georgia, serif',
                   fontWeight: 700,
                   lineHeight: '1',
-                  transform: 'translateY(2px)',
+                  transform: 'translateY(3px)',
                 }}
               >
                 JassKalkulator
