@@ -253,6 +253,27 @@
     "title": "Informativa sulla privacy",
     "intro": "La protezione dei tuoi dati è importante per noi. Questa informativa sulla privacy ti informa sul trattamento dei dati personali sul nostro sito web."
   },
+  "jasskalkulator": {
+    "myCards": "Le mie carte:",
+    "probability": "Qual è la probabilità che ...",
+    "result": "Probabilità",
+    "resultSuffix": "... ha:",
+    "selectCards": "Seleziona le tue 9 carte.",
+    "opponent": {
+      "partner": "il mio\npartner",
+      "opponentsOne": "uno degli\navversari",
+      "opponentsNone": "nessuno degli\navversari"
+    },
+    "comparator": {
+      "atLeast": "almeno",
+      "exact": "esattamente",
+      "atMost": "al massimo"
+    },
+    "condition": {
+      "blutt": "blutt",
+      "atN": "a {n}."
+    }
+  },
   "mitmachen": {
     "hero": {
       "title": "Plasmate il futuro del Jass svizzero",

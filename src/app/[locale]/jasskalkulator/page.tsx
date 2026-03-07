@@ -4,6 +4,7 @@ import { useState, useCallback, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useTranslations, useLocale } from 'next-intl';
 import { PiCalculatorFill } from 'react-icons/pi';
 import { JASS_CARDS, type JassCard, type CardLocale, type Suit, type Value, getSuitLabel } from '@/lib/calculator/cards';
 import { calculateProbability, type CalculationConfig, type OpponentType, type Comparator, getMaxPossibleInSuit } from '@/lib/calculator/jassLogic';
@@ -102,6 +103,8 @@ function getProbabilityColor(value: number): string {
 }
 
 export default function JasskalkulatorPage() {
+  const t = useTranslations('jasskalkulator');
+  const locale = useLocale();
   const [selectedCards, setSelectedCards] = useState<JassCard[]>([]);
   const [cardLocale, setCardLocale] = useState<CardLocale>('de');
   const [showCardSelectionPopup, setShowCardSelectionPopup] = useState(false);
@@ -206,7 +209,7 @@ export default function JasskalkulatorPage() {
         <div className="max-w-[1400px] mx-auto w-full h-full px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <Link 
-              href="/"
+              href={`/${locale}`}
               className="w-8 h-8 flex items-center justify-center text-white/60 hover:text-white transition-colors"
             >
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5">
@@ -285,7 +288,7 @@ export default function JasskalkulatorPage() {
                   marginLeft: isMobilePortrait ? '8px' : '0px',
                 }}
               >
-                Ich habe folgende Karten:
+                {t('myCards')}
               </span>
               <span 
                 style={{ 
@@ -464,15 +467,15 @@ export default function JasskalkulatorPage() {
                 marginBottom: '20px',
               }}
             >
-              Wie gross ist die Wahrscheinlichkeit, dass ...
+              {t('probability')}
             </h2>
 
             {/* Opponent Selection */}
             <div className="flex gap-2 mb-4">
               {[
-                { key: 'partner', label: 'mein\nPartner', type: 'partner' as OpponentType },
-                { key: 'opponents_one', label: 'einer der\nGegner', type: 'opponents_one' as OpponentType },
-                { key: 'opponents_none', label: 'keiner der\nGegner', type: 'opponents_none' as OpponentType },
+                { key: 'partner', label: t('opponent.partner'), type: 'partner' as OpponentType },
+                { key: 'opponents_one', label: t('opponent.opponentsOne'), type: 'opponents_one' as OpponentType },
+                { key: 'opponents_none', label: t('opponent.opponentsNone'), type: 'opponents_none' as OpponentType },
               ].map((opt) => {
                 const isActive = config.opponentType === opt.type;
                 const showActive = cardsReady && isActive;
@@ -651,9 +654,9 @@ export default function JasskalkulatorPage() {
             {/* Comparator Selection */}
             <div className="flex gap-2 mb-4">
               {[
-                { key: 'atLeast', label: 'mindestens' },
-                { key: 'exact', label: 'genau' },
-                { key: 'atMost', label: 'höchstens' },
+                { key: 'atLeast', label: t('comparator.atLeast') },
+                { key: 'exact', label: t('comparator.exact') },
+                { key: 'atMost', label: t('comparator.atMost') },
               ].map((opt) => {
                 const isActive = config.comparator === opt.key;
                 const showActive = cardsReady && isActive;
@@ -698,7 +701,7 @@ export default function JasskalkulatorPage() {
                   cursor: cardsReady ? 'pointer' : 'not-allowed',
                 }}
               >
-                blutt
+                {t('condition.blutt')}
               </button>
               {[2, 3, 4, 5].map((n) => {
                 const isActive = config.condition === n;
@@ -721,7 +724,7 @@ export default function JasskalkulatorPage() {
                       cursor: !cardsReady ? 'not-allowed' : (isDisabled ? 'not-allowed' : 'pointer'),
                     }}
                   >
-                    zu {n}.
+                    {t('condition.atN', { n })}
                   </button>
                 );
               })}
@@ -750,7 +753,7 @@ export default function JasskalkulatorPage() {
                       cursor: !cardsReady ? 'not-allowed' : (isDisabled ? 'not-allowed' : 'pointer'),
                     }}
                   >
-                    zu {n}.
+                    {t('condition.atN', { n })}
                   </button>
                 );
               })}
@@ -767,8 +770,8 @@ export default function JasskalkulatorPage() {
                   border: `1px solid ${resetButtonIsActive ? '#FF0000' : OPTION_BUTTON_INACTIVE_BORDER}`,
                   cursor: 'pointer',
                 }}
-                aria-label="Auswahl zurücksetzen"
-                title="Auswahl zurücksetzen"
+                aria-label="Reset"
+                title="Reset"
               >
                 <Image
                   src="/cards/icons/back_icon.svg"
@@ -793,7 +796,7 @@ export default function JasskalkulatorPage() {
                 marginBottom: '8px',
               }}
             >
-              ... hat:
+              {t('resultSuffix')}
             </div>
 
             {/* Result Display */}
@@ -822,7 +825,7 @@ export default function JasskalkulatorPage() {
                       color: 'white',
                     }}
                   >
-                    Wahrscheinlichkeit
+                    {t('result')}
                   </span>
                   <span 
                     style={{ 
@@ -897,7 +900,7 @@ export default function JasskalkulatorPage() {
                   marginBottom: '14px',
                 }}
               >
-                Wähle deine neun Karten aus.
+                {t('selectCards')}
               </p>
               <div className="flex justify-end">
                 <button

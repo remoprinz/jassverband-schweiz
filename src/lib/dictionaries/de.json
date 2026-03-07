@@ -304,6 +304,27 @@
     "title": "Datenschutzerklärung",
     "intro": "Der Schutz Ihrer Daten ist uns wichtig. Diese Datenschutzerklärung informiert Sie über die Verarbeitung personenbezogener Daten auf unserer Website."
   },
+  "jasskalkulator": {
+    "myCards": "Ich habe folgende Karten:",
+    "probability": "Wie gross ist die Wahrscheinlichkeit, dass ...",
+    "result": "Wahrscheinlichkeit",
+    "resultSuffix": "... hat:",
+    "selectCards": "Wähle deine neun Karten aus.",
+    "opponent": {
+      "partner": "mein\nPartner",
+      "opponentsOne": "einer der\nGegner",
+      "opponentsNone": "keiner der\nGegner"
+    },
+    "comparator": {
+      "atLeast": "mindestens",
+      "exact": "genau",
+      "atMost": "höchstens"
+    },
+    "condition": {
+      "blutt": "blutt",
+      "atN": "zu {n}."
+    }
+  },
   "mitmachen": {
     "hero": {
       "title": "Saison 1 ist eröffnet. Dein Platz steht bereit.",
