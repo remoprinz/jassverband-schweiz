@@ -18,7 +18,7 @@ export default async function ImpressumPage({ params }: ImpressumPageProps) {
           <h2>{t("verein")}</h2>
           <p>
             <strong>Jassverband Schweiz (JVS)</strong><br />
-            Verein nach Art. 60 ff. ZGB
+            {t("legalForm")}
           </p>
 
           <h3>{t("contact")}</h3>
@@ -34,29 +34,19 @@ export default async function ImpressumPage({ params }: ImpressumPageProps) {
 
           <h3>{t("responsible")}</h3>
           <p>
-            Remo Prinz, Präsident<br />
+            Remo Prinz, {t("presidentRole")}<br />
             E-Mail: <a href="mailto:remo@jassverband.ch">remo@jassverband.ch</a>
           </p>
 
-          <h3>Gründungsdatum</h3>
-          <p>15. Januar 2026</p>
+          <h3>{t("founding")}</h3>
+          <p>{t("foundingDate")}</p>
 
-          <h3>Vereinszweck</h3>
-          <p>
-            Der Verein bezweckt die Förderung, Erhaltung und innovative Vermittlung des Jassens 
-            als schweizerisches immaterielles Kulturgut sowie als strategischer Denksport.
-          </p>
+          <h3>{t("purpose")}</h3>
+          <p>{t("purposeText")}</p>
 
-          <h3>Haftungsausschluss</h3>
-          <p>
-            Die Inhalte dieser Website wurden mit grösster Sorgfalt erstellt. Für die Richtigkeit, 
-            Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.
-          </p>
-          <p>
-            Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte 
-            externer Links. Für den Inhalt der verlinkten Seiten sind ausschliesslich deren 
-            Betreiber verantwortlich.
-          </p>
+          <h3>{t("disclaimer")}</h3>
+          <p>{t("disclaimerText1")}</p>
+          <p>{t("disclaimerText2")}</p>
         </div>
       </div>
     </div>

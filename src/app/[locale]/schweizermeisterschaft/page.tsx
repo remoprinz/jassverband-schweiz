@@ -16,9 +16,9 @@ export default async function SchweizermeisterschaftPage({ params }: Props) {
     <div>
       {/* Hero – identisch mit Home & Plattform */}
       <Hero
-        title={"Schweizer\nJass-Meisterschaft."}
-        subtitle="Die erste nationale Meisterschaft für Schieber-Teams — so gross wie unsere Community."
-        cta="Jetzt Mitglied werden"
+        title={t('schweizermeisterschaft.hero.title')}
+        subtitle={t('schweizermeisterschaft.hero.subtitle')}
+        cta={t('schweizermeisterschaft.hero.cta')}
         locale={locale}
         ctaHref={`/${locale}/mitmachen`}
         preserveTitleLineBreaks

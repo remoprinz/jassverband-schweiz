@@ -17,7 +17,7 @@ export default async function DatenschutzPage({ params }: DatenschutzPageProps) 
         <div className="prose prose-lg max-w-none">
           <p className="lead">{t("intro")}</p>
 
-          <h2>Verantwortliche Stelle</h2>
+          <h2>{t("responsible")}</h2>
           <p>
             Jassverband Schweiz (JVS)<br />
             Hirslanderstrasse 34<br />
@@ -25,51 +25,34 @@ export default async function DatenschutzPage({ params }: DatenschutzPageProps) 
             E-Mail: <a href="mailto:info@jassverband.ch">info@jassverband.ch</a>
           </p>
 
-          <h2>Erhebung und Verarbeitung von Daten</h2>
-          <p>
-            Wir erheben personenbezogene Daten nur, wenn Sie uns diese im Rahmen einer 
-            Kontaktanfrage freiwillig mitteilen. Dies umfasst:
-          </p>
+          <h2>{t("dataCollection")}</h2>
+          <p>{t("dataCollectionText")}</p>
           <ul>
-            <li>Name</li>
-            <li>E-Mail-Adresse</li>
-            <li>Ihre Nachricht</li>
+            {(t.raw("dataItems") as string[]).map((item: string) => (
+              <li key={item}>{item}</li>
+            ))}
           </ul>
 
-          <h2>Verwendungszweck</h2>
+          <h2>{t("purposeSection")}</h2>
+          <p>{t("purposeText")}</p>
+
+          <h2>{t("cookies")}</h2>
+          <p>{t("cookiesText")}</p>
+
+          <h2>{t("externalLinks")}</h2>
+          <p>{t("externalLinksText")}</p>
+
+          <h2>{t("rights")}</h2>
           <p>
-            Die von Ihnen übermittelten Daten werden ausschliesslich zur Bearbeitung 
-            Ihrer Anfrage verwendet und nicht an Dritte weitergegeben.
+            {t("rightsText")}{" "}
+            <a href="mailto:info@jassverband.ch">info@jassverband.ch</a>.
           </p>
 
-          <h2>Cookies und Tracking</h2>
-          <p>
-            Diese Website verwendet <strong>keine Cookies</strong> und 
-            <strong> keine Tracking-Tools</strong>. Wir erfassen keine Nutzungsdaten 
-            und erstellen keine Nutzerprofile.
-          </p>
-
-          <h2>Externe Links</h2>
-          <p>
-            Unsere Website enthält Links zu externen Websites (jasswiki.ch, jassguru.ch, 
-            jassmeister.web.app). Für die Datenschutzpraktiken dieser externen Seiten 
-            sind wir nicht verantwortlich.
-          </p>
-
-          <h2>Ihre Rechte</h2>
-          <p>
-            Sie haben jederzeit das Recht auf Auskunft, Berichtigung oder Löschung 
-            Ihrer bei uns gespeicherten Daten. Kontaktieren Sie uns hierfür unter 
-            <a href="mailto:info@jassverband.ch"> info@jassverband.ch</a>.
-          </p>
-
-          <h2>Anwendbares Recht</h2>
-          <p>
-            Es gilt das Schweizerische Datenschutzgesetz (revDSG). Gerichtsstand ist Zürich.
-          </p>
+          <h2>{t("law")}</h2>
+          <p>{t("lawText")}</p>
 
           <p className="text-sm text-[var(--color-foreground-muted)] mt-12">
-            Stand: Februar 2026
+            {t("updated")}
           </p>
         </div>
       </div>

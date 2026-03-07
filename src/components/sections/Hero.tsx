@@ -28,6 +28,7 @@ interface HeroProps {
   teaser?: {
     label: string;
     text: string;
+    badge?: string;
   };
 }
 
@@ -462,19 +463,21 @@ export function Hero({
           transition={{ duration: 0.7, delay: 0.4 }}
         >
           <div className="flex flex-col items-center" style={{ gap: '5px', maxWidth: '150px' }}>
-            <span
-              className="inline-flex items-center justify-center rounded-full px-3 py-[3px]"
-              style={{
-                fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
-                fontWeight: 700,
-                fontSize: '11px',
-                lineHeight: 1,
-                color: '#ffffff',
-                backgroundColor: '#ff0000',
-              }}
-            >
-              Neu
-            </span>
+            {teaser.badge && (
+              <span
+                className="inline-flex items-center justify-center rounded-full px-3 py-[3px]"
+                style={{
+                  fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
+                  fontWeight: 700,
+                  fontSize: '11px',
+                  lineHeight: 1,
+                  color: '#ffffff',
+                  backgroundColor: '#ff0000',
+                }}
+              >
+                {teaser.badge}
+              </span>
+            )}
             <p
               style={{
                 fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',

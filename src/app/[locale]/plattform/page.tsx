@@ -12,16 +12,17 @@ export default async function PlattformenPage({ params }: PlattformenPageProps) 
   return (
     <div>
       <Hero
-        title={"Gemeinsam stärker\n— statt isoliert."}
-        subtitle="In unserem Ökosystem führen wir Tools, Experten und Jass-Wissen zusammen."
-        cta="jetzt testen"
+        title={t("plattform.hero.title")}
+        subtitle={t("plattform.hero.subtitle")}
+        cta={t("plattform.hero.cta")}
         locale={locale}
         ctaHref={`/${locale}/jasskalkulator`}
         preserveTitleLineBreaks
         mobileFlow
         teaser={{
           label: "JassKalkulator",
-          text: "Beende das Rätselraten und lerne deine Chancen beim Ansagen kennen:",
+          badge: t("plattform.hero.teaserBadge"),
+          text: t("plattform.hero.teaserText"),
         }}
         altTable={t("hero.altTable")}
         altFelt={t("hero.altFelt")}

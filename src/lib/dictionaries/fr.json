@@ -30,6 +30,11 @@
     "title": "Pourquoi la fédération de Jass?"
   },
   "schweizermeisterschaft": {
+    "hero": {
+      "title": "Championnat suisse\nde Jass.",
+      "subtitle": "Le premier championnat national pour équipes de Schieber — aussi grand que notre communauté.",
+      "cta": "Devenir membre"
+    },
     "title": "Championnat Suisse de Schieber par équipes",
     "subtitle": "Le premier championnat national de Schieber par équipes.",
     "copy": "Le Schieber est un jass d'équipe. C'est pourquoi ce ne sont pas des joueurs individuels, mais des équipes entières qui participent au championnat suisse. Le premier championnat sera aussi grand que la communauté.",
@@ -185,6 +190,28 @@
     ]
   },
   "verband": {
+    "hero": {
+      "title": "Pour que le Jass\nreste vivant.",
+      "subtitle": "Depuis le 15 janvier 2026, nous nous engageons activement pour la préservation et la promotion de la culture Jass suisse.",
+      "cta": "Devenir membre"
+    },
+    "praesidium": {
+      "remo": {
+        "role": "Président",
+        "quote": "Je ne crois pas à la chance. C'est pourquoi je me concentre particulièrement lors des ablupfen.",
+        "description": "Remo fait avancer la numérisation du jeu national suisse. Avec JassGuru et JassWiki, il rend connaissances, règles et résultats accessibles à l'échelle suisse pour la première fois. À la fédération, il veille à ce que tradition et technologie se rejoignent."
+      },
+      "fabian": {
+        "role": "Vice-président",
+        "quote": "Dans le Jass se reflète le monde.",
+        "description": "Fabian connaît la scène Jass suisse comme peu d'autres. En tant que rédacteur de Trumpf-As et directeur de tournois expérimenté, il sait ce qui touche les joueuses et joueurs. À la fédération, il apporte la perspective des bistrots aux salles de tournoi."
+      },
+      "erich": {
+        "role": "Secrétaire",
+        "quote": "Le Jass est comme une équation : à la fin, ça doit s'arranger d'une façon ou d'une autre.",
+        "description": "Erich est chargé de cours en statistiques à la FHNW et gère jassstatistik.ch depuis 2008. À la fédération, il veille à ce que tout suive son chemin correct — juridiquement, organisationnellement, documentairement."
+      }
+    },
     "title": "La Fédération",
     "subtitle": "Le Jass est un patrimoine culturel suisse — et mérite une organisation qui le porte vers l'avenir.",
     "intro": "La Fédération Suisse de Jass a été fondée le 15 janvier 2026 à Zurich. Nous nous engageons pour la promotion, la préservation et la transmission innovante du Jass en tant que patrimoine culturel suisse et sport de réflexion stratégique.",
@@ -200,9 +227,13 @@
   },
   "projekte": {
     "title": "Nos projets",
-    "subtitle": "Outils et plateformes numériques pour la communauté Jass"
+    "subtitle": "Outils et plateformes numériques pour la communauté Jass",
+    "futureTitle": "Ensemble pour l'avenir du Jass",
+    "futureDescription": "Toutes les plateformes font partie de l'écosystème numérique de la Fédération Suisse de Jass. Elles se complètent mutuellement et offrent à la communauté Jass une offre complète, des connaissances à la compétition en passant par l'entraînement."
   },
   "partner": {
+    "ctaTitle": "Intéressé·e ?",
+    "ctaDescription": "Contactez-nous pour un entretien sans engagement sur les partenariats et les possibilités de sponsoring.",
     "title": "Devenir partenaire",
     "subtitle": "Investissez dans le patrimoine culturel suisse et la promotion de la jeunesse",
     "why": {
@@ -246,12 +277,45 @@
   "impressum": {
     "title": "Mentions légales",
     "verein": "Informations sur l'association",
+    "legalForm": "Association selon art. 60 ss CC",
     "contact": "Contact",
-    "responsible": "Responsable du contenu"
+    "responsible": "Responsable du contenu",
+    "presidentRole": "Président",
+    "founding": "Date de fondation",
+    "foundingDate": "15 janvier 2026",
+    "purpose": "Objet de l'association",
+    "purposeText": "L'association a pour but la promotion, la préservation et la transmission innovante du Jass en tant que patrimoine culturel immatériel suisse ainsi que comme sport de réflexion stratégique.",
+    "disclaimer": "Clause de non-responsabilité",
+    "disclaimerText1": "Le contenu de ce site web a été créé avec le plus grand soin. Cependant, nous ne pouvons garantir l'exactitude, l'exhaustivité et l'actualité du contenu.",
+    "disclaimerText2": "Malgré un contrôle minutieux du contenu, nous déclinons toute responsabilité pour le contenu des liens externes. Les exploitants des pages liées sont seuls responsables de leur contenu."
   },
   "datenschutz": {
     "title": "Protection des données",
-    "intro": "La protection de vos données nous tient à cœur. Cette déclaration de protection des données vous informe sur le traitement des données personnelles sur notre site web."
+    "intro": "La protection de vos données nous tient à cœur. Cette déclaration de protection des données vous informe sur le traitement des données personnelles sur notre site web.",
+    "responsible": "Responsable du traitement",
+    "dataCollection": "Collecte et traitement des données",
+    "dataCollectionText": "Nous ne collectons des données personnelles que si vous nous les communiquez volontairement dans le cadre d'une demande de contact. Cela comprend :",
+    "dataItems": ["Nom", "Adresse e-mail", "Votre message"],
+    "purposeSection": "Finalité",
+    "purposeText": "Les données transmises sont utilisées exclusivement pour traiter votre demande et ne sont pas transmises à des tiers.",
+    "cookies": "Cookies et suivi",
+    "cookiesText": "Ce site web n'utilise pas de cookies et pas d'outils de suivi. Nous ne collectons pas de données d'utilisation et ne créons pas de profils d'utilisateurs.",
+    "externalLinks": "Liens externes",
+    "externalLinksText": "Notre site contient des liens vers des sites externes (jasswiki.ch, jassguru.ch, jassmeister.web.app). Nous ne sommes pas responsables des pratiques de protection des données de ces sites externes.",
+    "rights": "Vos droits",
+    "rightsText": "Vous avez à tout moment le droit d'accès, de rectification ou de suppression des données que nous stockons vous concernant. Contactez-nous à cet effet à",
+    "law": "Droit applicable",
+    "lawText": "La loi suisse sur la protection des données (revLPD) est applicable. Le for juridique est Zurich.",
+    "updated": "État : février 2026"
+  },
+  "plattform": {
+    "hero": {
+      "title": "Plus forts ensemble\n— pas isolés.",
+      "subtitle": "Dans notre écosystème, nous réunissons outils, experts et savoirs du Jass.",
+      "cta": "Essayer maintenant",
+      "teaserBadge": "Nouveau",
+      "teaserText": "Mettez fin aux incertitudes et découvrez vos chances lors des annonces :"
+    }
   },
   "jasskalkulator": {
     "myCards": "Mes cartes :",

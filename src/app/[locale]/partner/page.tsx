@@ -69,10 +69,10 @@ export default async function PartnerPage({ params }: PartnerPageProps) {
         {/* CTA */}
         <section className="bg-[var(--color-background-dark)] text-white rounded-3xl p-8 md:p-16 text-center">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">
-            Interessiert?
+            {t("ctaTitle")}
           </h2>
           <p className="text-white/70 mb-8">
-            Kontaktieren Sie uns für ein unverbindliches Gespräch über Partnerschaften und Sponsoring-Möglichkeiten.
+            {t("ctaDescription")}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button href={`/${locale}/kontakt`} size="lg">

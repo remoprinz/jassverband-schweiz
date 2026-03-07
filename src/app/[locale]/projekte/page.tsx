@@ -84,12 +84,10 @@ export default async function ProjektePage({ params }: ProjektePageProps) {
         {/* Additional Info */}
         <div className="bg-[var(--color-background-alt)] rounded-3xl p-8 md:p-12 text-center">
           <h3 className="text-xl md:text-2xl font-bold mb-4">
-            Gemeinsam für die Zukunft des Jassens
+            {t("projekte.futureTitle")}
           </h3>
           <p className="text-[var(--color-foreground-muted)] max-w-2xl mx-auto">
-            Alle Plattformen sind Teil des digitalen Ökosystems des Jassverbands Schweiz. 
-            Sie ergänzen sich gegenseitig und bieten der Jass-Community ein umfassendes Angebot 
-            von Wissen über Training bis zum Wettkampf.
+            {t("projekte.futureDescription")}
           </p>
         </div>
       </div>

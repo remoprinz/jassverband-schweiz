@@ -25,39 +25,30 @@ export async function generateMetadata({ params }: VerbandPageProps): Promise<Me
   };
 }
 
-const praesidium = [
+const praesidiumBase = [
   {
     name: "Remo Prinz",
-    role: "Präsident",
+    key: "remo" as const,
     location: "Zürich",
     image: "/images/praesidium/remo-freigestellt.png",
     imageOffsetY: 8,
     imageScale: 1.1,
-    quote: "Ich glaube nicht an Glück. Daher konzentriere ich mich beim Ablupfen besonders.",
-    description:
-      "Remo treibt die Digitalisierung des Schweizer Nationalspiels voran. Mit JassGuru und JassWiki macht er Wissen, Regeln und Resultate erstmals schweizweit zugänglich. Im Verband sorgt er dafür, dass Tradition und Technologie zusammenfinden.",
   },
   {
     name: "Fabian Cadonau",
-    role: "Vizepräsident",
+    key: "fabian" as const,
     location: "Flims",
     image: "/images/praesidium/fabian-freigestellt.png",
     imageOffsetY: 8,
     imageScale: 1.05,
-    quote: "Im Jassen spiegelt sich die Welt.",
-    description:
-      "Fabian kennt die Schweizer Jassszene wie kaum ein anderer. Als Redaktor von Trumpf-As und erfahrener Turnierleiter weiss er, was Spielerinnen und Spieler bewegt. Im Verband bringt er die Perspektive vom Stammtisch bis zum Turniersaal ein.",
   },
   {
     name: "Dr. Erich Studerus",
-    role: "Aktuar",
+    key: "erich" as const,
     location: "Basel",
     image: "/images/praesidium/studi-freigestellt.png",
     imageOffsetY: 1,
     imageScale: 1.07,
-    quote: "Jassen ist wie eine Gleichung: Am Ende muss es irgendwie aufgehen.",
-    description:
-      "Erich ist Statistik-Dozent an der FHNW und betreibt seit 2008 jassstatistik.ch. Im Verband sorgt er dafür, dass alles seinen richtigen Weg geht — rechtlich, organisatorisch, dokumentarisch.",
   },
 ];
 
@@ -65,6 +56,13 @@ export default async function VerbandPage({ params }: VerbandPageProps) {
   const { locale } = await params;
   const t = await getTranslations({ locale });
   const tLeitbild = await getTranslations({ locale, namespace: "leitbild" });
+
+  const praesidium = praesidiumBase.map((p) => ({
+    ...p,
+    role: t(`verband.praesidium.${p.key}.role`),
+    quote: t(`verband.praesidium.${p.key}.quote`),
+    description: t(`verband.praesidium.${p.key}.description`),
+  }));
 
   const vision = {
     title: tLeitbild("visionTitle"),
@@ -81,9 +79,9 @@ export default async function VerbandPage({ params }: VerbandPageProps) {
   return (
     <div>
       <Hero
-        title={"Damit Jassen\nlebendig bleibt."}
-        subtitle="Seit dem 15. Januar 2026 setzen wir uns aktiv für die Erhaltung und Förderung der Schweizer Jasskultur ein."
-        cta="Mitglied werden"
+        title={t("verband.hero.title")}
+        subtitle={t("verband.hero.subtitle")}
+        cta={t("verband.hero.cta")}
         locale={locale}
         ctaHref={`/${locale}/mitmachen`}
         preserveTitleLineBreaks

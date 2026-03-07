@@ -30,6 +30,11 @@
     "title": "Weshalb braucht es den Jassverband?"
   },
   "schweizermeisterschaft": {
+    "hero": {
+      "title": "Schweizer\nJass-Meisterschaft.",
+      "subtitle": "Die erste nationale Meisterschaft für Schieber-Teams — so gross wie unsere Community.",
+      "cta": "Jetzt Mitglied werden"
+    },
     "title": "Schweizer Team-Schiebermeisterschaft",
     "subtitle": "Die erste nationale Team-Schieber Schweizermeisterschaft.",
     "copy": "Der Schieber ist ein Team-Jass. Deshalb treten nicht Einzelspieler, sondern ganze Teams zur Schweizermeisterschaft an. Die erste Meisterschaft wird so gross wie die Community.",
@@ -236,6 +241,28 @@
     ]
   },
   "verband": {
+    "hero": {
+      "title": "Damit Jassen\nlebendig bleibt.",
+      "subtitle": "Seit dem 15. Januar 2026 setzen wir uns aktiv für die Erhaltung und Förderung der Schweizer Jasskultur ein.",
+      "cta": "Mitglied werden"
+    },
+    "praesidium": {
+      "remo": {
+        "role": "Präsident",
+        "quote": "Ich glaube nicht an Glück. Daher konzentriere ich mich beim Ablupfen besonders.",
+        "description": "Remo treibt die Digitalisierung des Schweizer Nationalspiels voran. Mit JassGuru und JassWiki macht er Wissen, Regeln und Resultate erstmals schweizweit zugänglich. Im Verband sorgt er dafür, dass Tradition und Technologie zusammenfinden."
+      },
+      "fabian": {
+        "role": "Vizepräsident",
+        "quote": "Im Jassen spiegelt sich die Welt.",
+        "description": "Fabian kennt die Schweizer Jassszene wie kaum ein anderer. Als Redaktor von Trumpf-As und erfahrener Turnierleiter weiss er, was Spielerinnen und Spieler bewegt. Im Verband bringt er die Perspektive vom Stammtisch bis zum Turniersaal ein."
+      },
+      "erich": {
+        "role": "Aktuar",
+        "quote": "Jassen ist wie eine Gleichung: Am Ende muss es irgendwie aufgehen.",
+        "description": "Erich ist Statistik-Dozent an der FHNW und betreibt seit 2008 jassstatistik.ch. Im Verband sorgt er dafür, dass alles seinen richtigen Weg geht — rechtlich, organisatorisch, dokumentarisch."
+      }
+    },
     "title": "Der Verband",
     "subtitle": "Jassen ist Schweizer Kulturgut — und verdient eine Organisation, die es in die Zukunft führt.",
     "intro": "Der Jassverband Schweiz wurde am 15. Januar 2026 in Zürich gegründet. Wir setzen uns für die Förderung, Erhaltung und innovative Vermittlung des Jassens als schweizerisches Kulturgut und strategischer Denksport ein.",
@@ -251,9 +278,13 @@
   },
   "projekte": {
     "title": "Unsere Projekte",
-    "subtitle": "Digitale Werkzeuge und Plattformen für die Jass-Community"
+    "subtitle": "Digitale Werkzeuge und Plattformen für die Jass-Community",
+    "futureTitle": "Gemeinsam für die Zukunft des Jassens",
+    "futureDescription": "Alle Plattformen sind Teil des digitalen Ökosystems des Jassverbands Schweiz. Sie ergänzen sich gegenseitig und bieten der Jass-Community ein umfassendes Angebot von Wissen über Training bis zum Wettkampf."
   },
   "partner": {
+    "ctaTitle": "Interessiert?",
+    "ctaDescription": "Kontaktieren Sie uns für ein unverbindliches Gespräch über Partnerschaften und Sponsoring-Möglichkeiten.",
     "title": "Partner werden",
     "subtitle": "Investieren Sie in Schweizer Kulturgut und Jugendförderung",
     "why": {
@@ -297,12 +328,45 @@
   "impressum": {
     "title": "Impressum",
     "verein": "Vereinsangaben",
+    "legalForm": "Verein nach Art. 60 ff. ZGB",
     "contact": "Kontakt",
-    "responsible": "Verantwortlich für den Inhalt"
+    "responsible": "Verantwortlich für den Inhalt",
+    "presidentRole": "Präsident",
+    "founding": "Gründungsdatum",
+    "foundingDate": "15. Januar 2026",
+    "purpose": "Vereinszweck",
+    "purposeText": "Der Verein bezweckt die Förderung, Erhaltung und innovative Vermittlung des Jassens als schweizerisches immaterielles Kulturgut sowie als strategischer Denksport.",
+    "disclaimer": "Haftungsausschluss",
+    "disclaimerText1": "Die Inhalte dieser Website wurden mit grösster Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.",
+    "disclaimerText2": "Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschliesslich deren Betreiber verantwortlich."
   },
   "datenschutz": {
     "title": "Datenschutzerklärung",
-    "intro": "Der Schutz Ihrer Daten ist uns wichtig. Diese Datenschutzerklärung informiert Sie über die Verarbeitung personenbezogener Daten auf unserer Website."
+    "intro": "Der Schutz Ihrer Daten ist uns wichtig. Diese Datenschutzerklärung informiert Sie über die Verarbeitung personenbezogener Daten auf unserer Website.",
+    "responsible": "Verantwortliche Stelle",
+    "dataCollection": "Erhebung und Verarbeitung von Daten",
+    "dataCollectionText": "Wir erheben personenbezogene Daten nur, wenn Sie uns diese im Rahmen einer Kontaktanfrage freiwillig mitteilen. Dies umfasst:",
+    "dataItems": ["Name", "E-Mail-Adresse", "Ihre Nachricht"],
+    "purposeSection": "Verwendungszweck",
+    "purposeText": "Die von Ihnen übermittelten Daten werden ausschliesslich zur Bearbeitung Ihrer Anfrage verwendet und nicht an Dritte weitergegeben.",
+    "cookies": "Cookies und Tracking",
+    "cookiesText": "Diese Website verwendet keine Cookies und keine Tracking-Tools. Wir erfassen keine Nutzungsdaten und erstellen keine Nutzerprofile.",
+    "externalLinks": "Externe Links",
+    "externalLinksText": "Unsere Website enthält Links zu externen Websites (jasswiki.ch, jassguru.ch, jassmeister.web.app). Für die Datenschutzpraktiken dieser externen Seiten sind wir nicht verantwortlich.",
+    "rights": "Ihre Rechte",
+    "rightsText": "Sie haben jederzeit das Recht auf Auskunft, Berichtigung oder Löschung Ihrer bei uns gespeicherten Daten. Kontaktieren Sie uns hierfür unter",
+    "law": "Anwendbares Recht",
+    "lawText": "Es gilt das Schweizerische Datenschutzgesetz (revDSG). Gerichtsstand ist Zürich.",
+    "updated": "Stand: Februar 2026"
+  },
+  "plattform": {
+    "hero": {
+      "title": "Gemeinsam stärker\n— statt isoliert.",
+      "subtitle": "In unserem Ökosystem führen wir Tools, Experten und Jass-Wissen zusammen.",
+      "cta": "Jetzt testen",
+      "teaserBadge": "Neu",
+      "teaserText": "Beende das Rätselraten und lerne deine Chancen beim Ansagen kennen:"
+    }
   },
   "jasskalkulator": {
     "myCards": "Ich habe folgende Karten:",
