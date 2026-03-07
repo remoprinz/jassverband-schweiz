@@ -384,6 +384,12 @@
       "exact": "genau",
       "atMost": "höchstens"
     },
+    "cardLabels": {
+      "ass": "Ass",
+      "koenig": "König",
+      "dame": "Ober",
+      "unter": "Unter"
+    },
     "condition": {
       "blutt": "blutt",
       "atN": "zu {n}."

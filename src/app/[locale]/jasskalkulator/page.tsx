@@ -608,10 +608,10 @@ export default function JasskalkulatorPage() {
                 const showActive = cardsReady && isSelected;
                 const isAvailable = !card || !selectedCards.some(c => c.id === card.id);
                 const labels: Record<Value, string> = {
-                  A: 'Ass',
-                  K: 'König',
-                  O: cardLocale === 'fr' ? 'Dame' : 'Ober',
-                  U: 'Under',
+                  A: t('cardLabels.ass'),
+                  K: t('cardLabels.koenig'),
+                  O: locale === 'de' && cardLocale === 'fr' ? 'Dame' : t('cardLabels.dame'),
+                  U: t('cardLabels.unter'),
                   '10': '10',
                   '9': '9',
                   '8': '8',
