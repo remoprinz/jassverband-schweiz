@@ -18,9 +18,10 @@ export default async function PlattformenPage({ params }: PlattformenPageProps) 
         locale={locale}
         ctaHref={`/${locale}/jasskalkulator`}
         preserveTitleLineBreaks
+        mobileFlow
         teaser={{
           label: "JassKalkulator",
-          text: "Beende das Rätselraten und lerne\ndeine Chancen beim Ansagen kennen:",
+          text: "Beende das Rätselraten und lerne deine Chancen beim Ansagen kennen:",
         }}
         altTable={t("hero.altTable")}
         altFelt={t("hero.altFelt")}

@@ -1,80 +1,33 @@
-'use client';
-
-import { useTranslations, useLocale } from 'next-intl';
-import { motion } from 'framer-motion';
+import { getTranslations } from 'next-intl/server';
 import Image from 'next/image';
 import { Button } from '@/components/ui';
 import { StandardSection } from '@/components/layout/StandardSection';
-import { Trust } from '@/components/sections';
+import { Trust, Hero } from '@/components/sections';
 
-export default function SchweizermeisterschaftPage() {
-  const t = useTranslations();
-  const locale = useLocale();
+interface Props {
+  params: Promise<{ locale: string }>;
+}
+
+export default async function SchweizermeisterschaftPage({ params }: Props) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale });
 
   return (
     <div>
-      {/* Hero */}
-      <section className="relative py-20 md:py-28 overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/backgrounds/felt-figma.png"
-            alt={t('schweizermeisterschaft.altFelt')}
-            fill
-            className="object-cover"
-            priority
-            quality={85}
-          />
-          <div className="absolute inset-0 bg-black/35" />
-        </div>
-
-        <div className="container-main relative z-10">
-          <motion.div
-            className="max-w-3xl mx-auto text-center"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <motion.div
-              className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/15 backdrop-blur-sm text-white text-sm font-medium mb-8"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2 }}
-            >
-              <span
-                className="w-2.5 h-2.5 rounded-full animate-pulse"
-                style={{ backgroundColor: 'var(--color-primary)' }}
-              />
-              {t('schweizermeisterschaft.season')}
-            </motion.div>
-
-            <h1
-              className="text-white mb-6"
-              style={{
-                fontFamily: 'var(--font-capita), Capita, Georgia, serif',
-                fontWeight: 700,
-                fontSize: 'clamp(32px, 6vw, 48px)',
-                lineHeight: 1.2,
-                letterSpacing: '-0.96px',
-                textShadow: '0 2px 20px rgba(0,0,0,0.3)',
-              }}
-            >
-              {t('schweizermeisterschaft.title')}
-            </h1>
-
-            <p
-              className="text-white/85 max-w-xl mx-auto"
-              style={{
-                fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
-                fontWeight: 400,
-                fontSize: 'clamp(16px, 2.5vw, 20px)',
-                lineHeight: 1.6,
-              }}
-            >
-              {t('schweizermeisterschaft.subtitle')}
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      {/* Hero – identisch mit Home & Plattform */}
+      <Hero
+        title={"Schweizer\nJass-Meisterschaft."}
+        subtitle="Die erste nationale Meisterschaft für Schieber-Teams — so gross wie unsere Community."
+        cta="Jetzt Mitglied werden"
+        locale={locale}
+        ctaHref={`/${locale}/mitmachen`}
+        preserveTitleLineBreaks
+        mobileFlow
+        wreath
+        altTable={t('hero.altTable')}
+        altFelt={t('hero.altFelt')}
+        altCard={t('hero.altCard')}
+      />
 
       {/* Das Format */}
       <StandardSection
@@ -241,53 +194,47 @@ export default function SchweizermeisterschaftPage() {
         </div>
 
         <div className="container-main relative z-10 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+          <h2
+            className="text-white mb-4"
+            style={{
+              fontFamily: 'var(--font-capita), Capita, Georgia, serif',
+              fontWeight: 700,
+              fontSize: 'clamp(28px, 5vw, 42px)',
+              lineHeight: 1.2,
+            }}
           >
-            <h2
-              className="text-white mb-4"
-              style={{
-                fontFamily: 'var(--font-capita), Capita, Georgia, serif',
-                fontWeight: 700,
-                fontSize: 'clamp(28px, 5vw, 42px)',
-                lineHeight: 1.2,
-              }}
+            {t('schweizermeisterschaft.register.title')}
+          </h2>
+          <p
+            className="text-white/75 mb-8 max-w-lg mx-auto"
+            style={{
+              fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
+              fontSize: '16px',
+              lineHeight: 1.6,
+            }}
+          >
+            {t('schweizermeisterschaft.register.description')}
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button
+              href="https://jassmeister.web.app"
+              external
+              size="lg"
+              className="bg-[var(--color-primary)] hover:bg-[#cc0000] text-white px-8 py-4 text-[17px] font-bold rounded-full shadow-lg hover:shadow-xl transition-all"
             >
-              {t('schweizermeisterschaft.register.title')}
-            </h2>
-            <p
-              className="text-white/75 mb-8 max-w-lg mx-auto"
-              style={{
-                fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
-                fontSize: '16px',
-                lineHeight: 1.6,
-              }}
+              {t('schweizermeisterschaft.register.ctaJassmeister')}
+              <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </Button>
+            <Button
+              href={`/${locale}/mitmachen`}
+              size="lg"
+              className="bg-white/15 backdrop-blur-sm text-white border border-white/30 px-8 py-4 text-[17px] font-bold rounded-full hover:bg-white/25 transition-all"
             >
-              {t('schweizermeisterschaft.register.description')}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                href="https://jassmeister.web.app"
-                external
-                size="lg"
-                className="bg-[var(--color-primary)] hover:bg-[#cc0000] text-white px-8 py-4 text-[17px] font-bold rounded-full shadow-lg hover:shadow-xl transition-all"
-              >
-                {t('schweizermeisterschaft.register.ctaJassmeister')}
-                <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-              </Button>
-              <Button
-                href={`/${locale}/mitmachen`}
-                size="lg"
-                className="bg-white/15 backdrop-blur-sm text-white border border-white/30 px-8 py-4 text-[17px] font-bold rounded-full hover:bg-white/25 transition-all"
-              >
-                {t('schweizermeisterschaft.register.ctaMember')}
-              </Button>
-            </div>
-          </motion.div>
+              {t('schweizermeisterschaft.register.ctaMember')}
+            </Button>
+          </div>
         </div>
       </section>
 

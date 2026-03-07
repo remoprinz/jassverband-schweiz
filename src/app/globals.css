@@ -284,6 +284,7 @@ a, button {
   --hero-subtitle-width: 80%;
   --hero-subtitle-size: clamp(15px, 1.944vw, 28px);
   --hero-cta-top: 70.43%;
+  --hero-teaser-top: calc(var(--hero-cta-top) - 60px);
 }
 
 /* iPad Portrait (768-1023px) – zwischen Mobile und Desktop */
@@ -317,13 +318,13 @@ a, button {
     --hero-felt-radius: 16px;
     --hero-felt-border: 6px;
     --hero-title-top: 20%;
-    --hero-title-size: 30px;
+    --hero-title-size: 44px;
     --hero-title-line-height: 1.1;
-    --hero-title-max-width: 340px;
-    --hero-subtitle-top: 40%;
-    --hero-subtitle-max-width: 300px;
-    --hero-subtitle-width: 80%;
-    --hero-subtitle-size: 18px;
+    --hero-title-max-width: 260px;
+    --hero-subtitle-top: 43.5%;
+    --hero-subtitle-max-width: 260px;
+    --hero-subtitle-width: 70%;
+    --hero-subtitle-size: 20px;
     --hero-cta-top: 80%;
   }
 }

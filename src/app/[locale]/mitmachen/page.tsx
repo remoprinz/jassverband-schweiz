@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { Button, FAQCard, PricingCard } from '@/components/ui';
 import { StandardSection } from '@/components/layout/StandardSection';
+import { Hero } from '@/components/sections';
 
 const packages = [
   { key: 'pionier' as const, price: 60, highlight: false },
@@ -78,79 +79,15 @@ export default function MitmachenPage() {
   return (
     <div>
       {/* ════════════════════ HERO ════════════════════ */}
-      <section className="relative py-16 md:py-20 overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/backgrounds/felt-figma.png"
-            alt={t('altFelt')}
-            fill
-            className="object-cover"
-            priority
-            quality={85}
-          />
-          <div className="absolute inset-0 bg-black/30" />
-        </div>
-
-        <div className="container-main relative z-10">
-          <motion.div
-            className="max-w-3xl mx-auto text-center"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2
-              className="text-white mb-6"
-              style={{
-                fontFamily: 'var(--font-capita), Capita, Georgia, serif',
-                fontWeight: 700,
-                fontSize: 'clamp(32px, 6vw, 48px)',
-                lineHeight: '1.2',
-                letterSpacing: '-0.96px',
-                textShadow: '0 2px 20px rgba(0,0,0,0.3)',
-              }}
-            >
-              {t('hero.title')}
-            </h2>
-
-            <p
-              className="text-white/90 max-w-3xl mx-auto"
-              style={{
-                fontFamily: 'var(--font-capita), Capita, Georgia, serif',
-                fontWeight: 700,
-                fontSize: 'clamp(22px, 3.2vw, 30px)',
-                lineHeight: '1.35',
-                letterSpacing: '-0.5px',
-                whiteSpace: 'pre-line',
-                textShadow: '0 2px 20px rgba(0,0,0,0.25)',
-              }}
-            >
-              {t('hero.subtitle')}
-            </p>
-            {t.has('hero.teaser') && t.has('hero.teaserLabel') && t.has('hero.teaserUrl') && (
-              <p
-                className="mt-5 text-white/85"
-                style={{
-                  fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
-                  fontWeight: 500,
-                  fontSize: 'clamp(15px, 2vw, 18px)',
-                  lineHeight: '1.5',
-                }}
-              >
-                {t('hero.teaser')}{' '}
-                <a
-                  href={t('hero.teaserUrl')}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="underline underline-offset-2 hover:text-white transition-colors"
-                  style={{ fontWeight: 700 }}
-                >
-                  {t('hero.teaserLabel')}
-                </a>
-              </p>
-            )}
-          </motion.div>
-        </div>
-      </section>
+      <Hero
+        title="Werde offizieller Verbandsjasser"
+        subtitle="Erhalte dein persönliches Jassprofil und sichere dir die Lizenz für die erste Schweizermeisterschaft im Team-Schieber."
+        cta="Mitglied werden"
+        locale={locale}
+        ctaHref="#mitglied-werden"
+        preserveTitleLineBreaks
+        mobileFlow
+      />
 
       {/* ════════════════════ PRICING ════════════════════ */}
       <StandardSection

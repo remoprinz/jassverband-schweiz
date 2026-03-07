@@ -268,7 +268,7 @@
   },
   "kontakt": {
     "title": "Kontakt",
-    "subtitle": "Wir freuen uns auf Ihre Nachricht",
+    "subtitle": "Wir freuen uns auf deine Nachricht.",
     "form": {
       "name": "Name",
       "email": "E-Mail",
@@ -283,7 +283,7 @@
     "orgName": "Jassverband Schweiz",
     "success": {
       "title": "Nachricht gesendet!",
-      "message": "Wir melden uns so schnell wie möglich bei Ihnen."
+      "message": "Wir melden uns so schnell wie möglich bei dir."
     },
     "mediaNote": "Für Medienanfragen wenden Sie sich bitte an:"
   },

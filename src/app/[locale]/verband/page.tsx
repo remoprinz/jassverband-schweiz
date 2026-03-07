@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import { Hero } from "@/components/sections";
 import { VerbandContent } from "./VerbandContent";
 
 interface VerbandPageProps {
@@ -78,20 +79,32 @@ export default async function VerbandPage({ params }: VerbandPageProps) {
   }));
 
   return (
-    <VerbandContent
-      title={t("verband.title")}
-      subtitle={t("verband.subtitle")}
-      intro={t("verband.intro")}
-      gruendung={t("verband.gruendung")}
-      praesidiumTitle={t("verband.praesidiumTitle")}
-      praesidiumSubtitle={t("verband.praesidiumSubtitle")}
-      statutenTitle={t("verband.statuten.title")}
-      statutenDownload={t("verband.statuten.download")}
-      statutenDescription={t("verband.statuten.description")}
-      vision={vision}
-      missionsTitle={tLeitbild("missionsTitle")}
-      missions={missions}
-      praesidium={praesidium}
-    />
+    <div>
+      <Hero
+        title={"Damit Jassen\nlebendig bleibt."}
+        subtitle="Seit dem 15. Januar 2026 setzen wir uns aktiv für die Erhaltung und Förderung der Schweizer Jasskultur ein."
+        cta="Mitglied werden"
+        locale={locale}
+        ctaHref={`/${locale}/mitmachen`}
+        preserveTitleLineBreaks
+        mobileFlow
+        mobileUniformTitleSize
+        mobileSubtitleMarginTop="74px"
+        altTable={t("hero.altTable")}
+        altFelt={t("hero.altFelt")}
+        altCard={t("hero.altCard")}
+      />
+      <VerbandContent
+        praesidiumTitle={t("verband.praesidiumTitle")}
+        praesidiumSubtitle={t("verband.praesidiumSubtitle")}
+        statutenTitle={t("verband.statuten.title")}
+        statutenDownload={t("verband.statuten.download")}
+        statutenDescription={t("verband.statuten.description")}
+        vision={vision}
+        missionsTitle={tLeitbild("missionsTitle")}
+        missions={missions}
+        praesidium={praesidium}
+      />
+    </div>
   );
 }

@@ -16,6 +16,15 @@ interface HeroProps {
   altCard?: string;
   ctaHref?: string;
   preserveTitleLineBreaks?: boolean;
+  /** Mobile: Flex-Flow-Layout statt fixer %-Positionen. Aktiviert für Seiten
+   *  wo H1-Inhalt variiert (z.B. Plattform) – Home bleibt absolut-positioniert. */
+  mobileFlow?: boolean;
+  /** Mobile Flow: Alle Title-Zeilen in derselben (grossen) Schrift anzeigen. */
+  mobileUniformTitleSize?: boolean;
+  /** Mobile Flow: Zusätzlicher Abstand zwischen H1 und Subtitle. */
+  mobileSubtitleMarginTop?: string;
+  /** Dekorativer Eichenlaub-Kranz rund um die Schrift (nur Desktop). */
+  wreath?: boolean;
   teaser?: {
     label: string;
     text: string;
@@ -89,6 +98,10 @@ export function Hero({
   altCard,
   ctaHref,
   preserveTitleLineBreaks = false,
+  mobileFlow = false,
+  mobileUniformTitleSize = false,
+  mobileSubtitleMarginTop = '16px',
+  wreath = false,
   teaser,
 }: HeroProps) {
   const [isMounted, setIsMounted] = useState(false);
@@ -347,11 +360,140 @@ export function Hero({
         </>
       )}
 
+      {/* ── KRANZ – dekorativ hinter dem Text, nur Desktop ─────────── */}
+      {wreath && (
+        <motion.div
+          className="absolute hidden md:block pointer-events-none"
+          style={{
+            zIndex: 15,
+            left: '50%',
+            top: '47%',
+            transform: 'translate(-50%, -50%)',
+            width: 'clamp(380px, 42%, 620px)',
+          }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.2, delay: 0.15 }}
+        >
+          <Image
+            src="/images/decorations/kranz.png"
+            alt=""
+            aria-hidden="true"
+            width={636}
+            height={600}
+            className="w-full h-auto"
+            style={{
+              filter: 'brightness(0) invert(1)',
+              opacity: 0.22,
+            }}
+            priority
+          />
+        </motion.div>
+      )}
+
       {/* ── TEXTE – direkt im section als absolute, kein Wrapper ─────── */}
 
-      {/* HEADLINE – responsive via CSS vars */}
+      {/* ── MOBILE FLOW LAYOUT (nur wenn mobileFlow=true, versteckt auf ≥md) ── */}
+      {mobileFlow && (
+        <motion.div
+          className="absolute z-20 left-0 right-0 md:hidden flex flex-col items-center px-6"
+          style={{ top: 'var(--hero-title-top)' }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+        >
+          {/* H1: optional zweite Zeile kleiner oder beide Zeilen gleich gross */}
+          <h1
+            style={{
+              textAlign: 'center',
+              width: '100%',
+              fontFamily: 'var(--font-capita), Capita, Georgia, serif',
+              fontWeight: 700,
+              letterSpacing: '-0.96px',
+              color: '#ffffff',
+              textShadow: '0 2px 20px rgba(0,0,0,0.3)',
+            }}
+          >
+            {preserveTitleLineBreaks && title.includes('\n') && !mobileUniformTitleSize ? (
+              <>
+                {/* Hauptzeilen: Originalgrösse (darf umbrechen) */}
+                <span style={{ display: 'block', fontSize: '44px', lineHeight: 1.1 }}>
+                  {title.split('\n')[0]}
+                </span>
+                {/* Letzte Zeile: kleiner damit alles auf eine Zeile passt */}
+                <span style={{ display: 'block', fontSize: '30px', lineHeight: 1.2, marginTop: '4px' }}>
+                  {title.split('\n')[1]}
+                </span>
+              </>
+            ) : (
+              <span style={{ fontSize: '44px', lineHeight: 1.1, whiteSpace: preserveTitleLineBreaks ? 'pre-line' : 'normal' }}>
+                {title}
+              </span>
+            )}
+          </h1>
+
+          {/* Subtitle: direkt unterhalb, kein fixer %-Abstand */}
+          <p
+            style={{
+              marginTop: mobileSubtitleMarginTop,
+              textAlign: 'center',
+              maxWidth: '260px',
+              fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
+              fontWeight: 400,
+              fontSize: '18px',
+              lineHeight: 1.35,
+              color: 'rgba(255,255,255,0.92)',
+              textShadow: '0 1px 8px rgba(0,0,0,0.2)',
+            }}
+          >
+            {subtitle}
+          </p>
+
+        </motion.div>
+      )}
+
+      {/* TEASER – Mobile Flow: absolut, tiefer zwischen den Karten, schmaler Container */}
+      {mobileFlow && teaser && (
+        <motion.div
+          className="absolute z-20 left-0 right-0 md:hidden flex justify-center"
+          style={{ top: '53%' }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.4 }}
+        >
+          <div className="flex flex-col items-center" style={{ gap: '5px', maxWidth: '150px' }}>
+            <span
+              className="inline-flex items-center justify-center rounded-full px-3 py-[3px]"
+              style={{
+                fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
+                fontWeight: 700,
+                fontSize: '11px',
+                lineHeight: 1,
+                color: '#ffffff',
+                backgroundColor: '#ff0000',
+              }}
+            >
+              Neu
+            </span>
+            <p
+              style={{
+                fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
+                fontWeight: 400,
+                fontSize: '11px',
+                color: 'rgba(255,255,255,0.75)',
+                lineHeight: 1.4,
+                textAlign: 'center',
+              }}
+            >
+              {teaser.text}
+            </p>
+          </div>
+        </motion.div>
+      )}
+
+      {/* HEADLINE – responsive via CSS vars (Desktop; auf Mobile nur wenn !mobileFlow) */}
       <motion.div
-        className="absolute z-20 left-0 right-0 flex justify-center"
+        className={`absolute z-20 left-0 right-0 flex justify-center${mobileFlow ? ' hidden md:flex' : ''}`}
         style={{ top: 'var(--hero-title-top)' }}
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -376,9 +518,9 @@ export function Hero({
         </h1>
       </motion.div>
 
-      {/* SUBTITLE – responsive via CSS vars */}
+      {/* SUBTITLE – responsive via CSS vars (Desktop; auf Mobile nur wenn !mobileFlow) */}
       <motion.div
-        className="absolute z-20 left-0 right-0 flex justify-center"
+        className={`absolute z-20 left-0 right-0 flex justify-center${mobileFlow ? ' hidden md:flex' : ''}`}
         style={{ top: 'var(--hero-subtitle-top)' }}
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -401,10 +543,11 @@ export function Hero({
         </p>
       </motion.div>
 
+      {/* TEASER – Desktop (auf Mobile nur wenn !mobileFlow) */}
       {teaser && (
         <motion.div
-          className="absolute z-20 left-0 right-0 flex justify-center px-4"
-          style={{ top: 'calc(var(--hero-cta-top) - 60px)' }}
+          className={`absolute z-20 left-0 right-0 flex justify-center px-4${mobileFlow ? ' hidden md:flex' : ''}`}
+          style={{ top: 'var(--hero-teaser-top)' }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
@@ -427,11 +570,9 @@ export function Hero({
               style={{
                 fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
                 fontWeight: 400,
-                fontSize: 'clamp(13px, 1.2vw, 14px)',
+                fontSize: 'clamp(12px, 1.2vw, 14px)',
                 color: 'rgba(255,255,255,0.70)',
-                lineHeight: 1.4,
-                whiteSpace: 'pre-line',
-                textAlign: 'center',
+                lineHeight: 1.35,
               }}
             >
               {teaser.text}

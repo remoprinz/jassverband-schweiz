@@ -27,10 +27,6 @@ interface PraesidiumMember {
 }
 
 interface VerbandContentProps {
-  title: string;
-  subtitle: string;
-  intro: string;
-  gruendung: string;
   praesidiumTitle: string;
   praesidiumSubtitle: string;
   statutenTitle: string;
@@ -52,10 +48,6 @@ const missionIcons = [
 ];
 
 export function VerbandContent({
-  title,
-  subtitle,
-  intro,
-  gruendung,
   praesidiumTitle,
   praesidiumSubtitle,
   statutenTitle,
@@ -69,114 +61,7 @@ export function VerbandContent({
   return (
     <>
       {/* ═══════════════════════════════════════════════════════════════
-          1. HERO — Filz-Streifen mit Jasskarten (Broschüren-Design)
-             Darunter: Cream-Bereich mit Titel + Intro
-          ═══════════════════════════════════════════════════════════════ */}
-      <section className="relative w-full overflow-hidden">
-        {/* Filz-Bereich oben */}
-        <div className="relative w-full h-[200px] md:h-[260px] lg:h-[300px]">
-          <Image
-            src="/images/backgrounds/felt-figma.png"
-            alt=""
-            fill
-            className="object-cover"
-            priority
-            quality={90}
-          />
-          <div className="absolute inset-0 bg-black/15" />
-
-          {/* Dekorative Jasskarten — wie Broschüre: oben rechts auf dem Filz */}
-          <motion.div
-            className="absolute right-[10%] md:right-[15%] -bottom-8 md:-bottom-10 z-10 flex items-end"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <div
-              className="relative w-[70px] md:w-[100px] lg:w-[120px]"
-              style={{ transform: 'rotate(-8deg)', filter: 'drop-shadow(0 8px 20px rgba(0,0,0,0.4))' }}
-            >
-              <Image src="/images/cards/schilten-10.png" alt="" width={120} height={189} className="w-full h-auto rounded-[6px] md:rounded-[8px]" />
-            </div>
-            <div
-              className="relative w-[70px] md:w-[100px] lg:w-[120px] -ml-6 md:-ml-8"
-              style={{ transform: 'rotate(6deg) translateY(-12px)', filter: 'drop-shadow(0 10px 24px rgba(0,0,0,0.45))' }}
-            >
-              <Image src="/images/cards/rosen-ass.png" alt="" width={120} height={189} className="w-full h-auto rounded-[6px] md:rounded-[8px]" />
-            </div>
-          </motion.div>
-
-          {/* Gründungsbadge auf dem Filz */}
-          <div className="absolute inset-0 z-10 flex items-center justify-center">
-            <motion.div
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/15 backdrop-blur-sm text-white text-sm md:text-base font-medium"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.1 }}
-            >
-              <span className="w-2 h-2 rounded-full bg-[var(--color-primary)]" />
-              {gruendung}
-            </motion.div>
-          </div>
-        </div>
-
-        {/* Cream-Bereich darunter — Intro */}
-        <div style={{ backgroundColor: 'var(--color-cream)' }}>
-          <div className="container-main py-14 md:py-20">
-            <motion.div
-              className="max-w-[680px] mx-auto text-center"
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.15 }}
-            >
-              <h1
-                className="mb-5"
-                style={{
-                  fontFamily: 'var(--font-capita), Capita, Georgia, serif',
-                  fontWeight: 700,
-                  fontSize: 'clamp(34px, 5.5vw, 52px)',
-                  lineHeight: 1.15,
-                  letterSpacing: '-0.96px',
-                  color: 'var(--color-foreground)',
-                }}
-              >
-                {title}
-              </h1>
-
-              <p
-                className="mb-6"
-                style={{
-                  fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
-                  fontWeight: 400,
-                  fontSize: 'clamp(17px, 2.5vw, 21px)',
-                  lineHeight: 1.55,
-                  color: 'var(--color-foreground-muted)',
-                }}
-              >
-                {subtitle}
-              </p>
-
-              <div className="w-12 h-px mx-auto mb-6" style={{ backgroundColor: 'var(--color-border)' }} />
-
-              <p
-                className="max-w-xl mx-auto"
-                style={{
-                  fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
-                  fontWeight: 400,
-                  fontSize: 'var(--font-size-16)',
-                  lineHeight: 1.65,
-                  color: 'var(--color-foreground-muted)',
-                }}
-              >
-                {intro}
-              </p>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════════════════
-          2. VISION — Chalkboard (Kreidetafel), wie auf der Home
+          1. VISION — Chalkboard (Kreidetafel), wie auf der Home
           ═══════════════════════════════════════════════════════════════ */}
       <section id="vision" className="relative py-20 md:py-28 overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -246,7 +131,7 @@ export function VerbandContent({
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════
-          3. MISSIONEN — Cream-Hintergrund, 2er-Grid
+          2. MISSIONEN — Cream-Hintergrund, 2er-Grid
           ═══════════════════════════════════════════════════════════════ */}
       <section className="py-20 md:py-28" style={{ backgroundColor: 'var(--color-cream)' }}>
         <div className="container-main">
@@ -335,7 +220,7 @@ export function VerbandContent({
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════
-          4. PRÄSIDIUM — Weiss
+          3. PRÄSIDIUM — Weiss
           ═══════════════════════════════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-white">
         <div className="container-main">
@@ -449,7 +334,7 @@ export function VerbandContent({
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════
-          5. STATUTEN — Chalkboard-Akzent, minimalistisch
+          4. STATUTEN — Chalkboard-Akzent, minimalistisch
           ═══════════════════════════════════════════════════════════════ */}
       <section className="relative py-16 md:py-20 overflow-hidden">
         <div className="absolute inset-0 z-0">

@@ -110,7 +110,9 @@ export function Header({ locale, nav, isHeroPage }: HeaderProps) {
   };
 
   const isCompactMode = isMobileViewport && isMobileCompact && !mobileMenuOpen;
-  const showTransparent = isHeroPage && !scrolled;
+  const isKontaktPage = pathname === `/${locale}/kontakt` || pathname === `/${locale}/kontakt/`;
+  const useHeroHeaderStyle = isHeroPage && !isKontaktPage;
+  const showTransparent = useHeroHeaderStyle && !scrolled;
   const logoVariant = showTransparent ? 'white' : 'color';
 
   return (
@@ -140,7 +142,7 @@ export function Header({ locale, nav, isHeroPage }: HeaderProps) {
                 boxShadow: '0 4px 24px rgba(0,0,0,0.10)',
                 backdropFilter: 'blur(12px)',
               }
-            : isHeroPage
+            : useHeroHeaderStyle
             ? {
                 top: 0,
                 left: 0,
@@ -166,7 +168,7 @@ export function Header({ locale, nav, isHeroPage }: HeaderProps) {
               boxShadow: '0 4px 24px rgba(0,0,0,0.10)',
               backdropFilter: 'blur(12px)',
             }
-          : isHeroPage
+          : useHeroHeaderStyle
           ? {
               top: 0,
               left: 0,
