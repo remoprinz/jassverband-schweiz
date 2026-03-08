@@ -40,19 +40,19 @@ export function Footer({ locale, content, nav }: FooterProps) {
     <footer data-footer className="bg-black overflow-hidden">
       {/* Mobile Layout */}
       <div className="lg:hidden container-main py-12">
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col items-start gap-10 text-left">
           {/* Logo */}
           <Image
             src="/images/logos/JVS Logo farbig weiss.svg"
             alt="Jassverband Schweiz"
             width={189}
             height={51}
-            className="h-10 w-auto"
+            className="h-10 w-auto self-start block"
             priority
           />
 
           {/* Navigation + Rechtliches Grid */}
-          <div className="grid grid-cols-2 gap-8">
+          <div className="grid w-full grid-cols-2 gap-8 justify-items-start">
             {/* Navigation */}
             <div>
               <h4 className="mb-4" style={headingStyle}>Navigation</h4>

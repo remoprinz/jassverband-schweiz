@@ -111,7 +111,7 @@
     "title": "Le nostre piattaforme",
     "subtitle": "L'ecosistema Jass della Federazione Svizzera di Jass",
     "whatsapp": {
-      "title": "JassBegegnung",
+      "title": "Incontro Jass",
       "description": "Scambia idee con altri giocatori, trova compagni di gioco e resta informato. La chat comunitaria per i membri."
     },
     "jasswiki": {
@@ -119,7 +119,7 @@
       "description": "Oltre 100 articoli su regole, varianti, storia e strategia. L'enciclopedia del Jass."
     },
     "jasskalkulator": {
-      "title": "JassKalkulator",
+      "title": "Calcolatore Jass",
       "description": "Calcola le probabilità durante il gioco. Quali atout sono ancora in gioco?"
     },
     "jassguru": {
@@ -127,19 +127,19 @@
       "description": "Registra le partite, segui il tuo sviluppo e partecipa alla classifica nazionale."
     },
     "jasskarten": {
-      "title": "JassKarten",
+      "title": "Carte da Jass",
       "description": "Carte da Jass svizzere premium — tradizionali e moderne. Set di carte esclusivo per i membri."
     },
     "jassreisen": {
-      "title": "JassReisen",
+      "title": "Viaggi Jass",
       "description": "Viaggi Jass in Svizzera e all'estero. I membri hanno posti garantiti e sconti."
     },
     "jassmeister": {
-      "title": "Jassmeister",
+      "title": "JassMaestro",
       "description": "La piattaforma per tornei e campionati nazionali. Iscrizione, qualificazione e risultati."
     },
     "jasstrainer": {
-      "title": "Jasstrainer Göpf",
+      "title": "Allenatore Jass Göpf",
       "description": "Allenamento con IA — impara dai migliori. Göpf ti spiega ogni presa."
     },
     "jassturniere": {

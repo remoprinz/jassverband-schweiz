@@ -98,7 +98,7 @@ export function Header({ locale, nav, isHeroPage }: HeaderProps) {
   }, [mobileMenuOpen]);
 
   const navItems = [
-    { href: `/${locale}/schweizermeisterschaft`, label: nav.schweizermeisterschaft, shortLabel: 'Meisterschaft' },
+    { href: `/${locale}/schweizermeisterschaft`, label: nav.schweizermeisterschaft },
     { href: `/${locale}/plattform`, label: nav.plattformen },
     { href: `/${locale}/verband`, label: nav.verband },
     { href: `/${locale}/news`, label: nav.news },
@@ -230,7 +230,7 @@ export function Header({ locale, nav, isHeroPage }: HeaderProps) {
                   }
                 }}
               >
-                {'shortLabel' in item && item.shortLabel ? item.shortLabel : item.label}
+                {item.label}
               </Link>
             ))}
             
