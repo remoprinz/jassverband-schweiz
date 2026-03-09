@@ -86,8 +86,6 @@ export default async function VerbandPage({ params }: VerbandPageProps) {
         ctaHref={`/${locale}/mitmachen`}
         preserveTitleLineBreaks
         mobileFlow
-        mobileUniformTitleSize
-        mobileSubtitleMarginTop="74px"
         altTable={t("hero.altTable")}
         altFelt={t("hero.altFelt")}
         altCard={t("hero.altCard")}

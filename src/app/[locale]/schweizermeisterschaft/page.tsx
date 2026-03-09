@@ -29,7 +29,6 @@ export default async function SchweizermeisterschaftPage({ params }: Props) {
         ctaHref={`/${locale}/mitmachen`}
         preserveTitleLineBreaks
         mobileFlow
-        mobileSubtitleMarginTop="20px"
         heroTitleTopDesktop="16%"
         wreath
         altTable={t('hero.altTable')}
