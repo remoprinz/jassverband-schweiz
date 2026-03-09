@@ -402,21 +402,23 @@ export function Hero({
       {/* ── TEXTE – direkt im section als absolute, kein Wrapper ─────── */}
 
       {/* ── MOBILE FLOW LAYOUT (nur wenn mobileFlow=true, versteckt auf ≥md) ── */}
+      {/* Enthält nur die H1 – Subtitle läuft über den Standard-Subtitle-Div (absolut) */}
       {mobileFlow && (
         <motion.div
-          className="absolute z-20 left-0 right-0 md:hidden flex flex-col items-center px-6"
+          className="absolute z-20 left-0 right-0 md:hidden flex flex-col items-center"
           style={{ top: 'var(--hero-title-top)' }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
         >
-          {/* H1: optional zweite Zeile kleiner oder beide Zeilen gleich gross */}
           <h1
             style={{
               textAlign: 'center',
-              width: '100%',
+              width: '90%',
               fontFamily: 'var(--font-capita), Capita, Georgia, serif',
               fontWeight: 700,
+              fontSize: 'var(--hero-title-size)',
+              lineHeight: 'var(--hero-title-line-height)',
               letterSpacing: '-0.96px',
               color: '#ffffff',
               textShadow: '0 2px 20px rgba(0,0,0,0.3)',
@@ -428,8 +430,6 @@ export function Hero({
                   key={i}
                   style={{
                     display: 'block',
-                    fontSize: 'clamp(22px, 7vw, 40px)',
-                    lineHeight: 1.1,
                     overflowWrap: 'break-word',
                     hyphens: 'auto',
                     ...(i > 0 ? { marginTop: '2px' } : {}),
@@ -440,8 +440,6 @@ export function Hero({
               ))
             ) : (
               <span style={{
-                fontSize: 'clamp(22px, 7vw, 40px)',
-                lineHeight: 1.1,
                 whiteSpace: preserveTitleLineBreaks ? 'pre-line' : 'normal',
                 overflowWrap: 'break-word',
                 hyphens: 'auto',
@@ -450,24 +448,6 @@ export function Hero({
               </span>
             )}
           </h1>
-
-          {/* Subtitle: direkt unterhalb, kein fixer %-Abstand */}
-          <p
-            style={{
-              marginTop: mobileSubtitleMarginTop,
-              textAlign: 'center',
-              maxWidth: '260px',
-              fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
-              fontWeight: 400,
-              fontSize: '18px',
-              lineHeight: 1.35,
-              color: 'rgba(255,255,255,0.92)',
-              textShadow: '0 1px 8px rgba(0,0,0,0.2)',
-            }}
-          >
-            {subtitle}
-          </p>
-
         </motion.div>
       )}
 
@@ -539,9 +519,9 @@ export function Hero({
         </h1>
       </motion.div>
 
-      {/* SUBTITLE – responsive via CSS vars (Desktop; auf Mobile nur wenn !mobileFlow) */}
+      {/* SUBTITLE – immer absolut bei var(--hero-subtitle-top), identisch mit Home */}
       <motion.div
-        className={`absolute z-20 left-0 right-0 flex justify-center${mobileFlow ? ' hidden md:flex' : ''}`}
+        className="absolute z-20 left-0 right-0 flex justify-center"
         style={{ top: 'var(--hero-subtitle-top)' }}
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -564,7 +544,7 @@ export function Hero({
         </p>
       </motion.div>
 
-      {/* TEASER – Desktop (auf Mobile nur wenn !mobileFlow) */}
+      {/* TEASER – Desktop und Tablet (auf Mobile eigene mobileFlow-Variante) */}
       {teaser && (
         <motion.div
           className={`absolute z-20 left-0 right-0 flex justify-center px-4${mobileFlow ? ' hidden md:flex' : ''}`}
