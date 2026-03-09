@@ -17,30 +17,25 @@ export default async function SchweizermeisterschaftPage({ params }: Props) {
   return (
     <div>
       {/*
-       * CSS-Variablen-Override für diese Seite:
-       * Der Titel "Die Schweizermeisterschaft im Team-Jass." ist länger als
-       * der Home-Titel → Subtitle und CTA brauchen mehr Abstand nach unten.
-       * Inline-Style überschreibt die :root-Werte für alle Nachfolger.
+       * heroTitleTopDesktop: Titel startet auf Desktop/Tablet höher (16% statt 24.35%),
+       * damit die 3-zeilige Überschrift Platz hat, ohne die Subtitle-Position zu ändern.
+       * Die Subtitle bleibt bei exakt derselben CSS-Variable wie auf der Homepage.
        */}
-      <div style={{
-        '--hero-subtitle-top': '57%',
-        '--hero-cta-top': '76%',
-      } as React.CSSProperties}>
-        <Hero
-          title={t('schweizermeisterschaft.hero.title')}
-          subtitle={t('schweizermeisterschaft.hero.subtitle')}
-          cta={t('schweizermeisterschaft.hero.cta')}
-          locale={locale}
-          ctaHref={`/${locale}/mitmachen`}
-          preserveTitleLineBreaks
-          mobileFlow
-          mobileSubtitleMarginTop="20px"
-          wreath
-          altTable={t('hero.altTable')}
-          altFelt={t('hero.altFelt')}
-          altCard={t('hero.altCard')}
-        />
-      </div>
+      <Hero
+        title={t('schweizermeisterschaft.hero.title')}
+        subtitle={t('schweizermeisterschaft.hero.subtitle')}
+        cta={t('schweizermeisterschaft.hero.cta')}
+        locale={locale}
+        ctaHref={`/${locale}/mitmachen`}
+        preserveTitleLineBreaks
+        mobileFlow
+        mobileSubtitleMarginTop="20px"
+        heroTitleTopDesktop="16%"
+        wreath
+        altTable={t('hero.altTable')}
+        altFelt={t('hero.altFelt')}
+        altCard={t('hero.altCard')}
+      />
 
       <MeisterschaftContent
         teamTitle={t('schweizermeisterschaft.team.title')}

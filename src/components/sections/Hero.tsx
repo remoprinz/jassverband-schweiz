@@ -23,8 +23,14 @@ interface HeroProps {
   mobileUniformTitleSize?: boolean;
   /** Mobile Flow: Zusätzlicher Abstand zwischen H1 und Subtitle. */
   mobileSubtitleMarginTop?: string;
-  /** Dekorativer Eichenlaub-Kranz rund um die Schrift (nur Desktop). */
+  /** Dekorativer Eichenlaub-Kranz rund um die Schrift. */
   wreath?: boolean;
+  /**
+   * Überschreibt --hero-title-top nur auf Desktop/Tablet (md+).
+   * Nützlich wenn der Titel länger als auf der Homepage ist und
+   * mehr Raum braucht, ohne die Subtitle-Position zu ändern.
+   */
+  heroTitleTopDesktop?: string;
   teaser?: {
     label: string;
     text: string;
@@ -103,6 +109,7 @@ export function Hero({
   mobileUniformTitleSize = false,
   mobileSubtitleMarginTop = '16px',
   wreath = false,
+  heroTitleTopDesktop,
   teaser,
 }: HeroProps) {
   const [isMounted, setIsMounted] = useState(false);
@@ -415,32 +422,25 @@ export function Hero({
               textShadow: '0 2px 20px rgba(0,0,0,0.3)',
             }}
           >
-            {preserveTitleLineBreaks && title.includes('\n') && !mobileUniformTitleSize ? (
-              <>
-                {/* Hauptzeile: responsive Grösse + automatische Silbentrennung */}
-                <span style={{
-                  display: 'block',
-                  fontSize: 'clamp(22px, 8vw, 44px)',
-                  lineHeight: 1.1,
-                  overflowWrap: 'break-word',
-                  hyphens: 'auto',
-                  wordBreak: 'break-word',
-                }}>
-                  {title.split('\n')[0]}
+            {preserveTitleLineBreaks && title.includes('\n') ? (
+              title.split('\n').map((line, i) => (
+                <span
+                  key={i}
+                  style={{
+                    display: 'block',
+                    fontSize: 'clamp(22px, 7vw, 40px)',
+                    lineHeight: 1.1,
+                    overflowWrap: 'break-word',
+                    hyphens: 'auto',
+                    ...(i > 0 ? { marginTop: '2px' } : {}),
+                  }}
+                >
+                  {line}
                 </span>
-                {/* Letzte Zeile: etwas kleiner */}
-                <span style={{
-                  display: 'block',
-                  fontSize: 'clamp(18px, 6vw, 30px)',
-                  lineHeight: 1.2,
-                  marginTop: '4px',
-                }}>
-                  {title.split('\n')[1]}
-                </span>
-              </>
+              ))
             ) : (
               <span style={{
-                fontSize: 'clamp(22px, 8vw, 44px)',
+                fontSize: 'clamp(22px, 7vw, 40px)',
                 lineHeight: 1.1,
                 whiteSpace: preserveTitleLineBreaks ? 'pre-line' : 'normal',
                 overflowWrap: 'break-word',
@@ -515,7 +515,7 @@ export function Hero({
       {/* HEADLINE – responsive via CSS vars (Desktop; auf Mobile nur wenn !mobileFlow) */}
       <motion.div
         className={`absolute z-20 left-0 right-0 flex justify-center${mobileFlow ? ' hidden md:flex' : ''}`}
-        style={{ top: 'var(--hero-title-top)' }}
+        style={{ top: heroTitleTopDesktop ?? 'var(--hero-title-top)' }}
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.1 }}
