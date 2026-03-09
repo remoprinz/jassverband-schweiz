@@ -16,19 +16,31 @@ export default async function SchweizermeisterschaftPage({ params }: Props) {
 
   return (
     <div>
-      <Hero
-        title={t('schweizermeisterschaft.hero.title')}
-        subtitle={t('schweizermeisterschaft.hero.subtitle')}
-        cta={t('schweizermeisterschaft.hero.cta')}
-        locale={locale}
-        ctaHref={`/${locale}/mitmachen`}
-        preserveTitleLineBreaks
-        mobileFlow
-        wreath
-        altTable={t('hero.altTable')}
-        altFelt={t('hero.altFelt')}
-        altCard={t('hero.altCard')}
-      />
+      {/*
+       * CSS-Variablen-Override für diese Seite:
+       * Der Titel "Die Schweizermeisterschaft im Team-Jass." ist länger als
+       * der Home-Titel → Subtitle und CTA brauchen mehr Abstand nach unten.
+       * Inline-Style überschreibt die :root-Werte für alle Nachfolger.
+       */}
+      <div style={{
+        '--hero-subtitle-top': '57%',
+        '--hero-cta-top': '76%',
+      } as React.CSSProperties}>
+        <Hero
+          title={t('schweizermeisterschaft.hero.title')}
+          subtitle={t('schweizermeisterschaft.hero.subtitle')}
+          cta={t('schweizermeisterschaft.hero.cta')}
+          locale={locale}
+          ctaHref={`/${locale}/mitmachen`}
+          preserveTitleLineBreaks
+          mobileFlow
+          mobileSubtitleMarginTop="20px"
+          wreath
+          altTable={t('hero.altTable')}
+          altFelt={t('hero.altFelt')}
+          altCard={t('hero.altCard')}
+        />
+      </div>
 
       <MeisterschaftContent
         teamTitle={t('schweizermeisterschaft.team.title')}

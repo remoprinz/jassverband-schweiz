@@ -361,16 +361,16 @@ export function Hero({
         </>
       )}
 
-      {/* ── KRANZ – dekorativ hinter dem Text, nur Desktop ─────────── */}
+      {/* ── KRANZ – dekorativ hinter dem Text ──────────────────────── */}
       {wreath && (
         <motion.div
-          className="absolute hidden md:block pointer-events-none"
+          className="absolute pointer-events-none"
           style={{
             zIndex: 15,
             left: '50%',
-            top: '47%',
+            top: '43%',
             transform: 'translate(-50%, -50%)',
-            width: 'clamp(380px, 42%, 620px)',
+            width: 'clamp(220px, 45vw, 620px)',
           }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -417,17 +417,35 @@ export function Hero({
           >
             {preserveTitleLineBreaks && title.includes('\n') && !mobileUniformTitleSize ? (
               <>
-                {/* Hauptzeilen: Originalgrösse (darf umbrechen) */}
-                <span style={{ display: 'block', fontSize: '44px', lineHeight: 1.1 }}>
+                {/* Hauptzeile: responsive Grösse + automatische Silbentrennung */}
+                <span style={{
+                  display: 'block',
+                  fontSize: 'clamp(22px, 8vw, 44px)',
+                  lineHeight: 1.1,
+                  overflowWrap: 'break-word',
+                  hyphens: 'auto',
+                  wordBreak: 'break-word',
+                }}>
                   {title.split('\n')[0]}
                 </span>
-                {/* Letzte Zeile: kleiner damit alles auf eine Zeile passt */}
-                <span style={{ display: 'block', fontSize: '30px', lineHeight: 1.2, marginTop: '4px' }}>
+                {/* Letzte Zeile: etwas kleiner */}
+                <span style={{
+                  display: 'block',
+                  fontSize: 'clamp(18px, 6vw, 30px)',
+                  lineHeight: 1.2,
+                  marginTop: '4px',
+                }}>
                   {title.split('\n')[1]}
                 </span>
               </>
             ) : (
-              <span style={{ fontSize: '44px', lineHeight: 1.1, whiteSpace: preserveTitleLineBreaks ? 'pre-line' : 'normal' }}>
+              <span style={{
+                fontSize: 'clamp(22px, 8vw, 44px)',
+                lineHeight: 1.1,
+                whiteSpace: preserveTitleLineBreaks ? 'pre-line' : 'normal',
+                overflowWrap: 'break-word',
+                hyphens: 'auto',
+              }}>
                 {title}
               </span>
             )}
