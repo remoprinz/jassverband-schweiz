@@ -46,3 +46,7 @@ public/assets/local-only/
 
 # dev build cache
 .next-dev/
+
+# print output (large PDFs & generated files)
+print/output/
+print/signatures/

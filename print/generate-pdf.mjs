@@ -39,6 +39,8 @@ async function generatePDF() {
 
   const page = await browser.newPage();
 
+  await page.setViewport({ width: 794, height: 1123, deviceScaleFactor: 2 });
+
   await page.goto(`file://${templatePath}`, {
     waitUntil: 'networkidle0',
     timeout: 30000,

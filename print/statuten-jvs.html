@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Statuten – Jassverband Schweiz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    @page {
+      size: 210mm 297mm;
+      margin: 0;
+    }
+
+    @font-face {
+      font-family: 'Capita';
+      src: url('../src/assets/fonts/Capita/Capita-Bold.ttf') format('truetype');
+      font-weight: 700;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Capita';
+      src: url('../src/assets/fonts/Capita/Capita-Regular.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Capita';
+      src: url('../src/assets/fonts/Capita/Capita-BoldItalic.ttf') format('truetype');
+      font-weight: 700;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'Capita';
+      src: url('../src/assets/fonts/Capita/Capita-RegularItalic.ttf') format('truetype');
+      font-weight: 400;
+      font-style: italic;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 210mm;
+      font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+      font-size: 9.5pt;
+      line-height: 1.55;
+      color: #1a1a1a;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .page {
+      width: 210mm;
+      height: 297mm;
+      position: relative;
+      overflow: hidden;
+      page-break-after: always;
+      background: #ffffff;
+    }
+    .page:last-child {
+      page-break-after: avoid;
+    }
+
+    /* ═══════════════════════════════════════════════
+       COVER
+       ═══════════════════════════════════════════════ */
+    #page-cover {
+      background: #003810;
+    }
+    .cover-felt {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 153.5mm;
+      background: url('../public/images/backgrounds/felt-figma.png') center/cover no-repeat;
+    }
+    .cover-felt::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      height: 5mm;
+      background: linear-gradient(to top, rgba(0,0,0,0.42), rgba(0,0,0,0));
+      pointer-events: none;
+    }
+    .cover-wood {
+      position: absolute;
+      top: 153mm; left: 0; right: 0;
+      height: 47.5mm;
+      background: url('../public/images/backgrounds/holztisch.jpg') center 40%/140% auto no-repeat;
+      filter: brightness(0.75) contrast(1.1);
+    }
+    .cover-white {
+      position: absolute;
+      top: 200mm; left: 0; right: 0; bottom: 0;
+      background: #ffffff;
+    }
+
+    .logo-top-right-badge {
+      position: absolute;
+      top: 0; right: 12mm;
+      width: 65mm; height: 28mm;
+      background: #ffffff;
+      border-radius: 0 0 3mm 3mm;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 7.6mm;
+      z-index: 20;
+    }
+    .logo-top-right {
+      width: 54mm;
+      height: auto;
+      display: block;
+    }
+
+    .cover-headline {
+      position: absolute;
+      top: 85mm; left: 25mm;
+      color: #ffffff;
+      font-family: 'Capita', Georgia, serif;
+      font-weight: 700;
+      font-size: 42pt;
+      line-height: 1.1;
+    }
+    .cover-subline {
+      position: absolute;
+      top: 122mm; left: 25mm;
+      color: #ffffff;
+      font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+      font-weight: 700;
+      font-size: 15pt;
+      line-height: 1.3;
+    }
+    .cover-card-1 {
+      position: absolute;
+      top: 92mm; right: 14mm;
+      width: 43mm;
+      transform: rotate(14deg);
+      z-index: 6;
+      filter: drop-shadow(2px 4px 8px rgba(0,0,0,0.3));
+    }
+    .cover-card-2 {
+      position: absolute;
+      top: 154mm; right: 29mm;
+      width: 48mm;
+      transform: rotate(-11deg);
+      z-index: 7;
+      filter: drop-shadow(2px 4px 8px rgba(0,0,0,0.3));
+    }
+
+    .cover-footer {
+      position: absolute;
+      bottom: 10mm;
+      left: 25mm; right: 25mm;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+      font-size: 9pt;
+      font-weight: 400;
+      color: #1a1a1a;
+    }
+
+    /* ═══════════════════════════════════════════════
+       INHALTSSEITEN
+       ═══════════════════════════════════════════════ */
+    .content-logo {
+      position: absolute;
+      top: 0; right: 12mm;
+      width: 65mm; height: 28mm;
+      background: #ffffff;
+      border-radius: 0 0 3mm 3mm;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 7.6mm;
+      z-index: 20;
+    }
+    .content-logo img {
+      width: 54mm;
+      height: auto;
+      display: block;
+    }
+
+    .content-body {
+      position: absolute;
+      top: 40mm;
+      left: 25mm;
+      right: 25mm;
+      bottom: 26mm;
+      font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+      font-size: 9.5pt;
+      line-height: 1.55;
+      color: #1a1a1a;
+      overflow: hidden;
+    }
+
+    .section-title {
+      font-family: 'Capita', Georgia, serif;
+      font-weight: 700;
+      font-size: 14pt;
+      line-height: 1.25;
+      color: #1a1a1a;
+      margin-top: 7mm;
+      margin-bottom: 3.5mm;
+    }
+    .section-title:first-child {
+      margin-top: 0;
+    }
+
+    .article {
+      margin-top: 4mm;
+      margin-bottom: 2mm;
+    }
+    .article-header {
+      font-family: 'Capita', Georgia, serif;
+      font-weight: 700;
+      font-size: 10pt;
+      line-height: 1.3;
+      color: #1a1a1a;
+      margin-bottom: 1mm;
+    }
+    .article p {
+      margin-top: 1.2mm;
+      margin-bottom: 0;
+      font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    .article-list {
+      margin-top: 1.2mm;
+      margin-bottom: 1.2mm;
+      padding-left: 5mm;
+    }
+    .article-list li {
+      margin-bottom: 0.8mm;
+      list-style: none;
+      position: relative;
+      padding-left: 4.5mm;
+      font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    }
+    .article-list li .ll {
+      position: absolute;
+      left: 0;
+      font-weight: 600;
+      color: #1a1a1a;
+    }
+
+    .numbered {
+      padding-left: 4mm;
+      position: relative;
+      font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    }
+    .numbered .n {
+      position: absolute;
+      left: 0;
+      font-weight: 600;
+      color: #666;
+    }
+
+    .content-footer {
+      position: absolute;
+      bottom: 10mm;
+      left: 25mm; right: 25mm;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+      font-size: 9pt;
+      font-weight: 400;
+      color: #1a1a1a;
+    }
+
+    /* ═══════════════════════════════════════════════
+       GENEHMIGUNG — Chalkboard + Karten (exakt wie Broschüre)
+       ═══════════════════════════════════════════════ */
+    .approval-wrapper {
+      margin-top: 8mm;
+      position: relative;
+      height: 50mm;
+      background: url('../src/assets/textures/chalkboard.jpg') center/cover no-repeat;
+      border-radius: 4mm;
+      overflow: hidden;
+    }
+    .approval-card-1 {
+      position: absolute;
+      top: 4mm;
+      right: 8mm;
+      width: 22mm;
+      transform: rotate(10deg);
+      filter: drop-shadow(2px 3px 6px rgba(0,0,0,0.5));
+      z-index: 5;
+    }
+    .approval-card-2 {
+      position: absolute;
+      top: 10mm;
+      right: 19mm;
+      width: 22mm;
+      transform: rotate(-12deg);
+      filter: drop-shadow(2px 3px 6px rgba(0,0,0,0.5));
+      z-index: 4;
+    }
+    .approval-content {
+      position: absolute;
+      top: 9mm;
+      left: 12mm;
+      right: 60mm;
+    }
+    .approval-title {
+      font-family: 'Capita', Georgia, serif;
+      font-weight: 700;
+      font-size: 14pt;
+      color: #ffffff;
+      margin-bottom: 4mm;
+    }
+    .approval-text {
+      font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+      font-size: 9pt;
+      line-height: 1.5;
+      color: rgba(255,255,255,0.93);
+    }
+
+    /* Unterschriften */
+    .signatures {
+      margin-top: 7mm;
+      display: flex;
+      justify-content: space-between;
+      gap: 10mm;
+    }
+    .signature-block {
+      flex: 1;
+      text-align: center;
+    }
+    .signature-signature-area {
+      position: relative;
+      height: 23mm;
+      margin-bottom: 1mm;
+    }
+    .signature-img {
+      position: absolute;
+      left: 50%;
+      bottom: 2mm;
+      transform: translateX(-50%);
+      height: 14mm;
+      width: auto;
+      display: block;
+      object-fit: contain;
+    }
+    .signature-img.remo {
+      height: 25mm;
+      bottom: -2mm;
+    }
+    .signature-line {
+      border-top: 0.3mm solid #1a1a1a;
+      padding-top: 2mm;
+    }
+    .signature-name {
+      font-family: 'Capita', Georgia, serif;
+      font-weight: 700;
+      font-size: 9pt;
+      color: #1a1a1a;
+    }
+    .signature-role {
+      font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+      font-size: 8pt;
+      color: #666;
+      margin-top: 0.5mm;
+    }
+
+    @media print {
+      body { margin: 0; }
+      .page { page-break-after: always; }
+      .page:last-child { page-break-after: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════════
+       SEITE 1 — COVER
+       ══════════════════════════════════════════════════ -->
+  <div class="page" id="page-cover">
+    <div class="cover-felt"></div>
+    <div class="cover-wood"></div>
+    <div class="cover-white"></div>
+
+    <div class="logo-top-right-badge">
+      <img class="logo-top-right"
+           src="../public/images/logos/JVS Logo farbig.svg"
+           alt="Jassverband Schweiz">
+    </div>
+
+    <div class="cover-headline">Statuten</div>
+    <div class="cover-subline">Jassverband Schweiz (JVS)</div>
+
+    <img class="cover-card-1" src="../public/cards/de/RA.png" alt="">
+    <img class="cover-card-2" src="../public/cards/fr/LU.png" alt="">
+
+    <div class="cover-footer">
+      <span>www.jassverband.ch</span>
+      <span>Genehmigt am 15. Januar 2026</span>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════
+       SEITE 2 — I. Name, Sitz und Zweck + II. Mittel
+       ══════════════════════════════════════════════════ -->
+  <div class="page">
+    <div class="content-logo">
+      <img src="../public/images/logos/JVS Logo farbig.svg" alt="Jassverband Schweiz">
+    </div>
+
+    <div class="content-body">
+
+      <div class="section-title">I. Name, Sitz und Zweck</div>
+
+      <div class="article">
+        <div class="article-header">Art. 1 Name und Sitz</div>
+        <p>Unter dem Namen Jassverband Schweiz (JVS) besteht ein Verein im Sinne von Art. 60 ff. ZGB. Der Verein hat seinen Sitz in Zürich. Er kann im Rechts- und Geschäftsverkehr auch unter Kurzbezeichnungen oder unter der Bezeichnung seiner Webpräsenz (jassverband.ch) auftreten.</p>
+      </div>
+
+      <div class="article">
+        <div class="article-header">Art. 2 Zweck und Werte</div>
+        <p class="numbered"><span class="n">1.</span>Der Verein bezweckt die Förderung, Erhaltung und innovative Vermittlung des Jassens als schweizerisches immaterielles Kulturgut sowie als strategischer Denksport.</p>
+        <p class="numbered" style="margin-top:1.5mm"><span class="n">2.</span>Der Verein setzt sich insbesondere folgende Ziele:</p>
+        <ol class="article-list">
+          <li><span class="ll">a)</span>Die Etablierung und Pflege eines standardisierten nationalen Regelwerks sowie eines digitalen Ranglisten- und Statistiksystems (inkl. ELO-Wertung).</li>
+          <li><span class="ll">b)</span>Die Förderung des Jassens unter Jugendlichen und Studierenden zur Stärkung der sozialen, kognitiven und strategischen Kompetenzen.</li>
+          <li><span class="ll">c)</span>Die Organisation und Überwachung von nationalen Meisterschaften und Turnierserien.</li>
+          <li><span class="ll">d)</span>Die Dokumentation und Sicherung des Jass-Wissens durch den Betrieb digitaler Wissensplattformen.</li>
+          <li><span class="ll">e)</span>Die Unterstützung von Veranstaltern und Vereinen durch die Bereitstellung moderner Infrastruktur.</li>
+        </ol>
+        <p class="numbered"><span class="n">3.</span>Der Verein bekennt sich zu den Werten der Diversität, Inklusion und Gleichberechtigung. Er fördert das Jassen als verbindendes Element über alle Generationen, Geschlechter und sozialen Schichten hinweg und tritt jeder Form von Diskriminierung entgegen.</p>
+        <p class="numbered" style="margin-top:1.5mm"><span class="n">4.</span>Der Verein ist politisch und konfessionell neutral. Er verfolgt keinen Erwerbszweck und erstrebt keinen Gewinn. Allfällige Mittelüberschüsse sind ausschliesslich dem statutarischen Zweck zuzuführen.</p>
+      </div>
+
+      <div class="section-title">II. Mittel und Geschäftsjahr</div>
+
+      <div class="article">
+        <div class="article-header">Art. 3 Finanzen und Geschäftsjahr</div>
+        <p class="numbered"><span class="n">1.</span>Zur Erreichung des Vereinszwecks verfügt der Verein über folgende Mittel:</p>
+        <ol class="article-list">
+          <li><span class="ll">a)</span>Einnahmen aus Teilnehmerlizenzen, Startgeldern und Jassanlässen.</li>
+          <li><span class="ll">b)</span>Erträge aus Sponsoring, Partnerschaften und Werberechten.</li>
+          <li><span class="ll">c)</span>Erträge aus Leistungsvereinbarungen, Bildungsangeboten und dem Betrieb digitaler Plattformen.</li>
+          <li><span class="ll">d)</span>Mitglieder- und Gönnerbeiträge sowie Schenkungen.</li>
+        </ol>
+        <p class="numbered"><span class="n">2.</span>Das Geschäftsjahr entspricht dem Kalenderjahr und schliesst jeweils am 31. Dezember ab.</p>
+        <p class="numbered" style="margin-top:1.5mm"><span class="n">3.</span>Zur Gewährleistung einer professionellen technischen Infrastruktur kann der Verein entsprechende Leistungs- und Lizenzvereinbarungen mit spezialisierten Partnern abschliessen.</p>
+      </div>
+
+    </div>
+
+    <div class="content-footer">
+      <span>www.jassverband.ch</span>
+      <span>2</span>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════
+       SEITE 3 — III. Mitgliedschaft + IV. Organisation (Anfang)
+       ══════════════════════════════════════════════════ -->
+  <div class="page">
+    <div class="content-logo">
+      <img src="../public/images/logos/JVS Logo farbig.svg" alt="Jassverband Schweiz">
+    </div>
+
+    <div class="content-body">
+
+      <div class="section-title">III. Mitgliedschaft</div>
+
+      <div class="article">
+        <div class="article-header">Art. 4 Mitgliederkategorien und Aufnahme</div>
+        <p class="numbered"><span class="n">1.</span><strong>Aktivmitglieder:</strong> Natürliche Personen, die sich aktiv an der strategischen Führung oder Organisation des Verbandes beteiligen. Sie besitzen das volle Stimm- und Wahlrecht. Über das Aufnahmegesuch entscheidet der Vorstand endgültig und ohne Angabe von Gründen. Ein Rechtsanspruch auf Aufnahme besteht nicht.</p>
+        <p class="numbered" style="margin-top:1.5mm"><span class="n">2.</span><strong>Passivmitglieder (Gönner/Spieler):</strong> Natürliche Personen, welche den Verein unterstützen oder dessen Infrastruktur nutzen. Sie haben kein Stimm- und Wahlrecht.</p>
+        <p class="numbered" style="margin-top:1.5mm"><span class="n">3.</span><strong>Kollektivmitglieder:</strong> Juristische Personen. Ihr Stimmrecht wird durch ein Reglement definiert.</p>
+      </div>
+
+      <div class="article">
+        <div class="article-header">Art. 5 Erlöschen der Mitgliedschaft</div>
+        <p>Die Mitgliedschaft erlischt durch Austritt, Ausschluss oder Tod. Der Vorstand kann Mitglieder ohne Angabe von Gründen ausschliessen, wenn sie den Interessen des Verbandes zuwiderhandeln.</p>
+      </div>
+
+      <div class="section-title">IV. Organisation</div>
+
+      <div class="article">
+        <div class="article-header">Art. 6 Organe</div>
+        <p>Die Organe des Vereins sind:</p>
+        <ol class="article-list">
+          <li><span class="ll">A.</span>Die Generalversammlung (GV)</li>
+          <li><span class="ll">B.</span>Der Vorstand</li>
+          <li><span class="ll">C.</span>Die Revisionsstelle</li>
+        </ol>
+      </div>
+
+      <div class="article">
+        <div class="article-header">Art. 7 Generalversammlung (GV)</div>
+        <p class="numbered"><span class="n">1.</span>Die GV ist das oberste Organ des Vereins. Eine ordentliche GV findet jährlich statt.</p>
+        <p class="numbered" style="margin-top:1.5mm"><span class="n">2.</span>Eine ausserordentliche GV wird auf Beschluss des Vorstandes oder auf schriftliches Begehren von mindestens einem Fünftel (1/5) der Aktivmitglieder einberufen.</p>
+        <p class="numbered" style="margin-top:1.5mm"><span class="n">3.</span>Die Einladung erfolgt mindestens 20 Tage im Voraus per E-Mail unter Angabe der Traktanden. Sofern alle Aktivmitglieder anwesend sind, kann auf diese Formvorschrift verzichtet und eine Universalversammlung abgehalten werden.</p>
+        <p class="numbered" style="margin-top:1.5mm"><span class="n">4.</span>Die GV hat folgende unentziehbare Aufgaben:</p>
+        <ol class="article-list">
+          <li><span class="ll">a)</span>Genehmigung des Protokolls der letzten GV.</li>
+          <li><span class="ll">b)</span>Abnahme des Jahresberichts und der Jahresrechnung.</li>
+          <li><span class="ll">c)</span>Entlastung des Vorstandes.</li>
+          <li><span class="ll">d)</span>Wahl des Vorstandes und der Revisionsstelle.</li>
+          <li><span class="ll">e)</span>Festsetzung der Mitgliederbeiträge.</li>
+          <li><span class="ll">f)</span>Beschlussfassung über Statutenänderungen und Auflösung des Vereins.</li>
+        </ol>
+        <p class="numbered"><span class="n">5.</span>Beschlüsse werden mit der einfachen Mehrheit der anwesenden Aktivmitglieder gefasst. Statutenänderungen und die Auflösung bedürfen einer Zweidrittelmehrheit (2/3).</p>
+      </div>
+
+    </div>
+
+    <div class="content-footer">
+      <span>www.jassverband.ch</span>
+      <span>3</span>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════
+       SEITE 4 — IV. Organisation (Fortsetzung)
+       ══════════════════════════════════════════════════ -->
+  <div class="page">
+    <div class="content-logo">
+      <img src="../public/images/logos/JVS Logo farbig.svg" alt="Jassverband Schweiz">
+    </div>
+
+    <div class="content-body">
+
+      <div class="article">
+        <div class="article-header">Art. 8 Vorstand</div>
+        <p class="numbered"><span class="n">1.</span>Der Vorstand besteht aus mindestens drei Mitgliedern (Präsident, Vizepräsident, Aktuar) und konstituiert sich selbst.</p>
+        <p class="numbered" style="margin-top:1.5mm"><span class="n">2.</span>Die Amtsdauer beträgt zwei Jahre. Eine Wiederwahl ist möglich.</p>
+        <p class="numbered" style="margin-top:1.5mm"><span class="n">3.</span>Der Vorstand ist für die strategische Führung und die Vertretung nach aussen zuständig. Er kann die operative Geschäftsführung sowie den technischen Plattformbetrieb an Dritte delegieren.</p>
+        <p class="numbered" style="margin-top:1.5mm"><span class="n">4.</span>Die Vorstandsmitglieder sind grundsätzlich ehrenamtlich tätig. Für projektbezogene Fachleistungen kann eine angemessene Entschädigung gemäss Reglement ausgerichtet werden.</p>
+        <p class="numbered" style="margin-top:1.5mm"><span class="n">5.</span>Der Vorstand erlässt notwendige Reglemente (Turnierbetrieb, Entschädigung, Disziplinarwesen, Datenschutz).</p>
+        <p class="numbered" style="margin-top:1.5mm"><span class="n">6.</span>Er sorgt für die Wahrung der Integrität des Sports und kann Sanktionen aussprechen.</p>
+      </div>
+
+      <div class="article">
+        <div class="article-header">Art. 9 Revisionsstelle</div>
+        <p class="numbered"><span class="n">1.</span>Die GV wählt einen oder zwei Revisoren für eine Amtsdauer von zwei Jahren. Eine Wiederwahl ist möglich.</p>
+        <p class="numbered" style="margin-top:1.5mm"><span class="n">2.</span>Die Revisoren dürfen nicht dem Vorstand angehören. Sie prüfen die Rechnung und erstatten der GV schriftlich Bericht.</p>
+      </div>
+
+      <div class="article">
+        <div class="article-header">Art. 10 Interessenbindung und Ausstand</div>
+        <p>Vorstandsmitglieder treten bei Geschäften, die ihre eigenen Interessen oder jene ihnen nahestehender Personen betreffen, in den Ausstand. Solche Geschäfte müssen einem Drittvergleich («at arm's length») standhalten.</p>
+      </div>
+
+      <div class="article">
+        <div class="article-header">Art. 11 Zeichnungsberechtigung</div>
+        <p>Kollektivunterschrift zu zweien durch Vorstandsmitglieder.</p>
+      </div>
+
+    </div>
+
+    <div class="content-footer">
+      <span>www.jassverband.ch</span>
+      <span>4</span>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════
+       SEITE 5 — V. Datenschutz, Haftung, Auflösung
+                  + Genehmigung + Unterschriften
+       ══════════════════════════════════════════════════ -->
+  <div class="page">
+    <div class="content-logo">
+      <img src="../public/images/logos/JVS Logo farbig.svg" alt="Jassverband Schweiz">
+    </div>
+
+    <div class="content-body">
+
+      <div class="section-title">V. Datenschutz, Haftung und Auflösung</div>
+
+      <div class="article">
+        <div class="article-header">Art. 12 Datenschutz</div>
+        <p>Der Verein verarbeitet Daten gemäss schweizerischem Datenschutzrecht (revDSG). Der Vorstand erlässt eine entsprechende Datenschutzerklärung.</p>
+      </div>
+
+      <div class="article">
+        <div class="article-header">Art. 13 Haftung</div>
+        <p>Für die Schulden des Vereins haftet ausschliesslich das Vereinsvermögen. Eine persönliche Haftung der Mitglieder oder des Vorstandes ist ausgeschlossen.</p>
+      </div>
+
+      <div class="article">
+        <div class="article-header">Art. 14 Auflösung</div>
+        <p>Im Falle einer Auflösung fällt das Vermögen zwingend an eine steuerbefreite, gemeinnützige Institution mit ähnlichem Zweck in der Schweiz. Eine Verteilung an Mitglieder ist ausgeschlossen.</p>
+      </div>
+
+      <div class="article">
+        <div class="article-header">Art. 15 Recht und Gerichtsstand</div>
+        <p>Auf diese Statuten ist ausschliesslich materielles Schweizer Recht anwendbar. Ausschliesslicher Gerichtsstand ist Zürich.</p>
+      </div>
+
+      <div class="approval-wrapper">
+        <img class="approval-card-1" src="../public/cards/de/EO.png" alt="Eichel-Ober">
+        <img class="approval-card-2" src="../public/cards/de/L9.png" alt="Schilten-9">
+        <div class="approval-content">
+          <div class="approval-title">Genehmigung und Inkrafttreten</div>
+          <div class="approval-text">
+            Diese Statuten wurden an der Gründungsversammlung vom 15. Januar 2026 in Zürich beraten und einstimmig genehmigt. Sie treten per sofort in Kraft.
+          </div>
+        </div>
+      </div>
+
+      <p style="margin-top:7mm; font-family:'Inter','Helvetica Neue',Arial,sans-serif; font-size:9pt; color:#666;">Die Gründungsmitglieder:</p>
+      <p style="margin-top:1mm; font-family:'Inter','Helvetica Neue',Arial,sans-serif; font-size:9pt; color:#666;">Zürich, 15. Januar 2026</p>
+
+      <div class="signatures">
+        <div class="signature-block">
+          <div class="signature-signature-area">
+            <img class="signature-img remo" src="signatures/unterschrift-remo.png" alt="Unterschrift Remo Prinz">
+          </div>
+          <div class="signature-line"></div>
+          <div class="signature-name">Remo Prinz</div>
+          <div class="signature-role">Präsident</div>
+        </div>
+        <div class="signature-block">
+          <div class="signature-signature-area">
+            <img class="signature-img" src="signatures/unterschrift-fabian.png" alt="Unterschrift Fabian Cadonau">
+          </div>
+          <div class="signature-line"></div>
+          <div class="signature-name">Fabian Cadonau</div>
+          <div class="signature-role">Vizepräsident</div>
+        </div>
+        <div class="signature-block">
+          <div class="signature-signature-area">
+            <img class="signature-img" src="signatures/unterschrift-studi.png" alt="Unterschrift Dr. Erich Studerus">
+          </div>
+          <div class="signature-line"></div>
+          <div class="signature-name">Dr. Erich Studerus</div>
+          <div class="signature-role">Aktuar</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="content-footer">
+      <span>www.jassverband.ch</span>
+      <span>5</span>
+    </div>
+  </div>
+
+</body>
+</html>

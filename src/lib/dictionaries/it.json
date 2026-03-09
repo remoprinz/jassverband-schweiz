@@ -275,7 +275,8 @@
     "statuten": {
       "title": "Statuti",
       "download": "Scarica gli statuti (PDF)",
-      "description": "Gli statuti della Federazione Svizzera di Jass regolano lo scopo, l'adesione, l'organizzazione e le finanze della federazione."
+      "description": "Gli statuti della Federazione Svizzera di Jass regolano lo scopo, l'adesione, l'organizzazione e le finanze della federazione.",
+      "brochureLink": "Vedi la brochure"
     }
   },
   "projekte": {

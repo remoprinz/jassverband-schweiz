@@ -96,6 +96,7 @@ export default async function VerbandPage({ params }: VerbandPageProps) {
         statutenTitle={t("verband.statuten.title")}
         statutenDownload={t("verband.statuten.download")}
         statutenDescription={t("verband.statuten.description")}
+        statutenBrochureLink={t("verband.statuten.brochureLink")}
         vision={vision}
         missionsTitle={tLeitbild("missionsTitle")}
         missions={missions}

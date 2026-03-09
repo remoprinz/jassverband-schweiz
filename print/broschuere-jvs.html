@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <title>JVS Broschüre – Jassverband Schweiz</title>
   <style>
+    @page {
+      size: 210mm 297mm;
+      margin: 0;
+    }
+
     /* =========================================================
        PRINT TEMPLATE — JVS Broschüre A4
        
@@ -61,27 +66,48 @@
       page-break-after: avoid;
     }
 
-    /* --- SHARED: Logo oben rechts --- */
-    .logo-top-right {
+    /* Cover-Seite: Filz-Grün als Fallback-Background */
+    #page-1-cover {
+      background: #003810;
+    }
+
+    /* --- SHARED: Logo oben rechts auf weissem Badge --- */
+    .logo-top-right-badge {
       position: absolute;
-      /* POSITION: Logo oben rechts */
-      top: 8mm;
-      right: 10mm;
-      width: 55mm;
-      z-index: 10;
+      /* POSITION: Weisser Header-Badge — 65mm breit, 28mm hoch, 12mm vom rechten Rand */
+      top: 0;
+      right: 12mm;
+      width: 65mm;
+      height: 28mm;
+      background: #ffffff;
+      border-radius: 0 0 3mm 3mm;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 7.6mm;
+      z-index: 20;
+    }
+
+    .logo-top-right {
+      /* POSITION: Logo innerhalb des weissen Badges — 54mm breit, im unteren Bereich */
+      width: 54mm;
+      height: auto;
+      display: block;
     }
 
     /* --- SHARED: Footer --- */
     .page-footer {
       position: absolute;
-      bottom: 8mm;
-      left: 15mm;
-      right: 15mm;
+      /* POSITION: Footer — 10mm vom unteren Rand, links 25mm, rechts 10mm */
+      bottom: 10mm;
+      left: 25mm;
+      right: 10mm;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 8pt;
-      color: #666;
+      font-size: 9pt;
+      font-weight: 400;
+      color: #000;
     }
 
     /* --- TYPOGRAPHY --- */
@@ -99,28 +125,40 @@
        ========================================================= */
     .cover-felt {
       position: absolute;
-      /* POSITION: Filz-Hintergrund, oberer Teil */
+      /* POSITION: Filz-Hintergrund (0–153mm) */
       top: 0;
       left: 0;
       right: 0;
-      height: 200mm;
+      height: 153.5mm;
       background: url('../public/images/backgrounds/felt-figma.png') center/cover no-repeat;
+    }
+
+    .cover-felt::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 5mm;
+      background: linear-gradient(to top, rgba(0,0,0,0.42), rgba(0,0,0,0));
+      pointer-events: none;
     }
 
     .cover-wood {
       position: absolute;
-      /* POSITION: Holz-Streifen */
-      top: 185mm;
+      /* POSITION: Holz-Streifen (153–200mm), dunkler + herangezoomt */
+      top: 153mm;
       left: 0;
       right: 0;
-      height: 40mm;
-      background: url('../public/images/backgrounds/holztisch.jpg') center/cover no-repeat;
+      height: 47.5mm;
+      background: url('../public/images/backgrounds/holztisch.jpg') center 40%/140% auto no-repeat;
+      filter: brightness(0.75) contrast(1.1);
     }
 
     .cover-white {
       position: absolute;
-      /* POSITION: Weisser unterer Bereich */
-      top: 222mm;
+      /* POSITION: Weisser unterer Bereich (ab 200mm) */
+      top: 200mm;
       left: 0;
       right: 0;
       bottom: 0;
@@ -129,63 +167,70 @@
 
     .cover-headline {
       position: absolute;
-      /* POSITION: Haupttitel auf Filz */
-      top: 105mm;
-      left: 18mm;
+      /* POSITION: Haupttitel auf Filz — top: 90mm, left: 25mm, 32pt */
+      top: 90mm;
+      left: 25mm;
       color: #ffffff;
       font-family: 'Capita', Georgia, serif;
       font-weight: 700;
-      font-style: italic;
-      font-size: 28pt;
-      line-height: 1.2;
-      max-width: 130mm;
+      font-style: normal;
+      font-size: 32pt;
+      line-height: 1.15;
+      max-width: 120mm;
     }
 
     .cover-subline {
       position: absolute;
-      /* POSITION: Untertitel */
-      top: 148mm;
-      left: 18mm;
+      /* POSITION: Untertitel — weiter unten, Inter Bold, engerer Zeilenabstand */
+      top: 126mm;
+      left: 25mm;
       color: #ffffff;
       font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
-      font-weight: 600;
-      font-size: 11pt;
-      line-height: 1.6;
-      max-width: 170mm;
+      font-weight: 700;
+      font-size: 15pt;
+      line-height: 1.3;
+      max-width: 160mm;
     }
 
     /* --- COVER: Jasskarten --- */
     .cover-card-rosen-ass {
       position: absolute;
-      /* POSITION: Rosen-Ass (obere Karte rechts, leicht gedreht) */
-      top: 88mm;
-      right: 8mm;
-      width: 55mm;
-      transform: rotate(18deg);
-      z-index: 5;
+      /* POSITION: Rosen-Ass (obere Karte, vorne) */
+      top: 92mm;
+      right: 14mm;
+      width: 43mm;
+      transform: rotate(14deg);
+      z-index: 6;
       filter: drop-shadow(2px 4px 8px rgba(0,0,0,0.3));
     }
 
     .cover-card-karo-under {
       position: absolute;
-      /* POSITION: Karo-Under (untere Karte, überlappt mit Holz) */
-      top: 160mm;
-      right: 22mm;
-      width: 55mm;
-      transform: rotate(-8deg);
-      z-index: 6;
+      /* POSITION: Karo-Under (untere Karte, hinten) */
+      top: 154mm;
+      right: 29mm;
+      width: 48mm;
+      transform: rotate(-11deg);
+      z-index: 7;
       filter: drop-shadow(2px 4px 8px rgba(0,0,0,0.3));
     }
 
     /* =========================================================
        SEITE 2 — CONTENT
+       Analyse-Werte vom Original (Pixel-Analyse 4x):
+       - Headline: top=51mm, left=25mm, ~20pt
+       - Intro: top=55mm, left=25mm, ~13pt, grau
+       - Spalten: top=100mm, left=25mm, gap bei ~100mm, rechts bis ~199mm
+       - Filz-Cut: 212–234mm (22mm), left=26mm, right=199mm
+       - Cream/Zitat: 234–270mm, left=25mm, right=200mm, #f1ede4
+       - Footer: 285–288mm
        ========================================================= */
     .content-headline {
       position: absolute;
       /* POSITION: Seitentitel */
-      top: 35mm;
-      left: 15mm;
-      right: 15mm;
+      top: 49mm;
+      left: 25mm;
+      right: 25mm;
       font-family: 'Capita', Georgia, serif;
       font-weight: 700;
       font-size: 24pt;
@@ -196,65 +241,103 @@
     .content-intro {
       position: absolute;
       /* POSITION: Einleitungstext */
-      top: 55mm;
-      left: 15mm;
-      right: 15mm;
-      font-size: 11pt;
-      line-height: 1.6;
-      color: #333;
+      top: 67mm;
+      left: 25mm;
+      right: 25mm;
+      font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+      font-weight: 400;
+      font-size: 12.5pt;
+      line-height: 1.58;
+      color: #222;
+    }
+
+    .content-intro .text-secondary {
+      font-family: inherit;
+      font-weight: inherit;
+      font-size: inherit;
+      color: inherit;
+      display: inline;
+      margin-top: 0;
     }
 
     .content-subheadline {
       font-family: 'Capita', Georgia, serif;
       font-weight: 700;
-      font-size: 11pt;
-      margin-bottom: 3mm;
+      font-size: 10pt;
+      margin-bottom: 0;
+      color: #1a1a1a;
+    }
+
+    .content-columns-heading {
+      position: absolute;
+      /* POSITION: Titel oberhalb beider Spalten */
+      top: 101mm;
+      left: 25mm;
+      right: 10mm;
+      font-family: 'Capita', Georgia, serif;
+      font-weight: 700;
+      font-size: 11.5pt;
       color: #1a1a1a;
     }
 
     .content-columns {
       position: absolute;
-      /* POSITION: Zweispalten-Text */
-      top: 88mm;
-      left: 15mm;
-      right: 15mm;
-      column-count: 2;
+      /* POSITION: Zweispalten-Text, beide Blöcke oben bündig */
+      top: 110mm;
+      left: 25mm;
+      right: 10mm;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       column-gap: 8mm;
       font-size: 8.5pt;
       line-height: 1.55;
       color: #333;
     }
 
-    .content-columns-continued {
-      position: absolute;
-      /* POSITION: Fortsetzung einspaltiger Text */
-      top: 188mm;
-      left: 15mm;
-      right: 50%;
-      font-size: 8.5pt;
-      line-height: 1.55;
-      color: #333;
+    .content-column p {
+      margin-top: 3mm;
     }
 
-    /* --- SEITE 2: Unterer Bereich (Filz-Cut + Karten + Filz-Zitat) --- */
+    .content-column p:first-child {
+      margin-top: 0;
+    }
+
+    .content-columns-continued {
+      display: none;
+    }
+
+    /* --- SEITE 2: Unterer Bereich (Filz-Cut + Zitat-Box) --- */
     .content-bottom-wrapper {
       position: absolute;
-      /* POSITION: Gesamter unterer Bereich */
-      bottom: 22mm;
-      left: 0;
-      right: 0;
-      height: 90mm;
+      /* POSITION: Gesamter unterer Bereich — linksbündig mit Text */
+      top: 208mm;
+      left: 25mm;
+      right: 10mm;
+      height: 68mm;
     }
 
-    /* Filz-Streifen oben (das cut-Element mit abgerundeten Ecken) */
+    /* Filz-Cut-Streifen oben (abgerundete Ecken) */
     .content-felt-cut {
       position: absolute;
-      /* POSITION: Filz-cut-Streifen (schmaler Streifen oben) */
+      /* POSITION: Filz-cut-Bild (oben im Wrapper) */
       top: 0;
       left: 0;
       right: 0;
-      height: 28mm;
+      height: 24mm;
       overflow: hidden;
+      border-radius: 4mm 4mm 0 0;
+      box-shadow: inset 0 0 3.4mm rgba(0, 0, 0, 0.30);
+    }
+    .content-felt-cut::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      /* Oben/links/rechts exakt gleich breite Innenkante */
+      border-top: 1.35mm solid rgba(0, 0, 0, 0.44);
+      border-left: 1.35mm solid rgba(0, 0, 0, 0.44);
+      border-right: 1.35mm solid rgba(0, 0, 0, 0.44);
+      pointer-events: none;
     }
     .content-felt-cut img {
       width: 100%;
@@ -265,48 +348,50 @@
     /* Karten die über dem Filz-cut schweben */
     .content-felt-cards {
       position: absolute;
-      /* POSITION: Karten, ragen über den Filz-cut hinaus */
-      top: -22mm;
-      right: 10mm;
-      z-index: 10;
+      /* POSITION: Karten, ragen über den Filz-cut hinaus nach oben */
+      top: -17mm;
+      right: 16mm;
+      z-index: 1;
     }
 
     .content-felt-card-1 {
       position: absolute;
-      /* POSITION: Obere Karte (Rosen-Ass) */
+      /* POSITION: Obere Karte (Karo-Under) */
       top: 0;
       right: 0;
-      width: 30mm;
-      transform: rotate(15deg);
+      width: 29mm;
+      transform: rotate(9deg);
       filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.4));
     }
 
     .content-felt-card-2 {
       position: absolute;
-      /* POSITION: Untere Karte (Karo-Under) */
-      top: 18mm;
-      right: 14mm;
-      width: 30mm;
-      transform: rotate(-8deg);
+      /* POSITION: Untere Karte (Rosen-Ass) */
+      top: 14mm;
+      right: 16mm;
+      width: 29mm;
+      transform: rotate(-13deg);
       filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.4));
     }
 
-    /* Grosse Filz-Fläche unten (für Zitat-Box, mit Filz-Hintergrund) */
-    .content-felt-quote-area {
+    /* Cream/Beige Zitat-Fläche — 40mm hoch, direkt unter Filz */
+    .content-quote-area {
       position: absolute;
-      /* POSITION: Filz-Hintergrund für die Zitat-Box */
-      top: 28mm;
+      /* POSITION: Helle Zitat-Fläche unter dem Filz */
+      top: 24mm;
       left: 0;
       right: 0;
       bottom: 0;
-      background: url('../public/images/backgrounds/felt-figma.png') center/cover no-repeat;
+      background: #f1ede4;
+      border-radius: 0 0 4mm 4mm;
+      z-index: 2;
     }
 
-    /* --- SEITE 2: Zitat-Box (weisse Schrift auf Filz) --- */
+    /* --- SEITE 2: Zitat-Inhalt auf cream --- */
     .content-quote-box {
       position: absolute;
-      /* POSITION: Zitat-Box auf Filz-Fläche */
-      top: 8mm;
+      /* POSITION: Zitat-Text innerhalb der cream-Fläche */
+      top: 4mm;
       left: 15mm;
       right: 15mm;
       text-align: center;
@@ -315,15 +400,21 @@
     .content-quote-title {
       font-family: 'Capita', Georgia, serif;
       font-weight: 700;
-      font-size: 15pt;
-      margin-bottom: 4mm;
-      color: #ffffff;
+      font-size: 14pt;
+      margin-bottom: 3mm;
+      color: #1a1a1a;
     }
 
     .content-quote-text {
-      font-size: 10pt;
+      font-size: 10.5pt;
       line-height: 1.6;
-      color: rgba(255,255,255,0.92);
+      color: #333;
+    }
+
+    .content-quote-author {
+      font-size: 7.5pt;
+      color: #666;
+      margin-top: 3mm;
     }
 
     /* =========================================================
@@ -332,12 +423,12 @@
     .mission-headline {
       position: absolute;
       /* POSITION: Seitentitel */
-      top: 30mm;
-      left: 15mm;
-      right: 15mm;
+      top: 49mm;
+      left: 25mm;
+      right: 25mm;
       font-family: 'Capita', Georgia, serif;
       font-weight: 700;
-      font-style: italic;
+      font-style: normal;
       font-size: 24pt;
       line-height: 1.2;
       color: #1a1a1a;
@@ -346,44 +437,43 @@
     .mission-intro {
       position: absolute;
       /* POSITION: Einleitungstext */
-      top: 55mm;
-      left: 15mm;
-      right: 15mm;
-      font-size: 10pt;
-      line-height: 1.6;
+      top: 68mm;
+      left: 25mm;
+      right: 25mm;
+      font-size: 12.5pt;
+      line-height: 1.58;
       color: #333;
-      text-align: center;
+      text-align: left;
     }
 
     .mission-section-title {
       position: absolute;
       /* POSITION: "Unsere Mission" Titel */
-      top: 88mm;
-      left: 15mm;
-      right: 15mm;
+      top: 99mm;
+      left: 25mm;
+      right: 10mm;
       text-align: center;
       font-family: 'Capita', Georgia, serif;
       font-weight: 700;
-      font-size: 16pt;
+      font-size: 17pt;
       color: #1a1a1a;
-      text-decoration: underline;
-      text-underline-offset: 3mm;
+      text-decoration: none;
     }
 
     /* --- MISSION GRID: 3×2 Kacheln --- */
     .mission-grid {
       position: absolute;
       /* POSITION: Kachel-Grid */
-      top: 100mm;
-      left: 15mm;
-      right: 15mm;
+      top: 111mm;
+      left: 25mm;
+      right: 10mm;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      gap: 4mm;
+      gap: 3.5mm;
     }
 
     .mission-tile {
-      border: 0.5pt solid #ccc;
+      background: #f0eee7;
       border-radius: 2mm;
       padding: 5mm 4mm;
       text-align: center;
@@ -392,62 +482,64 @@
     .mission-tile-title {
       font-family: 'Capita', Georgia, serif;
       font-weight: 700;
-      font-size: 9.5pt;
-      margin-bottom: 3mm;
+      font-size: 9.6pt;
+      line-height: 1.2;
+      margin-bottom: 2mm;
       color: #1a1a1a;
-      text-decoration: underline;
-      text-underline-offset: 2mm;
+      text-decoration: none;
     }
 
     .mission-tile-text {
-      font-size: 8pt;
-      line-height: 1.5;
-      color: #555;
+      font-size: 7.6pt;
+      line-height: 1.34;
+      color: #2f2f2f;
     }
 
     /* --- SEITE 3: Chalkboard-Sektion --- */
     .mission-chalkboard {
       position: absolute;
-      /* POSITION: Tafel-Sektion */
+      /* POSITION: Tafel-Sektion — linksbündig mit Text */
       bottom: 22mm;
-      left: 0;
-      right: 0;
-      height: 72mm;
+      left: 25mm;
+      right: 10mm;
+      height: 62mm;
       background: url('../public/images/backgrounds/chalkboard.jpg') center/cover no-repeat;
-      border-radius: 6mm 6mm 0 0;
-      overflow: visible;
+      border-radius: 4mm;
+      overflow: hidden;
     }
 
     .mission-chalkboard-content {
       position: absolute;
       /* POSITION: Text auf der Tafel */
-      top: 10mm;
-      left: 18mm;
-      right: 72mm;
+      top: 11mm;
+      left: 12mm;
+      right: 62mm;
       text-align: center;
     }
 
     .mission-chalkboard-title {
       font-family: 'Capita', Georgia, serif;
       font-weight: 700;
-      font-size: 15pt;
+      font-size: 14pt;
       color: #ffffff;
       margin-bottom: 4mm;
     }
 
     .mission-chalkboard-text {
-      font-size: 9pt;
-      line-height: 1.55;
-      color: rgba(255,255,255,0.9);
+      font-family: 'Capita', Georgia, serif;
+      font-size: 9.2pt;
+      font-weight: 600;
+      line-height: 1.45;
+      color: rgba(255,255,255,0.93);
     }
 
     /* --- SEITE 3: Karten auf der Tafel --- */
     .chalkboard-card-1 {
       position: absolute;
       /* POSITION: Obere Karte auf Tafel (ragt oben hinaus) */
-      top: -8mm;
-      right: 16mm;
-      width: 28mm;
+      top: 4mm;
+      right: 8mm;
+      width: 26.04mm;
       transform: rotate(10deg);
       filter: drop-shadow(2px 3px 6px rgba(0,0,0,0.5));
       z-index: 5;
@@ -456,10 +548,10 @@
     .chalkboard-card-2 {
       position: absolute;
       /* POSITION: Untere Karte auf Tafel */
-      top: 18mm;
-      right: 26mm;
-      width: 28mm;
-      transform: rotate(-5deg);
+      top: 16mm;
+      right: 20mm;
+      width: 26.04mm;
+      transform: rotate(-12deg);
       filter: drop-shadow(2px 3px 6px rgba(0,0,0,0.5));
       z-index: 4;
     }
@@ -492,10 +584,12 @@
     <!-- Hintergrund: Weiss unten -->
     <div class="cover-white"></div>
 
-    <!-- Logo oben rechts -->
-    <img class="logo-top-right"
-         src="../public/images/logos/JVS Logo farbig.svg"
-         alt="Jassverband Schweiz">
+    <!-- Logo oben rechts auf weissem Badge -->
+    <div class="logo-top-right-badge">
+      <img class="logo-top-right"
+           src="../public/images/logos/JVS Logo farbig.svg"
+           alt="Jassverband Schweiz">
+    </div>
 
     <!-- Headline -->
     <div class="cover-headline">
@@ -531,10 +625,12 @@
        ============================ -->
   <div class="page" id="page-2-content">
 
-    <!-- Logo oben rechts -->
-    <img class="logo-top-right"
-         src="../public/images/logos/JVS Logo farbig.svg"
-         alt="Jassverband Schweiz">
+    <!-- Logo oben rechts auf weissem Badge -->
+    <div class="logo-top-right-badge">
+      <img class="logo-top-right"
+           src="../public/images/logos/JVS Logo farbig.svg"
+           alt="Jassverband Schweiz">
+    </div>
 
     <!-- Headline -->
     <div class="content-headline">
@@ -549,14 +645,20 @@
       nisi erat porttitor ligula, eget lacinia odio sem nec elit.
     </div>
 
-    <!-- Zweispalten-Text -->
+    <!-- Titel über den Spalten -->
+    <div class="content-columns-heading">Inceptos Adipiscing Mollis Portan</div>
+
+    <!-- Zweispalten-Text (oben bündig) -->
     <div class="content-columns">
-      <div class="content-subheadline">Inceptos Adipiscing Mollis Portan</div>
-      <p>Maecenas faucibus mollis interdum. Etiam porta sem malesuada magna mollis euismod. Curabitur blandit tempus porttitor. Nullam id dolor id nibh ultricies vehicula ut id elit. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
-      <p style="margin-top: 3mm;">Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper nulla non metus auctor fringilla.</p>
-      <p style="margin-top: 3mm;">Donec sed odio dui. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Aenean lacinia bibendum nulla sed consectetur.</p>
-      <p style="margin-top: 3mm;">Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper nulla non metus auctor fringilla.</p>
-      <p style="margin-top: 3mm;">Donec sed odio dui. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Aenean lacinia bibendum nulla sed consecte</p>
+      <div class="content-column">
+        <p>Maecenas faucibus mollis interdum. Etiam porta sem malesuada magna mollis euismod. Curabitur blandit tempus porttitor. Nullam id dolor id nibh ultricies vehicula ut id elit. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+        <p>Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper nulla non metus auctor fringilla.</p>
+        <p>Donec sed odio dui. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Aenean lacinia bibendum nulla sed consectetur.</p>
+      </div>
+      <div class="content-column">
+        <p>Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper nulla non metus auctor fringilla.</p>
+        <p>Donec sed odio dui. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Aenean lacinia bibendum nulla sed consectetur.</p>
+      </div>
     </div>
 
     <!-- Fortsetzung einspaltig -->
@@ -564,10 +666,10 @@
       Donec sed odio dui. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa
     </div>
 
-    <!-- Unterer Bereich: Filz-Cut + Filz-Zitat -->
+    <!-- Unterer Bereich: Filz-Cut oben + Cream-Zitat unten -->
     <div class="content-bottom-wrapper">
 
-      <!-- Filz-Cut-Streifen (schmaler Streifen mit abgerundeten Ecken) -->
+      <!-- Filz-Cut-Streifen (oben, abgerundete Ecken oben) -->
       <div class="content-felt-cut">
         <img src="../public/images/backgrounds/felt-texture-cut-large.png"
              alt="Filz-Textur">
@@ -583,8 +685,8 @@
              alt="Karo-Under">
       </div>
 
-      <!-- Grosse Filz-Fläche mit Zitat (weisse Schrift auf dunkelgrün) -->
-      <div class="content-felt-quote-area">
+      <!-- Cream-Fläche darunter (eigenes Element, abgerundete Ecken unten) -->
+      <div class="content-quote-area">
         <div class="content-quote-box">
           <div class="content-quote-title">Fusce Commodo Adipiscing</div>
           <div class="content-quote-text">
@@ -608,10 +710,12 @@
        ============================ -->
   <div class="page" id="page-3-mission">
 
-    <!-- Logo oben rechts -->
-    <img class="logo-top-right"
-         src="../public/images/logos/JVS Logo farbig.svg"
-         alt="Jassverband Schweiz">
+    <!-- Logo oben rechts auf weissem Badge -->
+    <div class="logo-top-right-badge">
+      <img class="logo-top-right"
+           src="../public/images/logos/JVS Logo farbig.svg"
+           alt="Jassverband Schweiz">
+    </div>
 
     <!-- Headline -->
     <div class="mission-headline">
@@ -631,7 +735,7 @@
     <!-- Mission-Grid 3×2 -->
     <div class="mission-grid">
       <div class="mission-tile">
-        <div class="mission-tile-title">Meisterschaften etablieren</div>
+        <div class="mission-tile-title">Schweizermeisterschaft</div>
         <div class="mission-tile-text">
           Wir etablieren Jassen als offizielle Wettkampfsportart mit klaren Strukturen, Ranglisten und nationalen Meisterschaften.
         </div>

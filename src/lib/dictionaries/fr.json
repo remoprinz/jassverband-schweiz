@@ -275,7 +275,8 @@
     "statuten": {
       "title": "Statuts",
       "download": "Télécharger les statuts (PDF)",
-      "description": "Les statuts de la Fédération Suisse de Jass régissent l'objet, l'adhésion, l'organisation et les finances de la fédération."
+      "description": "Les statuts de la Fédération Suisse de Jass régissent l'objet, l'adhésion, l'organisation et les finances de la fédération.",
+      "brochureLink": "Voir la brochure"
     }
   },
   "projekte": {
