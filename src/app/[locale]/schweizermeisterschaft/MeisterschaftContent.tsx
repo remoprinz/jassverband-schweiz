@@ -16,11 +16,9 @@ interface MeisterschaftContentProps {
   teamTitle: string;
   teamCopy1: string;
   teamCopy2: string;
-  teamCta: string;
   howTitle: string;
   howIntro: string;
   howSteps: HowStep[];
-  howLinkLabel: string;
   homeTitle: string;
   homeCopy: string;
   homeStrichIntro: string;
@@ -59,11 +57,9 @@ export function MeisterschaftContent({
   teamTitle,
   teamCopy1,
   teamCopy2,
-  teamCta,
   howTitle,
   howIntro,
   howSteps,
-  howLinkLabel,
   homeTitle,
   homeCopy,
   homeStrichIntro,
@@ -132,46 +128,28 @@ export function MeisterschaftContent({
             </h2>
 
             <p
-              className="text-white/90 mb-3"
+              className="text-white/90 mb-5"
               style={{
                 fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
                 fontSize: 'clamp(18px, 2.5vw, 22px)',
                 fontWeight: 500,
-                lineHeight: 1.5,
+                lineHeight: 1.55,
               }}
             >
               {teamCopy1}
             </p>
 
             <p
-              className="text-white/75 mb-10"
+              className="text-white/90"
               style={{
                 fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
-                fontSize: 'clamp(16px, 2vw, 19px)',
-                lineHeight: 1.6,
+                fontSize: 'clamp(18px, 2.5vw, 22px)',
+                fontWeight: 500,
+                lineHeight: 1.55,
               }}
             >
               {teamCopy2}
             </p>
-
-            <div
-              className="inline-block px-6 py-3 rounded-full"
-              style={{
-                backgroundColor: 'rgba(255,255,255,0.1)',
-                border: '1px solid rgba(255,255,255,0.25)',
-              }}
-            >
-              <p
-                className="text-white/85 italic"
-                style={{
-                  fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
-                  fontSize: 'clamp(14px, 1.8vw, 17px)',
-                  lineHeight: 1.5,
-                }}
-              >
-                {teamCta}
-              </p>
-            </div>
           </motion.div>
         </div>
       </section>
@@ -281,32 +259,6 @@ export function MeisterschaftContent({
             ))}
           </div>
 
-          <motion.div
-            className="text-center"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
-            <a
-              href="https://jassmeister.web.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 font-medium hover:gap-3 transition-all duration-200"
-              style={{
-                fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
-                fontSize: 'var(--font-size-16)',
-                color: 'var(--color-foreground)',
-                textDecoration: 'underline',
-                textUnderlineOffset: '3px',
-              }}
-            >
-              {howLinkLabel}
-              <svg className="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-              </svg>
-            </a>
-          </motion.div>
         </div>
       </section>
 
@@ -391,16 +343,11 @@ export function MeisterschaftContent({
                   >
                     {homeStrich1Title}
                   </div>
-                  <p
-                    className="text-white/80"
-                    style={{
-                      fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
-                      fontSize: 'var(--font-size-15)',
-                      lineHeight: 1.55,
-                    }}
-                  >
-                    {homeStrich1Desc}
-                  </p>
+                  <ul className="text-white/80 space-y-1 list-disc list-inside" style={{ fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif', fontSize: 'var(--font-size-15)', lineHeight: 1.55 }}>
+                    {homeStrich1Desc.split('\n').map((item, i) => (
+                      <li key={i}>{item}</li>
+                    ))}
+                  </ul>
                 </div>
 
                 <div
@@ -423,16 +370,11 @@ export function MeisterschaftContent({
                   >
                     {homeStrich2Title}
                   </div>
-                  <p
-                    className="text-white/80"
-                    style={{
-                      fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
-                      fontSize: 'var(--font-size-15)',
-                      lineHeight: 1.55,
-                    }}
-                  >
-                    {homeStrich2Desc}
-                  </p>
+                  <ul className="text-white/80 space-y-1 list-disc list-inside" style={{ fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif', fontSize: 'var(--font-size-15)', lineHeight: 1.55 }}>
+                    {homeStrich2Desc.split('\n').map((item, i) => (
+                      <li key={i}>{item}</li>
+                    ))}
+                  </ul>
                 </div>
               </div>
 
