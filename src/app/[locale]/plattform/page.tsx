@@ -19,6 +19,7 @@ export default async function PlattformenPage({ params }: PlattformenPageProps) 
         ctaHref={`/${locale}/jasskalkulator`}
         preserveTitleLineBreaks
         mobileFlow
+        mobileFlowTitleSize="clamp(22px, 8.5vw, 36px)"
         teaser={{
           label: "JassKalkulator",
           badge: t("plattform.hero.teaserBadge"),

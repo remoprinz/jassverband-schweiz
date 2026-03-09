@@ -19,10 +19,9 @@ interface HeroProps {
   /** Mobile: Flex-Flow-Layout statt fixer %-Positionen. Aktiviert für Seiten
    *  wo H1-Inhalt variiert (z.B. Plattform) – Home bleibt absolut-positioniert. */
   mobileFlow?: boolean;
-  /** Mobile Flow: Alle Title-Zeilen in derselben (grossen) Schrift anzeigen. */
-  mobileUniformTitleSize?: boolean;
-  /** Mobile Flow: Zusätzlicher Abstand zwischen H1 und Subtitle. */
-  mobileSubtitleMarginTop?: string;
+  /** Mobile Flow: Überschreibt die Schriftgrösse des H1 (Standard: var(--hero-title-size)).
+   *  Nützlich für Seiten mit längeren Titeln, die sonst umbrechen würden. */
+  mobileFlowTitleSize?: string;
   /** Dekorativer Eichenlaub-Kranz rund um die Schrift. */
   wreath?: boolean;
   /**
@@ -106,8 +105,7 @@ export function Hero({
   ctaHref,
   preserveTitleLineBreaks = false,
   mobileFlow = false,
-  mobileUniformTitleSize = false,
-  mobileSubtitleMarginTop = '16px',
+  mobileFlowTitleSize,
   wreath = false,
   heroTitleTopDesktop,
   teaser,
@@ -417,7 +415,7 @@ export function Hero({
               width: '90%',
               fontFamily: 'var(--font-capita), Capita, Georgia, serif',
               fontWeight: 700,
-              fontSize: 'var(--hero-title-size)',
+              fontSize: mobileFlowTitleSize ?? 'var(--hero-title-size)',
               lineHeight: 'var(--hero-title-line-height)',
               letterSpacing: '-0.96px',
               color: '#ffffff',
