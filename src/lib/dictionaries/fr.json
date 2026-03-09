@@ -43,6 +43,59 @@
     "season": "Saison 1",
     "altFelt": "Fond en feutre vert",
     "altChalkboard": "Fond tableau noir",
+    "team": {
+      "title": "En équipe vers le titre",
+      "copy1": "Pas un joueur individuel — une équipe entière. Comme au football. Comme au hockey.",
+      "copy2": "Avec de vraies équipes. Pour de vrais titres. Pour de vraie histoire.",
+      "cta": "Ne restez pas spectateur pendant que d'autres écrivent l'histoire."
+    },
+    "how": {
+      "title": "Comment ça marche : la Suisse est votre terrain de jeu",
+      "intro": "Oubliez les calendriers rigides. En Saison 1, c'est vous qui décidez quand et où vous attaquez.",
+      "steps": [
+        {
+          "title": "Votre équipe",
+          "description": "Au moins 4 joueurs — plus il y en a, plus vous êtes flexibles. Un captain représente l'équipe auprès de la FJS."
+        },
+        {
+          "title": "La qualification",
+          "description": "Décentralisée dans toute la Suisse. Vous jouez dans votre région, défiez d'autres équipes et voyagez à travers les cantons."
+        },
+        {
+          "title": "Classement JassGuru",
+          "description": "Chaque partie est saisie sur JassGuru.ch. Le système Elo national décide en direct qui atteint le sommet."
+        },
+        {
+          "title": "La finale",
+          "description": "Les meilleures équipes se qualifient pour le grand tournoi final à Zurich. Le premier trophée de l'histoire y sera décerné."
+        }
+      ],
+      "linkLabel": "Vers le mode détaillé sur Jassmeister.ch"
+    },
+    "home": {
+      "title": "Avantage domicile : votre bistrot, vos règles",
+      "copy": "Nous respectons la culture locale du Jass. L'équipe à domicile détermine les règles de table — quelles variantes d'atout, quels multiplicateurs, quels points cibles.",
+      "strichIntro": "Pour que le championnat reste comparable au niveau national, on joue aux traits :",
+      "strich1Title": "1 trait",
+      "strich1Desc": "Pour une Berge ou un Matsch.",
+      "strich2Title": "2 traits",
+      "strich2Desc": "Pour une victoire, un Schneider ou un Kontermatsch.",
+      "strichConclusion": "Quelles que soient vos règles — à la fin, ce sont les traits qui comptent pour le classement national.",
+      "profileTitle": "Votre équipe écrit l'histoire",
+      "profileCopy": "Chaque équipe inscrite reçoit un profil public sur JassGuru — avec l'historique complet des parties, les résultats et l'évolution Elo. Vous faites partie du premier classement officiel de Jass de Suisse. Pour toujours."
+    },
+    "titles": {
+      "title": "Deux titres — un objectif",
+      "intro": "Que ce soit 10 ou 200 équipes — le mode s'adapte. En Saison 1, nous couronnons :",
+      "open": "Champion suisse",
+      "openSub": "Ouvert à toutes les équipes.",
+      "youth": "Champion suisse junior",
+      "youthSub": "Pour les équipes jusqu'à 25 ans.",
+      "memberTitle": "Droit de participer",
+      "memberCopy": "L'adhésion à la FJS donne automatiquement le droit de participer au Championnat suisse. Il n'y a pas de frais d'inscription séparés pour la saison ou le classement.",
+      "ctaMember": "Devenir membre maintenant",
+      "ctaTeam": "Créer une équipe sur Jassmeister.ch"
+    },
     "format": {
       "title": "Le format",
       "description": "Une équipe entière devient championne suisse. Pas un joueur individuel — mais une équipe. Comme au football. Comme au hockey.",
