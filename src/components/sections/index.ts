@@ -7,5 +7,5 @@ export { Tournament } from './Tournament';
 export { Ecosystem } from './Ecosystem';
 export { Trust } from './Trust';
 export { Schweizermeisterschaft } from './Schweizermeisterschaft';
-export { HomeFAQ } from './HomeFAQ';
+export { HomeFAQ } from './HomeFaq';
 export { Testimonials } from './Testimonials';
