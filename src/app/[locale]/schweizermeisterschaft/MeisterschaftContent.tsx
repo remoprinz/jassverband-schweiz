@@ -1,5 +1,6 @@
 'use client';
 
+import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { RiTeamFill } from 'react-icons/ri';
@@ -45,11 +46,11 @@ interface MeisterschaftContentProps {
   altChalkboard: string;
 }
 
-const howIcons = [
-  <RiTeamFill key="team" className="w-7 h-7" />,
-  <TbTournament key="tournament" className="w-7 h-7" />,
-  <Image key="jassguru" src="/images/icons/guru_round.png" alt="JassGuru" width={28} height={28} className="w-7 h-7 object-contain" />,
-  <FaTrophy key="trophy" className="w-7 h-7" />,
+const howIcons: { el: React.ReactNode; bg: boolean }[] = [
+  { el: <RiTeamFill key="team" className="w-7 h-7" />, bg: true },
+  { el: <TbTournament key="tournament" className="w-7 h-7" />, bg: true },
+  { el: <Image key="jassguru" src="/images/icons/guru_round.png" alt="JassGuru" width={48} height={48} className="w-full h-full object-cover rounded-xl" />, bg: false },
+  { el: <FaTrophy key="trophy" className="w-7 h-7" />, bg: true },
 ];
 
 const noiseOverlay = `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`;
@@ -230,10 +231,12 @@ export function MeisterschaftContent({
               >
                 <div className="flex items-start gap-4 mb-3">
                   <div
-                    className="shrink-0 w-12 h-12 rounded-xl flex items-center justify-center"
-                    style={{ backgroundColor: 'var(--color-cream)', color: 'var(--color-foreground)' }}
+                    className="shrink-0 w-12 h-12 rounded-xl flex items-center justify-center overflow-hidden"
+                    style={howIcons[index].bg
+                      ? { backgroundColor: 'var(--color-cream)', color: 'var(--color-foreground)' }
+                      : {}}
                   >
-                    {howIcons[index]}
+                    {howIcons[index].el}
                   </div>
                   <div className="flex-1 pt-1">
                     <span
