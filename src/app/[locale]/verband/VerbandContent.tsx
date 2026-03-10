@@ -37,6 +37,7 @@ interface VerbandContentProps {
   statutenTitle: string;
   statutenDownload: string;
   statutenDescription: string;
+  statutenBrochureLink?: string;
   vision: VisionData;
   missionsTitle: string;
   missions: MissionData[];
@@ -58,6 +59,7 @@ export function VerbandContent({
   statutenTitle,
   statutenDownload,
   statutenDescription,
+  statutenBrochureLink = '/documents/statuten-jvs.pdf',
   vision,
   missionsTitle,
   missions,
@@ -392,7 +394,7 @@ export function VerbandContent({
             </p>
 
             <a
-              href="/documents/statuten-jvs.pdf"
+              href={statutenBrochureLink}
               className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-white text-[#1e2d1e] rounded-full font-bold text-base shadow-lg hover:shadow-xl hover:bg-white/95 transition-all duration-200 hover:-translate-y-0.5"
             >
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
