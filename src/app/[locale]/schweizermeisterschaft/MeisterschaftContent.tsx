@@ -492,7 +492,7 @@ export function MeisterschaftContent({
                   border: '1px solid rgba(255,255,255,0.2)',
                 }}
               >
-                <div className="text-3xl mb-3">🏆</div>
+                {/* Emoji comes from dictionary title */}
                 <h3
                   className="text-white mb-1"
                   style={{
@@ -523,7 +523,7 @@ export function MeisterschaftContent({
                   border: '1px solid rgba(255,255,255,0.2)',
                 }}
               >
-                <div className="text-3xl mb-3">🏆</div>
+                {/* Emoji comes from dictionary title */}
                 <h3
                   className="text-white mb-1"
                   style={{

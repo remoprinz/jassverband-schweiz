@@ -31,96 +31,59 @@
   },
   "schweizermeisterschaft": {
     "hero": {
-      "title": "Campionato svizzero\ndi Jass.",
-      "subtitle": "Il primo campionato nazionale per squadre Schieber — grande quanto la nostra community.",
-      "cta": "Diventa membro"
+      "title": "Il Campionato Svizzero\ndi Jass a squadre.",
+      "subtitle": "La stagione 1 inizia nel 2026 — partecipa e scrivi la storia del Jass.",
+      "cta": "Prenota licenza"
     },
-    "title": "Campionato Svizzero di Schieber a squadre",
-    "subtitle": "Il primo campionato nazionale di Schieber a squadre.",
-    "copy": "Lo Schieber è un jass di squadra. Per questo non partecipano giocatori singoli, ma intere squadre al campionato svizzero. Il primo campionato sarà grande quanto la community.",
-    "jugend": "Le squadre giovanili giocano nello stesso campionato e ricevono una classifica separata per il titolo di campione svizzero giovanile.",
-    "cta": "Scopri di più",
-    "season": "Stagione 1",
-    "altFelt": "Sfondo feltro verde",
-    "altChalkboard": "Sfondo lavagna",
     "team": {
-      "title": "Come squadra verso il titolo",
-      "copy1": "Non un singolo giocatore — un'intera squadra. Come nel calcio. Come nell'hockey.",
-      "copy2": "Con vere squadre. Per veri titoli. Per vera storia.",
-      "cta": "Non restare spettatore mentre altri scrivono la storia."
+      "title": "Insieme verso il trono",
+      "copy1": "La Svizzera conosce molti tornei di Jass — ma quasi sempre alla fine vince un singolo. Il Campionato Svizzero stabilisce un nuovo formato: non vince il singolo giocatore — ma la squadra.",
+      "copy2": "Schierarsi come unità, vincere come unità. Come nel calcio. Come nell'hockey."
     },
     "how": {
-      "title": "Come funziona: la Svizzera è il vostro campo da gioco",
+      "title": "La Svizzera è il vostro campo da gioco",
       "intro": "Dimenticate i calendari rigidi. Nella Stagione 1 siete voi a decidere quando e dove attaccate.",
       "steps": [
         {
-          "title": "La vostra squadra",
-          "description": "Almeno 4 giocatori — più siete, più siete flessibili. Un capitano rappresenta la squadra presso la FGJ."
+          "title": "Passo 1: Fondare una squadra",
+          "description": "Almeno 4 giocatori. Un capitano rappresenta la squadra presso la FSJ e coordina le partite direttamente con gli altri capitani."
         },
         {
-          "title": "La qualificazione",
-          "description": "Decentralizzata in tutta la Svizzera. Giocate nella vostra regione, sfidare altre squadre e viaggiate attraverso i cantoni."
+          "title": "Passo 2: Qualificarsi",
+          "description": "Decentralizzato in tutta la Svizzera. Sfidate squadre nella vostra regione o viaggiate attraverso i cantoni."
         },
         {
-          "title": "Classifica JassGuru",
-          "description": "Ogni partita viene registrata su JassGuru.ch. Il sistema Elo nazionale decide in diretta chi raggiunge la vetta."
+          "title": "Passo 3: Classifica live",
+          "description": "Ogni partita conta. I risultati vengono registrati via JassGuru e confluiscono in diretta nella classifica nazionale."
         },
         {
-          "title": "La finale",
-          "description": "Le migliori squadre si qualificano per il grande torneo finale a Zurigo. Lì verrà assegnato il primo trofeo della storia."
+          "title": "Passo 4: La finale",
+          "description": "Le migliori squadre si qualificano per il grande torneo finale a Zurigo. Lì è in gioco il primo titolo ufficiale della storia."
         }
-      ],
-      "linkLabel": "Verso la modalità dettagliata su Jassmeister.ch"
+      ]
     },
     "home": {
-      "title": "Vantaggio casalingo: il vostro locale, le vostre regole",
-      "copy": "Rispettiamo la cultura locale del Jass. La squadra di casa determina le regole del tavolo — quali varianti di briscola, quali moltiplicatori, quali punti obiettivo.",
-      "strichIntro": "Affinché il campionato rimanga comparabile a livello nazionale, si gioca a tratti:",
+      "title": "Vantaggio casalingo: il vostro tavolo, le vostre regole",
+      "copy": "Celebriamo la diversità della Svizzera del Jass. La squadra di casa determina le regole — varianti di briscola, annunci, punti obiettivo.",
+      "strichIntro": "Affinché i risultati siano comparabili in tutta la Svizzera, si conta a tratti:",
       "strich1Title": "1 tratto",
-      "strich1Desc": "Per una Berga o un Matsch.",
+      "strich1Desc": "Montagna (Berg) o Match.",
       "strich2Title": "2 tratti",
-      "strich2Desc": "Per una vittoria, uno Schneider o un Kontermatsch.",
-      "strichConclusion": "Qualunque siano le vostre regole — alla fine sono i tratti a contare per la classifica nazionale.",
+      "strich2Desc": "Vittoria, Schneider o Contro-match.",
+      "strichConclusion": "Indipendentemente dalle regole con cui giocate — alla fine contano i tratti per la classifica nazionale. Così preserviamo la tradizione locale e permettiamo comunque una competizione sportiva.",
       "profileTitle": "La vostra squadra scrive la storia",
-      "profileCopy": "Ogni squadra iscritta riceve un profilo pubblico su JassGuru — con la cronologia completa delle partite, i risultati e l'evoluzione Elo. Fate parte della prima classifica ufficiale di Jass della Svizzera. Per sempre."
+      "profileCopy": "Ogni squadra iscritta riceve un profilo pubblico su JassGuru — con la cronologia completa delle partite e tutti i risultati. Fate parte della prima classifica ufficiale di Jass della Svizzera."
     },
     "titles": {
-      "title": "Due titoli — un obiettivo",
-      "intro": "Che siano 10 o 200 squadre — la modalità si adatta. Nella Stagione 1 incoroniamo:",
-      "open": "Campione svizzero",
+      "title": "Un campionato – due titoli",
+      "intro": "Nella Stagione 1 incoroniamo i migliori del paese:",
+      "open": "🏆 Campione Svizzero",
       "openSub": "Aperto a tutte le squadre.",
-      "youth": "Campione svizzero giovanile",
+      "youth": "🎖️ Campione Svizzero Giovanile",
       "youthSub": "Per squadre fino a 25 anni.",
-      "memberTitle": "Diritto di partecipazione",
-      "memberCopy": "L'adesione alla FGJ dà automaticamente il diritto di partecipare al Campionato svizzero. Non c'è alcuna quota di iscrizione separata per la stagione o la classifica.",
-      "ctaMember": "Diventa membro ora",
-      "ctaTeam": "Crea una squadra su Jassmeister.ch"
-    },
-    "format": {
-      "title": "Il formato",
-      "description": "Un'intera squadra diventa campione svizzera. Non un singolo giocatore — ma una squadra. Come nel calcio. Come nell'hockey.",
-      "howItWorks": "Come funziona?",
-      "steps": [
-        "Almeno 10 partite nel proprio gruppo (qualificazione decentralizzata)",
-        "Sfidare altre squadre",
-        "La classifica Elo decide il torneo finale",
-        "Torneo finale: le migliori squadre si incontrano"
-      ],
-      "communityNote": "Il primo campionato svizzero sarà grande quanto la community. Che siano 20 o 200 squadre — adattiamo la modalità. La stagione 1 si svolgerà, indipendentemente dal numero di squadre iscritte."
-    },
-    "youth": {
-      "title": "Classifica giovanile",
-      "description": "Le squadre giovanili (fino a 25 anni) partecipano al campionato regolare e ricevono una classifica separata.",
-      "championTitle": "Campione svizzero",
-      "championSubtitle": "Tutte le categorie d'età",
-      "youthChampionTitle": "Campione svizzero giovanile",
-      "youthChampionSubtitle": "Fino a 25 anni"
-    },
-    "register": {
-      "title": "Iscrivi la tua squadra",
-      "description": "L'iscrizione avviene tramite Jassmeister. Hai bisogno di un'adesione.",
-      "ctaJassmeister": "Iscriversi su Jassmeister",
-      "ctaMember": "Diventa membro"
+      "memberTitle": "Diritto di gioco",
+      "memberCopy": "L'adesione alla FSJ dà automaticamente diritto a partecipare al Campionato Svizzero. Non c'è una tassa di iscrizione separata per la stagione o la classifica.",
+      "ctaMember": "Assicurati ora il diritto di partenza"
     }
   },
   "mission": {

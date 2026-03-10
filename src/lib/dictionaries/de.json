@@ -33,16 +33,8 @@
     "hero": {
       "title": "Die Schweizer-\nmeisterschaft\nim Team-Jass.",
       "subtitle": "Saison 1 startet 2026 — mach mit und schreibe Jass-Geschichte.",
-      "cta": "Jetzt Team anmelden"
+      "cta": "Lizenz buchen"
     },
-    "title": "Schweizer Team-Schiebermeisterschaft",
-    "subtitle": "Die erste nationale Team-Schieber Schweizermeisterschaft.",
-    "copy": "Der Schieber ist ein Team-Jass. Deshalb treten nicht Einzelspieler, sondern ganze Teams zur Schweizermeisterschaft an. Die erste Meisterschaft wird so gross wie die Community.",
-    "jugend": "Jugendteams spielen in der gleichen Meisterschaft und erhalten eine separate Wertung für den Jugend-Schweizermeister.",
-    "cta": "Mehr zur Schweizermeisterschaft",
-    "season": "Saison 1",
-    "altFelt": "Jassteppich Hintergrund",
-    "altChalkboard": "Kreidetafel Hintergrund",
     "team": {
       "title": "Gemeinsam auf den Thron",
       "copy1": "Jass-Turniere kennt die Schweiz viele — doch fast immer gewinnt am Ende ein Einzelner. Die Schweizermeisterschaft etabliert ein neues Format: Nicht der Einzelspieler gewinnt — sondern das Team.",
@@ -53,20 +45,20 @@
       "intro": "Vergesst starre Spielpläne. In Saison 1 entscheidet ihr, wann und wo ihr angreift.",
       "steps": [
         {
-          "title": "Team gründen",
-          "description": "Mindestens 4 Spieler. Ein Captain vertritt das Team gegenüber dem JVS."
+          "title": "Schritt 1: Team gründen",
+          "description": "Mindestens 4 Spieler. Ein Captain vertritt das Team gegenüber dem JVS und koordiniert die Spiele direkt mit anderen Kapitänen."
         },
         {
-          "title": "Qualifizieren",
-          "description": "Dezentral in der ganzen Schweiz. Fordere Teams in eurer Region heraus oder reise durch die Kantone."
+          "title": "Schritt 2: Qualifizieren",
+          "description": "Dezentral in der ganzen Schweiz. Fordert Teams in eurer Region heraus oder reist durch die Kantone."
         },
         {
-          "title": "Live-Ranking",
-          "description": "Jedes Spiel zählt. Resultate werden via JassGuru erfasst und fliessen live ins nationale Jass-Ranking ein."
+          "title": "Schritt 3: Live-Ranking",
+          "description": "Jedes Spiel zählt. Resultate werden via JassGuru erfasst und fliessen live in die nationale Rangliste ein."
         },
         {
-          "title": "Das Finale",
-          "description": "Die Top-Teams qualifizieren sich für das Finalturnier in Zürich. Dort geht es um den ersten offiziellen Titel der Geschichte."
+          "title": "Schritt 4: Das Finale",
+          "description": "Die Top-Teams qualifizieren sich für das grosse Finalturnier in Zürich. Dort geht es um den ersten offiziellen Titel der Geschichte."
         }
       ]
     },
@@ -75,50 +67,23 @@
       "copy": "Wir feiern die Vielfalt der Jass-Schweiz. Das Heimteam bestimmt die Regeln — Trumpfvarianten, Weis, Zielpunkte.",
       "strichIntro": "Damit die Resultate schweizweit vergleichbar sind, wird mit Strichen abgerechnet:",
       "strich1Title": "1 Strich",
-      "strich1Desc": "Berg\nMatsch",
+      "strich1Desc": "Berg oder Matsch.",
       "strich2Title": "2 Striche",
-      "strich2Desc": "Sieg\nSchneider\nKontermatsch",
-      "strichConclusion": "Egal mit welchen Regeln ihr spielt — am Ende zählen die Striche für die nationale Tabelle. So bewahren wir die lokale Tradition und ermöglichen echten sportlichen Wettbewerb.",
+      "strich2Desc": "Sieg, Schneider oder Kontermatsch.",
+      "strichConclusion": "Egal mit welchen Regeln ihr spielt — am Ende zählen die Striche für die nationale Tabelle. So bewahren wir die lokale Tradition und ermöglichen trotzdem sportlichen Wettbewerb.",
       "profileTitle": "Euer Team schreibt Geschichte",
-      "profileCopy": "Jedes angemeldete Team erhält ein öffentliches Profil auf JassGuru — mit vollständiger Spielhistorie, Resultaten und der Elo-Entwicklung. Ihr seid Teil der ersten offiziellen Jass-Rangliste der Schweiz. Für immer."
+      "profileCopy": "Jedes angemeldete Team erhält ein öffentliches Profil auf JassGuru — mit vollständiger Spielhistorie und allen Resultaten. Ihr seid Teil der ersten offiziellen Jass-Rangliste der Schweiz."
     },
     "titles": {
-      "title": "Zwei Titel — ein Ziel",
+      "title": "Eine Meisterschaft – zwei Titel",
       "intro": "In Saison 1 krönen wir die Besten des Landes:",
-      "open": "Schweizermeister",
+      "open": "🏆 Schweizermeister",
       "openSub": "Offen für alle Teams.",
-      "youth": "Jugend-Schweizermeister",
+      "youth": "🎖️ Jugend-Schweizermeister",
       "youthSub": "Für Teams bis 25 Jahre.",
       "memberTitle": "Spielberechtigung",
-      "memberCopy": "Die JVS-Mitgliedschaft berechtigt automatisch zur Teilnahme. Kein separates Startgeld.",
-      "ctaMember": "Jetzt Mitglied werden",
-      "ctaTeam": "Team anlegen auf Jassmeister.ch"
-    },
-    "format": {
-      "title": "Das Format",
-      "description": "Ein ganzes Team wird Schweizermeister. Nicht ein Einzelspieler — sondern ein Team. So wie im Fussball. So wie im Hockey.",
-      "howItWorks": "Wie funktioniert\u2019s?",
-      "steps": [
-        "Mindestens 10 Spiele in der eigenen Gruppe (dezentrale Qualifikation)",
-        "Andere Teams herausfordern",
-        "Elo-Ranking entscheidet über Finalturnier",
-        "Finalturnier: Die besten Teams treffen sich"
-      ],
-      "communityNote": "Die erste Schweizermeisterschaft wird so gross wie die Community. Ob 20 oder 200 Teams — wir passen den Modus an. Saison 1 findet statt, egal wie viele Teams sich anmelden."
-    },
-    "youth": {
-      "title": "Jugendwertung",
-      "description": "Jugendteams (bis 25 Jahre) nehmen an der regulären Meisterschaft teil und erhalten eine separate Wertung.",
-      "championTitle": "Schweizermeister",
-      "championSubtitle": "Alle Altersklassen",
-      "youthChampionTitle": "Jugend-Schweizermeister",
-      "youthChampionSubtitle": "Bis 25 Jahre"
-    },
-    "register": {
-      "title": "Jetzt Team anmelden",
-      "description": "Die Anmeldung erfolgt über Jassmeister. Du brauchst eine Mitgliedschaft.",
-      "ctaJassmeister": "Auf Jassmeister anmelden",
-      "ctaMember": "Mitglied werden"
+      "memberCopy": "Die JVS-Mitgliedschaft berechtigt automatisch zur Teilnahme an der Schweizermeisterschaft. Es gibt kein separates Startgeld für die Saison oder das Ranking.",
+      "ctaMember": "Jetzt Startberechtigung sichern"
     }
   },
   "mission": {

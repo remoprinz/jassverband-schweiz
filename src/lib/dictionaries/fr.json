@@ -31,96 +31,59 @@
   },
   "schweizermeisterschaft": {
     "hero": {
-      "title": "Championnat suisse\nde Jass.",
-      "subtitle": "Le premier championnat national pour équipes de Schieber — aussi grand que notre communauté.",
-      "cta": "Devenir membre"
+      "title": "Le Championnat Suisse\nde Jass par équipes.",
+      "subtitle": "La saison 1 débute en 2026 — participez et écrivez l'histoire du Jass.",
+      "cta": "Réserver une licence"
     },
-    "title": "Championnat Suisse de Schieber par équipes",
-    "subtitle": "Le premier championnat national de Schieber par équipes.",
-    "copy": "Le Schieber est un jass d'équipe. C'est pourquoi ce ne sont pas des joueurs individuels, mais des équipes entières qui participent au championnat suisse. Le premier championnat sera aussi grand que la communauté.",
-    "jugend": "Les équipes jeunes jouent dans le même championnat et reçoivent un classement séparé pour le titre de champion suisse junior.",
-    "cta": "En savoir plus",
-    "season": "Saison 1",
-    "altFelt": "Fond en feutre vert",
-    "altChalkboard": "Fond tableau noir",
     "team": {
-      "title": "En équipe vers le titre",
-      "copy1": "Pas un joueur individuel — une équipe entière. Comme au football. Comme au hockey.",
-      "copy2": "Avec de vraies équipes. Pour de vrais titres. Pour de vraie histoire.",
-      "cta": "Ne restez pas spectateur pendant que d'autres écrivent l'histoire."
+      "title": "Ensemble vers le trône",
+      "copy1": "La Suisse connaît de nombreux tournois de Jass — mais c'est presque toujours un individu qui gagne à la fin. Le Championnat Suisse établit un nouveau format : ce n'est pas le joueur individuel qui gagne — mais l'équipe.",
+      "copy2": "S'aligner comme une unité, gagner comme une unité. Comme au football. Comme au hockey."
     },
     "how": {
-      "title": "Comment ça marche : la Suisse est votre terrain de jeu",
+      "title": "La Suisse est votre terrain de jeu",
       "intro": "Oubliez les calendriers rigides. En Saison 1, c'est vous qui décidez quand et où vous attaquez.",
       "steps": [
         {
-          "title": "Votre équipe",
-          "description": "Au moins 4 joueurs — plus il y en a, plus vous êtes flexibles. Un captain représente l'équipe auprès de la FJS."
+          "title": "Étape 1 : Créer une équipe",
+          "description": "Au moins 4 joueurs. Un capitaine représente l'équipe auprès de la FJS et coordonne les matchs directement avec les autres capitaines."
         },
         {
-          "title": "La qualification",
-          "description": "Décentralisée dans toute la Suisse. Vous jouez dans votre région, défiez d'autres équipes et voyagez à travers les cantons."
+          "title": "Étape 2 : Se qualifier",
+          "description": "Décentralisé dans toute la Suisse. Défiez des équipes de votre région ou voyagez à travers les cantons."
         },
         {
-          "title": "Classement JassGuru",
-          "description": "Chaque partie est saisie sur JassGuru.ch. Le système Elo national décide en direct qui atteint le sommet."
+          "title": "Étape 3 : Classement en direct",
+          "description": "Chaque partie compte. Les résultats sont saisis via JassGuru et intègrent en direct le classement national."
         },
         {
-          "title": "La finale",
-          "description": "Les meilleures équipes se qualifient pour le grand tournoi final à Zurich. Le premier trophée de l'histoire y sera décerné."
+          "title": "Étape 4 : La finale",
+          "description": "Les meilleures équipes se qualifient pour le grand tournoi final à Zurich. Le premier titre officiel de l'histoire y sera en jeu."
         }
-      ],
-      "linkLabel": "Vers le mode détaillé sur Jassmeister.ch"
+      ]
     },
     "home": {
-      "title": "Avantage domicile : votre bistrot, vos règles",
-      "copy": "Nous respectons la culture locale du Jass. L'équipe à domicile détermine les règles de table — quelles variantes d'atout, quels multiplicateurs, quels points cibles.",
-      "strichIntro": "Pour que le championnat reste comparable au niveau national, on joue aux traits :",
+      "title": "Avantage domicile : votre table, vos règles",
+      "copy": "Nous célébrons la diversité de la Suisse du Jass. L'équipe à domicile détermine les règles — variantes d'atout, annonces, points cibles.",
+      "strichIntro": "Pour que les résultats soient comparables dans toute la Suisse, on compte les traits :",
       "strich1Title": "1 trait",
-      "strich1Desc": "Pour une Berge ou un Matsch.",
+      "strich1Desc": "Montagne (Berg) ou Match.",
       "strich2Title": "2 traits",
-      "strich2Desc": "Pour une victoire, un Schneider ou un Kontermatsch.",
-      "strichConclusion": "Quelles que soient vos règles — à la fin, ce sont les traits qui comptent pour le classement national.",
+      "strich2Desc": "Victoire, Schneider ou Contre-match.",
+      "strichConclusion": "Quelles que soient les règles avec lesquelles vous jouez — à la fin, ce sont les traits qui comptent pour le classement national. Ainsi, nous préservons la tradition locale tout en permettant une compétition sportive.",
       "profileTitle": "Votre équipe écrit l'histoire",
-      "profileCopy": "Chaque équipe inscrite reçoit un profil public sur JassGuru — avec l'historique complet des parties, les résultats et l'évolution Elo. Vous faites partie du premier classement officiel de Jass de Suisse. Pour toujours."
+      "profileCopy": "Chaque équipe inscrite reçoit un profil public sur JassGuru — avec l'historique complet des parties et tous les résultats. Vous faites partie du premier classement officiel de Jass de Suisse."
     },
     "titles": {
-      "title": "Deux titres — un objectif",
-      "intro": "Que ce soit 10 ou 200 équipes — le mode s'adapte. En Saison 1, nous couronnons :",
-      "open": "Champion suisse",
+      "title": "Un championnat – deux titres",
+      "intro": "En Saison 1, nous couronnons les meilleurs du pays :",
+      "open": "🏆 Champion Suisse",
       "openSub": "Ouvert à toutes les équipes.",
-      "youth": "Champion suisse junior",
+      "youth": "🎖️ Champion Suisse Junior",
       "youthSub": "Pour les équipes jusqu'à 25 ans.",
-      "memberTitle": "Droit de participer",
-      "memberCopy": "L'adhésion à la FJS donne automatiquement le droit de participer au Championnat suisse. Il n'y a pas de frais d'inscription séparés pour la saison ou le classement.",
-      "ctaMember": "Devenir membre maintenant",
-      "ctaTeam": "Créer une équipe sur Jassmeister.ch"
-    },
-    "format": {
-      "title": "Le format",
-      "description": "Une équipe entière devient championne suisse. Pas un joueur individuel — mais une équipe. Comme au football. Comme au hockey.",
-      "howItWorks": "Comment ça marche ?",
-      "steps": [
-        "Au moins 10 parties dans son propre groupe (qualification décentralisée)",
-        "Défier d'autres équipes",
-        "Le classement Elo décide du tournoi final",
-        "Tournoi final : les meilleures équipes se rencontrent"
-      ],
-      "communityNote": "Le premier championnat suisse sera aussi grand que la communauté. Que ce soit 20 ou 200 équipes — nous adaptons le mode. La saison 1 aura lieu, quel que soit le nombre d'équipes inscrites."
-    },
-    "youth": {
-      "title": "Classement jeunesse",
-      "description": "Les équipes jeunes (jusqu'à 25 ans) participent au championnat régulier et reçoivent un classement séparé.",
-      "championTitle": "Champion suisse",
-      "championSubtitle": "Toutes catégories d'âge",
-      "youthChampionTitle": "Champion suisse junior",
-      "youthChampionSubtitle": "Jusqu'à 25 ans"
-    },
-    "register": {
-      "title": "Inscrire votre équipe",
-      "description": "L'inscription se fait via Jassmeister. Vous avez besoin d'une adhésion.",
-      "ctaJassmeister": "S'inscrire sur Jassmeister",
-      "ctaMember": "Devenir membre"
+      "memberTitle": "Droit de jeu",
+      "memberCopy": "L'adhésion à la FJS donne automatiquement le droit de participer au Championnat Suisse. Il n'y a pas de frais d'inscription séparés pour la saison ou le classement.",
+      "ctaMember": "S'assurer le droit de départ maintenant"
     }
   },
   "mission": {
