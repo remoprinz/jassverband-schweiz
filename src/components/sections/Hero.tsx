@@ -408,11 +408,11 @@ export function Hero({
       {/* ── TEXTE – direkt im section als absolute, kein Wrapper ─────── */}
 
       {/* ── MOBILE FLOW LAYOUT (nur wenn mobileFlow=true, versteckt auf ≥md) ── */}
-      {/* Enthält nur die H1 – Subtitle läuft über den Standard-Subtitle-Div (absolut) */}
+      {/* Enthält H1 + Subtitle im Flow, damit Subtitle zwischen Titel und Teaser steht */}
       {mobileFlow && (
         <motion.div
           className="absolute z-20 left-0 right-0 md:hidden flex flex-col items-center"
-          style={{ top: 'var(--hero-title-top)' }}
+          style={{ top: 'var(--hero-title-top)', gap: '16px' }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
@@ -454,6 +454,21 @@ export function Hero({
               </span>
             )}
           </h1>
+          <p
+            style={{
+              textAlign: 'center',
+              width: '85%',
+              maxWidth: '300px',
+              fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
+              fontWeight: 400,
+              fontSize: '15px',
+              lineHeight: 1.35,
+              color: 'rgba(255,255,255,0.92)',
+              textShadow: '0 1px 8px rgba(0,0,0,0.2)',
+            }}
+          >
+            {subtitle}
+          </p>
         </motion.div>
       )}
 
@@ -525,9 +540,9 @@ export function Hero({
         </h1>
       </motion.div>
 
-      {/* SUBTITLE – immer absolut bei var(--hero-subtitle-top), identisch mit Home */}
+      {/* SUBTITLE – absolut positioniert, nur auf Desktop oder wenn nicht mobileFlow */}
       <motion.div
-        className="absolute z-20 left-0 right-0 flex justify-center"
+        className={`absolute z-20 left-0 right-0 flex justify-center${mobileFlow ? ' hidden md:flex' : ''}`}
         style={{ top: 'var(--hero-subtitle-top)' }}
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
