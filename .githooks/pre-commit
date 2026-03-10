@@ -1,0 +1,19 @@
+#!/bin/sh
+#
+# Pre-commit hook: block files larger than 2 MB
+#
+MAX_SIZE=2097152  # 2 MB in bytes
+
+status=0
+against=$(git rev-parse --verify HEAD 2>/dev/null || echo "4b825dc642cb6eb9a060e54bf899d15363da7e23")
+
+git diff --cached --name-only --diff-filter=ACM "$against" | while read -r file; do
+    if [ -f "$file" ]; then
+        size=$(wc -c < "$file" | tr -d ' ')
+        if [ "$size" -gt "$MAX_SIZE" ]; then
+            echo "ERROR: $file is $(( size / 1048576 )) MB – too large for git (max 2 MB)"
+            echo "       Use cloud storage (Vercel Blob, R2) for large files."
+            exit 1
+        fi
+    fi
+done

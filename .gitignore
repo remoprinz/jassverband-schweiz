@@ -50,3 +50,24 @@ public/assets/local-only/
 # print output (large PDFs & generated files)
 print/output/
 print/signatures/
+
+# large binary files – NEVER commit videos or large media
+*.mp4
+*.mov
+*.avi
+*.webm
+*.mkv
+*.zip
+*.tar.gz
+*.rar
+
+# large asset directories
+public/assets/videos/
+src/assets/videos/
+src/assets/brochure/
+
+# PDFs and documents (use cloud storage, not git)
+*.pdf
+Statuten/
+public/documents/
+Einreichungen\ Fördergelder/
