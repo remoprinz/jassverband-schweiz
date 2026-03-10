@@ -65,42 +65,54 @@
     }
 
     /* ═══════════════════════════════════════════════
-       COVER
+       COVER — identisch mit broschuere-jvs.html
        ═══════════════════════════════════════════════ */
     #page-cover {
       background: #003810;
     }
     .cover-felt {
       position: absolute;
-      top: 0; left: 0; right: 0;
+      top: 0;
+      left: 0;
+      right: 0;
       height: 153.5mm;
       background: url('../public/images/backgrounds/felt-figma.png') center/cover no-repeat;
     }
     .cover-felt::after {
       content: '';
       position: absolute;
-      left: 0; right: 0; bottom: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
       height: 5mm;
       background: linear-gradient(to top, rgba(0,0,0,0.42), rgba(0,0,0,0));
       pointer-events: none;
     }
     .cover-wood {
       position: absolute;
-      top: 153mm; left: 0; right: 0;
+      top: 153mm;
+      left: 0;
+      right: 0;
       height: 47.5mm;
       background: url('../public/images/backgrounds/holztisch.jpg') center 40%/140% auto no-repeat;
       filter: brightness(0.75) contrast(1.1);
     }
     .cover-white {
       position: absolute;
-      top: 200mm; left: 0; right: 0; bottom: 0;
+      top: 200mm;
+      left: 0;
+      right: 0;
+      bottom: 0;
       background: #ffffff;
     }
 
+    /* Logo-Badge — identisch mit Broschüre */
     .logo-top-right-badge {
       position: absolute;
-      top: 0; right: 12mm;
-      width: 65mm; height: 28mm;
+      top: 0;
+      right: 12mm;
+      width: 65mm;
+      height: 28mm;
       background: #ffffff;
       border-radius: 0 0 3mm 3mm;
       display: flex;
@@ -115,9 +127,11 @@
       display: block;
     }
 
+    /* Headline / Subline — Statuten-Grösse */
     .cover-headline {
       position: absolute;
-      top: 85mm; left: 25mm;
+      top: 90mm;
+      left: 25mm;
       color: #ffffff;
       font-family: 'Capita', Georgia, serif;
       font-weight: 700;
@@ -126,41 +140,48 @@
     }
     .cover-subline {
       position: absolute;
-      top: 122mm; left: 25mm;
+      top: 126mm;
+      left: 25mm;
       color: #ffffff;
       font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
       font-weight: 700;
       font-size: 15pt;
       line-height: 1.3;
+      max-width: 160mm;
     }
-    .cover-card-1 {
+
+    /* Karten — identisch mit Broschüre */
+    .cover-card-rosen-ass {
       position: absolute;
-      top: 92mm; right: 14mm;
+      top: 92mm;
+      right: 14mm;
       width: 43mm;
       transform: rotate(14deg);
       z-index: 6;
       filter: drop-shadow(2px 4px 8px rgba(0,0,0,0.3));
     }
-    .cover-card-2 {
+    .cover-card-karo-under {
       position: absolute;
-      top: 154mm; right: 29mm;
+      top: 154mm;
+      right: 29mm;
       width: 48mm;
       transform: rotate(-11deg);
       z-index: 7;
       filter: drop-shadow(2px 4px 8px rgba(0,0,0,0.3));
     }
 
-    .cover-footer {
+    /* Footer — identisch mit Broschüre */
+    .page-footer {
       position: absolute;
       bottom: 10mm;
-      left: 25mm; right: 25mm;
+      left: 25mm;
+      right: 10mm;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
       font-size: 9pt;
       font-weight: 400;
-      color: #1a1a1a;
+      color: #000;
     }
 
     /* ═══════════════════════════════════════════════
@@ -394,10 +415,10 @@
     <div class="cover-headline">Statuten</div>
     <div class="cover-subline">Jassverband Schweiz (JVS)</div>
 
-    <img class="cover-card-1" src="../public/cards/de/RA.png" alt="">
-    <img class="cover-card-2" src="../public/cards/fr/LU.png" alt="">
+    <img class="cover-card-rosen-ass" src="../public/cards/de/RA.png" alt="Rosen-Ass">
+    <img class="cover-card-karo-under" src="../public/cards/fr/LU.png" alt="Karo-Under">
 
-    <div class="cover-footer">
+    <div class="page-footer">
       <span>www.jassverband.ch</span>
       <span>Genehmigt am 15. Januar 2026</span>
     </div>
