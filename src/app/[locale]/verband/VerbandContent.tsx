@@ -393,6 +393,7 @@ export function VerbandContent({
 
             <a
               href="/documents/statuten-jvs.pdf"
+              download="Statuten-Jassverband-Schweiz.pdf"
               className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-white text-[#1e2d1e] rounded-full font-bold text-base shadow-lg hover:shadow-xl hover:bg-white/95 transition-all duration-200 hover:-translate-y-0.5"
             >
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
