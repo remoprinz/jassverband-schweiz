@@ -111,9 +111,11 @@ export function Header({ locale, nav, isHeroPage }: HeaderProps) {
 
   const isCompactMode = isMobileViewport && isMobileCompact && !mobileMenuOpen;
   const isKontaktPage = pathname === `/${locale}/kontakt` || pathname === `/${locale}/kontakt/`;
-  const useHeroHeaderStyle = isHeroPage && !isKontaktPage;
+  const isNewsPage = pathname === `/${locale}/news` || pathname === `/${locale}/news/` || pathname.startsWith(`/${locale}/news/`);
+  const useHeroHeaderStyle = isHeroPage && !isKontaktPage && !isNewsPage;
   const showTransparent = useHeroHeaderStyle && !scrolled;
   const logoVariant = showTransparent ? 'white' : 'color';
+  const forceScrolledStyle = isNewsPage || isKontaktPage;
 
   return (
     <header
@@ -132,7 +134,7 @@ export function Header({ locale, nav, isHeroPage }: HeaderProps) {
                 boxShadow: '0 4px 24px rgba(0,0,0,0.10)',
                 backdropFilter: 'blur(12px)',
               }
-            : scrolled
+            : scrolled || forceScrolledStyle
             ? {
                 top: '12px',
                 right: '12px',
@@ -158,7 +160,7 @@ export function Header({ locale, nav, isHeroPage }: HeaderProps) {
                 background: 'rgba(255,255,255,0.98)',
                 boxShadow: '0 1px 8px rgba(0,0,0,0.08)',
               }
-          : scrolled
+          : scrolled || forceScrolledStyle
           ? {
               top: '12px',
               left: '140px',
@@ -184,17 +186,17 @@ export function Header({ locale, nav, isHeroPage }: HeaderProps) {
             }
       }
     >
-      <div suppressHydrationWarning className={isCompactMode ? 'px-0' : scrolled ? 'px-6' : 'container-main'}>
+      <div suppressHydrationWarning className={isCompactMode ? 'px-0' : (scrolled || forceScrolledStyle) ? 'px-6' : 'container-main'}>
         <nav suppressHydrationWarning className={`flex items-center transition-all duration-500 ${
           isCompactMode
             ? 'justify-end h-14 px-1'
-            : scrolled
+            : (scrolled || forceScrolledStyle)
             ? 'justify-between h-[72px] md:h-[76px]'
             : 'justify-between h-20 md:h-24'
         }`}>
           {!isCompactMode && (
             <Link href={`/${locale}`} className="flex items-center">
-              <Logo variant={logoVariant} shrunk={scrolled} />
+              <Logo variant={logoVariant} shrunk={scrolled || forceScrolledStyle} />
             </Link>
           )}
 

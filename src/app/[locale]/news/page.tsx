@@ -539,7 +539,7 @@ export default async function NewsPage({ params }: NewsPageProps) {
 
       <div
         className="section-spacing"
-        style={{ background: "var(--color-cream)" }}
+        style={{ background: "var(--color-cream)", paddingTop: "120px" }}
       >
         <div className="container-main">
           {/* Page Header */}
