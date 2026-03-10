@@ -461,7 +461,7 @@ export function Hero({
               maxWidth: '300px',
               fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
               fontWeight: 400,
-              fontSize: '15px',
+              fontSize: 'var(--hero-subtitle-size)',
               lineHeight: 1.35,
               color: 'rgba(255,255,255,0.92)',
               textShadow: '0 1px 8px rgba(0,0,0,0.2)',
