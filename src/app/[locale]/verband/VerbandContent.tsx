@@ -2,6 +2,11 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { FaPeopleArrows } from 'react-icons/fa';
+import { FaTrophy } from 'react-icons/fa6';
+import { CgSwiss } from 'react-icons/cg';
+import { HiAcademicCap } from 'react-icons/hi2';
+import { TbBarrierBlockOff, TbMoodKid } from 'react-icons/tb';
 
 interface VisionData {
   title: string;
@@ -32,7 +37,6 @@ interface VerbandContentProps {
   statutenTitle: string;
   statutenDownload: string;
   statutenDescription: string;
-  statutenBrochureLink: string;
   vision: VisionData;
   missionsTitle: string;
   missions: MissionData[];
@@ -40,12 +44,12 @@ interface VerbandContentProps {
 }
 
 const missionIcons = [
-  <svg key="trophy" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-7 h-7"><path d="M8 21h8m-4-4v4m-4.5-8a7.5 7.5 0 1115 0H7.5z" /><path d="M5 3h14l-1.5 8.5a5.5 5.5 0 01-11 0L5 3z" /></svg>,
-  <svg key="network" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-7 h-7"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" /></svg>,
-  <svg key="youth" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-7 h-7"><path d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422A12.083 12.083 0 0124 21H0a12.083 12.083 0 015.84-10.422L12 14z" /><path d="M12 14v7" /></svg>,
-  <svg key="access" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-7 h-7"><path d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>,
-  <svg key="digital" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-7 h-7"><path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>,
-  <svg key="culture" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-7 h-7"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>,
+  <FaTrophy key="trophy" className="w-7 h-7" />,
+  <FaPeopleArrows key="people-arrows" className="w-7 h-7" />,
+  <TbMoodKid key="mood-kid" className="w-7 h-7" />,
+  <TbBarrierBlockOff key="barrier-off" className="w-7 h-7" />,
+  <HiAcademicCap key="academic-cap" className="w-7 h-7" />,
+  <CgSwiss key="swiss" className="w-7 h-7" />,
 ];
 
 export function VerbandContent({
@@ -54,7 +58,6 @@ export function VerbandContent({
   statutenTitle,
   statutenDownload,
   statutenDescription,
-  statutenBrochureLink,
   vision,
   missionsTitle,
   missions,
@@ -171,7 +174,7 @@ export function VerbandContent({
                 transition={{ duration: 0.45, delay: index * 0.06 }}
                 whileHover={{ boxShadow: 'var(--shadow-card-hover)', y: -2 }}
               >
-                <div className="flex items-start gap-4 mb-4">
+                <div className="flex items-center gap-4 mb-4">
                   <div
                     className="shrink-0 w-12 h-12 rounded-xl flex items-center justify-center"
                     style={{ backgroundColor: 'var(--color-cream)', color: 'var(--color-foreground)' }}
@@ -179,7 +182,6 @@ export function VerbandContent({
                     {missionIcons[index]}
                   </div>
                   <h3
-                    className="pt-2"
                     style={{
                       fontFamily: 'var(--font-capita), Capita, Georgia, serif',
                       fontWeight: 700,
@@ -194,7 +196,7 @@ export function VerbandContent({
                 </div>
 
                 <p
-                  className="mb-3 font-medium"
+                  className="font-medium"
                   style={{
                     fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
                     fontSize: 'var(--font-size-16)',
@@ -206,7 +208,7 @@ export function VerbandContent({
                 </p>
 
                 <p
-                  className="text-[var(--color-foreground-muted)] mt-auto"
+                  className="text-[var(--color-foreground-muted)] mt-4"
                   style={{
                     fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
                     fontSize: 'var(--font-size-15)',
@@ -268,14 +270,14 @@ export function VerbandContent({
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <div
-                  className="relative w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden"
+                  className="relative w-30 h-30 mx-auto mb-6 rounded-full overflow-hidden"
                   style={{ backgroundColor: 'var(--color-cream)' }}
                 >
                   <Image
                     src={member.image}
                     alt={`Portrait von ${member.name}`}
                     fill
-                    sizes="160px"
+                    sizes="120px"
                     className="object-contain p-1"
                     style={{
                       transform: `translateY(${member.imageOffsetY}px) scale(${member.imageScale})`,
@@ -389,32 +391,15 @@ export function VerbandContent({
               {statutenDescription}
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center gap-4">
-              <a
-                href="/documents/statuten-jvs.pdf"
-                className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-white text-[#1e2d1e] rounded-full font-bold text-base shadow-lg hover:shadow-xl hover:bg-white/95 transition-all duration-200 hover:-translate-y-0.5"
-              >
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
-                {statutenDownload}
-              </a>
-              <a
-                href="/documents/broschuere-jvs.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors duration-200"
-                style={{
-                  fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
-                  fontSize: 'var(--font-size-15)',
-                }}
-              >
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-                {statutenBrochureLink}
-              </a>
-            </div>
+            <a
+              href="/documents/statuten-jvs.pdf"
+              className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-white text-[#1e2d1e] rounded-full font-bold text-base shadow-lg hover:shadow-xl hover:bg-white/95 transition-all duration-200 hover:-translate-y-0.5"
+            >
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              {statutenDownload}
+            </a>
           </motion.div>
         </div>
       </section>
