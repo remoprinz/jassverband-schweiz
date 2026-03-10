@@ -148,7 +148,6 @@ export default async function SchweizermeisterschaftPage({ params }: Props) {
         memberTitle={t('schweizermeisterschaft.titles.memberTitle')}
         memberCopy={t('schweizermeisterschaft.titles.memberCopy')}
         ctaMember={t('schweizermeisterschaft.titles.ctaMember')}
-        ctaTeam={t('schweizermeisterschaft.titles.ctaTeam')}
         locale={locale}
         altFelt={t('schweizermeisterschaft.altFelt')}
         altChalkboard={t('schweizermeisterschaft.altChalkboard')}

@@ -30,15 +30,22 @@ export function Schweizermeisterschaft({
           className="object-cover"
           quality={85}
         />
-        <div className="absolute inset-0 bg-black/30" />
-        <Image
-          src="/images/decorations/kranz.png"
-          alt=""
-          fill
-          aria-hidden
-          className="object-cover opacity-60 mix-blend-screen pointer-events-none"
-          quality={90}
-        />
+        <div className="absolute inset-0 bg-black/0" />
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <Image
+            src="/images/decorations/kranz.png"
+            alt=""
+            aria-hidden
+            width={636}
+            height={600}
+            className="w-[82vw] md:w-[54vw] max-w-[744px] h-auto object-contain -translate-y-[18%] md:translate-y-0"
+            style={{
+              filter: 'brightness(0) invert(1)',
+              opacity: 0.22,
+            }}
+            quality={90}
+          />
+        </div>
       </div>
 
       <div className="container-main relative z-10">
@@ -75,7 +82,20 @@ export function Schweizermeisterschaft({
               textShadow: '0 2px 20px rgba(0,0,0,0.3)',
             }}
           >
-            {title}
+            {locale === 'de' ? (
+              <>
+                <span className="md:hidden">
+                  Die Schweizer-
+                  <br />
+                  Meisterschaft im
+                  <br />
+                  Team-Schieber.
+                </span>
+                <span className="hidden md:inline">{title}</span>
+              </>
+            ) : (
+              title
+            )}
           </h2>
 
           <p

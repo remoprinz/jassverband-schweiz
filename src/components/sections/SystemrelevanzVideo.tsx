@@ -147,7 +147,7 @@ export function SystemrelevanzVideo({
   const showPoster = !hasStarted;
 
   return (
-    <section className="relative bg-black py-20 md:py-24 overflow-hidden">
+    <section id="video" className="relative bg-black py-20 md:py-24 overflow-hidden">
       <div className="container-main">
         {/* FIX 2: EINZIGER TITEL - Capita wie andere Sections */}
         <SafeAnimateOnScroll className="text-center mb-12 md:mb-16">

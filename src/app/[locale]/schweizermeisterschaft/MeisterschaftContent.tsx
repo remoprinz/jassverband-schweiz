@@ -38,7 +38,6 @@ interface MeisterschaftContentProps {
   memberTitle: string;
   memberCopy: string;
   ctaMember: string;
-  ctaTeam: string;
   locale: string;
   altFelt: string;
   altChalkboard: string;
@@ -79,7 +78,6 @@ export function MeisterschaftContent({
   memberTitle,
   memberCopy,
   ctaMember,
-  ctaTeam,
   locale,
   altFelt,
   altChalkboard,
@@ -261,7 +259,7 @@ export function MeisterschaftContent({
             className="object-cover"
             quality={85}
           />
-          <div className="absolute inset-0 bg-black/50" />
+          <div className="absolute inset-0 bg-black/0" />
         </div>
 
         <div className="container-main relative z-10">
@@ -561,8 +559,8 @@ export function MeisterschaftContent({
               </p>
             </div>
 
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            {/* CTA */}
+            <div className="flex justify-center">
               <a
                 href={`/${locale}/mitmachen`}
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-bold text-white shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-0.5"
@@ -573,23 +571,8 @@ export function MeisterschaftContent({
                 }}
               >
                 {ctaMember}
-              </a>
-              <a
-                href="https://jassmeister.web.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-bold transition-all duration-200 hover:-translate-y-0.5"
-                style={{
-                  backgroundColor: 'rgba(255,255,255,0.12)',
-                  border: '1px solid rgba(255,255,255,0.3)',
-                  fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
-                  fontSize: 'var(--font-size-17)',
-                  color: '#fff',
-                }}
-              >
-                {ctaTeam}
-                <svg className="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </a>
             </div>

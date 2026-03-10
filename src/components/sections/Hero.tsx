@@ -369,13 +369,12 @@ export function Hero({
       {/* ── KRANZ – dekorativ hinter dem Text ──────────────────────── */}
       {wreath && (
         <motion.div
-          className="absolute pointer-events-none"
+          className="absolute pointer-events-none w-[78vw] md:w-[54vw] max-w-[744px]"
           style={{
             zIndex: 15,
             left: '50%',
             top: '43%',
             transform: 'translate(-50%, -50%)',
-            width: 'clamp(220px, 45vw, 620px)',
           }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
