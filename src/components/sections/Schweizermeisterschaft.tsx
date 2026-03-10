@@ -9,6 +9,7 @@ interface SchweizermeisterschaftProps {
   copy: string;
   jugend: string;
   cta: string;
+  locale: string;
 }
 
 export function Schweizermeisterschaft({
@@ -17,6 +18,7 @@ export function Schweizermeisterschaft({
   copy,
   jugend,
   cta,
+  locale,
 }: SchweizermeisterschaftProps) {
   return (
     <section className="relative py-20 md:py-24 overflow-hidden">
@@ -29,6 +31,14 @@ export function Schweizermeisterschaft({
           quality={85}
         />
         <div className="absolute inset-0 bg-black/30" />
+        <Image
+          src="/images/decorations/kranz.png"
+          alt=""
+          fill
+          aria-hidden
+          className="object-cover opacity-60 mix-blend-screen pointer-events-none"
+          quality={90}
+        />
       </div>
 
       <div className="container-main relative z-10">
@@ -107,7 +117,7 @@ export function Schweizermeisterschaft({
           </p>
 
           <a
-            href="/schweizermeisterschaft"
+            href={`/${locale}/schweizermeisterschaft`}
             className="btn-primary inline-flex items-center gap-2"
           >
             {cta}

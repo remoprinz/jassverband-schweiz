@@ -31,14 +31,14 @@
   },
   "schweizermeisterschaft": {
     "hero": {
-      "title": "Die Schweizer-\nmeisterschaft\nim Team-Jass.",
+      "title": "Die Schweizer-\nmeisterschaft\nim Team-Schieber.",
       "subtitle": "Saison 1 startet 2026 — mach mit und schreibe Jass-Geschichte.",
       "cta": "Lizenz buchen"
     },
     "team": {
       "title": "Gemeinsam auf den Thron",
-      "copy1": "Als Einheit antreten, als Einheit siegen. Wie im Fussball, wie im Hockey — jetzt auch beim Schieber-Jass.",
-      "copy2": "Jass-Turniere kennt die Schweiz viele — doch fast immer gewinnt am Ende ein Einzelner. Der JVS etabliert ein neues Format: Nicht der Einzelspieler gewinnt, sondern das ganze Jass-Team."
+      "copy1": "Als Einheit antreten, als Einheit siegen.",
+      "copy2": "Jass-Turniere kennt die Schweiz viele — doch fast immer gewinnt am Ende ein Einzelner. Der JVS etabliert ein neues Format: Nicht der Einzelspieler gewinnt, sondern das ganze Schieber-Team. Wie im Fussball, wie im Hockey."
     },
     "how": {
       "title": "Die Schweiz ist euer Spielfeld",
@@ -83,8 +83,16 @@
       "youthSub": "Für Teams bis 25 Jahre.",
       "memberTitle": "Spielberechtigung",
       "memberCopy": "Die JVS-Mitgliedschaft berechtigt automatisch zur Teilnahme an der Schweizermeisterschaft. Es gibt kein separates Startgeld für die Saison oder das Ranking.",
-      "ctaMember": "Jetzt Startberechtigung sichern"
-    }
+      "ctaMember": "Jetzt Startberechtigung sichern",
+      "ctaTeam": "Zum Modus auf Jassmeister.ch"
+    },
+    "title": "Die Schweizermeisterschaft im Team-Schieber.",
+    "subtitle": "Als Einheit antreten, als Einheit siegen. Wie im Fussball, wie im Hockey.",
+    "copy": "Nicht der Einzelspieler gewinnt, sondern das ganze Schieber-Team. Saison 1 startet 2026.",
+    "jugend": "Jugendteams bis 25 Jahre spielen mit und erhalten eine separate Wertung.",
+    "cta": "Zur Schweizermeisterschaft",
+    "altFelt": "Jassteppich Hintergrund",
+    "altChalkboard": "Kreidetafel Hintergrund"
   },
   "mission": {
     "title": "Unsere Mission",

@@ -83,23 +83,58 @@
       "youthSub": "Pour les équipes jusqu'à 25 ans.",
       "memberTitle": "Droit de jeu",
       "memberCopy": "L'adhésion à la FJS donne automatiquement le droit de participer au Championnat Suisse. Il n'y a pas de frais d'inscription séparés pour la saison ou le classement.",
-      "ctaMember": "S'assurer le droit de départ maintenant"
-    }
+      "ctaMember": "S'assurer le droit de départ maintenant",
+      "ctaTeam": "Vers le mode sur Jassmeister.ch"
+    },
+    "title": "Le Championnat Suisse de Schieber en équipe.",
+    "subtitle": "S'aligner comme une unité, gagner comme une unité. Comme au football, comme au hockey.",
+    "copy": "Ce n'est pas le joueur individuel qui gagne, mais toute l'équipe de Schieber. La saison 1 commence en 2026.",
+    "jugend": "Les équipes jusqu'à 25 ans participent aussi avec un classement séparé.",
+    "cta": "Vers le championnat suisse",
+    "altFelt": "Fond en feutre vert",
+    "altChalkboard": "Fond tableau noir"
   },
   "mission": {
     "title": "Notre mission",
     "items": [
-      { "title": "Connecter les joueurs", "mission": "Nous réunissons les joueurs — du bistrot au championnat. Régional, national, digital." },
-      { "title": "Mesurer le niveau", "mission": "Grâce à la saisie numérique, des profils de Jass personnels naissent pour la première fois. Statistiques, progression et un système Elo national rendent visible ce qui était jusqu'ici caché." },
-      { "title": "Promouvoir le Jass", "mission": "Nous fournissons l'infrastructure pour que le Jass grandisse — de la salle de classe au bistrot, des règles au championnat." }
+      {
+        "title": "Connecter les joueurs",
+        "mission": "Nous réunissons les joueurs — du bistrot au championnat. Régional, national, digital."
+      },
+      {
+        "title": "Mesurer le niveau",
+        "mission": "Grâce à la saisie numérique, des profils de Jass personnels naissent pour la première fois. Statistiques, progression et un système Elo national rendent visible ce qui était jusqu'ici caché."
+      },
+      {
+        "title": "Promouvoir le Jass",
+        "mission": "Nous fournissons l'infrastructure pour que le Jass grandisse — de la salle de classe au bistrot, des règles au championnat."
+      }
     ],
     "allItems": [
-      { "title": "Établir des championnats", "mission": "Nous faisons du Jass un sport de compétition officiel avec des structures claires, des classements et des championnats nationaux." },
-      { "title": "Connecter les joueurs", "mission": "Nous ramenons les joueurs de Jass – surtout à l'ère numérique – consciemment vers la table physique." },
-      { "title": "Promouvoir la relève", "mission": "Nous passionnons la prochaine génération pour le Jass et l'ancrons durablement dans le système éducatif." },
-      { "title": "Réduire les obstacles", "mission": "Nous abaissons les barrières à l'entrée et rendons le Jass accessible à tous – quel que soit le niveau." },
-      { "title": "Moderniser la tradition", "mission": "Nous amenons le Jass à l'ère numérique et assurons sa pertinence pour les générations à venir." },
-      { "title": "Façonner la culture", "mission": "Nous entretenons et développons le Jass comme patrimoine culturel vivant qui relie les gens par-delà toutes les frontières sociales." }
+      {
+        "title": "Établir des championnats",
+        "mission": "Nous faisons du Jass un sport de compétition officiel avec des structures claires, des classements et des championnats nationaux."
+      },
+      {
+        "title": "Connecter les joueurs",
+        "mission": "Nous ramenons les joueurs de Jass – surtout à l'ère numérique – consciemment vers la table physique."
+      },
+      {
+        "title": "Promouvoir la relève",
+        "mission": "Nous passionnons la prochaine génération pour le Jass et l'ancrons durablement dans le système éducatif."
+      },
+      {
+        "title": "Réduire les obstacles",
+        "mission": "Nous abaissons les barrières à l'entrée et rendons le Jass accessible à tous – quel que soit le niveau."
+      },
+      {
+        "title": "Moderniser la tradition",
+        "mission": "Nous amenons le Jass à l'ère numérique et assurons sa pertinence pour les générations à venir."
+      },
+      {
+        "title": "Façonner la culture",
+        "mission": "Nous entretenons et développons le Jass comme patrimoine culturel vivant qui relie les gens par-delà toutes les frontières sociales."
+      }
     ],
     "cta": "Vers la charte"
   },
@@ -197,12 +232,36 @@
     "visionText": "La Fédération Suisse de Jass s'engage activement à connecter les joueuses et joueurs de Jass dans toute la Suisse, à rendre visibles de nouvelles tables et à faciliter l'accès au jeu en commun.",
     "missionsTitle": "Nos missions",
     "missions": [
-      { "title": "Établir des championnats", "mission": "Nous faisons du Jass un sport de compétition officiel avec des structures claires, des classements et des championnats nationaux.", "kernidee": "Nous faisons du Jass un sport de compétition officiel avec des structures claires, des classements et des championnats nationaux." },
-      { "title": "Connecter les joueurs", "mission": "Nous ramenons les joueurs de Jass – surtout à l'ère numérique – consciemment vers la table physique.", "kernidee": "Nous ramenons les joueurs de Jass – surtout à l'ère numérique – consciemment vers la table physique." },
-      { "title": "Promouvoir la relève", "mission": "Nous passionnons la prochaine génération pour le Jass et l'ancrons durablement dans le système éducatif.", "kernidee": "Nous passionnons la prochaine génération pour le Jass et l'ancrons durablement dans le système éducatif." },
-      { "title": "Réduire les obstacles", "mission": "Nous abaissons les barrières à l'entrée et rendons le Jass accessible à tous – quel que soit le niveau.", "kernidee": "Nous abaissons les barrières à l'entrée et rendons le Jass accessible à tous – quel que soit le niveau." },
-      { "title": "Moderniser la tradition", "mission": "Nous amenons le Jass à l'ère numérique et assurons sa pertinence pour les générations à venir.", "kernidee": "Nous amenons le Jass à l'ère numérique et assurons sa pertinence pour les générations à venir." },
-      { "title": "Façonner la culture", "mission": "Nous entretenons et développons le Jass comme patrimoine culturel vivant qui relie les gens par-delà toutes les frontières sociales.", "kernidee": "Nous entretenons et développons le Jass comme patrimoine culturel vivant qui relie les gens par-delà toutes les frontières sociales." }
+      {
+        "title": "Établir des championnats",
+        "mission": "Nous faisons du Jass un sport de compétition officiel avec des structures claires, des classements et des championnats nationaux.",
+        "kernidee": "Nous faisons du Jass un sport de compétition officiel avec des structures claires, des classements et des championnats nationaux."
+      },
+      {
+        "title": "Connecter les joueurs",
+        "mission": "Nous ramenons les joueurs de Jass – surtout à l'ère numérique – consciemment vers la table physique.",
+        "kernidee": "Nous ramenons les joueurs de Jass – surtout à l'ère numérique – consciemment vers la table physique."
+      },
+      {
+        "title": "Promouvoir la relève",
+        "mission": "Nous passionnons la prochaine génération pour le Jass et l'ancrons durablement dans le système éducatif.",
+        "kernidee": "Nous passionnons la prochaine génération pour le Jass et l'ancrons durablement dans le système éducatif."
+      },
+      {
+        "title": "Réduire les obstacles",
+        "mission": "Nous abaissons les barrières à l'entrée et rendons le Jass accessible à tous – quel que soit le niveau.",
+        "kernidee": "Nous abaissons les barrières à l'entrée et rendons le Jass accessible à tous – quel que soit le niveau."
+      },
+      {
+        "title": "Moderniser la tradition",
+        "mission": "Nous amenons le Jass à l'ère numérique et assurons sa pertinence pour les générations à venir.",
+        "kernidee": "Nous amenons le Jass à l'ère numérique et assurons sa pertinence pour les générations à venir."
+      },
+      {
+        "title": "Façonner la culture",
+        "mission": "Nous entretenons et développons le Jass comme patrimoine culturel vivant qui relie les gens par-delà toutes les frontières sociales.",
+        "kernidee": "Nous entretenons et développons le Jass comme patrimoine culturel vivant qui relie les gens par-delà toutes les frontières sociales."
+      }
     ]
   },
   "verband": {
@@ -312,7 +371,11 @@
     "responsible": "Responsable du traitement",
     "dataCollection": "Collecte et traitement des données",
     "dataCollectionText": "Nous ne collectons des données personnelles que si vous nous les communiquez volontairement dans le cadre d'une demande de contact. Cela comprend :",
-    "dataItems": ["Nom", "Adresse e-mail", "Votre message"],
+    "dataItems": [
+      "Nom",
+      "Adresse e-mail",
+      "Votre message"
+    ],
     "purposeSection": "Finalité",
     "purposeText": "Les données transmises sont utilisées exclusivement pour traiter votre demande et ne sont pas transmises à des tiers.",
     "cookies": "Cookies et suivi",

@@ -72,6 +72,7 @@ export default async function HomePage({ params }: HomePageProps) {
         copy={t("schweizermeisterschaft.copy")}
         jugend={t("schweizermeisterschaft.jugend")}
         cta={t("schweizermeisterschaft.cta")}
+        locale={locale}
       />
 
       {/* 4. Mission — Cream (3 Kacheln) */}
