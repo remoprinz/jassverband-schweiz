@@ -37,8 +37,8 @@
     },
     "team": {
       "title": "Gemeinsam auf den Thron",
-      "copy1": "Jass-Turniere kennt die Schweiz viele — doch fast immer gewinnt am Ende ein Einzelner. Die Schweizermeisterschaft etabliert ein neues Format: Nicht der Einzelspieler gewinnt — sondern das Team.",
-      "copy2": "Als Einheit antreten, als Einheit siegen. Wie im Fussball. Wie im Hockey."
+      "copy1": "Als Einheit antreten, als Einheit siegen. Wie im Fussball, wie im Hockey — jetzt auch beim Schieber-Jass.",
+      "copy2": "Jass-Turniere kennt die Schweiz viele — doch fast immer gewinnt am Ende ein Einzelner. Der JVS etabliert ein neues Format: Nicht der Einzelspieler gewinnt, sondern das ganze Jass-Team."
     },
     "how": {
       "title": "Die Schweiz ist euer Spielfeld",
@@ -363,7 +363,11 @@
     "responsible": "Verantwortliche Stelle",
     "dataCollection": "Erhebung und Verarbeitung von Daten",
     "dataCollectionText": "Wir erheben personenbezogene Daten nur, wenn Sie uns diese im Rahmen einer Kontaktanfrage freiwillig mitteilen. Dies umfasst:",
-    "dataItems": ["Name", "E-Mail-Adresse", "Ihre Nachricht"],
+    "dataItems": [
+      "Name",
+      "E-Mail-Adresse",
+      "Ihre Nachricht"
+    ],
     "purposeSection": "Verwendungszweck",
     "purposeText": "Die von Ihnen übermittelten Daten werden ausschliesslich zur Bearbeitung Ihrer Anfrage verwendet und nicht an Dritte weitergegeben.",
     "cookies": "Cookies und Tracking",

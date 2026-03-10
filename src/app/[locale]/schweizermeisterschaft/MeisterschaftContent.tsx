@@ -128,24 +128,24 @@ export function MeisterschaftContent({
             </h2>
 
             <p
-              className="text-white/90 mb-5"
+              className="text-white mb-6"
               style={{
                 fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
-                fontSize: 'clamp(18px, 2.5vw, 22px)',
+                fontSize: 'clamp(24px, 3.4vw, 34px)',
                 fontWeight: 500,
-                lineHeight: 1.55,
+                lineHeight: 1.35,
               }}
             >
               {teamCopy1}
             </p>
 
             <p
-              className="text-white/90"
+              className="text-white/85"
               style={{
                 fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
-                fontSize: 'clamp(18px, 2.5vw, 22px)',
-                fontWeight: 500,
-                lineHeight: 1.55,
+                fontSize: 'clamp(16px, 2vw, 19px)',
+                fontWeight: 400,
+                lineHeight: 1.7,
               }}
             >
               {teamCopy2}
@@ -217,19 +217,6 @@ export function MeisterschaftContent({
                     {howIcons[index].el}
                   </div>
                   <div className="flex-1 pt-1">
-                    <span
-                      className="block mb-0.5"
-                      style={{
-                        fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
-                        fontSize: '11px',
-                        fontWeight: 700,
-                        letterSpacing: '0.08em',
-                        color: 'var(--color-primary)',
-                        textTransform: 'uppercase',
-                      }}
-                    >
-                      Schritt {index + 1}
-                    </span>
                     <h3
                       style={{
                         fontFamily: 'var(--font-capita), Capita, Georgia, serif',
