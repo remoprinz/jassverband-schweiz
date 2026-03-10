@@ -1,0 +1,28 @@
+.git
+.github
+.cursor
+
+# Local dependencies and build output
+node_modules
+.next
+out
+build
+coverage
+
+# Local environment and logs
+.env*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Print pipeline (not needed for runtime)
+print/
+
+# Local-only large assets/tooling artifacts
+src/assets/cards/JVS KA Karten Tools 2602/
+src/assets/videos/
+public/assets/videos/berset_jvs_org.mp4
+
+# OS/editor noise
+.DS_Store
+*.tsbuildinfo

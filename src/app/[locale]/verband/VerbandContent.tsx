@@ -37,7 +37,6 @@ interface VerbandContentProps {
   statutenTitle: string;
   statutenDownload: string;
   statutenDescription: string;
-  statutenBrochureLink?: string;
   vision: VisionData;
   missionsTitle: string;
   missions: MissionData[];
@@ -59,7 +58,6 @@ export function VerbandContent({
   statutenTitle,
   statutenDownload,
   statutenDescription,
-  statutenBrochureLink = '/documents/statuten-jvs.pdf',
   vision,
   missionsTitle,
   missions,
@@ -272,14 +270,14 @@ export function VerbandContent({
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <div
-                  className="relative w-30 h-30 mx-auto mb-6 rounded-full overflow-hidden"
+                  className="relative w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden"
                   style={{ backgroundColor: 'var(--color-cream)' }}
                 >
                   <Image
                     src={member.image}
                     alt={`Portrait von ${member.name}`}
                     fill
-                    sizes="120px"
+                    sizes="128px"
                     className="object-contain p-1"
                     style={{
                       transform: `translateY(${member.imageOffsetY}px) scale(${member.imageScale})`,
@@ -394,7 +392,7 @@ export function VerbandContent({
             </p>
 
             <a
-              href={statutenBrochureLink}
+              href="/documents/statuten-jvs.pdf"
               className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-white text-[#1e2d1e] rounded-full font-bold text-base shadow-lg hover:shadow-xl hover:bg-white/95 transition-all duration-200 hover:-translate-y-0.5"
             >
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

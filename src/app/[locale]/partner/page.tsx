@@ -1,8 +1,47 @@
+import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { SectionHeader, Button, Card } from "@/components/ui";
 
 interface PartnerPageProps {
   params: Promise<{ locale: string }>;
+}
+
+const BASE_URL = "https://jassverband.ch";
+
+export async function generateMetadata({ params }: PartnerPageProps): Promise<Metadata> {
+  const { locale } = await params;
+
+  const meta: Record<string, { title: string; description: string }> = {
+    de: {
+      title: "Partner werden | Jassverband Schweiz",
+      description: "Partner des Jassverbands Schweiz werden und die Jasskultur, Jugendförderung und digitale Innovation unterstützen.",
+    },
+    fr: {
+      title: "Devenir partenaire | Fédération Suisse de Jass",
+      description: "Devenez partenaire de la Fédération Suisse de Jass et soutenez la culture du Jass et la promotion de la jeunesse.",
+    },
+    it: {
+      title: "Diventare partner | Federazione Svizzera di Jass",
+      description: "Diventa partner della Federazione Svizzera di Jass e sostieni la cultura dello Jass e la promozione dei giovani.",
+    },
+  };
+
+  const current = meta[locale] ?? meta.de;
+
+  return {
+    title: current.title,
+    description: current.description,
+    alternates: {
+      canonical: `${BASE_URL}/${locale}/partner`,
+      languages: {
+        de: `${BASE_URL}/de/partner`,
+        fr: `${BASE_URL}/fr/partner`,
+        it: `${BASE_URL}/it/partner`,
+        "x-default": `${BASE_URL}/de/partner`,
+      },
+    },
+    robots: { index: true, follow: true },
+  };
 }
 
 const reasons = [

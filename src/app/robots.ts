@@ -6,9 +6,10 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/api/', '/_next/', '/static/'],
+        disallow: ['/api/'],
       },
     ],
+    host: 'https://jassverband.ch',
     sitemap: 'https://jassverband.ch/sitemap.xml',
   };
 }

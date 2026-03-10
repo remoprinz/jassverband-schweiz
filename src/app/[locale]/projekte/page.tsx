@@ -1,8 +1,47 @@
+import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { SectionHeader, ProjectCard } from "@/components/ui";
 
 interface ProjektePageProps {
   params: Promise<{ locale: string }>;
+}
+
+const BASE_URL = "https://jassverband.ch";
+
+export async function generateMetadata({ params }: ProjektePageProps): Promise<Metadata> {
+  const { locale } = await params;
+
+  const meta: Record<string, { title: string; description: string }> = {
+    de: {
+      title: "Projekte | Jassverband Schweiz",
+      description: "Alle Projekte des Jassverbands Schweiz: JassWiki, JassGuru und weitere digitale Initiativen rund um den Schweizer Jass.",
+    },
+    fr: {
+      title: "Projets | Fédération Suisse de Jass",
+      description: "Tous les projets de la Fédération Suisse de Jass: JassWiki, JassGuru et d'autres initiatives numériques.",
+    },
+    it: {
+      title: "Progetti | Federazione Svizzera di Jass",
+      description: "Tutti i progetti della Federazione Svizzera di Jass: JassWiki, JassGuru e altre iniziative digitali.",
+    },
+  };
+
+  const current = meta[locale] ?? meta.de;
+
+  return {
+    title: current.title,
+    description: current.description,
+    alternates: {
+      canonical: `${BASE_URL}/${locale}/projekte`,
+      languages: {
+        de: `${BASE_URL}/de/projekte`,
+        fr: `${BASE_URL}/fr/projekte`,
+        it: `${BASE_URL}/it/projekte`,
+        "x-default": `${BASE_URL}/de/projekte`,
+      },
+    },
+    robots: { index: true, follow: true },
+  };
 }
 
 const icons = {

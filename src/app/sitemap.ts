@@ -17,7 +17,6 @@ const staticPages: {
   { path: '/schweizermeisterschaft', priority: 0.9,  changeFreq: 'weekly',  lastModified: '2026-03-01' },
   { path: '/plattform',              priority: 0.9,  changeFreq: 'weekly',  lastModified: '2026-03-01' },
   { path: '/news',                   priority: 0.9,  changeFreq: 'weekly',  lastModified: '2026-03-01' },
-  { path: '/leitbild',               priority: 0.85, changeFreq: 'monthly', lastModified: '2026-02-01' },
   { path: '/verband',                priority: 0.8,  changeFreq: 'monthly', lastModified: '2026-02-01' },
   { path: '/projekte',               priority: 0.8,  changeFreq: 'monthly', lastModified: '2026-02-01' },
   { path: '/jasskalkulator',         priority: 0.75, changeFreq: 'monthly', lastModified: '2026-02-01' },

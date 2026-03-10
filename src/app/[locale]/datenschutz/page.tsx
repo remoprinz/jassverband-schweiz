@@ -1,8 +1,34 @@
+import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { SectionHeader } from "@/components/ui";
 
 interface DatenschutzPageProps {
   params: Promise<{ locale: string }>;
+}
+
+const BASE_URL = "https://jassverband.ch";
+
+export async function generateMetadata({ params }: DatenschutzPageProps): Promise<Metadata> {
+  const { locale } = await params;
+  const titleByLocale: Record<string, string> = {
+    de: "Datenschutz | Jassverband Schweiz",
+    fr: "Protection des données | Fédération Suisse de Jass",
+    it: "Protezione dei dati | Federazione Svizzera di Jass",
+  };
+
+  return {
+    title: titleByLocale[locale] ?? titleByLocale.de,
+    alternates: {
+      canonical: `${BASE_URL}/${locale}/datenschutz`,
+      languages: {
+        de: `${BASE_URL}/de/datenschutz`,
+        fr: `${BASE_URL}/fr/datenschutz`,
+        it: `${BASE_URL}/it/datenschutz`,
+        "x-default": `${BASE_URL}/de/datenschutz`,
+      },
+    },
+    robots: { index: true, follow: true },
+  };
 }
 
 export default async function DatenschutzPage({ params }: DatenschutzPageProps) {

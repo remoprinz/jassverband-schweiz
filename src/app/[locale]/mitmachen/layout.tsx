@@ -1,13 +1,13 @@
-import { getTranslations } from 'next-intl/server';
 import { Metadata } from 'next';
 
 interface Props {
   params: Promise<{ locale: string }>;
+  children: React.ReactNode;
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
-  
+
   const metadata: Record<string, { title: string; description: string; keywords: string[] }> = {
     de: {
       title: 'Jetzt Mitglied werden | Jassverband Schweiz',
@@ -63,10 +63,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function MitmachenLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function MitmachenLayout({ children }: { children: React.ReactNode }) {
   return children;
 }

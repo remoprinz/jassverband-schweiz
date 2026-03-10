@@ -1,8 +1,47 @@
+import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { Ecosystem, Hero } from "@/components/sections";
 
 interface PlattformenPageProps {
   params: Promise<{ locale: string }>;
+}
+
+const BASE_URL = "https://jassverband.ch";
+
+export async function generateMetadata({ params }: PlattformenPageProps): Promise<Metadata> {
+  const { locale } = await params;
+
+  const meta: Record<string, { title: string; description: string }> = {
+    de: {
+      title: "Plattform | Jassverband Schweiz",
+      description: "Das digitale Jass-Ökosystem des Jassverbands Schweiz mit JassGuru, JassWiki und weiteren Projekten.",
+    },
+    fr: {
+      title: "Plateforme | Fédération Suisse de Jass",
+      description: "L'écosystème numérique du Jass en Suisse avec JassGuru, JassWiki et d'autres projets.",
+    },
+    it: {
+      title: "Piattaforma | Federazione Svizzera di Jass",
+      description: "L'ecosistema digitale dello Jass in Svizzera con JassGuru, JassWiki e altri progetti.",
+    },
+  };
+
+  const current = meta[locale] ?? meta.de;
+
+  return {
+    title: current.title,
+    description: current.description,
+    alternates: {
+      canonical: `${BASE_URL}/${locale}/plattform`,
+      languages: {
+        de: `${BASE_URL}/de/plattform`,
+        fr: `${BASE_URL}/fr/plattform`,
+        it: `${BASE_URL}/it/plattform`,
+        "x-default": `${BASE_URL}/de/plattform`,
+      },
+    },
+    robots: { index: true, follow: true },
+  };
 }
 
 export default async function PlattformenPage({ params }: PlattformenPageProps) {

@@ -1,8 +1,34 @@
+import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { SectionHeader } from "@/components/ui";
 
 interface ImpressumPageProps {
   params: Promise<{ locale: string }>;
+}
+
+const BASE_URL = "https://jassverband.ch";
+
+export async function generateMetadata({ params }: ImpressumPageProps): Promise<Metadata> {
+  const { locale } = await params;
+  const titleByLocale: Record<string, string> = {
+    de: "Impressum | Jassverband Schweiz",
+    fr: "Mentions légales | Fédération Suisse de Jass",
+    it: "Note legali | Federazione Svizzera di Jass",
+  };
+
+  return {
+    title: titleByLocale[locale] ?? titleByLocale.de,
+    alternates: {
+      canonical: `${BASE_URL}/${locale}/impressum`,
+      languages: {
+        de: `${BASE_URL}/de/impressum`,
+        fr: `${BASE_URL}/fr/impressum`,
+        it: `${BASE_URL}/it/impressum`,
+        "x-default": `${BASE_URL}/de/impressum`,
+      },
+    },
+    robots: { index: true, follow: true },
+  };
 }
 
 export default async function ImpressumPage({ params }: ImpressumPageProps) {
