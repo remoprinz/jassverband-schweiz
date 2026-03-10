@@ -1,5 +1,4 @@
 import { SystemrelevanzVideo } from '@/components/sections/SystemrelevanzVideo';
-import Image from 'next/image';
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -14,25 +13,10 @@ export default async function VideoPage({ params }: Props) {
   const { locale } = await params;
 
   return (
-    <main className="min-h-screen bg-black flex flex-col">
-      {/* Minimaler Header */}
-      <div className="flex justify-center pt-8 pb-4">
-        <a href={`/${locale}`}>
-          <Image
-            src="/images/logos/JVS Logo weiss.svg"
-            alt="Jassverband Schweiz"
-            width={180}
-            height={48}
-            className="h-10 w-auto"
-          />
-        </a>
-      </div>
-
-      {/* Video — zentriert, prominent */}
-      <div className="flex-1 flex items-center">
-        <div className="w-full">
-          <SystemrelevanzVideo title="Weshalb braucht es den Jassverband?" />
-        </div>
+    <main className="min-h-screen bg-black">
+      {/* Video — mit Standard-Abständen wie andere Seiten */}
+      <div className="w-full">
+        <SystemrelevanzVideo title="Weshalb braucht es den Jassverband?" />
       </div>
 
       {/* Minimaler Footer */}
