@@ -373,13 +373,22 @@ export function Hero({
           style={{
             zIndex: 15,
             left: '50%',
-            top: '43%',
+            top: 'var(--kranz-top, calc(43% - 15px))',
             transform: 'translate(-50%, -50%)',
           }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2, delay: 0.15 }}
         >
+          <style dangerouslySetInnerHTML={{
+            __html: `
+              @media (min-width: 768px) {
+                :root {
+                  --kranz-top: 43%;
+                }
+              }
+            `
+          }} />
           <Image
             src="/images/decorations/kranz.png"
             alt=""
