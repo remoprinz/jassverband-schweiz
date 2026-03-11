@@ -38,8 +38,7 @@ export async function POST(request: NextRequest) {
     const price = MEMBERSHIP_PRICES[membershipType];
     const productName = MEMBERSHIP_NAMES[membershipType];
 
-    // Base URL für Redirects
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://jassverband.ch';
+    const baseUrl = 'https://jassverband.ch';
     
     // Stripe Checkout Session erstellen
     const session = await stripe.checkout.sessions.create({
