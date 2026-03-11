@@ -5,6 +5,8 @@
 # Local dependencies and build output
 node_modules
 .next
+.next-dev
+.next-dev/
 out
 build
 coverage
