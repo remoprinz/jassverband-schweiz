@@ -10,12 +10,16 @@ const MEMBERSHIP_TYPE_MAP: Record<string, string> = {
   pionier: 'single',
   botschafter: 'partner',
   patron: 'patron',
+  jugend: 'jugend',
+  goenner: 'goenner',
 };
 
 const MEMBERSHIP_PRICES: Record<string, number> = {
   pionier: 6000,
   botschafter: 9000,
   patron: 35000,
+  jugend: 2000,
+  goenner: 5000,
 };
 
 export async function POST(request: NextRequest) {

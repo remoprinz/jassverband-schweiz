@@ -2,18 +2,43 @@
 
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
-import { SectionHeader, Button } from '@/components/ui';
+import { SectionHeader } from '@/components/ui';
 
 export default function KontaktPage() {
   const t = useTranslations('kontakt');
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // For now, just show success message
-    // In production, connect to email service or API
-    setSubmitted(true);
+    setIsLoading(true);
+    setError(null);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Anfrage fehlgeschlagen');
+      }
+
+      setSubmitted(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Ein Fehler ist aufgetreten.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -75,9 +100,27 @@ export default function KontaktPage() {
                     className="w-full px-4 py-3 rounded-xl border border-[var(--color-border)] focus:border-[var(--color-primary)] focus:ring-2 focus:ring-[var(--color-primary)]/20 outline-none transition-all resize-none"
                   />
                 </div>
-                <Button type="submit" size="lg" className="w-full">
-                  {t('form.submit')}
-                </Button>
+                {error && (
+                  <div className="p-4 rounded-xl bg-red-50 border border-red-200 text-sm text-red-700">
+                    {error}
+                  </div>
+                )}
+                <button
+                  type="submit"
+                  disabled={isLoading}
+                  className="w-full font-bold transition-all transform hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                  style={{
+                    fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
+                    fontSize: '17px',
+                    padding: '14px 28px',
+                    borderRadius: '9999px',
+                    backgroundColor: 'var(--color-primary)',
+                    color: '#ffffff',
+                    boxShadow: '0px 10px 15px -3px rgba(0,0,0,0.1)',
+                  }}
+                >
+                  {isLoading ? '...' : t('form.submit')}
+                </button>
               </form>
             )}
           </div>

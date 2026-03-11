@@ -1,9 +1,3 @@
-/**
- * Stripe Configuration
- * 
- * Server-side Stripe client für JVS Checkout
- */
-
 import Stripe from 'stripe';
 
 if (!process.env.STRIPE_SECRET_KEY) {
@@ -11,22 +5,23 @@ if (!process.env.STRIPE_SECRET_KEY) {
 }
 
 export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
-  apiVersion: '2026-01-28.clover',
   typescript: true,
 });
 
-// Mitgliedschafts-Preise in Rappen
 export const MEMBERSHIP_PRICES = {
-  pionier: 6000,     // CHF 60
-  botschafter: 9000, // CHF 90
-  patron: 35000,     // CHF 350
+  pionier: 6000,      // CHF 60
+  botschafter: 9000,  // CHF 90
+  patron: 35000,      // CHF 350
+  jugend: 2000,       // CHF 20
+  goenner: 5000,      // CHF 50 (Mindestbetrag, vom User anpassbar)
 } as const;
 
 export type MembershipType = keyof typeof MEMBERSHIP_PRICES;
 
-// Human-readable Namen
 export const MEMBERSHIP_NAMES: Record<MembershipType, string> = {
-  pionier: 'Pionier-Mitgliedschaft',
-  botschafter: 'Botschafter-Mitgliedschaft', 
-  patron: 'Patron-Mitgliedschaft',
+  pionier: 'Jasser-Lizenz',
+  botschafter: 'Trumpf-Lizenz',
+  patron: 'Gruppen-Lizenz',
+  jugend: 'Jugendlizenz',
+  goenner: 'Gönner-Beitrag',
 };
