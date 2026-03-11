@@ -45,7 +45,27 @@ export async function POST(request: NextRequest) {
     switch (event.type) {
       case 'checkout.session.completed': {
         const session = event.data.object as Stripe.Checkout.Session;
+        // Bei TWINT: nur verarbeiten wenn Zahlung wirklich abgeschlossen
+        if (session.payment_status === 'paid') {
+          await handleCheckoutCompleted(session);
+        } else {
+          console.log(`[Stripe Webhook] Session completed but payment_status=${session.payment_status}, waiting for async confirmation`);
+        }
+        break;
+      }
+
+      case 'checkout.session.async_payment_succeeded': {
+        // TWINT: Zahlung asynchron bestätigt → Member aktivieren
+        const session = event.data.object as Stripe.Checkout.Session;
+        console.log(`[Stripe Webhook] Async payment succeeded: ${session.id}`);
         await handleCheckoutCompleted(session);
+        break;
+      }
+
+      case 'checkout.session.async_payment_failed': {
+        // TWINT: Zahlung asynchron fehlgeschlagen
+        const session = event.data.object as Stripe.Checkout.Session;
+        console.log(`[Stripe Webhook] Async payment failed: ${session.id}, email: ${session.customer_email}`);
         break;
       }
 
