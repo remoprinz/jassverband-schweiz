@@ -99,18 +99,36 @@ function renderMarkdown(content: string): string {
 function renderArticleContent(
   content: string,
   article: NewsArticle
-): Array<{ type: "html" | "video"; html?: string }> {
-  const parts = content.split("[VIDEO]");
-  const segments: Array<{ type: "html" | "video"; html?: string }> = [];
+): Array<{
+  type: "html" | "video" | "image";
+  html?: string;
+  image?: NonNullable<NewsArticle["inlineImages"]>[number];
+}> {
+  const parts = content.split(/(\[VIDEO\]|\[IMAGE_[A-Z0-9_]+\])/g);
+  const segments: Array<{
+    type: "html" | "video" | "image";
+    html?: string;
+    image?: NonNullable<NewsArticle["inlineImages"]>[number];
+  }> = [];
 
-  parts.forEach((part, index) => {
+  parts.forEach((part) => {
     const trimmed = part.trim();
-    if (trimmed) {
-      segments.push({ type: "html", html: renderMarkdown(trimmed) });
+    if (!trimmed) return;
+
+    if (trimmed === "[VIDEO]") {
+      if (article.video) segments.push({ type: "video" });
+      return;
     }
-    if (index < parts.length - 1 && article.video) {
-      segments.push({ type: "video" });
+
+    const imageTokenMatch = trimmed.match(/^\[(IMAGE_[A-Z0-9_]+)\]$/);
+    if (imageTokenMatch) {
+      const token = imageTokenMatch[1];
+      const image = article.inlineImages?.find((item) => item.token === token);
+      if (image) segments.push({ type: "image", image });
+      return;
     }
+
+    segments.push({ type: "html", html: renderMarkdown(trimmed) });
   });
 
   return segments;
@@ -137,6 +155,9 @@ function InlineArticle({
   };
 
   const segments = renderArticleContent(content.content, article);
+  const canRenderLocalMedia =
+    process.env.NODE_ENV !== "production" ||
+    process.env.NEXT_PUBLIC_ENABLE_LOCAL_NEWS_MEDIA === "true";
 
   return (
     <article
@@ -251,6 +272,37 @@ function InlineArticle({
                   alt={article.video.alt}
                 />
               </div>
+            );
+          }
+          if (segment.type === "image" && segment.image) {
+            const image = segment.image;
+            const showImage = !image.localOnly || canRenderLocalMedia;
+            if (!showImage) return null;
+            return (
+              <figure key={`image-${index}`} className="my-8 md:my-10">
+                <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden border border-[var(--color-border)]">
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 720px"
+                  />
+                </div>
+                {image.caption && (
+                  <figcaption
+                    className="mt-3 text-[var(--color-foreground-muted)]"
+                    style={{
+                      fontFamily: "var(--font-inter), Inter, system-ui, sans-serif",
+                      fontSize: "14px",
+                      lineHeight: 1.6,
+                      fontStyle: "italic",
+                    }}
+                  >
+                    {image.caption}
+                  </figcaption>
+                )}
+              </figure>
             );
           }
           if (segment.type === "html" && segment.html) {

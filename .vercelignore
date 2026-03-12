@@ -24,6 +24,7 @@ print/
 src/assets/cards/JVS KA Karten Tools 2602/
 src/assets/videos/
 public/assets/videos/berset_jvs_org.mp4
+public/assets/local-only/
 
 # OS/editor noise
 .DS_Store

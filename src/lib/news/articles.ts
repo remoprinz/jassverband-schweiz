@@ -5,7 +5,9 @@
  * 1. Kopieren Sie einen bestehenden Artikel-Block
  * 2. Ändern Sie slug, Datum, Titel, etc.
  * 3. Fügen Sie den Content als Markdown ein
- * 4. Speichern und pushen → Artikel ist live
+ * 4. Optional: Bilder via [IMAGE_1], [IMAGE_2], ... und inlineImages[] einfügen
+ * 5. Local-only Medien unter public/assets/local-only/ ablegen (nicht in Git)
+ * 6. Speichern und pushen → Artikel ist live
  */
 
 export interface Author {
@@ -20,6 +22,14 @@ export interface ArticleVideo {
   alt?: string;
 }
 
+export interface ArticleInlineImage {
+  token: string; // e.g. IMAGE_1 used as [IMAGE_1] in markdown
+  src: string;
+  alt: string;
+  caption?: string;
+  localOnly?: boolean;
+}
+
 export interface NewsArticle {
   slug: string;
   publishedAt: string; // ISO date: YYYY-MM-DD
@@ -30,6 +40,7 @@ export interface NewsArticle {
   image?: string;
   imageAlt?: string;
   video?: ArticleVideo;
+  inlineImages?: ArticleInlineImage[];
   tags: string[];
   de: {
     title: string;
@@ -68,6 +79,124 @@ export const authors: Record<string, Author> = {
 };
 
 export const articles: NewsArticle[] = [
+  {
+    slug: "grueezi-bern-jassverband-schweiz-bundeshaus",
+    publishedAt: "2026-03-12",
+    author: authors.jvs,
+    readingTime: 3,
+    featured: true,
+    tags: ["Volkskultur", "Bundeshaus", "Verband"],
+    de: {
+      title: "Grüezi Bern: Der Jassverband im Bundeshaus",
+      excerpt:
+        "Auf Einladung von Nationalrätin Stefanie Heimgartner stellte sich der Jassverband Schweiz am «Tag der Volkskultur» erstmals im politischen Zentrum der Schweiz vor.",
+      content: `Wer am 11. März durch die Wandelhalle des Bundeshauses schritt, begegnete Trachten, Volksmusik, regionalen Festen und gelebtem Brauchtum. Und erstmals dabei: Das Jassen. Remo und Fabian machten einen Abstecher nach Bundesbern – und nutzten die Gelegenheit, den neu gegründeten Jassverband Schweiz erstmals im politischen Umfeld vorzustellen.
+
+## Das Nationalspiel im Herzen der Politik
+
+Dass das Jassen zur Schweizer Volkskultur gehört, steht ausser Frage. Bislang fehlte jedoch eine nationale Organisation, die dieses Kulturgut sichtbar koordiniert. Genau hier setzt der Jassverband Schweiz an – mit dem Ziel, dem Jassen eine gemeinsame Struktur zu geben, damit Tradition, Wissensvermittlung und moderne Spielformen künftig unter einem Dach weiterentwickelt werden können.
+
+## Begegnungen auf höchster Ebene
+
+Dass in Bundesbern über Partei- und Kantonsgrenzen hinweg gejasst wird, zeigte sich in den vielen Gesprächen des Tages.
+
+[IMAGE_1]
+
+[IMAGE_2]
+
+## Danke, Steffi!
+
+Dass dieser Abstecher überhaupt möglich wurde, ist der Initiative von Nationalrätin Stefanie Heimgartner zu verdanken. Als Organisatorin des bekannten SVP-Jass weiss sie aus eigener Erfahrung, welche verbindende Kraft in den 36 Karten steckt. Ihre Einladung ermöglichte es, dass sich der Jassverband Schweiz erstmals im politischen Zentrum des Landes vorstellen konnte.
+
+## Viel Jass-Erfahrung im Bundeshaus
+
+Der Austausch zeigte schnell: Im Bundeshaus wird nicht nur Politik gemacht – hier wird auch gejasst. Viele Parlamentarierinnen und Parlamentarier haben eigene Jassgeschichten zu erzählen, organisieren Turniere und nehmen am Parlamentarier-Jass teil.
+
+[IMAGE_3]
+
+## Auftakt mit Wirkung
+
+Schwingen hat seinen Verband seit 1895. Jodeln seit 1910. Das Jassen hat seit dem 15. Januar 2026 seines – und seit dem 11. März weiss Bern davon.`,
+    },
+    fr: {
+      title: "Salut Berne: la Fédération Suisse de Jass au Palais fédéral",
+      excerpt:
+        "Sur invitation de la conseillère nationale Stefanie Heimgartner, la Fédération Suisse de Jass s'est présentée pour la première fois au centre politique du pays, lors de la «Journée de la culture populaire».",
+      content: `Le 11 mars, celles et ceux qui traversaient la Wandelhalle du Palais fédéral rencontraient costumes traditionnels, musique populaire, fêtes régionales et traditions vivantes. Et pour la première fois: le Jass. Remo et Fabian ont fait un détour par Berne et ont saisi l'occasion de présenter la jeune Fédération Suisse de Jass dans un cadre politique.
+
+## Le jeu national au coeur de la politique
+
+Que le Jass fasse partie de la culture populaire suisse ne fait aucun doute. Jusqu'ici, il manquait toutefois une organisation nationale capable de coordonner et de rendre visible ce patrimoine. C'est précisément là qu'intervient la Fédération Suisse de Jass: donner une structure commune au Jass afin de faire évoluer, sous un même toit, tradition, transmission du savoir et formes de jeu modernes.
+
+## Des rencontres au plus haut niveau
+
+Les nombreux échanges de la journée ont montré qu'à Berne, on joue au Jass au-delà des partis et des cantons.
+
+## Merci, Steffi!
+
+Cette visite n'aurait pas été possible sans l'initiative de la conseillère nationale Stefanie Heimgartner. En tant qu'organisatrice du célèbre «SVP-Jass», elle connaît de première main la force de cohésion des 36 cartes. Son invitation a permis à la Fédération Suisse de Jass de se présenter pour la première fois au coeur politique du pays.
+
+## Beaucoup de compétence Jass au Palais fédéral
+
+Les discussions ont aussi montré qu'au Palais fédéral siègent de nombreuses et nombreux passionnés de Jass. Au stand de la fédération, un groupe s'est formé, riche en expérience tant politique que jassistique.
+
+## Un début qui compte
+
+La lutte suisse a sa fédération depuis 1895. Le yodel depuis 1910. Le Jass a la sienne depuis le 15 janvier 2026 – et depuis le 11 mars, Berne le sait.`,
+    },
+    it: {
+      title: "Grüezi Berna: la Federazione Svizzera di Jass a Palazzo federale",
+      excerpt:
+        "Su invito della consigliera nazionale Stefanie Heimgartner, la Federazione Svizzera di Jass si è presentata per la prima volta al centro politico della Svizzera durante la «Giornata della cultura popolare».",
+      content: `L'11 marzo, chi attraversava la Wandelhalle di Palazzo federale incontrava costumi tradizionali, musica popolare, feste regionali e tradizioni vive. E per la prima volta c'era anche il Jass. Remo e Fabian hanno fatto tappa a Berna, cogliendo l'occasione per presentare la neo-fondata Federazione Svizzera di Jass in un contesto politico.
+
+## Il gioco nazionale nel cuore della politica
+
+Che il Jass appartenga alla cultura popolare svizzera è fuori discussione. Finora mancava però un'organizzazione nazionale capace di coordinare e valorizzare visibilmente questo patrimonio culturale. Proprio qui interviene la Federazione Svizzera di Jass: offrire una struttura comune al Jass, affinché tradizione, trasmissione del sapere e forme di gioco moderne possano svilupparsi sotto lo stesso tetto.
+
+## Incontri ai massimi livelli
+
+I molti colloqui della giornata hanno mostrato che a Berna si gioca a Jass oltre i confini di partito e di cantone.
+
+## Grazie, Steffi!
+
+Questa visita è stata possibile grazie all'iniziativa della consigliera nazionale Stefanie Heimgartner. In qualità di organizzatrice del noto «SVP-Jass», conosce bene la forza aggregante delle 36 carte. Il suo invito ha permesso alla Federazione Svizzera di Jass di presentarsi per la prima volta nel centro politico del Paese.
+
+## Grande competenza di Jass a Palazzo federale
+
+Gli scambi hanno mostrato anche che a Palazzo federale siedono numerose e numerosi appassionati di Jass. Allo stand della federazione si è riunito un gruppo con molta esperienza, sia politica sia jassistica.
+
+## Un avvio con impatto
+
+La lotta svizzera ha la sua federazione dal 1895. Lo jodel dal 1910. Il Jass ha la sua dal 15 gennaio 2026 – e dall'11 marzo anche Berna lo sa.`,
+    },
+    inlineImages: [
+      {
+        token: "IMAGE_1",
+        src: "/assets/local-only/news/grueezi-bern/photo-1-fabian-pierre-andre.png",
+        alt: "Fabian im Gespräch mit Nationalratspräsident Pierre-André in der Wandelhalle des Bundeshauses.",
+        caption:
+          "Jasslobbyismus auf höchstmöglicher Ebene: Fabian im Gespräch mit Nationalratspräsident Pierre-André.",
+        localOnly: true,
+      },
+      {
+        token: "IMAGE_2",
+        src: "/assets/local-only/news/grueezi-bern/photo-2-fabian-stefan.png",
+        alt: "Fabian zusammen mit Ständeratspräsident Stefan im Bundeshaus.",
+        caption:
+          "Da liess sich auch Ständeratspräsident Stefan nicht lange bitten.",
+        localOnly: true,
+      },
+      {
+        token: "IMAGE_3",
+        src: "/assets/local-only/news/grueezi-bern/photo-3-gruppe.png",
+        alt: "Ständerat Markus, Nationalrätin Steffi und Nationalrat Thomas am Stand des Jassverbands.",
+        caption:
+          "Ständerat Markus (Gründer der Glarner Jassmeisterschaften), Nationalrätin Steffi (Organisatorin des SVP-Jass) und Nationalrat Thomas (amtierender Jasskönig Parlamentarier-Jass).",
+        localOnly: true,
+      },
+    ],
+  },
   {
     slug: "gruendung-jassverband-schweiz",
     publishedAt: "2026-01-15",

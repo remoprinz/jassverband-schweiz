@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { getArticleBySlug, getAllArticles, type NewsArticle } from "@/lib/news/articles";
 import { ArticleVideoPlayer } from "@/components/news/ArticleVideoPlayer";
 
@@ -86,20 +87,39 @@ function formatDate(dateString: string, locale: string): string {
 
 function renderArticleContent(
   content: string,
-  article: NewsArticle,
-  locale: string
-): { segments: Array<{ type: "html" | "video"; html?: string }> } {
-  const parts = content.split("[VIDEO]");
-  const segments: Array<{ type: "html" | "video"; html?: string }> = [];
+  article: NewsArticle
+): {
+  segments: Array<{
+    type: "html" | "video" | "image";
+    html?: string;
+    image?: NonNullable<NewsArticle["inlineImages"]>[number];
+  }>;
+} {
+  const parts = content.split(/(\[VIDEO\]|\[IMAGE_[A-Z0-9_]+\])/g);
+  const segments: Array<{
+    type: "html" | "video" | "image";
+    html?: string;
+    image?: NonNullable<NewsArticle["inlineImages"]>[number];
+  }> = [];
 
-  parts.forEach((part, index) => {
+  parts.forEach((part) => {
     const trimmed = part.trim();
-    if (trimmed) {
-      segments.push({ type: "html", html: renderMarkdown(trimmed) });
+    if (!trimmed) return;
+
+    if (trimmed === "[VIDEO]") {
+      if (article.video) segments.push({ type: "video" });
+      return;
     }
-    if (index < parts.length - 1 && article.video) {
-      segments.push({ type: "video" });
+
+    const imageTokenMatch = trimmed.match(/^\[(IMAGE_[A-Z0-9_]+)\]$/);
+    if (imageTokenMatch) {
+      const token = imageTokenMatch[1];
+      const image = article.inlineImages?.find((item) => item.token === token);
+      if (image) segments.push({ type: "image", image });
+      return;
     }
+
+    segments.push({ type: "html", html: renderMarkdown(trimmed) });
   });
 
   return { segments };
@@ -157,7 +177,10 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
     it: "min di lettura",
   };
 
-  const { segments } = renderArticleContent(content.content, article, locale);
+  const { segments } = renderArticleContent(content.content, article);
+  const canRenderLocalMedia =
+    process.env.NODE_ENV !== "production" ||
+    process.env.NEXT_PUBLIC_ENABLE_LOCAL_NEWS_MEDIA === "true";
 
   const jsonLd = [
     {
@@ -400,6 +423,37 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                         alt={article.video.alt}
                       />
                     </div>
+                  );
+                }
+                if (segment.type === "image" && segment.image) {
+                  const image = segment.image;
+                  const showImage = !image.localOnly || canRenderLocalMedia;
+                  if (!showImage) return null;
+                  return (
+                    <figure key={`image-${index}`} className="my-10 md:my-12">
+                      <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden border border-[var(--color-border)]">
+                        <Image
+                          src={image.src}
+                          alt={image.alt}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 768px) 100vw, 720px"
+                        />
+                      </div>
+                      {image.caption && (
+                        <figcaption
+                          className="mt-3 text-[var(--color-foreground-muted)]"
+                          style={{
+                            fontFamily: "var(--font-inter), Inter, system-ui, sans-serif",
+                            fontSize: "14px",
+                            lineHeight: 1.6,
+                            fontStyle: "italic",
+                          }}
+                        >
+                          {image.caption}
+                        </figcaption>
+                      )}
+                    </figure>
                   );
                 }
                 if (segment.type === "html" && segment.html) {
