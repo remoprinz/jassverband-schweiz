@@ -85,6 +85,9 @@ export const articles: NewsArticle[] = [
     author: authors.jvs,
     readingTime: 3,
     featured: true,
+    image: "/assets/news/grueezi-bern/photo-1-fabian-pierre-andre.png",
+    imageAlt:
+      "Fabian im Gespräch mit Nationalratspräsident Pierre-André in der Wandelhalle des Bundeshauses.",
     tags: ["Volkskultur", "Bundeshaus", "Verband"],
     de: {
       title: "Grüezi Bern: Der Jassverband im Bundeshaus",
@@ -173,27 +176,24 @@ La lotta svizzera ha la sua federazione dal 1895. Lo jodel dal 1910. Il Jass ha 
     inlineImages: [
       {
         token: "IMAGE_1",
-        src: "/assets/local-only/news/grueezi-bern/photo-1-fabian-pierre-andre.png",
+        src: "/assets/news/grueezi-bern/photo-1-fabian-pierre-andre.png",
         alt: "Fabian im Gespräch mit Nationalratspräsident Pierre-André in der Wandelhalle des Bundeshauses.",
         caption:
           "Jasslobbyismus auf höchstmöglicher Ebene: Fabian im Gespräch mit Nationalratspräsident Pierre-André.",
-        localOnly: true,
       },
       {
         token: "IMAGE_2",
-        src: "/assets/local-only/news/grueezi-bern/photo-2-fabian-stefan.png",
+        src: "/assets/news/grueezi-bern/photo-2-fabian-stefan.png",
         alt: "Fabian zusammen mit Ständeratspräsident Stefan im Bundeshaus.",
         caption:
           "Da liess sich auch Ständeratspräsident Stefan nicht lange bitten.",
-        localOnly: true,
       },
       {
         token: "IMAGE_3",
-        src: "/assets/local-only/news/grueezi-bern/photo-3-gruppe.png",
+        src: "/assets/news/grueezi-bern/photo-3-gruppe.png",
         alt: "Ständerat Markus, Nationalrätin Steffi und Nationalrat Thomas am Stand des Jassverbands.",
         caption:
           "Ständerat Markus (Gründer der Glarner Jassmeisterschaften), Nationalrätin Steffi (Organisatorin des SVP-Jass) und Nationalrat Thomas (amtierender Jasskönig Parlamentarier-Jass).",
-        localOnly: true,
       },
     ],
   },
