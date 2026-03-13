@@ -21,10 +21,23 @@ interface HeaderProps {
   };
 }
 
-function Logo({ variant = 'color', shrunk = false }: { variant?: 'color' | 'white'; shrunk?: boolean }) {
-  const src = variant === 'white' 
-    ? '/images/logos/JVS Logo farbig weiss.svg'
-    : '/images/logos/JVS Logo farbig.svg';
+function Logo({ variant = 'color', shrunk = false, locale }: { variant?: 'color' | 'white'; shrunk?: boolean; locale: string }) {
+  const normalizedLocale = locale === 'fr' || locale === 'it' ? locale : 'de';
+  const localizedSources = {
+    de: {
+      color: '/images/logos/JVS Logo farbig.svg',
+      white: '/images/logos/JVS Logo farbig weiss.svg',
+    },
+    fr: {
+      color: '/images/logos/JVS Logo 100mm farbig FR.svg',
+      white: '/images/logos/JVS Logo 100mm farbig weiss FR.svg',
+    },
+    it: {
+      color: '/images/logos/JVS Logo 100mm farbig IT.svg',
+      white: '/images/logos/JVS Logo 100mm farbig weiss IT.svg',
+    },
+  } as const;
+  const src = localizedSources[normalizedLocale][variant];
   
   return (
     <Image
@@ -196,7 +209,7 @@ export function Header({ locale, nav, isHeroPage }: HeaderProps) {
         }`}>
           {!isCompactMode && (
             <Link href={`/${locale}`} className="flex items-center">
-              <Logo variant={logoVariant} shrunk={scrolled || forceScrolledStyle} />
+              <Logo locale={locale} variant={logoVariant} shrunk={scrolled || forceScrolledStyle} />
             </Link>
           )}
 
