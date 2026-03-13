@@ -36,6 +36,14 @@ const headingStyle = {
 };
 
 export function Footer({ locale, content, nav }: FooterProps) {
+  const normalizedLocale = locale === 'fr' || locale === 'it' ? locale : 'de';
+  const footerLogoByLocale = {
+    de: '/images/logos/JVS Logo farbig weiss.svg',
+    fr: '/images/logos/JVS Logo 100mm farbig weiss FR.svg',
+    it: '/images/logos/JVS Logo 100mm farbig weiss IT.svg',
+  } as const;
+  const footerLogoSrc = footerLogoByLocale[normalizedLocale];
+
   return (
     <footer data-footer className="bg-black overflow-hidden">
       {/* Mobile Layout */}
@@ -43,7 +51,7 @@ export function Footer({ locale, content, nav }: FooterProps) {
         <div className="flex flex-col items-start gap-10 text-left">
           {/* Logo */}
           <Image
-            src="/images/logos/JVS Logo farbig weiss.svg"
+            src={footerLogoSrc}
             alt="Jassverband Schweiz"
             width={189}
             height={51}
@@ -120,7 +128,7 @@ export function Footer({ locale, content, nav }: FooterProps) {
           {/* Logo – oben links */}
           <div className="absolute" style={{ top: '64px', left: '0' }}>
             <Image
-              src="/images/logos/JVS Logo farbig weiss.svg"
+              src={footerLogoSrc}
               alt="Jassverband Schweiz"
               width={189}
               height={51}
