@@ -38,8 +38,8 @@
     "team": {
       "title": "Insieme verso il trono",
       "copy1": "Schierarsi come unità, vincere come unità.",
-      "copy2": "La Svizzera conosce molti tornei di Jass — ma quasi sempre alla fine vince un singolo. La FSJ stabilisce un nuovo formato: non vince il singolo giocatore, ma l'intera squadra di Schieber.",
-      "copy3": "Come nel calcio, come nell'hockey — ora anche nello Schieber."
+      "copy2": "La Svizzera conosce molti tornei di Jass — ma quasi sempre alla fine vince un singolo. La FSJ stabilisce un nuovo formato: non vince il singolo giocatore, ma l'intera squadra di Schieber. Come nel calcio, come nell'hockey — ora anche nello Schieber.",
+      "copy3": ""
     },
     "jassguru": {
       "title": "JassGuru: la lavagna digitale del campionato",
@@ -95,7 +95,7 @@
       "youthSub": "Per squadre fino a 25 anni.",
       "memberTitle": "Diritto di partecipazione",
       "memberCopy": "L'adesione alla FSJ dà diritto alla partecipazione al Campionato Svizzero e sblocca JassGuru Pro — con classifica Elo, statistiche e confronto tra gruppi. Nessuna quota di iscrizione separata.",
-      "ctaMember": "Ottieni il diritto di partenza",
+      "ctaMember": "Diventa membro",
       "ctaTeam": "Alla modalità su Jassmeister.ch"
     },
     "title": "Primo Campionato Svizzero ufficiale di Jass a squadre.",
@@ -345,6 +345,7 @@
     "fairplay3Title": "Trasparenza e integrità",
     "fairplay3Text": "Giochiamo a carte scoperte in senso figurato. Accordi, segni o altre forme di comunicazione sleale non hanno posto ai nostri tavoli.",
     "konsequenzenTitle": "Conseguenze in caso di violazione delle regole",
+    "konsequenzenTransparenz": "Grazie alla registrazione digitale su JassGuru, creiamo trasparenza. Le irregolarità nei timestamp o le anomalie statistiche vengono esaminate dalla direzione del torneo e possono comportare sanzioni.",
     "konsequenzenIntro": "Per preservare l'integrità del nostro torneo, valgono regole chiare:",
     "konsequenzenWarning": "Ogni sospetto fondato di comportamento sleale può portare all'esclusione immediata e irrevocabile dalla federazione.",
     "konsequenzenList": ["Comunicazione non autorizzata tra partner di squadra", "Manipolazione di carte o materiale di gioco", "Conteggio intenzionalmente errato dei punti", "Comportamento antisportivo verso altri partecipanti"],

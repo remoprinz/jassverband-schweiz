@@ -104,6 +104,7 @@ export default async function SchweizermeisterschaftPage({ params }: Props) {
     <div>
       <Hero
         title={t('schweizermeisterschaft.hero.title')}
+        {...(locale === 'de' ? { mobileTitle: 'Erste offizielle\nSchweizer-\nmeisterschaft\nim Teamjassen.' } : {})}
         subtitle={t('schweizermeisterschaft.hero.subtitle')}
         cta={t('schweizermeisterschaft.hero.cta')}
         locale={locale}

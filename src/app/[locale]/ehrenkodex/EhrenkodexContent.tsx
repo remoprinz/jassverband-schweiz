@@ -17,6 +17,7 @@ interface EhrenkodexContentProps {
   fairplay3Title: string;
   fairplay3Text: string;
   konsequenzenTitle: string;
+  konsequenzenTransparenz: string;
   konsequenzenIntro: string;
   konsequenzenWarning: string;
   konsequenzenList: string[];
@@ -56,6 +57,7 @@ export function EhrenkodexContent({
   fairplay3Title,
   fairplay3Text,
   konsequenzenTitle,
+  konsequenzenTransparenz,
   konsequenzenWarning,
   konsequenzenList,
   konsequenzenFooter,
@@ -353,6 +355,19 @@ export function EhrenkodexContent({
             >
               {konsequenzenTitle}
             </motion.h2>
+
+            <motion.p
+              className="mb-6"
+              style={{
+                fontFamily: interFont,
+                fontSize: 'clamp(15px, 1.8vw, 17px)',
+                lineHeight: 1.55,
+                color: 'rgba(255, 255, 255, 0.85)',
+              }}
+              {...fadeUp}
+            >
+              {konsequenzenTransparenz}
+            </motion.p>
 
             <motion.p
               className="font-bold mb-6"

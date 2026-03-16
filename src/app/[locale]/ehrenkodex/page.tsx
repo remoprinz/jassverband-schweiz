@@ -33,6 +33,7 @@ export default async function EhrenkodexPage({ params }: Props) {
       fairplay3Title={t("ehrenkodex.fairplay3Title")}
       fairplay3Text={t("ehrenkodex.fairplay3Text")}
       konsequenzenTitle={t("ehrenkodex.konsequenzenTitle")}
+      konsequenzenTransparenz={t("ehrenkodex.konsequenzenTransparenz")}
       konsequenzenIntro={t("ehrenkodex.konsequenzenIntro")}
       konsequenzenWarning={t("ehrenkodex.konsequenzenWarning")}
       konsequenzenList={[

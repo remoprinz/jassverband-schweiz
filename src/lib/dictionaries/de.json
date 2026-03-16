@@ -38,8 +38,8 @@
     "team": {
       "title": "Gemeinsam auf den Thron",
       "copy1": "Als Einheit antreten, als Einheit siegen.",
-      "copy2": "Jass-Turniere kennt die Schweiz viele — doch fast immer gewinnt am Ende ein Einzelner. Der JVS etabliert ein neues Format: Nicht der Einzelspieler gewinnt, sondern das ganze Schieber-Team.",
-      "copy3": "Wie im Fussball, wie im Hockey — jetzt auch im Schieber-Jassen."
+      "copy2": "Jass-Turniere kennt die Schweiz viele — doch fast immer gewinnt am Ende ein Einzelner. Der JVS etabliert ein neues Format: Nicht der Einzelspieler gewinnt, sondern das ganze Schieber-Team. Wie im Fussball, wie im Hockey — jetzt auch im Schieber-Jassen.",
+      "copy3": ""
     },
     "jassguru": {
       "title": "JassGuru: Die digitale Kreidetafel der Meisterschaft",
@@ -95,7 +95,7 @@
       "youthSub": "Für Teams bis 25 Jahre.",
       "memberTitle": "Spielberechtigung",
       "memberCopy": "Die JVS-Mitgliedschaft berechtigt zur Teilnahme an der Schweizermeisterschaft und schaltet JassGuru Pro frei — mit Elo-Ranking, Statistiken und Gruppenvergleich. Kein separates Startgeld.",
-      "ctaMember": "Jetzt Startberechtigung sichern",
+      "ctaMember": "Mitglied werden",
       "ctaTeam": "Zum Modus auf Jassmeister.ch"
     },
     "title": "Erste offizielle Schweizermeisterschaft im Teamjassen.",
@@ -345,6 +345,7 @@
     "fairplay3Title": "Transparenz und Integrität",
     "fairplay3Text": "Wir spielen mit offenen Karten im übertragenen Sinne. Absprachen, Zeichen oder andere Formen unlauterer Kommunikation haben an unseren Tischen keinen Platz.",
     "konsequenzenTitle": "Konsequenzen bei Regelverstössen",
+    "konsequenzenTransparenz": "Durch die digitale Erfassung auf JassGuru schaffen wir Transparenz. Unregelmässigkeiten in den Zeitstempeln oder statistische Anomalien werden durch die Turnierleitung geprüft und können Sanktionen nach sich ziehen.",
     "konsequenzenIntro": "Um die Integrität unseres Turniers zu wahren, gelten klare Regeln:",
     "konsequenzenWarning": "Jeder begründete Verdacht auf unlauteres Verhalten kann zum sofortigen und unwiderruflichen Ausschluss aus dem Verband führen.",
     "konsequenzenList": ["Unerlaubte Kommunikation zwischen Teampartnern", "Manipulation von Karten oder Spielmaterial", "Absichtliche Falschzählung von Punkten", "Unsportliches Verhalten gegenüber anderen Teilnehmenden"],

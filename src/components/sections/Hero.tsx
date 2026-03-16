@@ -22,6 +22,9 @@ interface HeroProps {
   /** Mobile Flow: Überschreibt die Schriftgrösse des H1 (Standard: var(--hero-title-size)).
    *  Nützlich für Seiten mit längeren Titeln, die sonst umbrechen würden. */
   mobileFlowTitleSize?: string;
+  /** Überschreibt den Titel nur auf Mobile (md:hidden). Nützlich wenn mobile
+   *  andere Zeilenumbrüche braucht als Desktop. */
+  mobileTitle?: string;
   /** Dekorativer Eichenlaub-Kranz rund um die Schrift. */
   wreath?: boolean;
   /**
@@ -106,6 +109,7 @@ export function Hero({
   preserveTitleLineBreaks = false,
   mobileFlow = false,
   mobileFlowTitleSize,
+  mobileTitle,
   wreath = false,
   heroTitleTopDesktop,
   teaser,
@@ -430,29 +434,32 @@ export function Hero({
               textShadow: '0 2px 20px rgba(0,0,0,0.3)',
             }}
           >
-            {preserveTitleLineBreaks && title.includes('\n') ? (
-              title.split('\n').map((line, i) => (
-                <span
-                  key={i}
-                  style={{
-                    display: 'block',
-                    overflowWrap: 'break-word',
-                    hyphens: 'auto',
-                    ...(i > 0 ? { marginTop: '2px' } : {}),
-                  }}
-                >
-                  {line}
+            {(() => {
+              const mobileText = mobileTitle ?? title;
+              return preserveTitleLineBreaks && mobileText.includes('\n') ? (
+                mobileText.split('\n').map((line, i) => (
+                  <span
+                    key={i}
+                    style={{
+                      display: 'block',
+                      overflowWrap: 'break-word',
+                      hyphens: 'auto',
+                      ...(i > 0 ? { marginTop: '2px' } : {}),
+                    }}
+                  >
+                    {line}
+                  </span>
+                ))
+              ) : (
+                <span style={{
+                  whiteSpace: preserveTitleLineBreaks ? 'pre-line' : 'normal',
+                  overflowWrap: 'break-word',
+                  hyphens: 'auto',
+                }}>
+                  {mobileText}
                 </span>
-              ))
-            ) : (
-              <span style={{
-                whiteSpace: preserveTitleLineBreaks ? 'pre-line' : 'normal',
-                overflowWrap: 'break-word',
-                hyphens: 'auto',
-              }}>
-                {title}
-              </span>
-            )}
+              );
+            })()}
           </h1>
           <p
             style={{

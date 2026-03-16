@@ -31,15 +31,15 @@
   },
   "schweizermeisterschaft": {
     "hero": {
-      "title": "Premier Championnat\nSuisse officiel\nde Jass par équipes.",
+      "title": "Championnat\nSuisse officiel\nde Jass par équipes.",
       "subtitle": "La saison 1 débute en 2026. Créez votre groupe et écrivez l'histoire du Jass.",
       "cta": "Créer un groupe"
     },
     "team": {
       "title": "Ensemble vers le trône",
       "copy1": "S'aligner comme une unité, gagner comme une unité.",
-      "copy2": "La Suisse connaît de nombreux tournois de Jass — mais c'est presque toujours un individu qui gagne à la fin. La FSJ établit un nouveau format : ce n'est pas le joueur individuel qui gagne, mais toute l'équipe de Schieber.",
-      "copy3": "Comme au football, comme au hockey — maintenant aussi au Schieber."
+      "copy2": "La Suisse connaît de nombreux tournois de Jass — mais c'est presque toujours un individu qui gagne à la fin. La FSJ établit un nouveau format : ce n'est pas le joueur individuel qui gagne, mais toute l'équipe de Schieber. Comme au football, comme au hockey — maintenant aussi au Schieber.",
+      "copy3": ""
     },
     "jassguru": {
       "title": "JassGuru : le tableau noir numérique du championnat",
@@ -95,7 +95,7 @@
       "youthSub": "Pour les équipes jusqu'à 25 ans.",
       "memberTitle": "Droit de participation",
       "memberCopy": "L'adhésion à la FSJ donne droit à la participation au Championnat Suisse et débloque JassGuru Pro — avec classement Elo, statistiques et comparaison de groupes. Pas de frais de départ séparés.",
-      "ctaMember": "Obtenir le droit de départ",
+      "ctaMember": "Devenir membre",
       "ctaTeam": "Voir le mode sur Jassmeister.ch"
     },
     "title": "Premier Championnat Suisse officiel de Jass par équipes.",
@@ -345,6 +345,7 @@
     "fairplay3Title": "Transparence et intégrité",
     "fairplay3Text": "Nous jouons cartes sur table au sens figuré. Les ententes, les signes ou toute autre forme de communication déloyale n'ont pas leur place à nos tables.",
     "konsequenzenTitle": "Conséquences en cas de violation des règles",
+    "konsequenzenTransparenz": "Grâce à l'enregistrement numérique sur JassGuru, nous créons de la transparence. Les irrégularités dans les horodatages ou les anomalies statistiques sont examinées par la direction du tournoi et peuvent entraîner des sanctions.",
     "konsequenzenIntro": "Pour préserver l'intégrité de notre tournoi, des règles claires s'appliquent :",
     "konsequenzenWarning": "Tout soupçon fondé de comportement déloyal peut entraîner l'exclusion immédiate et irrévocable de la fédération.",
     "konsequenzenList": ["Communication non autorisée entre partenaires d'équipe", "Manipulation de cartes ou de matériel de jeu", "Comptage intentionnellement erroné des points", "Comportement antisportif envers d'autres participants"],

@@ -195,18 +195,20 @@ export function MeisterschaftContent({
               {teamCopy2}
             </p>
 
-            <p
-              className="text-white/70"
-              style={{
-                fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
-                fontSize: 'clamp(15px, 1.8vw, 17px)',
-                fontWeight: 500,
-                lineHeight: 1.5,
-                fontStyle: 'italic',
-              }}
-            >
-              {teamCopy3}
-            </p>
+            {teamCopy3 && (
+              <p
+                className="text-white/70"
+                style={{
+                  fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
+                  fontSize: 'clamp(15px, 1.8vw, 17px)',
+                  fontWeight: 500,
+                  lineHeight: 1.5,
+                  fontStyle: 'italic',
+                }}
+              >
+                {teamCopy3}
+              </p>
+            )}
           </motion.div>
         </div>
       </section>

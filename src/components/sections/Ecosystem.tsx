@@ -102,7 +102,7 @@ const icons = {
   jassmeister: (
     <span className="w-full h-full flex items-center justify-start overflow-visible">
       <Image
-        src="/images/icons/jvs-logo-farbig-kurz.svg"
+        src="/images/icons/logo-jassmeisterschaft.svg"
         alt="JassMeisterschaft"
         width={48}
         height={48}
