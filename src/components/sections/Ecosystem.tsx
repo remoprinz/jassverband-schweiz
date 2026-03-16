@@ -13,6 +13,24 @@ interface EcosystemProject {
   description: string;
 }
 
+interface BadgeLabels {
+  free: string;
+  member: string;
+  preview: string;
+}
+
+interface CtaLabels {
+  jassmeister: string;
+  jassguru: string;
+  whatsapp: string;
+  jasskarten: string;
+  jassturniere: string;
+  jassreisen: string;
+  jasskalkulator: string;
+  jasstrainer: string;
+  jasswiki: string;
+}
+
 interface EcosystemProps {
   title: string;
   subtitle: string;
@@ -25,6 +43,9 @@ interface EcosystemProps {
   jassmeister: EcosystemProject;
   jasstrainer: EcosystemProject;
   jassturniere: EcosystemProject;
+  badges: BadgeLabels;
+  comingSoonLabel: string;
+  ctaLabels: CtaLabels;
 }
 
 const icons = {
@@ -34,14 +55,12 @@ const icons = {
     </span>
   ),
   jasswiki: (
-    <span className="w-full h-full rounded-full overflow-hidden flex items-center justify-start bg-white">
-      <Image
-        src="/images/icons/jasswiki-logo-hero.png"
-        alt="JassWiki"
-        width={48}
-        height={48}
-        className="w-full h-full object-cover scale-[1.18] origin-center"
-      />
+    <span className="w-full h-full rounded-full bg-white flex items-center justify-center">
+      <svg viewBox="4524 6774 32 34" className="w-[80%] h-[80%]" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4551.0908203125,6788.0712890625C4550.88916015625,6787.42724609375,4550.62255859375,6786.806640625,4550.3154296875,6786.2109375L4552.76220703125,6782.81982421875L4550.65478515625,6780.71728515625L4548.5390625,6778.60693359375L4545.1396484375,6781.0478515625C4544.5419921875,6780.74169921875,4543.92041015625,6780.48388671875,4543.2744140625,6780.2744140625L4542.60400390625,6776.150390625L4536.62890625,6776.150390625L4535.95849609375,6780.2744140625C4535.3046875,6780.48388671875,4534.68310546875,6780.74169921875,4534.08544921875,6781.0478515625L4530.68603515625,6778.60693359375L4528.5703125,6780.71728515625L4526.462890625,6782.81982421875L4528.90966796875,6786.2109375C4528.6025390625,6786.806640625,4528.3359375,6787.42724609375,4528.13427734375,6788.0712890625L4524,6788.748046875L4524,6794.70068359375L4528.13427734375,6795.376953125C4528.3359375,6796.021484375,4528.6025390625,6796.64990234375,4528.90966796875,6797.23779296875L4526.462890625,6800.62890625L4528.5703125,6802.73095703125L4530.68603515625,6804.83349609375L4534.08544921875,6802.40087890625C4534.68310546875,6802.70703125,4535.3046875,6802.96484375,4535.95849609375,6803.17431640625L4536.62890625,6807.29833984375L4542.60400390625,6807.29833984375L4543.2744140625,6803.17431640625C4543.9287109375,6802.97265625,4544.55029296875,6802.70703125,4545.14794921875,6802.40087890625L4548.5390625,6804.83349609375L4550.65478515625,6802.73095703125L4552.76220703125,6800.62890625L4550.3154296875,6797.23779296875C4550.62255859375,6796.64990234375,4550.88916015625,6796.021484375,4551.0908203125,6795.376953125L4555.22509765625,6794.70068359375L4555.22509765625,6788.748046875L4551.0908203125,6788.0712890625Z" fill="#ff0000" fillRule="nonzero"/>
+        <path d="M4532.955078125,6791.72021484375C4532.955078125,6788.05517578125,4535.9345703125,6785.0830078125,4539.60888671875,6785.0830078125C4543.28271484375,6785.0830078125,4546.25439453125,6788.05517578125,4546.25439453125,6791.72021484375C4546.25439453125,6795.38525390625,4543.2744140625,6798.357421875,4539.60888671875,6798.357421875C4535.94287109375,6798.357421875,4532.955078125,6795.38525390625,4532.955078125,6791.72021484375Z" fill="#ff0000" fillRule="nonzero"/>
+        <path d="M4539.59228515625,6799.60595703125C4538.373046875,6797.22998046875,4537.3798828125,6796.6259765625,4535.3369140625,6795.2646484375C4533.1650390625,6793.82275390625,4531.404296875,6791.470703125,4532.19580078125,6788.92529296875C4533.27001953125,6785.501953125,4537.63037109375,6784.82568359375,4539.59228515625,6787.7412109375C4541.5546875,6784.82568359375,4545.90673828125,6785.494140625,4546.98876953125,6788.92529296875C4547.7880859375,6791.462890625,4546.02783203125,6793.814453125,4543.84765625,6795.2646484375C4541.8046875,6796.6259765625,4540.8115234375,6797.22998046875,4539.59228515625,6799.60595703125Z" fill="#ffffff" fillRule="evenodd"/>
+      </svg>
     </span>
   ),
   jasskalkulator: (
@@ -111,11 +130,11 @@ const icons = {
 
 type BadgeType = 'free' | 'member' | 'preview';
 
-function BadgePill({ type }: { type: BadgeType }) {
-  const config: Record<BadgeType, { label: string; bg: string; color: string }> = {
-    free: { label: 'Frei zugänglich', bg: 'rgba(34, 139, 34, 0.12)', color: '#228b22' },
-    member: { label: 'Für Mitglieder', bg: 'rgba(255, 0, 0, 0.08)', color: 'var(--color-primary)' },
-    preview: { label: 'Vorschau', bg: 'rgba(0, 0, 0, 0.06)', color: 'var(--color-foreground-muted)' },
+function BadgePill({ type, labels }: { type: BadgeType; labels: BadgeLabels }) {
+  const config: Record<BadgeType, { bg: string; color: string }> = {
+    free: { bg: 'rgba(34, 139, 34, 0.12)', color: '#228b22' },
+    member: { bg: 'rgba(255, 0, 0, 0.08)', color: 'var(--color-primary)' },
+    preview: { bg: 'rgba(0, 0, 0, 0.06)', color: 'var(--color-foreground-muted)' },
   };
   const c = config[type];
   return (
@@ -123,7 +142,7 @@ function BadgePill({ type }: { type: BadgeType }) {
       className="inline-block text-xs font-semibold px-3 py-1 rounded-full"
       style={{ backgroundColor: c.bg, color: c.color }}
     >
-      {c.label}
+      {labels[type]}
     </span>
   );
 }
@@ -141,6 +160,9 @@ export function Ecosystem({
   jassmeister,
   jasstrainer,
   jassturniere,
+  badges,
+  comingSoonLabel,
+  ctaLabels,
 }: EcosystemProps) {
   const projects: Array<{
     key: string;
@@ -153,17 +175,17 @@ export function Ecosystem({
     title: string;
     description: string;
   }> = [
-    { key: 'jassmeister', href: 'https://jassmeister.web.app', icon: icons.jassmeister, ctaText: 'Anmelden', badge: 'member', ...jassmeister, title: 'JassMeisterschaft' },
-    { key: 'jassguru', href: 'https://jassguru.ch', icon: icons.jassguru, ctaText: 'Profil erstellen', badge: 'member', ...jassguru },
-    { key: 'whatsapp', href: '#', icon: icons.whatsapp, ctaText: 'Beitreten', badge: 'member', comingSoon: true, ...whatsapp, title: 'JassBegegnung' },
+    { key: 'jassmeister', href: 'https://jassmeister.web.app', icon: icons.jassmeister, ctaText: ctaLabels.jassmeister, badge: 'member', ...jassmeister },
+    { key: 'jassguru', href: 'https://jassguru.ch', icon: icons.jassguru, ctaText: ctaLabels.jassguru, badge: 'member', ...jassguru },
+    { key: 'whatsapp', href: '#', icon: icons.whatsapp, ctaText: ctaLabels.whatsapp, badge: 'member', comingSoon: true, ...whatsapp },
 
-    { key: 'jasskarten', href: 'https://schweizerjass.ch/', icon: icons.jasskarten, ctaText: 'Karten bestellen', badge: 'member', ...jasskarten },
-    { key: 'jassturniere', href: '#', icon: icons.jassturniere, ctaText: 'Entdecken', badge: 'member', comingSoon: true, ...jassturniere, title: 'JassTurniere' },
-    { key: 'jassreisen', href: 'https://trumpf-as.ch', icon: icons.jassreisen, ctaText: 'Entdecken', badge: 'member', ...jassreisen },
+    { key: 'jasskarten', href: 'https://schweizerjass.ch/', icon: icons.jasskarten, ctaText: ctaLabels.jasskarten, badge: 'member', ...jasskarten },
+    { key: 'jassturniere', href: '#', icon: icons.jassturniere, ctaText: ctaLabels.jassturniere, badge: 'member', comingSoon: true, ...jassturniere },
+    { key: 'jassreisen', href: 'https://trumpf-as.ch', icon: icons.jassreisen, ctaText: ctaLabels.jassreisen, badge: 'member', ...jassreisen },
 
-    { key: 'jasskalkulator', href: '/jasskalkulator', icon: icons.jasskalkulator, ctaText: 'Berechnen', badge: 'free', external: false, ...jasskalkulator },
-    { key: 'jasstrainer', href: '#', icon: icons.jasstrainer, ctaText: 'Trainieren', badge: 'free', comingSoon: true, ...jasstrainer, title: 'JassTrainer Göpf' },
-    { key: 'jasswiki', href: 'https://jasswiki.ch', icon: icons.jasswiki, ctaText: 'Erkunden', badge: 'free', ...jasswiki },
+    { key: 'jasskalkulator', href: '/jasskalkulator', icon: icons.jasskalkulator, ctaText: ctaLabels.jasskalkulator, badge: 'free', external: false, ...jasskalkulator },
+    { key: 'jasstrainer', href: '#', icon: icons.jasstrainer, ctaText: ctaLabels.jasstrainer, badge: 'free', comingSoon: true, ...jasstrainer },
+    { key: 'jasswiki', href: 'https://jasswiki.ch', icon: icons.jasswiki, ctaText: ctaLabels.jasswiki, badge: 'free', ...jasswiki },
   ];
 
   return (
@@ -185,14 +207,14 @@ export function Ecosystem({
             className="relative h-full"
           >
             <div className="absolute top-3 right-3 z-10">
-              <BadgePill type={project.badge} />
+              <BadgePill type={project.badge} labels={badges} />
             </div>
             <EnhancedProjectCard
               title={project.title}
               description={project.description}
               href={project.comingSoon ? '#' : project.href}
               icon={project.icon}
-              ctaText={project.comingSoon ? 'In Entwicklung' : project.ctaText}
+              ctaText={project.comingSoon ? comingSoonLabel : project.ctaText}
               external={'external' in project ? project.external : !project.href?.startsWith('/')}
             />
           </motion.div>

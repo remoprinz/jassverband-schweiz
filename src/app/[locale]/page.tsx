@@ -128,6 +128,23 @@ export default async function HomePage({ params }: HomePageProps) {
           title: t("ecosystem.jassturniere.title"),
           description: t("ecosystem.jassturniere.description"),
         }}
+        badges={{
+          free: t("ecosystem.badges.free"),
+          member: t("ecosystem.badges.member"),
+          preview: t("ecosystem.badges.preview"),
+        }}
+        comingSoonLabel={t("ecosystem.comingSoon")}
+        ctaLabels={{
+          jassmeister: t("ecosystem.cta.jassmeister"),
+          jassguru: t("ecosystem.cta.jassguru"),
+          whatsapp: t("ecosystem.cta.whatsapp"),
+          jasskarten: t("ecosystem.cta.jasskarten"),
+          jassturniere: t("ecosystem.cta.jassturniere"),
+          jassreisen: t("ecosystem.cta.jassreisen"),
+          jasskalkulator: t("ecosystem.cta.jasskalkulator"),
+          jasstrainer: t("ecosystem.cta.jasstrainer"),
+          jasswiki: t("ecosystem.cta.jasswiki"),
+        }}
       />
 
       {/* 7. Testimonials — Cream (auskommentiert bis echte Testimonials vorhanden) */}

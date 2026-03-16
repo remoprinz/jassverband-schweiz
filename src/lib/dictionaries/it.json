@@ -31,7 +31,7 @@
   },
   "schweizermeisterschaft": {
     "hero": {
-      "title": "Primo Campionato Svizzero\nufficiale\ndi Jass a squadre.",
+      "title": "Primo Campionato\nSvizzero ufficiale\ndi Jass a squadre.",
       "subtitle": "La stagione 1 inizia nel 2026. Fonda il tuo gruppo e scrivi la storia del Jass.",
       "cta": "Fonda un gruppo"
     },
@@ -198,16 +198,33 @@
       "description": "Viaggi Jass in Svizzera e all'estero. I membri hanno posti garantiti e sconti."
     },
     "jassmeister": {
-      "title": "Jassmeister",
+      "title": "JassMeisterschaft",
       "description": "La piattaforma per tornei e campionati nazionali. Iscrizione, qualificazione e risultati."
     },
     "jasstrainer": {
-      "title": "Jasstrainer Göpf",
+      "title": "JassTrainer Göpf",
       "description": "Allenamento assistito dall'IA — impara dai migliori. Göpf ti spiega ogni presa."
     },
     "jassturniere": {
-      "title": "Tornei di Jass",
+      "title": "JassTornei",
       "description": "Oltre al campionato, sono previsti ulteriori formati di torneo. Con la piattaforma, i membri appassionati possono organizzare i propri tornei in modo più semplice che mai."
+    },
+    "badges": {
+      "free": "Accesso libero",
+      "member": "Per membri",
+      "preview": "Anteprima"
+    },
+    "comingSoon": "In sviluppo",
+    "cta": {
+      "jassmeister": "Iscriviti",
+      "jassguru": "Crea profilo",
+      "whatsapp": "Unisciti",
+      "jasskarten": "Ordina",
+      "jassturniere": "Scopri",
+      "jassreisen": "Scopri",
+      "jasskalkulator": "Calcola",
+      "jasstrainer": "Allenati",
+      "jasswiki": "Esplora"
     }
   },
   "trust": {

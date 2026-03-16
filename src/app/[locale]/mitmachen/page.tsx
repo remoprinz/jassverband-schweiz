@@ -80,9 +80,9 @@ export default function MitmachenPage() {
     <div>
       {/* ════════════════════ HERO ════════════════════ */}
       <Hero
-        title="Werde offizieller Verbandsjasser"
-        subtitle="Erhalte dein persönliches Jassprofil und sichere dir die Lizenz für die erste Schweizermeisterschaft im Team-Schieber."
-        cta="Mitglied werden"
+        title={t('hero.title')}
+        subtitle={t('hero.subtitle')}
+        cta={t('hero.cta')}
         locale={locale}
         ctaHref="#mitglied-werden"
         preserveTitleLineBreaks

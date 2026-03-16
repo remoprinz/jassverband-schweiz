@@ -432,7 +432,7 @@ export function MeisterschaftContent({
             dangerouslySetInnerHTML={{
               __html: howFootnote.replace(
                 /<ehrenkodex>(.*?)<\/ehrenkodex>/,
-                '<a href="/de/verband#ehrenkodex" style="text-decoration:underline;text-underline-offset:2px">$1</a>'
+                `<a href="/${locale}/verband#ehrenkodex" style="text-decoration:underline;text-underline-offset:2px">$1</a>`
               )
             }}
           />

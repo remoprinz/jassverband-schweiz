@@ -198,16 +198,33 @@
       "description": "Jassreisen in der Schweiz und im Ausland. Mitglieder erhalten garantierte Plätze und Rabatte."
     },
     "jassmeister": {
-      "title": "Jassmeister",
+      "title": "JassMeisterschaft",
       "description": "Die Turnierplattform für nationale Meisterschaften. Anmeldung, Qualifikation und Resultate."
     },
     "jasstrainer": {
-      "title": "Jasstrainer Göpf",
+      "title": "JassTrainer Göpf",
       "description": "KI-gestütztes Training — lerne von den Besten. Göpf erklärt dir jeden Stich."
     },
     "jassturniere": {
-      "title": "Jass-Turniere",
+      "title": "JassTurniere",
       "description": "Neben der SM sind weitere Turnier-Formate geplant. Mit der Plattform können jassverrückte Mitglieder so einfach wie noch nie eigene Turniere organisieren und durchführen."
+    },
+    "badges": {
+      "free": "Frei zugänglich",
+      "member": "Für Mitglieder",
+      "preview": "Vorschau"
+    },
+    "comingSoon": "In Entwicklung",
+    "cta": {
+      "jassmeister": "Anmelden",
+      "jassguru": "Profil erstellen",
+      "whatsapp": "Beitreten",
+      "jasskarten": "Karten bestellen",
+      "jassturniere": "Entdecken",
+      "jassreisen": "Entdecken",
+      "jasskalkulator": "Berechnen",
+      "jasstrainer": "Trainieren",
+      "jasswiki": "Erkunden"
     }
   },
   "trust": {
