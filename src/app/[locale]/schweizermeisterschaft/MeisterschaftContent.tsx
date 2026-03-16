@@ -246,8 +246,8 @@ export function MeisterschaftContent({
               {jassguruCopy}
             </p>
 
-            {/* Desktop: 3 Phones nebeneinander */}
-            <div className="hidden md:grid grid-cols-3 gap-8 lg:gap-12 mb-10">
+            {/* 2 Phones nebeneinander — Mobile und Desktop */}
+            <div className="grid grid-cols-2 gap-4 sm:gap-8 lg:gap-12 max-w-2xl mx-auto mb-10">
               {/* Phone 1: Kreidetafel */}
               <motion.div
                 className="flex flex-col items-center"
@@ -265,12 +265,12 @@ export function MeisterschaftContent({
                     quality={90}
                   />
                 </PhoneFrame>
-                <p className="text-white/60 text-sm mt-4 mb-2 text-center">{jassguruTafelLabel}</p>
+                <p className="text-white/60 text-xs sm:text-sm mt-3 sm:mt-4 mb-1 sm:mb-2 text-center">{jassguruTafelLabel}</p>
                 <a
                   href="https://jassguru.ch/onboarding_tutorial/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white/40 text-xs hover:text-white/70 transition-colors underline underline-offset-2"
+                  className="text-white/40 text-[10px] sm:text-xs hover:text-white/70 transition-colors underline underline-offset-2"
                 >
                   {jassguruTafelLink} →
                 </a>
@@ -293,129 +293,14 @@ export function MeisterschaftContent({
                     quality={90}
                   />
                 </PhoneFrame>
-                <p className="text-white/60 text-sm mt-4 mb-2 text-center">{jassguruGroupLabel}</p>
+                <p className="text-white/60 text-xs sm:text-sm mt-3 sm:mt-4 mb-1 sm:mb-2 text-center">{jassguruGroupLabel}</p>
                 <a
                   href="https://jassguru.ch/view/group/Tz0wgIHMTlhvTtFastiJ"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white/40 text-xs hover:text-white/70 transition-colors underline underline-offset-2"
+                  className="text-white/40 text-[10px] sm:text-xs hover:text-white/70 transition-colors underline underline-offset-2"
                 >
                   {jassguruGroupLink} →
-                </a>
-              </motion.div>
-
-              {/* Phone 3: Profilansicht */}
-              <motion.div
-                className="flex flex-col items-center"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-              >
-                <PhoneFrame>
-                  <Image
-                    src="/images/screenshots/jassguru-profil.jpg"
-                    alt={jassguruAltProfile}
-                    fill
-                    className="object-cover object-top"
-                    quality={90}
-                  />
-                </PhoneFrame>
-                <p className="text-white/60 text-sm mt-4 mb-2 text-center">{jassguruProfileLabel}</p>
-                <a
-                  href="https://jassguru.ch/profile/b16c1120111b7d9e7d733837"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white/40 text-xs hover:text-white/70 transition-colors underline underline-offset-2"
-                >
-                  {jassguruProfileLink} →
-                </a>
-              </motion.div>
-            </div>
-
-            {/* Mobile: Vertikaler Stack mit Screenshots */}
-            <div className="md:hidden space-y-10 mb-10">
-              {/* Kreidetafel */}
-              <motion.div
-                className="flex flex-col items-center"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-              >
-                <PhoneFrame>
-                  <Image
-                    src="/images/screenshots/jassguru-kreidetafel.jpg"
-                    alt={jassguruAltScreenshot}
-                    fill
-                    className="object-cover object-center"
-                    quality={90}
-                  />
-                </PhoneFrame>
-                <p className="text-white/60 text-sm mt-4 mb-2 text-center">{jassguruTafelLabel}</p>
-                <a
-                  href="https://jassguru.ch/onboarding_tutorial/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white/40 text-xs hover:text-white/70 transition-colors underline underline-offset-2"
-                >
-                  {jassguruTafelLink} →
-                </a>
-              </motion.div>
-
-              {/* Gruppe */}
-              <motion.div
-                className="flex flex-col items-center"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-              >
-                <PhoneFrame>
-                  <Image
-                    src="/images/screenshots/jassguru-gruppe.jpg"
-                    alt={jassguruAltGroup}
-                    fill
-                    className="object-cover object-top"
-                    quality={90}
-                  />
-                </PhoneFrame>
-                <p className="text-white/60 text-sm mt-4 mb-2 text-center">{jassguruGroupLabel}</p>
-                <a
-                  href="https://jassguru.ch/view/group/Tz0wgIHMTlhvTtFastiJ"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white/40 text-xs hover:text-white/70 transition-colors underline underline-offset-2"
-                >
-                  {jassguruGroupLink} →
-                </a>
-              </motion.div>
-
-              {/* Profil */}
-              <motion.div
-                className="flex flex-col items-center"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-              >
-                <PhoneFrame>
-                  <Image
-                    src="/images/screenshots/jassguru-profil.jpg"
-                    alt={jassguruAltProfile}
-                    fill
-                    className="object-cover object-top"
-                    quality={90}
-                  />
-                </PhoneFrame>
-                <p className="text-white/60 text-sm mt-4 mb-2 text-center">{jassguruProfileLabel}</p>
-                <a
-                  href="https://jassguru.ch/profile/b16c1120111b7d9e7d733837"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white/40 text-xs hover:text-white/70 transition-colors underline underline-offset-2"
-                >
-                  {jassguruProfileLink} →
                 </a>
               </motion.div>
             </div>
