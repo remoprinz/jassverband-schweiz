@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 import { FaPeopleArrows } from 'react-icons/fa';
 import { FaTrophy } from 'react-icons/fa6';
 import { CgSwiss } from 'react-icons/cg';
@@ -31,6 +32,12 @@ interface PraesidiumMember {
   description: string;
 }
 
+interface EhrenkodexTeaser {
+  title: string;
+  text: string;
+  cta: string;
+}
+
 interface VerbandContentProps {
   praesidiumTitle: string;
   praesidiumSubtitle: string;
@@ -41,6 +48,8 @@ interface VerbandContentProps {
   missionsTitle: string;
   missions: MissionData[];
   praesidium: PraesidiumMember[];
+  ehrenkodex: EhrenkodexTeaser;
+  locale: string;
 }
 
 const missionIcons = [
@@ -62,6 +71,8 @@ export function VerbandContent({
   missionsTitle,
   missions,
   praesidium,
+  ehrenkodex,
+  locale,
 }: VerbandContentProps) {
   return (
     <>
@@ -334,6 +345,62 @@ export function VerbandContent({
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════
+          3.5 EHRENKODEX TEASER — Cream
+          ═══════════════════════════════════════════════════════════════ */}
+      <section id="ehrenkodex" className="py-16 md:py-24" style={{ backgroundColor: 'var(--color-cream)' }}>
+        <div className="container-main">
+          <motion.div
+            className="max-w-[680px] mx-auto text-center"
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <h2
+              className="mb-6"
+              style={{
+                fontFamily: 'var(--font-capita), Capita, Georgia, serif',
+                fontWeight: 700,
+                fontSize: 'clamp(28px, 4vw, 38px)',
+                lineHeight: 1.2,
+                letterSpacing: '-0.5px',
+                color: 'var(--color-foreground)',
+              }}
+            >
+              {ehrenkodex.title}
+            </h2>
+
+            <p
+              className="mb-8"
+              style={{
+                fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
+                fontSize: 'clamp(16px, 2vw, 18px)',
+                lineHeight: 1.65,
+                color: 'var(--color-foreground-muted)',
+              }}
+            >
+              {ehrenkodex.text}
+            </p>
+
+            <Link
+              href={`/${locale}/ehrenkodex`}
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-bold text-white shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-0.5"
+              style={{
+                backgroundColor: 'var(--color-primary)',
+                fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
+                fontSize: 'var(--font-size-16)',
+              }}
+            >
+              {ehrenkodex.cta}
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+          </motion.div>
         </div>
       </section>
 

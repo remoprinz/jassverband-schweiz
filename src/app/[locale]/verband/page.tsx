@@ -100,6 +100,12 @@ export default async function VerbandPage({ params }: VerbandPageProps) {
         missionsTitle={tLeitbild("missionsTitle")}
         missions={missions}
         praesidium={praesidium}
+        ehrenkodex={{
+          title: t("ehrenkodex.subtitle"),
+          text: t("ehrenkodex.teaserText"),
+          cta: t("ehrenkodex.teaserCta"),
+        }}
+        locale={locale}
       />
     </div>
   );
