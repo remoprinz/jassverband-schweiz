@@ -1,12 +1,12 @@
 {
   "metadata": {
-    "title": "Federazione Svizzera di Jass | Tradizione e Innovazione",
-    "description": "La Federazione Svizzera di Jass promuove il gioco nazionale svizzero come sport mentale moderno. Promozione giovanile, piattaforme digitali, campionati nazionali."
+    "title": "Federazione Svizzera di Jass | La casa nazionale degli jassisti",
+    "description": "La Federazione Svizzera di Jass organizza il primo Campionato Svizzero ufficiale di Schieber a squadre, connette i giocatori in tutta la Svizzera e fornisce strumenti digitali per la comunità Jass."
   },
   "nav": {
     "home": "Home",
     "schweizermeisterschaft": "Campionato",
-    "plattformen": "Piattaforme",
+    "plattformen": "Piattaforma",
     "verband": "Federazione",
     "news": "Notizie",
     "kontakt": "Contatto",
@@ -15,83 +15,95 @@
   "hero": {
     "title": "Il Jass è più di un gioco di carte.",
     "subtitle": "È patrimonio culturale svizzero — e merita un futuro moderno.",
-    "cta": "Partecipa ora",
+    "cta": "Diventa membro",
     "altTable": "Tavolo in legno",
     "altFelt": "Tappeto da jass",
     "altCard": "Carta da jass"
   },
   "vision": {
-    "title": "La nostra visione: in Svizzera nessun giocatore di Jass resta senza tavolo.",
-    "subtitle": "",
+    "title": "La nostra visione",
+    "subtitle": "In Svizzera nessun giocatore di Jass resta senza tavolo.",
     "copy": "La Federazione Svizzera di Jass si impegna attivamente a collegare giocatrici e giocatori di Jass in tutta la Svizzera, a rendere visibili nuovi tavoli e a facilitare l'accesso al gioco condiviso.",
     "cta": "Leggi di più"
   },
   "systemrelevanz": {
-    "title": "Perché la federazione di Jass?"
+    "title": "Perché è necessaria la Federazione di Jass?"
   },
   "schweizermeisterschaft": {
     "hero": {
-      "title": "Il Campionato Svizzero\ndi Jass a squadre.",
-      "subtitle": "La stagione 1 inizia nel 2026 — partecipa e scrivi la storia del Jass.",
-      "cta": "Prenota licenza"
+      "title": "Primo Campionato Svizzero\nufficiale\ndi Jass a squadre.",
+      "subtitle": "La stagione 1 inizia nel 2026. Fonda il tuo gruppo e scrivi la storia del Jass.",
+      "cta": "Fonda un gruppo"
     },
     "team": {
       "title": "Insieme verso il trono",
-      "copy1": "La Svizzera conosce molti tornei di Jass — ma quasi sempre alla fine vince un singolo. Il Campionato Svizzero stabilisce un nuovo formato: non vince il singolo giocatore — ma la squadra.",
-      "copy2": "Schierarsi come unità, vincere come unità. Come nel calcio. Come nell'hockey."
+      "copy1": "Schierarsi come unità, vincere come unità.",
+      "copy2": "La Svizzera conosce molti tornei di Jass — ma quasi sempre alla fine vince un singolo. La FSJ stabilisce un nuovo formato: non vince il singolo giocatore, ma l'intera squadra di Schieber.",
+      "copy3": "Come nel calcio, come nell'hockey — ora anche nello Schieber."
+    },
+    "jassguru": {
+      "title": "JassGuru: la lavagna digitale del campionato",
+      "copy": "Per consentire al Campionato Svizzero di svolgersi in modo decentralizzato in tutta la Svizzera, si gioca digitalmente tramite JassGuru. Qui registrate le vostre partite sulla lavagna digitale — in modo rapido e semplice. In background si creano automaticamente classifica, statistiche e confronto tra gruppi.",
+      "cta": "Apri JassGuru",
+      "tafelLabel": "La vostra lavagna digitale",
+      "tafelLink": "Provalo",
+      "groupLabel": "Ecco come appare il vostro gruppo",
+      "groupLink": "Vedi esempio di gruppo",
+      "profileLabel": "Ecco come appare il vostro profilo",
+      "profileLink": "Vedi esempio di profilo",
+      "altScreenshot": "Screenshot JassGuru",
+      "altGroup": "Vista gruppo JassGuru",
+      "altProfile": "Vista profilo JassGuru"
     },
     "how": {
-      "title": "La Svizzera è il vostro campo da gioco",
-      "intro": "Dimenticate i calendari rigidi. Nella Stagione 1 siete voi a decidere quando e dove attaccate.",
+      "title": "Come qualificarsi",
+      "intro": "In tre livelli dal proprio tavolo da gioco al titolo di Campione Svizzero.",
       "steps": [
         {
-          "title": "Passo 1: Fondare una squadra",
-          "description": "Almeno 4 giocatori. Un capitano rappresenta la squadra presso la FSJ e coordina le partite direttamente con gli altri capitani."
+          "title": "Livello 1 — Fonda un gruppo",
+          "description": "Create il vostro gruppo su JassGuru e registrate almeno 3 partite — con minimo 10 giochi in totale.* Il vostro tavolo, le vostre regole, il vostro ritmo. Questa è la vostra qualificazione."
         },
         {
-          "title": "Passo 2: Qualificarsi",
-          "description": "Decentralizzato in tutta la Svizzera. Sfidate squadre nella vostra regione o viaggiate attraverso i cantoni."
+          "title": "Livello 2 — Sfidate altri gruppi",
+          "description": "Non appena il vostro gruppo è qualificato, potete sfidare altre squadre al duello diretto. Squadra contro squadra — ogni risultato conta per la classifica nazionale."
         },
         {
-          "title": "Passo 3: Classifica live",
-          "description": "Ogni partita conta. I risultati vengono registrati via JassGuru e confluiscono in diretta nella classifica nazionale."
-        },
-        {
-          "title": "Passo 4: La finale",
-          "description": "Le migliori squadre si qualificano per il grande torneo finale a Zurigo. Lì è in gioco il primo titolo ufficiale della storia."
+          "title": "Finale",
+          "description": "Le migliori squadre della classifica si qualificano per il torneo finale. Lì verrà incoronato il primo Campione Svizzero ufficiale di Schieber a squadre."
         }
-      ]
+      ],
+      "footnote": "* Una partita è composta da diversi giochi. Imbrogliare è inutile: ogni singola mano viene registrata con timestamp. Chi non rispetta il <ehrenkodex>codice d'onore</ehrenkodex> della FSJ viene escluso permanentemente."
     },
     "home": {
       "title": "Vantaggio casalingo: il vostro tavolo, le vostre regole",
-      "copy": "Celebriamo la diversità della Svizzera del Jass. La squadra di casa determina le regole — varianti di briscola, annunci, punti obiettivo.",
-      "strichIntro": "Affinché i risultati siano comparabili in tutta la Svizzera, si conta a tratti:",
+      "copy": "Celebriamo la diversità del Jass svizzero. La squadra di casa determina le regole — varianti di briscola, annunci, punti obiettivo.",
+      "strichIntro": "Per rendere i risultati comparabili in tutta la Svizzera, si conta a tratti:",
       "strich1Title": "1 tratto",
-      "strich1Desc": "Montagna (Berg) o Match.",
+      "strich1Desc": "Montagna o pareggio.",
       "strich2Title": "2 tratti",
-      "strich2Desc": "Vittoria, Schneider o Contro-match.",
+      "strich2Desc": "Vittoria, Schneider o contro-match.",
       "strichConclusion": "Indipendentemente dalle regole con cui giocate — alla fine contano i tratti per la classifica nazionale. Così preserviamo la tradizione locale e permettiamo comunque una competizione sportiva.",
       "profileTitle": "La vostra squadra scrive la storia",
       "profileCopy": "Ogni squadra iscritta riceve un profilo pubblico su JassGuru — con la cronologia completa delle partite e tutti i risultati. Fate parte della prima classifica ufficiale di Jass della Svizzera."
     },
     "titles": {
-      "title": "Un campionato – due titoli",
-      "intro": "Nella Stagione 1 incoroniamo i migliori del paese:",
-      "open": "🏆 Campione Svizzero",
+      "title": "Un campionato — due titoli",
+      "intro": "Nella stagione 1 incoroniamo i migliori del paese:",
+      "open": "\uD83C\uDFC6 Campione Svizzero",
       "openSub": "Aperto a tutte le squadre.",
-      "youth": "🎖️ Campione Svizzero Giovanile",
+      "youth": "\uD83C\uDF96\uFE0F Campione Svizzero Giovanile",
       "youthSub": "Per squadre fino a 25 anni.",
-      "memberTitle": "Diritto di gioco",
-      "memberCopy": "L'adesione alla FSJ dà automaticamente diritto a partecipare al Campionato Svizzero. Non c'è una tassa di iscrizione separata per la stagione o la classifica.",
-      "ctaMember": "Assicurati ora il diritto di partenza",
+      "memberTitle": "Diritto di partecipazione",
+      "memberCopy": "L'adesione alla FSJ dà diritto alla partecipazione al Campionato Svizzero e sblocca JassGuru Pro — con classifica Elo, statistiche e confronto tra gruppi. Nessuna quota di iscrizione separata.",
+      "ctaMember": "Ottieni il diritto di partenza",
       "ctaTeam": "Alla modalità su Jassmeister.ch"
     },
-    "title": "Il Campionato Svizzero di Schieber a squadre.",
+    "title": "Primo Campionato Svizzero ufficiale di Jass a squadre.",
     "subtitle": "Schierarsi come unità, vincere come unità. Come nel calcio, come nell'hockey.",
     "copy": "Non vince il singolo giocatore, ma l'intera squadra di Schieber. La stagione 1 inizia nel 2026.",
-    "jugend": "Anche le squadre fino a 25 anni partecipano con una classifica separata.",
+    "jugend": "Anche le squadre giovanili fino a 25 anni partecipano e ricevono una classifica separata.",
     "cta": "Al campionato svizzero",
-    "altFelt": "Sfondo feltro verde",
+    "altFelt": "Sfondo tappeto da jass",
     "altChalkboard": "Sfondo lavagna"
   },
   "mission": {
@@ -117,7 +129,7 @@
       },
       {
         "title": "Connettere i giocatori",
-        "mission": "Portiamo i giocatori di Jass – soprattutto nell'era digitale – consapevolmente di nuovo al tavolo fisico."
+        "mission": "Portiamo i giocatori di Jass — soprattutto nell'era digitale — consapevolmente di nuovo al tavolo fisico."
       },
       {
         "title": "Promuovere i giovani",
@@ -125,7 +137,7 @@
       },
       {
         "title": "Abbattere le barriere",
-        "mission": "Abbassiamo le soglie di ingresso e rendiamo il Jass accessibile a tutti – indipendentemente dall'esperienza."
+        "mission": "Abbassiamo le soglie di ingresso e rendiamo il Jass accessibile a tutti — indipendentemente dall'esperienza."
       },
       {
         "title": "Modernizzare la tradizione",
@@ -146,7 +158,7 @@
     },
     "youth": {
       "title": "Promuovere i giovani",
-      "description": "Il Campionato Svizzero di Jass a squadre giovanili porta il pensiero strategico e il lavoro di squadra nelle scuole e università."
+      "description": "Il Campionato Svizzero Giovanile di Schieber a squadre porta il pensiero strategico e il lavoro di squadra nelle scuole e università."
     },
     "future": {
       "title": "Plasmare il futuro",
@@ -154,23 +166,23 @@
     }
   },
   "tournament": {
-    "title": "Campionato Svizzero di Jass a squadre giovanili",
-    "subtitle": "La prima competizione nazionale di Jass per squadre giovani",
-    "cta": "Iscriviti ora"
+    "title": "Campionato Svizzero di Schieber a squadre",
+    "subtitle": "Il primo Campionato Svizzero nazionale di Schieber a squadre.",
+    "cta": "Per saperne di più"
   },
   "ecosystem": {
-    "title": "Le nostre piattaforme",
-    "subtitle": "L'ecosistema Jass della Federazione Svizzera di Jass",
+    "title": "La nostra piattaforma",
+    "subtitle": "Il Jass vince quando collaboriamo. Nel nostro ecosistema Jass riuniamo strumenti, conoscenze e partner impegnati in un'unità. Così creiamo le fondamenta per una moderna cultura Jass svizzera.",
     "whatsapp": {
-      "title": "Incontro Jass",
-      "description": "Scambia idee con altri giocatori, trova compagni di gioco e resta informato. La chat comunitaria per i membri."
+      "title": "JassIncontro",
+      "description": "Scambia idee con altri giocatori, trova compagni di gioco e resta informato. La piattaforma comunitaria per i membri."
     },
     "jasswiki": {
       "title": "JassWiki",
       "description": "Oltre 100 articoli su regole, varianti, storia e strategia. L'enciclopedia del Jass."
     },
     "jasskalkulator": {
-      "title": "Calcolatore Jass",
+      "title": "JassCalcolatore",
       "description": "Calcola le probabilità durante il gioco. Quali atout sono ancora in gioco?"
     },
     "jassguru": {
@@ -178,108 +190,108 @@
       "description": "Registra le partite, segui il tuo sviluppo e partecipa alla classifica nazionale."
     },
     "jasskarten": {
-      "title": "Carte da Jass",
-      "description": "Carte da Jass svizzere premium — tradizionali e moderne. Set di carte esclusivo per i membri."
+      "title": "JassCarte",
+      "description": "Carte da Jass svizzere premium — tradizionali e moderne. Set di carte esclusivo di stagione per i membri."
     },
     "jassreisen": {
-      "title": "Viaggi Jass",
+      "title": "JassViaggi",
       "description": "Viaggi Jass in Svizzera e all'estero. I membri hanno posti garantiti e sconti."
     },
     "jassmeister": {
-      "title": "JassMaestro",
+      "title": "Jassmeister",
       "description": "La piattaforma per tornei e campionati nazionali. Iscrizione, qualificazione e risultati."
     },
     "jasstrainer": {
-      "title": "Allenatore Jass Göpf",
-      "description": "Allenamento con IA — impara dai migliori. Göpf ti spiega ogni presa."
+      "title": "Jasstrainer Göpf",
+      "description": "Allenamento assistito dall'IA — impara dai migliori. Göpf ti spiega ogni presa."
     },
     "jassturniere": {
       "title": "Tornei di Jass",
-      "description": "Oltre al campionato, i membri organizzano i propri tornei — dal Jass di 24 ore al torneo del club."
+      "description": "Oltre al campionato, sono previsti ulteriori formati di torneo. Con la piattaforma, i membri appassionati possono organizzare i propri tornei in modo più semplice che mai."
     }
   },
   "trust": {
     "badge": "Tradizione vivente",
     "text": "Iscritto presso l'Ufficio federale della cultura",
-    "description": "La FSJ rappresenta il Jass come tradizione riconosciuta dall'Ufficio federale della cultura quale",
+    "description": "La FSJ rappresenta il Jass come",
     "linkText": "tradizione vivente",
     "altBadge": "Tradizioni viventi della Svizzera"
   },
   "homeFaq": {
     "title": "Domande frequenti",
     "q1": {
-      "question": "Perché serve una federazione di Jass?",
+      "question": "Perché è necessaria una federazione di Jass?",
       "answer": "Il Jass è iscritto come tradizione vivente presso l'Ufficio federale della cultura. Ma le tradizioni viventi hanno bisogno di cura attiva. La Federazione Svizzera di Jass garantisce regole chiare, campionati nazionali, infrastruttura digitale e la connessione di tutti i giocatori in Svizzera."
     },
     "q2": {
       "question": "Come posso diventare membro?",
-      "answer": "Scegli la tua licenza sulla nostra pagina Partecipa e iscriviti. Riceverai il tuo profilo Jass, accesso al sistema Elo e il diritto di partecipare al campionato svizzero. Tutti coloro che si iscrivono nella stagione 1 saranno registrati come membri fondatori."
+      "answer": "Scegli la tua licenza sulla nostra pagina Partecipa e iscriviti. Riceverai il tuo profilo Jass, l'accesso al sistema Elo e il diritto di partecipare al Campionato Svizzero. Tutti coloro che aderiscono nella stagione 1 saranno registrati come membri fondatori."
     },
     "q3": {
       "question": "Quali vantaggi ho come membro?",
-      "answer": "Il tuo profilo Jass personale con statistiche e classifica Elo, diritto di partecipazione al campionato svizzero, accesso alla rete della federazione e alla comunità WhatsApp. Con la licenza Trumpf ricevi inoltre un set di carte esclusivo e sconti sui viaggi Jass."
+      "answer": "Il tuo profilo Jass personale con statistiche e classifica Elo, diritto di partecipazione al Campionato Svizzero, accesso alla rete della federazione e alla comunità WhatsApp. Con la licenza Trumpf ricevi inoltre un set di carte esclusivo e sconti sui viaggi Jass."
     },
     "q4": {
       "question": "C'è un campionato svizzero?",
-      "answer": "Sì — il primo campionato nazionale di Schieber a squadre. Partecipano intere squadre, non giocatori singoli. Le squadre giovanili hanno una classifica separata. Il campionato sarà grande quanto la community."
+      "answer": "Sì — il primo Campionato Svizzero nazionale di Schieber a squadre. Partecipano intere squadre, non giocatori singoli. Le squadre giovanili ricevono una classifica separata. Il campionato sarà grande quanto la community."
     }
   },
   "leitbild": {
-    "title": "Visione e missione",
-    "visionTitle": "La nostra visione: in Svizzera nessun giocatore di Jass resta senza tavolo.",
-    "visionSubtitle": "",
+    "title": "Carta",
+    "visionTitle": "La nostra visione",
+    "visionSubtitle": "In Svizzera nessun giocatore di Jass resta senza tavolo.",
     "visionCopy": "La Federazione Svizzera di Jass si impegna attivamente a collegare giocatrici e giocatori di Jass in tutta la Svizzera, a rendere visibili nuovi tavoli e a facilitare l'accesso al gioco condiviso.",
     "visionText": "La Federazione Svizzera di Jass si impegna attivamente a collegare giocatrici e giocatori di Jass in tutta la Svizzera, a rendere visibili nuovi tavoli e a facilitare l'accesso al gioco condiviso.",
-    "missionsTitle": "Le nostre missioni",
+    "missionsTitle": "La nostra missione",
     "missions": [
       {
         "title": "Stabilire i campionati",
         "mission": "Facciamo del Jass uno sport di competizione ufficiale con strutture chiare, classifiche e campionati nazionali.",
-        "kernidee": "Facciamo del Jass uno sport di competizione ufficiale con strutture chiare, classifiche e campionati nazionali."
+        "kernidee": "Ogni attività seria conosce il suo campionato. Creiamo formati vincolanti, regole trasparenti e strutture istituzionali — dal torneo locale al vertice nazionale. Il Jass diventa misurabile, comparabile e riconosciuto sportivamente."
       },
       {
         "title": "Connettere i giocatori",
-        "mission": "Portiamo i giocatori di Jass – soprattutto nell'era digitale – consapevolmente di nuovo al tavolo fisico.",
-        "kernidee": "Portiamo i giocatori di Jass – soprattutto nell'era digitale – consapevolmente di nuovo al tavolo fisico."
+        "mission": "Portiamo i giocatori di Jass — soprattutto nell'era digitale — consapevolmente di nuovo al tavolo fisico.",
+        "kernidee": "La digitalizzazione connette virtualmente, ma non sostituisce l'incontro tra persone. Il nostro obiettivo è rendere visibili i giocatori, rafforzare le comunità regionali e portare le persone dallo smartphone isolato al tavolo da gioco condiviso. Utilizziamo gli strumenti digitali per l'organizzazione e la connessione — si gioca insieme, sul posto, con vere interazioni."
       },
       {
         "title": "Promuovere i giovani",
         "mission": "Entusiasmiamo la prossima generazione per il Jass e lo ancoriamo in modo sostenibile nel sistema formativo.",
-        "kernidee": "Entusiasmiamo la prossima generazione per il Jass e lo ancoriamo in modo sostenibile nel sistema formativo."
+        "kernidee": "Contrastiamo attivamente l'invecchiamento. Il Jass promuove il pensiero strategico, la comprensione delle probabilità, il lavoro di squadra e il fair play. La nostra visione a lungo termine è stabilire il Jass come elemento culturale e pedagogico nel contesto scolastico."
       },
       {
         "title": "Abbattere le barriere",
-        "mission": "Abbassiamo le soglie di ingresso e rendiamo il Jass accessibile a tutti – indipendentemente dall'esperienza.",
-        "kernidee": "Abbassiamo le soglie di ingresso e rendiamo il Jass accessibile a tutti – indipendentemente dall'esperienza."
+        "mission": "Abbassiamo le soglie di ingresso e rendiamo il Jass accessibile a tutti — indipendentemente dall'esperienza.",
+        "kernidee": "Molti interessati non osano sedersi al tavolo perché non possono valutare il proprio livello o hanno paura di fare errori. Creiamo offerte di apprendimento a bassa soglia, valutazioni trasparenti del livello e modelli di allenamento assistiti dall'IA, con pazienza e accompagnamento individuale — dalla prima presa al giocatore di torneo ambizioso."
       },
       {
         "title": "Modernizzare la tradizione",
         "mission": "Portiamo il Jass nell'era digitale e ne assicuriamo la rilevanza per le generazioni future.",
-        "kernidee": "Portiamo il Jass nell'era digitale e ne assicuriamo la rilevanza per le generazioni future."
+        "kernidee": "Tradizione e tecnologia non sono in contraddizione. Utilizziamo piattaforme moderne, analisi dei dati, formati di torneo digitali e intelligenza artificiale per rafforzare il Jass a lungo termine, renderlo più accessibile e svilupparlo strutturalmente — senza perdere il suo carattere."
       },
       {
         "title": "Plasmare la cultura",
         "mission": "Curiamo e sviluppiamo il Jass come patrimonio culturale vivente che unisce le persone oltre ogni confine sociale.",
-        "kernidee": "Curiamo e sviluppiamo il Jass come patrimonio culturale vivente che unisce le persone oltre ogni confine sociale."
+        "kernidee": "Il Jass è più di un gioco — è uno specchio della Svizzera: diversificato, adattabile e comunitario. Si adatta sia all'osteria che al formato torneo, sia alla famiglia che alla vita associativa. Dall'operaio al consigliere federale, riunisce naturalmente le persone attorno a un tavolo. Questa forza unificante non la preserviamo soltanto — la sviluppiamo attivamente."
       }
     ]
   },
   "verband": {
     "hero": {
       "title": "Perché il Jass\nresti vivo.",
-      "subtitle": "Dal 15 gennaio 2026, ci impegniamo attivamente per la conservazione e la promozione della cultura Jass svizzera.",
+      "subtitle": "Dal 15 gennaio 2026 ci impegniamo attivamente per la conservazione e la promozione della cultura Jass svizzera.",
       "cta": "Diventa membro"
     },
     "praesidium": {
       "remo": {
         "role": "Presidente",
-        "quote": "Non credo nella fortuna. Per questo mi concentro particolarmente sugli ablupfen.",
+        "quote": "Non credo nella fortuna. Per questo mi concentro particolarmente durante l'«Ablupfen».",
         "description": "Remo promuove la digitalizzazione del gioco nazionale svizzero. Con JassGuru e JassWiki rende per la prima volta accessibili conoscenze, regole e risultati a livello svizzero. In seno alla federazione, si assicura che tradizione e tecnologia si incontrino."
       },
       "fabian": {
         "role": "Vicepresidente",
         "quote": "Nel Jass si rispecchia il mondo.",
-        "description": "Fabian conosce la scena Jass svizzera come pochi altri. Come redattore di Trumpf-As e direttore di tornei esperto, sa cosa muove giocatrici e giocatori. In seno alla federazione, porta la prospettiva dall'osteria alla sala tornei."
+        "description": "Fabian conosce la scena Jass svizzera come pochi altri. Come redattore di Trumpf-As e direttore di tornei esperto, sa cosa muove le giocatrici e i giocatori. In seno alla federazione, porta la prospettiva dall'osteria alla sala tornei."
       },
       "erich": {
         "role": "Segretario",
@@ -301,11 +313,38 @@
       "brochureLink": "Vedi la brochure"
     }
   },
+  "ehrenkodex": {
+    "title": "Codice d'onore",
+    "subtitle": "La nostra promessa al gioco",
+    "teaserText": "Il Jass è più di un gioco di carte — è cultura svizzera vissuta, un pezzo di patria che ha riunito famiglie e amici attorno a un tavolo per generazioni. Come partecipanti al Campionato Svizzero, portiamo la responsabilità di onorare questa preziosa tradizione.",
+    "teaserCta": "Leggi il codice d'onore",
+    "intro": "Il Jass è più di un gioco di carte — è cultura svizzera vissuta, un pezzo di patria che ha riunito famiglie e amici attorno a un tavolo per generazioni. Da secoli questo gioco si gioca con passione, rispetto e decenza. Come partecipanti al Campionato Svizzero di Schieber a squadre, portiamo la responsabilità di onorare questa preziosa tradizione e di mantenerla viva per le generazioni future.",
+    "fairplayTitle": "Il fair play come fondamento",
+    "fairplayIntro": "Ci impegniamo ad un'equità assoluta sotto ogni aspetto:",
+    "fairplay1Title": "L'onestà prima della vittoria",
+    "fairplay1Text": "Ogni carta viene giocata secondo le regole, ogni punto contato onestamente. Il valore della nostra vittoria non si misura dal numero di punti, ma dal modo in cui l'abbiamo ottenuta.",
+    "fairplay2Title": "Rispetto per tutti",
+    "fairplay2Text": "Nei confronti di compagni di squadra, avversari, arbitri e spettatori manteniamo sempre un tono rispettoso e amichevole — indipendentemente dal punteggio.",
+    "fairplay3Title": "Trasparenza e integrità",
+    "fairplay3Text": "Giochiamo a carte scoperte in senso figurato. Accordi, segni o altre forme di comunicazione sleale non hanno posto ai nostri tavoli.",
+    "konsequenzenTitle": "Conseguenze in caso di violazione delle regole",
+    "konsequenzenIntro": "Per preservare l'integrità del nostro torneo, valgono regole chiare:",
+    "konsequenzenWarning": "Ogni sospetto fondato di comportamento sleale può portare all'esclusione immediata e irrevocabile dalla federazione.",
+    "konsequenzenList": ["Comunicazione non autorizzata tra partner di squadra", "Manipolazione di carte o materiale di gioco", "Conteggio intenzionalmente errato dei punti", "Comportamento antisportivo verso altri partecipanti"],
+    "konsequenzenFooter": "La direzione del torneo decide in ultima istanza in caso di dubbio. Il fair play e la protezione di tutti i giocatori onesti sono prioritari.",
+    "botschafterTitle": "Ambasciatori di una tradizione",
+    "botschafterText1": "Come partecipanti al Campionato Svizzero di Schieber a squadre o ad altri tornei organizzati dalla FSJ, siamo più che giocatori — siamo ambasciatori di una cultura centenaria. In ogni presa che facciamo, in ogni atout che scegliamo, proseguiamo ciò che i nostri nonni e i loro nonni prima di loro hanno iniziato.",
+    "botschafterText2": "Non giochiamo solo per noi stessi, ma per tutti coloro che amano il Jass. Giochiamo per i ricordi di serate conviviali nelle osterie e ai tavoli di famiglia. Giochiamo per il futuro di questo patrimonio culturale unico.",
+    "zielTitle": "Il nostro obiettivo comune",
+    "zielText": "Che vinca il migliore — ma che ci alziamo tutti dal tavolo come degni rappresentanti della nostra tradizione del Jass. Perché alla fine della giornata, ciò che conta non è solo chi ha fatto più punti, ma che tutti insieme abbiamo contribuito a preservare il Jass per ciò che è sempre stato:",
+    "zielQuote": "Il Jass è un gioco di tradizione, amicizia e gioia.",
+    "cta": "Partecipa"
+  },
   "projekte": {
     "title": "I nostri progetti",
     "subtitle": "Strumenti e piattaforme digitali per la comunità Jass",
     "futureTitle": "Insieme per il futuro del Jass",
-    "futureDescription": "Tutte le piattaforme fanno parte dell'ecosistema digitale della Federazione Svizzera di Jass. Si completano a vicenda e offrono alla community Jass un'offerta completa, dalla conoscenza alla competizione passando per l'allenamento."
+    "futureDescription": "Tutte le piattaforme fanno parte dell'ecosistema digitale della Federazione Svizzera di Jass. Si completano a vicenda e offrono alla community Jass un'offerta completa — dalla conoscenza alla competizione passando per l'allenamento."
   },
   "partner": {
     "ctaTitle": "Interessati?",
@@ -324,7 +363,7 @@
   },
   "kontakt": {
     "title": "Contatto",
-    "subtitle": "Siamo lieti di ricevere il tuo messaggio",
+    "subtitle": "Siamo lieti di ricevere il tuo messaggio.",
     "form": {
       "name": "Nome",
       "email": "E-mail",
@@ -402,7 +441,7 @@
     "probability": "Qual è la probabilità che ...",
     "result": "Probabilità",
     "resultSuffix": "... ha:",
-    "selectCards": "Seleziona le tue 9 carte.",
+    "selectCards": "Seleziona le tue nove carte.",
     "opponent": {
       "partner": "il mio\npartner",
       "opponentsOne": "uno degli\navversari",
@@ -426,143 +465,89 @@
   },
   "mitmachen": {
     "hero": {
-      "title": "Plasmate il futuro del Jass svizzero",
-      "subtitle": "Diventate membro fondatore della Federazione Svizzera di Jass. Nel 2026 poniamo le basi per il nostro gioco nazionale – siate presenti fin dall'inizio.",
-      "cta": "Diventa membro",
-      "ctaSecondary": "Richiedi sponsorizzazione"
-    },
-    "warum": {
-      "title": "Un'eredità che deve essere curata",
-      "intro": "Il Jass è iscritto come «Tradizione vivente» presso l'Ufficio federale della cultura. Ma la tradizione ha bisogno di portatori – persone che la tramandano.",
-      "wissen": {
-        "title": "Conservazione del sapere",
-        "description": "JassWiki – tutte le regole e varianti, liberamente accessibili a tutti."
-      },
-      "modern": {
-        "title": "Modernizzazione",
-        "description": "JassGuru – un sistema Elo equo a livello svizzero per tutti i giocatori."
-      },
-      "foerderung": {
-        "title": "Promozione",
-        "description": "Programmi per la prossima generazione di giocatori di Jass."
-      },
-      "vertretung": {
-        "title": "Rappresentanza",
-        "description": "Una voce forte nei confronti di politica, media e partner."
-      }
-    },
-    "pionier": {
-      "badge": "Solo 2026",
-      "title": "Status di Pioniere – Esclusivo nell'anno di fondazione",
-      "intro": "Tutti i membri che aderiscono nel 2026 ricevono lo status permanente di Pioniere JVS.",
-      "register": {
-        "title": "Registro di fondazione",
-        "description": "Il vostro nome sarà (su richiesta) registrato nel registro ufficiale di fondazione."
-      },
-      "kartenset": {
-        "title": "Set di carte fondatore",
-        "description": "Riceverete il set di carte JVS limitato – stampato in Svizzera."
-      },
-      "feedback": {
-        "title": "Diritto di feedback",
-        "description": "Partecipate attivamente: diritto di feedback diretto sullo sviluppo dei nostri strumenti."
-      }
+      "title": "La stagione 1 è aperta. Il tuo posto è pronto.",
+      "subtitle": "Diventa membro ora e ottieni la licenza per partecipare al primo Campionato Svizzero di Schieber a squadre. Valida fino all'incoronazione dei primi Campioni Svizzeri.",
+      "teaser": "Curioso?",
+      "teaserLabel": "Vai all'anteprima",
+      "teaserUrl": "https://jassmeister.web.app",
+      "cta": "Scegli una licenza"
     },
     "pricing": {
-      "title": "Scegliete il vostro pacchetto",
-      "subtitle": "Ogni pacchetto sostiene la missione della Federazione Svizzera di Jass.",
-      "year": "anno",
-      "recommended": "Popolare",
-      "select": "Seleziona",
-      "groupNote": "Nota: il pacchetto di gruppo autorizza la partecipazione agli eventi di gruppo. Per gli eventi individuali è necessaria una licenza Jasser individuale.",
+      "title": "Scegli la tua licenza per la stagione 1.",
+      "subtitle": "Scegli la licenza adatta e approfitta dei servizi della Federazione Svizzera di Jass. Unisciti al movimento Jass.",
+      "year": "Stagione",
+      "recommended": "Consigliato",
+      "select": "Scegli la licenza",
+      "groupNote": "Nota: la licenza di gruppo autorizza la partecipazione agli eventi di gruppo. Per gli eventi individuali è necessaria una licenza Jasser individuale.",
       "pionier": {
-        "title": "Jass-Pioniere",
-        "feature1": "Adesione completa alla JVS",
-        "feature2": "Accesso al sistema Elo JassGuru",
-        "feature3": "Status di pioniere permanente",
-        "feature4": "Classifica Elo e statistiche avanzate",
-        "feature5": "Base ideale per la stagione 2026",
-        "linkLabel": "→ jassguru.ch",
-        "linkUrl": "https://jassguru.ch"
+        "title": "Licenza Jass",
+        "feature1": "Diritto di partecipazione ai Campionati Svizzeri di Jass.",
+        "feature2": "Brevetto Jass come attestato ufficiale di competenza (badge nel profilo).",
+        "feature3": "Accesso alla chat membri FSJ e alla rete della federazione.",
+        "feature4": "JassGuru Pro con classifica Elo e statistiche.",
+        "feature5": "Posizione ideale per la stagione 2026."
       },
       "botschafter": {
-        "title": "Jass-Ambasciatore",
-        "feature1": "Tutto da Jass-Pioniere",
-        "feature2": "Set di carte JVS fondatore limitato",
-        "feature3": "Statistiche estese in JassGuru",
-        "feature4": "Accesso prioritario 24h a tornei ed eventi",
-        "feature5": "Sconto esclusivo sui viaggi Jass",
+        "title": "Licenza Trumpf",
+        "feature1": "Tutto dalla licenza Jass.",
+        "feature2": "Set di carte esclusivo di stagione (edizione 2026 come prima serie).",
+        "feature3": "24 ore di accesso prioritario a tornei ed eventi nazionali.",
+        "feature4": "Sconto esclusivo sui viaggi Jass con Trumpf-As.",
+        "feature5": "Set di carte non disponibile in commercio, della massima qualità.",
         "linkLabel": "→ trumpf-as.ch",
         "linkUrl": "https://trumpf-as.ch"
       },
       "patron": {
-        "title": "Il Tavolo di Jass",
-        "feature1": "Tutto da Jass-Ambasciatore",
-        "feature2": "Partecipazione al 1° torneo nazionale della Federazione",
-        "feature3": "Accesso alla Lega svizzera di Schieber a squadre",
-        "feature4": "Jass-Brevet, Elo e statistiche per ogni membro",
-        "feature5": "Vantaggio prezzo: CHF 35 a persona"
+        "title": "Licenza di gruppo",
+        "feature1": "Per gruppi di Jass fino a 10 persone.",
+        "feature2": "Diritto di partecipazione agli eventi di gruppo e al Campionato di Schieber a squadre.",
+        "feature3": "Classifica privata di gruppo su JassGuru.",
+        "feature4": "Brevetto Jass, classifica Elo e statistiche per ogni persona.",
+        "feature5": "Vantaggio prezzo: CHF 35 a persona invece di CHF 60."
       }
     },
     "goenner": {
       "title": "Sostenitore",
       "lead": "Non ti servono classifica Elo o set di carte. Vuoi semplicemente che il Jass abbia un futuro.",
-      "description": "Con il tuo sostegno manteniamo JassWiki senza pubblicità, sviluppiamo JassGuru e portiamo il gioco nazionale alla prossima generazione.",
+      "description": "Con il tuo sostegno manteniamo JassWiki senza pubblicità, sviluppiamo JassGuru e portiamo il gioco nazionale alla prossima generazione. Su richiesta comparirai nella nostra lista di sostenitori.",
       "cta": "Scegli importo e sostieni",
       "optionPrice": "Importo libero"
     },
-    "impact": {
-      "title": "Cosa realizza il vostro contributo",
-      "intro": "Con il vostro contributo finanziamo progetti concreti:",
-      "jasswiki": {
-        "title": "JassWiki senza pubblicità",
-        "description": "Sapere per tutti, senza distrazioni – gratuitamente e permanentemente."
-      },
-      "lehrmaterial": {
-        "title": "Materiale didattico",
-        "description": "Guide per scuole, club e famiglie."
-      },
-      "infrastruktur": {
-        "title": "Infrastruttura",
-        "description": "Una rete svizzera per il Jass."
-      }
-    },
     "form": {
-      "title": "Iscrivetevi ora",
-      "intro": "Compilate il modulo e vi contatteremo con i dettagli di pagamento.",
+      "title": "Iscrizione",
+      "intro": "Il pagamento online tramite Stripe/Twint sarà presto disponibile. Riceverai una fattura via e-mail dopo l'iscrizione.",
       "name": "Nome",
       "email": "E-mail",
       "jassname": "Nome Jass (opzionale)",
-      "jassnamePlaceholder": "Il vostro nome giocatore su JassGuru",
-      "phone": "Telefono (opzionale)",
-      "paket": "Pacchetto di adesione",
+      "jassnamePlaceholder": "Il tuo nome giocatore su JassGuru",
+      "paket": "Licenza",
       "message": "Messaggio (opzionale)",
-      "messagePlaceholder": "Avete domande o osservazioni?",
+      "messagePlaceholder": "Opzionale: domande o osservazioni",
       "notice": {
         "title": "Nota:",
-        "message": "Il pagamento online tramite Stripe/Twint sarà presto disponibile. Attualmente riceverete una fattura via e-mail dopo l'iscrizione."
+        "message": "Il pagamento online tramite Stripe/Twint sarà presto disponibile. Riceverai una fattura via e-mail dopo l'iscrizione."
       },
       "submit": "Invia iscrizione",
       "success": {
         "title": "Iscrizione ricevuta!",
-        "message": "Grazie per il vostro interesse. Vi contatteremo entro 48 ore con i dettagli di pagamento."
+        "message": "Ci metteremo in contatto entro 48 ore."
       }
     },
     "faq": {
       "title": "Domande frequenti",
       "meisterschaft": {
-        "question": "Cos'è il Campionato Svizzero di Team-Schieber?",
-        "answer": "Il JVS introduce un formato completamente nuovo. Non diventa campione svizzero un singolo giocatore, ma un'intera squadra — come nel calcio o nell'hockey."
+        "question": "Cos'è il Campionato Svizzero di Schieber a squadre?",
+        "answer": "La FSJ introduce un formato completamente nuovo. Non diventa campione svizzero un singolo giocatore, ma un'intera squadra — come nel calcio o nell'hockey."
       },
       "ablauf": {
-        "question": "Come funziona il campionato Team-Schieber?",
+        "question": "Come funziona il Campionato di Schieber a squadre?",
         "answer": "Il punto centrale è la registrazione digitale con JassGuru. Le squadre possono giocare nella propria arena mentre tutti i risultati vengono registrati centralmente.",
         "linkLabel": "Vai a jassguru.ch",
         "linkUrl": "https://jassguru.ch"
       },
       "modus": {
         "question": "Qual è la modalità?",
-        "answer": "La modalità esatta dipende da quante squadre si registrano nella stagione 1. La community viene informata costantemente."
+        "answer": "La modalità esatta dipende da quanti partecipanti si registrano nella stagione 1. La community viene informata costantemente."
       },
       "stehtFest": {
         "question": "Cosa è già definito?",
@@ -570,7 +555,7 @@
       },
       "zuWenigAnmeldungen": {
         "question": "Cosa succede se non ci sono abbastanza iscrizioni?",
-        "answer": "In questo caso tutti i gruppi registrati si incontrano direttamente al torneo finale senza qualificazione, così la stagione 1 si svolge comunque."
+        "answer": "In questo caso tutti i gruppi registrati si incontrano direttamente al torneo finale senza qualificazione — così la stagione 1 si svolge comunque."
       },
       "lizenzGueltigkeit": {
         "question": "Quanto dura la mia licenza?",
@@ -582,21 +567,21 @@
       },
       "jassguruNutzung": {
         "question": "Come si usa JassGuru Pro?",
-        "answer": "JassGuru è stato testato con centinaia di partite e con diversi profili di giocatori. Tutte le domande e risposte sono disponibili nell'area supporto.",
+        "answer": "JassGuru è stato testato con centinaia di partite e diversi profili di giocatori. Tutte le domande e risposte sono disponibili nell'area supporto.",
         "linkLabel": "Supporto su jassguru.ch",
         "linkUrl": "https://jassguru.ch/support/"
       },
       "zuKompliziert": {
         "question": "JassGuru Pro è troppo complicato per me. E adesso?",
-        "answer": "Non ogni membro deve usare attivamente JassGuru Pro. Ogni squadra però ha bisogno di un capitano che conosca le funzioni. Il JVS supporta personalmente i capitani."
+        "answer": "Non ogni membro deve usare attivamente JassGuru Pro. Ogni squadra però ha bisogno di un capitano che conosca le funzioni. La FSJ supporta personalmente i capitani."
       },
       "captain": {
         "question": "Che cos'è il capitano?",
-        "answer": "Ogni squadra ha un capitano. Fonda il gruppo di Jass, può nominare altri amministratori, registra il gruppo, lo iscrive ai tornei e rappresenta la squadra verso il JVS."
+        "answer": "Ogni squadra ha un capitano. Fonda il gruppo di Jass, può nominare altri amministratori, registra il gruppo, lo iscrive ai tornei e rappresenta la squadra verso la FSJ."
       },
       "weitereTurniere": {
         "question": "Ci saranno anche altri tornei?",
-        "answer": "Il focus è sul Campionato Svizzero Team-Schieber. Sono previsti anche altri formati, ad esempio un Jass di 24 ore. I membri possono inoltre organizzare tornei propri con JassGuru Pro."
+        "answer": "Il focus è sul Campionato Svizzero di Schieber a squadre. Sono previsti altri formati come un Jass di 24 ore. I membri possono inoltre organizzare e condurre i propri tornei con JassGuru Pro."
       },
       "eloSystem": {
         "question": "Cos'è il sistema Elo?",
@@ -604,7 +589,7 @@
       },
       "spielregeln": {
         "question": "Chi definisce le regole di gioco?",
-        "answer": "La Federazione Svizzera di Jass è custode delle regole e le mette gratuitamente a disposizione in formato digitale. La base è l'opera di Dani Müller con integrazioni moderate del JVS.",
+        "answer": "La Federazione Svizzera di Jass è custode delle regole e le mette gratuitamente a disposizione in formato digitale. La base è l'opera di Dani Müller con integrazioni moderate della FSJ.",
         "linkLabel": "Regole su jasswiki.ch",
         "linkUrl": "https://jasswiki.ch"
       }
@@ -612,7 +597,7 @@
     "trust": {
       "text": "La Federazione Svizzera di Jass rappresenta il Jass come «Tradizione vivente» riconosciuta dall'Ufficio federale della cultura."
     },
-    "altFelt": "Sfondo feltro verde",
+    "altFelt": "Sfondo tappeto da jass",
     "altChalkboard": "Sfondo lavagna",
     "altTrust": "Tradizioni viventi della Svizzera",
     "checkout": {
