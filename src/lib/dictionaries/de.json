@@ -31,34 +31,45 @@
   },
   "schweizermeisterschaft": {
     "hero": {
-      "title": "Die Schweizer-\nmeisterschaft\nim Team-Schieber.",
-      "subtitle": "Saison 1 startet 2026 — mach mit und schreibe Jass-Geschichte.",
-      "cta": "Lizenz buchen"
+      "title": "Erste offizielle\nSchweizermeisterschaft\nim Teamjassen.",
+      "subtitle": "Saison 1 startet 2026. Gründe deine Gruppe und schreibe Jass-Geschichte.",
+      "cta": "Gruppe gründen"
     },
     "team": {
       "title": "Gemeinsam auf den Thron",
       "copy1": "Als Einheit antreten, als Einheit siegen.",
-      "copy2": "Jass-Turniere kennt die Schweiz viele — doch fast immer gewinnt am Ende ein Einzelner. Der JVS etabliert ein neues Format: Nicht der Einzelspieler gewinnt, sondern das ganze Schieber-Team. Wie im Fussball, wie im Hockey."
+      "copy2": "Jass-Turniere kennt die Schweiz viele — doch fast immer gewinnt am Ende ein Einzelner. Der JVS etabliert ein neues Format: Nicht der Einzelspieler gewinnt, sondern das ganze Schieber-Team. Wie im Fussball, wie im Hockey.",
+      "copy3": "Gejasst wird Schieber — das Herzstück des Schweizer Jass."
+    },
+    "jassguru": {
+      "title": "JassGuru: Die digitale Kreidetafel",
+      "copy": "Erfasst eure Spiele auf der digitalen Kreidetafel — schnell und einfach. Danach verfolgt ihr eure Entwicklung, vergleicht euch in der Gruppe und seht alle wichtigen Statistiken auf einen Blick.",
+      "cta": "JassGuru öffnen",
+      "tafelLabel": "Eure digitale Kreidetafel",
+      "tafelLink": "Ausprobieren",
+      "groupLabel": "So sieht eure Gruppe aus",
+      "groupLink": "Beispiel-Gruppe ansehen",
+      "profileLabel": "So sieht euer Profil aus",
+      "profileLink": "Beispiel-Profil ansehen",
+      "altScreenshot": "JassGuru Kreidetafel Screenshot",
+      "altGroup": "JassGuru Gruppenansicht",
+      "altProfile": "JassGuru Profilansicht"
     },
     "how": {
-      "title": "Die Schweiz ist euer Spielfeld",
-      "intro": "Vergesst starre Spielpläne. In Saison 1 entscheidet ihr, wann und wo ihr angreift.",
+      "title": "So qualifiziert ihr euch",
+      "intro": "In drei Levels vom eigenen Jasstisch zum Schweizermeister-Titel.",
       "steps": [
         {
-          "title": "Schritt 1: Team gründen",
-          "description": "Mindestens 4 Spieler. Ein Captain vertritt das Team gegenüber dem JVS und koordiniert die Spiele direkt mit anderen Kapitänen."
+          "title": "Level 1 — Gruppe gründen",
+          "description": "Erstellt eure Gruppe auf JassGuru und erfasst mindestens 3 Partien. Euer Jasstisch, eure Regeln, euer Tempo. Das ist eure Qualifikation."
         },
         {
-          "title": "Schritt 2: Qualifizieren",
-          "description": "Dezentral in der ganzen Schweiz. Fordert Teams in eurer Region heraus oder reist durch die Kantone."
+          "title": "Level 2 — Messt euch mit anderen Gruppen",
+          "description": "Sobald eure Gruppe qualifiziert ist, könnt ihr andere Teams zum direkten Duell herausfordern. Team gegen Team — jedes Resultat zählt für die nationale Rangliste."
         },
         {
-          "title": "Schritt 3: Live-Ranking",
-          "description": "Jedes Spiel zählt. Resultate werden via JassGuru erfasst und fliessen live in die nationale Rangliste ein."
-        },
-        {
-          "title": "Schritt 4: Das Finale",
-          "description": "Die Top-Teams qualifizieren sich für das grosse Finalturnier in Zürich. Dort geht es um den ersten offiziellen Titel der Geschichte."
+          "title": "Finale",
+          "description": "Die besten Teams der Rangliste qualifizieren sich für das Finalturnier. Dort wird der erste offizielle Schweizermeister im Team-Schieber gekürt."
         }
       ]
     },
@@ -82,11 +93,11 @@
       "youth": "🎖️ Jugend-Schweizermeister",
       "youthSub": "Für Teams bis 25 Jahre.",
       "memberTitle": "Spielberechtigung",
-      "memberCopy": "Die JVS-Mitgliedschaft berechtigt automatisch zur Teilnahme an der Schweizermeisterschaft. Es gibt kein separates Startgeld für die Saison oder das Ranking.",
+      "memberCopy": "Die JVS-Mitgliedschaft berechtigt zur Teilnahme an der Schweizermeisterschaft und schaltet JassGuru Pro frei — mit Elo-Ranking, Statistiken und Gruppenvergleich. Kein separates Startgeld.",
       "ctaMember": "Jetzt Startberechtigung sichern",
       "ctaTeam": "Zum Modus auf Jassmeister.ch"
     },
-    "title": "Die Schweizermeisterschaft im Team-Schieber.",
+    "title": "Erste offizielle Schweizermeisterschaft im Teamjassen.",
     "subtitle": "Als Einheit antreten, als Einheit siegen. Wie im Fussball, wie im Hockey.",
     "copy": "Nicht der Einzelspieler gewinnt, sondern das ganze Schieber-Team. Saison 1 startet 2026.",
     "jugend": "Jugendteams bis 25 Jahre spielen mit und erhalten eine separate Wertung.",

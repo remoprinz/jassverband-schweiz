@@ -15,15 +15,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const meta: Record<string, { title: string; description: string }> = {
     de: {
       title: 'Schweizer Jassmeisterschaft | Jassverband Schweiz',
-      description: 'Die nationale Jass-Meisterschaft der Schweiz. Spiele Schieber im Zweierteam und kämpfe um den Schweizer Meistertitel. Jetzt Mitglied werden und teilnehmen.',
+      description: 'Die erste offizielle Schweizermeisterschaft im Team-Schieber. Gründe deine Gruppe auf JassGuru, qualifiziere dich und kämpfe um den Titel. Saison 1 startet 2026.',
     },
     fr: {
       title: 'Championnat Suisse de Jass | Fédération Suisse de Jass',
-      description: 'Le championnat national de Jass en Suisse. Jouez au Schieber en équipe de deux et battez-vous pour le titre de champion suisse. Devenez membre maintenant.',
+      description: 'Le premier championnat officiel de Jass en équipe. Créez votre groupe sur JassGuru, qualifiez-vous et battez-vous pour le titre. Saison 1 commence en 2026.',
     },
     it: {
       title: 'Campionato Svizzero di Jass | Federazione Svizzera di Jass',
-      description: 'Il campionato nazionale di Jass in Svizzera. Gioca a Schieber in coppia e lotta per il titolo di campione svizzero. Diventa membro ora.',
+      description: 'Il primo campionato ufficiale di Jass a squadre. Crea il tuo gruppo su JassGuru, qualificati e lotta per il titolo. Stagione 1 inizia nel 2026.',
     },
   };
 
@@ -64,10 +64,10 @@ const sportsEventJsonLd = (locale: string) => ({
   '@context': 'https://schema.org',
   '@type': 'SportsEvent',
   name: locale === 'de'
-    ? 'Schweizer Jassmeisterschaft 2026'
+    ? 'Erste offizielle Schweizer Jassmeisterschaft 2026'
     : locale === 'fr'
-    ? 'Championnat Suisse de Jass 2026'
-    : 'Campionato Svizzero di Jass 2026',
+    ? 'Premier Championnat Officiel Suisse de Jass 2026'
+    : 'Primo Campionato Ufficiale Svizzero di Jass 2026',
   sport: 'Jass',
   organizer: {
     '@type': 'Organization',
@@ -81,10 +81,10 @@ const sportsEventJsonLd = (locale: string) => ({
   },
   url: `${BASE_URL}/${locale}/schweizermeisterschaft`,
   description: locale === 'de'
-    ? 'Die nationale Jass-Meisterschaft der Schweiz, organisiert vom Jassverband Schweiz.'
+    ? 'Die erste offizielle Schweizermeisterschaft im Team-Schieber, organisiert vom Jassverband Schweiz.'
     : locale === 'fr'
-    ? 'Le championnat national de Jass en Suisse, organisé par la Fédération Suisse de Jass.'
-    : 'Il campionato nazionale di Jass in Svizzera, organizzato dalla Federazione Svizzera di Jass.',
+    ? 'Le premier championnat officiel de Jass en équipe, organisé par la Fédération Suisse de Jass.'
+    : 'Il primo campionato ufficiale di Jass a squadre, organizzato dalla Federazione Svizzera di Jass.',
 });
 
 export default async function SchweizermeisterschaftPage({ params }: Props) {
@@ -102,11 +102,6 @@ export default async function SchweizermeisterschaftPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(sportsEventJsonLd(locale)) }}
       />
     <div>
-      {/*
-       * heroTitleTopDesktop: Titel startet auf Desktop/Tablet höher (16% statt 24.35%),
-       * damit die 3-zeilige Überschrift Platz hat, ohne die Subtitle-Position zu ändern.
-       * Die Subtitle bleibt bei exakt derselben CSS-Variable wie auf der Homepage.
-       */}
       <Hero
         title={t('schweizermeisterschaft.hero.title')}
         subtitle={t('schweizermeisterschaft.hero.subtitle')}
@@ -126,6 +121,19 @@ export default async function SchweizermeisterschaftPage({ params }: Props) {
         teamTitle={t('schweizermeisterschaft.team.title')}
         teamCopy1={t('schweizermeisterschaft.team.copy1')}
         teamCopy2={t('schweizermeisterschaft.team.copy2')}
+        teamCopy3={t('schweizermeisterschaft.team.copy3')}
+        jassguruTitle={t('schweizermeisterschaft.jassguru.title')}
+        jassguruCopy={t('schweizermeisterschaft.jassguru.copy')}
+        jassguruCta={t('schweizermeisterschaft.jassguru.cta')}
+        jassguruTafelLabel={t('schweizermeisterschaft.jassguru.tafelLabel')}
+        jassguruTafelLink={t('schweizermeisterschaft.jassguru.tafelLink')}
+        jassguruGroupLabel={t('schweizermeisterschaft.jassguru.groupLabel')}
+        jassguruGroupLink={t('schweizermeisterschaft.jassguru.groupLink')}
+        jassguruProfileLabel={t('schweizermeisterschaft.jassguru.profileLabel')}
+        jassguruProfileLink={t('schweizermeisterschaft.jassguru.profileLink')}
+        jassguruAltScreenshot={t('schweizermeisterschaft.jassguru.altScreenshot')}
+        jassguruAltGroup={t('schweizermeisterschaft.jassguru.altGroup')}
+        jassguruAltProfile={t('schweizermeisterschaft.jassguru.altProfile')}
         howTitle={t('schweizermeisterschaft.how.title')}
         howIntro={t('schweizermeisterschaft.how.intro')}
         howSteps={howSteps}
