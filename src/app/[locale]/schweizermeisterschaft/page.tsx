@@ -137,6 +137,7 @@ export default async function SchweizermeisterschaftPage({ params }: Props) {
         howTitle={t('schweizermeisterschaft.how.title')}
         howIntro={t('schweizermeisterschaft.how.intro')}
         howSteps={howSteps}
+        howFootnote={t('schweizermeisterschaft.how.footnote')}
         homeTitle={t('schweizermeisterschaft.home.title')}
         homeCopy={t('schweizermeisterschaft.home.copy')}
         homeStrichIntro={t('schweizermeisterschaft.home.strichIntro')}

@@ -32,6 +32,7 @@ interface MeisterschaftContentProps {
   howTitle: string;
   howIntro: string;
   howSteps: HowStep[];
+  howFootnote: string;
   homeTitle: string;
   homeCopy: string;
   homeStrichIntro: string;
@@ -68,12 +69,11 @@ const noiseOverlay = `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns
 function PhoneFrame({ children, className = '' }: { children: React.ReactNode; className?: string }) {
   return (
     <div
-      className={`relative mx-auto ${className}`}
+      className={`relative mx-auto w-[min(42vw,240px)] ${className}`}
       style={{
-        width: '240px',
         aspectRatio: '390 / 844',
-        borderRadius: '32px',
-        border: '5px solid #2a2a2a',
+        borderRadius: 'clamp(16px, 4vw, 32px)',
+        border: 'clamp(3px, 0.6vw, 5px) solid #2a2a2a',
         backgroundColor: '#111',
         boxShadow: '0 25px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.05)',
         overflow: 'hidden',
@@ -104,6 +104,7 @@ export function MeisterschaftContent({
   howTitle,
   howIntro,
   howSteps,
+  howFootnote,
   homeTitle,
   homeCopy,
   homeStrichIntro,
@@ -265,12 +266,12 @@ export function MeisterschaftContent({
                     quality={90}
                   />
                 </PhoneFrame>
-                <p className="text-white/60 text-xs sm:text-sm mt-3 sm:mt-4 mb-1 sm:mb-2 text-center">{jassguruTafelLabel}</p>
+                <p className="text-white/60 text-sm mt-3 sm:mt-4 mb-1 sm:mb-2 text-center">{jassguruTafelLabel}</p>
                 <a
                   href="https://jassguru.ch/onboarding_tutorial/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white/40 text-[10px] sm:text-xs hover:text-white/70 transition-colors underline underline-offset-2"
+                  className="text-white/40 text-xs sm:text-sm hover:text-white/70 transition-colors underline underline-offset-2"
                 >
                   {jassguruTafelLink} →
                 </a>
@@ -293,12 +294,12 @@ export function MeisterschaftContent({
                     quality={90}
                   />
                 </PhoneFrame>
-                <p className="text-white/60 text-xs sm:text-sm mt-3 sm:mt-4 mb-1 sm:mb-2 text-center">{jassguruGroupLabel}</p>
+                <p className="text-white/60 text-sm mt-3 sm:mt-4 mb-1 sm:mb-2 text-center">{jassguruGroupLabel}</p>
                 <a
                   href="https://jassguru.ch/view/group/Tz0wgIHMTlhvTtFastiJ"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white/40 text-[10px] sm:text-xs hover:text-white/70 transition-colors underline underline-offset-2"
+                  className="text-white/40 text-xs sm:text-sm hover:text-white/70 transition-colors underline underline-offset-2"
                 >
                   {jassguruGroupLink} →
                 </a>
@@ -417,6 +418,24 @@ export function MeisterschaftContent({
               </motion.article>
             ))}
           </div>
+
+          {/* Fussnote */}
+          <p
+            className="max-w-3xl mx-auto text-center"
+            style={{
+              fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
+              fontSize: 'var(--font-size-13)',
+              lineHeight: 1.55,
+              color: 'var(--color-foreground-muted)',
+              opacity: 0.7,
+            }}
+            dangerouslySetInnerHTML={{
+              __html: howFootnote.replace(
+                /<ehrenkodex>(.*?)<\/ehrenkodex>/,
+                '<a href="/de/verband#ehrenkodex" style="text-decoration:underline;text-underline-offset:2px">$1</a>'
+              )
+            }}
+          />
         </div>
       </section>
 

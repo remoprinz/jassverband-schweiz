@@ -38,8 +38,8 @@
     "team": {
       "title": "Gemeinsam auf den Thron",
       "copy1": "Als Einheit antreten, als Einheit siegen.",
-      "copy2": "Jass-Turniere kennt die Schweiz viele — doch fast immer gewinnt am Ende ein Einzelner. Der JVS etabliert ein neues Format: Nicht der Einzelspieler gewinnt, sondern das ganze Schieber-Team. Wie im Fussball, wie im Hockey.",
-      "copy3": "Gejasst wird Schieber — das Herzstück des Schweizer Jass."
+      "copy2": "Jass-Turniere kennt die Schweiz viele — doch fast immer gewinnt am Ende ein Einzelner. Der JVS etabliert ein neues Format: Nicht der Einzelspieler gewinnt, sondern das ganze Schieber-Team.",
+      "copy3": "Wie im Fussball, wie im Hockey — jetzt auch im Schieber-Jassen."
     },
     "jassguru": {
       "title": "JassGuru: Die digitale Kreidetafel der Meisterschaft",
@@ -61,7 +61,7 @@
       "steps": [
         {
           "title": "Level 1 — Gruppe gründen",
-          "description": "Erstellt eure Gruppe auf JassGuru und erfasst mindestens 3 Partien. Euer Jasstisch, eure Regeln, euer Tempo. Das ist eure Qualifikation."
+          "description": "Erstellt eure Gruppe auf JassGuru und erfasst mindestens 3 Partien — mit insgesamt mindestens 10 Spielen.* Euer Jasstisch, eure Regeln, euer Tempo. Das ist eure Qualifikation."
         },
         {
           "title": "Level 2 — Messt euch mit anderen Gruppen",
@@ -71,7 +71,8 @@
           "title": "Finale",
           "description": "Die besten Teams der Rangliste qualifizieren sich für das Finalturnier. Dort wird der erste offizielle Schweizermeister im Team-Schieber gekürt."
         }
-      ]
+      ],
+      "footnote": "* Eine Partie besteht aus mehreren Spielen. Cheating ist zwecklos: Jede einzelne Runde wird mit Zeitstempel erfasst. Wer sich nicht an den <ehrenkodex>Ehrenkodex</ehrenkodex> des JVS hält, wird permanent ausgeschlossen."
     },
     "home": {
       "title": "Heimvorteil: Euer Tisch, eure Regeln",
