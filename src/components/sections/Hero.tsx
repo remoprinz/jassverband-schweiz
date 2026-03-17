@@ -27,6 +27,8 @@ interface HeroProps {
   mobileTitle?: string;
   /** Dekorativer Eichenlaub-Kranz rund um die Schrift. */
   wreath?: boolean;
+  /** Silbentrennung im Mobile-Titel deaktivieren. */
+  noHyphens?: boolean;
   /**
    * Überschreibt --hero-title-top nur auf Desktop/Tablet (md+).
    * Nützlich wenn der Titel länger als auf der Homepage ist und
@@ -113,6 +115,7 @@ export function Hero({
   wreath = false,
   heroTitleTopDesktop,
   teaser,
+  noHyphens = false,
 }: HeroProps) {
   const [isMounted, setIsMounted] = useState(false);
   const [animateCards, setAnimateCards] = useState(false);
@@ -443,7 +446,7 @@ export function Hero({
                     style={{
                       display: 'block',
                       overflowWrap: 'break-word',
-                      hyphens: 'auto',
+                      hyphens: noHyphens ? 'none' : 'auto',
                       ...(i > 0 ? { marginTop: '2px' } : {}),
                     }}
                   >
@@ -454,7 +457,7 @@ export function Hero({
                 <span style={{
                   whiteSpace: preserveTitleLineBreaks ? 'pre-line' : 'normal',
                   overflowWrap: 'break-word',
-                  hyphens: 'auto',
+                  hyphens: noHyphens ? 'none' : 'auto',
                 }}>
                   {mobileText}
                 </span>

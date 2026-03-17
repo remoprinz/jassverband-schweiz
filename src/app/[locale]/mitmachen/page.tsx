@@ -87,6 +87,7 @@ export default function MitmachenPage() {
         ctaHref="#mitglied-werden"
         preserveTitleLineBreaks
         mobileFlow
+        noHyphens
       />
 
       {/* ════════════════════ PRICING ════════════════════ */}

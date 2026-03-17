@@ -175,7 +175,7 @@
     "subtitle": "Jassen gewinnt, wenn wir zusammenarbeiten. In unserem Jass-Ökosystem führen wir Tools, Wissen und engagierte Partner zu einer Einheit zusammen. Damit schaffen wir das Fundament für eine moderne Schweizer Jasskultur.",
     "whatsapp": {
       "title": "JassChat",
-      "description": "Der WhatsApp-Chat für JVS-Mitglieder. Tausche dich aus, finde Mitspieler und bleib auf dem Laufenden."
+      "description": "Die WhatsApp-Community für JVS-Mitglieder. Tausche dich aus, finde Mitspieler und bleib auf dem Laufenden."
     },
     "jasswiki": {
       "title": "JassWiki",
@@ -488,7 +488,7 @@
       "teaser": "Neugierig?",
       "teaserLabel": "Hier geht's zur Vorschau",
       "teaserUrl": "https://jassmeister.web.app",
-      "cta": "Lizenz wählen"
+      "cta": "Ja, ich bin dabei"
     },
     "pricing": {
       "title": "Wähle deine Lizenz für Saison 1.",
