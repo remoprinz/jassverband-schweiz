@@ -50,7 +50,7 @@ export function Footer({ locale, content, nav }: FooterProps) {
   return (
     <footer data-footer className="bg-black overflow-hidden">
       {/* Mobile Layout */}
-      <div className="lg:hidden container-main pt-10 pb-4">
+      <div className="lg:hidden container-main pt-10 pb-[max(0.5rem,env(safe-area-inset-bottom))]">
         <div className="flex flex-col items-start gap-6 text-left">
           {/* Logo */}
           <Image
@@ -63,33 +63,32 @@ export function Footer({ locale, content, nav }: FooterProps) {
           />
           <SocialIconLinks variant="on-dark" size="md" locale={locale} />
 
-          {/* Links Figur unten bündig; Rechtliches + Copyright nur rechts (kein volle-Breite-Block unten) */}
-          <div className="grid w-full grid-cols-2 gap-6 sm:gap-8 items-stretch">
-            <div className="flex min-h-[200px] w-full max-w-[220px] min-w-0 flex-col justify-end overflow-hidden">
+          <div className="flex w-full items-stretch gap-6 sm:gap-8">
+            <div className="flex min-h-0 min-w-0 basis-0 flex-[1_1_0%] flex-col overflow-hidden">
               {showDame ? (
-                <div className="relative h-[200px] w-full shrink-0">
+                <div className="relative min-h-[200px] w-full flex-1">
                   <Image
                     src="/images/cards/jesterdame.png"
                     alt="Jass Dame"
                     fill
                     className="object-contain object-bottom"
-                    sizes="(max-width: 1024px) 40vw, 220px"
+                    sizes="(max-width: 1024px) 45vw, 220px"
                   />
                 </div>
               ) : (
-                <div className="relative mt-auto h-[280px] w-[170px] max-w-full shrink-0 sm:h-[292px] sm:w-[180px]">
+                <div className="relative min-h-[260px] w-full max-w-[180px] flex-1 sm:min-h-[272px]">
                   <Image
                     src="/images/cards/jester.png"
                     alt="Jass Narr"
                     fill
                     className="object-contain object-top"
-                    sizes="(max-width: 1024px) 40vw, 180px"
+                    sizes="(max-width: 1024px) 45vw, 180px"
                   />
                 </div>
               )}
             </div>
 
-            <div className="flex min-w-0 flex-col justify-start text-left">
+            <div className="flex min-h-0 min-w-0 basis-0 flex-[1_1_0%] flex-col justify-start text-left">
               <h4 className="mb-4" style={headingStyle}>{content.legal}</h4>
               <ul className="space-y-2.5">
                 <li>
