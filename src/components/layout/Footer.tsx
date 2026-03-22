@@ -140,14 +140,18 @@ export function Footer({ locale, content, nav }: FooterProps) {
               priority
             />
             <div
-              className={`relative mt-[80px] shrink-0 ${showDame ? 'h-[210px] w-[280px]' : 'h-[333px] w-[203px]'}`}
+              className={
+                showDame
+                  ? 'relative mt-[171px] h-[242px] w-[322px] shrink-0'
+                  : 'relative mt-[80px] h-[333px] w-[203px] shrink-0'
+              }
             >
               <Image
                 src={showDame ? '/images/cards/jesterdame.png' : '/images/cards/jester.png'}
                 alt={showDame ? 'Jass Dame' : 'Jass Narr'}
                 fill
-                className="object-contain object-top"
-                sizes={showDame ? '280px' : '203px'}
+                className={showDame ? 'object-contain object-bottom' : 'object-contain object-top'}
+                sizes={showDame ? '322px' : '203px'}
               />
             </div>
           </div>
