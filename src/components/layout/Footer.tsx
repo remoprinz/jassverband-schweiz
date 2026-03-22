@@ -139,7 +139,9 @@ export function Footer({ locale, content, nav }: FooterProps) {
               className="shrink-0"
               priority
             />
-            <div className={`relative mt-10 shrink-0 ${showDame ? 'h-[210px] w-[280px]' : 'h-[333px] w-[203px]'}`}>
+            <div
+              className={`relative mt-[70px] shrink-0 ${showDame ? 'h-[210px] w-[280px]' : 'h-[333px] w-[203px]'}`}
+            >
               <Image
                 src={showDame ? '/images/cards/jesterdame.png' : '/images/cards/jester.png'}
                 alt={showDame ? 'Jass Dame' : 'Jass Narr'}
