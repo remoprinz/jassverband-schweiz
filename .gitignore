@@ -52,10 +52,8 @@ print/output/
 print/signatures/
 
 # large binary files – NEVER commit videos or large media
-*.mp4
 *.mov
 *.avi
-*.webm
 *.mkv
 *.mp3
 *.wav
@@ -63,10 +61,14 @@ print/signatures/
 *.tar.gz
 *.rar
 
-# large asset directories
-public/assets/videos/
+# large asset directories — only originals/backups ignored
 src/assets/videos/
 src/assets/brochure/
+
+# public video assets — allow compressed web versions, block originals
+public/assets/videos/*_ORIGINAL.*
+public/assets/videos/*_org.*
+public/assets/videos/berset_jvs_org.mp4
 
 # PDFs and documents (use cloud storage, not git)
 *.pdf
