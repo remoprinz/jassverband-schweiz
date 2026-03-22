@@ -37,10 +37,15 @@ const headingStyle = {
   color: 'rgba(255, 255, 255, 0.95)',
 };
 
-const FOOTER_JASSGURU_LOGO = '/images/logos/jassguru-logo-weiss.png';
-
 export function Footer({ locale, content, nav }: FooterProps) {
   const [showDame] = useState(() => Math.random() < 0.5);
+  const normalizedLocale = locale === 'fr' || locale === 'it' ? locale : 'de';
+  const footerLogoByLocale = {
+    de: '/images/logos/JVS Logo farbig weiss.svg',
+    fr: '/images/logos/JVS Logo 100mm farbig weiss FR.svg',
+    it: '/images/logos/JVS Logo 100mm farbig weiss IT.svg',
+  } as const;
+  const footerLogoSrc = footerLogoByLocale[normalizedLocale];
 
   return (
     <footer data-footer className="bg-black overflow-hidden">
@@ -52,11 +57,11 @@ export function Footer({ locale, content, nav }: FooterProps) {
         <div className="flex flex-col items-start gap-5 text-left">
           {/* Logo */}
           <Image
-            src={FOOTER_JASSGURU_LOGO}
-            alt="JassGuru"
-            width={1152}
-            height={252}
-            className="h-9 w-auto max-w-full self-start sm:h-10"
+            src={footerLogoSrc}
+            alt="Jassverband Schweiz"
+            width={189}
+            height={51}
+            className="h-10 w-auto self-start block"
             priority
           />
           <SocialIconLinks variant="on-dark" size="md" locale={locale} />
@@ -125,11 +130,11 @@ export function Footer({ locale, content, nav }: FooterProps) {
             }`}
           >
             <Image
-              src={FOOTER_JASSGURU_LOGO}
-              alt="JassGuru"
-              width={1152}
-              height={252}
-              className={`h-[52px] w-auto shrink-0 ${showDame ? 'self-start' : ''}`}
+              src={footerLogoSrc}
+              alt="Jassverband Schweiz"
+              width={189}
+              height={51}
+              className={showDame ? 'shrink-0 self-start' : 'shrink-0'}
               priority
             />
             {showDame ? (
