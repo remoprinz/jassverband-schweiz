@@ -64,28 +64,19 @@ export function Footer({ locale, content, nav }: FooterProps) {
           <SocialIconLinks variant="on-dark" size="md" locale={locale} />
 
           <div className="flex w-full items-stretch gap-6 sm:gap-8">
+            {/* Mobile: nur Narr (Dame zu breit); nach unten geschoben, unten am Footer beschnitten */}
             <div className="flex min-h-0 min-w-0 basis-0 flex-[1_1_0%] flex-col overflow-hidden">
-              {showDame ? (
-                <div className="relative min-h-[200px] w-full flex-1">
-                  <Image
-                    src="/images/cards/jesterdame.png"
-                    alt="Jass Dame"
-                    fill
-                    className="object-contain object-bottom"
-                    sizes="(max-width: 1024px) 45vw, 220px"
-                  />
-                </div>
-              ) : (
-                <div className="relative min-h-[260px] w-full max-w-[180px] flex-1 sm:min-h-[272px]">
+              <div className="relative min-h-[200px] w-full flex-1 overflow-hidden">
+                <div className="absolute left-1/2 top-0 h-[122%] w-[min(100%,188px)] -translate-x-1/2 translate-y-[16%]">
                   <Image
                     src="/images/cards/jester.png"
                     alt="Jass Narr"
                     fill
-                    className="object-contain object-top"
-                    sizes="(max-width: 1024px) 45vw, 180px"
+                    className="pointer-events-none object-contain object-top"
+                    sizes="(max-width: 1024px) 46vw, 188px"
                   />
                 </div>
-              )}
+              </div>
             </div>
 
             <div className="flex min-h-0 min-w-0 basis-0 flex-[1_1_0%] flex-col justify-start text-left">
