@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { useState } from 'react';
 
 interface FooterProps {
   locale: string;
@@ -36,6 +37,7 @@ const headingStyle = {
 };
 
 export function Footer({ locale, content, nav }: FooterProps) {
+  const [showDame] = useState(() => Math.random() < 0.5);
   const normalizedLocale = locale === 'fr' || locale === 'it' ? locale : 'de';
   const footerLogoByLocale = {
     de: '/images/logos/JVS Logo farbig weiss.svg',
@@ -128,7 +130,7 @@ export function Footer({ locale, content, nav }: FooterProps) {
           className="container-main flex flex-row justify-between items-start pt-16"
           style={{ minHeight: '390px' }}
         >
-          <div className="relative flex h-[326px] shrink-0 flex-row items-start gap-11 lg:gap-16 xl:gap-20">
+          <div className="relative flex h-[326px] shrink-0 flex-row items-start gap-4 lg:gap-6 xl:gap-8">
             <Image
               src={footerLogoSrc}
               alt="Jassverband Schweiz"
@@ -137,13 +139,13 @@ export function Footer({ locale, content, nav }: FooterProps) {
               className="shrink-0"
               priority
             />
-            <div className="relative mt-10 h-[333px] w-[203px] shrink-0">
+            <div className={`relative mt-10 shrink-0 ${showDame ? 'h-[210px] w-[280px]' : 'h-[333px] w-[203px]'}`}>
               <Image
-                src="/images/cards/jester.png"
-                alt="Jass Narr"
+                src={showDame ? '/images/cards/jesterdame.png' : '/images/cards/jester.png'}
+                alt={showDame ? 'Jass Dame' : 'Jass Narr'}
                 fill
                 className="object-contain object-top"
-                sizes="203px"
+                sizes={showDame ? '280px' : '203px'}
               />
             </div>
           </div>
