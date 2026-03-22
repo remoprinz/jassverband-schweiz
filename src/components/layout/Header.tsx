@@ -24,15 +24,15 @@ interface HeaderProps {
 function Logo({ variant = 'color', shrunk = false }: { variant?: 'color' | 'white'; shrunk?: boolean }) {
   const src =
     variant === 'white'
-      ? '/images/logos/jassguru-logo-weiss.png'
-      : '/images/logos/jassguru-logo.png';
+      ? '/images/logos/JVS Logo farbig weiss kurz.svg'
+      : '/images/logos/JVS Logo farbig kurz.svg';
 
   return (
     <Image
       src={src}
-      alt="JassGuru"
-      width={1152}
-      height={252}
+      alt="Jassverband Schweiz"
+      width={180}
+      height={48}
       className={`transition-all duration-500 w-auto max-w-[min(100%,240px)] sm:max-w-[min(100%,280px)] md:max-w-none ${
         shrunk ? 'h-9 md:h-10' : 'h-10 md:h-[52px]'
       }`}
