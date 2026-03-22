@@ -128,7 +128,7 @@ export function Footer({ locale, content, nav }: FooterProps) {
           className="container-main flex flex-row justify-between items-start pt-16"
           style={{ minHeight: '390px' }}
         >
-          <div className="relative flex h-[326px] shrink-0 flex-row items-start gap-16 lg:gap-24 xl:gap-32">
+          <div className="relative flex h-[326px] shrink-0 flex-row items-start gap-11 lg:gap-16 xl:gap-20">
             <Image
               src={footerLogoSrc}
               alt="Jassverband Schweiz"
