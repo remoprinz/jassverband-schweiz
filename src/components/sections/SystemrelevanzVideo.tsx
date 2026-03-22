@@ -183,11 +183,11 @@ export function SystemrelevanzVideo({
                 controls={false}
                 playsInline
                 preload="auto"
-                poster="/assets/videos/video-poster.jpg"
+                poster="https://qlwo3d8gkia0vga2.public.blob.vercel-storage.com/videos/video-poster.jpg"
                 disablePictureInPicture
                 controlsList="nodownload nofullscreen noremoteplayback"
               >
-                <source src="/assets/videos/Video_Berset_SVJ_1.mp4" type="video/mp4" />
+                <source src="https://qlwo3d8gkia0vga2.public.blob.vercel-storage.com/videos/Video_Berset_SVJ_1.mp4" type="video/mp4" />
               </video>
 
               {/* 🖼️ CLEAN POSTER-OVERLAY: Nur Play-Button, KEIN Overlay/Abdunklung */}
