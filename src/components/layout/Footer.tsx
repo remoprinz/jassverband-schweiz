@@ -130,30 +130,42 @@ export function Footer({ locale, content, nav }: FooterProps) {
           className="container-main flex flex-row justify-between items-start pt-16"
           style={{ minHeight: '390px' }}
         >
-          <div className="relative flex h-[326px] shrink-0 flex-row items-start gap-4 lg:gap-6 xl:gap-8">
+          <div
+            className={`relative flex h-[326px] shrink-0 flex-row gap-4 lg:gap-6 xl:gap-8 ${
+              showDame ? 'items-stretch' : 'items-start'
+            }`}
+          >
             <Image
               src={footerLogoSrc}
               alt="Jassverband Schweiz"
               width={189}
               height={51}
-              className="shrink-0"
+              className={showDame ? 'shrink-0 self-start' : 'shrink-0'}
               priority
             />
-            <div
-              className={
-                showDame
-                  ? 'relative mt-[171px] h-[242px] w-[322px] shrink-0'
-                  : 'relative mt-[80px] h-[333px] w-[203px] shrink-0'
-              }
-            >
-              <Image
-                src={showDame ? '/images/cards/jesterdame.png' : '/images/cards/jester.png'}
-                alt={showDame ? 'Jass Dame' : 'Jass Narr'}
-                fill
-                className={showDame ? 'object-contain object-bottom' : 'object-contain object-top'}
-                sizes={showDame ? '322px' : '203px'}
-              />
-            </div>
+            {showDame ? (
+              <div className="flex h-full w-[322px] shrink-0 flex-col justify-end">
+                <div className="relative h-[242px] w-full">
+                  <Image
+                    src="/images/cards/jesterdame.png"
+                    alt="Jass Dame"
+                    fill
+                    className="object-contain object-bottom"
+                    sizes="322px"
+                  />
+                </div>
+              </div>
+            ) : (
+              <div className="relative mt-[80px] h-[333px] w-[203px] shrink-0">
+                <Image
+                  src="/images/cards/jester.png"
+                  alt="Jass Narr"
+                  fill
+                  className="object-contain object-top"
+                  sizes="203px"
+                />
+              </div>
+            )}
           </div>
 
           <div className="flex shrink-0 justify-end" style={{ gap: '120px' }}>
