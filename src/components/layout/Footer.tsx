@@ -50,8 +50,11 @@ export function Footer({ locale, content, nav }: FooterProps) {
   return (
     <footer data-footer className="bg-black overflow-hidden">
       {/* Mobile Layout */}
-      <div className="lg:hidden container-main pt-10 pb-[max(0.5rem,env(safe-area-inset-bottom))]">
-        <div className="flex flex-col items-start gap-6 text-left">
+      <div
+        className="lg:hidden container-main pt-10"
+        style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}
+      >
+        <div className="flex flex-col items-start gap-5 text-left">
           {/* Logo */}
           <Image
             src={footerLogoSrc}
@@ -63,11 +66,11 @@ export function Footer({ locale, content, nav }: FooterProps) {
           />
           <SocialIconLinks variant="on-dark" size="md" locale={locale} />
 
-          <div className="flex w-full items-stretch gap-6 sm:gap-8">
-            {/* Mobile: nur Narr (Dame zu breit); nach unten geschoben, unten am Footer beschnitten */}
+          <div className="flex w-full items-stretch gap-5 sm:gap-7">
+            {/* Mobile: nur Narr; translate-y an Zeilenhöhe angepasst, unten ohne extra pb (nur safe-area) */}
             <div className="flex min-h-0 min-w-0 basis-0 flex-[1_1_0%] flex-col overflow-hidden">
-              <div className="relative min-h-[200px] w-full flex-1 overflow-hidden">
-                <div className="absolute left-1/2 top-0 h-[122%] w-[min(100%,188px)] -translate-x-1/2 translate-y-[16%]">
+              <div className="relative min-h-[180px] w-full flex-1 overflow-hidden">
+                <div className="absolute left-1/2 top-0 h-[128%] w-[min(100%,188px)] -translate-x-1/2 translate-y-[18%]">
                   <Image
                     src="/images/cards/jester.png"
                     alt="Jass Narr"
@@ -80,8 +83,8 @@ export function Footer({ locale, content, nav }: FooterProps) {
             </div>
 
             <div className="flex min-h-0 min-w-0 basis-0 flex-[1_1_0%] flex-col justify-start text-left">
-              <h4 className="mb-4" style={headingStyle}>{content.legal}</h4>
-              <ul className="space-y-2.5">
+              <h4 className="mb-2.5" style={headingStyle}>{content.legal}</h4>
+              <ul className="space-y-1.5">
                 <li>
                   <Link href={`/${locale}/impressum`} className="transition-colors duration-200 hover:text-white" style={linkStyle}>
                     {content.impressum}
@@ -93,18 +96,18 @@ export function Footer({ locale, content, nav }: FooterProps) {
                   </Link>
                 </li>
               </ul>
-              <div className="mt-6">
-                <a href="mailto:info@jassverband.ch" className="inline-block transition-colors duration-200 hover:text-white" style={{ fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif', fontWeight: 400, fontSize: '14px', color: 'rgba(255,255,255,0.4)' }}>
+              <div className="mt-3.5">
+                <a href="mailto:info@jassverband.ch" className="inline-block transition-colors duration-200 hover:text-white" style={{ fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif', fontWeight: 400, fontSize: '13px', color: 'rgba(255,255,255,0.4)' }}>
                   info@jassverband.ch
                 </a>
               </div>
               <p
-                className="mt-5"
+                className="mt-2.5"
                 style={{
                   fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
                   fontWeight: 400,
-                  fontSize: '13px',
-                  lineHeight: 1.45,
+                  fontSize: '12px',
+                  lineHeight: 1.35,
                   color: 'rgba(255, 255, 255, 0.35)',
                 }}
               >
