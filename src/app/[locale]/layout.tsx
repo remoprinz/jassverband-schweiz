@@ -132,6 +132,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
     <html lang={locale}>
       <head>
         <meta name="theme-color" content="#0b0b0d" />
+        <meta name="msvalidate.01" content="EB52E386CFB4974A95E31BEF8F1EEA67" />
         <OrganizationSchema />
       </head>
       <body className={`${inter.variable} ${capita.variable} antialiased`}>

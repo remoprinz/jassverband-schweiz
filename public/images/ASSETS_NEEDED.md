@@ -5,6 +5,8 @@
 ### `/backgrounds/`
 - [ ] `wood-texture.jpg` - Holztextur für Hero-Hintergrund (min. 2000x1200px, seamless tileable bevorzugt)
 - [ ] `felt-texture.jpg` - Grüner Filz für Tournament-Section (min. 1920x800px)
+- [ ] `chalkboard.jpg` - Kreidetafel-Hintergrund für Background (min. 1920x800px)
+
 
 ### `/cards/`
 Schweizer Jasskarten als transparente PNGs (ca. 400x600px):
@@ -15,6 +17,7 @@ Schweizer Jasskarten als transparente PNGs (ca. 400x600px):
 - [ ] `rosen-under.png` (für Pillars Dekoration)
 - [ ] `schilten-bauer.png`
 - [ ] `eichel-ass.png`
+etc.
 
 ### `/badges/`
 - [ ] `lebendige-traditionen.png` - Offizielles Badge "Lebendige Traditionen" (transparent PNG)
@@ -33,7 +36,7 @@ SVG-Icons falls die eingebauten nicht ausreichen:
 
 ## Schriften
 
-Die Website verwendet:
+Die Website verwendet (bitte definieren):
 - **Zilla Slab** (Google Font) - für Headlines
 - **Geist Sans** (Vercel Font) - für Body Text
 
@@ -51,6 +54,6 @@ Beide werden automatisch über `next/font` geladen.
 ## Hinweise
 
 - Alle Bilder sollten WebP-kompatibel sein (Next.js konvertiert automatisch)
-- Für Retina-Displays: Liefern Sie Bilder in 2x Auflösung
+- Für Retina-Displays: Bilder in 2x Auflösung
 - Transparente PNGs für Karten und Illustrationen
 - JPGs für Texturen (bessere Kompression)

@@ -57,6 +57,8 @@ print/signatures/
 *.avi
 *.webm
 *.mkv
+*.mp3
+*.wav
 *.zip
 *.tar.gz
 *.rar

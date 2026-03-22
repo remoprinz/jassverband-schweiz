@@ -105,7 +105,7 @@ const icons = {
       alt="JassMeisterschaft"
       width={48}
       height={48}
-      className="w-full h-full object-contain"
+      className="w-full h-full object-contain scale-[1.2]"
     />
   ),
   jasstrainer: (
@@ -173,7 +173,7 @@ export function Ecosystem({
     title: string;
     description: string;
   }> = [
-    { key: 'jassmeister', href: 'https://jassmeister.web.app', icon: icons.jassmeister, ctaText: ctaLabels.jassmeister, badge: 'member', ...jassmeister },
+    { key: 'jassmeister', href: 'https://jassverband.ch/de/schweizermeisterschaft', icon: icons.jassmeister, ctaText: ctaLabels.jassmeister, badge: 'member', ...jassmeister },
     { key: 'jassguru', href: 'https://jassguru.ch', icon: icons.jassguru, ctaText: ctaLabels.jassguru, badge: 'member', ...jassguru },
     { key: 'whatsapp', href: 'https://chat.whatsapp.com/Cgc2tJxsGNV4SXU87cYeCX', icon: icons.whatsapp, ctaText: ctaLabels.whatsapp, badge: 'member', ...whatsapp },
 
