@@ -122,11 +122,13 @@ export function Footer({ locale, content, nav }: FooterProps) {
         </div>
       </div>
 
-      {/* Desktop Layout – Figma: 1440 x 390px */}
-      <div className="hidden lg:block relative" style={{ height: '390px' }}>
-        <div className="container-main h-full relative">
-          {/* Logo – oben links */}
-          <div className="absolute" style={{ top: '64px', left: '0' }}>
+      {/* Desktop: Logo im normalen Fluss → gleiche linke Kante wie Header (absolute left:0 liegt vor dem Padding) */}
+      <div className="hidden lg:block min-h-[390px]">
+        <div
+          className="container-main flex flex-row justify-between items-start pt-16"
+          style={{ minHeight: '390px' }}
+        >
+          <div className="relative h-[326px] w-[203px] shrink-0">
             <Image
               src={footerLogoSrc}
               alt="Jassverband Schweiz"
@@ -134,32 +136,18 @@ export function Footer({ locale, content, nav }: FooterProps) {
               height={51}
               priority
             />
+            <div className="absolute left-0 top-[91px] h-[333px] w-[203px]">
+              <Image
+                src="/images/cards/jester.png"
+                alt="Jass Narr"
+                fill
+                className="object-contain object-top"
+                sizes="203px"
+              />
+            </div>
           </div>
 
-          {/* Jester – weiter rechts, ragt nach unten raus */}
-          <div 
-            className="absolute"
-            style={{ 
-              top: '155px',
-              left: '300x',
-              width: '203px', 
-              height: '333px',
-            }}
-          >
-            <Image
-              src="/images/cards/jester.png"
-              alt="Jass Narr"
-              fill
-              className="object-contain object-top"
-              sizes="203px"
-            />
-          </div>
-
-          {/* Navigation + Rechtliches – Flex-Layout, rechtsbündig mit Content */}
-          <div 
-            className="flex justify-end"
-            style={{ paddingTop: '64px', gap: '120px' }}
-          >
+          <div className="flex shrink-0 justify-end" style={{ gap: '120px' }}>
             {/* Navigation */}
             <div className="flex flex-col" style={{ width: '140px', height: '260px' }}>
               <h4 className="mb-4" style={headingStyle}>Navigation</h4>
