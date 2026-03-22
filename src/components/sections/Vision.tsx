@@ -20,7 +20,7 @@ export function Vision({ title, subtitle, copy, cta, ctaHref }: VisionProps) {
     <section
       className="relative w-full overflow-hidden py-20 md:py-24"
       style={{
-        backgroundImage: 'url(/images/backgrounds/chalkboard.jpg)',
+        backgroundImage: 'url(/images/backgrounds/chalkboard.webp)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         color: '#ffffff',

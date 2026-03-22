@@ -213,7 +213,7 @@ export default function MitmachenPage() {
       <section id="anmeldung" className="relative py-24 md:py-32 overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/backgrounds/chalkboard.jpg"
+            src="/images/backgrounds/chalkboard.webp"
             alt={t('altChalkboard')}
             fill
             className="object-cover"

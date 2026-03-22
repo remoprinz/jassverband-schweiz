@@ -82,7 +82,7 @@ export function VerbandContent({
       <section id="vision" className="relative py-20 md:py-28 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/backgrounds/chalkboard.jpg"
+            src="/images/backgrounds/chalkboard.webp"
             alt=""
             fill
             className="object-cover"
@@ -410,7 +410,7 @@ export function VerbandContent({
       <section className="relative py-16 md:py-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/backgrounds/chalkboard.jpg"
+            src="/images/backgrounds/chalkboard.webp"
             alt=""
             fill
             className="object-cover"

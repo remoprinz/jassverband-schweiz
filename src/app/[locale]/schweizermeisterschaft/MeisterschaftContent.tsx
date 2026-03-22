@@ -136,7 +136,7 @@ export function MeisterschaftContent({
       <section className="relative py-20 md:py-28 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/backgrounds/chalkboard.jpg"
+            src="/images/backgrounds/chalkboard.webp"
             alt={altChalkboard}
             fill
             className="object-cover"
@@ -447,7 +447,7 @@ export function MeisterschaftContent({
       <section className="relative py-20 md:py-28 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/backgrounds/felt-figma.png"
+            src="/images/backgrounds/felt-figma.webp"
             alt={altFelt}
             fill
             className="object-cover"
@@ -549,7 +549,7 @@ export function MeisterschaftContent({
           ═══════════════════════════════════════════════════════════════ */}
       <section className="relative py-20 md:py-28 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Image src="/images/backgrounds/chalkboard.jpg" alt={altChalkboard} fill className="object-cover" quality={85} />
+          <Image src="/images/backgrounds/chalkboard.webp" alt={altChalkboard} fill className="object-cover" quality={85} />
           <div className="absolute inset-0 bg-black/20" />
         </div>
         <div className="absolute inset-0 z-[1] opacity-[0.03] pointer-events-none" aria-hidden style={{ backgroundImage: noiseOverlay }} />

@@ -24,7 +24,7 @@ export function Schweizermeisterschaft({
     <section className="relative py-20 md:py-24 overflow-hidden">
       <div className="absolute inset-0">
         <Image
-          src="/images/backgrounds/felt-figma.png"
+          src="/images/backgrounds/felt-figma.webp"
           alt="Grüner Filz Hintergrund"
           fill
           className="object-cover"
@@ -33,7 +33,7 @@ export function Schweizermeisterschaft({
         <div className="absolute inset-0 bg-black/0" />
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <Image
-            src="/images/decorations/kranz.png"
+            src="/images/decorations/kranz.webp"
             alt=""
             aria-hidden
             width={636}

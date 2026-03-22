@@ -165,7 +165,7 @@ export function Hero({
       {/* HOLZTISCH – full bleed */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/backgrounds/holztisch.jpg"
+          src="/images/backgrounds/holztisch.webp"
           alt={altTable ?? 'Holztisch'}
           fill
           className="object-cover"
@@ -186,7 +186,7 @@ export function Hero({
         }}
       >
         <Image
-          src="/images/backgrounds/felt-figma.png"
+          src="/images/backgrounds/felt-figma.webp"
           alt={altFelt ?? 'Jassteppich'}
           fill
           className="object-cover"
@@ -397,7 +397,7 @@ export function Hero({
             `
           }} />
           <Image
-            src="/images/decorations/kranz.png"
+            src="/images/decorations/kranz.webp"
             alt=""
             aria-hidden="true"
             width={636}

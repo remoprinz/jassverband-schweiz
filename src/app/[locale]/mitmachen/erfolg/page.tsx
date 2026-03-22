@@ -26,7 +26,7 @@ export default function ErfolgPage() {
       <section className="relative py-24 md:py-32 overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/backgrounds/felt-figma.png"
+            src="/images/backgrounds/felt-figma.webp"
             alt={t('altFelt')}
             fill
             className="object-cover"

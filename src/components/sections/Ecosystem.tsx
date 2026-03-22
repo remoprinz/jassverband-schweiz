@@ -70,7 +70,7 @@ const icons = {
   ),
   jassguru: (
     <Image
-      src="/images/icons/guru_round.png"
+      src="/images/icons/guru_round.webp"
       alt="JassGuru"
       width={48}
       height={48}

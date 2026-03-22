@@ -78,7 +78,7 @@ export function EhrenkodexContent({
       <section className="relative pt-32 md:pt-40 pb-16 md:pb-24 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/backgrounds/chalkboard.jpg"
+            src="/images/backgrounds/chalkboard.webp"
             alt=""
             fill
             className="object-cover"
@@ -325,7 +325,7 @@ export function EhrenkodexContent({
       <section className="relative py-16 md:py-24 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/backgrounds/felt-figma.png"
+            src="/images/backgrounds/felt-figma.webp"
             alt=""
             fill
             className="object-cover"
