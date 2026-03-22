@@ -50,8 +50,8 @@ export function Footer({ locale, content, nav }: FooterProps) {
   return (
     <footer data-footer className="bg-black overflow-hidden">
       {/* Mobile Layout */}
-      <div className="lg:hidden container-main py-12">
-        <div className="flex flex-col items-start gap-10 text-left">
+      <div className="lg:hidden container-main pt-10 pb-4">
+        <div className="flex flex-col items-start gap-6 text-left">
           {/* Logo */}
           <Image
             src={footerLogoSrc}
@@ -61,25 +61,23 @@ export function Footer({ locale, content, nav }: FooterProps) {
             className="h-10 w-auto self-start block"
             priority
           />
-          <SocialIconLinks variant="on-dark" size="md" locale={locale} className="mt-3" />
+          <SocialIconLinks variant="on-dark" size="md" locale={locale} />
 
-          {/* Narr/Dame (wie Desktop beschnitten) + Rechtliches — Navigation nur Header/Menü, nicht doppelt */}
-          <div className="grid w-full grid-cols-2 gap-6 sm:gap-8 justify-items-start">
-            <div className="relative h-[236px] w-full max-w-[220px] min-w-0 overflow-hidden">
+          {/* Links Figur unten bündig; Rechtliches + Copyright nur rechts (kein volle-Breite-Block unten) */}
+          <div className="grid w-full grid-cols-2 gap-6 sm:gap-8 items-stretch">
+            <div className="flex min-h-[200px] w-full max-w-[220px] min-w-0 flex-col justify-end overflow-hidden">
               {showDame ? (
-                <div className="flex h-full w-full flex-col justify-end">
-                  <div className="relative h-[200px] w-full">
-                    <Image
-                      src="/images/cards/jesterdame.png"
-                      alt="Jass Dame"
-                      fill
-                      className="object-contain object-bottom"
-                      sizes="(max-width: 1024px) 40vw, 220px"
-                    />
-                  </div>
+                <div className="relative h-[200px] w-full shrink-0">
+                  <Image
+                    src="/images/cards/jesterdame.png"
+                    alt="Jass Dame"
+                    fill
+                    className="object-contain object-bottom"
+                    sizes="(max-width: 1024px) 40vw, 220px"
+                  />
                 </div>
               ) : (
-                <div className="relative mt-[58px] h-[300px] w-[170px] max-w-full sm:mt-[62px] sm:h-[308px] sm:w-[180px]">
+                <div className="relative mt-auto h-[280px] w-[170px] max-w-full shrink-0 sm:h-[292px] sm:w-[180px]">
                   <Image
                     src="/images/cards/jester.png"
                     alt="Jass Narr"
@@ -91,8 +89,7 @@ export function Footer({ locale, content, nav }: FooterProps) {
               )}
             </div>
 
-            {/* Rechtliches */}
-            <div>
+            <div className="flex min-w-0 flex-col justify-start text-left">
               <h4 className="mb-4" style={headingStyle}>{content.legal}</h4>
               <ul className="space-y-2.5">
                 <li>
@@ -111,20 +108,20 @@ export function Footer({ locale, content, nav }: FooterProps) {
                   info@jassverband.ch
                 </a>
               </div>
+              <p
+                className="mt-5"
+                style={{
+                  fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
+                  fontWeight: 400,
+                  fontSize: '13px',
+                  lineHeight: 1.45,
+                  color: 'rgba(255, 255, 255, 0.35)',
+                }}
+              >
+                {content.copyright}
+              </p>
             </div>
           </div>
-
-          <p
-            className="mt-8 w-full"
-            style={{
-              fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
-              fontWeight: 400,
-              fontSize: '13px',
-              color: 'rgba(255, 255, 255, 0.35)',
-            }}
-          >
-            {content.copyright}
-          </p>
         </div>
       </div>
 
