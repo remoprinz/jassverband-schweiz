@@ -7,6 +7,7 @@ import { EnhancedProjectCard } from '@/components/ui';
 import { PiCalculatorFill } from 'react-icons/pi';
 import { IoChatbubbles } from 'react-icons/io5';
 import { FaTrophy } from 'react-icons/fa6';
+import { SOCIAL_LINKS } from '@/lib/social-links';
 
 interface EcosystemProject {
   title: string;
@@ -175,7 +176,7 @@ export function Ecosystem({
   }> = [
     { key: 'jassmeister', href: 'https://jassverband.ch/de/schweizermeisterschaft', icon: icons.jassmeister, ctaText: ctaLabels.jassmeister, badge: 'member', ...jassmeister },
     { key: 'jassguru', href: 'https://jassguru.ch', icon: icons.jassguru, ctaText: ctaLabels.jassguru, badge: 'member', ...jassguru },
-    { key: 'whatsapp', href: 'https://chat.whatsapp.com/Cgc2tJxsGNV4SXU87cYeCX', icon: icons.whatsapp, ctaText: ctaLabels.whatsapp, badge: 'member', ...whatsapp },
+    { key: 'whatsapp', href: SOCIAL_LINKS.whatsappCommunity, icon: icons.whatsapp, ctaText: ctaLabels.whatsapp, badge: 'member', ...whatsapp },
 
     { key: 'jasskarten', href: 'https://schweizerjass.ch/', icon: icons.jasskarten, ctaText: ctaLabels.jasskarten, badge: 'member', ...jasskarten },
     { key: 'jassturniere', href: '#', icon: icons.jassturniere, ctaText: ctaLabels.jassturniere, badge: 'member', comingSoon: true, ...jassturniere },

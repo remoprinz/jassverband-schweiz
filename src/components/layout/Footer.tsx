@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
+import { SocialIconLinks } from '@/components/layout/SocialIconLinks';
 
 interface FooterProps {
   locale: string;
@@ -60,6 +61,7 @@ export function Footer({ locale, content, nav }: FooterProps) {
             className="h-10 w-auto self-start block"
             priority
           />
+          <SocialIconLinks variant="on-dark" size="md" locale={locale} className="mt-3" />
 
           {/* Navigation + Rechtliches Grid */}
           <div className="grid w-full grid-cols-2 gap-8 justify-items-start">
@@ -130,42 +132,45 @@ export function Footer({ locale, content, nav }: FooterProps) {
           className="container-main flex flex-row justify-between items-start pt-16"
           style={{ minHeight: '390px' }}
         >
-          <div
-            className={`relative flex h-[326px] shrink-0 flex-row gap-4 lg:gap-6 xl:gap-8 ${
-              showDame ? 'items-stretch' : 'items-start'
-            }`}
-          >
-            <Image
-              src={footerLogoSrc}
-              alt="Jassverband Schweiz"
-              width={189}
-              height={51}
-              className={showDame ? 'shrink-0 self-start' : 'shrink-0'}
-              priority
-            />
-            {showDame ? (
-              <div className="flex h-full w-[322px] shrink-0 flex-col justify-end">
-                <div className="relative h-[242px] w-full">
+          <div className="flex shrink-0 flex-col gap-4">
+            <div
+              className={`relative flex h-[326px] shrink-0 flex-row gap-4 lg:gap-6 xl:gap-8 ${
+                showDame ? 'items-stretch' : 'items-start'
+              }`}
+            >
+              <Image
+                src={footerLogoSrc}
+                alt="Jassverband Schweiz"
+                width={189}
+                height={51}
+                className={showDame ? 'shrink-0 self-start' : 'shrink-0'}
+                priority
+              />
+              {showDame ? (
+                <div className="flex h-full w-[322px] shrink-0 flex-col justify-end">
+                  <div className="relative h-[242px] w-full">
+                    <Image
+                      src="/images/cards/jesterdame.png"
+                      alt="Jass Dame"
+                      fill
+                      className="object-contain object-bottom"
+                      sizes="322px"
+                    />
+                  </div>
+                </div>
+              ) : (
+                <div className="relative mt-[80px] h-[333px] w-[203px] shrink-0">
                   <Image
-                    src="/images/cards/jesterdame.png"
-                    alt="Jass Dame"
+                    src="/images/cards/jester.png"
+                    alt="Jass Narr"
                     fill
-                    className="object-contain object-bottom"
-                    sizes="322px"
+                    className="object-contain object-top"
+                    sizes="203px"
                   />
                 </div>
-              </div>
-            ) : (
-              <div className="relative mt-[80px] h-[333px] w-[203px] shrink-0">
-                <Image
-                  src="/images/cards/jester.png"
-                  alt="Jass Narr"
-                  fill
-                  className="object-contain object-top"
-                  sizes="203px"
-                />
-              </div>
-            )}
+              )}
+            </div>
+            <SocialIconLinks variant="on-dark" size="md" locale={locale} />
           </div>
 
           <div className="flex shrink-0 justify-end" style={{ gap: '120px' }}>
