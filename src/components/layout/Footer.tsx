@@ -65,7 +65,7 @@ export function Footer({ locale, content, nav }: FooterProps) {
 
           {/* Narr/Dame (wie Desktop beschnitten) + Rechtliches — Navigation nur Header/Menü, nicht doppelt */}
           <div className="grid w-full grid-cols-2 gap-6 sm:gap-8 justify-items-start">
-            <div className="relative h-[260px] w-full max-w-[220px] min-w-0 overflow-hidden">
+            <div className="relative h-[236px] w-full max-w-[220px] min-w-0 overflow-hidden">
               {showDame ? (
                 <div className="flex h-full w-full flex-col justify-end">
                   <div className="relative h-[200px] w-full">
@@ -79,16 +79,14 @@ export function Footer({ locale, content, nav }: FooterProps) {
                   </div>
                 </div>
               ) : (
-                <div className="relative h-full w-full max-w-[200px] overflow-hidden">
-                  <div className="relative mt-[56px] h-[272px] w-[168px] max-w-full sm:h-[280px] sm:w-[180px]">
-                    <Image
-                      src="/images/cards/jester.png"
-                      alt="Jass Narr"
-                      fill
-                      className="object-contain object-top"
-                      sizes="(max-width: 1024px) 40vw, 180px"
-                    />
-                  </div>
+                <div className="relative mt-[58px] h-[300px] w-[170px] max-w-full sm:mt-[62px] sm:h-[308px] sm:w-[180px]">
+                  <Image
+                    src="/images/cards/jester.png"
+                    alt="Jass Narr"
+                    fill
+                    className="object-contain object-top"
+                    sizes="(max-width: 1024px) 40vw, 180px"
+                  />
                 </div>
               )}
             </div>
@@ -109,10 +107,7 @@ export function Footer({ locale, content, nav }: FooterProps) {
                 </li>
               </ul>
               <div className="mt-6">
-                <p style={{ fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif', fontWeight: 400, fontSize: '14px', lineHeight: '1.7', color: 'rgba(255,255,255,0.4)' }}>
-                  Hirslanderstrasse 34<br />8032 Zürich
-                </p>
-                <a href="mailto:info@jassverband.ch" className="inline-block mt-2 transition-colors duration-200 hover:text-white" style={{ fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif', fontWeight: 400, fontSize: '14px', color: 'rgba(255,255,255,0.4)' }}>
+                <a href="mailto:info@jassverband.ch" className="inline-block transition-colors duration-200 hover:text-white" style={{ fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif', fontWeight: 400, fontSize: '14px', color: 'rgba(255,255,255,0.4)' }}>
                   info@jassverband.ch
                 </a>
               </div>
@@ -227,10 +222,7 @@ export function Footer({ locale, content, nav }: FooterProps) {
                 </li>
               </ul>
               <div className="mt-6">
-                <p style={{ fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif', fontWeight: 400, fontSize: '14px', lineHeight: '1.7', color: 'rgba(255,255,255,0.4)' }}>
-                  Hirslanderstrasse 34<br />8032 Zürich
-                </p>
-                <a href="mailto:info@jassverband.ch" className="inline-block mt-2 transition-colors duration-200 hover:text-white" style={{ fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif', fontWeight: 400, fontSize: '14px', color: 'rgba(255,255,255,0.4)' }}>
+                <a href="mailto:info@jassverband.ch" className="inline-block transition-colors duration-200 hover:text-white" style={{ fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif', fontWeight: 400, fontSize: '14px', color: 'rgba(255,255,255,0.4)' }}>
                   info@jassverband.ch
                 </a>
               </div>
