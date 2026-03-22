@@ -63,39 +63,34 @@ export function Footer({ locale, content, nav }: FooterProps) {
           />
           <SocialIconLinks variant="on-dark" size="md" locale={locale} className="mt-3" />
 
-          {/* Navigation + Rechtliches Grid */}
-          <div className="grid w-full grid-cols-2 gap-8 justify-items-start">
-            {/* Navigation */}
-            <div>
-              <h4 className="mb-4" style={headingStyle}>Navigation</h4>
-              <ul className="space-y-2.5">
-                {[
-                  { href: `/${locale}`, label: nav.home },
-                  { href: `/${locale}/schweizermeisterschaft`, label: nav.schweizermeisterschaft },
-                  { href: `/${locale}/plattform`, label: nav.plattformen },
-                  { href: `/${locale}/verband`, label: nav.verband },
-                  { href: `/${locale}/news`, label: nav.news },
-                  { href: `/${locale}/kontakt`, label: nav.kontakt },
-                ].map((item) => (
-                  <li key={item.href}>
-                    <Link href={item.href} className="transition-colors duration-200 hover:text-white" style={linkStyle}>
-                      {item.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-              <p
-                className="mt-6"
-                style={{
-                  fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
-                  fontWeight: 400,
-                  fontSize: '13px',
-                  color: 'rgba(255, 255, 255, 0.35)',
-                  whiteSpace: 'nowrap',
-                }}
-              >
-                {content.copyright}
-              </p>
+          {/* Narr/Dame (wie Desktop beschnitten) + Rechtliches — Navigation nur Header/Menü, nicht doppelt */}
+          <div className="grid w-full grid-cols-2 gap-6 sm:gap-8 justify-items-start">
+            <div className="relative h-[260px] w-full max-w-[220px] min-w-0 overflow-hidden">
+              {showDame ? (
+                <div className="flex h-full w-full flex-col justify-end">
+                  <div className="relative h-[200px] w-full">
+                    <Image
+                      src="/images/cards/jesterdame.png"
+                      alt="Jass Dame"
+                      fill
+                      className="object-contain object-bottom"
+                      sizes="(max-width: 1024px) 40vw, 220px"
+                    />
+                  </div>
+                </div>
+              ) : (
+                <div className="relative h-full w-full max-w-[200px] overflow-hidden">
+                  <div className="relative mt-[56px] h-[272px] w-[168px] max-w-full sm:h-[280px] sm:w-[180px]">
+                    <Image
+                      src="/images/cards/jester.png"
+                      alt="Jass Narr"
+                      fill
+                      className="object-contain object-top"
+                      sizes="(max-width: 1024px) 40vw, 180px"
+                    />
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Rechtliches */}
@@ -123,6 +118,18 @@ export function Footer({ locale, content, nav }: FooterProps) {
               </div>
             </div>
           </div>
+
+          <p
+            className="mt-8 w-full"
+            style={{
+              fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
+              fontWeight: 400,
+              fontSize: '13px',
+              color: 'rgba(255, 255, 255, 0.35)',
+            }}
+          >
+            {content.copyright}
+          </p>
         </div>
       </div>
 
@@ -132,45 +139,42 @@ export function Footer({ locale, content, nav }: FooterProps) {
           className="container-main flex flex-row justify-between items-start pt-16"
           style={{ minHeight: '390px' }}
         >
-          <div className="flex shrink-0 flex-col gap-4">
-            <div
-              className={`relative flex h-[326px] shrink-0 flex-row gap-4 lg:gap-6 xl:gap-8 ${
-                showDame ? 'items-stretch' : 'items-start'
-              }`}
-            >
-              <Image
-                src={footerLogoSrc}
-                alt="Jassverband Schweiz"
-                width={189}
-                height={51}
-                className={showDame ? 'shrink-0 self-start' : 'shrink-0'}
-                priority
-              />
-              {showDame ? (
-                <div className="flex h-full w-[322px] shrink-0 flex-col justify-end">
-                  <div className="relative h-[242px] w-full">
-                    <Image
-                      src="/images/cards/jesterdame.png"
-                      alt="Jass Dame"
-                      fill
-                      className="object-contain object-bottom"
-                      sizes="322px"
-                    />
-                  </div>
-                </div>
-              ) : (
-                <div className="relative mt-[80px] h-[333px] w-[203px] shrink-0">
+          <div
+            className={`relative flex h-[326px] shrink-0 flex-row gap-4 lg:gap-6 xl:gap-8 ${
+              showDame ? 'items-stretch' : 'items-start'
+            }`}
+          >
+            <Image
+              src={footerLogoSrc}
+              alt="Jassverband Schweiz"
+              width={189}
+              height={51}
+              className={showDame ? 'shrink-0 self-start' : 'shrink-0'}
+              priority
+            />
+            {showDame ? (
+              <div className="flex h-full w-[322px] shrink-0 flex-col justify-end">
+                <div className="relative h-[242px] w-full">
                   <Image
-                    src="/images/cards/jester.png"
-                    alt="Jass Narr"
+                    src="/images/cards/jesterdame.png"
+                    alt="Jass Dame"
                     fill
-                    className="object-contain object-top"
-                    sizes="203px"
+                    className="object-contain object-bottom"
+                    sizes="322px"
                   />
                 </div>
-              )}
-            </div>
-            <SocialIconLinks variant="on-dark" size="md" locale={locale} />
+              </div>
+            ) : (
+              <div className="relative mt-[80px] h-[333px] w-[203px] shrink-0">
+                <Image
+                  src="/images/cards/jester.png"
+                  alt="Jass Narr"
+                  fill
+                  className="object-contain object-top"
+                  sizes="203px"
+                />
+              </div>
+            )}
           </div>
 
           <div className="flex shrink-0 justify-end" style={{ gap: '120px' }}>
@@ -229,6 +233,9 @@ export function Footer({ locale, content, nav }: FooterProps) {
                 <a href="mailto:info@jassverband.ch" className="inline-block mt-2 transition-colors duration-200 hover:text-white" style={{ fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif', fontWeight: 400, fontSize: '14px', color: 'rgba(255,255,255,0.4)' }}>
                   info@jassverband.ch
                 </a>
+              </div>
+              <div className="mt-6">
+                <SocialIconLinks variant="on-dark" size="md" locale={locale} />
               </div>
             </div>
           </div>

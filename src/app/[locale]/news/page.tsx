@@ -318,7 +318,6 @@ function InlineArticle({
         })}
       </div>
 
-      {/* Kanäle (kein X/Teilen-Intent — Links zur echten Community) */}
       <div
         className="flex flex-wrap items-center gap-4 mt-8 pt-6 border-t"
         style={{ borderColor: "var(--color-border)" }}
@@ -331,10 +330,10 @@ function InlineArticle({
           }}
         >
           {locale === "de"
-            ? "Folgen & Community"
+            ? "Social Media"
             : locale === "fr"
-              ? "Suivre & communauté"
-              : "Seguire & community"}
+              ? "Réseaux sociaux"
+              : "Social media"}
         </span>
         <SocialIconLinks variant="on-light" size="sm" locale={locale} />
       </div>
