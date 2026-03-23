@@ -207,7 +207,22 @@ export function Header({ locale, nav, isHeroPage }: HeaderProps) {
             }
       }
     >
-      <div suppressHydrationWarning className={isCompactMode ? 'px-0' : (scrolled || forceScrolledStyle) ? 'px-6' : 'container-main'}>
+      {/* Desktop: gleiche horizontale Raster wie im gescrollten Zustand (Header left/right 140px + px-6),
+          damit Logo / Nav / Sprache nicht springen. Mobil weiterhin container-main außer gescrollt. */}
+      <div
+        suppressHydrationWarning
+        className={
+          isCompactMode
+            ? 'px-0'
+            : isMobileViewport
+              ? (scrolled || forceScrolledStyle)
+                ? 'px-6'
+                : 'container-main'
+              : (scrolled || forceScrolledStyle)
+                ? 'px-6'
+                : 'mx-[140px] px-6'
+        }
+      >
         <nav suppressHydrationWarning className={`flex items-center transition-all duration-500 ${
           isCompactMode
             ? 'justify-end h-14 px-1'
