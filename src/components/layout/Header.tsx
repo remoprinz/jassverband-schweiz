@@ -21,20 +21,40 @@ interface HeaderProps {
   };
 }
 
-function Logo({ variant = 'color', shrunk = false }: { variant?: 'color' | 'white'; shrunk?: boolean }) {
-  const src =
-    variant === 'white'
-      ? '/images/logos/JVS Logo farbig weiss kurz.svg'
-      : '/images/logos/JVS Logo farbig kurz.svg';
+function Logo({
+  locale,
+  variant = 'color',
+  shrunk = false,
+}: {
+  locale: string;
+  variant?: 'color' | 'white';
+  shrunk?: boolean;
+}) {
+  const normalizedLocale = locale === 'fr' || locale === 'it' ? locale : 'de';
+  const headerLogoByLocale = {
+    de: {
+      white: '/images/logos/JVS Logo farbig weiss.svg',
+      color: '/images/logos/JVS Logo farbig.svg',
+    },
+    fr: {
+      white: '/images/logos/JVS Logo 100mm farbig weiss FR.svg',
+      color: '/images/logos/JVS Logo 100mm farbig FR.svg',
+    },
+    it: {
+      white: '/images/logos/JVS Logo 100mm farbig weiss IT.svg',
+      color: '/images/logos/JVS Logo 100mm farbig IT.svg',
+    },
+  } as const;
+  const src = headerLogoByLocale[normalizedLocale][variant === 'white' ? 'white' : 'color'];
 
   return (
     <Image
       src={src}
       alt="Jassverband Schweiz"
-      width={180}
-      height={48}
-      className={`transition-all duration-500 w-auto max-w-[min(100%,240px)] sm:max-w-[min(100%,280px)] md:max-w-none ${
-        shrunk ? 'h-9 md:h-10' : 'h-10 md:h-[52px]'
+      width={220}
+      height={60}
+      className={`transition-all duration-500 w-auto max-w-[min(100%,200px)] sm:max-w-[min(100%,260px)] lg:max-w-[min(100%,300px)] ${
+        shrunk ? 'h-8 sm:h-9 md:h-10' : 'h-9 sm:h-10 md:h-[52px]'
       }`}
       priority
     />
@@ -197,7 +217,7 @@ export function Header({ locale, nav, isHeroPage }: HeaderProps) {
         }`}>
           {!isCompactMode && (
             <Link href={`/${locale}`} className="flex items-center">
-              <Logo variant={logoVariant} shrunk={scrolled || forceScrolledStyle} />
+              <Logo locale={locale} variant={logoVariant} shrunk={scrolled || forceScrolledStyle} />
             </Link>
           )}
 
