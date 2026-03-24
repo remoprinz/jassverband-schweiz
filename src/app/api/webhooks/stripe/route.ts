@@ -169,6 +169,20 @@ async function handleCheckoutCompleted(session: Stripe.Checkout.Session) {
   } else {
     memberId = db.collection('jvs_members').doc().id;
 
+    // Mitgliedsnummer atomisch vergeben
+    const counterRef = db.collection('jvs_counters').doc('members');
+    let memberNumber = 1;
+    await db.runTransaction(async (transaction) => {
+      const counterDoc = await transaction.get(counterRef);
+      if (counterDoc.exists) {
+        memberNumber = (counterDoc.data()?.nextNumber || 1);
+        transaction.update(counterRef, { nextNumber: memberNumber + 1 });
+      } else {
+        memberNumber = 1;
+        transaction.set(counterRef, { nextNumber: 2 });
+      }
+    });
+
     await db
       .collection('jvs_members')
       .doc(memberId)
@@ -180,13 +194,15 @@ async function handleCheckoutCompleted(session: Stripe.Checkout.Session) {
         email: customerEmail,
         jassname: jassname || null,
         membershipType: MEMBERSHIP_TYPE_MAP[membershipType] || membershipType,
+        memberNumber,
+        season: 1,
         memberSince: now,
         validUntil,
         status: 'active',
         createdAt: now,
         updatedAt: now,
       });
-    console.log(`[Stripe Webhook] New member created: ${memberId}`);
+    console.log(`[Stripe Webhook] New member #${memberNumber} created: ${memberId}`);
   }
 
   // 3. Subscription-Eintrag erstellen
