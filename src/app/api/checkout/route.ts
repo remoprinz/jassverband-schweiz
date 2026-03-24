@@ -6,16 +6,18 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const {
       paket,
-      name,
+      firstName,
+      lastName,
       email,
       jassname,
+      message,
       amount: customAmount,
       locale = 'de',
     } = body;
 
-    if (!paket || !name || !email) {
+    if (!paket || !firstName || !lastName || !email) {
       return NextResponse.json(
-        { error: 'Pflichtfelder fehlen: paket, name, email' },
+        { error: 'Pflichtfelder fehlen: paket, firstName, lastName, email' },
         { status: 400 }
       );
     }
@@ -51,7 +53,7 @@ export async function POST(request: NextRequest) {
               description:
                 membershipType === 'goenner'
                   ? 'Jassverband Schweiz — Gönner-Beitrag'
-                  : `Jassverband Schweiz — ${productName} (Saison 1)`,
+                  : `Jassverband Schweiz — ${productName} (12 Monate)`,
             },
             unit_amount: price,
           },
@@ -61,9 +63,11 @@ export async function POST(request: NextRequest) {
 
       metadata: {
         membership_type: membershipType,
-        customer_name: name,
+        customer_firstName: firstName,
+        customer_lastName: lastName,
         customer_email: email,
         jassname: jassname || '',
+        message: message || '',
       },
 
       success_url: `${baseUrl}/${locale}/mitmachen/erfolg?session_id={CHECKOUT_SESSION_ID}`,

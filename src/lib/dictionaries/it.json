@@ -491,19 +491,19 @@
       "cta": "Sì, ci sono"
     },
     "pricing": {
-      "title": "Scegli la tua licenza per la stagione 1.",
-      "subtitle": "Scegli la licenza adatta e approfitta dei servizi della Federazione Svizzera di Jass. Unisciti al movimento Jass.",
-      "year": "Stagione",
+      "title": "Scegli la tua licenza.",
+      "subtitle": "Diventa membro della Federazione Svizzera di Jass. Crea il tuo gruppo di Jass, organizza tornei e partecipa al Campionato Svizzero.",
+      "year": "anno",
       "recommended": "Consigliato",
       "select": "Scegli la licenza",
-      "groupNote": "Nota: la licenza di gruppo autorizza la partecipazione agli eventi di gruppo. Per gli eventi individuali è necessaria una licenza Jasser individuale.",
+      "groupNote": "Nota: la licenza di gruppo autorizza la partecipazione agli eventi di gruppo. Per gli eventi individuali è necessaria una licenza Jass individuale.",
       "pionier": {
         "title": "Licenza Jass",
-        "feature1": "Diritto di partecipazione ai Campionati Svizzeri di Jass.",
-        "feature2": "Brevetto Jass come attestato ufficiale di competenza (badge nel profilo).",
-        "feature3": "Accesso alla chat membri FSJ e alla rete della federazione.",
-        "feature4": "JassGuru Pro con classifica Elo e statistiche.",
-        "feature5": "Posizione ideale per la stagione 2026."
+        "feature1": "Crea il tuo gruppo di Jass e invita i tuoi amici.",
+        "feature2": "Organizza tornei per il tuo gruppo.",
+        "feature3": "Classifica Elo nazionale e statistiche personali.",
+        "feature4": "Diritto di partecipazione al Campionato Svizzero 2026.",
+        "feature5": "Accesso alla chat membri FSJ e alla rete della federazione."
       },
       "botschafter": {
         "title": "Licenza Trumpf",
@@ -517,11 +517,11 @@
       },
       "patron": {
         "title": "Licenza di gruppo",
-        "feature1": "Per gruppi di Jass fino a 10 persone.",
-        "feature2": "Diritto di partecipazione agli eventi di gruppo e al Campionato di Schieber a squadre.",
-        "feature3": "Classifica privata di gruppo su JassGuru.",
-        "feature4": "Brevetto Jass, classifica Elo e statistiche per ogni persona.",
-        "feature5": "Vantaggio prezzo: CHF 35 a persona invece di CHF 60."
+        "feature1": "JassGuru Pro per tutto il tuo gruppo di Jass.",
+        "feature2": "Diritto di partecipazione agli eventi di gruppo e al Campionato Svizzero.",
+        "feature3": "Il tuo gruppo appare nella classifica nazionale dei gruppi.",
+        "feature4": "Classifica Elo e statistiche per ogni persona.",
+        "feature5": "Vantaggio prezzo rispetto alle licenze individuali."
       }
     },
     "goenner": {
@@ -533,19 +533,22 @@
     },
     "form": {
       "title": "Iscrizione",
-      "intro": "Il pagamento online tramite Stripe/Twint sarà presto disponibile. Riceverai una fattura via e-mail dopo l'iscrizione.",
-      "name": "Nome",
+      "intro": "Pagamento online sicuro tramite TWINT o carta di credito. Dopo l'invio sarai reindirizzato al pagamento.",
+      "firstName": "Nome",
+      "lastName": "Cognome",
       "email": "E-mail",
       "jassname": "Nome Jass (opzionale)",
       "jassnamePlaceholder": "Il tuo nome giocatore su JassGuru",
       "paket": "Licenza",
       "message": "Messaggio (opzionale)",
       "messagePlaceholder": "Opzionale: domande o osservazioni",
+      "goennerAmount": "Importo (CHF)",
+      "goennerAmountPlaceholder": "Minimo 10",
       "notice": {
         "title": "Nota:",
-        "message": "Il pagamento online tramite Stripe/Twint sarà presto disponibile. Riceverai una fattura via e-mail dopo l'iscrizione."
+        "message": "Dopo l'invio sarai reindirizzato al pagamento sicuro tramite Stripe."
       },
-      "submit": "Invia iscrizione",
+      "submit": "Continua al pagamento",
       "success": {
         "title": "Iscrizione ricevuta!",
         "message": "Ci metteremo in contatto entro 48 ore."

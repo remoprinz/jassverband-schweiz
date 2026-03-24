@@ -491,19 +491,19 @@
       "cta": "Oui, je suis partant"
     },
     "pricing": {
-      "title": "Choisissez votre licence pour la saison 1.",
-      "subtitle": "Choisissez la licence adaptée et profitez des services de la Fédération Suisse de Jass. Rejoignez le mouvement Jass.",
-      "year": "Saison",
+      "title": "Choisissez votre licence.",
+      "subtitle": "Devenez membre de la Fédération Suisse de Jass. Créez votre propre groupe de Jass, organisez des tournois et participez au Championnat Suisse.",
+      "year": "année",
       "recommended": "Recommandé",
       "select": "Choisir la licence",
-      "groupNote": "Remarque : la licence de groupe autorise la participation aux événements de groupe. Pour les événements individuels, une licence Jasser individuelle est requise.",
+      "groupNote": "Remarque : la licence de groupe autorise la participation aux événements de groupe. Pour les événements individuels, une licence Jass individuelle est requise.",
       "pionier": {
         "title": "Licence Jass",
-        "feature1": "Droit de participation aux Championnats Suisses de Jass.",
-        "feature2": "Brevet Jass comme attestation officielle de compétence (badge sur le profil).",
-        "feature3": "Accès au chat membres FSJ et au réseau de la fédération.",
-        "feature4": "JassGuru Pro avec classement Elo et statistiques.",
-        "feature5": "Position idéale pour la saison 2026."
+        "feature1": "Créez votre propre groupe de Jass et invitez vos amis.",
+        "feature2": "Organisez des tournois pour votre groupe.",
+        "feature3": "Classement Elo national et statistiques personnelles.",
+        "feature4": "Droit de participation au Championnat Suisse 2026.",
+        "feature5": "Accès au chat membres FSJ et au réseau de la fédération."
       },
       "botschafter": {
         "title": "Licence Trumpf",
@@ -517,11 +517,11 @@
       },
       "patron": {
         "title": "Licence de groupe",
-        "feature1": "Pour les groupes de Jass jusqu'à 10 personnes.",
-        "feature2": "Droit de participation aux événements de groupe et au Championnat de Schieber par équipes.",
-        "feature3": "Classement privé de groupe sur JassGuru.",
-        "feature4": "Brevet Jass, classement Elo et statistiques pour chaque personne.",
-        "feature5": "Avantage prix : CHF 35 par personne au lieu de CHF 60."
+        "feature1": "JassGuru Pro pour tout votre groupe de Jass.",
+        "feature2": "Droit de participation aux événements de groupe et au Championnat Suisse.",
+        "feature3": "Votre groupe apparaît dans le classement national des groupes.",
+        "feature4": "Classement Elo et statistiques pour chaque personne.",
+        "feature5": "Avantage prix par rapport aux licences individuelles."
       }
     },
     "goenner": {
@@ -533,19 +533,22 @@
     },
     "form": {
       "title": "Inscription",
-      "intro": "Le paiement en ligne via Stripe/Twint sera bientôt disponible. Vous recevrez une facture par e-mail après l'inscription.",
-      "name": "Nom",
+      "intro": "Paiement en ligne sécurisé via TWINT ou carte de crédit. Vous serez redirigé vers le paiement après l'envoi.",
+      "firstName": "Prénom",
+      "lastName": "Nom",
       "email": "E-mail",
       "jassname": "Nom de Jass (optionnel)",
       "jassnamePlaceholder": "Votre nom de joueur sur JassGuru",
       "paket": "Licence",
       "message": "Message (optionnel)",
       "messagePlaceholder": "Optionnel : questions ou remarques",
+      "goennerAmount": "Montant (CHF)",
+      "goennerAmountPlaceholder": "Minimum 10",
       "notice": {
         "title": "Remarque :",
-        "message": "Le paiement en ligne via Stripe/Twint sera bientôt disponible. Vous recevrez une facture par e-mail après l'inscription."
+        "message": "Vous serez redirigé vers le paiement sécurisé via Stripe après l'envoi."
       },
-      "submit": "Envoyer l'inscription",
+      "submit": "Continuer vers le paiement",
       "success": {
         "title": "Inscription reçue !",
         "message": "Nous vous répondrons dans les 48 heures."

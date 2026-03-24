@@ -491,23 +491,23 @@
       "cta": "Ja, ich bin dabei"
     },
     "pricing": {
-      "title": "Wähle deine Lizenz für Saison 1.",
-      "subtitle": "Wähle die passende Lizenz und profitiere von den Services des Jassverbands Schweiz. Werde Teil der Jass-Bewegung.",
-      "year": "Saison",
+      "title": "Wähle deine Lizenz.",
+      "subtitle": "Werde Mitglied im Jassverband Schweiz. Erstelle deine eigene Jassgruppe, organisiere Turniere und nimm an der Schweizermeisterschaft teil.",
+      "year": "Jahr",
       "recommended": "Empfohlen",
       "select": "Lizenz wählen",
       "groupNote": "Hinweis: Die Gruppen-Lizenz berechtigt zur Teilnahme an Gruppen-Events. Für Einzel-Events ist eine individuelle Jasser-Lizenz erforderlich.",
       "pionier": {
         "title": "Jasser-Lizenz",
-        "feature1": "Wettkampf-Berechtigung für Schweizer Jass-Meisterschaften.",
-        "feature2": "Jass-Brevet als offizieller Kompetenznachweis (Badge im Profil).",
-        "feature3": "Zugang zum JVS-Mitgliederchat und Verbandsnetzwerk.",
-        "feature4": "JassGuru Pro mit Elo-Ranking und Statistiken.",
-        "feature5": "Beste Ausgangslage für die Saison 2026."
+        "feature1": "Erstelle deine eigene Jassgruppe und lade Freunde ein.",
+        "feature2": "Organisiere Turniere für deine Gruppe.",
+        "feature3": "Nationales Elo-Ranking und persönliche Statistiken.",
+        "feature4": "Teilnahmeberechtigung Schweizermeisterschaft 2026.",
+        "feature5": "Zugang zum JVS-Mitgliederchat und Verbandsnetzwerk."
       },
       "botschafter": {
         "title": "Trumpf-Lizenz",
-        "feature1": "Alles aus dem Jasser-Paket.",
+        "feature1": "Alles aus der Jasser-Lizenz.",
         "feature2": "Exklusives Saison-Kartenset (Edition 2026 als erste Auflage).",
         "feature3": "24 Stunden Vorzugszugang für nationale Turniere und Events.",
         "feature4": "Exklusiver Rabatt auf Jassreisen mit Trumpf-As.",
@@ -517,11 +517,11 @@
       },
       "patron": {
         "title": "Gruppen-Lizenz",
-        "feature1": "Für Jassgruppen bis zu 10 Personen.",
-        "feature2": "Team-Berechtigung für Gruppen-Events und Team-Schiebermeisterschaft.",
-        "feature3": "Private Runden-Rangliste auf JassGuru.",
-        "feature4": "Jass-Brevet, Elo-Ranking und Statistiken für jede Person.",
-        "feature5": "Preisvorteil: CHF 35 pro Person statt CHF 60."
+        "feature1": "JassGuru Pro für deine ganze Jassgruppe.",
+        "feature2": "Team-Berechtigung für Gruppen-Events und Schweizermeisterschaft.",
+        "feature3": "Gruppe erscheint in der nationalen Gruppen-Rangliste.",
+        "feature4": "Elo-Ranking und Statistiken für jede Person.",
+        "feature5": "Preisvorteil gegenüber Einzellizenzen."
       }
     },
     "goenner": {
@@ -533,19 +533,22 @@
     },
     "form": {
       "title": "Anmeldung",
-      "intro": "Online-Zahlung via Stripe/Twint folgt in Kürze. Du erhältst nach der Anmeldung eine Rechnung per E-Mail.",
-      "name": "Name",
+      "intro": "Sichere Online-Zahlung via TWINT oder Kreditkarte. Du wirst nach dem Absenden direkt zur Zahlung weitergeleitet.",
+      "firstName": "Vorname",
+      "lastName": "Nachname",
       "email": "E-Mail",
       "jassname": "Jassname (optional)",
       "jassnamePlaceholder": "Dein Spielername bei JassGuru",
       "paket": "Lizenz",
       "message": "Nachricht (optional)",
       "messagePlaceholder": "Optional: Fragen oder Hinweise",
+      "goennerAmount": "Betrag (CHF)",
+      "goennerAmountPlaceholder": "Mindestens 10",
       "notice": {
         "title": "Hinweis:",
-        "message": "Online-Zahlung via Stripe/Twint folgt in Kürze. Du erhältst nach der Anmeldung eine Rechnung per E-Mail."
+        "message": "Du wirst nach dem Absenden direkt zur sicheren Zahlung via Stripe weitergeleitet."
       },
-      "submit": "Anmeldung absenden",
+      "submit": "Weiter zur Zahlung",
       "success": {
         "title": "Anmeldung erhalten!",
         "message": "Wir melden uns innerhalb von 48 Stunden."

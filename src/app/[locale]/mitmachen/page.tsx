@@ -34,7 +34,7 @@ export default function MitmachenPage() {
   const t = useTranslations('mitmachen');
   const locale = useLocale();
   const [formData, setFormData] = useState({
-    name: '', email: '', jassname: '', paket: 'botschafter', message: '',
+    firstName: '', lastName: '', email: '', jassname: '', paket: 'botschafter', message: '', amount: '',
   });
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -52,9 +52,12 @@ export default function MitmachenPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           paket: formData.paket,
-          name: formData.name,
+          firstName: formData.firstName,
+          lastName: formData.lastName,
           email: formData.email,
           jassname: formData.jassname,
+          message: formData.message,
+          amount: formData.paket === 'goenner' ? formData.amount : undefined,
           locale: locale,
         }),
       });
@@ -254,33 +257,48 @@ export default function MitmachenPage() {
               >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium mb-2" style={{ color: '#000000' }}>
-                      {t('form.name')} *
+                    <label htmlFor="firstName" className="block text-sm font-medium mb-2" style={{ color: '#000000' }}>
+                      {t('form.firstName')} *
                     </label>
                     <input
                       type="text"
-                      id="name"
+                      id="firstName"
                       required
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      value={formData.firstName}
+                      onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
                       className="w-full px-4 py-3 outline-none transition-all"
                       style={{ borderRadius: '12px', border: '1px solid #e5e5e5', fontSize: '16px' }}
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium mb-2" style={{ color: '#000000' }}>
-                      {t('form.email')} *
+                    <label htmlFor="lastName" className="block text-sm font-medium mb-2" style={{ color: '#000000' }}>
+                      {t('form.lastName')} *
                     </label>
                     <input
-                      type="email"
-                      id="email"
+                      type="text"
+                      id="lastName"
                       required
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      value={formData.lastName}
+                      onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
                       className="w-full px-4 py-3 outline-none transition-all"
                       style={{ borderRadius: '12px', border: '1px solid #e5e5e5', fontSize: '16px' }}
                     />
                   </div>
+                </div>
+
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium mb-2" style={{ color: '#000000' }}>
+                    {t('form.email')} *
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    required
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    className="w-full px-4 py-3 outline-none transition-all"
+                    style={{ borderRadius: '12px', border: '1px solid #e5e5e5', fontSize: '16px' }}
+                  />
                 </div>
 
                 <div>
@@ -302,7 +320,7 @@ export default function MitmachenPage() {
                   <label className="block text-sm font-medium mb-2" style={{ color: '#000000' }}>
                     {t('form.paket')} *
                   </label>
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                  <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
                     {packages.map((pkg) => (
                       <button
                         key={pkg.key}
@@ -323,6 +341,21 @@ export default function MitmachenPage() {
                     ))}
                     <button
                       type="button"
+                      onClick={() => setFormData({ ...formData, paket: 'jugend' })}
+                      className="py-3 px-4 transition-all"
+                      style={{
+                        borderRadius: '12px',
+                        border: formData.paket === 'jugend' ? '2px solid #ff0000' : '2px solid #e5e5e5',
+                        backgroundColor: formData.paket === 'jugend' ? 'rgba(255,0,0,0.04)' : '#ffffff',
+                      }}
+                    >
+                      <div style={{ fontFamily: 'var(--font-capita), Capita, Georgia, serif', fontWeight: 700, fontSize: '15px' }}>
+                        {t('youth.title')}
+                      </div>
+                      <div style={{ fontSize: '13px', color: '#6b6b6b' }}>CHF 20</div>
+                    </button>
+                    <button
+                      type="button"
                       onClick={() => setFormData({ ...formData, paket: 'goenner' })}
                       className="py-3 px-4 transition-all"
                       style={{
@@ -338,6 +371,25 @@ export default function MitmachenPage() {
                     </button>
                   </div>
                 </div>
+
+                {formData.paket === 'goenner' && (
+                  <div>
+                    <label htmlFor="amount" className="block text-sm font-medium mb-2" style={{ color: '#000000' }}>
+                      {t('form.goennerAmount')} *
+                    </label>
+                    <input
+                      type="number"
+                      id="amount"
+                      min="10"
+                      required
+                      value={formData.amount}
+                      onChange={(e) => setFormData({ ...formData, amount: e.target.value })}
+                      placeholder={t('form.goennerAmountPlaceholder')}
+                      className="w-full px-4 py-3 outline-none transition-all"
+                      style={{ borderRadius: '12px', border: '1px solid #e5e5e5', fontSize: '16px' }}
+                    />
+                  </div>
+                )}
 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium mb-2" style={{ color: '#000000' }}>

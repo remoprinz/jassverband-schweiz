@@ -92,9 +92,11 @@ export async function POST(request: NextRequest) {
 async function handleCheckoutCompleted(session: Stripe.Checkout.Session) {
   const metadata = session.metadata || {};
   const customerEmail = session.customer_email || metadata.customer_email;
-  const customerName = metadata.customer_name || '';
+  const firstName = metadata.customer_firstName || '';
+  const lastName = metadata.customer_lastName || '';
   const membershipType = metadata.membership_type || 'pionier';
   const jassname = metadata.jassname || '';
+  const fullName = `${firstName} ${lastName}`.trim();
 
   if (!customerEmail) {
     console.error('[Stripe Webhook] No customer email in session:', session.id);
@@ -103,7 +105,8 @@ async function handleCheckoutCompleted(session: Stripe.Checkout.Session) {
 
   console.log('[Stripe Webhook] Processing checkout:', {
     email: customerEmail,
-    name: customerName,
+    firstName,
+    lastName,
     membership: membershipType,
     amount: session.amount_total,
   });
@@ -120,8 +123,7 @@ async function handleCheckoutCompleted(session: Stripe.Checkout.Session) {
     uid = userRecord.uid;
     console.log(`[Stripe Webhook] Existing user found: ${uid}`);
   } catch {
-    const nameParts = customerName.split(' ');
-    const displayName = jassname || customerName || customerEmail.split('@')[0];
+    const displayName = jassname || fullName || customerEmail.split('@')[0];
 
     const newUser = await adminAuth.createUser({
       email: customerEmail,
@@ -165,7 +167,6 @@ async function handleCheckoutCompleted(session: Stripe.Checkout.Session) {
     });
     console.log(`[Stripe Webhook] Existing member reactivated: ${memberId}`);
   } else {
-    const nameParts = customerName.split(' ');
     memberId = db.collection('jvs_members').doc().id;
 
     await db
@@ -174,8 +175,8 @@ async function handleCheckoutCompleted(session: Stripe.Checkout.Session) {
       .set({
         id: memberId,
         uid,
-        firstName: nameParts[0] || '',
-        lastName: nameParts.slice(1).join(' ') || '',
+        firstName,
+        lastName,
         email: customerEmail,
         jassname: jassname || null,
         membershipType: MEMBERSHIP_TYPE_MAP[membershipType] || membershipType,
@@ -225,15 +226,17 @@ async function handleCheckoutCompleted(session: Stripe.Checkout.Session) {
     console.log(`[Stripe Webhook] Linked member ${memberId} to player ${playerId}`);
   }
 
-  // 5. Password-Reset-Link senden für neue User
-  if (isNewUser) {
-    try {
-      const resetLink = await adminAuth.generatePasswordResetLink(customerEmail);
-      console.log(`[Stripe Webhook] Password reset link generated for ${customerEmail}`);
+  // 5. E-Mail senden
+  try {
+    if (process.env.RESEND_API_KEY) {
+      const { Resend } = await import('resend');
+      const resend = new Resend(process.env.RESEND_API_KEY);
+      const greeting = firstName || 'Jasser';
 
-      if (process.env.RESEND_API_KEY) {
-        const { Resend } = await import('resend');
-        const resend = new Resend(process.env.RESEND_API_KEY);
+      if (isNewUser) {
+        // Neuer User: Welcome + Passwort-Setup
+        const resetLink = await adminAuth.generatePasswordResetLink(customerEmail);
+        console.log(`[Stripe Webhook] Password reset link generated for ${customerEmail}`);
 
         await resend.emails.send({
           from: process.env.EMAIL_FROM || 'Jassverband Schweiz <noreply@jassverband.ch>',
@@ -242,28 +245,56 @@ async function handleCheckoutCompleted(session: Stripe.Checkout.Session) {
           html: `
             <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 600px; margin: 0 auto;">
               <h1 style="color: #000;">Willkommen beim Jassverband Schweiz!</h1>
-              <p>Hallo ${customerName || 'Jasser'},</p>
-              <p>Deine Mitgliedschaft wurde erfolgreich aktiviert. Du bist jetzt offizieller Verbandsjasser!</p>
-              <p>Um dein Konto auf <a href="https://jasstafel.app">jasstafel.app</a> zu nutzen, setze bitte dein Passwort:</p>
+              <p>Hallo ${greeting},</p>
+              <p>Deine Mitgliedschaft wurde erfolgreich aktiviert. Du bist jetzt offizielles Mitglied des Jassverbands Schweiz!</p>
+              <p>Um JassGuru Pro zu nutzen, setze bitte dein Passwort:</p>
               <p style="text-align: center; margin: 32px 0;">
-                <a href="${resetLink}" 
+                <a href="${resetLink}"
                    style="background-color: #ff0000; color: #fff; padding: 14px 28px; border-radius: 9999px; text-decoration: none; font-weight: bold;">
                   Passwort setzen
+                </a>
+              </p>
+              <p>Danach kannst du dich auf <a href="https://jassguru.ch">jassguru.ch</a> einloggen und deine eigene Jassgruppe erstellen.</p>
+              <p style="color: #6b6b6b; font-size: 14px;">
+                Bei Fragen erreichst du uns unter <a href="mailto:info@jassverband.ch">info@jassverband.ch</a>.
+              </p>
+              <hr style="border: none; border-top: 1px solid #e5e5e5; margin: 24px 0;" />
+              <p style="color: #9ca3af; font-size: 12px;">Jassverband Schweiz | jassverband.ch</p>
+            </div>
+          `,
+        });
+        console.log(`[Stripe Webhook] Welcome email sent to ${customerEmail}`);
+      } else {
+        // Bestehender User: Info-Email (kein Passwort-Reset)
+        await resend.emails.send({
+          from: process.env.EMAIL_FROM || 'Jassverband Schweiz <noreply@jassverband.ch>',
+          to: customerEmail,
+          subject: 'Deine JVS-Mitgliedschaft ist aktiv!',
+          html: `
+            <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 600px; margin: 0 auto;">
+              <h1 style="color: #000;">Deine Mitgliedschaft ist aktiv!</h1>
+              <p>Hallo ${greeting},</p>
+              <p>Deine Mitgliedschaft beim Jassverband Schweiz wurde erfolgreich aktiviert.</p>
+              <p>Logge dich wie gewohnt auf <a href="https://jassguru.ch">jassguru.ch</a> ein — deine Pro-Features sind freigeschaltet.</p>
+              <p style="text-align: center; margin: 32px 0;">
+                <a href="https://jassguru.ch"
+                   style="background-color: #ff0000; color: #fff; padding: 14px 28px; border-radius: 9999px; text-decoration: none; font-weight: bold;">
+                  Zu JassGuru
                 </a>
               </p>
               <p style="color: #6b6b6b; font-size: 14px;">
                 Bei Fragen erreichst du uns unter <a href="mailto:info@jassverband.ch">info@jassverband.ch</a>.
               </p>
               <hr style="border: none; border-top: 1px solid #e5e5e5; margin: 24px 0;" />
-              <p style="color: #9ca3af; font-size: 12px;">Jassverband Schweiz | Hirslanderstrasse 34, 8032 Zürich</p>
+              <p style="color: #9ca3af; font-size: 12px;">Jassverband Schweiz | jassverband.ch</p>
             </div>
           `,
         });
-        console.log(`[Stripe Webhook] Welcome email sent to ${customerEmail}`);
+        console.log(`[Stripe Webhook] Activation email sent to ${customerEmail}`);
       }
-    } catch (emailError) {
-      console.error('[Stripe Webhook] Email sending failed (non-critical):', emailError);
     }
+  } catch (emailError) {
+    console.error('[Stripe Webhook] Email sending failed (non-critical):', emailError);
   }
 
   console.log(`[Stripe Webhook] Checkout processing complete for ${customerEmail}`);
