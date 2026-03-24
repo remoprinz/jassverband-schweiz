@@ -299,6 +299,9 @@ export default function MitmachenPage() {
                     className="w-full px-4 py-3 outline-none transition-all"
                     style={{ borderRadius: '12px', border: '1px solid #e5e5e5', fontSize: '16px' }}
                   />
+                  <p className="mt-1.5 text-xs" style={{ color: '#9ca3af' }}>
+                    {t('form.emailHint')}
+                  </p>
                 </div>
 
                 <div>

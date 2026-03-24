@@ -537,6 +537,7 @@
       "firstName": "Prénom",
       "lastName": "Nom",
       "email": "E-mail",
+      "emailHint": "Utilisez la même adresse e-mail que sur jassguru.ch pour que votre adhésion soit automatiquement liée.",
       "jassname": "Nom de Jass (optionnel)",
       "jassnamePlaceholder": "Votre nom de joueur sur JassGuru",
       "paket": "Licence",
