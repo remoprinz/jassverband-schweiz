@@ -32,7 +32,7 @@ export async function POST(request: NextRequest) {
     const membershipType = paket as MembershipType;
 
     let price: number = MEMBERSHIP_PRICES[membershipType];
-    if (membershipType === 'goenner' && customAmount && Number(customAmount) >= 1) {
+    if (membershipType === 'goenner' && customAmount && Number(customAmount) >= 10) {
       price = Math.round(Number(customAmount) * 100);
     }
 

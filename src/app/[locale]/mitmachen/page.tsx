@@ -383,7 +383,7 @@ export default function MitmachenPage() {
                     <input
                       type="number"
                       id="amount"
-                      min="1"
+                      min="10"
                       required
                       value={formData.amount}
                       onChange={(e) => setFormData({ ...formData, amount: e.target.value })}
