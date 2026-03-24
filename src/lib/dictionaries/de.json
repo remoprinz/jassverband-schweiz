@@ -636,16 +636,16 @@
     },
     "erfolg": {
       "title": "Willkommen im Jassverband!",
-      "description": "Deine Zahlung war erfolgreich. Du erhältst in Kürze eine Bestätigung per E-Mail mit allen Details zu deiner Mitgliedschaft.",
+      "description": "Deine Zahlung war erfolgreich. Du erhältst in Kürze eine Bestätigung per E-Mail.",
       "ctaHome": "Zur Startseite",
-      "ctaPlay": "Jetzt auf Jasstafel spielen",
+      "ctaPlay": "Jetzt auf JassGuru spielen",
       "nextSteps": "So geht es weiter",
-      "step1Title": "E-Mail bestätigen",
-      "step1Description": "Du erhältst in wenigen Minuten eine Bestätigungs-E-Mail mit deiner Mitgliedsnummer.",
-      "step2Title": "Jasstafel verbinden",
-      "step2Description": "Verknüpfe dein JVS-Konto mit Jasstafel.app für Premium-Features und Elo-Tracking.",
-      "step3Title": "Meisterschaft melden",
-      "step3Description": "Ab Frühjahr kannst du dein Team zur Schweizer Jass-Meisterschaft anmelden."
+      "step1Title": "Bestätigungs-E-Mail prüfen",
+      "step1Description": "Du erhältst in wenigen Minuten eine E-Mail mit allen Details zu deiner Mitgliedschaft.",
+      "step2Title": "Auf JassGuru einloggen",
+      "step2Description": "Logge dich auf jassguru.ch ein. Du kannst jetzt deine eigene Jassgruppe erstellen und Freunde einladen.",
+      "step3Title": "Turniere organisieren",
+      "step3Description": "Erstelle Turniere für deine Gruppe und nimm an der Schweizermeisterschaft teil."
     }
   }
 }

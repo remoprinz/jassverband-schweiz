@@ -636,16 +636,16 @@
     },
     "erfolg": {
       "title": "Benvenuto nella Federazione!",
-      "description": "Il tuo pagamento è andato a buon fine. Riceverai presto un'e-mail di conferma con tutti i dettagli della tua adesione.",
+      "description": "Il tuo pagamento è andato a buon fine. Riceverai presto un'e-mail di conferma.",
       "ctaHome": "Alla pagina iniziale",
-      "ctaPlay": "Gioca su Jasstafel",
+      "ctaPlay": "Gioca su JassGuru",
       "nextSteps": "Prossimi passi",
-      "step1Title": "Conferma e-mail",
-      "step1Description": "Riceverai tra pochi minuti un'e-mail di conferma con il tuo numero di membro.",
-      "step2Title": "Collega Jasstafel",
-      "step2Description": "Collega il tuo account FSJ a Jasstafel.app per le funzionalità Premium e il tracciamento Elo.",
-      "step3Title": "Iscriviti al campionato",
-      "step3Description": "Da primavera potrai iscrivere la tua squadra al Campionato Svizzero di Jass."
+      "step1Title": "Controlla l'e-mail di conferma",
+      "step1Description": "Riceverai tra pochi minuti un'e-mail con tutti i dettagli della tua adesione.",
+      "step2Title": "Accedi su JassGuru",
+      "step2Description": "Accedi su jassguru.ch. Ora puoi creare il tuo gruppo di Jass e invitare i tuoi amici.",
+      "step3Title": "Organizza tornei",
+      "step3Description": "Crea tornei per il tuo gruppo e partecipa al Campionato Svizzero."
     }
   }
 }
