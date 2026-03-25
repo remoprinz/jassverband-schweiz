@@ -48,6 +48,9 @@ interface VerbandContentProps {
   missionsTitle: string;
   missions: MissionData[];
   praesidium: PraesidiumMember[];
+  revision: PraesidiumMember[];
+  revisionTitle: string;
+  revisionSubtitle: string;
   ehrenkodex: EhrenkodexTeaser;
   locale: string;
 }
@@ -71,6 +74,9 @@ export function VerbandContent({
   missionsTitle,
   missions,
   praesidium,
+  revision,
+  revisionTitle,
+  revisionSubtitle,
   ehrenkodex,
   locale,
 }: VerbandContentProps) {
@@ -272,6 +278,114 @@ export function VerbandContent({
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10 max-w-5xl mx-auto">
             {praesidium.map((member, index) => (
+              <motion.div
+                key={member.name}
+                className="text-center"
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <div
+                  className="relative w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden"
+                  style={{ backgroundColor: 'var(--color-cream)' }}
+                >
+                  <Image
+                    src={member.image}
+                    alt={`Portrait von ${member.name}`}
+                    fill
+                    sizes="128px"
+                    className="object-contain p-1"
+                    style={{
+                      transform: `translateY(${member.imageOffsetY}px) scale(${member.imageScale})`,
+                    }}
+                  />
+                </div>
+
+                <h3
+                  className="mb-1"
+                  style={{
+                    fontFamily: 'var(--font-capita), Capita, Georgia, serif',
+                    fontWeight: 700,
+                    fontSize: 'var(--font-size-20)',
+                    lineHeight: 1.25,
+                    color: 'var(--color-foreground)',
+                  }}
+                >
+                  {member.name}
+                </h3>
+
+                <p
+                  className="font-medium mb-5"
+                  style={{
+                    fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
+                    fontSize: 'var(--font-size-15)',
+                    color: 'var(--color-primary)',
+                  }}
+                >
+                  {member.role}, {member.location}
+                </p>
+
+                <p
+                  className="text-[var(--color-foreground-muted)] mb-4 max-w-[280px] mx-auto"
+                  style={{
+                    fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
+                    fontSize: 'var(--font-size-15)',
+                    lineHeight: 1.6,
+                  }}
+                >
+                  {member.description}
+                </p>
+
+                <blockquote
+                  className="italic max-w-[260px] mx-auto"
+                  style={{
+                    fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
+                    fontSize: 'var(--font-size-15)',
+                    lineHeight: 1.5,
+                    color: 'var(--color-foreground)',
+                  }}
+                >
+                  &bdquo;{member.quote}&ldquo;
+                </blockquote>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* ── REVISION ── */}
+          <motion.div
+            className="text-center mt-16 md:mt-20 mb-10"
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <h3
+              style={{
+                fontFamily: 'var(--font-capita), Capita, Georgia, serif',
+                fontWeight: 700,
+                fontSize: 'clamp(24px, 3.5vw, 32px)',
+                lineHeight: 1.2,
+                letterSpacing: '-0.5px',
+                color: 'var(--color-foreground)',
+              }}
+            >
+              {revisionTitle}
+            </h3>
+            <p
+              className="mt-2 text-[var(--color-foreground-muted)]"
+              style={{
+                fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
+                fontSize: 'var(--font-size-15)',
+                lineHeight: 1.5,
+              }}
+            >
+              {revisionSubtitle}
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 max-w-3xl mx-auto">
+            {revision.map((member, index) => (
               <motion.div
                 key={member.name}
                 className="text-center"

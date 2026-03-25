@@ -52,12 +52,38 @@ const praesidiumBase = [
   },
 ];
 
+const revisionBase = [
+  {
+    name: "Claudia Studer",
+    key: "claudia" as const,
+    location: "Zürich",
+    image: "/images/praesidium/claudia-platzhalter.png",
+    imageOffsetY: 0,
+    imageScale: 1.0,
+  },
+  {
+    name: "Dr. Karim Bschir",
+    key: "karim" as const,
+    location: "Zürich",
+    image: "/images/praesidium/karim-freigestellt.png",
+    imageOffsetY: 4,
+    imageScale: 1.15,
+  },
+];
+
 export default async function VerbandPage({ params }: VerbandPageProps) {
   const { locale } = await params;
   const t = await getTranslations({ locale });
   const tLeitbild = await getTranslations({ locale, namespace: "leitbild" });
 
   const praesidium = praesidiumBase.map((p) => ({
+    ...p,
+    role: t(`verband.praesidium.${p.key}.role`),
+    quote: t(`verband.praesidium.${p.key}.quote`),
+    description: t(`verband.praesidium.${p.key}.description`),
+  }));
+
+  const revision = revisionBase.map((p) => ({
     ...p,
     role: t(`verband.praesidium.${p.key}.role`),
     quote: t(`verband.praesidium.${p.key}.quote`),
@@ -100,6 +126,9 @@ export default async function VerbandPage({ params }: VerbandPageProps) {
         missionsTitle={tLeitbild("missionsTitle")}
         missions={missions}
         praesidium={praesidium}
+        revision={revision}
+        revisionTitle={t("verband.revisionTitle")}
+        revisionSubtitle={t("verband.revisionSubtitle")}
         ehrenkodex={{
           title: t("ehrenkodex.subtitle"),
           text: t("ehrenkodex.teaserText"),

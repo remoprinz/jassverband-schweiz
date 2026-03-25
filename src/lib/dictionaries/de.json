@@ -314,8 +314,20 @@
         "role": "Aktuar",
         "quote": "Jassen ist wie eine Gleichung: Am Ende muss es irgendwie aufgehen.",
         "description": "Erich ist Statistik-Dozent an der FHNW und betreibt seit 2008 jassstatistik.ch. Im Verband sorgt er dafür, dass alles seinen richtigen Weg geht — rechtlich, organisatorisch, dokumentarisch."
+      },
+      "claudia": {
+        "role": "Revisorin",
+        "quote": "Ordnung ist die halbe Partie.",
+        "description": "Claudia hält im Hintergrund die Fäden zusammen — beruflich im Schulhaus Ilgen, beim JVS als Revisorin. Sie sorgt dafür, dass die Bücher so sauber sind wie eine frisch gewischte Kreidetafel."
+      },
+      "karim": {
+        "role": "Revisor",
+        "quote": "Philosophie erklärt die Welt — Jassen den Charakter.",
+        "description": "Karim ist Managing Director der Ethikkommission an der Universität St. Gallen. Er forscht und lehrt zu Wissenschaftsphilosophie, Wissenschaftsethik und Werten in der Gesellschaft. Beim JVS setzt er das in die Praxis um."
       }
     },
+    "revisionTitle": "Revision",
+    "revisionSubtitle": "Unabhängige Kontrolle",
     "title": "Der Verband",
     "subtitle": "Jassen ist Schweizer Kulturgut — und verdient eine Organisation, die es in die Zukunft führt.",
     "intro": "Der Jassverband Schweiz wurde am 15. Januar 2026 in Zürich gegründet. Wir setzen uns für die Förderung, Erhaltung und innovative Vermittlung des Jassens als schweizerisches Kulturgut und strategischer Denksport ein.",
