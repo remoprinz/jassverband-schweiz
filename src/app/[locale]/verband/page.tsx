@@ -57,7 +57,7 @@ const revisionBase = [
     name: "Claudia Studer",
     key: "claudia" as const,
     location: "Zürich",
-    image: "/images/praesidium/claudia-platzhalter.png",
+    image: "/images/praesidium/claudia-freigestellt.png",
     imageOffsetY: 0,
     imageScale: 1.0,
   },
