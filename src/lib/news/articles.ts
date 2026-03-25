@@ -191,9 +191,9 @@ La lotta svizzera ha la sua federazione dal 1895. Lo jodel dal 1910. Il Jass ha 
       {
         token: "IMAGE_3",
         src: "/assets/news/grueezi-bern/photo-3-gruppe.png",
-        alt: "Ständerat Mathias Zopfi, Nationalrätin Steffi und Nationalrat Thomas am Stand des Jassverbands.",
+        alt: "Ständerat Mathias, Nationalrätin Steffi und Nationalrat Thomas am Stand des Jassverbands.",
         caption:
-          "Ständerat Mathias Zopfi (Gründer der Glarner Jassmeisterschaften), Nationalrätin Steffi (Organisatorin des SVP-Jass) und Nationalrat Thomas (amtierender Jasskönig Parlamentarier-Jass).",
+          "Ständerat Mathias (Mitgründer der Glarner Jassmeisterschaften), Nationalrätin Steffi (Organisatorin des SVP-Jass) und Nationalrat Thomas (amtierender Jasskönig Parlamentarier-Jass).",
       },
     ],
   },
