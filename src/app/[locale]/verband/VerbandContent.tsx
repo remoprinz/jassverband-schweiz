@@ -276,6 +276,25 @@ export function VerbandContent({
             </p>
           </motion.div>
 
+          {/* Präsidium Zwischenüberschrift */}
+          <motion.h3
+            className="text-center mb-10"
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            style={{
+              fontFamily: 'var(--font-capita), Capita, Georgia, serif',
+              fontWeight: 700,
+              fontSize: 'clamp(24px, 3.5vw, 32px)',
+              lineHeight: 1.2,
+              letterSpacing: '-0.5px',
+              color: 'var(--color-foreground)',
+            }}
+          >
+            Präsidium
+          </motion.h3>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10 max-w-5xl mx-auto">
             {praesidium.map((member, index) => (
               <motion.div
@@ -372,16 +391,6 @@ export function VerbandContent({
             >
               {revisionTitle}
             </h3>
-            <p
-              className="mt-2 text-[var(--color-foreground-muted)]"
-              style={{
-                fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
-                fontSize: 'var(--font-size-15)',
-                lineHeight: 1.5,
-              }}
-            >
-              {revisionSubtitle}
-            </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 max-w-3xl mx-auto">

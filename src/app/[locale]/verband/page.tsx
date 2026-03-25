@@ -64,7 +64,7 @@ const revisionBase = [
   {
     name: "Dr. Karim Bschir",
     key: "karim" as const,
-    location: "Zürich",
+    location: "St. Gallen",
     image: "/images/praesidium/karim-freigestellt.png",
     imageOffsetY: 4,
     imageScale: 1.15,

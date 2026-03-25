@@ -318,7 +318,7 @@
       "claudia": {
         "role": "Revisorin",
         "quote": "Ordnung ist die halbe Partie.",
-        "description": "Claudia hält im Hintergrund die Fäden zusammen — beruflich im Schulhaus Ilgen, beim JVS als Revisorin. Sie sorgt dafür, dass die Bücher so sauber sind wie eine frisch gewischte Kreidetafel."
+        "description": "Claudia hält im Hintergrund die Fäden zusammen — beruflich im Sekretariat vom Schulhaus Ilgen, beim JVS als Revisorin. Sie sorgt dafür, dass die Bücher so sauber sind wie eine frisch gewischte Kreidetafel."
       },
       "karim": {
         "role": "Revisor",
@@ -333,8 +333,8 @@
     "intro": "Der Jassverband Schweiz wurde am 15. Januar 2026 in Zürich gegründet. Wir setzen uns für die Förderung, Erhaltung und innovative Vermittlung des Jassens als schweizerisches Kulturgut und strategischer Denksport ein.",
     "gruendung": "Gegründet am 15. Januar 2026 in Zürich",
     "vorstand": "Vorstand",
-    "praesidiumTitle": "Das Präsidium",
-    "praesidiumSubtitle": "Ein starkes Blatt für den Schweizer Jass",
+    "praesidiumTitle": "Team",
+    "praesidiumSubtitle": "Ein starkes Blatt fürs Jassen.",
     "statuten": {
       "title": "Statuten",
       "download": "Statuten herunterladen (PDF)",
