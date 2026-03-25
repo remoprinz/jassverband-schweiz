@@ -57,6 +57,26 @@ export function Button({
         </motion.a>
       );
     }
+
+    // Anchor-Links: Smooth-Scroll statt Next.js Client-Navigation
+    if (href.startsWith('#')) {
+      return (
+        <motion.a
+          href={href}
+          className={combinedClassName}
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+          onClick={(e) => {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            target?.scrollIntoView({ behavior: 'smooth' });
+          }}
+        >
+          {children}
+        </motion.a>
+      );
+    }
+
     return (
       <Link href={href} className={combinedClassName}>
         <MotionComponent

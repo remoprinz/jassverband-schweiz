@@ -523,10 +523,14 @@ export function Hero({
         </motion.div>
       )}
 
-      {/* HEADLINE – responsive via CSS vars (Desktop; auf Mobile nur wenn !mobileFlow) */}
+      {/* HEADLINE + SUBTITLE – Desktop: gemeinsamer Flex-Container mit gap
+          verhindert Überlappung bei mehrzeiligem H1 (immer schöner Abstand) */}
       <motion.div
-        className={`absolute z-20 left-0 right-0 flex justify-center${mobileFlow ? ' hidden md:flex' : ''}`}
-        style={{ top: heroTitleTopDesktop ?? 'var(--hero-title-top)' }}
+        className={`absolute z-20 left-0 right-0 flex flex-col items-center${mobileFlow ? ' hidden md:flex' : ''}`}
+        style={{
+          top: heroTitleTopDesktop ?? 'var(--hero-title-top)',
+          gap: 'clamp(20px, 3.2vh, 40px)',
+        }}
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.1 }}
@@ -548,16 +552,6 @@ export function Hero({
         >
           {title}
         </h1>
-      </motion.div>
-
-      {/* SUBTITLE – absolut positioniert, nur auf Desktop oder wenn nicht mobileFlow */}
-      <motion.div
-        className={`absolute z-20 left-0 right-0 flex justify-center${mobileFlow ? ' hidden md:flex' : ''}`}
-        style={{ top: 'var(--hero-subtitle-top)' }}
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-      >
         <p
           style={{
             textAlign: 'center',
