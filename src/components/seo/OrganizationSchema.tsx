@@ -48,8 +48,11 @@ export function OrganizationSchema() {
         availableLanguage: ['German', 'French', 'Italian'],
       },
       sameAs: [
+        'https://www.wikidata.org/wiki/Q139042763',
         'https://www.wikidata.org/wiki/Q786768',
         'https://www.lebendige-traditionen.ch/tradition/de/home/traditionen/jassen.html',
+        'https://www.instagram.com/jassverband_schweiz/',
+        'https://www.linkedin.com/company/112297214',
       ],
       owns: [
         {
