@@ -76,3 +76,12 @@ Statuten/
 public/documents/
 Einreichungen\ Fördergelder/
 src/assets/textures/_originals/
+
+# Large asset directories — iCloud backup, not git
+src/assets/backgrounds/
+src/assets/textures/
+src/assets/cards/
+src/assets/logos/
+src/assets/fonts/
+public/images/cards/
+public/images/backgrounds/
