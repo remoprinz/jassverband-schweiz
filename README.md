@@ -1,36 +1,130 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Jassverband Schweiz
+
+**The official website for the Swiss Jass Federation** -- a non-profit organization dedicated to preserving, promoting, and digitizing Swiss Jass culture. Home of Switzerland's first national team-based Jass championship.
+
+Live at [jassverband.ch](https://jassverband.ch)
+
+---
+
+## What Is This
+
+Jass is the Swiss national card game, played by millions across the country. Jassverband Schweiz (JVS) is the federation that brings structure, competition, and community to the game. This website serves as the digital home for:
+
+- **Schweizermeisterschaft** -- a three-level national championship (form a group, challenge teams, compete in the finals) with home-field advantage and a binding code of honor
+- **Membership management** -- five membership tiers with Stripe-powered payments (CHF, TWINT, card)
+- **Trilingual content** -- full German, French, and Italian support, reflecting Switzerland's linguistic regions
+- **News and communication** -- federation updates, partner pages, and contact forms
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Framework | Next.js 16 (App Router) |
+| Language | TypeScript |
+| UI | React 19, Tailwind CSS 4, Framer Motion |
+| i18n | next-intl (DE / FR / IT) |
+| Payments | Stripe (Checkout, Webhooks) |
+| Database | Firebase Admin SDK (Firestore) |
+| Email | Resend (transactional + marketing) |
+| Media | Vercel Blob |
+| PDF | Puppeteer |
+| Deployment | Vercel (auto-deploy from main) |
+| Design | Custom serif font (Capita), felt-green and chalkboard theme, mobile-first |
+
+## Membership Tiers
+
+| Tier | Price | Description |
+|---|---|---|
+| Pionier | CHF 60/year | Individual license |
+| Botschafter | CHF 90/year | Ambassador license |
+| Patron | CHF 350/year | Group license |
+| Jugend | CHF 20/year | Youth (under 25) |
+| Goenner | Custom (min CHF 10) | Supporter donation |
+
+### Payment Flow
+
+```
+Stripe Checkout -> Webhook -> Firebase member creation -> Auto-link to JassGuru player -> Welcome email (Resend)
+```
+
+Members are automatically linked to their JassGuru player profile upon signup, connecting federation membership with the digital scoreboard ecosystem.
+
+## Project Structure
+
+```
+src/
+├── app/
+│   ├── [locale]/           # Localized pages (de, fr, it)
+│   │   ├── schweizermeisterschaft/   # Championship
+│   │   ├── mitmachen/                # Membership signup
+│   │   ├── kontakt/                  # Contact
+│   │   ├── verband/                  # About the federation
+│   │   ├── ehrenkodex/               # Code of honor
+│   │   ├── news/                     # News
+│   │   ├── partner/                  # Partners
+│   │   └── ...
+│   └── api/
+│       ├── checkout/       # Stripe session creation
+│       ├── contact/        # Rate-limited contact form
+│       └── webhooks/       # Stripe payment events
+├── components/             # UI components
+├── lib/
+│   ├── dictionaries/       # Translation files (de.json, fr.json, it.json)
+│   ├── firebaseAdmin.ts    # Firebase Admin SDK setup
+│   ├── stripe.ts           # Stripe client
+│   └── i18n.ts             # Internationalization config
+├── assets/                 # Static assets
+├── fonts/                  # Custom fonts (Capita)
+└── middleware.ts           # Locale detection and routing
+```
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Node.js 20+
+- npm
+
+### Environment Variables
+
+Create a `.env.local` file with the following:
+
+```env
+# Stripe
+STRIPE_SECRET_KEY=sk_...
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_...
+STRIPE_WEBHOOK_SECRET=whsec_...
+
+# Firebase
+FIREBASE_SERVICE_ACCOUNT_KEY={"type":"service_account",...}
+
+# Email (Resend)
+RESEND_API_KEY=re_...
+EMAIL_FROM=info@jassverband.ch
+CONTACT_EMAIL=kontakt@jassverband.ch
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Commands
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run dev              # Start dev server (localhost:3000)
+npm run build            # Production build
+npm run lint             # ESLint
+npm run pdf              # Generate PDF documents
+npm run pdf:broschuere   # Generate JVS brochure PDF
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Ecosystem
 
-## Learn More
+This project is part of the JassGuru ecosystem:
 
-To learn more about Next.js, take a look at the following resources:
+| Project | Description |
+|---|---|
+| **jassverband-schweiz** (this repo) | Federation website at jassverband.ch |
+| **jasstafel** | Digital Jass scoreboard PWA at [jassguru.ch](https://jassguru.ch) |
+| **jasswiki** | Jass encyclopedia and rule reference |
+| **jassmeister** | Tournament platform |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Private. All rights reserved by Jassverband Schweiz.
