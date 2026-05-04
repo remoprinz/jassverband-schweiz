@@ -6,6 +6,23 @@
   ],
   "type": "MCPAuthorityAttestation",
   "version": "0.1.0",
+  "specification": {
+    "name": "AMCP",
+    "version": "0.1",
+    "fullName": "Authority-MCP — Specification for cryptographically verifiable authority chains on top of MCP",
+    "architect": {
+      "@type": "Organization",
+      "name": "Agentic Relations",
+      "url": "https://agenticrelations.ch",
+      "founder": {
+        "@type": "Person",
+        "name": "Remo Prinz",
+        "role": "Architect / Spec Owner"
+      }
+    },
+    "specUrl": "https://agenticrelations.ch/specs/amcp",
+    "license": "CC-BY-4.0"
+  },
   "attestor": {
     "@type": "Organization",
     "did": "did:web:jassverband.ch",
@@ -50,7 +67,7 @@
         "curator": {
           "@type": "Person",
           "name": "Remo Prinz",
-          "email": "remo@jasswiki.ch"
+          "email": "remo@jassverband.ch"
         }
       },
       "endpoint": "https://us-central1-jassguru.cloudfunctions.net/mcp",
