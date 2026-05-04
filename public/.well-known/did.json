@@ -1,0 +1,44 @@
+{
+  "@context": [
+    "https://www.w3.org/ns/did/v1",
+    "https://w3id.org/security/suites/jws-2020/v1"
+  ],
+  "id": "did:web:jassverband.ch",
+  "alsoKnownAs": [
+    "https://jassverband.ch",
+    "https://www.wikidata.org/wiki/Q139042763"
+  ],
+  "verificationMethod": [
+    {
+      "id": "did:web:jassverband.ch#authority-key-1",
+      "type": "JsonWebKey2020",
+      "controller": "did:web:jassverband.ch",
+      "publicKeyJwk": {
+        "kty": "OKP",
+        "crv": "Ed25519",
+        "x": "mwq05fLHa9z9NEa4q7P6wWfLoLa1KrJnoFnHz8nuSbk",
+        "kid": "jvs-authority-key-1",
+        "use": "sig"
+      }
+    }
+  ],
+  "authentication": [
+    "did:web:jassverband.ch#authority-key-1"
+  ],
+  "assertionMethod": [
+    "did:web:jassverband.ch#authority-key-1"
+  ],
+  "service": [
+    {
+      "id": "did:web:jassverband.ch#mcp-authority",
+      "type": "MCPAuthorityAttestation",
+      "serviceEndpoint": "https://jassverband.ch/.well-known/mcp-authority.json",
+      "description": "Attestation der durch JVS autorisierten MCP-Server (verifizierte Wissens-Quellen)"
+    },
+    {
+      "id": "did:web:jassverband.ch#website",
+      "type": "LinkedDomains",
+      "serviceEndpoint": "https://jassverband.ch"
+    }
+  ]
+}
