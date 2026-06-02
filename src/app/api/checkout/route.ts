@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { stripe, MEMBERSHIP_PRICES, MEMBERSHIP_NAMES, type MembershipType } from '@/lib/stripe';
+import { getStripe, MEMBERSHIP_PRICES, MEMBERSHIP_NAMES, type MembershipType } from '@/lib/stripe';
 
 export async function POST(request: NextRequest) {
   try {
@@ -39,7 +39,7 @@ export async function POST(request: NextRequest) {
     const productName = MEMBERSHIP_NAMES[membershipType];
     const baseUrl = 'https://jassverband.ch';
 
-    const session = await stripe.checkout.sessions.create({
+    const session = await getStripe().checkout.sessions.create({
       mode: 'payment',
       customer_email: email,
       payment_method_types: ['twint', 'card'],
