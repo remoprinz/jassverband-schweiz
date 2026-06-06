@@ -191,11 +191,11 @@
     },
     "jasskarten": {
       "title": "JassCartes",
-      "description": "Cartes de Jass suisses premium — traditionnelles et modernes. Jeu de cartes exclusif de saison pour les membres."
+      "description": "Cartes de Jass suisses premium — traditionnelles et modernes. En collaboration avec Trumpf-As."
     },
     "jassreisen": {
       "title": "JassVoyages",
-      "description": "Voyages Jass en Suisse et à l'étranger. Les membres ont des places garanties et des rabais."
+      "description": "Voyages Jass en Suisse et à l'étranger — organisés par Trumpf-As."
     },
     "jassmeister": {
       "title": "JassMeisterschaft",
@@ -242,11 +242,11 @@
     },
     "q2": {
       "question": "Comment devenir membre ?",
-      "answer": "Choisissez votre licence sur notre page Participer et inscrivez-vous. Vous recevrez votre profil Jass, l'accès au système Elo et le droit de participer au Championnat Suisse. Tous ceux qui rejoignent en saison 1 seront enregistrés comme membres fondateurs."
+      "answer": "Choisissez votre licence sur notre page Participer et inscrivez-vous. Vous recevrez un numéro de membre FSJ permanent, l'accès à toutes les analyses JassGuru et le droit de participer au Championnat Suisse."
     },
     "q3": {
       "question": "Quels avantages ai-je en tant que membre ?",
-      "answer": "Votre profil Jass personnel avec statistiques et classement Elo, droit de participation au Championnat Suisse, accès au réseau de la fédération et à la communauté WhatsApp. Avec la licence Trumpf, vous recevez en plus un jeu de cartes exclusif et des rabais sur les voyages Jass."
+      "answer": "Accès complet à toutes les statistiques et analyses JassGuru (Elo, statistiques de Trumpf, analyse partenaires et adversaires), vos propres groupes de Jass et tournois, droit de participation au Championnat Suisse ainsi qu'un numéro de membre FSJ permanent avec badge sur le profil."
     },
     "q4": {
       "question": "Y a-t-il un championnat suisse ?",
@@ -289,7 +289,7 @@
       {
         "title": "Façonner la culture",
         "mission": "Nous entretenons et développons le Jass comme patrimoine culturel vivant qui relie les gens par-delà toutes les frontières sociales.",
-        "kernidee": "Le Jass est plus qu'un jeu — c'est un miroir de la Suisse : diversifié, adaptable et communautaire. Il convient aussi bien au bistrot qu'au format tournoi, à la famille qu'à la vie associative. Du travailleur au conseiller fédéral, il réunit naturellement les gens autour d'une table. Cette force fédératrice, nous ne la préservons pas seulement — nous la développons activement."
+        "kernidee": "Le Jass est plus qu'un jeu — c'est un miroir de la Suisse : diversifié, adaptable et communautaire. Il convient aussi bien au bistrot qu'au format tournoi, à la famille qu'à la vie associative. Du travailleur à la conseillère fédérale, il réunit naturellement les gens autour d'une table. Cette force fédératrice, nous ne la préservons pas seulement — nous la développons activement."
       }
     ]
   },
@@ -371,7 +371,7 @@
     "subtitle": "Investissez dans le patrimoine culturel suisse et la promotion de la jeunesse",
     "why": {
       "title": "Pourquoi soutenir le Jass ?",
-      "culture": "Le Jass est un patrimoine culturel immatériel suisse inscrit à l'UNESCO",
+      "culture": "Le Jass est inscrit à la Liste des traditions vivantes de la Suisse par l'Office fédéral de la culture",
       "youth": "Promotion directe de la jeunesse par des championnats nationaux",
       "digital": "Numérisation innovante d'une tradition vivante",
       "reach": "Accès à une communauté active et engagée"
@@ -491,43 +491,43 @@
       "cta": "Oui, je suis partant"
     },
     "pricing": {
-      "title": "Choisissez votre licence.",
-      "subtitle": "Votre association de Jass moderne — sans bureaucratie. Prenez votre licence, créez votre groupe de Jass sur JassGuru et participez au Championnat Suisse.",
-      "year": "année",
+      "title": "Joignez-vous.",
+      "subtitle": "Pour qu'aucune place au Jass ne reste vide.",
+      "saison": "saison",
+      "einmalig": "paiement unique",
+      "year": "saison",
       "recommended": "Recommandé",
-      "select": "Choisir la licence",
-      "groupNote": "Remarque : la licence de groupe autorise la participation aux événements de groupe. Pour les événements individuels, une licence Jass individuelle est requise.",
+      "aufbauBadge": "Offre de lancement 2026",
+      "select": "Choisir",
+      "aufbauDisclaimer": "Offre de la phase de lancement 2026. Les conditions peuvent évoluer par la suite — les adhésions à vie et d'honneur acquises restent valables sans changement.",
+      "customAmountLink": "Choisir un autre montant →",
       "pionier": {
         "title": "Licence Jass",
-        "feature1": "Créez votre propre groupe de Jass et invitez vos amis.",
-        "feature2": "Organisez des tournois pour votre groupe.",
-        "feature3": "Classement Elo national et statistiques personnelles.",
-        "feature4": "Droit de participation au Championnat Suisse 2026.",
-        "feature5": "Accès au chat membres FSJ et au réseau de la fédération."
+        "feature1": "Accès illimité à toutes vos statistiques et analyses sur JassGuru.",
+        "feature2": "Classement Elo, statistiques de Trumpf, analyse partenaires et adversaires.",
+        "feature3": "Créez vos propres groupes et organisez des tournois.",
+        "feature4": "Droit de participation au Championnat Suisse.",
+        "feature5": "Numéro de membre FSJ et badge sur votre profil."
       },
-      "botschafter": {
-        "title": "Licence Trumpf",
-        "feature1": "Tout de la licence Jass.",
-        "feature2": "Jeu de cartes exclusif de saison (édition 2026 en première série).",
-        "feature3": "24 heures d'accès prioritaire aux tournois et événements nationaux.",
-        "feature4": "Rabais exclusif sur les voyages Jass avec Trumpf-As.",
-        "feature5": "Jeu de cartes non disponible dans le commerce, de la plus haute qualité.",
-        "linkLabel": "→ trumpf-as.ch",
-        "linkUrl": "https://trumpf-as.ch"
+      "lifetime": {
+        "title": "À vie",
+        "feature1": "Tout de la Licence Jass — pour toujours.",
+        "feature2": "Un paiement, jamais de renouvellement.",
+        "feature3": "Numéro de membre FSJ permanent (série À vie).",
+        "feature4": "Vous faites partie de ceux qui portent la fédération dans sa phase de lancement."
       },
-      "patron": {
-        "title": "Licence de groupe",
-        "feature1": "JassGuru Pro pour tout votre groupe de Jass.",
-        "feature2": "Droit de participation aux événements de groupe et au Championnat Suisse.",
-        "feature3": "Votre groupe apparaît dans le classement national des groupes.",
-        "feature4": "Classement Elo et statistiques pour chaque personne.",
-        "feature5": "Avantage prix par rapport aux licences individuelles."
+      "ehrenmitglied": {
+        "title": "Membre d'honneur",
+        "feature1": "Tout de l'adhésion à vie.",
+        "feature2": "Diplôme physique signé par le comité.",
+        "feature3": "Inscription sur la liste des membres d'honneur sur jassverband.ch.",
+        "feature4": "Vous portez le Jass de tout votre engagement."
       }
     },
     "goenner": {
       "title": "Mécène",
-      "lead": "Vous n'avez pas besoin de classement Elo ni de jeu de cartes. Vous voulez simplement que le Jass ait un avenir.",
-      "description": "Avec votre soutien, nous gardons JassWiki sans publicité, développons JassGuru et transmettons le jeu national à la prochaine génération. Sur demande, vous figurez sur notre liste de mécènes.",
+      "lead": "Vous voulez simplement que le Jass ait un avenir.",
+      "description": "Avec votre soutien, nous gardons JassWiki sans publicité, développons JassGuru et transmettons le jeu national à la prochaine génération.",
       "cta": "Choisir un montant et soutenir",
       "optionPrice": "Montant libre"
     },
@@ -545,6 +545,8 @@
       "messagePlaceholder": "Optionnel : questions ou remarques",
       "goennerAmount": "Montant (CHF)",
       "goennerAmountPlaceholder": "Minimum 10",
+      "goennerOptionTitle": "Mécène",
+      "goennerOptionPrice": "montant libre",
       "notice": {
         "title": "Remarque :",
         "message": "Vous serez redirigé vers le paiement sécurisé via Stripe après l'envoi."
@@ -581,7 +583,7 @@
       },
       "lizenzGueltigkeit": {
         "question": "Combien de temps ma licence est-elle valable ?",
-        "answer": "Elle reste valable jusqu'à ce que la première équipe officiellement championne suisse soit couronnée en saison 1. Ensuite, la licence est renouvelée pour la saison 2."
+        "answer": "La Licence Jass est valable pour une saison — 12 mois à partir de la date d'achat. L'adhésion à vie et l'adhésion d'honneur sont illimitées : une fois acquises, tu restes membre pour toujours."
       },
       "jassguruPro": {
         "question": "Qu'est-ce que JassGuru Pro ?",
@@ -599,7 +601,7 @@
       },
       "captain": {
         "question": "Qu'est-ce que le capitaine ?",
-        "answer": "Chaque équipe a un capitaine. Il crée le groupe de Jass, peut nommer d'autres administrateurs, enregistre le groupe, l'inscrit aux tournois et représente l'équipe auprès de la FSJ."
+        "answer": "Chaque équipe a un capitaine. Cette personne crée le groupe de Jass, peut nommer d'autres administrateurs, enregistre le groupe, l'inscrit aux tournois et représente l'équipe auprès de la FSJ."
       },
       "weitereTurniere": {
         "question": "Y aura-t-il d'autres tournois ?",
@@ -611,7 +613,7 @@
       },
       "spielregeln": {
         "question": "Qui définit les règles du jeu ?",
-        "answer": "La Fédération Suisse de Jass est garante des règles du jeu et les met gratuitement à disposition en version numérique. La base est l'œuvre de Dani Müller avec des compléments modérés de la FSJ.",
+        "answer": "La Fédération Suisse de Jass documente les règles du jeu et les met gratuitement à disposition en version numérique. La base est l'œuvre de Dani Müller avec des compléments modérés de la FSJ.",
         "linkLabel": "Vers les règles sur jasswiki.ch",
         "linkUrl": "https://jasswiki.ch"
       }
@@ -631,7 +633,7 @@
     "youth": {
       "title": "Licence junior (jusqu'à 25 ans)",
       "description": "Les équipes junior (élèves, apprentis et étudiants) participent au championnat régulier et reçoivent un classement séparé.",
-      "price": "CHF 20",
+      "price": "CHF 10",
       "period": " / personne / saison",
       "cta": "Choisir licence junior"
     },

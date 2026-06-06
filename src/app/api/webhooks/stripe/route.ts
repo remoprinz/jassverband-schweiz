@@ -8,18 +8,14 @@ const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
 
 const MEMBERSHIP_TYPE_MAP: Record<string, string> = {
   pionier: 'single',
-  botschafter: 'partner',
-  patron: 'patron',
   jugend: 'jugend',
   goenner: 'goenner',
 };
 
 const MEMBERSHIP_PRICES: Record<string, number> = {
-  pionier: 6000,
-  botschafter: 9000,
-  patron: 35000,
-  jugend: 2000,
-  goenner: 5000,
+  pionier: 2000,
+  jugend: 1000,
+  goenner: 1000,
 };
 
 export async function POST(request: NextRequest) {
@@ -89,13 +85,22 @@ export async function POST(request: NextRequest) {
   }
 }
 
+type GoennerTier = 'goenner' | 'lifetime' | 'ehrenmitglied';
+
+function resolveGoennerTier(amountChf: number): GoennerTier {
+  if (amountChf >= 500) return 'ehrenmitglied';
+  if (amountChf >= 100) return 'lifetime';
+  return 'goenner';
+}
+
 async function handleCheckoutCompleted(session: Stripe.Checkout.Session) {
   const metadata = session.metadata || {};
-  const customerEmail = session.customer_email || metadata.customer_email;
-  const firstName = metadata.customer_firstName || '';
-  const lastName = metadata.customer_lastName || '';
+  // Defensive trim: historische Metadaten oder externe Schreiber könnten Leerzeichen mitliefern.
+  const customerEmail = (session.customer_email || metadata.customer_email || '').trim();
+  const firstName = (metadata.customer_firstName || '').trim();
+  const lastName = (metadata.customer_lastName || '').trim();
   const membershipType = metadata.membership_type || 'pionier';
-  const jassname = metadata.jassname || '';
+  const jassname = (metadata.jassname || '').trim();
   const fullName = `${firstName} ${lastName}`.trim();
 
   if (!customerEmail) {
@@ -145,9 +150,16 @@ async function handleCheckoutCompleted(session: Stripe.Checkout.Session) {
 
   // 2. JVS Member erstellen oder aktualisieren
   const now = Timestamp.now();
+  const amountChf = (session.amount_total || 0) / 100;
+  const goennerTier: GoennerTier | null =
+    membershipType === 'goenner' ? resolveGoennerTier(amountChf) : null;
+  const isLifetime = goennerTier === 'lifetime' || goennerTier === 'ehrenmitglied';
+  const isEhrenmitglied = goennerTier === 'ehrenmitglied';
+
   const nextYear = new Date();
   nextYear.setFullYear(nextYear.getFullYear() + 1);
-  const validUntil = Timestamp.fromDate(nextYear);
+  const lifetimeDate = new Date('2200-01-01T00:00:00Z');
+  const validUntil = Timestamp.fromDate(isLifetime ? lifetimeDate : nextYear);
 
   const existingMemberQuery = await db
     .collection('jvs_members')
@@ -163,9 +175,12 @@ async function handleCheckoutCompleted(session: Stripe.Checkout.Session) {
       status: 'active',
       membershipType: MEMBERSHIP_TYPE_MAP[membershipType] || membershipType,
       validUntil,
+      ...(goennerTier ? { tier: goennerTier } : {}),
+      ...(isLifetime ? { isLifetime: true } : {}),
+      ...(isEhrenmitglied ? { isEhrenmitglied: true } : {}),
       updatedAt: FieldValue.serverTimestamp(),
     });
-    console.log(`[Stripe Webhook] Existing member reactivated: ${memberId}`);
+    console.log(`[Stripe Webhook] Existing member reactivated: ${memberId}` + (goennerTier ? ` (tier: ${goennerTier})` : ''));
   } else {
     memberId = db.collection('jvs_members').doc().id;
 
@@ -199,10 +214,16 @@ async function handleCheckoutCompleted(session: Stripe.Checkout.Session) {
         memberSince: now,
         validUntil,
         status: 'active',
+        ...(goennerTier ? { tier: goennerTier } : {}),
+        ...(isLifetime ? { isLifetime: true } : {}),
+        ...(isEhrenmitglied ? { isEhrenmitglied: true } : {}),
         createdAt: now,
         updatedAt: now,
       });
-    console.log(`[Stripe Webhook] New member #${memberNumber} created: ${memberId}`);
+    console.log(
+      `[Stripe Webhook] New member #${memberNumber} created: ${memberId}` +
+        (goennerTier ? ` (tier: ${goennerTier})` : '')
+    );
   }
 
   // 3. Subscription-Eintrag erstellen

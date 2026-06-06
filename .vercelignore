@@ -1,6 +1,7 @@
 .git
 .github
 .cursor
+.deploy-excluded/
 
 # Local dependencies and build output
 node_modules
@@ -25,6 +26,12 @@ src/assets/cards/JVS KA Karten Tools 2602/
 src/assets/videos/
 public/assets/videos/berset_jvs_org.mp4
 public/assets/local-only/
+public/assets/local-only/**
+
+# Verbands-Dokumente (nicht auf Deployment-Servern)
+Einreichungen Fördergelder/
+Beschluesse/
+Statuten/
 
 # OS/editor noise
 .DS_Store

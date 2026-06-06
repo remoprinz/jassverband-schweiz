@@ -8,10 +8,44 @@ import { Button, FAQCard, PricingCard } from '@/components/ui';
 import { StandardSection } from '@/components/layout/StandardSection';
 import { Hero } from '@/components/sections';
 
-const packages = [
-  { key: 'pionier' as const, price: 60, highlight: false },
-  { key: 'botschafter' as const, price: 90, highlight: false },
-  { key: 'patron' as const, price: 350, highlight: false },
+type PackageDef = {
+  key: 'pionier' | 'lifetime' | 'ehrenmitglied';
+  paket: 'pionier' | 'goenner';
+  amount: string | null;
+  priceValue: number | string;
+  periodKey: string | null;
+  showAufbauBadge: boolean;
+  highlight: boolean;
+};
+
+const packages: PackageDef[] = [
+  {
+    key: 'pionier',
+    paket: 'pionier',
+    amount: null,
+    priceValue: 20,
+    periodKey: 'pricing.saison',
+    showAufbauBadge: false,
+    highlight: false,
+  },
+  {
+    key: 'lifetime',
+    paket: 'goenner',
+    amount: '100',
+    priceValue: 100,
+    periodKey: 'pricing.einmalig',
+    showAufbauBadge: true,
+    highlight: true,
+  },
+  {
+    key: 'ehrenmitglied',
+    paket: 'goenner',
+    amount: '500',
+    priceValue: 'ab CHF 500',
+    periodKey: null,
+    showAufbauBadge: true,
+    highlight: false,
+  },
 ];
 
 const faqKeys = [
@@ -34,7 +68,7 @@ export default function MitmachenPage() {
   const t = useTranslations('mitmachen');
   const locale = useLocale();
   const [formData, setFormData] = useState({
-    firstName: '', lastName: '', email: '', jassname: '', paket: 'botschafter', message: '', amount: '',
+    firstName: '', lastName: '', email: '', jassname: '', paket: 'pionier', message: '', amount: '',
   });
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -107,67 +141,49 @@ export default function MitmachenPage() {
             <PricingCard
               key={pkg.key}
               title={t(`pricing.${pkg.key}.title`)}
-              price={pkg.price}
-              period={t('pricing.year')}
-              features={[1, 2, 3, 4, 5].map(i => t.raw(`pricing.${pkg.key}.feature${i}`))}
+              price={pkg.priceValue}
+              period={pkg.periodKey ? t(pkg.periodKey) : undefined}
+              features={[1, 2, 3, 4, 5]
+                .map((i) => t.raw(`pricing.${pkg.key}.feature${i}`))
+                .filter((f) => typeof f === 'string' && f.length > 0)}
               isHighlighted={pkg.highlight}
-              isSelected={formData.paket === pkg.key}
+              isSelected={
+                formData.paket === pkg.paket &&
+                (pkg.amount ? formData.amount === pkg.amount : !formData.amount)
+              }
               onSelect={() => {
-                setFormData({ ...formData, paket: pkg.key });
+                setFormData({
+                  ...formData,
+                  paket: pkg.paket,
+                  amount: pkg.amount || '',
+                });
                 document.getElementById('anmeldung')?.scrollIntoView({ behavior: 'smooth' });
               }}
               ctaText={t('pricing.select')}
-              badge={pkg.highlight ? t('pricing.recommended') : undefined}
+              badge={pkg.showAufbauBadge ? t('pricing.aufbauBadge') : undefined}
             />
           ))}
         </div>
-        <p 
-          className="text-center mt-8 text-sm"
+        <p
+          className="text-center mt-8 text-sm max-w-3xl mx-auto"
           style={{ color: 'var(--color-foreground-muted)' }}
         >
-          {t('pricing.groupNote')}
+          {t('pricing.aufbauDisclaimer')}
         </p>
-      </StandardSection>
-      {/* ════════════════════ GOENNER ════════════════════ */}
-      <StandardSection
-        title={t('goenner.title')}
-        background="white"
-        containerSize="full"
-        spacing="lg"
-      >
-        <div className="text-center">
-          <p
-            className="mb-4"
-            style={{
-              fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
-              fontWeight: 400,
-              fontSize: '18px',
-              lineHeight: '1.6',
-              color: '#1f1f1f',
-            }}
-          >
-            {t('goenner.lead')}
-          </p>
-          <p
-            className="mb-8"
-            style={{
-              fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
-              fontWeight: 400,
-              fontSize: '16px',
-              lineHeight: '1.6',
-              color: 'var(--color-foreground-muted)',
-            }}
-          >
-            {t('goenner.description')}
-          </p>
-          <Button
+        <p
+          className="text-center mt-4 text-sm"
+          style={{ color: 'var(--color-foreground-muted)' }}
+        >
+          <a
             href="#anmeldung"
-            size="lg"
-            onClick={() => setFormData({ ...formData, paket: 'goenner' })}
+            onClick={() =>
+              setFormData({ ...formData, paket: 'goenner', amount: '' })
+            }
+            style={{ textDecoration: 'underline' }}
           >
-            {t('goenner.cta')}
-          </Button>
-        </div>
+            {t('pricing.customAmountLink')}
+          </a>
+        </p>
       </StandardSection>
 
       {/* ════════════════════ JUGENDLIZENZ ════════════════════ */}
@@ -323,55 +339,35 @@ export default function MitmachenPage() {
                   <label className="block text-sm font-medium mb-2" style={{ color: '#000000' }}>
                     {t('form.paket')} *
                   </label>
-                  <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
-                    {packages.map((pkg) => (
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                    {[
+                      { key: 'pionier', title: t('pricing.pionier.title'), priceLabel: 'CHF 20 / Saison' },
+                      { key: 'jugend', title: t('youth.title'), priceLabel: 'CHF 10 / Saison' },
+                      { key: 'goenner', title: t('form.goennerOptionTitle'), priceLabel: t('form.goennerOptionPrice') },
+                    ].map((opt) => (
                       <button
-                        key={pkg.key}
+                        key={opt.key}
                         type="button"
-                        onClick={() => setFormData({ ...formData, paket: pkg.key })}
-                        className="py-3 px-4 transition-all"
+                        onClick={() =>
+                          setFormData({
+                            ...formData,
+                            paket: opt.key,
+                            amount: opt.key === 'goenner' ? formData.amount : '',
+                          })
+                        }
+                        className="py-3 px-4 transition-all text-left"
                         style={{
                           borderRadius: '12px',
-                          border: formData.paket === pkg.key ? '2px solid #ff0000' : '2px solid #e5e5e5',
-                          backgroundColor: formData.paket === pkg.key ? 'rgba(255,0,0,0.04)' : '#ffffff',
+                          border: formData.paket === opt.key ? '2px solid #ff0000' : '2px solid #e5e5e5',
+                          backgroundColor: formData.paket === opt.key ? 'rgba(255,0,0,0.04)' : '#ffffff',
                         }}
                       >
                         <div style={{ fontFamily: 'var(--font-capita), Capita, Georgia, serif', fontWeight: 700, fontSize: '15px' }}>
-                          {t(`pricing.${pkg.key}.title`)}
+                          {opt.title}
                         </div>
-                        <div style={{ fontSize: '13px', color: '#6b6b6b' }}>CHF {pkg.price}</div>
+                        <div style={{ fontSize: '13px', color: '#6b6b6b' }}>{opt.priceLabel}</div>
                       </button>
                     ))}
-                    <button
-                      type="button"
-                      onClick={() => setFormData({ ...formData, paket: 'jugend' })}
-                      className="py-3 px-4 transition-all"
-                      style={{
-                        borderRadius: '12px',
-                        border: formData.paket === 'jugend' ? '2px solid #ff0000' : '2px solid #e5e5e5',
-                        backgroundColor: formData.paket === 'jugend' ? 'rgba(255,0,0,0.04)' : '#ffffff',
-                      }}
-                    >
-                      <div style={{ fontFamily: 'var(--font-capita), Capita, Georgia, serif', fontWeight: 700, fontSize: '15px' }}>
-                        {t('youth.title')}
-                      </div>
-                      <div style={{ fontSize: '13px', color: '#6b6b6b' }}>CHF 20</div>
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => setFormData({ ...formData, paket: 'goenner' })}
-                      className="py-3 px-4 transition-all"
-                      style={{
-                        borderRadius: '12px',
-                        border: formData.paket === 'goenner' ? '2px solid #ff0000' : '2px solid #e5e5e5',
-                        backgroundColor: formData.paket === 'goenner' ? 'rgba(255,0,0,0.04)' : '#ffffff',
-                      }}
-                    >
-                      <div style={{ fontFamily: 'var(--font-capita), Capita, Georgia, serif', fontWeight: 700, fontSize: '15px' }}>
-                        {t('goenner.title')}
-                      </div>
-                      <div style={{ fontSize: '13px', color: '#6b6b6b' }}>{t('goenner.optionPrice')}</div>
-                    </button>
                   </div>
                 </div>
 

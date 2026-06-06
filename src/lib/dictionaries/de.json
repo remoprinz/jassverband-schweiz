@@ -191,11 +191,11 @@
     },
     "jasskarten": {
       "title": "JassKarten",
-      "description": "Premium Schweizer Jasskarten — traditionell und modern. Exklusives Saison-Kartenset für Mitglieder."
+      "description": "Premium Schweizer Jasskarten — traditionell und modern. In Zusammenarbeit mit Trumpf-As."
     },
     "jassreisen": {
       "title": "JassReisen",
-      "description": "Jassreisen in der Schweiz und im Ausland. Mitglieder erhalten garantierte Plätze und Rabatte."
+      "description": "Jassreisen in der Schweiz und im Ausland — von Trumpf-As organisiert."
     },
     "jassmeister": {
       "title": "JassMeisterschaft",
@@ -242,11 +242,11 @@
     },
     "q2": {
       "question": "Wie kann ich Mitglied werden?",
-      "answer": "Wähle deine Lizenz auf unserer Mitmachen-Seite und melde dich an. Du erhältst dein Jass-Profil, Zugang zum Elo-System und die Startberechtigung für die Schweizermeisterschaft. Alle, die in Saison 1 beitreten, werden dauerhaft als Gründungsmitglieder geführt."
+      "answer": "Wähle deine Lizenz auf unserer Mitmachen-Seite und melde dich an. Du erhältst eine permanente JVS-Mitgliedsnummer, Zugang zu allen JassGuru-Auswertungen und die Startberechtigung für die Schweizermeisterschaft."
     },
     "q3": {
       "question": "Welche Vorteile habe ich als Mitglied?",
-      "answer": "Dein persönliches Jass-Profil mit Statistiken und Elo-Ranking, Startberechtigung an der Schweizermeisterschaft, Zugang zum Verbandsnetzwerk und zur WhatsApp-Community. Mit der Trumpf-Lizenz erhältst du zusätzlich ein exklusives Kartenset und Rabatt auf Jassreisen."
+      "answer": "Voller Zugang zu allen JassGuru-Stats und Auswertungen (Elo, Trumpf-Statistik, Partner- und Gegner-Analyse), eigene Jassgruppen und Turniere, Teilnahmeberechtigung an der Schweizermeisterschaft sowie eine permanente JVS-Mitgliedsnummer mit Profil-Badge."
     },
     "q4": {
       "question": "Gibt es eine Schweizer Meisterschaft?",
@@ -289,7 +289,7 @@
       {
         "title": "Kultur gestalten",
         "mission": "Wir pflegen und entwickeln Jassen als lebendiges Kulturgut, das Menschen über alle gesellschaftlichen Grenzen hinweg verbindet.",
-        "kernidee": "Jassen ist mehr als ein Spiel – es ist ein Spiegel der Schweiz: vielfältig, anpassungsfähig und gemeinschaftlich. Es passt in die Dorfbeiz ebenso wie ins Turnierformat, in die Familie ebenso wie ins Vereinsleben. Vom Büezer bis zur Bundesrat bringt es Menschen selbstverständlich an einen Tisch. Diese verbindende Kraft bewahren wir nicht nur – wir entwickeln sie aktiv weiter"
+        "kernidee": "Jassen ist mehr als ein Spiel – es ist ein Spiegel der Schweiz: vielfältig, anpassungsfähig und gemeinschaftlich. Es passt in die Dorfbeiz ebenso wie ins Turnierformat, in die Familie ebenso wie ins Vereinsleben. Vom Büezer bis zur Bundesrätin bringt es Menschen selbstverständlich an einen Tisch. Diese verbindende Kraft bewahren wir nicht nur – wir entwickeln sie aktiv weiter."
       }
     ]
   },
@@ -383,7 +383,7 @@
     "subtitle": "Investieren Sie in Schweizer Kulturgut und Jugendförderung",
     "why": {
       "title": "Warum Jassen fördern?",
-      "culture": "Jassen ist UNESCO-gelistetes immaterielles Kulturgut der Schweiz",
+      "culture": "Jassen ist beim Bundesamt für Kultur als lebendige Tradition der Schweiz gelistet",
       "youth": "Direkte Jugendförderung durch nationale Meisterschaften",
       "digital": "Innovative Digitalisierung einer lebendigen Tradition",
       "reach": "Zugang zu einer aktiven, engagierten Community"
@@ -503,43 +503,43 @@
       "cta": "Ja, ich bin dabei"
     },
     "pricing": {
-      "title": "Wähle deine Lizenz.",
-      "subtitle": "Dein moderner Jassverein — ohne Vereinsbürokratie. Löse deine Lizenz, erstelle deine Jassgruppe auf JassGuru und nimm an der Schweizermeisterschaft teil.",
-      "year": "Jahr",
+      "title": "Mach mit.",
+      "subtitle": "Damit kein freier Jassplatz unbesetzt bleibt.",
+      "saison": "Saison",
+      "einmalig": "einmalig",
+      "year": "Saison",
       "recommended": "Empfohlen",
-      "select": "Lizenz wählen",
-      "groupNote": "Hinweis: Die Gruppen-Lizenz berechtigt zur Teilnahme an Gruppen-Events. Für Einzel-Events ist eine individuelle Jasser-Lizenz erforderlich.",
+      "aufbauBadge": "Aufbau-Angebot 2026",
+      "select": "Wählen",
+      "aufbauDisclaimer": "Aufbau-Angebot der Gründungsphase 2026. Konditionen können sich später ändern — einmal erworbene Lebenslange und Ehrenmitgliedschaften bleiben unverändert gültig.",
+      "customAmountLink": "Anderen Betrag wählen →",
       "pionier": {
         "title": "Jasser-Lizenz",
-        "feature1": "Erstelle deine eigene Jassgruppe und lade Freunde ein.",
-        "feature2": "Organisiere Turniere für deine Gruppe.",
-        "feature3": "Nationales Elo-Ranking und persönliche Statistiken.",
-        "feature4": "Teilnahmeberechtigung Schweizermeisterschaft 2026.",
-        "feature5": "Zugang zum JVS-Mitgliederchat und Verbandsnetzwerk."
+        "feature1": "Voller Zugang zu allen Stats und Auswertungen auf JassGuru.",
+        "feature2": "Elo-Ranking, Trumpf-Statistik, Partner- und Gegner-Analyse.",
+        "feature3": "Eigene Jassgruppen und Turniere organisieren.",
+        "feature4": "Teilnahmeberechtigung Schweizermeisterschaft.",
+        "feature5": "JVS-Mitgliedsnummer und Profil-Badge."
       },
-      "botschafter": {
-        "title": "Trumpf-Lizenz",
-        "feature1": "Alles aus der Jasser-Lizenz.",
-        "feature2": "Exklusives Saison-Kartenset (Edition 2026 als erste Auflage).",
-        "feature3": "24 Stunden Vorzugszugang für nationale Turniere und Events.",
-        "feature4": "Exklusiver Rabatt auf Jassreisen mit Trumpf-As.",
-        "feature5": "Nicht im Handel erhältliches Kartenset in höchster Qualität.",
-        "linkLabel": "→ trumpf-as.ch",
-        "linkUrl": "https://trumpf-as.ch"
+      "lifetime": {
+        "title": "Lebenslang",
+        "feature1": "Alles aus der Jasser-Lizenz — für immer.",
+        "feature2": "Eine Zahlung, nie wieder verlängern.",
+        "feature3": "Permanente JVS-Mitgliedsnummer (Lebenslang-Serie).",
+        "feature4": "Du gehörst zu denen, die den Verband in der Aufbauphase tragen."
       },
-      "patron": {
-        "title": "Gruppen-Lizenz",
-        "feature1": "JassGuru Pro für deine ganze Jassgruppe.",
-        "feature2": "Team-Berechtigung für Gruppen-Events und Schweizermeisterschaft.",
-        "feature3": "Gruppe erscheint in der nationalen Gruppen-Rangliste.",
-        "feature4": "Elo-Ranking und Statistiken für jede Person.",
-        "feature5": "Preisvorteil gegenüber Einzellizenzen."
+      "ehrenmitglied": {
+        "title": "Ehrenmitglied",
+        "feature1": "Alles aus der Lebenslangen Mitgliedschaft.",
+        "feature2": "Physisches Diplom mit Unterschrift des Vorstands.",
+        "feature3": "Eintrag in die Ehrenmitglieder-Liste auf jassverband.ch.",
+        "feature4": "Du trägst den Jass mit allem, was du hast."
       }
     },
     "goenner": {
       "title": "Gönner",
-      "lead": "Du brauchst kein Elo-Ranking und kein Kartenset. Du willst einfach, dass das Jassen eine Zukunft hat.",
-      "description": "Mit deiner Unterstützung halten wir JassWiki werbefrei, entwickeln JassGuru weiter und bringen das Nationalspiel in die nächste Generation. Auf Wunsch erscheinst du auf unserer Gönnerliste.",
+      "lead": "Du willst einfach, dass das Jassen eine Zukunft hat.",
+      "description": "Mit deiner Unterstützung halten wir JassWiki werbefrei, entwickeln JassGuru weiter und bringen das Nationalspiel in die nächste Generation.",
       "cta": "Betrag wählen und unterstützen",
       "optionPrice": "Frei wählbar"
     },
@@ -557,6 +557,8 @@
       "messagePlaceholder": "Optional: Fragen oder Hinweise",
       "goennerAmount": "Betrag (CHF)",
       "goennerAmountPlaceholder": "Mindestens 10",
+      "goennerOptionTitle": "Gönner",
+      "goennerOptionPrice": "frei wählbar",
       "notice": {
         "title": "Hinweis:",
         "message": "Du wirst nach dem Absenden direkt zur sicheren Zahlung via Stripe weitergeleitet."
@@ -593,7 +595,7 @@
       },
       "lizenzGueltigkeit": {
         "question": "Wie lange ist meine Lizenz gültig?",
-        "answer": "Sie ist so lange gültig, bis in Saison 1 das erste offizielle Schweizermeister-Team gekürt ist. Danach wird die Lizenz für Saison 2 erneuert."
+        "answer": "Die Jasser-Lizenz gilt für eine Saison — 12 Monate ab Kaufdatum. Die Lebenslange Mitgliedschaft und die Ehrenmitgliedschaft sind unbefristet: einmal gelöst, bleibst du für immer Mitglied."
       },
       "jassguruPro": {
         "question": "Was ist JassGuru Pro?",
@@ -611,7 +613,7 @@
       },
       "captain": {
         "question": "Was ist der Captain?",
-        "answer": "Jedes Team hat einen Captain. Er gründet die Jassgruppe, kann weitere Administratoren ernennen, registriert die Gruppe, meldet sie zu Turnieren an und repräsentiert das Team gegenüber dem JVS."
+        "answer": "Jedes Team hat einen Captain. Diese Person gründet die Jassgruppe, kann weitere Administratoren ernennen, registriert die Gruppe, meldet sie zu Turnieren an und repräsentiert das Team gegenüber dem JVS."
       },
       "weitereTurniere": {
         "question": "Wird es auch andere Turniere geben?",
@@ -623,7 +625,7 @@
       },
       "spielregeln": {
         "question": "Wer bestimmt die Spielregeln?",
-        "answer": "Der Jassverband Schweiz ist Hüter der Spielregeln und stellt sie kostenlos digital zur Verfügung. Grundlage ist das Werk von Dani Müller mit moderaten Ergänzungen des JVS.",
+        "answer": "Der Jassverband Schweiz dokumentiert die Spielregeln und stellt sie kostenlos digital zur Verfügung. Grundlage ist das Werk von Dani Müller mit moderaten Ergänzungen des JVS.",
         "linkLabel": "Zu den Regeln auf jasswiki.ch",
         "linkUrl": "https://jasswiki.ch"
       }
@@ -643,7 +645,7 @@
     "youth": {
       "title": "Jugendlizenz (bis 25 Jahre)",
       "description": "Jugendteams (Schüler, Lehrlinge und Studenten) nehmen an der regulären Schweizermeisterschaft teil und erhalten eine separate Wertung.",
-      "price": "CHF 20",
+      "price": "CHF 10",
       "period": " / Person / Saison",
       "cta": "Jugendlizenz wählen"
     },
