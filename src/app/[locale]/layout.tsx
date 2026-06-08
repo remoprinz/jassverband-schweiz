@@ -9,6 +9,7 @@ import { headers } from "next/headers";
 import { locales, type Locale } from "@/lib/i18n";
 import { LayoutContent } from "@/components/layout/LayoutContent";
 import { OrganizationSchema } from "@/components/seo/OrganizationSchema";
+import { Analytics } from "@vercel/analytics/next";
 import "../globals.css";
 
 const inter = Inter({
@@ -141,6 +142,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
             {children}
           </LayoutContent>
         </NextIntlClientProvider>
+        <Analytics />
       </body>
     </html>
   );
