@@ -3,6 +3,11 @@ import { getStripe } from '@/lib/stripe';
 import { getAdminFirestore, getAdminAuth } from '@/lib/firebaseAdmin';
 import { FieldValue, Timestamp } from 'firebase-admin/firestore';
 import type Stripe from 'stripe';
+import {
+  renderWelcomeEmail,
+  ehrenmitgliedInternalNotification,
+  type WelcomeTier,
+} from '@/lib/emails/welcome';
 
 const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
 
@@ -168,9 +173,11 @@ async function handleCheckoutCompleted(session: Stripe.Checkout.Session) {
     .get();
 
   let memberId: string;
+  let memberNumber = 0;
 
   if (!existingMemberQuery.empty) {
     memberId = existingMemberQuery.docs[0].id;
+    memberNumber = existingMemberQuery.docs[0].data().memberNumber || 0;
     await db.collection('jvs_members').doc(memberId).update({
       status: 'active',
       membershipType: MEMBERSHIP_TYPE_MAP[membershipType] || membershipType,
@@ -186,7 +193,7 @@ async function handleCheckoutCompleted(session: Stripe.Checkout.Session) {
 
     // Mitgliedsnummer atomisch vergeben
     const counterRef = db.collection('jvs_counters').doc('members');
-    let memberNumber = 1;
+    memberNumber = 1;
     await db.runTransaction(async (transaction) => {
       const counterDoc = await transaction.get(counterRef);
       if (counterDoc.exists) {
@@ -271,36 +278,54 @@ async function handleCheckoutCompleted(session: Stripe.Checkout.Session) {
       const greeting = firstName || 'Jasser';
 
       if (isNewUser) {
-        // Neuer User: Welcome + Passwort-Setup
+        // Neuer User: Welcome + Passwort-Setup, tier-spezifischer Inhalt
         const resetLink = await adminAuth.generatePasswordResetLink(customerEmail);
         console.log(`[Stripe Webhook] Password reset link generated for ${customerEmail}`);
+
+        const welcomeTier: WelcomeTier =
+          goennerTier === 'lifetime' ? 'lifetime'
+          : goennerTier === 'ehrenmitglied' ? 'ehrenmitglied'
+          : 'pionier';
+
+        // Gültig-bis im deutschen Format (für Pionier-Template)
+        const validUntilStr = new Intl.DateTimeFormat('de-CH', {
+          day: 'numeric',
+          month: 'long',
+          year: 'numeric',
+        }).format(validUntil.toDate());
+
+        const welcomeMail = renderWelcomeEmail(welcomeTier, {
+          firstName: greeting,
+          memberNumber,
+          resetLink,
+          validUntil: validUntilStr,
+        });
 
         await resend.emails.send({
           from: process.env.EMAIL_FROM || 'Jassverband Schweiz <noreply@jassverband.ch>',
           to: customerEmail,
-          subject: 'Willkommen beim Jassverband Schweiz!',
-          html: `
-            <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 600px; margin: 0 auto;">
-              <h1 style="color: #000;">Willkommen beim Jassverband Schweiz!</h1>
-              <p>Hallo ${greeting},</p>
-              <p>Deine Mitgliedschaft wurde erfolgreich aktiviert. Du bist jetzt offizielles Mitglied des Jassverbands Schweiz!</p>
-              <p>Um JassGuru Pro zu nutzen, setze bitte dein Passwort:</p>
-              <p style="text-align: center; margin: 32px 0;">
-                <a href="${resetLink}"
-                   style="background-color: #ff0000; color: #fff; padding: 14px 28px; border-radius: 9999px; text-decoration: none; font-weight: bold;">
-                  Passwort setzen
-                </a>
-              </p>
-              <p>Danach kannst du dich auf <a href="https://jassguru.ch">jassguru.ch</a> einloggen und deine eigene Jassgruppe erstellen.</p>
-              <p style="color: #6b6b6b; font-size: 14px;">
-                Bei Fragen erreichst du uns unter <a href="mailto:info@jassverband.ch">info@jassverband.ch</a>.
-              </p>
-              <hr style="border: none; border-top: 1px solid #e5e5e5; margin: 24px 0;" />
-              <p style="color: #9ca3af; font-size: 12px;">Jassverband Schweiz | jassverband.ch</p>
-            </div>
-          `,
+          subject: welcomeMail.subject,
+          html: welcomeMail.html,
         });
-        console.log(`[Stripe Webhook] Welcome email sent to ${customerEmail}`);
+        console.log(`[Stripe Webhook] Welcome email (${welcomeTier}) sent to ${customerEmail}`);
+
+        // Internal-Notification bei Ehrenmitglied — damit das Diplom nicht durchrutscht
+        if (welcomeTier === 'ehrenmitglied') {
+          const notif = ehrenmitgliedInternalNotification({
+            firstName,
+            lastName,
+            email: customerEmail,
+            memberNumber,
+            amountChf,
+          });
+          await resend.emails.send({
+            from: process.env.EMAIL_FROM || 'Jassverband Schweiz <noreply@jassverband.ch>',
+            to: 'info@jassverband.ch',
+            subject: notif.subject,
+            html: notif.html,
+          });
+          console.log(`[Stripe Webhook] Internal notification for Ehrenmitglied #${memberNumber} sent`);
+        }
       } else {
         // Bestehender User: Info-Email (kein Passwort-Reset)
         await resend.emails.send({
