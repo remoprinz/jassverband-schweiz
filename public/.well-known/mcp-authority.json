@@ -118,9 +118,11 @@
     {
       "type": "AttestationResolution",
       "resolutionType": "Vorstandsbeschluss",
-      "date": "2026-05-04",
-      "reference": "JVS-VS-2026-05-04-AMCP-01",
-      "archive": "https://jassverband.ch/dokumente/vorstandsbeschluesse/2026-05-04-amcp-attestation"
+      "date": "2026-06-10",
+      "reference": "JVS-VS-2026-06-10-AMCP-01",
+      "archive": "https://jassverband.ch/documents/vorstandsbeschluesse/2026-06-10-amcp-attestation.pdf",
+      "mediaType": "application/pdf",
+      "digestSRI": "sha256-Ff3w1mhL/rRthtbyk39RF20AhXTLJqvyYfNm5CdCsPw="
     }
   ],
   "evidence": [
@@ -193,9 +195,9 @@
   "proof": {
     "type": "DataIntegrityProof",
     "cryptosuite": "eddsa-jcs-2022",
-    "created": "2026-05-05T00:00:00Z",
+    "created": "2026-06-11T00:00:00Z",
     "verificationMethod": "did:web:jassverband.ch#authority-key-1",
     "proofPurpose": "assertionMethod",
-    "proofValue": "z3PDMxe1RueGvYAJfvW5qxKyTM1W7NSs43jraigfMV2HHy1zbAziEMLbeZbFf3pP4ELvDwzVa2Eap94VKKTcKSY6i"
+    "proofValue": "zyr3sER6kzgL2wWkAGcdayj7PZ97c4YuAWyoBuGyoT7Uk53uV7eZXtg6LhfjfUpnQB1CDKCSbR2VtTBKvwFxJ8UR"
   }
 }
