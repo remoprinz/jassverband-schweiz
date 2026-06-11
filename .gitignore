@@ -85,3 +85,7 @@ src/assets/logos/
 src/assets/fonts/
 public/images/cards/
 public/images/backgrounds/
+
+# Board-Beschlüsse: nur Authority-Attestation (AMCP, Public-Use-Case) ist öffentlich.
+# Interne Beschlüsse gehören nach Beschluesse/intern/ und bleiben privat.
+Beschluesse/intern/
