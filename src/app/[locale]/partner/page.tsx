@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { SectionHeader, Button, Card } from "@/components/ui";
 
 interface PartnerPageProps {
@@ -81,6 +81,7 @@ const reasons = [
 
 export default async function PartnerPage({ params }: PartnerPageProps) {
   const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "partner" });
 
   return (

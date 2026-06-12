@@ -1,4 +1,4 @@
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import {
   Hero,
   Vision,
@@ -16,6 +16,7 @@ interface HomePageProps {
 
 export default async function HomePage({ params }: HomePageProps) {
   const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations({ locale });
   const verbandUrl = `/${locale}/verband`;
 

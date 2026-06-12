@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { SectionHeader, ProjectCard } from "@/components/ui";
 
 interface ProjektePageProps {
@@ -64,6 +64,7 @@ const icons = {
 
 export default async function ProjektePage({ params }: ProjektePageProps) {
   const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations({ locale });
 
   const projects = [

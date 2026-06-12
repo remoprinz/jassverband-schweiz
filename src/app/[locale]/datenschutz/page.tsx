@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { SectionHeader } from "@/components/ui";
 
 interface DatenschutzPageProps {
@@ -33,6 +33,7 @@ export async function generateMetadata({ params }: DatenschutzPageProps): Promis
 
 export default async function DatenschutzPage({ params }: DatenschutzPageProps) {
   const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "datenschutz" });
 
   return (

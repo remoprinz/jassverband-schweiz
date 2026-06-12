@@ -5,10 +5,14 @@ import { Header } from './Header';
 import { Footer } from './Footer';
 import { MainWrapper } from './MainWrapper';
 
+// Seiten mit Full-Bleed-Hero hinter dem Header (Header transparent statt solid).
+// Client-seitig aus usePathname() abgeleitet — KEIN headers() im Layout, damit
+// alle Seiten statisch generiert + vom Edge gecacht bleiben.
+const HERO_PAGES = ['', '/', '/plattform', '/schweizermeisterschaft', '/verband', '/mitmachen'];
+
 interface LayoutContentProps {
   children: React.ReactNode;
   locale: string;
-  isHeroPage: boolean;
   nav: {
     home: string;
     schweizermeisterschaft: string;
@@ -27,9 +31,15 @@ interface LayoutContentProps {
   };
 }
 
-export function LayoutContent({ children, locale, isHeroPage, nav, footer }: LayoutContentProps) {
+export function LayoutContent({ children, locale, nav, footer }: LayoutContentProps) {
   const pathname = usePathname();
   const isStandalonePage = pathname.includes('/jasskalkulator');
+
+  const withoutLocale = pathname.startsWith(`/${locale}`)
+    ? pathname.slice(`/${locale}`.length)
+    : pathname;
+  const normalizedSuffix = withoutLocale === '/' ? '' : withoutLocale.replace(/\/$/, '');
+  const isHeroPage = HERO_PAGES.includes(normalizedSuffix);
 
   if (isStandalonePage) {
     return (

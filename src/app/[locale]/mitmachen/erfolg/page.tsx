@@ -1,13 +1,13 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { useTranslations, useLocale } from 'next-intl';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function ErfolgPage() {
+function ErfolgContent() {
   const t = useTranslations('mitmachen');
   const locale = useLocale();
   const searchParams = useSearchParams();
@@ -225,5 +225,13 @@ export default function ErfolgPage() {
         </div>
       </section>
     </div>
+  );
+}
+
+export default function ErfolgPage() {
+  return (
+    <Suspense fallback={null}>
+      <ErfolgContent />
+    </Suspense>
   );
 }

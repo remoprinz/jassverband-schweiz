@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { setRequestLocale } from 'next-intl/server';
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -501,6 +502,7 @@ const GRID_MODE_THRESHOLD = 5;
 
 export default async function NewsPage({ params }: NewsPageProps) {
   const { locale } = await params;
+  setRequestLocale(locale);
 
   const pageContent: Record<
     string,

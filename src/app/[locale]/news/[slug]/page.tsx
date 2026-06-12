@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { setRequestLocale } from 'next-intl/server';
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
@@ -157,6 +158,7 @@ function renderMarkdown(content: string): string {
 
 export default async function ArticlePage({ params }: ArticlePageProps) {
   const { locale, slug } = await params;
+  setRequestLocale(locale);
   const article = getArticleBySlug(slug);
 
   if (!article) {

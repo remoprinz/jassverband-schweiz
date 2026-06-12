@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { Trust, Hero } from '@/components/sections';
 import { MeisterschaftContent } from './MeisterschaftContent';
 
@@ -89,6 +89,7 @@ const sportsEventJsonLd = (locale: string) => ({
 
 export default async function SchweizermeisterschaftPage({ params }: Props) {
   const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations({ locale });
 
   const howSteps = (

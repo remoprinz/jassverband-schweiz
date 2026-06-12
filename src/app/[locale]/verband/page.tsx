@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Hero } from "@/components/sections";
 import { VerbandContent } from "./VerbandContent";
 
@@ -73,6 +73,7 @@ const revisionBase = [
 
 export default async function VerbandPage({ params }: VerbandPageProps) {
   const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations({ locale });
   const tLeitbild = await getTranslations({ locale, namespace: "leitbild" });
 
