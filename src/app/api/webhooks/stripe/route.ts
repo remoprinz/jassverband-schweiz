@@ -5,8 +5,9 @@ import { FieldValue, Timestamp } from 'firebase-admin/firestore';
 import type Stripe from 'stripe';
 import {
   renderWelcomeEmail,
-  ehrenmitgliedInternalNotification,
+  internalMemberNotification,
   type WelcomeTier,
+  type NotificationTier,
 } from '@/lib/emails/welcome';
 
 const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
@@ -308,24 +309,6 @@ async function handleCheckoutCompleted(session: Stripe.Checkout.Session) {
           html: welcomeMail.html,
         });
         console.log(`[Stripe Webhook] Welcome email (${welcomeTier}) sent to ${customerEmail}`);
-
-        // Internal-Notification bei Ehrenmitglied — damit das Diplom nicht durchrutscht
-        if (welcomeTier === 'ehrenmitglied') {
-          const notif = ehrenmitgliedInternalNotification({
-            firstName,
-            lastName,
-            email: customerEmail,
-            memberNumber,
-            amountChf,
-          });
-          await resend.emails.send({
-            from: process.env.EMAIL_FROM || 'Jassverband Schweiz <noreply@jassverband.ch>',
-            to: 'info@jassverband.ch',
-            subject: notif.subject,
-            html: notif.html,
-          });
-          console.log(`[Stripe Webhook] Internal notification for Ehrenmitglied #${memberNumber} sent`);
-        }
       } else {
         // Bestehender User: Info-Email (kein Passwort-Reset)
         await resend.emails.send({
@@ -354,6 +337,31 @@ async function handleCheckoutCompleted(session: Stripe.Checkout.Session) {
         });
         console.log(`[Stripe Webhook] Activation email sent to ${customerEmail}`);
       }
+
+      // Internal-Notification an info@jassverband.ch bei jeder bezahlten Anmeldung
+      const notificationTier: NotificationTier =
+        goennerTier === 'lifetime' ? 'lifetime'
+        : goennerTier === 'ehrenmitglied' ? 'ehrenmitglied'
+        : goennerTier === 'goenner' ? 'goenner'
+        : membershipType === 'jugend' ? 'jugend'
+        : 'pionier';
+
+      const notif = internalMemberNotification({
+        firstName,
+        lastName,
+        email: customerEmail,
+        memberNumber,
+        amountChf,
+        tier: notificationTier,
+        isRenewal: !existingMemberQuery.empty,
+      });
+      await resend.emails.send({
+        from: process.env.EMAIL_FROM || 'Jassverband Schweiz <noreply@jassverband.ch>',
+        to: 'info@jassverband.ch',
+        subject: notif.subject,
+        html: notif.html,
+      });
+      console.log(`[Stripe Webhook] Internal notification sent for ${notificationTier} #${memberNumber}`);
     }
   } catch (emailError) {
     console.error('[Stripe Webhook] Email sending failed (non-critical):', emailError);

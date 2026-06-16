@@ -119,32 +119,61 @@ export function ehrenmitgliedWelcomeEmail(p: BaseProps): RenderedEmail {
 }
 
 // ----------------------------------------------------------------------------
-// Internal-Notification an info@jassverband.ch bei neuem Ehrenmitglied
+// Internal-Notification an info@jassverband.ch bei jeder bezahlten Anmeldung
 // ----------------------------------------------------------------------------
 
-export function ehrenmitgliedInternalNotification(p: {
+export type NotificationTier =
+  | 'pionier'
+  | 'jugend'
+  | 'goenner'
+  | 'lifetime'
+  | 'ehrenmitglied';
+
+const TIER_LABELS: Record<NotificationTier, string> = {
+  pionier: 'Pionier (Jasser-Lizenz)',
+  jugend: 'Jugendlizenz',
+  goenner: 'Gönner-Beitrag',
+  lifetime: 'Lebenslang-Mitglied',
+  ehrenmitglied: 'Ehrenmitglied',
+};
+
+export function internalMemberNotification(p: {
   firstName: string;
   lastName: string;
   email: string;
   memberNumber: number;
   amountChf: number;
+  tier: NotificationTier;
+  isRenewal: boolean;
 }): RenderedEmail {
-  return {
-    subject: `Neues Ehrenmitglied #${p.memberNumber}: ${p.firstName} ${p.lastName}`,
-    html: `
-<div style="${STYLES.wrapper}">
-  <h1 style="${STYLES.h1}">Neues Ehrenmitglied</h1>
-  <div style="${STYLES.infoBox}">
-    <strong>Mitgliedsnummer:</strong> #${p.memberNumber}<br/>
-    <strong>Name:</strong> ${p.firstName} ${p.lastName}<br/>
-    <strong>E-Mail:</strong> ${p.email}<br/>
-    <strong>Beitrag:</strong> CHF ${p.amountChf.toFixed(2)}
-  </div>
+  const tierLabel = TIER_LABELS[p.tier];
+  const subjectPrefix = p.isRenewal ? 'Erneuerung' : 'Neuer Beitritt';
+  const headline = p.isRenewal
+    ? 'Erneuerung einer Mitgliedschaft'
+    : 'Neues zahlendes Mitglied';
+
+  const ehrenmitgliedTodos =
+    p.tier === 'ehrenmitglied' && !p.isRenewal
+      ? `
   <p style="${STYLES.p}"><strong>Nächste Schritte:</strong></p>
   <ul>
     <li>Persönlich melden (vorgängig zur Diplom-Sendung).</li>
     <li>Gedrucktes Diplom vorbereiten und per Post versenden.</li>
-  </ul>
+  </ul>`
+      : '';
+
+  return {
+    subject: `${subjectPrefix} #${p.memberNumber} — ${tierLabel}: ${p.firstName} ${p.lastName} (CHF ${p.amountChf.toFixed(2)})`,
+    html: `
+<div style="${STYLES.wrapper}">
+  <h1 style="${STYLES.h1}">${headline}</h1>
+  <div style="${STYLES.infoBox}">
+    <strong>Tier:</strong> ${tierLabel}<br/>
+    <strong>Mitgliedsnummer:</strong> #${p.memberNumber}<br/>
+    <strong>Name:</strong> ${p.firstName} ${p.lastName}<br/>
+    <strong>E-Mail:</strong> ${p.email}<br/>
+    <strong>Beitrag:</strong> CHF ${p.amountChf.toFixed(2)}
+  </div>${ehrenmitgliedTodos}
 </div>
     `.trim(),
   };
