@@ -314,6 +314,16 @@
         "role": "Secrétaire",
         "quote": "Le Jass est comme une équation : à la fin, ça doit quadrer d'une façon ou d'une autre.",
         "description": "Erich est chargé de cours en statistiques à la FHNW et gère jassstatistik.ch depuis 2008. Au sein de la fédération, il veille à ce que tout suive son cours — juridiquement, organisationnellement, documentairement."
+      },
+      "claudia": {
+        "role": "Réviseuse",
+        "quote": "L'ordre, c'est la moitié de la partie.",
+        "description": "Claudia tire les ficelles en coulisses — professionnellement au secrétariat de l'école Ilgen, et comme réviseuse au sein de la fédération. Elle veille à ce que les comptes soient aussi nets qu'un tableau noir fraîchement effacé."
+      },
+      "karim": {
+        "role": "Réviseur",
+        "quote": "La philosophie explique le monde — le Jass, le caractère.",
+        "description": "Karim est Managing Director de la commission d'éthique de l'Université de Saint-Gall. Il mène des recherches et enseigne la philosophie des sciences, l'éthique scientifique et les valeurs dans la société. Au sein de la fédération, il met tout cela en pratique."
       }
     },
     "title": "La Fédération",
@@ -323,6 +333,8 @@
     "vorstand": "Comité",
     "praesidiumTitle": "Le Présidium",
     "praesidiumSubtitle": "Une main forte pour le Jass suisse",
+    "revisionTitle": "Révision",
+    "revisionSubtitle": "Contrôle indépendant",
     "statuten": {
       "title": "Statuts",
       "download": "Télécharger les statuts (PDF)",
