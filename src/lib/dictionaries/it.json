@@ -316,14 +316,14 @@
         "description": "Erich è docente di statistica alla FHNW e gestisce jassstatistik.ch dal 2008. In seno alla federazione, si assicura che tutto segua il percorso corretto — legalmente, organizzativamente, documentalmente."
       },
       "claudia": {
-        "role": "Revisora dei conti",
+        "role": "Revisore dei conti",
         "quote": "L'ordine è metà della partita.",
-        "description": "Claudia tiene le fila dietro le quinte — professionalmente nella segreteria della scuola Ilgen e come revisora in seno alla federazione. Si assicura che i conti siano puliti come una lavagna appena cancellata."
+        "description": "Claudia tiene le fila dietro le quinte — professionalmente nella segreteria della scuola Ilgen e, in seno alla federazione, come revisore dei conti. Si assicura che i conti siano puliti come una lavagna appena cancellata."
       },
       "karim": {
         "role": "Revisore dei conti",
-        "quote": "La filosofia spiega il mondo — il Jass, il carattere.",
-        "description": "Karim è Managing Director della commissione etica dell'Università di San Gallo. Svolge ricerca e insegna filosofia della scienza, etica della scienza e valori nella società. In seno alla federazione, mette tutto questo in pratica."
+        "quote": "La filosofia spiega il mondo, il Jass il carattere.",
+        "description": "Karim è Managing Director della commissione etica dell'Università di San Gallo. Svolge attività di ricerca e insegnamento in filosofia della scienza, etica della scienza e valori nella società. In seno alla federazione, traduce tutto questo nella pratica."
       }
     },
     "title": "La Federazione",
