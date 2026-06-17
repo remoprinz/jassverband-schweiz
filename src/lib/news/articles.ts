@@ -203,7 +203,7 @@ La lotta svizzera ha la sua federazione dal 1895. Lo jodel dal 1910. Il Jass ha 
     author: authors.jvs,
     readingTime: 2,
     featured: true,
-    image: "https://qlwo3d8gkia0vga2.public.blob.vercel-storage.com/videos/video-poster.jpg",
+    image: "/assets/videos/video-poster.jpg",
     imageAlt: "Bundesrat zur Systemrelevanz des Jassens",
     video: {
       src: "https://qlwo3d8gkia0vga2.public.blob.vercel-storage.com/videos/Video_Berset_SVJ_1.mp4",
