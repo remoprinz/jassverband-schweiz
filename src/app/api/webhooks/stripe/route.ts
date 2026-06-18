@@ -280,7 +280,13 @@ async function handleCheckoutCompleted(session: Stripe.Checkout.Session) {
 
       if (isNewUser) {
         // Neuer User: Welcome + Passwort-Setup, tier-spezifischer Inhalt
-        const resetLink = await adminAuth.generatePasswordResetLink(customerEmail);
+        // continueUrl → nach dem Passwort-Setzen landet der User direkt in der App.
+        // Wirkt mit der Firebase-Default-Seite (zeigt "Weiter") UND mit dem gebrandeten
+        // Handler auf jassguru.ch/auth/action (dort: Auto-Login + Redirect auf /start).
+        const resetLink = await adminAuth.generatePasswordResetLink(customerEmail, {
+          url: 'https://jassguru.ch/start',
+          handleCodeInApp: false,
+        });
         console.log(`[Stripe Webhook] Password reset link generated for ${customerEmail}`);
 
         const welcomeTier: WelcomeTier =
