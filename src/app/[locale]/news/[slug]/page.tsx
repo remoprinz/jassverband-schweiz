@@ -92,16 +92,18 @@ function renderArticleContent(
   article: NewsArticle
 ): {
   segments: Array<{
-    type: "html" | "video" | "image";
+    type: "html" | "video" | "image" | "imageRow";
     html?: string;
     image?: NonNullable<NewsArticle["inlineImages"]>[number];
+    images?: Array<NonNullable<NewsArticle["inlineImages"]>[number]>;
   }>;
 } {
-  const parts = content.split(/(\[VIDEO\]|\[IMAGE_[A-Z0-9_]+\])/g);
+  const parts = content.split(/(\[VIDEO\]|\[IMAGE_[A-Z0-9_]+(?:\+IMAGE_[A-Z0-9_]+)*\])/g);
   const segments: Array<{
-    type: "html" | "video" | "image";
+    type: "html" | "video" | "image" | "imageRow";
     html?: string;
     image?: NonNullable<NewsArticle["inlineImages"]>[number];
+    images?: Array<NonNullable<NewsArticle["inlineImages"]>[number]>;
   }> = [];
 
   parts.forEach((part) => {
@@ -110,6 +112,17 @@ function renderArticleContent(
 
     if (trimmed === "[VIDEO]") {
       if (article.video) segments.push({ type: "video" });
+      return;
+    }
+
+    // Bild-Reihe: [IMAGE_1+IMAGE_2] → zwei (oder mehr) Bilder nebeneinander
+    const rowTokenMatch = trimmed.match(/^\[(IMAGE_[A-Z0-9_]+(?:\+IMAGE_[A-Z0-9_]+)+)\]$/);
+    if (rowTokenMatch) {
+      const images = rowTokenMatch[1]
+        .split("+")
+        .map((token) => article.inlineImages?.find((item) => item.token === token))
+        .filter((item): item is NonNullable<typeof item> => Boolean(item));
+      if (images.length > 0) segments.push({ type: "imageRow", images });
       return;
     }
 
@@ -428,19 +441,48 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                     </div>
                   );
                 }
+                if (segment.type === "imageRow" && segment.images) {
+                  // App-Store-Look: Screenshots paarweise nebeneinander,
+                  // Originalproportion, gleiche Höhe.
+                  return (
+                    <div key={`imagerow-${index}`} className="my-10 md:my-12 flex justify-center gap-4 md:gap-6">
+                      {segment.images.map((rowImage, rowIndex) => (
+                        <div
+                          key={`imagerow-${index}-${rowIndex}`}
+                          className="relative w-full rounded-xl overflow-hidden"
+                          style={{
+                            maxWidth: rowImage.maxWidth ?? 280,
+                            aspectRatio: rowImage.aspect ?? 4 / 3,
+                          }}
+                        >
+                          <Image
+                            src={rowImage.src}
+                            alt={rowImage.alt}
+                            fill
+                            className="object-cover"
+                            sizes={`${rowImage.maxWidth ?? 280}px`}
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  );
+                }
                 if (segment.type === "image" && segment.image) {
                   const image = segment.image;
                   const showImage = !image.localOnly || canRenderLocalMedia;
                   if (!showImage) return null;
                   // Bilder mit maxWidth (Handy-Screenshots, QR-Codes) werden
-                  // zentriert in Originalproportion gezeigt statt 4:3-beschnitten.
+                  // in Originalproportion gezeigt statt 4:3-beschnitten;
+                  // Default zentriert, align:"left" für z.B. QR-Codes.
                   const constrained = typeof image.maxWidth === "number";
                   return (
                     <figure key={`image-${index}`} className="my-10 md:my-12">
                       <div
                         className={
                           constrained
-                            ? "relative w-full mx-auto rounded-xl overflow-hidden border border-[var(--color-border)]"
+                            ? image.align === "left"
+                              ? "relative w-full rounded-xl overflow-hidden border border-[var(--color-border)]"
+                              : "relative w-full mx-auto rounded-xl overflow-hidden border border-[var(--color-border)]"
                             : "relative w-full aspect-[4/3] rounded-xl overflow-hidden border border-[var(--color-border)]"
                         }
                         style={
