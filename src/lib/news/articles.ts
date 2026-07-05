@@ -28,6 +28,12 @@ export interface ArticleInlineImage {
   alt: string;
   caption?: string;
   localOnly?: boolean;
+  /** Optionale Maximalbreite in px — für Hochformat-Screenshots/QR-Codes,
+   *  die nicht auf volle Spaltenbreite skaliert werden sollen. */
+  maxWidth?: number;
+  /** Seitenverhältnis (Breite/Höhe) des Bildes; nur zusammen mit maxWidth.
+   *  Ohne maxWidth rendert der Artikel wie bisher 4:3 mit object-cover. */
+  aspect?: number;
 }
 
 export interface NewsArticle {
@@ -93,24 +99,32 @@ export const articles: NewsArticle[] = [
         src: "/assets/news/jassguru-app/jasstafel.png",
         alt: "Die digitale Jasstafel von JassGuru: Punkte schreiben wie mit Kreide.",
         caption: "Anschreiben wie auf der Kreidetafel, nur im Hosensack.",
+        maxWidth: 280,
+        aspect: 1284 / 2778,
       },
       {
         token: "IMAGE_2",
         src: "/assets/news/jassguru-app/elo-statistik.png",
         alt: "Jass-Elo-Verlauf und Statistiken in der JassGuru-App.",
         caption: "Das Jass-Elo: die offizielle Wertungszahl des Jassverbands Schweiz.",
+        maxWidth: 280,
+        aspect: 1284 / 2778,
       },
       {
         token: "IMAGE_3",
         src: "/assets/news/jassguru-app/turnier-rangliste.png",
         alt: "Turnier-Rangliste in der JassGuru-App.",
         caption: "Turniere und Ranglisten, direkt in der App.",
+        maxWidth: 280,
+        aspect: 1284 / 2778,
       },
       {
         token: "IMAGE_4",
         src: "/assets/news/jassguru-app/qr-app.png",
         alt: "QR-Code zum Download der JassGuru-App: jassguru.ch/app",
         caption: "Scannen oder tippen: jassguru.ch/app",
+        maxWidth: 180,
+        aspect: 1,
       },
     ],
     tags: ["JassGuru", "App", "Jass-Elo", "Digital"],

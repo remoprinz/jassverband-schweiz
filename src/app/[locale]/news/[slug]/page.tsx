@@ -432,20 +432,38 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                   const image = segment.image;
                   const showImage = !image.localOnly || canRenderLocalMedia;
                   if (!showImage) return null;
+                  // Bilder mit maxWidth (Handy-Screenshots, QR-Codes) werden
+                  // zentriert in Originalproportion gezeigt statt 4:3-beschnitten.
+                  const constrained = typeof image.maxWidth === "number";
                   return (
                     <figure key={`image-${index}`} className="my-10 md:my-12">
-                      <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden border border-[var(--color-border)]">
+                      <div
+                        className={
+                          constrained
+                            ? "relative w-full mx-auto rounded-xl overflow-hidden border border-[var(--color-border)]"
+                            : "relative w-full aspect-[4/3] rounded-xl overflow-hidden border border-[var(--color-border)]"
+                        }
+                        style={
+                          constrained
+                            ? { maxWidth: image.maxWidth, aspectRatio: image.aspect ?? 1 }
+                            : undefined
+                        }
+                      >
                         <Image
                           src={image.src}
                           alt={image.alt}
                           fill
                           className="object-cover"
-                          sizes="(max-width: 768px) 100vw, 720px"
+                          sizes={constrained ? `${image.maxWidth}px` : "(max-width: 768px) 100vw, 720px"}
                         />
                       </div>
                       {image.caption && (
                         <figcaption
-                          className="mt-3 text-[var(--color-foreground-muted)]"
+                          className={
+                            constrained
+                              ? "mt-3 text-center text-[var(--color-foreground-muted)]"
+                              : "mt-3 text-[var(--color-foreground-muted)]"
+                          }
                           style={{
                             fontFamily: "var(--font-inter), Inter, system-ui, sans-serif",
                             fontSize: "14px",
