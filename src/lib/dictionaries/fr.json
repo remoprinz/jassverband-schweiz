@@ -466,6 +466,15 @@
       "teaserText": "Cessez de deviner et découvrez vos chances lors des annonces :"
     }
   },
+  "appDownload": {
+    "title": "L'app JassGuru est là.",
+    "subtitle": "La table de marque numérique officielle de la Fédération Suisse de Jass — les points comme à la craie, statistiques, Elo et tournois. Gratuite pour ton smartphone.",
+    "qrHint": "Scanne le code avec ton smartphone — il t'amène directement dans le bon store.",
+    "androidSoon": "bientôt disponible",
+    "altQr": "Code QR : jassguru.ch/app",
+    "altAppStore": "Télécharger dans l'App Store",
+    "altGooglePlay": "Disponible sur Google Play"
+  },
   "jasskalkulator": {
     "myCards": "Mes cartes :",
     "probability": "Quelle est la probabilité que ...",

@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { Ecosystem, Hero } from "@/components/sections";
+import { AppDownload, Ecosystem, Hero } from "@/components/sections";
 
 interface PlattformenPageProps {
   params: Promise<{ locale: string }>;
@@ -68,6 +68,17 @@ export default async function PlattformenPage({ params }: PlattformenPageProps) 
         altTable={t("hero.altTable")}
         altFelt={t("hero.altFelt")}
         altCard={t("hero.altCard")}
+      />
+
+      <AppDownload
+        locale={locale}
+        title={t("appDownload.title")}
+        subtitle={t("appDownload.subtitle")}
+        qrHint={t("appDownload.qrHint")}
+        androidSoon={t("appDownload.androidSoon")}
+        altQr={t("appDownload.altQr")}
+        altAppStore={t("appDownload.altAppStore")}
+        altGooglePlay={t("appDownload.altGooglePlay")}
       />
 
       <Ecosystem

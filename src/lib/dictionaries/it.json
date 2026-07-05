@@ -466,6 +466,15 @@
       "teaserText": "Smetti di indovinare e scopri le tue probabilità durante le annunciate:"
     }
   },
+  "appDownload": {
+    "title": "L'app JassGuru è arrivata.",
+    "subtitle": "La lavagna ufficiale digitale della Federazione Svizzera di Jass — i punti come col gesso, statistiche, Elo e tornei. Gratis per il tuo smartphone.",
+    "qrHint": "Scansiona il codice con lo smartphone — ti porta direttamente allo store giusto.",
+    "androidSoon": "presto disponibile",
+    "altQr": "Codice QR: jassguru.ch/app",
+    "altAppStore": "Scarica su App Store",
+    "altGooglePlay": "Disponibile su Google Play"
+  },
   "jasskalkulator": {
     "myCards": "Le mie carte:",
     "probability": "Qual è la probabilità che ...",

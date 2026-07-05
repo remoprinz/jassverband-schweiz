@@ -9,3 +9,4 @@ export { Trust } from './Trust';
 export { Schweizermeisterschaft } from './Schweizermeisterschaft';
 export { HomeFAQ } from './HomeFAQ';
 export { Testimonials } from './Testimonials';
+export { AppDownload } from './AppDownload';

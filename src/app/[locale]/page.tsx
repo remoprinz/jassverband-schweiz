@@ -8,6 +8,7 @@ import {
   Ecosystem,
   Trust,
   HomeFAQ,
+  AppDownload,
 } from "@/components/sections";
 
 interface HomePageProps {
@@ -148,7 +149,19 @@ export default async function HomePage({ params }: HomePageProps) {
         }}
       />
 
-      {/* 7. Testimonials — Cream (auskommentiert bis echte Testimonials vorhanden) */}
+      {/* 7. App-Download — Cream (JassGuru App Store + QR) */}
+      <AppDownload
+        locale={locale}
+        title={t("appDownload.title")}
+        subtitle={t("appDownload.subtitle")}
+        qrHint={t("appDownload.qrHint")}
+        androidSoon={t("appDownload.androidSoon")}
+        altQr={t("appDownload.altQr")}
+        altAppStore={t("appDownload.altAppStore")}
+        altGooglePlay={t("appDownload.altGooglePlay")}
+      />
+
+      {/* 7b. Testimonials — Cream (auskommentiert bis echte Testimonials vorhanden) */}
       {/* <Testimonials
         title="Was Jasser sagen"
         testimonials={[
