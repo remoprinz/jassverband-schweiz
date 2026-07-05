@@ -106,8 +106,8 @@ export const articles: NewsArticle[] = [
       },
       {
         token: "IMAGE_2",
-        src: "/assets/news/jassguru-app/rundentracking.png",
-        alt: "Rundentracking in der JassGuru-App: jede Runde im Blick.",
+        src: "/assets/news/jassguru-app/berg-sieg.png",
+        alt: "Berg und Sieg auf der digitalen Jasstafel von JassGuru.",
         maxWidth: 280,
         aspect: 1284 / 2778,
       },
