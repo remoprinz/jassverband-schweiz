@@ -466,6 +466,15 @@
       "teaserText": "Beende das Rätselraten und lerne deine Chancen beim Ansagen kennen:"
     }
   },
+  "appDownload": {
+    "title": "Die JassGuru-App ist da.",
+    "subtitle": "Die offizielle digitale Jasstafel des Jassverbands Schweiz — Punkte schreiben wie mit Kreide, Statistiken, Elo und Turniere. Gratis für dein Handy.",
+    "qrHint": "Mit dem Handy scannen — führt direkt in den richtigen Store.",
+    "androidSoon": "bald verfügbar",
+    "altQr": "QR-Code: jassguru.ch/app",
+    "altAppStore": "Laden im App Store",
+    "altGooglePlay": "Jetzt bei Google Play"
+  },
   "jasskalkulator": {
     "myCards": "Ich habe folgende Karten:",
     "probability": "Wie gross ist die Wahrscheinlichkeit, dass ...",
@@ -656,7 +665,7 @@
       "ctaPlay": "Jetzt auf JassGuru spielen",
       "nextSteps": "So geht es weiter",
       "step1Title": "Bestätigungs-E-Mail prüfen",
-      "step1Description": "Du erhältst in wenigen Minuten eine E-Mail mit allen Details zu deiner Mitgliedschaft.",
+      "step1Description": "Du erhältst in wenigen Minuten eine E-Mail. Neu bei JassGuru? Darin ist ein Link, um dein Passwort zu setzen — mit derselben E-Mail-Adresse wie bei der Anmeldung.",
       "step2Title": "Auf JassGuru einloggen",
       "step2Description": "Logge dich auf jassguru.ch ein. Du kannst jetzt deine eigene Jassgruppe erstellen und Freunde einladen.",
       "step3Title": "Turniere organisieren",

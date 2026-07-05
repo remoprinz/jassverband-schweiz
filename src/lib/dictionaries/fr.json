@@ -314,6 +314,16 @@
         "role": "Secrétaire",
         "quote": "Le Jass est comme une équation : à la fin, ça doit quadrer d'une façon ou d'une autre.",
         "description": "Erich est chargé de cours en statistiques à la FHNW et gère jassstatistik.ch depuis 2008. Au sein de la fédération, il veille à ce que tout suive son cours — juridiquement, organisationnellement, documentairement."
+      },
+      "claudia": {
+        "role": "Vérificatrice des comptes",
+        "quote": "L'ordre, c'est la moitié de la partie.",
+        "description": "Claudia tire les ficelles en coulisses — professionnellement au secrétariat de l'école d'Ilgen, et comme vérificatrice des comptes au sein de la fédération. Elle veille à ce que les comptes soient aussi nets qu'un tableau noir fraîchement effacé."
+      },
+      "karim": {
+        "role": "Vérificateur des comptes",
+        "quote": "La philosophie explique le monde — le Jass, le caractère.",
+        "description": "Karim est Managing Director de la commission d'éthique de l'Université de Saint-Gall. Il y mène des recherches et enseigne la philosophie des sciences, l'éthique scientifique et les valeurs dans la société. Au sein de la fédération, il met tout cela en pratique."
       }
     },
     "title": "La Fédération",
@@ -323,6 +333,8 @@
     "vorstand": "Comité",
     "praesidiumTitle": "Le Présidium",
     "praesidiumSubtitle": "Une main forte pour le Jass suisse",
+    "revisionTitle": "Vérification des comptes",
+    "revisionSubtitle": "Contrôle indépendant",
     "statuten": {
       "title": "Statuts",
       "download": "Télécharger les statuts (PDF)",
@@ -453,6 +465,15 @@
       "teaserBadge": "Nouveau",
       "teaserText": "Cessez de deviner et découvrez vos chances lors des annonces :"
     }
+  },
+  "appDownload": {
+    "title": "L'app JassGuru est là.",
+    "subtitle": "La table de marque numérique officielle de la Fédération Suisse de Jass — les points comme à la craie, statistiques, Elo et tournois. Gratuite pour ton smartphone.",
+    "qrHint": "Scanne le code avec ton smartphone — il t'amène directement dans le bon store.",
+    "androidSoon": "bientôt disponible",
+    "altQr": "Code QR : jassguru.ch/app",
+    "altAppStore": "Télécharger dans l'App Store",
+    "altGooglePlay": "Disponible sur Google Play"
   },
   "jasskalkulator": {
     "myCards": "Mes cartes :",
@@ -644,7 +665,7 @@
       "ctaPlay": "Jouer sur JassGuru",
       "nextSteps": "Prochaines étapes",
       "step1Title": "Vérifier l'e-mail de confirmation",
-      "step1Description": "Vous recevrez dans quelques minutes un e-mail avec tous les détails de votre adhésion.",
+      "step1Description": "Vous recevez un e-mail dans quelques minutes. Nouveau sur JassGuru ? Il contient un lien pour définir votre mot de passe — avec la même adresse e-mail que lors de l'inscription.",
       "step2Title": "Se connecter sur JassGuru",
       "step2Description": "Connectez-vous sur jassguru.ch. Vous pouvez maintenant créer votre propre groupe de Jass et inviter vos amis.",
       "step3Title": "Organiser des tournois",
