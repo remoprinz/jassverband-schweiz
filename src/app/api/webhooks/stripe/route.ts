@@ -305,6 +305,7 @@ async function handleCheckoutCompleted(session: Stripe.Checkout.Session) {
         await resend.emails.send({
           from: process.env.EMAIL_FROM || 'Jassverband Schweiz <noreply@jassverband.ch>',
           to: customerEmail,
+          replyTo: 'info@jassverband.ch',
           subject: welcomeMail.subject,
           html: welcomeMail.html,
         });
@@ -314,6 +315,7 @@ async function handleCheckoutCompleted(session: Stripe.Checkout.Session) {
         await resend.emails.send({
           from: process.env.EMAIL_FROM || 'Jassverband Schweiz <noreply@jassverband.ch>',
           to: customerEmail,
+          replyTo: 'info@jassverband.ch',
           subject: 'Deine JVS-Mitgliedschaft ist aktiv!',
           html: `
             <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 600px; margin: 0 auto;">
