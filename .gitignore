@@ -71,9 +71,15 @@ public/assets/videos/*.mov
 public/assets/videos/*.webm
 
 # PDFs and documents (use cloud storage, not git)
+# Ausnahme: die auf der Website verlinkten PDFs müssen ins Repo, sonst baut Vercel
+# ohne sie und der Download liefert 404.
 *.pdf
 Statuten/
-public/documents/
+public/documents/*
+!public/documents/statuten-jvs.pdf
+!public/documents/broschuere-jvs.pdf
+!public/documents/vorstandsbeschluesse/
+!public/documents/vorstandsbeschluesse/*.pdf
 Einreichungen\ Fördergelder/
 src/assets/textures/_originals/
 

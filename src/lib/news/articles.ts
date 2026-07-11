@@ -6,6 +6,7 @@
  * 2. Ändern Sie slug, Datum, Titel, etc.
  * 3. Fügen Sie den Content als Markdown ein
  * 4. Optional: Bilder via [IMAGE_1], [IMAGE_2], ... und inlineImages[] einfügen
+ *    (zwei nebeneinander: [IMAGE_1+IMAGE_2])
  * 5. Local-only Medien unter public/assets/local-only/ ablegen (nicht in Git)
  * 6. Speichern und pushen → Artikel ist live
  */
@@ -23,11 +24,19 @@ export interface ArticleVideo {
 }
 
 export interface ArticleInlineImage {
-  token: string; // e.g. IMAGE_1 used as [IMAGE_1] in markdown
+  token: string; // e.g. IMAGE_1 used as [IMAGE_1+IMAGE_2] in markdown
   src: string;
   alt: string;
   caption?: string;
   localOnly?: boolean;
+  /** Optionale Maximalbreite in px — für Hochformat-Screenshots/QR-Codes,
+   *  die nicht auf volle Spaltenbreite skaliert werden sollen. */
+  maxWidth?: number;
+  /** Seitenverhältnis (Breite/Höhe) des Bildes; nur zusammen mit maxWidth.
+   *  Ohne maxWidth rendert der Artikel wie bisher 4:3 mit object-cover. */
+  aspect?: number;
+  /** Ausrichtung für breitenbegrenzte Einzelbilder (Default: zentriert). */
+  align?: "left";
 }
 
 export interface NewsArticle {
@@ -79,6 +88,144 @@ export const authors: Record<string, Author> = {
 };
 
 export const articles: NewsArticle[] = [
+  {
+    slug: "jassguru-offizielle-jass-app-im-app-store",
+    publishedAt: "2026-07-06",
+    author: authors.jvs,
+    readingTime: 3,
+    featured: true,
+    image: "/assets/news/jassguru-app/jasstafel.png",
+    imageAlt: "Die digitale Jasstafel von JassGuru mit Z-Linie und Kreide-Optik auf dem Smartphone.",
+    inlineImages: [
+      {
+        token: "IMAGE_1",
+        src: "/assets/news/jassguru-app/jasstafel.png",
+        alt: "Die digitale Jasstafel von JassGuru: Punkte schreiben wie mit Kreide.",
+        maxWidth: 280,
+        aspect: 1284 / 2778,
+      },
+      {
+        token: "IMAGE_2",
+        src: "/assets/news/jassguru-app/berg-sieg.png",
+        alt: "Berg und Sieg auf der digitalen Jasstafel von JassGuru.",
+        maxWidth: 280,
+        aspect: 1284 / 2778,
+      },
+      {
+        token: "IMAGE_3",
+        src: "/assets/news/jassguru-app/elo-statistik.png",
+        alt: "Jass-Elo-Verlauf und Statistiken in der JassGuru-App.",
+        maxWidth: 280,
+        aspect: 1284 / 2778,
+      },
+      {
+        token: "IMAGE_4",
+        src: "/assets/news/jassguru-app/turnier-rangliste.png",
+        alt: "Turnier-Rangliste in der JassGuru-App.",
+        maxWidth: 280,
+        aspect: 1284 / 2778,
+      },
+      {
+        token: "IMAGE_5",
+        src: "/assets/news/jassguru-app/qr-app.png",
+        alt: "QR-Code zum Download der JassGuru-App: jassguru.ch/app",
+        maxWidth: 240,
+        aspect: 1,
+        align: "left",
+      },
+    ],
+    tags: ["JassGuru", "App", "Jass-Elo", "Digital"],
+    de: {
+      title: "Die offizielle Jass-App der Schweiz ist da: JassGuru jetzt im App Store",
+      excerpt:
+        "Punkte schreiben wie auf der Kreidetafel, und am Ende der Partie stehen Statistiken, Ranglisten und das offizielle Jass-Elo: Mit JassGuru bringt der Jassverband Schweiz die digitale Jasstafel aufs Smartphone.",
+      content: `Angeschrieben wird beim Jassen seit Generationen gleich: Kreide, Tafel, Striche. JassGuru führt diese Tradition weiter, nur dass die Tafel jetzt im Hosensack steckt. Seit dieser Woche ist die offizielle Jass-App des Jassverbands Schweiz in den App Stores erhältlich.
+
+[IMAGE_1+IMAGE_2]
+
+## Vorne schreiben, hinten Statistik
+
+Der Clou von JassGuru ist die durchgehende Erfassung: Was vorne auf der Kreidetafel geschrieben wird, geht direkt aufs Dashboard. Jede Runde, jeder Matsch, jeder Berg fliesst in die Statistik ein. Wie oft er mit welchem Partner gewinnt, welcher Trumpf ihm liegt oder was seine durchschnittliche Rundenzeit ist.
+
+## Das Elo-System jetzt auch fürs Jassen
+
+Was im Schach seit Jahrzehnten selbstverständlich ist, gibt es jetzt auch für das Nationalspiel: eine offizielle Wertungszahl. Das Jass-Elo des Jassverbands Schweiz misst die Spielstärke über alle erfassten Spiele hinweg. Wer gegen starke Gegner gewinnt, steigt schneller, wer verliert, gibt Punkte ab. So entsteht zum ersten Mal eine faire, vergleichbare Rangliste für Jasserinnen und Jasser.
+
+[IMAGE_3+IMAGE_4]
+
+## Die Grundlage für Turniere und Meisterschaften
+
+JassGuru ist mehr als eine Tafel mit Gedächtnis. Die App ist die technische Grundlage, auf der der Verband seine Wettbewerbe aufbauen wird: Jassgruppen organisieren ihre Abende, Turniere laufen über die integrierte Turnierverwaltung, und die Resultate fliessen in die offiziellen Ranglisten. Der Weg zur Schweizermeisterschaft im Jassen führt über diese Infrastruktur.
+
+## Gratis laden
+
+JassGuru ist kostenlos und ohne Werbung. Hier geht's zum Download: **[jassguru.ch/app](https://jassguru.ch/app)**
+
+[IMAGE_5]
+
+Schwingen hat seinen Verband, Jodeln hat seine Feste. Das Jassen hat jetzt seine offizielle App fürs Jassen am Tisch.`,
+    },
+    fr: {
+      title: "L'app officielle de Jass de Suisse est là: JassGuru dans l'App Store",
+      excerpt:
+        "Noter les points comme sur l'ardoise, et à la fin de la partie: statistiques, classements et le Elo de Jass officiel. Avec JassGuru, la Fédération Suisse de Jass amène la table de marque numérique sur le smartphone.",
+      content: `Au Jass, on note les points de la même manière depuis des générations: craie, ardoise, traits. JassGuru perpétue cette tradition, sauf que l'ardoise tient désormais dans la poche. Depuis cette semaine, l'app officielle de la Fédération Suisse de Jass est disponible dans les stores d'applications.
+
+[IMAGE_1+IMAGE_2]
+
+## Noter devant, analyser derrière
+
+L'atout de JassGuru, c'est la saisie de bout en bout: ce qui est noté devant sur l'ardoise arrive directement sur le tableau de bord. Chaque ronde, chaque match, chaque « Berg » alimente les statistiques. À quelle fréquence on gagne avec quel partenaire, quel atout nous réussit, ou quel est notre temps moyen par ronde.
+
+## Le système Elo, désormais aussi pour le Jass
+
+Ce qui va de soi aux échecs depuis des décennies existe désormais pour le jeu national: un classement officiel. Le Elo de Jass de la Fédération Suisse de Jass mesure la force de jeu sur l'ensemble des parties saisies. Qui gagne contre des adversaires forts monte plus vite, qui perd cède des points. Ainsi naît, pour la première fois, un classement équitable et comparable pour les joueuses et joueurs de Jass.
+
+[IMAGE_3+IMAGE_4]
+
+## La base des tournois et des championnats
+
+JassGuru est plus qu'une ardoise avec de la mémoire. L'app est l'infrastructure technique sur laquelle la fédération construira ses compétitions: les groupes de Jass organisent leurs soirées, les tournois passent par la gestion intégrée, et les résultats alimentent les classements officiels. Le chemin vers le championnat suisse de Jass passe par cette infrastructure.
+
+## Téléchargement gratuit
+
+JassGuru est gratuite et sans publicité. C'est par ici: **[jassguru.ch/app](https://jassguru.ch/app)**
+
+[IMAGE_5]
+
+La lutte suisse a sa fédération, le yodel a ses fêtes. Le Jass a désormais son app officielle pour jasser à table.`,
+    },
+    it: {
+      title: "L'app ufficiale di Jass della Svizzera è arrivata: JassGuru nell'App Store",
+      excerpt:
+        "Segnare i punti come sulla lavagna, e a fine partita: statistiche, classifiche e l'Elo di Jass ufficiale. Con JassGuru la Federazione Svizzera di Jass porta la lavagna digitale sullo smartphone.",
+      content: `A Jass i punti si segnano allo stesso modo da generazioni: gesso, lavagna, linee. JassGuru porta avanti questa tradizione, solo che ora la lavagna sta in tasca. Da questa settimana l'app ufficiale della Federazione Svizzera di Jass è disponibile negli store di applicazioni.
+
+[IMAGE_1+IMAGE_2]
+
+## Segnare davanti, analizzare dietro
+
+Il punto forte di JassGuru è la registrazione completa: ciò che si segna davanti sulla lavagna arriva direttamente sulla dashboard. Ogni round, ogni match, ogni « Berg » confluisce nelle statistiche. Quante volte si vince con quale partner, quale atout ci riesce meglio o qual è il nostro tempo medio per round.
+
+## Il sistema Elo, ora anche per lo Jass
+
+Ciò che negli scacchi è scontato da decenni ora esiste anche per il gioco nazionale: una valutazione ufficiale. L'Elo di Jass della Federazione Svizzera di Jass misura la forza di gioco su tutte le partite registrate. Chi vince contro avversari forti sale più in fretta, chi perde cede punti. Nasce così, per la prima volta, una classifica equa e confrontabile per le giocatrici e i giocatori di Jass.
+
+[IMAGE_3+IMAGE_4]
+
+## La base per tornei e campionati
+
+JassGuru è più di una lavagna con la memoria. L'app è l'infrastruttura tecnica su cui la federazione costruirà le sue competizioni: i gruppi di Jass organizzano le loro serate, i tornei passano dalla gestione integrata e i risultati alimentano le classifiche ufficiali. La strada verso il campionato svizzero di Jass passa da questa infrastruttura.
+
+## Scaricala gratis
+
+JassGuru è gratuita e senza pubblicità. Si scarica qui: **[jassguru.ch/app](https://jassguru.ch/app)**
+
+[IMAGE_5]
+
+La lotta svizzera ha la sua federazione, lo jodel ha le sue feste. Lo Jass ha ora la sua app ufficiale per jassare al tavolo.`,
+    },
+  },
   {
     slug: "grueezi-bern-jassverband-schweiz-bundeshaus",
     publishedAt: "2026-03-12",
@@ -203,7 +350,7 @@ La lotta svizzera ha la sua federazione dal 1895. Lo jodel dal 1910. Il Jass ha 
     author: authors.jvs,
     readingTime: 2,
     featured: true,
-    image: "https://qlwo3d8gkia0vga2.public.blob.vercel-storage.com/videos/video-poster.jpg",
+    image: "/assets/videos/video-poster.jpg",
     imageAlt: "Bundesrat zur Systemrelevanz des Jassens",
     video: {
       src: "https://qlwo3d8gkia0vga2.public.blob.vercel-storage.com/videos/Video_Berset_SVJ_1.mp4",
