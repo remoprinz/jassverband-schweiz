@@ -1,6 +1,16 @@
-import { Metadata } from 'next';
+import { Metadata, Viewport } from 'next';
 
 const BASE_URL = 'https://jassverband.ch';
+
+// Nur für die Kalkulator-Route: randlos rendern (viewport-fit=cover), damit
+// env(safe-area-inset-top) im jasstafel-WebView (contentInset:'never') den
+// echten Wert liefert und der Header-Padding-Fix unten greift. Andere
+// jassverband.ch-Seiten bleiben unberührt.
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover',
+};
 
 interface Props {
   params: Promise<{ locale: string }>;

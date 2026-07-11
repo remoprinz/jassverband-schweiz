@@ -197,16 +197,20 @@ export default function JasskalkulatorPage() {
       className="min-h-screen w-full flex flex-col"
       style={{ backgroundColor: '#1a472a' }}
     >
-      {/* Header - Schwarzer Balken */}
-      <header 
+      {/* Header - Schwarzer Balken. paddingTop = Safe-Area: in der jasstafel-App
+          (randloses WebView) füllt Schwarz die Status-Bar/Notch, der Inhalt sitzt
+          darunter. Im normalen Browser ist der Inset 0 → unverändert 76px. */}
+      <header
         className="w-full"
-        style={{ 
+        style={{
           backgroundColor: '#000000',
-          height: '76px',
-          minHeight: '76px',
+          paddingTop: 'env(safe-area-inset-top)',
         }}
       >
-        <div className="max-w-[1400px] mx-auto w-full h-full px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        <div
+          className="max-w-[1400px] mx-auto w-full px-4 sm:px-6 lg:px-8 flex items-center justify-between"
+          style={{ height: '76px' }}
+        >
           <div className="flex items-center gap-3">
             <Link 
               href={`/${locale}`}

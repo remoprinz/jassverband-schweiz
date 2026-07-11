@@ -49,7 +49,6 @@ export function OrganizationSchema() {
       },
       sameAs: [
         'https://www.wikidata.org/wiki/Q139042763',
-        'https://www.wikidata.org/wiki/Q786768',
         'https://www.lebendige-traditionen.ch/tradition/de/home/traditionen/jassen.html',
         'https://www.instagram.com/jassverband_schweiz/',
         'https://www.linkedin.com/company/112297214',
@@ -60,6 +59,7 @@ export function OrganizationSchema() {
           '@id': 'https://jasswiki.ch/#organization',
           name: 'JassWiki',
           url: 'https://jasswiki.ch',
+          sameAs: 'https://www.wikidata.org/wiki/Q137900251',
           description: 'Die umfassendste digitale Enzyklopädie des Schweizer Jassens — Regeln, Varianten, Geschichte und Strategien.',
         },
         {
@@ -67,6 +67,7 @@ export function OrganizationSchema() {
           '@id': 'https://jassguru.ch/#app',
           name: 'JassGuru (Jasstafel)',
           url: 'https://jassguru.ch',
+          sameAs: 'https://www.wikidata.org/wiki/Q140268082',
           description: 'Digitale Jass-Kreidetafel mit Elo-Ratingsystem, Statistiken und Turniermodul für die Schweizer Jass-Community.',
           applicationCategory: 'SportsApplication',
           operatingSystem: 'iOS, Android, Web',
@@ -74,7 +75,7 @@ export function OrganizationSchema() {
       ],
       knowsAbout: [
         { '@type': 'Thing', name: 'Jass', sameAs: 'https://www.wikidata.org/wiki/Q786768' },
-        { '@type': 'Thing', name: 'Schieber', sameAs: 'https://www.wikidata.org/wiki/Q137900251' },
+        { '@type': 'Thing', name: 'Schieber', sameAs: 'https://www.wikidata.org/wiki/Q137727247' },
         { '@type': 'Thing', name: 'Schweizer Kartenspiele' },
         { '@type': 'Thing', name: 'Lebendige Traditionen der Schweiz' },
         { '@type': 'Thing', name: 'Jass-Meisterschaft' },
