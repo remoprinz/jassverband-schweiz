@@ -16,6 +16,7 @@ interface LayoutContentProps {
   nav: {
     home: string;
     schweizermeisterschaft: string;
+    turniere: string;
     plattformen: string;
     verband: string;
     news: string;
@@ -29,9 +30,10 @@ interface LayoutContentProps {
     datenschutz: string;
     copyright: string;
   };
+  showTurniere?: boolean;
 }
 
-export function LayoutContent({ children, locale, nav, footer }: LayoutContentProps) {
+export function LayoutContent({ children, locale, nav, footer, showTurniere }: LayoutContentProps) {
   const pathname = usePathname();
   const isStandalonePage = pathname.includes('/jasskalkulator');
 
@@ -51,11 +53,11 @@ export function LayoutContent({ children, locale, nav, footer }: LayoutContentPr
 
   return (
     <>
-      <Header locale={locale} nav={nav} isHeroPage={isHeroPage} />
+      <Header locale={locale} nav={nav} isHeroPage={isHeroPage} showTurniere={showTurniere} />
       <MainWrapper isHeroPage={isHeroPage}>
         {children}
       </MainWrapper>
-      <Footer locale={locale} content={footer} nav={nav} />
+      <Footer locale={locale} content={footer} nav={nav} showTurniere={showTurniere} />
     </>
   );
 }

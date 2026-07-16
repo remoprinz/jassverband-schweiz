@@ -15,12 +15,14 @@ interface FooterProps {
   nav: {
     home: string;
     schweizermeisterschaft: string;
+    turniere: string;
     plattformen: string;
     verband: string;
     news: string;
     kontakt: string;
     mitmachen: string;
   };
+  showTurniere?: boolean;
 }
 
 const linkStyle = {
@@ -37,7 +39,7 @@ const headingStyle = {
   color: 'rgba(255, 255, 255, 0.95)',
 };
 
-export function Footer({ locale, content, nav }: FooterProps) {
+export function Footer({ locale, content, nav, showTurniere }: FooterProps) {
   const [showDame] = useState(() => Math.random() < 0.5);
   const normalizedLocale = locale === 'fr' || locale === 'it' ? locale : 'de';
   const footerLogoByLocale = {
@@ -170,6 +172,8 @@ export function Footer({ locale, content, nav }: FooterProps) {
                 {[
                   { href: `/${locale}`, label: nav.home },
                   { href: `/${locale}/schweizermeisterschaft`, label: nav.schweizermeisterschaft },
+                  // Soft-Launch: Turniere nur wo sichtbar (aktuell FR)
+                  ...(showTurniere ? [{ href: `/${locale}/turniere`, label: nav.turniere }] : []),
                   { href: `/${locale}/plattform`, label: nav.plattformen },
                   { href: `/${locale}/verband`, label: nav.verband },
                   { href: `/${locale}/news`, label: nav.news },

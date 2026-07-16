@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next';
 import { articles } from '@/lib/news/articles';
+import { tournaments, isTournamentVisibleInLocale } from '@/lib/tournaments/tournaments';
 
 const BASE_URL = 'https://jassverband.ch';
 const LOCALES = ['de', 'fr', 'it'] as const;
@@ -15,6 +16,7 @@ const staticPages: {
   { path: '',                        priority: 1.0,  changeFreq: 'weekly',  lastModified: '2026-03-01' },
   { path: '/mitmachen',              priority: 0.95, changeFreq: 'weekly',  lastModified: '2026-03-01' },
   { path: '/schweizermeisterschaft', priority: 0.9,  changeFreq: 'weekly',  lastModified: '2026-03-01' },
+  // /turniere-Index kommt weiter unten dynamisch dazu — nur in Sprachen mit sichtbaren Turnieren
   { path: '/plattform',              priority: 0.9,  changeFreq: 'weekly',  lastModified: '2026-03-01' },
   { path: '/news',                   priority: 0.9,  changeFreq: 'weekly',  lastModified: '2026-03-01' },
   { path: '/verband',                priority: 0.8,  changeFreq: 'monthly', lastModified: '2026-02-01' },
@@ -67,6 +69,54 @@ export default function sitemap(): MetadataRoute.Sitemap {
         changeFrequency: 'monthly',
         priority: locale === 'de' ? basePriority : Math.max(basePriority - 0.05, 0.1),
         alternates: { languages },
+      });
+    }
+  }
+
+  // Turniere — NUR in freigeschalteten Sprachen (Soft-Launch; aktuell FR).
+  // Keine leeren DE/IT-Turnierseiten im Sitemap bewerben.
+  const localesWithTournaments = new Set<string>();
+  for (const tournament of tournaments) {
+    const visibleLocales = LOCALES.filter((locale) => isTournamentVisibleInLocale(tournament, locale));
+    if (visibleLocales.length === 0) continue;
+
+    const languages: Record<string, string> = {};
+    for (const locale of visibleLocales) {
+      languages[locale] = `${BASE_URL}/${locale}/turniere/${tournament.slug}`;
+    }
+    languages['x-default'] = languages[visibleLocales[0]];
+
+    const lastModified = new Date(tournament.updatedAt || tournament.publishedAt);
+    const basePriority = tournament.featured ? 0.8 : 0.6;
+
+    for (const locale of visibleLocales) {
+      localesWithTournaments.add(locale);
+      entries.push({
+        url: `${BASE_URL}/${locale}/turniere/${tournament.slug}`,
+        lastModified,
+        changeFrequency: 'weekly',
+        priority: locale === 'de' ? basePriority : Math.max(basePriority - 0.05, 0.1),
+        alternates: { languages },
+      });
+    }
+  }
+
+  // Turnier-Übersicht — nur in Sprachen mit sichtbaren Turnieren
+  if (localesWithTournaments.size > 0) {
+    const indexLocales = Array.from(localesWithTournaments);
+    const indexLanguages: Record<string, string> = {};
+    for (const locale of indexLocales) {
+      indexLanguages[locale] = `${BASE_URL}/${locale}/turniere`;
+    }
+    indexLanguages['x-default'] = indexLanguages[indexLocales[0]];
+
+    for (const locale of indexLocales) {
+      entries.push({
+        url: `${BASE_URL}/${locale}/turniere`,
+        lastModified: new Date('2026-07-16'),
+        changeFrequency: 'weekly',
+        priority: 0.9,
+        alternates: { languages: indexLanguages },
       });
     }
   }
