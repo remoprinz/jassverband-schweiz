@@ -116,10 +116,11 @@ export const tournaments: Tournament[] = [
       url: "https://www.instagram.com/jeunesse_randogne_mollens/",
     },
     price: { amount: 50, currency: "CHF" },
-    // TODO(Remo): Google-Formular-Link einsetzen (der QR-Code auf dem Plakat
-    // führt dorthin). Solange leer, zeigt die Seite SMS + QR-Hinweis als Fallback,
-    // und das Event-JSON-LD lässt offers.url weg statt eine URL zu erfinden.
-    registrationUrl: "",
+    // Anmelde-Formular: aus dem QR-Code des Original-Plakats dekodiert und
+    // verifiziert (HTTP 200, Titel «Inscriptions - Tournoi de jass», nennt
+    // Randogne/binôme/raclette/5 septembre) — nicht geraten.
+    registrationUrl:
+      "https://docs.google.com/forms/d/e/1FAIpQLScjhuqPhWR59OwwGWQeiyIfwxjUaecCVv2PdFllWORWVD12oA/viewform",
     registrationPhone: "+41 79 190 66 13",
     registrationDeadline: "2026-08-31",
     poster: {
