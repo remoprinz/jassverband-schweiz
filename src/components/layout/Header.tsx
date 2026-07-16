@@ -13,12 +13,14 @@ interface HeaderProps {
   nav: {
     home: string;
     schweizermeisterschaft: string;
+    turniere: string;
     plattformen: string;
     verband: string;
     news: string;
     kontakt: string;
     mitmachen: string;
   };
+  showTurniere?: boolean;
 }
 
 function Logo({
@@ -61,7 +63,7 @@ function Logo({
   );
 }
 
-export function Header({ locale, nav, isHeroPage }: HeaderProps) {
+export function Header({ locale, nav, isHeroPage, showTurniere }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [isMobileViewport, setIsMobileViewport] = useState(false);
@@ -120,6 +122,8 @@ export function Header({ locale, nav, isHeroPage }: HeaderProps) {
 
   const navItems = [
     { href: `/${locale}/schweizermeisterschaft`, label: nav.schweizermeisterschaft },
+    // Soft-Launch: Turniere-Rubrik nur einblenden, wo sichtbare Turniere existieren (aktuell FR).
+    ...(showTurniere ? [{ href: `/${locale}/turniere`, label: nav.turniere }] : []),
     { href: `/${locale}/plattform`, label: nav.plattformen },
     { href: `/${locale}/verband`, label: nav.verband },
     { href: `/${locale}/news`, label: nav.news },

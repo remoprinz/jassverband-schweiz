@@ -6,6 +6,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { locales, type Locale } from "@/lib/i18n";
+import { hasVisibleTournaments } from "@/lib/tournaments/tournaments";
 import { LayoutContent } from "@/components/layout/LayoutContent";
 import { OrganizationSchema } from "@/components/seo/OrganizationSchema";
 import { Analytics } from "@vercel/analytics/next";
@@ -110,6 +111,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
   const nav = messages.nav as {
     home: string;
     schweizermeisterschaft: string;
+    turniere: string;
     plattformen: string;
     verband: string;
     news: string;
@@ -117,6 +119,9 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
     mitmachen: string;
   };
   const footer = messages.footer as { tagline: string; legal: string; impressum: string; datenschutz: string; copyright: string };
+
+  // Soft-Launch: Turniere-Nav nur zeigen, wo es sichtbare Turniere gibt (aktuell nur FR).
+  const showTurniere = hasVisibleTournaments(locale);
 
   return (
     <html lang={locale}>
@@ -127,7 +132,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
       </head>
       <body className={`${inter.variable} ${capita.variable} antialiased`}>
         <NextIntlClientProvider messages={messages}>
-          <LayoutContent locale={locale} nav={nav} footer={footer}>
+          <LayoutContent locale={locale} nav={nav} footer={footer} showTurniere={showTurniere}>
             {children}
           </LayoutContent>
         </NextIntlClientProvider>
