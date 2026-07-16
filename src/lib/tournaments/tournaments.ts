@@ -154,9 +154,9 @@ Les inscriptions se font par équipe de deux, via le formulaire (QR-code sur l'a
     de: {
       title: "Jassturnier der Jeunesse Randogne-Mollens",
       excerpt:
-        "Am 5. September 2026 richtet die Jeunesse Randogne-Mollens ihr Jassturnier im freien Trumpf in der Turnhalle Randogne aus — 50 CHF pro Zweierteam, Raclette inklusive. Der Jassverband Schweiz unterstützt den Nachwuchs mit Freude.",
+        "Am 5. September 2026 richtet die Jeunesse Randogne-Mollens ihr Jassturnier mit freier Trumpfwahl in der Turnhalle Randogne aus — 50 CHF pro Zweierteam, Raclette inklusive. Der Jassverband Schweiz unterstützt den Nachwuchs mit Freude.",
       format:
-        "5 Qualifikationsrunden in Gruppen, danach Finalphasen (1 bis 5 Spiele je nach Tableau). Gespielt wird mit freiem Trumpf, 8 Runden pro Partie.",
+        "5 Qualifikationsrunden in Gruppen, danach Finalphasen (1 bis 5 Spiele je nach Tableau). Gespielt wird mit freier Trumpfwahl («atout libre»), 8 Runden pro Partie.",
       priceNote: "pro Zweierteam, Mittags-Raclette inklusive · Zahlung per Twint oder bar",
       content: `## Wenn die Jugend jasst
 
@@ -173,9 +173,9 @@ Angemeldet wird im Zweierteam — über das Formular (QR-Code auf dem Plakat) od
     it: {
       title: "Torneo di Jass della Jeunesse Randogne-Mollens",
       excerpt:
-        "Il 5 settembre 2026 la Jeunesse Randogne-Mollens organizza il suo torneo di jass a briscola libera nella palestra di Randogne — 50 CHF a coppia, raclette inclusa. La Federazione Svizzera di Jass sostiene con piacere le nuove leve.",
+        "Il 5 settembre 2026 la Jeunesse Randogne-Mollens organizza il suo torneo di jass con libera scelta dell'atout nella palestra di Randogne — 50 CHF a coppia, raclette inclusa. La Federazione Svizzera di Jass sostiene con piacere le nuove leve.",
       format:
-        "5 turni di qualificazione a gironi, poi le fasi finali (da 1 a 5 partite secondo il tabellone). Si gioca a briscola libera, 8 mani per partita.",
+        "5 turni di qualificazione a gironi, poi le fasi finali (da 1 a 5 partite secondo il tabellone). Si gioca con libera scelta dell'atout («atout libre»), 8 mani per partita.",
       priceNote: "a coppia, raclette di mezzogiorno inclusa · pagamento con Twint o in contanti",
       content: `## Quando la gioventù gioca a jass
 
