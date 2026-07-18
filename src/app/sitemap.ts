@@ -19,9 +19,7 @@ const staticPages: {
   // /turniere-Index kommt weiter unten dynamisch dazu — nur in Sprachen mit sichtbaren Turnieren
   { path: '/plattform',              priority: 0.9,  changeFreq: 'weekly',  lastModified: '2026-03-01' },
   { path: '/news',                   priority: 0.9,  changeFreq: 'weekly',  lastModified: '2026-03-01' },
-  { path: '/research',               priority: 0.85, changeFreq: 'monthly', lastModified: '2026-07-17' },
-  { path: '/research/wie-alphajass-denkt', priority: 0.8, changeFreq: 'monthly', lastModified: '2026-07-17' },
-  { path: '/research/wie-stark-alphajass-spielt', priority: 0.8, changeFreq: 'monthly', lastModified: '2026-07-17' },
+  // /research bewusst NICHT im Sitemap (Remo 18.07.): privat, nur per Direktlink (ich/FHNW).
   { path: '/verband',                priority: 0.8,  changeFreq: 'monthly', lastModified: '2026-02-01' },
   { path: '/projekte',               priority: 0.8,  changeFreq: 'monthly', lastModified: '2026-02-01' },
   { path: '/jasskalkulator',         priority: 0.75, changeFreq: 'monthly', lastModified: '2026-02-01' },

@@ -128,7 +128,8 @@ export function Header({ locale, nav, isHeroPage, showTurniere }: HeaderProps) {
     { href: `/${locale}/plattform`, label: nav.plattformen },
     { href: `/${locale}/verband`, label: nav.verband },
     { href: `/${locale}/news`, label: nav.news },
-    { href: `/${locale}/research`, label: nav.research },
+    // /research bewusst NICHT im Nav (Remo 18.07.): «nur ich oder die FHNW finden»
+    // — Seiten bleiben per Direktlink erreichbar, aber nicht öffentlich beworben/indexiert.
     { href: `/${locale}/kontakt`, label: nav.kontakt },
   ];
 

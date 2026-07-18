@@ -31,6 +31,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: `${title} | Jassverband Schweiz`,
     description,
+    // Privat (Remo 18.07.): nur per Direktlink, nicht öffentlich indexiert.
+    robots: { index: false, follow: false },
     alternates: {
       canonical: CANONICAL,
       languages: {

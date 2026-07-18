@@ -56,6 +56,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: meta.title,
     description: meta.description,
+    // Privat (Remo 18.07.): nur per Direktlink, nicht öffentlich indexiert.
+    robots: { index: false, follow: false },
     alternates: {
       canonical: `${BASE_URL}/${locale}/research`,
       languages: {
