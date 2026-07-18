@@ -138,7 +138,13 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
                   <tr>
                     <th style={th}>Paarung (1000 paarige Deals, Seed 42)</th>
                     <th style={th}>vor dem Doktrin-Umbau</th>
-                    <th style={th}>heute (Live-Stand)</th>
+                    <th style={th}>
+                      nach dem Doktrin-Umbau
+                      <br />
+                      <span style={{ fontWeight: 400, color: MUTED, fontSize: 12 }}>
+                        Messstand jassai&nbsp;20f941b · 16.07.26
+                      </span>
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -166,8 +172,8 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
             </div>
             <P>
               Die Geschichte in diesen Zahlen:{" "}
-              <strong>Vor dem Doktrin-Umbau verlor AlphaJass gegen eine einfache Heuristik. Heute schlägt es sie um rund
-              32 Punkte pro Deal.</strong>{" "}Der grösste Treiber ist ausgerechnet Undenufe — zuvor die dokumentierte
+              <strong>Vor dem Doktrin-Umbau verlor AlphaJass gegen eine einfache Heuristik. Nach dem Umbau schlägt es sie
+              um rund 32 Punkte pro Deal.</strong>{" "}Der grösste Treiber ist ausgerechnet Undenufe — zuvor die dokumentierte
               Schwäche des Systems, von −25.7 auf +28.7 Punkte pro Durchgang gedreht. Der grosse Abstand zur
               Konventions-Baseline (+68.49) ist echt, aber mit Vorsicht zu lesen: Diese Baseline unterliegt ihrerseits
               dem einfachen Massstab und ist darum kein starker Referenzgegner. Die aussagekräftige Zahl ist der
@@ -192,8 +198,9 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
                 Baustelle der nächsten Generation.
               </li>
               <li>
-                <strong>Jede Zahl hat ein Datum.</strong> Was hier steht, gilt für den Messstand vom 16.&nbsp;Juli 2026
-                (jassai&nbsp;<code style={{ fontFamily: "ui-monospace, Menlo, monospace", fontSize: "0.85em" }}>20f941b</code>). Wenn sich das System bewegt, wird neu gemessen — nicht nachgebessert.
+                <strong>Jede Zahl hat ein Datum.</strong> Was hier steht, ist gegen einen <em>eingefrorenen</em> Stand
+                gemessen — jassai&nbsp;<code style={{ fontFamily: "ui-monospace, Menlo, monospace", fontSize: "0.85em" }}>20f941b</code>, 16.&nbsp;Juli 2026 —, nicht gegen die Arena von heute. Der Motor wird seither
+                weitergebaut; sobald ein neuer Stand steht, wird neu gemessen und neu datiert, nicht nachgebessert.
               </li>
             </ul>
             <P>

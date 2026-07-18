@@ -476,6 +476,17 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
             <p style={{ fontFamily: C.sans, fontSize: "12px", letterSpacing: "0.06em", color: C.muted, marginTop: "2.6rem", textTransform: "uppercase" }}>
               Jassverband Schweiz · Drei Bilder · vier Siebe · ein Satz · Stand 17.07.2026
             </p>
+
+            <p style={{ fontFamily: C.sans, fontSize: "14.5px", color: C.muted, marginTop: "1.6rem" }}>
+              → Wie stark dieser Motor spielt, steht in der Messung:{" "}
+              <Link
+                href={`/${locale}/research/wie-stark-alphajass-spielt`}
+                style={{ color: C.red }}
+                className="hover:underline"
+              >
+                Wie stark AlphaJass spielt
+              </Link>.
+            </p>
           </div>
         </div>
       </article>
