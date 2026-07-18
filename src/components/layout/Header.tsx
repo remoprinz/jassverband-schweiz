@@ -14,6 +14,7 @@ interface HeaderProps {
     home: string;
     schweizermeisterschaft: string;
     turniere: string;
+    research: string;
     plattformen: string;
     verband: string;
     news: string;
@@ -127,6 +128,7 @@ export function Header({ locale, nav, isHeroPage, showTurniere }: HeaderProps) {
     { href: `/${locale}/plattform`, label: nav.plattformen },
     { href: `/${locale}/verband`, label: nav.verband },
     { href: `/${locale}/news`, label: nav.news },
+    { href: `/${locale}/research`, label: nav.research },
     { href: `/${locale}/kontakt`, label: nav.kontakt },
   ];
 

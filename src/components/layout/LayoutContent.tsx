@@ -17,6 +17,7 @@ interface LayoutContentProps {
     home: string;
     schweizermeisterschaft: string;
     turniere: string;
+    research: string;
     plattformen: string;
     verband: string;
     news: string;

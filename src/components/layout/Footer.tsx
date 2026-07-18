@@ -16,6 +16,7 @@ interface FooterProps {
     home: string;
     schweizermeisterschaft: string;
     turniere: string;
+    research: string;
     plattformen: string;
     verband: string;
     news: string;
@@ -177,6 +178,7 @@ export function Footer({ locale, content, nav, showTurniere }: FooterProps) {
                   { href: `/${locale}/plattform`, label: nav.plattformen },
                   { href: `/${locale}/verband`, label: nav.verband },
                   { href: `/${locale}/news`, label: nav.news },
+                  { href: `/${locale}/research`, label: nav.research },
                   { href: `/${locale}/kontakt`, label: nav.kontakt },
                 ].map((item) => (
                   <li key={item.href}>

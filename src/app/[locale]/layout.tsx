@@ -112,6 +112,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
     home: string;
     schweizermeisterschaft: string;
     turniere: string;
+    research: string;
     plattformen: string;
     verband: string;
     news: string;
