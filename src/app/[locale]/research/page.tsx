@@ -87,6 +87,12 @@ export default async function ResearchPage({ params }: Props) {
         url: `${BASE_URL}/de/research/wie-alphajass-denkt`,
         inLanguage: "de-CH",
       },
+      {
+        "@type": "ScholarlyArticle",
+        headline: "Wie stark AlphaJass spielt — die Messung",
+        url: `${BASE_URL}/de/research/wie-stark-alphajass-spielt`,
+        inLanguage: "de-CH",
+      },
     ],
   };
 
@@ -119,38 +125,54 @@ export default async function ResearchPage({ params }: Props) {
             </p>
           </div>
 
-          {/* Paper-Karte */}
-          <div style={{ maxWidth: 720, margin: "0 auto" }}>
-            <Link
-              href={`/${locale}/research/wie-alphajass-denkt`}
-              className="group block transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
-              style={{
-                background: "var(--color-background)",
-                border: "1px solid var(--color-border)",
-                borderRadius: 16,
-                padding: "1.6rem 1.8rem",
-                textDecoration: "none",
-              }}
-            >
-              <p style={{ fontFamily: SANS, fontSize: "12px", fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase", color: "var(--color-primary)", margin: "0 0 0.6rem" }}>
-                AlphaJass · Doktrin-Architektur
-              </p>
-              <h2
-                className="group-hover:text-[var(--color-primary)] transition-colors"
-                style={{ fontFamily: SERIF, fontWeight: 700, fontSize: "clamp(20px, 2.6vw, 26px)", lineHeight: 1.25, color: "var(--color-foreground)", margin: "0 0 0.6rem" }}
+          {/* Paper-Karten */}
+          <div style={{ maxWidth: 720, margin: "0 auto", display: "grid", gap: "1rem" }}>
+            {[
+              {
+                href: `/${locale}/research/wie-alphajass-denkt`,
+                eyebrow: "AlphaJass · Doktrin-Architektur",
+                title: "Wie AlphaJass denkt",
+                desc: "Drei Bilder, vier Siebe, ein Satz — wie eine Maschine das Denken eines Jassers nachbildet und dabei jeden Zug erklären kann. Der Bauplan.",
+              },
+              {
+                href: `/${locale}/research/wie-stark-alphajass-spielt`,
+                eyebrow: "AlphaJass · Messung",
+                title: "Wie stark AlphaJass spielt",
+                desc: "+31.97 Punkte pro Deal gegen einen unbewegten Massstab — die empirische Messung, jede Zahl mit Seed, Skript und Artefakt. Das Ergebnis.",
+              },
+            ].map((card) => (
+              <Link
+                key={card.href}
+                href={card.href}
+                className="group block transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+                style={{
+                  background: "var(--color-background)",
+                  border: "1px solid var(--color-border)",
+                  borderRadius: 16,
+                  padding: "1.6rem 1.8rem",
+                  textDecoration: "none",
+                }}
               >
-                Wie AlphaJass denkt
-              </h2>
-              <p style={{ fontFamily: SANS, fontSize: "15.5px", lineHeight: 1.6, color: "var(--color-foreground-muted)", margin: "0 0 1rem" }}>
-                Drei Bilder, vier Siebe, ein Satz — wie eine Maschine das Denken eines Jassers nachbildet und dabei jeden Zug erklären kann.
-              </p>
-              <span style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", fontFamily: SERIF, fontWeight: 700, fontSize: "15px", color: "var(--color-primary)" }}>
-                {p.more}
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </span>
-            </Link>
+                <p style={{ fontFamily: SANS, fontSize: "12px", fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase", color: "var(--color-primary)", margin: "0 0 0.6rem" }}>
+                  {card.eyebrow}
+                </p>
+                <h2
+                  className="group-hover:text-[var(--color-primary)] transition-colors"
+                  style={{ fontFamily: SERIF, fontWeight: 700, fontSize: "clamp(20px, 2.6vw, 26px)", lineHeight: 1.25, color: "var(--color-foreground)", margin: "0 0 0.6rem" }}
+                >
+                  {card.title}
+                </h2>
+                <p style={{ fontFamily: SANS, fontSize: "15.5px", lineHeight: 1.6, color: "var(--color-foreground-muted)", margin: "0 0 1rem" }}>
+                  {card.desc}
+                </p>
+                <span style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", fontFamily: SERIF, fontWeight: 700, fontSize: "15px", color: "var(--color-primary)" }}>
+                  {p.more}
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </span>
+              </Link>
+            ))}
           </div>
         </div>
       </div>
