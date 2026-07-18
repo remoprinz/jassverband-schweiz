@@ -123,11 +123,11 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
               Wie stark AlphaJass spielt
             </h1>
             <p style={{ fontFamily: SANS, fontSize: "clamp(17px, 2.2vw, 20px)", lineHeight: 1.65, color: INK, opacity: 0.82, maxWidth: "60ch", margin: 0 }}>
-              Eine Jass-KI, die von einer Doktrin geführt wird — wie stark spielt sie? Hier steht die Messung. Jede Zahl
-              trägt Seed, Skript und Artefakt; keine erscheint ohne Beweisstück.
+              Eine Jass-KI, die von einer Doktrin geführt wird — wie stark spielt sie wirklich? Wir haben es gemessen:
+              paarig, mit festem Seed, gegen einen Gegner, der sich nicht bewegt. Hier ist die Zahl.
             </p>
 
-            <H>Gemessen, nicht behauptet</H>
+            <H>So stark spielt es</H>
             <P>
               Gemessen wird paarig: 1000 Kartengaben («Deals» — eine Kartengabe, neun Stiche, 157 Punkte; <em>nicht</em>{" "}
               eine ganze Partie), jede zweimal gespielt mit vertauschten Seiten, identische Blätter für beide Seiten,
@@ -182,29 +182,13 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
               Vergleich gegen den Gegner, der sich nicht bewegt hat.
             </P>
 
-            <H>Was noch nicht gemessen ist</H>
-            <P>Wir halten diesen Abschnitt für den wichtigsten. Wer seine Schwäche benennt, dem darf man die Stärke glauben.</P>
-            <ul style={{ fontFamily: SANS, fontSize: "clamp(16px, 1.9vw, 18px)", lineHeight: 1.8, color: INK, paddingLeft: "1.4em" }}>
-              <li>
-                <strong>Gegen Menschen ist nichts gemessen.</strong> Das teilt AlphaJass mit dem gesamten publizierten
-                Feld — die Frage «schlagen die besten Jass-Programme die besten Menschen?» ist offen.<sup>1</sup> Wir
-                beantworten sie erst, wenn wir sie messen können.
-              </li>
-              <li>
-                <strong>Der Wys ist gespielt, aber nicht vermessen.</strong> Die Arena weist; keine unserer Zahlen deckt
-                es ab. Alle Werte gelten für <strong>weisloses Schieber</strong>.
-              </li>
-              <li>
-                <strong>Die Absicht kommt heute aus der Doktrin, nicht aus dem Netz.</strong> Das Netz wählt Karten
-                innerhalb des Erlaubten; die Absicht selbst wird symbolisch bestimmt. Sie dem Netz beizubringen, ist die
-                Baustelle der nächsten Generation.
-              </li>
-              <li>
-                <strong>Jede Zahl hat ein Datum.</strong> Was hier steht, ist gegen einen <em>eingefrorenen</em> Stand
-                gemessen — jassai&nbsp;<code style={{ fontFamily: "ui-monospace, Menlo, monospace", fontSize: "0.85em" }}>20f941b</code>, 16.&nbsp;Juli 2026 —, nicht gegen die Arena von heute. Der Motor wird seither
-                weitergebaut; sobald ein neuer Stand steht, wird neu gemessen und neu datiert, nicht nachgebessert.
-              </li>
-            </ul>
+            <H>Ehrlich dazu</H>
+            <P>
+              Diese Stärke ist gegen Maschinen gemessen, nicht gegen Menschen — und die Frage «schlagen die besten
+              Jass-Programme die besten Menschen?» ist in der ganzen Forschung noch offen.<sup>1</sup> Wir beantworten
+              sie, wenn wir sie messen können, nicht vorher. Und die Zahlen gelten fürs <strong>weislose Schieber</strong>:
+              die Arena weist, der Messstand noch nicht.
+            </P>
             <P>
               Alle Gegner sind hauseigene Bots; <strong>menschliche Spielstärke ist nicht gemessen.</strong> In
               36&nbsp;000 Entscheidungen je Seite gab es null Rückfälle auf Notlogik. Und es gilt das Hausgesetz dieses

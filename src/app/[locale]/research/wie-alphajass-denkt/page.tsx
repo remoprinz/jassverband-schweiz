@@ -434,14 +434,14 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
               }}
             >
               <p style={{ fontFamily: C.sans, fontSize: "12px", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: C.gebaut, margin: "0 0 0.7rem" }}>
-                Ausgabe · Trumpf spielen: stärkster ausser dem Nell
+                Ausgabe · Trumpf spielen, das Nell schützen
               </p>
               <blockquote style={{ fontFamily: C.serif, fontStyle: "italic", fontSize: "clamp(1.1rem, 2.4vw, 1.4rem)", lineHeight: 1.5, color: C.ink, margin: 0 }}>
-                „Der Partner hat den Puur geführt — das Nell wird gleich zum Bock. Also das Nell aufheben und den
-                anderen Trumpf zugeben.“
+                „Der Partner hat den Puur ausgespielt — mein Nell wird nachher gleich zum Bock. Also das Nell aufheben
+                und den anderen Trumpf spielen.“
               </blockquote>
               <div style={{ marginTop: "1rem", display: "flex", justifyContent: "center", flexWrap: "wrap", gap: "0.5rem 1.4rem", fontFamily: C.sans, fontSize: "12px", fontWeight: 600, letterSpacing: "0.04em", textTransform: "uppercase", color: C.muted }}>
-                <span>Lage · Partner führt Puur</span>
+                <span>Lage · Partner spielt Puur aus</span>
                 <span>Absicht · Bock aufbauen</span>
                 <span>Griff · Nell schützen</span>
               </div>
