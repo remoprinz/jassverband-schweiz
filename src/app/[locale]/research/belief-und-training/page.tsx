@@ -139,9 +139,11 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
             <P>
               Konventionen schärfen dieses Bild: Wer mit dem <strong>König anzieht, verspricht den Ober</strong>;
               wer mit dem <strong>Ass anzieht, solange noch Trumpf im Spiel ist, verspricht den König</strong>.
-              Streng gelesen wird aus «vielleicht» ein Sitz. Diese strenge Lesart ist heute{" "}
-              <strong>aufgezeichnet, aber nicht angewendet</strong> (Opt-in, ausgeschaltet): das trainierte
-              Modell hat die weiche Welt gelernt, und sein Input bleibt unangetastet, bis es neu trainiert ist.
+              Streng gelesen wird aus «vielleicht» ein Sitz. Diese strenge Lesart wird heute immer{" "}
+              <strong>aufgezeichnet</strong>; für den <strong>Modell-Eingang bleibt sie ausgeschaltet</strong>{" "}
+              (Opt-in): das trainierte Modell hat die weiche Welt gelernt, und sein Input bleibt unangetastet,
+              bis es neu trainiert ist. Einzelne Doktrin-Griffe nutzen die strenge Lesart bereits lokal —
+              stets hinter dem Kill-Switch; den Encoder berührt das nicht.
             </P>
 
             <H>Ein Checkpoint, eine Welt</H>
