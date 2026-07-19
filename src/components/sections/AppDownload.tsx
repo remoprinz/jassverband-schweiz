@@ -14,7 +14,8 @@ import { StandardSection } from '@/components/layout/StandardSection';
 
 const APP_STORE_URL =
   'https://apps.apple.com/ch/app/jassguru-jassverband-schweiz/id6781383976';
-const PLAY_STORE_URL: string | null = null; // sobald live: Play-URL eintragen
+const PLAY_STORE_URL: string | null =
+  'https://play.google.com/store/apps/details?id=ch.jassguru.app'; // live seit 18.07.26
 
 interface AppDownloadProps {
   locale: string;
