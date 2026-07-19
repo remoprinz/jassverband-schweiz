@@ -85,7 +85,7 @@ export default async function ResearchPage({ params }: Props) {
     hasPart: [
       {
         "@type": "ScholarlyArticle",
-        headline: "Wie AlphaJass denkt — Drei Bilder, vier Siebe, ein Satz",
+        headline: "Wie AlphaJass denkt — Vier Bilder, vier Siebe, ein Satz",
         url: `${BASE_URL}/de/research/wie-alphajass-denkt`,
         inLanguage: "de-CH",
       },
@@ -93,6 +93,12 @@ export default async function ResearchPage({ params }: Props) {
         "@type": "ScholarlyArticle",
         headline: "Wie stark AlphaJass spielt — die Messung",
         url: `${BASE_URL}/de/research/wie-stark-alphajass-spielt`,
+        inLanguage: "de-CH",
+      },
+      {
+        "@type": "ScholarlyArticle",
+        headline: "Belief, Konventionen, Training — die Retraining-Spec",
+        url: `${BASE_URL}/de/research/belief-und-training`,
         inLanguage: "de-CH",
       },
     ],
@@ -134,13 +140,19 @@ export default async function ResearchPage({ params }: Props) {
                 href: `/${locale}/research/wie-alphajass-denkt`,
                 eyebrow: "AlphaJass · Doktrin-Architektur",
                 title: "Wie AlphaJass denkt",
-                desc: "Drei Bilder, vier Siebe, ein Satz — wie eine Maschine das Denken eines Jassers nachbildet und dabei jeden Zug erklären kann. Der Bauplan.",
+                desc: "Vier Bilder, vier Siebe, ein Satz — wie eine Maschine das Denken eines Jassers nachbildet und dabei jeden Zug erklären kann. Der Bauplan.",
               },
               {
                 href: `/${locale}/research/wie-stark-alphajass-spielt`,
                 eyebrow: "AlphaJass · Messung",
                 title: "Wie stark AlphaJass spielt",
                 desc: "+31.97 Punkte pro Deal gegen einen unbewegten Massstab — die empirische Messung, jede Zahl mit Seed, Skript und Artefakt. Das Ergebnis.",
+              },
+              {
+                href: `/${locale}/research/belief-und-training`,
+                eyebrow: "AlphaJass · Trainings-Spec",
+                title: "Belief, Konventionen, Training",
+                desc: "Wie das Belief das Modell füttert, warum ein Checkpoint zu genau einer Welt gehört — und woher die Trainingsdaten kommen. Die Spec fürs Retraining.",
               },
             ].map((card) => (
               <Link

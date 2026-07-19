@@ -4,7 +4,7 @@ import { setRequestLocale } from "next-intl/server";
 import Link from "next/link";
 
 /**
- * RESEARCH-PAPER «Wie AlphaJass denkt — Drei Bilder, vier Siebe, ein Satz»
+ * RESEARCH-PAPER «Wie AlphaJass denkt — Vier Bilder, vier Siebe, ein Satz»
  *
  * JVS-gebrandete Fassung der Doktrin-Architektur-Vorlage (Artifact 17f9d321).
  * Struktur der Vorlage, Look des Verbands (Creme/Capita/Rot statt dunkel).
@@ -14,9 +14,17 @@ import Link from "next/link";
  *   «Farbe bedienen»/«kein Untertrumpfen» (belegte Verben statt «Bedienpflicht»).
  *   anziehen/aufbauen/verwerfen/halten/Puur/Bock/Matsch = korpus-belegt.
  * - Status-Badges sind die EHRLICHKEITS-GRENZE: was gebaut ist, heisst «Gebaut»;
- *   das Farbenbild ist «Phase 0» (Entwurf, NICHT live) — keine Behauptung ohne
- *   Artefakt (STATIK-Regel). Badges von GEOMETER gegen die Anlage verifiziert.
+ *   keine Behauptung ohne Artefakt (STATIK-Regel).
  * - Inhalt Deutsch (Doktrin-Sprache); die Seiten-Chrome (Nav/Footer) lokalisiert.
+ *
+ * NACHFÜHRUNG G31 (DOKTRIN-DOKTOR III, 18.07.26, Remos Auftrag «FHNW-Docs»):
+ * - DREI → VIER Bilder: die Belief-Matrix ist seit G31 explizit das zweite Bild
+ *   (vorher implizit im Situationsbild). ja/nein-Schicht gebaut
+ *   (constraint_belief_tracker + Bock-Tafel), eher-Stufen geplant.
+ * - Farbenbild: Phase 0 → GEBAUT, erster Anschluss an die Kartenwahl live.
+ * - Spielerbild: Kill-Switch der Anzieh-Signale liest die Brille (erster Anschluss).
+ * - Synapsen-Zahl aus dem Code gezählt (VOKABULAR, main c25761a): 57 operativ.
+ * - Nachzug 19.07. (Dok-Doc III): Zählung auf main 4bb147b = 62 operativ.
  */
 
 const BASE_URL = "https://jassverband.ch";
@@ -46,9 +54,9 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const title = "Wie AlphaJass denkt — Drei Bilder, vier Siebe, ein Satz";
+  const title = "Wie AlphaJass denkt — Vier Bilder, vier Siebe, ein Satz";
   const description =
-    "Die Doktrin-Architektur der Jass-KI des Jassverbands Schweiz: drei Fakten-Bilder, ein Trichter aus vier Sieben, und jeder Schritt spricht einen Satz. Erklärbarkeit als Bauprinzip, nicht als Nachgedanke.";
+    "Die Doktrin-Architektur der Jass-KI des Jassverbands Schweiz: vier Fakten-Bilder, ein Trichter aus vier Sieben, und jeder Schritt spricht einen Satz. Erklärbarkeit als Bauprinzip, nicht als Nachgedanke.";
   return {
     title: `${title} | Jassverband Schweiz`,
     description,
@@ -76,10 +84,11 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "ScholarlyArticle",
   headline: "Wie AlphaJass denkt",
-  alternativeHeadline: "Drei Bilder, vier Siebe, ein Satz — die Doktrin-Architektur",
+  alternativeHeadline: "Vier Bilder, vier Siebe, ein Satz — die Doktrin-Architektur",
   inLanguage: "de-CH",
   datePublished: "2026-07-17",
-  version: "1.0",
+  dateModified: "2026-07-18",
+  version: "1.1",
   url: CANONICAL,
   about: [
     { "@type": "Thing", name: "Jass (Schweizer Kartenspiel)" },
@@ -336,23 +345,34 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
               Wie AlphaJass denkt
             </h1>
             <p style={{ fontFamily: C.sans, fontSize: "clamp(17px, 2.2vw, 20px)", lineHeight: 1.65, color: C.ink, opacity: 0.82, maxWidth: "60ch", margin: 0 }}>
-              Kein if-then-Baum. Die Maschine hält <strong>drei Bilder</strong> immer aktuell, lässt die
+              Kein if-then-Baum. Die Maschine hält <strong>vier Bilder</strong> immer aktuell, lässt die
               Entscheidung durch <strong>vier Siebe</strong> fliessen — und jeder Schritt spricht{" "}
               <strong>einen Satz</strong>. Das ist der ganze Motor. Der Rest ist Training.
             </p>
 
             <hr style={{ border: 0, height: 1, background: C.line, margin: "3rem 0" }} />
 
-            {/* DREI BILDER */}
-            <Band n="Was die Maschine weiss" title="Drei Bilder" sub="Fakten, keine Entscheide — alle gleichzeitig aktuell" />
+            {/* VIER BILDER */}
+            <Band n="Was die Maschine weiss" title="Vier Bilder" sub="Fakten, keine Entscheide — alle gleichzeitig aktuell" />
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(230px, 1fr))", gap: "1rem" }}>
               <Bild status="Gebaut" statusKind="gebaut" title="Situationsbild" file="netz/situationsbild.py">
-                Die Lage. Rund 47 Fakten: wer gewinnt, meine Rolle, Matsch-Gefahr, Trumpfzahl, Punkte übrig.
+                Die Lage. 62 Fakten (Stand 19.07. — tags zuvor waren es 57): wer gewinnt, meine Rolle,
+                Matsch-Gefahr, Trumpfzahl, Punkte übrig — ein geschlossenes Vokabular, das mit jeder
+                Doktrin-Welle wächst.
               </Bild>
 
-              <Bild status="Phase 0 — das eine Neue" statusKind="geplant" title="Farbenbild">
-                Die vier Farben, Trumpf ist Zeile&nbsp;4. Pro Zeile: <strong style={{ color: C.ink }}>Stärke + Rolle</strong>.
-                Der Plan steht nach dem Austeilen.
+              <Bild status="ja/nein-Schicht gebaut" statusKind="laeuft" title="Belief-Matrix" file="belief/constraint_belief_tracker.py">
+                Die Kartenbilder der anderen: 36&nbsp;Karten × 4&nbsp;Sitze, jede Zelle eine von fünf Stufen
+                (ja · eher ja · vielleicht · eher nicht · nein). Gespielte Karte → Zeile raus; Beweise
+                (eigene Hand, gefallene Karten, wer nicht bedienen konnte) schreiben ja/nein. Die <strong style={{ color: C.ink }}>Bock-Tafel</strong>{" "}
+                liest daraus die Kompression eines Jassers: je Farbe «welche Karte ist gerade Bock — und bei
+                wem sitzt sie». Die eher-Stufen schreibt das Spielerbild — sie sind der nächste Bau.
+              </Bild>
+
+              <Bild status="Gebaut — erster Anschluss" statusKind="gebaut" title="Farbenbild" file="netz/farbenbild.py">
+                Die vier Farben, Trumpf ist Zeile&nbsp;4. Pro Zeile: <strong style={{ color: C.ink }}>Stärke + Rolle</strong> —
+                kein eigenes Wissen, die farbweise Lesart von Hand und Matrix. Seit 18.07. liest die erste
+                Kartenwahl-Regel daraus (Anzieh-Signale).
                 <div style={{ marginTop: "0.8rem", borderTop: `1px solid ${C.line}`, paddingTop: "0.7rem", display: "flex", flexDirection: "column", gap: "0.35rem" }}>
                   {SUITS.map((s) => (
                     <div key={s.name} style={{ display: "grid", gridTemplateColumns: "12px 4.5rem 1fr auto", alignItems: "center", gap: "0.5rem", fontSize: "13px" }}>
@@ -366,9 +386,31 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
               </Bild>
 
               <Bild status="Scanner gebaut" statusKind="laeuft" title="Spielerbild" file="netz/spielerbild.py">
-                Die Brille pro Sitz: welche Schulen jeder folgt — Nell-vor-Puur, Verwerf-Schule, Austrumpf-Zählung.
-                Der Scanner steht; seine Brille fliesst noch nicht in die Kartenwahl.
+                Die Brille pro Sitz: welche Schulen jeder folgt — Nell-vor-Puur, Verwerf-Schule, Anzieh-Signale.
+                Es kommt <strong style={{ color: C.ink }}>vor</strong> dem Belief: dieselbe verworfene Karte heisst
+                je nach Schule das Gegenteil. Erster Anschluss live: der Kill-Switch — hält ein Sitz eine
+                Konvention beobachtet nicht, wird ihre Deutung für ihn ausgeblendet.
               </Bild>
+            </div>
+
+            {/* Denk-Kette */}
+            <div
+              style={{
+                marginTop: "1.4rem",
+                background: "rgba(255,255,255,0.6)",
+                border: `1px solid ${C.line}`,
+                borderRadius: 12,
+                padding: "0.9rem 1.2rem",
+                fontFamily: C.sans,
+                fontSize: "14px",
+                lineHeight: 1.6,
+                color: C.ink,
+                textAlign: "center",
+              }}
+            >
+              <strong>Die Denk-Kette:</strong> Situation → Züge, durchs{" "}
+              <strong>Spielerbild</strong> gelesen → <strong>Belief-Matrix</strong> →{" "}
+              <strong>Farbenbild</strong> → Intention → Griff.
             </div>
 
             {/* Doppelnutzen */}
@@ -402,7 +444,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
               </Sieve>
               <span style={{ color: C.muted }}>▼</span>
               <Sieve n="2" title="Intention-Netz" flag="Konvention zuoberst" out="→ eine Absicht" width="92%">
-                Alle Regeln <strong style={{ color: C.ink }}>gleichzeitig</strong> über die drei Bilder gehalten.
+                Alle Regeln <strong style={{ color: C.ink }}>gleichzeitig</strong> über die vier Bilder gehalten.
                 Konvention schlägt Kalkül; bei Überlapp gewinnt die <strong style={{ color: C.ink }}>spezifischste</strong>{" "}
                 Regel — kein fester Rang (ein Gleichstand heisst: ein Lage-Wort fehlt).
               </Sieve>
@@ -459,6 +501,13 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
                 Selfplay-Modell erfindet sie nie). Die Strategie hinter Farbenbild und Linealen tauscht ein gelerntes
                 Modell gegen eine gelernte Heuristik — Rahmen und Satz bleiben.
               </div>
+              <div style={{ borderLeft: `2px solid ${C.line}`, padding: "0.2rem 0 0.2rem 1rem", fontFamily: C.sans, fontSize: "14px", lineHeight: 1.6, color: C.muted }}>
+                <strong style={{ color: C.ink }}>Der Konventionen-Container.</strong> Konventionen sind eine eigene,
+                schaltbare Klasse — pro Sitz erkannt, pro Bot schaltbar. Sie sind Information{" "}
+                <strong style={{ color: C.ink }}>nur durch Einhaltung</strong>: bricht ein Sitz sie beobachtet, blendet
+                der Kill-Switch ihre Deutung aus. Genau das erlaubt Self-Play mit Konventions-Brechern — Training in
+                beiden Welten.
+              </div>
             </div>
 
             {/* Legende + Signatur */}
@@ -476,7 +525,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
             </div>
 
             <p style={{ fontFamily: C.sans, fontSize: "12px", letterSpacing: "0.06em", color: C.muted, marginTop: "2.6rem", textTransform: "uppercase" }}>
-              Jassverband Schweiz · Drei Bilder · vier Siebe · ein Satz · Stand 17.07.2026
+              Jassverband Schweiz · Vier Bilder · vier Siebe · ein Satz · Stand 19.07.2026
             </p>
 
             <p style={{ fontFamily: C.sans, fontSize: "14.5px", color: C.muted, marginTop: "1.6rem" }}>
@@ -487,6 +536,14 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
                 className="hover:underline"
               >
                 Wie stark AlphaJass spielt
+              </Link>
+              . Wie er trainiert wird, in der Spec:{" "}
+              <Link
+                href={`/${locale}/research/belief-und-training`}
+                style={{ color: C.red }}
+                className="hover:underline"
+              >
+                Belief, Konventionen, Training
               </Link>.
             </p>
           </div>
