@@ -203,9 +203,17 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
               Mess-Paper dokumentiert. Der laufende Server meldet den aktiven Konventions-Stand öffentlich
               unter <code>/health</code>.
             </P>
+            <P>
+              Das Instrument dafür steht seit dem 19.07. im Repository: die <strong>Waage</strong>{" "}
+              (<code>scripts/waage.py</code>) spielt paarige Kartengaben, jede zweimal mit getauschten
+              Rollen, und nimmt Agenten <strong>steckbar</strong> entgegen — heute die Doktrin-Engine und
+              ein Zufalls-Nullpunkt, morgen das trainierte Modell der Partner-Hochschule am selben
+              Steckplatz. Damit ist das Eval-Gate für jeden Checkpoint-Wechsel nicht Absichtserklärung,
+              sondern ausführbarer Code. Messwerte daraus erscheinen erst nach statistischer Freigabe.
+            </P>
 
             <p style={{ fontFamily: SANS, fontSize: "12px", letterSpacing: "0.06em", color: MUTED, marginTop: "2.6rem", textTransform: "uppercase" }}>
-              Jassverband Schweiz · Trainings-Spec · Stand 18.07.2026
+              Jassverband Schweiz · Trainings-Spec · Stand 19.07.2026
             </p>
 
             <p style={{ fontFamily: SANS, fontSize: "14.5px", color: MUTED, marginTop: "1.6rem" }}>

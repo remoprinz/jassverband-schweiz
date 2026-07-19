@@ -24,6 +24,7 @@ import Link from "next/link";
  * - Farbenbild: Phase 0 → GEBAUT, erster Anschluss an die Kartenwahl live.
  * - Spielerbild: Kill-Switch der Anzieh-Signale liest die Brille (erster Anschluss).
  * - Synapsen-Zahl aus dem Code gezählt (VOKABULAR, main c25761a): 57 operativ.
+ * - Nachzug 19.07. (Dok-Doc III): Zählung auf main 4bb147b = 62 operativ.
  */
 
 const BASE_URL = "https://jassverband.ch";
@@ -355,8 +356,9 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
             <Band n="Was die Maschine weiss" title="Vier Bilder" sub="Fakten, keine Entscheide — alle gleichzeitig aktuell" />
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(230px, 1fr))", gap: "1rem" }}>
               <Bild status="Gebaut" statusKind="gebaut" title="Situationsbild" file="netz/situationsbild.py">
-                Die Lage. 57 Fakten (Stand 18.07.): wer gewinnt, meine Rolle, Matsch-Gefahr, Trumpfzahl,
-                Punkte übrig — ein geschlossenes Vokabular, das mit jeder Doktrin-Welle wächst.
+                Die Lage. 62 Fakten (Stand 19.07. — tags zuvor waren es 57): wer gewinnt, meine Rolle,
+                Matsch-Gefahr, Trumpfzahl, Punkte übrig — ein geschlossenes Vokabular, das mit jeder
+                Doktrin-Welle wächst.
               </Bild>
 
               <Bild status="ja/nein-Schicht gebaut" statusKind="laeuft" title="Belief-Matrix" file="belief/constraint_belief_tracker.py">
@@ -523,7 +525,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
             </div>
 
             <p style={{ fontFamily: C.sans, fontSize: "12px", letterSpacing: "0.06em", color: C.muted, marginTop: "2.6rem", textTransform: "uppercase" }}>
-              Jassverband Schweiz · Vier Bilder · vier Siebe · ein Satz · Stand 18.07.2026
+              Jassverband Schweiz · Vier Bilder · vier Siebe · ein Satz · Stand 19.07.2026
             </p>
 
             <p style={{ fontFamily: C.sans, fontSize: "14.5px", color: C.muted, marginTop: "1.6rem" }}>
