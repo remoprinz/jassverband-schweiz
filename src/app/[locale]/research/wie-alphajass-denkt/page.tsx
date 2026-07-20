@@ -2,6 +2,8 @@ import { Metadata } from "next";
 import type { ReactNode } from "react";
 import { setRequestLocale } from "next-intl/server";
 import Link from "next/link";
+import SchaltpultBoard from "./SchaltpultBoard";
+import { SCHALTPULT } from "./schaltpultData";
 
 /**
  * RESEARCH-PAPER «Wie AlphaJass denkt — Vier Bilder, vier Siebe, ein Satz»
@@ -459,6 +461,52 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
                 Letztes Netz: keine Karte ausserhalb der erlaubten Menge, kein Zwang ohne Karte. Nicht abschaltbar.
               </Sieve>
             </div>
+
+            <hr style={{ border: 0, height: 1, background: C.line, margin: "3rem 0" }} />
+
+            {/* KANON DER ABSICHTEN */}
+            <Band
+              n="Kein Zug ohne Absicht"
+              title="Der Kanon der Absichten"
+              sub={`${Object.keys(SCHALTPULT.intentionen).length} Absichten — die gemeinsame Sprache`}
+            />
+            <p style={{ fontFamily: C.sans, fontSize: "15px", lineHeight: 1.7, color: C.muted, margin: "0 0 1.4rem", maxWidth: "62ch" }}>
+              Bevor die Maschine eine Karte legt, benennt sie <strong style={{ color: C.ink }}>warum</strong>. Es gibt
+              kein «einfach mal spielen»; selbst der Zwangsabwurf trägt sein ehrliches Etikett. Diese Wörter sind die
+              gemeinsame Sprache zwischen Meisterjasser, Maschine und Lernendem.
+            </p>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 1, background: C.line, border: `1px solid ${C.line}`, borderRadius: 12, overflow: "hidden" }}>
+              {Object.entries(SCHALTPULT.intentionen).map(([name, desc]) => (
+                <div key={name} style={{ background: "rgba(255,255,255,0.55)", padding: "13px 18px", display: "grid", gridTemplateColumns: "auto 1fr", gap: "14px", alignItems: "baseline" }}>
+                  <span style={{ fontFamily: "ui-monospace, Menlo, monospace", fontSize: "12.5px", fontWeight: 600, color: "#2e7d3f", whiteSpace: "nowrap" }}>{name}</span>
+                  <span style={{ fontFamily: C.sans, fontSize: "14px", color: C.muted, lineHeight: 1.45 }}>{desc}</span>
+                </div>
+              ))}
+            </div>
+
+            <hr style={{ border: 0, height: 1, background: C.line, margin: "3rem 0" }} />
+
+            {/* DAS SCHALTPULT */}
+            <Band
+              n="Direkt aus dem Code"
+              title="Das Schaltpult"
+              sub="Jede Regel mit ihren Auslösern — Konventionen zuoberst"
+            />
+            <p style={{ fontFamily: C.sans, fontSize: "15px", lineHeight: 1.7, color: C.muted, margin: "0 0 1.6rem", maxWidth: "62ch" }}>
+              Auf jede Lage matchen alle Regeln <strong style={{ color: C.ink }}>gleichzeitig</strong> gegen das
+              Situationsbild. Eine Regel ist eine <em>Und-Verknüpfung</em> von Auslösern — die Wenn-Bedingungen eines
+              Jassers, aufgeschrieben. Die <strong style={{ color: C.ink }}>Konventionen</strong> (willkürliche
+              Absprachen — Nell-vor-Puur, Hoch-Tief) stehen zuoberst und lassen sich ein- und abstellen; darunter die
+              feste <strong style={{ color: C.ink }}>Strategie</strong> und die <strong style={{ color: C.ink }}>Riegel</strong>.
+              Such eine Absicht, tippe ein Prädikat — kontrolliere selbst.
+            </p>
+            <SchaltpultBoard data={SCHALTPULT} />
+            {SCHALTPULT.stand?.commit && (
+              <p style={{ fontFamily: C.sans, fontSize: "12px", color: C.muted, marginTop: "1.4rem", fontStyle: "italic" }}>
+                Erzeugt aus dem Denksystem-Code — kein Abtippen, kein Drift · jassai&nbsp;{SCHALTPULT.stand.commit}
+                {SCHALTPULT.stand.datum ? ` · ${SCHALTPULT.stand.datum}` : ""} · {SCHALTPULT.regeln.length}&nbsp;Regeln
+              </p>
+            )}
 
             <hr style={{ border: 0, height: 1, background: C.line, margin: "3rem 0" }} />
 
