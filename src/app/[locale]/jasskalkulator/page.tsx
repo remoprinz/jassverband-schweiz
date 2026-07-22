@@ -10,6 +10,7 @@ import { JASS_CARDS, type JassCard, type CardLocale, type Suit, type Value, getS
 import { calculateProbability, type CalculationConfig, type OpponentType, type Comparator, getMaxPossibleInSuit } from '@/lib/calculator/jassLogic';
 
 const MAX_CARDS = 9;
+const JASSGURU_URL = 'https://jassguru.ch';
 const CARD_VALUE_DISPLAY_ORDER: Value[] = ['6', '7', '8', '9', '10', 'U', 'O', 'K', 'A'];
 const CARD_VALUE_ORDER_INDEX = new Map<Value, number>(
   CARD_VALUE_DISPLAY_ORDER.map((value, index) => [value, index])
@@ -112,6 +113,27 @@ export default function JasskalkulatorPage() {
   const [config, setConfig] = useState<Partial<CalculationConfig>>({});
   const cardsReady = selectedCards.length === MAX_CARDS;
 
+  // Herkunft JassGuru? Dann führt der Pfeil oben links dorthin ZURÜCK statt auf
+  // die jassverband-Startseite. Erkennung per URL-Parameter, weil die App-Kennung
+  // (window.Capacitor) nur auf jassguru.ch injiziert wird und der WebView-
+  // User-Agent nicht von normalem Safari/Chrome zu unterscheiden ist.
+  const [fromJassguru, setFromJassguru] = useState(false);
+  useEffect(() => {
+    setFromJassguru(new URLSearchParams(window.location.search).get('from') === 'jassguru');
+  }, []);
+
+  const handleBackToJassguru = useCallback(() => {
+    // history.back() statt hartem Link: In der App bleibt so der Zustand der
+    // Jasstafel erhalten (kein Neuladen der PWA).
+    const fallback = window.setTimeout(() => {
+      window.location.href = JASSGURU_URL;
+    }, 500);
+    // Wenn die Seite wirklich verlassen wird, Fallback abbestellen — sonst
+    // navigiert er ein zweites Mal (WebViews halten Seiten im bfcache).
+    window.addEventListener('pagehide', () => window.clearTimeout(fallback), { once: true });
+    window.history.back();
+  }, []);
+
   const handleCardSelect = useCallback((card: JassCard) => {
     setSelectedCards((prev) => {
       const isSelected = prev.some((c) => c.id === card.id);
@@ -212,14 +234,37 @@ export default function JasskalkulatorPage() {
           style={{ height: '76px' }}
         >
           <div className="flex items-center gap-3">
-            <Link 
-              href={`/${locale}`}
-              className="w-8 h-8 flex items-center justify-center text-white/60 hover:text-white transition-colors"
-            >
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-              </svg>
-            </Link>
+            {fromJassguru ? (
+              <button
+                type="button"
+                onClick={handleBackToJassguru}
+                aria-label="Zurück zu JassGuru"
+                className="h-8 flex items-center gap-1 text-white/60 hover:text-white transition-colors"
+              >
+                <span className="w-8 h-8 flex items-center justify-center">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+                  </svg>
+                </span>
+                {/* Label erst ab sm: — auf schmalen Handys würde der Header sonst
+                    mit «JassKalkulator» kollidieren; der Pfeil allein trägt dort. */}
+                <span
+                  className="hidden sm:inline text-[15px] whitespace-nowrap"
+                  style={{ fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif' }}
+                >
+                  JassGuru
+                </span>
+              </button>
+            ) : (
+              <Link
+                href={`/${locale}`}
+                className="w-8 h-8 flex items-center justify-center text-white/60 hover:text-white transition-colors"
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+                </svg>
+              </Link>
+            )}
             <div className="inline-flex items-center gap-1.5 h-8 lg:scale-[1.2] lg:origin-left">
               <span className="w-7 h-7 shrink-0 rounded-full bg-[#FFFFFF] flex items-center justify-center">
                 <PiCalculatorFill className="w-4 h-4 text-black" style={{ transform: 'scale(1.15)' }} />
